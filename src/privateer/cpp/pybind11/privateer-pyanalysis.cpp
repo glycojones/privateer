@@ -633,7 +633,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
         contacts.erase(std::remove_if(contacts.begin(), contacts.end(),
                                         [tmpmol, &originAtom](clipper::MAtomIndexSymmetry& current_contact) {
                                             clipper::ftype distance = clipper::Coord_orth::length( originAtom.coord_orth(), tmpmol.atom(current_contact).coord_orth() );
-                                            return distance > 7.0 && current_contact.symmetry() != 0;
+                                            return current_contact.symmetry() != 0;
                                         }), contacts.end());
 
         std::sort(contacts.begin(), contacts.end(), [tmpmol, &originAtom](const clipper::MAtomIndexSymmetry &left, const clipper::MAtomIndexSymmetry &right) {

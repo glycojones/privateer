@@ -170,7 +170,7 @@ namespace privateer {
             for ( int k = 0 ; k < neighbourhood.size() ; k++ )
             {
                 clipper::ftype distance = clipper::Coord_orth::length( centre_apolar, input_model.atom(neighbourhood[k]).coord_orth() );
-                if(distance <= 5.0 && (neighbourhood[k].symmetry() == 0))
+                if(neighbourhood[k].symmetry() == 0)
                 {
                     const clipper::MMonomer& mmon = this->input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()];
 
@@ -427,7 +427,7 @@ namespace privateer {
                 for(int i = 0; i < neighbourhood.size(); i++)
                 {
                     clipper::ftype distance = clipper::Coord_orth::length( currentAtom.coord_orth(), hydrogenated_input_model.atom(neighbourhood[i]).coord_orth() );
-                    if(distance <= max_dist && (neighbourhood[i].symmetry() == 0))
+                    if(neighbourhood[i].symmetry() == 0)
                     {
                         int detected_chain      = neighbourhood[i].polymer();
                         int detected_monomer    = neighbourhood[i].monomer();
@@ -521,7 +521,7 @@ namespace privateer {
         for(int i = 0; i < neighbourhood.size(); i++)
         {
             clipper::ftype distance = clipper::Coord_orth::length( input_atom.coord_orth(), hydrogenated_input_model.atom(neighbourhood[i]).coord_orth() );
-            if(distance <= 1.8 && (neighbourhood[i].symmetry() == 0))
+            if(neighbourhood[i].symmetry() == 0)
             {
                 int detected_chain      = neighbourhood[i].polymer();
                 int detected_monomer    = neighbourhood[i].monomer();
