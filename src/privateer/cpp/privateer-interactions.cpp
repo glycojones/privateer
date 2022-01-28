@@ -169,51 +169,55 @@ namespace privateer {
 
             for ( int k = 0 ; k < neighbourhood.size() ; k++ )
             {
-                const clipper::MMonomer& mmon = this->input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()];
-
-                if (( mmon.type() != "TRP" ) &&
-                    ( mmon.type() != "TYR" ) &&
-                    ( mmon.type() != "PHE" ) &&
-                    ( mmon.type() != "HIS" ))
-                    continue;
-
-                clipper::ftype distance = 0.0;
-
-                if ( neighbourhood[k].symmetry() == 0 )
+                clipper::ftype distance = clipper::Coord_orth::length( centre_apolar, input_model.atom(neighbourhood[k]).coord_orth() );
+                if(distance <= 5.0 && (neighbourhood[k].symmetry() == 0))
                 {
-                    distance = clipper::Coord_orth::length(this->input_model.atom(neighbourhood[k]).coord_orth(), centre_apolar);
-                }
-                else // this neighbour is actually a symmetry mate
-                {
-                    clipper::Spacegroup spgr = this->input_model.spacegroup();
-                    clipper::Coord_frac f1 = this->input_model.atom( neighbourhood[k] ).coord_orth().coord_frac( this->input_model.cell() );
-                    clipper::Coord_frac f2 = centre_apolar.coord_frac( this->input_model.cell() );
-                    f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                    f1 = f1.lattice_copy_near( f2 );
-                    distance = sqrt(( f2 - f1 ).lengthsq( this->input_model.cell() ));
-                }
+                    const clipper::MMonomer& mmon = this->input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()];
 
-                if ( distance < 4.0 ) // check distance, compliant with Hudson et al., JACS 2015
-                {
-                    clipper::Vec3<clipper::ftype> aromatic_plane = find_aromatic_plane ( mmon );
-                    clipper::ftype angle = get_angle ( aromatic_plane, input_sugar.ring_mean_plane () );
+                    if (( mmon.type() != "TRP" ) &&
+                        ( mmon.type() != "TYR" ) &&
+                        ( mmon.type() != "PHE" ) &&
+                        ( mmon.type() != "HIS" ))
+                        continue;
 
-                    if ( angle > 2.75 ) // 0 < angle < Pi, angle must be 30deg at most, also compliant with Hudson et al., JACS 2015
+                    clipper::ftype distance = 0.0;
+
+                    if ( neighbourhood[k].symmetry() == 0 )
                     {
-                        std::pair < clipper::MAtomIndexSymmetry, float > individual_result;
-                        individual_result.first = neighbourhood[k];
-                        individual_result.second = angle;
+                        distance = clipper::Coord_orth::length(this->input_model.atom(neighbourhood[k]).coord_orth(), centre_apolar);
+                    }
+                    else // this neighbour is actually a symmetry mate
+                    {
+                        clipper::Spacegroup spgr = this->input_model.spacegroup();
+                        clipper::Coord_frac f1 = this->input_model.atom( neighbourhood[k] ).coord_orth().coord_frac( this->input_model.cell() );
+                        clipper::Coord_frac f2 = centre_apolar.coord_frac( this->input_model.cell() );
+                        f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
+                        f1 = f1.lattice_copy_near( f2 );
+                        distance = sqrt(( f2 - f1 ).lengthsq( this->input_model.cell() ));
+                    }
 
-                        int residue;
+                    if ( distance < 4.0 ) // check distance, compliant with Hudson et al., JACS 2015
+                    {
+                        clipper::Vec3<clipper::ftype> aromatic_plane = find_aromatic_plane ( mmon );
+                        clipper::ftype angle = get_angle ( aromatic_plane, input_sugar.ring_mean_plane () );
 
-                        for ( residue = 0 ; residue < results.size(); residue++ )
+                        if ( angle > 2.75 ) // 0 < angle < Pi, angle must be 30deg at most, also compliant with Hudson et al., JACS 2015
                         {
-                            if ( this->input_model[results[residue].first.polymer()][results[residue].first.monomer()].id() == this->input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() )
-                                break;
-                        }
+                            std::pair < clipper::MAtomIndexSymmetry, float > individual_result;
+                            individual_result.first = neighbourhood[k];
+                            individual_result.second = angle;
 
-                        if ( residue == results.size() ) // not found in the results vector
-                            results.push_back ( individual_result );
+                            int residue;
+
+                            for ( residue = 0 ; residue < results.size(); residue++ )
+                            {
+                                if ( this->input_model[results[residue].first.polymer()][results[residue].first.monomer()].id() == this->input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() )
+                                    break;
+                            }
+
+                            if ( residue == results.size() ) // not found in the results vector
+                                results.push_back ( individual_result );
+                        }
                     }
                 }
             }
@@ -397,7 +401,7 @@ namespace privateer {
         }
     }
 
-
+    // Need to account for symmetry and distance here also.
     std::vector<privateer::interactions::HBond> privateer::interactions::HBondsParser::get_HBonds_via_mcdonald_and_thornton(int glycanIndex, double max_dist)
     {
         std::vector<clipper::MGlycan> list_of_hydrogenated_glycans = this->hydrogenated_mglycology.get_list_of_glycans();
@@ -422,77 +426,81 @@ namespace privateer {
 
                 for(int i = 0; i < neighbourhood.size(); i++)
                 {
-                    int detected_chain      = neighbourhood[i].polymer();
-                    int detected_monomer    = neighbourhood[i].monomer();
-                    int detected_atom       = neighbourhood[i].atom();
-
-                    // passing 'this' to lambda function is needed to capture class variable - 'clipper::MiniMol hydrogenated_input_model'
-                    auto check_if_neighbour_is_in_currentMGlycan = std::find_if(std::begin(inputGlycanSugars), std::end(inputGlycanSugars),
-                        [this, &detected_chain, &detected_monomer, &detected_atom, &glycanChainID](clipper::MSugar& element) {
-        
-                            
-                            return  element.id().trim() == hydrogenated_input_model[detected_chain][detected_monomer].id().trim() && element.type().trim() == hydrogenated_input_model[detected_chain][detected_monomer].type().trim() &&
-                                    element.seqnum() == hydrogenated_input_model[detected_chain][detected_monomer].seqnum() && glycanChainID == hydrogenated_input_model[detected_chain].id().trim() && 
-                                    element.size() == hydrogenated_input_model[detected_chain][detected_monomer].size();
-                        });
-                    
-                    if(check_if_neighbour_is_in_currentMGlycan == std::end(inputGlycanSugars) && clipper::Coord_orth::length(currentAtom.coord_orth(), hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) <= max_dist)
+                    clipper::ftype distance = clipper::Coord_orth::length( currentAtom.coord_orth(), hydrogenated_input_model.atom(neighbourhood[i]).coord_orth() );
+                    if(distance <= max_dist && (neighbourhood[i].symmetry() == 0))
                     {
-                        if(currentAtom.exists_property("hb_type") && hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].exists_property("hb_type"))
+                        int detected_chain      = neighbourhood[i].polymer();
+                        int detected_monomer    = neighbourhood[i].monomer();
+                        int detected_atom       = neighbourhood[i].atom();
+
+                        // passing 'this' to lambda function is needed to capture class variable - 'clipper::MiniMol hydrogenated_input_model'
+                        auto check_if_neighbour_is_in_currentMGlycan = std::find_if(std::begin(inputGlycanSugars), std::end(inputGlycanSugars),
+                            [this, &detected_chain, &detected_monomer, &detected_atom, &glycanChainID](clipper::MSugar& element) {
+            
+                                
+                                return  element.id().trim() == hydrogenated_input_model[detected_chain][detected_monomer].id().trim() && element.type().trim() == hydrogenated_input_model[detected_chain][detected_monomer].type().trim() &&
+                                        element.seqnum() == hydrogenated_input_model[detected_chain][detected_monomer].seqnum() && glycanChainID == hydrogenated_input_model[detected_chain].id().trim() && 
+                                        element.size() == hydrogenated_input_model[detected_chain][detected_monomer].size();
+                            });
+                        
+                        if(check_if_neighbour_is_in_currentMGlycan == std::end(inputGlycanSugars) && clipper::Coord_orth::length(currentAtom.coord_orth(), hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) <= max_dist)
                         {
-                            const hb_type& atom_hb_potential_target = dynamic_cast<const clipper::Property<hb_type>& >(currentAtom.get_property( "hb_type" )).value();
-                            const hb_type& atom_hb_potential_neighbour = dynamic_cast<const clipper::Property<hb_type>& >(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].get_property( "hb_type" )).value();
-                
-                            if(atom_hb_potential_target == HB_HYDROGEN)
+                            if(currentAtom.exists_property("hb_type") && hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].exists_property("hb_type"))
                             {
-                                if(atom_hb_potential_neighbour == HB_ACCEPTOR || atom_hb_potential_neighbour == HB_BOTH)
+                                const hb_type& atom_hb_potential_target = dynamic_cast<const clipper::Property<hb_type>& >(currentAtom.get_property( "hb_type" )).value();
+                                const hb_type& atom_hb_potential_neighbour = dynamic_cast<const clipper::Property<hb_type>& >(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].get_property( "hb_type" )).value();
+                    
+                                if(atom_hb_potential_target == HB_HYDROGEN)
                                 {
-                                    // Modify this, so that multiple neighbours are returned.
-                                    std::vector<std::pair<clipper::MAtom, float>> hb_potential_target_neighbours = get_closest_neighbour_atoms(currentAtom, currentSugar, glycanChainID);
-                                    std::vector<std::pair<clipper::MAtom, float>> hb_potential_neighbour_neighbours = get_closest_neighbour_atoms(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain].id().trim());
-                                    std::pair<bool, HBond> new_h_bond = make_h_bond_from_sugar_hydrogen(glycanChainID, currentSugar, currentAtom, hydrogenated_input_model[detected_chain].id().trim(), hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], hb_potential_target_neighbours, hb_potential_neighbour_neighbours );
-                                    new_h_bond.second.sugarIndex = sugar;
-                                    new_h_bond.second.glycanSize = inputGlycanSugars.size();
-                                    if(new_h_bond.first)
-                                        output.push_back(new_h_bond.second);
-                                    
-                                    // std::cout   << "DEBUG:: ===> pushing back new_h_bond from sugar_hydrogen, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
-                                    //             << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
-                                    //             << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
-                                    //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
-                                    //             << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
-                                    
+                                    if(atom_hb_potential_neighbour == HB_ACCEPTOR || atom_hb_potential_neighbour == HB_BOTH)
+                                    {
+                                        // Modify this, so that multiple neighbours are returned.
+                                        std::vector<std::pair<clipper::MAtom, float>> hb_potential_target_neighbours = get_closest_neighbour_atoms(currentAtom, currentSugar, glycanChainID);
+                                        std::vector<std::pair<clipper::MAtom, float>> hb_potential_neighbour_neighbours = get_closest_neighbour_atoms(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain].id().trim());
+                                        std::pair<bool, HBond> new_h_bond = make_h_bond_from_sugar_hydrogen(glycanChainID, currentSugar, currentAtom, hydrogenated_input_model[detected_chain].id().trim(), hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], hb_potential_target_neighbours, hb_potential_neighbour_neighbours );
+                                        new_h_bond.second.sugarIndex = sugar;
+                                        new_h_bond.second.glycanSize = inputGlycanSugars.size();
+                                        if(new_h_bond.first)
+                                            output.push_back(new_h_bond.second);
+                                        
+                                        // std::cout   << "DEBUG:: ===> pushing back new_h_bond from sugar_hydrogen, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
+                                        //             << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
+                                        //             << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
+                                        //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
+                                        //             << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
+                                        
+                                    }
+                                }
+                                if(atom_hb_potential_target == HB_ACCEPTOR || atom_hb_potential_target == HB_BOTH)
+                                {
+                                    if(atom_hb_potential_neighbour == HB_HYDROGEN || hydrogenated_input_model[detected_chain][detected_monomer].type().trim() == "HOH")
+                                    {
+                                        std::vector<std::pair<clipper::MAtom, float>> hb_potential_target_neighbours = get_closest_neighbour_atoms(currentAtom, currentSugar, glycanChainID);
+                                        std::vector<std::pair<clipper::MAtom, float>> hb_potential_neighbour_neighbours = get_closest_neighbour_atoms(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain].id().trim());
+                                        std::pair<bool, HBond> new_h_bond = make_h_bond_from_environment_residue_hydrogen(hydrogenated_input_model[detected_chain].id().trim(), hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], glycanChainID, currentSugar, currentAtom, hb_potential_neighbour_neighbours, hb_potential_target_neighbours);
+                                        new_h_bond.second.sugarIndex = sugar;
+                                        new_h_bond.second.glycanSize = inputGlycanSugars.size();
+                                        if(new_h_bond.first)
+                                            output.push_back(new_h_bond.second);
+                                        
+                                        // std::cout   << "DEBUG:: ===> pushing back new_h_bond from environment_residue, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
+                                        //             << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
+                                        //             << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
+                                        //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
+                                        //             << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
+
+                                    }
                                 }
                             }
-                            if(atom_hb_potential_target == HB_ACCEPTOR || atom_hb_potential_target == HB_BOTH)
+                            else
                             {
-                                if(atom_hb_potential_neighbour == HB_HYDROGEN || hydrogenated_input_model[detected_chain][detected_monomer].type().trim() == "HOH")
-                                {
-                                    std::vector<std::pair<clipper::MAtom, float>> hb_potential_target_neighbours = get_closest_neighbour_atoms(currentAtom, currentSugar, glycanChainID);
-                                    std::vector<std::pair<clipper::MAtom, float>> hb_potential_neighbour_neighbours = get_closest_neighbour_atoms(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain].id().trim());
-                                    std::pair<bool, HBond> new_h_bond = make_h_bond_from_environment_residue_hydrogen(hydrogenated_input_model[detected_chain].id().trim(), hydrogenated_input_model[detected_chain][detected_monomer], hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], glycanChainID, currentSugar, currentAtom, hb_potential_neighbour_neighbours, hb_potential_target_neighbours);
-                                    new_h_bond.second.sugarIndex = sugar;
-                                    new_h_bond.second.glycanSize = inputGlycanSugars.size();
-                                    if(new_h_bond.first)
-                                        output.push_back(new_h_bond.second);
-                                    
-                                    // std::cout   << "DEBUG:: ===> pushing back new_h_bond from environment_residue, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
-                                    //             << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
-                                    //             << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
-                                    //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
-                                    //             << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
-
-                                }
+                                // std::cout << "hb_type: property does not exist" << std::endl;
                             }
                         }
                         else
                         {
-                            // std::cout << "hb_type: property does not exist" << std::endl;
+                            // std::cout << hydrogenated_input_model[detected_chain][detected_monomer].id().trim() << "-" << hydrogenated_input_model[detected_chain][detected_monomer].type().trim() << hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].id().trim() << " have been detected to be in the current MGlycan" << std::endl;
                         }
-                    }
-                    else
-                    {
-                        // std::cout << hydrogenated_input_model[detected_chain][detected_monomer].id().trim() << "-" << hydrogenated_input_model[detected_chain][detected_monomer].type().trim() << hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].id().trim() << " have been detected to be in the current MGlycan" << std::endl;
                     }
                 }
             }
@@ -512,25 +520,29 @@ namespace privateer {
         std::vector<std::pair<clipper::MAtom, float>> atoms_in_current_residue_only;
         for(int i = 0; i < neighbourhood.size(); i++)
         {
-            int detected_chain      = neighbourhood[i].polymer();
-            int detected_monomer    = neighbourhood[i].monomer();
-            int detected_atom       = neighbourhood[i].atom();
-            // std::cout   << "Input: " << input_atom.coord_orth().format() << " " << input_atom.id().trim() << "--" << residue_atom_located_in.type().trim() << "-" << residue_atom_located_in.id().trim() << "_" << residue_atom_located_in.seqnum()
-            //             << " chain: " << chainID << "\t\tDetected: " << hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].id().trim() << "--" << hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].element() << " " << hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth().format()
-            //             << " " << hydrogenated_input_model[detected_chain][detected_monomer].type().trim() << "-" << hydrogenated_input_model[detected_chain][detected_monomer].id().trim() << "_" << hydrogenated_input_model[detected_chain][detected_monomer].seqnum() << " chain: " << hydrogenated_input_model[detected_chain].id().trim() << std::endl;
+            clipper::ftype distance = clipper::Coord_orth::length( input_atom.coord_orth(), hydrogenated_input_model.atom(neighbourhood[i]).coord_orth() );
+            if(distance <= 1.8 && (neighbourhood[i].symmetry() == 0))
+            {
+                int detected_chain      = neighbourhood[i].polymer();
+                int detected_monomer    = neighbourhood[i].monomer();
+                int detected_atom       = neighbourhood[i].atom();
+                // std::cout   << "Input: " << input_atom.coord_orth().format() << " " << input_atom.id().trim() << "--" << residue_atom_located_in.type().trim() << "-" << residue_atom_located_in.id().trim() << "_" << residue_atom_located_in.seqnum()
+                //             << " chain: " << chainID << "\t\tDetected: " << hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].id().trim() << "--" << hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].element() << " " << hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth().format()
+                //             << " " << hydrogenated_input_model[detected_chain][detected_monomer].type().trim() << "-" << hydrogenated_input_model[detected_chain][detected_monomer].id().trim() << "_" << hydrogenated_input_model[detected_chain][detected_monomer].seqnum() << " chain: " << hydrogenated_input_model[detected_chain].id().trim() << std::endl;
 
-            if( hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].element().trim() != "H" &&
-                hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].id().trim() != input_atom.id().trim() &&
-                hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth() != input_atom.coord_orth() &&
-                hydrogenated_input_model[detected_chain][detected_monomer].type().trim() == residue_atom_located_in.type().trim() && 
-                hydrogenated_input_model[detected_chain][detected_monomer].id().trim() == residue_atom_located_in.id().trim() &&
-                hydrogenated_input_model[detected_chain][detected_monomer].seqnum() == residue_atom_located_in.seqnum() &&
-                hydrogenated_input_model[detected_chain].id().trim() == chainID &&
-                clipper::Coord_orth::length(input_atom.coord_orth(), hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) <= 1.8)
-                {
-                    float dist = clipper::Coord_orth::length(input_atom.coord_orth(), hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth());
-                    atoms_in_current_residue_only.push_back(std::make_pair(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], dist));  
-                }
+                if( hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].element().trim() != "H" &&
+                    hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].id().trim() != input_atom.id().trim() &&
+                    hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth() != input_atom.coord_orth() &&
+                    hydrogenated_input_model[detected_chain][detected_monomer].type().trim() == residue_atom_located_in.type().trim() && 
+                    hydrogenated_input_model[detected_chain][detected_monomer].id().trim() == residue_atom_located_in.id().trim() &&
+                    hydrogenated_input_model[detected_chain][detected_monomer].seqnum() == residue_atom_located_in.seqnum() &&
+                    hydrogenated_input_model[detected_chain].id().trim() == chainID &&
+                    clipper::Coord_orth::length(input_atom.coord_orth(), hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) <= 1.8)
+                    {
+                        float dist = clipper::Coord_orth::length(input_atom.coord_orth(), hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth());
+                        atoms_in_current_residue_only.push_back(std::make_pair(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], dist));  
+                    }
+            }
                         
         }
         

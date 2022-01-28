@@ -991,7 +991,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
     for ( int i = 0 ; i < neighbourhood.size() ; i++ )
     {
         clipper::ftype distance = clipper::Coord_orth::length( ring_atoms[5].coord_orth(), mmol.atom(neighbourhood[i]).coord_orth() );
-        if(distance <= 1.2 && neighbourhood[i].symmetry() == 0)
+        if(neighbourhood[i].symmetry() == 0)
         {
             if  (( mmol.atom( neighbourhood[i] ).element().trim() != "H" ) && (mmol.atom(neighbourhood[i]).name().trim() != ring_atoms[5].name().trim()))
             // the target substituent could be anything apart from H, in-ring oxygen or in-ring carbon
@@ -1322,7 +1322,7 @@ std::vector<clipper::ftype> MSugar::cremerPople_pyranose(const clipper::MiniMol&
         for ( int i = 0 ; i < neighbourhood.size() ; i++ )
         {
             clipper::ftype distance = clipper::Coord_orth::length( ring_atoms[4].coord_orth(), mmol.atom(neighbourhood[i]).coord_orth() );
-            if(distance <= 1.5 && (neighbourhood[i].symmetry() == 0))
+            if((neighbourhood[i].symmetry() == 0))
             {
                 if(debug_output)
                 {
@@ -1830,17 +1830,25 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
             for ( int i = 0 ; i < neighbourhood.size() ; i++ )
             {
                 clipper::ftype distance = clipper::Coord_orth::length( ring_atoms[1].coord_orth(), mmol.atom(neighbourhood[i]).coord_orth() );
-                if(distance <= 1.2 && neighbourhood[i].symmetry() == 0)
+                if(neighbourhood[i].symmetry() == 0)
                 {
+                    if(debug_output)
+                        DBG << "Anomer computation, current neighbour atom: " << mmol.atom(neighbourhood[i]).id().trim() << std::endl;
                     if (( mmol.atom(neighbourhood[i]).element().trim() != "H" )
                     && ( mmol.atom(neighbourhood[i]).name().trim() != anomeric_carbon.name().trim()) )
                     {
                         if ( bonded(neighbourhood[i], ring_atoms[1] ) )
                         {
+                            if(debug_output)
+                                DBG << "Anomer computation, bonded = true " << mmol.atom(neighbourhood[i]).id().trim() << std::endl;
                             if ( !is_part_of_ring(mmol.atom(neighbourhood[i]), ring_atoms))
                             {
+                                if(debug_output)
+                                    DBG << "Anomer computation, not part of the ring " << mmol.atom(neighbourhood[i]).id().trim() << std::endl;
                                 if ( altconf_compatible(get_altconf ( mmol.atom(neighbourhood[i]) ), get_altconf ( ring_atoms[1] ) ))
                                 {
+                                    if(debug_output)
+                                        DBG << "Anomer computation, compatible altconf " << mmol.atom(neighbourhood[i]).id().trim() << std::endl;
                                     int polymerID = neighbourhood[i].polymer(); // needed for ugly fix down below.
                                     int monomerID = neighbourhood[i].monomer();
                                     if (mmol.atom(neighbourhood[i]).element().trim() != "C" ) // O6 is part of the ring if only checking by name!!!
@@ -1896,7 +1904,7 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
                         DBG << "i2: " << i2 << "\tneighbourhood.size() " << neighbourhood.size() << std::endl;
                     }
                     clipper::ftype distance = clipper::Coord_orth::length( configurational_carbon.coord_orth(), mmol.atom(neighbourhood[i2]).coord_orth() );
-                    if(distance <= 1.2 && neighbourhood[i2].symmetry() == 0)
+                    if(neighbourhood[i2].symmetry() == 0)
                     {
                         if ( !is_part_of_ring(mmol.atom(neighbourhood[i2]),ring_atoms)
                             && (mmol.atom(neighbourhood[i2]).element().trim() != "H" )
@@ -1938,7 +1946,7 @@ MSugar::stereochemistry_pairs MSugar::get_stereochemistry(const clipper::MiniMol
                 DBG << "i2 in while loop: " << i2 << "\tneighbourhood.size() " << neighbourhood.size() << std::endl;
             }
             clipper::ftype distance = clipper::Coord_orth::length( configurational_carbon.coord_orth(), mmol.atom(neighbourhood[i2]).coord_orth() );
-            if(distance <= 1.2 && neighbourhood[i2].symmetry() == 0)
+            if(neighbourhood[i2].symmetry() == 0)
             {
                 if ( !is_part_of_ring(mmol.atom(neighbourhood[i2]),ring_atoms)
                     && (mmol.atom(neighbourhood[i2]).element().trim() != "H" )
@@ -2094,6 +2102,9 @@ bool MSugar::bonded(const clipper::MAtomIndexSymmetry& ma_one, const clipper::MA
 
     }
 
+    if(debug_output)
+        std::cout << ": called from get_stereochemistry, distance = " << distance << "\tma_one.id() " << sugar_parent_molecule->atom(ma_one).id() << "\tma_two.id() " << ma_two.id().trim() << std::endl;
+
     if ( sugar_parent_molecule->atom(ma_one).element().trim() == "C" )
     {
         if ( ma_two.element().trim() == "C" )
@@ -2153,7 +2164,7 @@ bool MSugar::bonded(const clipper::MAtomIndexSymmetry& ma_one, const clipper::MA
     {
         if ( ma_two.element().trim() == "C" )
         {
-            if ((distance >  1.16 ) && ( distance < 1.60 ))
+            if ((distance >  1.16 ) && ( distance < 1.61 ))
                 return true; // O-C or O=C
             else
                 return false;
@@ -5389,8 +5400,8 @@ int MGlycology::parse_order(clipper::MAtom& atom_in_sugar, clipper::MSugar& suga
             &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() == sugar.type().trim())
             &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() == sugar.seqnum())
             &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].element().trim() == "C")
-            )   &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), atom_in_sugar.coord_orth() ) <= 2.0 )
-                &&  (contacts[j].symmetry() == 0))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+            )   &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), atom_in_sugar.coord_orth() ) <= 2.0 ))
+                // &&  (contacts[j].symmetry() == 0))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
         {                            //         of crappy structures in MG
             if ( altconf_compatible(get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(atom_in_sugar) ) )
             {
@@ -5749,14 +5760,14 @@ const std::vector < std::pair< clipper::String, clipper::MMonomer > > MGlycology
             std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( candidates[i].coord_orth(), 2.5 );
             for (int j = 0 ; j < contacts.size() ; j++ )
             {
-                if(contacts[j].symmetry() == 0)
-                {
+                // if(contacts[j].symmetry() == 0)
+                // {
                     if ((tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                     && ( clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) < 0.25 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     {                            //         of crappy structures in MG
                         tmpresults.push_back(std::make_pair(tmpmol[contacts[j].polymer()].id().trim(), tmpmol[contacts[j].polymer()][contacts[j].monomer()]));
                     }
-                }
+                // }
             }        
         }
 
@@ -6669,8 +6680,8 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
-                        )   &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.0 )
-                            &&  (contacts[j].symmetry() == 0) )  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                        )   &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.0 ))
+                            // &&  (contacts[j].symmetry() == 0) )  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                     //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     {                            //         of crappy structures in MG
@@ -6789,8 +6800,8 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() != mm.type().trim())
                         ||  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() != mm.seqnum())
-                        )   &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.0 )
-                            &&  (contacts[j].symmetry() == 0) )  // Beware: will report contacts that are not physically in contact, but needed for visualisation
+                        )   &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.0 ))
+                            // &&  (contacts[j].symmetry() == 0) )  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     //  if (   (tmpmol[contacts[j].polymer()][contacts[j].monomer()].id().trim() != mm.id().trim())
                     //     &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), candidates[i].coord_orth() ) <= 2.5 ))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
                     {                            //         of crappy structures in MG

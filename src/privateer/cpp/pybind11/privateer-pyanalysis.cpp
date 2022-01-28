@@ -630,6 +630,12 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
         std::vector < clipper::MAtomIndexSymmetry > contacts = manb_object.atoms_near ( originAtom.coord_orth(), 7.0 );
         std::vector < clipper::MAtomIndexSymmetry > refined_contact_results;
 
+        contacts.erase(std::remove_if(contacts.begin(), contacts.end(),
+                                        [tmpmol, &originAtom](clipper::MAtomIndexSymmetry& current_contact) {
+                                            clipper::ftype distance = clipper::Coord_orth::length( originAtom.coord_orth(), tmpmol.atom(current_contact).coord_orth() );
+                                            return distance > 7.0 && current_contact.symmetry() != 0;
+                                        }), contacts.end());
+
         std::sort(contacts.begin(), contacts.end(), [tmpmol, &originAtom](const clipper::MAtomIndexSymmetry &left, const clipper::MAtomIndexSymmetry &right) {
                 clipper::ftype distanceLeft = clipper::Coord_orth::length(originAtom.coord_orth(), tmpmol[left.polymer()][left.monomer()][left.atom()].coord_orth());
                 clipper::ftype distanceRight = clipper::Coord_orth::length(originAtom.coord_orth(), tmpmol[right.polymer()][right.monomer()][right.atom()].coord_orth());

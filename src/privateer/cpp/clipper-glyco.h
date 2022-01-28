@@ -32,12 +32,19 @@
 
 inline bool altconf_compatible ( char m1, char m2 )
 {
-    // OLD VERSION: if (( m1 == 'A' && m2 == 'B') || ( m1 == 'B' && m2 == 'A')) 
+    // OLD VERSION: 
+        // if (( m1 == 'A' && m2 == 'B') || ( m1 == 'B' && m2 == 'A'))
+        //     return false;
+        // else
+        //     return true;
     // would cause an endless while loop in is_stereocentre() when there would be altconfs like 'C'
-    if (( m1 != m2)) 
-        return false;
-    else
+    if(( m1 == m2))
         return true;
+    else if((m1 == ' ' && m2 != ' ') || (m1 != ' ' && m2 == ' '))
+        return true;
+    else 
+        return false;
+
 }
 //!< false if one is from conf A and the other is from conf B
 
