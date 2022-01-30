@@ -3697,6 +3697,8 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     }
     else if ( link == 1 )
     {
+        // { "K5B" ,	 "N", 	 "D", 	 "4,7-anhydro-3-deoxy-D-gluco-oct-2-ulosonic acid" ,"O7 C4 C5 C6 C7", 0.621, "2ev", 0.003, 2.048 },
+        // { "KD5" ,	 "N", 	 "D", 	 "4,7-anhydro-3-deoxy-D-manno-oct-2-ulosonic acid", "O7 C4 C5 C6 C7", 0.500, "Oh5", 0.095, 8.063 },
         // next_sugar 5 GLC - 4 MAN
         // first_sugar 4 FRU - 3 BMA
         if(next_sugar.ring_members().size() == 6)
@@ -3707,13 +3709,22 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else if(next_sugar.ring_members().size() == 5)
         {
-            o5 = first_sugar.ring_members()[0];              // O5
-            o5_next_sugar = next_sugar.ring_members()[0];
-            // c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
-            c1 = next_sugar.ring_members()[1];              // C2
-            actual_c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)];
-            o1 = next_sugar.anomeric_substituent();         // O1 usually
-            c3 = next_sugar.ring_members()[2];             // C3
+            if(next_sugar.type().trim() == "K5B" || next_sugar.type().trim() == "KD5")
+            {
+                c4 = next_sugar.ring_members()[1];
+                c5 = next_sugar.ring_members()[2];
+                o1 = first_sugar.anomeric_substituent();
+            }
+            else
+            {
+                o5 = first_sugar.ring_members()[0];              // O5
+                o5_next_sugar = next_sugar.ring_members()[0];
+                // c1 = next_sugar[next_sugar.lookup("C1",clipper::MM::ANY)]; // not going to be in the ring, but going to form the glycosidic bond regardless
+                c1 = next_sugar.ring_members()[1];              // C2
+                actual_c1 = next_sugar[next_sugar.lookup("C1", clipper::MM::ANY)];
+                o1 = next_sugar.anomeric_substituent();         // O1 usually
+                c3 = next_sugar.ring_members()[2];             // C3
+            }
         }
         else
         {
@@ -3765,21 +3776,37 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         else if(next_sugar.ring_members().size() == 5)
         {
-            phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
-                                                    first_sugar_c1.coord_orth(),
-                                                    o1.coord_orth(),
-                                                    actual_c1.coord_orth() );
+            if(next_sugar.type().trim() == "K5B" || next_sugar.type().trim() == "KD5")
+            {
+                phi   = clipper::Coord_orth::torsion (  c4.coord_orth(),
+                                                        c5.coord_orth(),
+                                                        o1.coord_orth(),
+                                                        first_sugar_c1.coord_orth() );
 
-            // Can't figure this shit out, to come back later. 
-            psi   = clipper::Coord_orth::torsion (  c2.coord_orth(),
-                                                    first_sugar_c1.coord_orth(),
-                                                    o1.coord_orth(),
-                                                    actual_c1.coord_orth() );
-            
-            omega = clipper::Coord_orth::torsion (  o1.coord_orth(),
-                                                    actual_c1.coord_orth(),
-                                                    c1.coord_orth(),
-                                                    c3.coord_orth() );
+                // Can't figure this shit out, to come back later. 
+                psi   = clipper::Coord_orth::torsion (  c5.coord_orth(),
+                                                        o1.coord_orth(),
+                                                        first_sugar_c1.coord_orth(),
+                                                        c2.coord_orth() );
+            }
+            else
+            {
+                phi   = clipper::Coord_orth::torsion (  o5.coord_orth(),
+                                                        first_sugar_c1.coord_orth(),
+                                                        o1.coord_orth(),
+                                                        actual_c1.coord_orth() );
+
+                // Can't figure this shit out, to come back later. 
+                psi   = clipper::Coord_orth::torsion (  c2.coord_orth(),
+                                                        first_sugar_c1.coord_orth(),
+                                                        o1.coord_orth(),
+                                                        actual_c1.coord_orth() );
+                
+                omega = clipper::Coord_orth::torsion (  o1.coord_orth(),
+                                                        actual_c1.coord_orth(),
+                                                        c1.coord_orth(),
+                                                        c3.coord_orth() );
+            }
 
             new_connection.set_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), clipper::Util::rad2d(omega), clipper::Util::rad2d(omega_six), clipper::Util::rad2d(omega_seven), clipper::Util::rad2d(omega_eight), clipper::Util::rad2d(omega_nine),  clipper::Util::rad2d(phi_cone_ctwo_oeight_ceight) );
             if(debug_output)
@@ -5086,9 +5113,9 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
             {
                 const clipper::MMonomer& tmpmon = mmol[linked[j].second.polymer()][linked[j].second.monomer()];
 
-
+                
                 // Might need to revert this change. To test with running Privateer again on a local pdb_mirror.
-                if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) )
+                if ( clipper::MSugar::search_database(potential_rootless_polysaccharides[i].first.type().c_str()) && ( !clipper::data::is_nucleic_acid(potential_rootless_polysaccharides[i].first.type().trim()) && !clipper::data::is_nucleic_acid(tmpmon.type().trim()) ) )
                 {
                     clipper::MSugar rootSugar (mmol, potential_rootless_polysaccharides[i].second, potential_rootless_polysaccharides[i].first, manb, debug_output);
                     list_of_sugars.push_back ( rootSugar );
