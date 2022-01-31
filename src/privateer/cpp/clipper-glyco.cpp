@@ -4314,14 +4314,17 @@ clipper::String MGlycan::generate_wurcs()
         // Describe the rest of the linkages.
         for (int i = 1; i < node_list.size(); i++)
         {
+            if(debug_output)
+                DBG << "Getting sugar at index " << i << "/" << node_list.size() << std::endl;
+                
             msug = node_list[i].get_sugar();
 
             if(debug_output)
             {
-                DBG << "Type of sugar via ::MSugar.full_type() = " << msug.full_type() << std::endl;
-                DBG << "Number of connections for msug/node_list[" << i << "]: " << node_list[i].number_of_connections() << std::endl
-                    << std::endl;
+                DBG << std::endl << "Type of sugar via ::MSugar.full_type() = " << msug.full_type() << std::endl;
+                DBG << "Number of connections for msug/node_list[" << i << "]: " << node_list[i].number_of_connections() << std::endl;
                 DBG << "Residue code via ::MSugar.type().trim() = " << msug.type().trim() << std::endl;
+                DBG << "number of connections " << node_list[i].number_of_connections() << std::endl;
             }
 
             if (node_list[i].number_of_connections() > 0)
