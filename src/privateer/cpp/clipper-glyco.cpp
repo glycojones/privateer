@@ -4584,7 +4584,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
             else if ( mmol[pol][mon].type().trim() == "CYS" )   potential_s_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // s-linked stuff ?
             else if ( mmol[pol][mon].type().trim() == "TRP" )   potential_c_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // C-linked stuff for C/TRP-mannosylation
             else if ( mmol[pol][mon].type().trim() == "SEP" )   potential_p_roots.push_back ( std::make_pair(mmol[pol][mon], mmol[pol].id()) ); // Phosphoglycosylation - no recorded cases on PDB yet.
-            else if ( clipper::data::found_in_database(mmol[pol][mon].type().trim()) )      potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
+            else if ( clipper::data::found_in_database(mmol[pol][mon].type().trim()) && !clipper::data::is_nucleic_acid(mmol[pol][mon].type().trim()) )      potential_rootless_polysaccharides.push_back( std::make_pair(mmol[pol][mon], mmol[pol].id()) );
         }
     for ( int i = 0 ; i < potential_n_roots.size() ; i++ )  // create n-glycan roots with first sugar
     {
@@ -5293,7 +5293,7 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
     
     for (int i = 0 ; i < contacts.size() ; i++ )
     {
-        if (clipper::data::found_in_database ( tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type() ))
+        if (clipper::data::found_in_database ( tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type() ) && !clipper::data::is_nucleic_acid(tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()].type().trim()))
         {
             const std::vector<clipper::MSugar> sugar_list = mg.get_sugars();
             const clipper::MSugar root_sugar = sugar_list.front();
@@ -5339,7 +5339,6 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
                                 tmpsug.seqnum() == reserved_sugar.seqnum(); 
                     
                     }); 
-
                     if(search_result_part_of_another_glycan == std::end(accounted_for_sugars))
                     {
                         clipper::MAtom acceptorAtom = tmpmol[contacts[i].second.polymer()][contacts[i].second.monomer()][contacts[i].second.atom()];
@@ -5420,9 +5419,8 @@ int MGlycology::parse_order(clipper::MAtom& atom_in_sugar, clipper::MSugar& suga
 {
     const clipper::MiniMol& tmpmol = *mmol;
 
-    std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( atom_in_sugar.coord_orth(), 2.0 );
+    std::vector < clipper::MAtomIndexSymmetry > contacts = this->manb->atoms_near ( atom_in_sugar.coord_orth(), 2.5 );
     std::vector < std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > > tmpresults;
-
     for (int j = 0 ; j < contacts.size() ; j++ )
     {
         if ( (  (tmpmol[contacts[j].polymer()].id().trim() == sugar.chain_id().trim())
@@ -5430,7 +5428,7 @@ int MGlycology::parse_order(clipper::MAtom& atom_in_sugar, clipper::MSugar& suga
             &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].type().trim() == sugar.type().trim())
             &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()].seqnum() == sugar.seqnum())
             &&  (tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].element().trim() == "C")
-            )   &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), atom_in_sugar.coord_orth() ) <= 2.0 )
+            )   &&  (clipper::Coord_orth::length ( tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()].coord_orth(), atom_in_sugar.coord_orth() ) <= 2.5 )
                 &&  (contacts[j].symmetry() == 0))  // Beware: will report contacts that are not physically in contact, but needed for visualisation
         {                            //         of crappy structures in MG
             if ( altconf_compatible(get_altconf(tmpmol[contacts[j].polymer()][contacts[j].monomer()][contacts[j].atom()]), get_altconf(atom_in_sugar) ) )
@@ -5445,7 +5443,7 @@ int MGlycology::parse_order(clipper::MAtom& atom_in_sugar, clipper::MSugar& suga
                 }
             }
         }
-    }        
+    }    
 
     std::sort(tmpresults.begin(), tmpresults.end(), [&tmpmol](const std::pair<clipper::MAtom,clipper::MAtomIndexSymmetry> &left, const std::pair<clipper::MAtom,clipper::MAtomIndexSymmetry> &right) {
         if(tmpmol[left.second.polymer()][left.second.monomer()].type().trim() == tmpmol[right.second.polymer()][right.second.monomer()].type().trim() && tmpmol[left.second.polymer()][left.second.monomer()].id() == tmpmol[right.second.polymer()][right.second.monomer()].id())
@@ -5457,20 +5455,43 @@ int MGlycology::parse_order(clipper::MAtom& atom_in_sugar, clipper::MSugar& suga
         else return false;
     });
     
-    std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > closest_pair = tmpresults.front();
-
-    clipper::MAtom atom_to_parse = tmpmol[closest_pair.second.polymer()][closest_pair.second.monomer()][closest_pair.second.atom()];
-    clipper::String atom_to_parse_id = atom_to_parse.id().trim();
-    const char *s = atom_to_parse_id.c_str();
-
-    int result = std::atoi(&s[1]);
-    
-    if(debug_output)
+    if(!tmpresults.empty())
     {
-        DBG << "Returning parsed linkage identifier: " << result << "\t from atom_to_parse_id " << atom_to_parse_id << std::endl;
+        std::pair < clipper::MAtom, clipper::MAtomIndexSymmetry > closest_pair = tmpresults.front();
+
+        clipper::MAtom atom_to_parse = tmpmol[closest_pair.second.polymer()][closest_pair.second.monomer()][closest_pair.second.atom()];
+        clipper::String atom_to_parse_id = atom_to_parse.id().trim();
+        const char *s = atom_to_parse_id.c_str();
+
+        int result = std::atoi(&s[1]);
+        
+        if(debug_output)
+        {
+            DBG << "Returning parsed linkage identifier: " << result << "\t from atom_to_parse_id " << atom_to_parse_id << std::endl;
+        }
+        
+        return result;
     }
-    
-    return result;
+    else
+    {
+        if(debug_output)
+        {
+            DBG << "Uh oh, unable to find closest atom within same sugar" << std::endl;
+        }
+
+        clipper::MAtom atom_to_parse = atom_in_sugar;
+        clipper::String atom_to_parse_id = atom_to_parse.id().trim();
+        const char *s = atom_to_parse_id.c_str();
+
+        int result = std::atoi(&s[1]);
+        
+        if(debug_output)
+        {
+            DBG << "Returning parsed linkage identifier: " << result << "\t from atom_to_parse_id " << atom_to_parse_id << std::endl;
+        }
+        
+        return result;
+    }
 }    
 
 
