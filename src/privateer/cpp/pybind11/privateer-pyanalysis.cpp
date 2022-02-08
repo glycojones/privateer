@@ -1345,10 +1345,11 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::initialize_summary
         
         std::string proteinResidue = list_of_glycans[i].get_root().first.type().trim();
         std::string proteinResidueID = list_of_glycans[i].get_root().first.id().trim();
+        int proteinResidueSeqnum = list_of_glycans[i].get_root().first.seqnum();
         std::string proteinChainID = list_of_glycans[i].get_chain().substr(0,1);
         std::string sugarRootChainID = list_of_glycans[i].get_root_sugar_chainID();
 
-        auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=sugarRootChainID);
+        auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinResidueSeqnum"_a=proteinResidueSeqnum, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=sugarRootChainID);
         
         std::vector<float> torsions = list_of_glycans[i].get_glycosylation_torsions();
         auto protein_glycan_linkage_torsion = pybind11::dict ("Phi"_a=torsions[0], "Psi"_a=torsions[1]);
@@ -1418,10 +1419,11 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
     
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
+    int         proteinResidueSeqnum = inputGlycan.get_root().first.seqnum();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
     this->chain_root_sugar_ID = inputGlycan.get_root_sugar_chainID();
     
-    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
+    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinResidueSeqnum"_a=proteinResidueSeqnum, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
     this->rootSummary = rootSummary;
 
     std::vector<float> torsions = inputGlycan.get_glycosylation_torsions();
@@ -1467,10 +1469,11 @@ void privateer::pyanalysis::GlycanStructure::pyinit_memsafe( const clipper::MGly
     
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
+    int         proteinResidueSeqnum = inputGlycan.get_root().first.seqnum();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
     this->chain_root_sugar_ID = inputGlycan.get_root_sugar_chainID();
     
-    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
+    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinResidueSeqnum"_a=proteinResidueSeqnum, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
     this->rootSummary = rootSummary;
 
     std::vector<float> torsions = inputGlycan.get_glycosylation_torsions();
@@ -1516,10 +1519,11 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
     
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
+    int         proteinResidueSeqnum = inputGlycan.get_root().first.seqnum();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
     this->chain_root_sugar_ID = inputGlycan.get_root_sugar_chainID();
     
-    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
+    auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinResidueSeqnum"_a=proteinResidueSeqnum, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
     this->rootSummary = rootSummary;
 
     std::vector<float> torsions = inputGlycan.get_glycosylation_torsions();
