@@ -1928,12 +1928,11 @@ void privateer::pyanalysis::GlycanStructure::update_with_experimental_data(priva
     {
         for(int k = 0; k < finalLigandList.size(); k++)
         {
-            if(finalLigandList[k].first == glycan.get_chain().substr(0,1) && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim() && list_of_sugars_original[i].short_name() == finalLigandList[k].second.short_name())
+            if(list_of_sugars_original[i].chain_id() == finalLigandList[k].second.chain_id() && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim() && list_of_sugars_original[i].short_name() == finalLigandList[k].second.short_name() && list_of_sugars_original[i].seqnum() == finalLigandList[k].second.seqnum())
                 list_of_sugars_modified.push_back(finalLigandList[k].second);
         }
     }
 
-    
     while(list_of_sugars_modified.size() > list_of_sugars_original.size())
     {
         for(int i = 0; i < list_of_sugars_modified.size(); i++)
@@ -1950,7 +1949,7 @@ void privateer::pyanalysis::GlycanStructure::update_with_experimental_data(priva
     auto list = pybind11::list();
     for(int sugarID = 0; sugarID < list_of_sugars_modified.size(); sugarID++)
     {
-        auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(glycan, sugarID, glycanID, parentGlycosylation, *this, list_of_sugars_modified);
+        auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(this->glycan, sugarID, this->glycanID, this->parentGlycosylation, *this, list_of_sugars_modified);
         list.append(sugarObject);
     }
     this->sugars = list;
@@ -1970,7 +1969,7 @@ void privateer::pyanalysis::GlycanStructure::update_with_experimental_data(priva
     {
         for(int k = 0; k < finalLigandList.size(); k++)
         {
-            if(finalLigandList[k].first == glycan.get_chain().substr(0,1) && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim() && list_of_sugars_original[i].short_name() == finalLigandList[k].second.short_name())
+            if(list_of_sugars_original[i].chain_id() == finalLigandList[k].second.chain_id() && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim() && list_of_sugars_original[i].short_name() == finalLigandList[k].second.short_name() && list_of_sugars_original[i].seqnum() == finalLigandList[k].second.seqnum())
                 list_of_sugars_modified.push_back(finalLigandList[k].second);
         }
     }
@@ -1992,7 +1991,7 @@ void privateer::pyanalysis::GlycanStructure::update_with_experimental_data(priva
     auto list = pybind11::list();
     for(int sugarID = 0; sugarID < list_of_sugars_modified.size(); sugarID++)
     {
-        auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(glycan, sugarID, glycanID, parentGlycosylation, *this, list_of_sugars_modified);
+        auto sugarObject = privateer::pyanalysis::CarbohydrateStructure(this->glycan, sugarID, this->glycanID, this->parentGlycosylation, *this, list_of_sugars_modified);
         list.append(sugarObject);
     }
     this->sugars = list;
