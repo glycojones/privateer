@@ -430,13 +430,20 @@ namespace privateer
 
                 clipper::String vector_point_target_hydrogen_name = "H" + sugar_vector_point.substr(1,1);
 
-                if(debug_output)
-                    DBG << "Attempting to delete the following H atom: '" << vector_point_target_hydrogen_name << "'" << std::endl;
+                
+                
+                int found_target_hydrogen_atom = converted_mglycan[0].lookup(vector_point_target_hydrogen_name, search_policy);
+                
+                if(found_target_hydrogen_atom != -1)
+                {
+                    if(debug_output)
+                        DBG << "Attempting to delete the following H atom: '" << vector_point_target_hydrogen_name << "'" << std::endl;
 
-                clipper::MAtom vector_point_target_hydrogen = converted_mglycan[0].find(vector_point_target_hydrogen_name, search_policy);
+                    clipper::MAtom vector_point_target_hydrogen = converted_mglycan[0].find(vector_point_target_hydrogen_name, search_policy);
 
-                converted_mglycan = delete_atom_from_mglycan(converted_mglycan, vector_point_target_hydrogen);
-
+                    converted_mglycan = delete_atom_from_mglycan(converted_mglycan, vector_point_target_hydrogen);
+                }
+                
                 if(enable_user_messages && !debug_output)
                     std::cout << "Grafting input glycan with Chain ID of: " << chainID << " to " << residue_name << "-" << input_protein_side_chain_residue.id().trim() << std::endl;
                 
