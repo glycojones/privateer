@@ -1166,7 +1166,7 @@ namespace privateer
                                 if(root_chain_id.trim() != input_model[detected_chain].id().trim() || input_protein_side_chain_residue.id().trim() != input_model[detected_chain][detected_monomer].id().trim() || input_protein_side_chain_residue.type().trim() != input_model[detected_chain][detected_monomer].type().trim() || input_protein_side_chain_residue.seqnum() != input_model[detected_chain][detected_monomer].seqnum())
                                      // Also ignore water for now... but prolly would be a better idea to just check whether not protein or sugar... or make a seperate list of ignorable solvent. 
                                     if(input_model[detected_chain][detected_monomer].type().trim() != "HOH")
-                                        clashing_residues.push_back( std::make_pair(std::make_pair(input_model[detected_chain][detected_monomer], root_chain_id), std::make_pair(currentSugar, root_sugar_chain_id)) );
+                                        clashing_residues.push_back( std::make_pair(std::make_pair(input_model[detected_chain][detected_monomer], input_model[detected_chain].id().trim()), std::make_pair(currentSugar, root_sugar_chain_id)) );
                             }
                         }
                         
