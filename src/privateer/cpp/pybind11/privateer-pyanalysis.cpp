@@ -577,7 +577,7 @@ pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_glycan_
     int numGlycans = mglycology.get_list_of_glycans().size();
     for(int i = 0; i < numGlycans; i++)
     {
-        pybind11::dict item = get_neighborhood_for_specific_glycan(i);
+        pybind11::dict item = get_neighborhood_for_specific_glycan(i, -1);
         result.append(item);
     }
     
@@ -586,7 +586,7 @@ pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_glycan_
 }
 
 
-pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhood_for_specific_glycan(int glycanIndex)
+pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhood_for_specific_glycan(int glycanIndex, int sugarIndex)
 {
     pybind11::dict result;
     std::vector<clipper::MGlycan> list_of_glycans = mglycology.get_list_of_glycans();
@@ -607,6 +607,17 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
         rootMMonomer = root.first;
     else
         rootMMonomer = rootSugar;
+
+    std::vector<clipper::MSugar> sugars = inputGlycan.get_sugars();
+    clipper::MMonomer targetSugar;
+    if(sugarIndex != -1)
+    {
+        if(sugarIndex >= sugars.size() || sugarIndex < -1)
+        {
+            throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of sugars detected in the model. \nInput: " + std::to_string(sugarIndex) + "\tPermitted Range: [0-" + std::to_string(sugars.size() - 1) + "]");
+        }
+        rootSugar = sugars[sugarIndex];
+    }
 
     if(rootSugar.ring_members().size() == 5 || rootSugar.ring_members().size() == 6)
     {
@@ -4155,7 +4166,8 @@ void init_pyanalysis(py::module& m)
         .def("get_hbonds_for_specific_glycan", &pa::GlycosylationInteractions::get_hbonds_for_specific_glycan)
         .def("get_chpibonds_for_specific_glycan", &pa::GlycosylationInteractions::get_chpibonds_for_specific_glycan)
         .def("get_all_glycan_neighborhoods", &pa::GlycosylationInteractions::get_all_glycan_neighborhoods)
-        .def("get_neighborhood_for_specific_glycan", &pa::GlycosylationInteractions::get_neighborhood_for_specific_glycan)
+        .def("get_neighborhood_for_specific_glycan", &pa::GlycosylationInteractions::get_neighborhood_for_specific_glycan, "Get 7A radius of detected neighbours around target sugar",
+        py::arg("glycanIndex"), py::arg("sugarIndex") = -1)
         .def("get_protein_sequence_information_for_entire_model", &pa::GlycosylationInteractions::get_protein_sequence_information_for_entire_model)
         .def("get_protein_sequence_information_for_single_chain", &pa::GlycosylationInteractions::get_protein_sequence_information_for_single_chain);
 
