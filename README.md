@@ -1,7 +1,7 @@
 
 
 # Privateer
-
+![ScreenShot](/logo.png)
 Synopsis: Privateer is a tool for carbohydrate structure validation, re-refinement and graphical analysis.
 
 Languages: C++11 and Python3 (via pybind11), produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
