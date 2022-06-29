@@ -282,8 +282,6 @@ class TorsionVisualiser:
 
     def _draw_base_plot(self, torsion_set: TorsionSet, title):
 
-        # Alternatively provide these database phi and psi with the method call
-        # (phi, psi) = self._get_data_source(self.data_path, sugar_1, sugar_2)
         rng = (
             np.array([(-180, 180), (0, 360)])
             if (torsion_set.sugar_1 == "ASN" and torsion_set.sugar_2 == "NAG")
@@ -443,8 +441,9 @@ class TorsionVisualiser:
         ):
             (phi_mean, psi_mean, phi_std, psi_std) = self.stats_cache["Stats"]
         else:
+            PRIVATEERDATA = os.getenv("PRIVATEERDATA")
             (phi_mean, psi_mean, phi_std, psi_std) = self._get_outliers_from_file(
-                file_source="./data/linkage_torsions/privateer_torsion_statistics.json",
+                file_source=os.path.join(PRIVATEERDATA, "linkage_torsions/privateer_torsion_statistics.json"),
                 sugar_1=torsion.sugar_1,
                 sugar_2=torsion.sugar_2,
             )
