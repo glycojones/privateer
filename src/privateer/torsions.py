@@ -443,7 +443,9 @@ class TorsionVisualiser:
         else:
             PRIVATEERDATA = os.getenv("PRIVATEERDATA")
             (phi_mean, psi_mean, phi_std, psi_std) = self._get_outliers_from_file(
-                file_source=os.path.join(PRIVATEERDATA, "linkage_torsions/privateer_torsion_statistics.json"),
+                file_source=os.path.join(
+                    PRIVATEERDATA, "linkage_torsions/privateer_torsion_statistics.json"
+                ),
                 sugar_1=torsion.sugar_1,
                 sugar_2=torsion.sugar_2,
             )
@@ -530,9 +532,15 @@ if __name__ == "__main__":
         master_folder=currentStructureResultsPath, combine_legends=False
     )
 
+    t_2 = time.time()
+
+    print(f"Time taken to create visualisation -  {t_2 - t_1} seconds")
+
     multiprocessing_enabled = True
 
     processes = []
+
+    t_3 = time.time()
 
     if multiprocessing_enabled:
         for torsion_set in parsed_structure_output:
@@ -555,9 +563,9 @@ if __name__ == "__main__":
             visualizer.plot_all(torsion_set=torsion_set)
             visualizer.plot_single_pair_torsions(torsion_set=torsion_set)
 
-    t_2 = time.time()
+    t_4 = time.time()
 
-    print(f"Total time taken -  {t_2 - t_0} seconds")
+    print(f"Total time taken -  {t_4 - t_0} seconds")
 
     print(f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}")
     print("Task Completed Successfully!")

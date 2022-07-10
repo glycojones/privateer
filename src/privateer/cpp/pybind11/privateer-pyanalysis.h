@@ -89,7 +89,7 @@ namespace privateer {
         pybind11::dict get_chpibonds_for_specific_glycan(int glycanIndex);
 
         pybind11::list get_all_glycan_neighborhoods();
-        pybind11::dict get_neighborhood_for_specific_glycan(int glycanIndex, int sugarIndex);
+        pybind11::dict get_neighborhood_for_specific_glycan(int glycanIndex, int sugarIndex, float radius);
 
 
         pybind11::list get_protein_sequence_information_for_entire_model();
