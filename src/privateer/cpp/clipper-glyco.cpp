@@ -6866,7 +6866,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                             if(get_altconf(tmpAtom) != ' ')
                             {
 
-                                if(tmpAtom.element().trim() == "O" || tmpAtom.element().trim() == "S" || tmpAtom.element().trim() == "N" || tmpAtom.element().trim() == "F") 
+                                if(tmpAtom.element().trim() == "O" || tmpAtom.element().trim() == "S" || tmpAtom.element().trim() == "N" || tmpAtom.element().trim() == "F" || mm.type().trim() == "TRP") 
                                 {
                                     std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
                                     link_tmp.first = candidates[i];
@@ -6882,7 +6882,7 @@ const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > M
                             }
                             else 
                             {
-                                if(tmpAtom.element().trim() == "O" || tmpAtom.element().trim() == "S" || tmpAtom.element().trim() == "N" || tmpAtom.element().trim() == "F")  
+                                if(tmpAtom.element().trim() == "O" || tmpAtom.element().trim() == "S" || tmpAtom.element().trim() == "N" || tmpAtom.element().trim() == "F" || mm.type().trim() == "TRP")  
                                 {
                                     std::pair < clipper::MAtom , clipper::MAtomIndexSymmetry > link_tmp;
                                     link_tmp.first = candidates[i];
