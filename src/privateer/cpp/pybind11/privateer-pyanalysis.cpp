@@ -577,7 +577,7 @@ pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_glycan_
     int numGlycans = mglycology.get_list_of_glycans().size();
     for(int i = 0; i < numGlycans; i++)
     {
-        pybind11::dict item = get_neighborhood_for_specific_glycan(i, -1);
+        pybind11::dict item = get_neighborhood_for_specific_glycan(i, -1, 10);
         result.append(item);
     }
     
@@ -586,7 +586,7 @@ pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_glycan_
 }
 
 
-pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhood_for_specific_glycan(int glycanIndex, int sugarIndex)
+pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhood_for_specific_glycan(int glycanIndex, int sugarIndex, float radius)
 {
     pybind11::dict result;
     std::vector<clipper::MGlycan> list_of_glycans = mglycology.get_list_of_glycans();
@@ -638,7 +638,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
 
         const clipper::MiniMol& tmpmol = this->input_model;
         clipper::MAtom originAtom = rootSugar.ring_members()[4];
-        std::vector < clipper::MAtomIndexSymmetry > contacts = manb_object.atoms_near ( originAtom.coord_orth(), 7.0 );
+        std::vector < clipper::MAtomIndexSymmetry > contacts = manb_object.atoms_near ( originAtom.coord_orth(), radius);
         std::vector < clipper::MAtomIndexSymmetry > refined_contact_results;
 
         contacts.erase(std::remove_if(contacts.begin(), contacts.end(),
@@ -670,7 +670,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                     rootMMonomer.id().trim() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() || 
                     rootMMonomer.type().trim() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() || 
                     rootMMonomer.seqnum() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum() ) && 
-                    (clipper::Coord_orth::length ( tmpmol[contacts[i].polymer()][contacts[i].monomer()][contacts[i].atom()].coord_orth(), originAtom.coord_orth() ) <= 7.0 ))  
+                    (clipper::Coord_orth::length ( tmpmol[contacts[i].polymer()][contacts[i].monomer()][contacts[i].atom()].coord_orth(), originAtom.coord_orth() ) <= radius ))  
             {          
                 auto search_result_already_accounted_for = std::find_if(refined_contact_results.begin(), refined_contact_results.end(), [tmpmol, &originAtom, &contacts, i](const clipper::MAtomIndexSymmetry& element) 
                 { 
@@ -4166,8 +4166,8 @@ void init_pyanalysis(py::module& m)
         .def("get_hbonds_for_specific_glycan", &pa::GlycosylationInteractions::get_hbonds_for_specific_glycan)
         .def("get_chpibonds_for_specific_glycan", &pa::GlycosylationInteractions::get_chpibonds_for_specific_glycan)
         .def("get_all_glycan_neighborhoods", &pa::GlycosylationInteractions::get_all_glycan_neighborhoods)
-        .def("get_neighborhood_for_specific_glycan", &pa::GlycosylationInteractions::get_neighborhood_for_specific_glycan, "Get 7A radius of detected neighbours around target sugar",
-        py::arg("glycanIndex"), py::arg("sugarIndex") = -1)
+        .def("get_neighborhood_for_specific_glycan", &pa::GlycosylationInteractions::get_neighborhood_for_specific_glycan, "Get specified radius of detected neighbours around target sugar",
+        py::arg("glycanIndex"), py::arg("sugarIndex") = -1, py::arg("radius") = 10)
         .def("get_protein_sequence_information_for_entire_model", &pa::GlycosylationInteractions::get_protein_sequence_information_for_entire_model)
         .def("get_protein_sequence_information_for_single_chain", &pa::GlycosylationInteractions::get_protein_sequence_information_for_single_chain);
 

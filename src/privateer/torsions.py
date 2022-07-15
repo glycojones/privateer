@@ -1,12 +1,21 @@
+import argparse
+import json
+import multiprocessing
 import os
-from privateer import privateer_core as pvtcore
-import seaborn as sns
-import matplotlib.pyplot as plt
+import time
+from dataclasses import dataclass, field
+from datetime import datetime
+from logging import root
+from typing import List, Tuple
+
 import matplotlib.colors as mcolors
 import matplotlib.lines as mlines
 import matplotlib.patheffects as pe
-from datetime import datetime
-import argparse
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+from privateer import privateer_core as pvtcore
 
 
 def CreateFolder(path):
@@ -14,12 +23,39 @@ def CreateFolder(path):
         os.makedirs(path)
 
 
+@dataclass
+class TorsionEntry:
+    Phi: float
+    Psi: float
+    glycan_bond: str
+    sugar_1: str
+    sugar_2: str
+    glycanIndex: int
+
+
+@dataclass
+class GlycanTorsion:
+    glycanIndex: int
+    WURCS: str
+    torsions: List[TorsionEntry]
+    root_description: str
+
+
+@dataclass
+class TorsionSet:
+    sugar_1: str = ""
+    sugar_2: str = ""
+    torsions: List = field(default_factory=list)  # List[GlycanTorsion]
+    database_phi: List = field(default_factory=list)  # List[Float]
+    database_psi: List = field(default_factory=list)  # List[Float]
+
+
 class PrivateerTorsionResultsOutputParser:
     def __init__(self, privateer_output):
         self.__type = "uninitialized"
         self.__privateer_output = privateer_output
         self.__type = self.__validateInputJSON()
-        self.__parsedTorsionsOfStructureOutputForPlotting = None
+        self.__parsedTorsionsOfStructureOutputForPlotting: List[TorsionSet] = None
         if self.__type == "structure":
             self.__parsedTorsionsOfStructureOutputForPlotting = (
                 self.__parseOutputIfTorsionsStructureProvided()
@@ -44,6 +80,7 @@ class PrivateerTorsionResultsOutputParser:
         if len(self.__privateer_output):
             item = self.__privateer_output[0]
             rootKeys = item.keys()
+
             if sorted(rootKeys) == sorted(expected_keys_glycan):
                 self.__type = "glycan"
             elif sorted(rootKeys) == sorted(expected_keys_structure):
@@ -66,7 +103,7 @@ class PrivateerTorsionResultsOutputParser:
 
         return self.__type
 
-    def __parseOutputIfTorsionsStructureProvided(self):
+    def __parseOutputIfTorsionsStructureProvided(self) -> List[TorsionSet]:
         def collectUniqueResiduePairs(input):
             pairs = []
             for rootItem in input:
@@ -89,13 +126,9 @@ class PrivateerTorsionResultsOutputParser:
             first_unique_residue = unique_pair[0]
             second_unique_residue = unique_pair[1]
             alreadyAdded = False
-            unique_pair_dict = {
-                "first": None,
-                "second": None,
-                "database_phi": None,
-                "database_psi": None,
-                "detected_torsions_in_structures": [],
-            }
+
+            unique_pair = TorsionSet()
+
             for rootItem in self.__privateer_output:
                 all_torsions = rootItem["all_torsions_in_structure"]
                 for item in all_torsions:
@@ -108,245 +141,350 @@ class PrivateerTorsionResultsOutputParser:
                             "WURCS": rootItem["WURCS"],
                             "glycan_torsions": item["detected_torsions"],
                         }
-                        if alreadyAdded:
-                            unique_pair_dict["detected_torsions_in_structures"].append(
-                                detected_torsions
-                            )
-                        else:
-                            unique_pair_dict["first"] = item["first_residue"]
-                            unique_pair_dict["second"] = item["second_residue"]
-                            unique_pair_dict["database_phi"] = item["database_phi"]
-                            unique_pair_dict["database_psi"] = item["database_psi"]
-                            unique_pair_dict["detected_torsions_in_structures"].append(
-                                detected_torsions
-                            )
-                            alreadyAdded = True
-            output.append(unique_pair_dict)
 
+                        for index, torsion in enumerate(item["detected_torsions"]):
+                            item["detected_torsions"][index][
+                                "sugar_1"
+                            ] = first_unique_residue
+                            item["detected_torsions"][index][
+                                "sugar_2"
+                            ] = second_unique_residue
+                            item["detected_torsions"][index]["glycanIndex"] = rootItem[
+                                "glycanIndex"
+                            ]
+
+                        glycan_torsions = [
+                            TorsionEntry(**data) for data in item["detected_torsions"]
+                        ]
+
+                        detected_torsions = GlycanTorsion(
+                            glycanIndex=rootItem["glycanIndex"],
+                            WURCS=rootItem["WURCS"],
+                            torsions=glycan_torsions,
+                            root_description=item["root_descr"],
+                        )
+
+                        if alreadyAdded:
+                            unique_pair.torsions.append(detected_torsions)
+                        else:
+                            unique_pair = TorsionSet(
+                                sugar_1=item["first_residue"],
+                                sugar_2=item["second_residue"],
+                                database_phi=item["database_phi"],
+                                database_psi=item["database_psi"],
+                            )
+                            unique_pair.torsions.append(detected_torsions)
+                            alreadyAdded = True
+
+            output.append(unique_pair)
         return output
 
 
 class TorsionVisualiser:
-    def __init__(self, outputMasterFolder):
-        self.outputMasterFolder = outputMasterFolder
-        self.glycan_focused_view_output_folder = os.path.join(
-            outputMasterFolder, "glycan_perspective"
-        )
-        self.structure_focused_view_output_folder = os.path.join(
-            outputMasterFolder, "structure_perspective"
-        )
-        CreateFolder(self.glycan_focused_view_output_folder)
-        CreateFolder(self.structure_focused_view_output_folder)
+    stats_cache = {"Sugar 1": "", "Sugar 2": "", "Stats": ()}
 
-    def plot_single_pair_torsions(self, glycan_description, glycanIndex=None):
-        for torsion_pair in glycan_description:
-            root_description = torsion_pair["root_descr"]
-            outputFolderDescription = (
-                f"[{glycanIndex}]__{root_description}"
-                if glycanIndex is not None
-                else f"{root_description}"
-            )
+    def __init__(self, master_folder: str, combine_legends: bool = False) -> None:
+        self.combined_legends = combine_legends
+        self._create_dir_structure(master_folder)
+
+    def plot_single_pair_torsions(self, torsion_set: TorsionSet):
+
+        for glycan in torsion_set.torsions:
+            outputFolderDescription = f"{torsion_set.sugar_1}-{torsion_set.sugar_2}"
             outputFolder = os.path.join(
                 self.glycan_focused_view_output_folder, outputFolderDescription
             )
+
             CreateFolder(outputFolder)
-            glycan_torsions = torsion_pair["detected_torsions"]
-            bonds = [d["glycan_bond"] for d in glycan_torsions]
-            color_labels = list(set(bonds))
-            col_values = sns.color_palette("hls", len(color_labels))
-            color_map = dict(zip(color_labels, col_values))
-            colors = [color_map[label] for label in bonds]
 
-            fig = plt.figure(figsize=(6.4, 3.6), dpi=300, facecolor="gainsboro")
-            ax = fig.add_subplot(111)
+            for torsion in glycan.torsions:
+                self._init_plot()
 
-            plt.hist2d(
-                torsion_pair["database_phi"],
-                torsion_pair["database_psi"],
-                bins=(180, 180),
-                cmap=plt.get_cmap("viridis"),
-                range=[[-185, 185], [-185, 185]],
-                norm=mcolors.PowerNorm(0.7),
-            )
-            first_residue_name = torsion_pair["first_residue"]
-            second_residue_name = torsion_pair["second_residue"]
-            plt.title(
-                f"{first_residue_name}-{second_residue_name} in {root_description}"
-            )
-            plt.axhline(linewidth=0.8, color="white")
-            plt.axvline(linewidth=0.8, color="white")
-            plt.xlim((-181, 181))
-            plt.ylim((-181, 181))
-            plt.xlabel("φ(Phi) / °", size=14)
-            plt.ylabel("ψ(Psi) / °", size=14)
-            plt.rc("xtick", labelsize=10)
-            plt.rc("ytick", labelsize=10)
-            plt.xticks(range(-180, 181, 60))
-            plt.yticks(range(-180, 181, 60))
-            ax.set_aspect("equal")
-            cbar = plt.colorbar()
-            cbar.set_label("Frequency", size=14)
+                title = f"{torsion_set.sugar_1}-{torsion_set.sugar_2} in {glycan.root_description}"
 
-            for index, torsion in enumerate(glycan_torsions):
-                currentPhi = torsion["Phi"]
-                currentPsi = torsion["Psi"]
-                plt.plot(
-                    currentPhi,
-                    currentPsi,
-                    marker="x",
-                    markersize=4,
-                    path_effects=[
-                        pe.Stroke(linewidth=1.3, foreground="w"),
-                        pe.Normal(),
-                    ],
-                    linestyle="None",
-                    color=colors[index],
+                label = self._get_label(glycan, torsion_set)
+
+                self._draw_base_plot(torsion_set, title)
+                points = self._draw_annotations(
+                    torsions=[torsion], colours=None, labels=[label]
                 )
-            plt.tight_layout()
-            plt.legend(
-                prop={"size": 6},
-                loc=2,
-                ncol=1,
-                bbox_to_anchor=(-0.8, 0.8),
-                title="Linkage:",
-                title_fontsize="xx-small",
-                handles=[
-                    mlines.Line2D(
-                        [],
-                        [],
-                        color=v,
-                        marker="x",
-                        markersize=4,
-                        path_effects=[
-                            pe.Stroke(linewidth=1.3, foreground="w"),
-                            pe.Normal(),
-                        ],
-                        linestyle="None",
-                        label=k,
-                    )
-                    for k, v in color_map.items()
+                self._draw_legends(points)
+
+                imageFileName = (
+                    f"{outputFolderDescription}__{glycan.root_description}.png"
+                )
+
+                self._save_figure(outputFolder, imageFileName)
+
+    def plot_all(self, torsion_set: TorsionSet):
+
+        torsion_list = []
+        label_list = []
+
+        for glycan in torsion_set.torsions:
+            for torsions in glycan.torsions:
+                torsion_list.append(torsions)
+                label = self._get_label(glycan, torsion_set)
+                label_list.append(label)
+
+        outputFolderDescription = f"{torsion_set.sugar_1}-{torsion_set.sugar_2}"
+        outputFolder = os.path.join(
+            self.structure_focused_view_output_folder, outputFolderDescription
+        )
+
+        CreateFolder(outputFolder)
+
+        col_values = sns.color_palette("hls", len(torsion_list))
+
+        title = f"{torsion_set.sugar_1}-{torsion_set.sugar_2} linkage torsions"
+
+        self._init_plot()
+        self._draw_base_plot(torsion_set, title)
+        points = self._draw_annotations(
+            torsions=torsion_list, colours=col_values, labels=label_list
+        )
+        self._draw_legends(points)
+        imageFileName = f"{torsion_set.sugar_1}-{torsion_set.sugar_2}_{torsion_set.torsions[0].root_description}.png"
+        self._save_figure(output_dir=outputFolder, image_name=imageFileName)
+
+    def _get_label(self, glycan, torsion_set):
+
+        sugar_1_tmp_descr = glycan.root_description.split("[")
+        sugar_1_tmp_descr = sugar_1_tmp_descr[1].split("]")
+        sugar_1_tmp_descr = sugar_1_tmp_descr[0]
+
+        sugar_2_tmp_descr = glycan.root_description.split("[")
+        sugar_2_tmp_descr = sugar_2_tmp_descr[2].split("]")
+        sugar_2_tmp_descr = sugar_2_tmp_descr[0]
+
+        label = (
+            f"{glycan.glycanIndex} {torsion_set.sugar_1}/{sugar_2_tmp_descr}-{torsion_set.sugar_2}/{sugar_1_tmp_descr}"
+            if (torsion_set.sugar_1 == "ASN" and torsion_set.sugar_2 == "NAG")
+            else f"{glycan.glycanIndex} {torsion_set.sugar_1}/{sugar_1_tmp_descr}-{torsion_set.sugar_2}/{sugar_1_tmp_descr}"
+        )
+
+        return label
+
+    def _create_dir_structure(self, master_folder):
+        self.glycan_focused_view_output_folder = os.path.join(
+            master_folder, "glycan_perspective"
+        )
+        self.structure_focused_view_output_folder = os.path.join(
+            master_folder, "structure_perspective"
+        )
+
+        CreateFolder(self.glycan_focused_view_output_folder)
+        CreateFolder(self.structure_focused_view_output_folder)
+
+    def _init_plot(self):
+        self.fig = plt.figure(figsize=(8, 4.5))
+        self.ax = self.fig.add_subplot(111)
+
+    def _draw_base_plot(self, torsion_set: TorsionSet, title):
+
+        rng = (
+            np.array([(-180, 180), (0, 360)])
+            if (torsion_set.sugar_1 == "ASN" and torsion_set.sugar_2 == "NAG")
+            else np.array([(-180, 180), (-180, 180)])
+        )
+        plt.hist2d(
+            torsion_set.database_phi,
+            torsion_set.database_psi,
+            bins=(180, 180),
+            cmap=plt.get_cmap("gist_heat_r"),
+            range=rng,
+            norm=mcolors.PowerNorm(0.7),
+        )
+
+        plt.axhline(linewidth=0.8, color="black")
+        plt.axvline(linewidth=0.8, color="black")
+        plt.xlim((-180, 180))
+        y_lim = (
+            (0, 360)
+            if (torsion_set.sugar_1 == "ASN" and torsion_set.sugar_2 == "NAG")
+            else (-180, 180)
+        )
+        plt.title(title)
+        plt.ylim(y_lim)
+        plt.xlabel("φ / °", size=14)
+        plt.ylabel("ψ / °", size=14)
+        plt.rc("xtick", labelsize=14)
+        plt.rc("ytick", labelsize=14)
+        self.ax.set_aspect("equal")
+        cbar = plt.colorbar()
+        cbar.set_label("Frequency", size=14)
+
+    def _draw_annotations(
+        self, torsions: List[TorsionEntry], colours, labels
+    ) -> Tuple[List[mlines.Line2D]]:
+
+        if colours == None:
+            colours = "blue"
+
+        inliers: List[TorsionEntry] = []
+        outliers: List[TorsionEntry] = []
+        inlier_points: List[mlines.Line2D] = []
+        outlier_points: List[mlines.Line2D] = []
+
+        for torsion_pair in torsions:
+            if self._is_outlier(torsion_pair):
+                inliers.append(torsion_pair)
+            else:
+                outliers.append(torsion_pair)
+
+        point_index = 0
+
+        for inlier in inliers:
+            (annotation,) = self.ax.plot(
+                inlier.Phi,
+                inlier.Psi,
+                marker="x",
+                path_effects=[
+                    pe.Stroke(linewidth=1.3, foreground="w"),
+                    pe.Normal(),
                 ],
+                linestyle="None",
+                label=labels[point_index],
+                color=colours[point_index],
             )
-            imageFileName = (
-                f"{first_residue_name}-{second_residue_name}_{root_description}.png"
+            point_index += 1
+            inlier_points.append(annotation)
+
+        outlier_colours = sns.color_palette("cubehelix", len(outliers))
+
+        for index, outlier in enumerate(outliers):
+            (annotation,) = self.ax.plot(
+                outlier.Phi,
+                outlier.Psi,
+                marker="*",
+                path_effects=[
+                    pe.Stroke(linewidth=1.3, foreground="w"),
+                    pe.Normal(),
+                ],
+                linestyle="None",
+                label=labels[point_index],
+                color=outlier_colours[index],
             )
+            point_index += 1
+            outlier_points.append(annotation)
 
-            plt.savefig(
-                os.path.join(outputFolder, imageFileName),
-                facecolor=fig.get_facecolor(),
-                transparent=True,
-            )
-            plt.cla()
-            plt.clf()
-            plt.close(fig)
+        return (inlier_points, outlier_points)
 
-    def plot_whole_structure_torsions(self, parsed_structure_output):
-        for torsion_pair in parsed_structure_output:
-            first_residue = torsion_pair["first"]
-            second_residue = torsion_pair["second"]
-            outputFolderDescription = f"{first_residue}-{second_residue}"
-            outputFolder = os.path.join(
-                self.structure_focused_view_output_folder, outputFolderDescription
-            )
-            CreateFolder(outputFolder)
-            glycan_torsions = torsion_pair["detected_torsions_in_structures"]
-            glycanIndices = [d["glycanIndex"] for d in glycan_torsions]
-            color_labels = list(set(glycanIndices))
-            col_values = sns.color_palette("hls", len(color_labels))
-            color_map = dict(zip(color_labels, col_values))
-            colors = [color_map[label] for label in glycanIndices]
+    def _draw_legends(self, points: Tuple[List[mlines.Line2D], List[mlines.Line2D]]):
 
-            fig = plt.figure(figsize=(6.4, 3.6), dpi=300, facecolor="gainsboro")
-            ax = fig.add_subplot(111)
+        inlier_points, outlier_points = points
 
-            plt.hist2d(
-                torsion_pair["database_phi"],
-                torsion_pair["database_psi"],
-                bins=(180, 180),
-                cmap=plt.get_cmap("viridis"),
-                range=[[-185, 185], [-185, 185]],
-                norm=mcolors.PowerNorm(0.7),
-            )
-            plt.title(f"{first_residue}-{second_residue} linkage torsions")
-            plt.axhline(linewidth=0.8, color="white")
-            plt.axvline(linewidth=0.8, color="white")
-            plt.xlim((-181, 181))
-            plt.ylim((-181, 181))
-            plt.xlabel("φ(Phi) / °", size=14)
-            plt.ylabel("ψ(Psi) / °", size=14)
-            plt.rc("xtick", labelsize=10)
-            plt.rc("ytick", labelsize=10)
-            plt.xticks(range(-180, 181, 60))
-            plt.yticks(range(-180, 181, 60))
-            ax.set_aspect("equal")
-            cbar = plt.colorbar()
-            cbar.set_label("Frequency", size=14)
+        if self.combined_legends:
+            combinded_points = inlier_points + outlier_points
 
-            imageFileName = f"{first_residue}-{second_residue}.png"
-            plt.tight_layout()
-            plt.savefig(
-                os.path.join(
-                    outputFolder, f"{first_residue}-{second_residue}_reference.png"
-                ),
-                facecolor=fig.get_facecolor(),
-                transparent=True,
-            )
-
-            for index, glycan in enumerate(glycan_torsions):
-                torsions = glycan["glycan_torsions"]
-                for torsion in torsions:
-                    currentPhi = torsion["Phi"]
-                    currentPsi = torsion["Psi"]
-                    plt.plot(
-                        currentPhi,
-                        currentPsi,
-                        marker="x",
-                        markersize=4,
-                        path_effects=[
-                            pe.Stroke(linewidth=1.3, foreground="w"),
-                            pe.Normal(),
-                        ],
-                        linestyle="None",
-                        color=colors[index],
-                    )
-
-                    plt.tight_layout()
-
-            plt.legend(
-                prop={"size": 4},
-                loc=2,
+            combined_legends = self.ax.legend(
+                title="Linkages:",
+                title_fontsize="small",
+                prop={"size": 10} if len(combinded_points) < 5 else {"size": 6},
+                handles=combinded_points,
+                bbox_to_anchor=(-0.3, 0.5),
+                loc="right",
+                labelcolor=[
+                    "red" if index >= len(inlier_points) else "black"
+                    for index, point in enumerate(combinded_points)
+                ],
                 ncol=3,
-                bbox_to_anchor=(-0.8, 1.05),
-                title="Glycan ID:",
-                title_fontsize="xx-small",
-                handles=[
-                    mlines.Line2D(
-                        [],
-                        [],
-                        color=v,
-                        marker="x",
-                        markersize=4,
-                        path_effects=[
-                            pe.Stroke(linewidth=1.3, foreground="w"),
-                            pe.Normal(),
-                        ],
-                        linestyle="None",
-                        label=k,
+            )
+
+            self.ax.add_artist(combined_legends)
+            return
+
+        if inlier_points:
+            linkage_legend = self.ax.legend(
+                title="Linkages:",
+                title_fontsize="small",
+                prop={"size": 10} if len(inlier_points) < 1 else {"size": 6},
+                handles=inlier_points,
+                bbox_to_anchor=(-0.3, 0.5),
+                ncol=3,
+                loc="upper right" if outlier_points else "right",  #
+            )
+            self.ax.add_artist(linkage_legend)
+
+        if outlier_points:
+            outlier_legend = self.ax.legend(
+                title="Outliers:",
+                title_fontsize="small",
+                prop={"size": 10} if len(outlier_points) < 1 else {"size": 6},
+                handles=outlier_points,
+                bbox_to_anchor=(-0.3, 0.5),
+                loc="lower right" if inlier_points else "right",
+                ncol=3,
+                labelcolor="red",
+            )
+
+            self.ax.add_artist(outlier_legend)
+
+    def _show(self):
+        plt.show()
+
+    def _save_figure(self, output_dir, image_name):
+        plt.savefig(
+            os.path.join(output_dir, image_name),
+            facecolor=self.fig.get_facecolor(),
+            transparent=True,
+            dpi=600,
+            bbox_inches="tight",
+        )
+        plt.close(self.fig)
+
+    def _is_outlier(self, torsion: TorsionEntry) -> bool:
+
+        if (
+            self.stats_cache["Sugar 1"] == torsion.sugar_1
+            and self.stats_cache["Sugar 2"] == torsion.sugar_2
+        ):
+            (phi_mean, psi_mean, phi_std, psi_std) = self.stats_cache["Stats"]
+        else:
+            PRIVATEERDATA = os.getenv("PRIVATEERDATA")
+            (phi_mean, psi_mean, phi_std, psi_std) = self._get_outliers_from_file(
+                file_source=os.path.join(
+                    PRIVATEERDATA, "linkage_torsions/privateer_torsion_statistics.json"
+                ),
+                sugar_1=torsion.sugar_1,
+                sugar_2=torsion.sugar_2,
+            )
+            self.stats_cache["Stats"] = (phi_mean, psi_mean, phi_std, psi_std)
+            self.stats_cache["Sugar 1"] = torsion.sugar_1
+            self.stats_cache["Sugar 2"] = torsion.sugar_2
+
+        number_of_stdevs = 2
+        lower_phi_range = phi_mean - (number_of_stdevs * phi_std)
+        higher_phi_range = phi_mean + (number_of_stdevs * phi_std)
+        lower_psi_range = psi_mean - (number_of_stdevs * psi_std)
+        higher_psi_range = psi_mean + (number_of_stdevs * psi_std)
+
+        if (lower_phi_range <= torsion.Phi <= higher_phi_range) and (
+            lower_psi_range <= torsion.Psi <= higher_psi_range
+        ):
+            return True
+        else:
+            return False
+
+    # Could obtain this from C++ similar to how the database torsions are passed up.
+    def _get_outliers_from_file(self, file_source, sugar_1, sugar_2):
+        with open(file_source, "r") as stats_file:
+            stats = json.load(stats_file)
+
+            for stat in stats:
+                if stat["Linkage"] == f"{sugar_1}-{sugar_2}":
+                    return (
+                        stat["Stats"]["Phi Mean"],
+                        stat["Stats"]["Psi Mean"],
+                        stat["Stats"]["Phi Std"],
+                        stat["Stats"]["Psi Std"],
                     )
-                    for k, v in color_map.items()
-                ],
-            )
-            plt.savefig(
-                os.path.join(outputFolder, imageFileName),
-                facecolor=fig.get_facecolor(),
-                transparent=True,
-            )
-            plt.cla()
-            plt.clf()
-            plt.close(fig)
 
 
 if __name__ == "__main__":
+
+    t_0 = time.time()
+
     parser = argparse.ArgumentParser(
         prog="torsions.py",
         usage="%(prog)s [options]. Python -pdbin 5fjj.pdb",
@@ -382,15 +520,55 @@ if __name__ == "__main__":
     structure = pvtcore.GlycosylationComposition_memsafe(inputPath)
     torsionsdb = pvtcore.OfflineTorsionsDatabase()
     total_torsions_in_structure = structure.get_torsions_summary(torsionsdb)
+
     wrapper = PrivateerTorsionResultsOutputParser(total_torsions_in_structure)
 
     parsed_structure_output = wrapper.getSortedOutputOfTorsionsForEntireStructure()
-    visualizer = TorsionVisualiser(currentStructureResultsPath)
-    print(f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}")
-    visualizer.plot_whole_structure_torsions(parsed_structure_output)
-    for item in total_torsions_in_structure:
-        glycan = item["all_torsions_in_structure"]
-        glycanIndex = item["glycanIndex"]
-        visualizer.plot_single_pair_torsions(glycan, glycanIndex)
+    t_1 = time.time()
 
+    print(f"Time taken to initialise - {t_1 - t_0} seconds ")
+
+    visualizer = TorsionVisualiser(
+        master_folder=currentStructureResultsPath, combine_legends=False
+    )
+
+    t_2 = time.time()
+
+    print(f"Time taken to create visualisation -  {t_2 - t_1} seconds")
+
+    multiprocessing_enabled = True
+
+    processes = []
+
+    t_3 = time.time()
+
+    if multiprocessing_enabled:
+        for torsion_set in parsed_structure_output:
+            p1 = multiprocessing.Process(
+                target=visualizer.plot_all, args=(torsion_set,)
+            )
+            p1.start()
+            processes.append(p1)
+
+            p2 = multiprocessing.Process(
+                target=visualizer.plot_single_pair_torsions, args=(torsion_set,)
+            )
+            p2.start()
+            processes.append(p2)
+
+        for process in processes:
+            process.join()
+    else:
+        for torsion_set in parsed_structure_output:
+            visualizer.plot_all(torsion_set=torsion_set)
+            visualizer.plot_single_pair_torsions(torsion_set=torsion_set)
+
+    t_4 = time.time()
+
+    print(f"Total time taken -  {t_4 - t_0} seconds")
+
+    print(f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}")
     print("Task Completed Successfully!")
+
+# Single thread time taken - 220 seconds / 3 minutes 40 seconds
+# Multithread time taken -  82 seconds with 5fjj / 15 seconds with 2wah
