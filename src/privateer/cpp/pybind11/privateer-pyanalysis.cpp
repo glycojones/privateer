@@ -1547,12 +1547,11 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
     {
         for(int k = 0; k < finalLigandList.size(); k++)
         {
-            if(list_of_sugars_original[i].size() == finalLigandList[k].second.size() && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim() && list_of_sugars_original[i].type().trim() == finalLigandList[k].second.type().trim() && list_of_sugars_original[i].seqnum() == finalLigandList[k].second.seqnum())
+            if(list_of_sugars_original[i].chain_id() == finalLigandList[k].second.chain_id() && list_of_sugars_original[i].id().trim() == finalLigandList[k].second.id().trim() && list_of_sugars_original[i].short_name() == finalLigandList[k].second.short_name() && list_of_sugars_original[i].seqnum() == finalLigandList[k].second.seqnum())
                 list_of_sugars_modified.push_back(finalLigandList[k].second);
         }
     }
 
-    
     while(list_of_sugars_modified.size() > list_of_sugars_original.size())
     {
         for(int i = 0; i < list_of_sugars_modified.size(); i++)
