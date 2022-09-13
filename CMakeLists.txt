@@ -66,6 +66,7 @@ add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-error.h
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-json.h
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-db.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco_data.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-blobs.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/privateer-composition.cpp
