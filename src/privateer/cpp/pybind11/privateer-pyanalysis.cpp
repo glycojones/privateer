@@ -2251,13 +2251,13 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
             std::vector<float> linkage_torsions = sugarNode.get_connection(j).get_torsions();
             std::string donorAtomID = linkage_atoms.first.id().trim();
             std::string acceptorAtomID = linkage_atoms.second.id().trim();
-            std::string donorPosition = linkagePositiontmp.str();
-            std::string acceptorPosition;
+            std::string donorPosition = std::regex_replace(donorAtomID, std::regex(R"([^\d])"), "");
+            std::string acceptorPosition = std::regex_replace(acceptorAtomID, std::regex(R"([^\d])"), "");
 
-            if (sugar.full_type() == "ketose")
-                acceptorPosition += "2";
-            else
-                acceptorPosition += "1";
+            // if (sugar.full_type() == "ketose")
+            //     acceptorPosition += "2";
+            // else
+            //     acceptorPosition += "1";
 
             auto linkage_torsion_dict = pybind11::dict();
             if (linkage_torsions.size() == 2)
@@ -2745,13 +2745,13 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
             std::vector<float> linkage_torsions = sugarNode.get_connection(j).get_torsions();
             std::string donorAtomID = linkage_atoms.first.id().trim();
             std::string acceptorAtomID = linkage_atoms.second.id().trim();
-            std::string donorPosition = linkagePositiontmp.str();
-            std::string acceptorPosition;
+            std::string donorPosition = std::regex_replace(donorAtomID, std::regex(R"([^\d])"), "");
+            std::string acceptorPosition = std::regex_replace(acceptorAtomID, std::regex(R"([^\d])"), "");
 
-            if (sugar.full_type() == "ketose")
-                acceptorPosition += "2";
-            else
-                acceptorPosition += "1";
+            // if (sugar.full_type() == "ketose")
+            //     acceptorPosition += "2";
+            // else
+            //     acceptorPosition += "1";
 
             auto linkage_torsion_dict = pybind11::dict();
             if (linkage_torsions.size() == 2)

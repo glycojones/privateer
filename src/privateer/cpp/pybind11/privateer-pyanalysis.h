@@ -12,6 +12,7 @@
 #include <string>
 #include <exception>
 #include <algorithm>
+#include <regex>
 #include "clipper-glyco.h"
 #include "privateer-lib.h"
 #include "privateer-xray.h"
