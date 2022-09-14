@@ -25,6 +25,7 @@
 #include "clipper-glyco.h"
 #include "privateer-blobs.h"
 #include "privateer-composition.h"
+#include "privateer-db.h"
 #include "privateer-dbquery.h"
 // #include "privateer-interactions.h"
 #include <future>
@@ -40,7 +41,7 @@
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
 
-clipper::String program_version = "MKIV";
+clipper::String program_version = "MKV";
 using clipper::data32::F_sigF;
 using clipper::data32::F_phi;
 using clipper::data32::Phi_fom;
@@ -76,6 +77,7 @@ int main(int argc, char** argv)
     clipper::String input_ccd_code          = "XXX";
     clipper::String ipwurcsjson             = "nopath";
     clipper::String iptorsionsjson          = "nopath";
+    clipper::String iptorsionszscorejson    = "nopath";
     clipper::String output_mapcoeffs_mtz    = "privateer-hklout.mtz";
     clipper::String title                   = "generic title";
     clipper::String input_reflections_mtz   = "NONE";
@@ -85,6 +87,7 @@ int main(int argc, char** argv)
     clipper::data::sugar_database_entry external_validation;
     std::vector<privateer::json::GlycomicsDatabase> glycomics_database;
     std::vector<privateer::json::TorsionsDatabase> torsions_database;
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
     bool glucose_only = true;
     bool useSigmaa = false;
     bool oldstyleinput = false;
@@ -313,7 +316,7 @@ int main(int argc, char** argv)
             return 1;
           }
         }
-        else if ( args[arg] == "-plot_torsions" )
+        else if ( args[arg] == "-torsions" )
         {
           useTorsionsDataBase = true;
         }
@@ -342,9 +345,35 @@ int main(int argc, char** argv)
               return 1;
             }
           }
+        }
+        else if ( args[arg] == "-torsions_zscore_dbpath" )
+        {
+          if ( ++arg < args.size() )
+          {
+            if(clipper::String(args[arg])[0] != '-')
+            {
+              iptorsionszscorejson = args[arg];
+              std::string fileName = iptorsionszscorejson.tail();
+              std::string fileExtension = fileName.substr( fileName.length() - 5 );
+
+              if (fileExtension != ".json" || fileExtension.empty() || fileExtension.length() != 5)
+              {
+                std::cout << std::endl << std::endl << "Error: the file input must be a .json!"
+                          << "\nPlease make sure the path to .json file is correct!\nExiting..." << std::endl << std::endl;
+                prog.set_termination_message( "Failed" );
+                return 1;
+              }
+            }
+            else
+            {
+              std::cout << "Error: No Path was given to -torsions_zscore_dbpath argument!" << std::endl;
+              prog.set_termination_message( "Failed" );
+              return 1;
+            }
+          }
           else
           {
-            std::cout << "Error: No Path was given to -torsions_dbpath argument!" << std::endl;
+            std::cout << "Error: No Path was given to -torsions_zscore_dbpath argument!" << std::endl;
             prog.set_termination_message( "Failed" );
             return 1;
           }
@@ -505,7 +534,27 @@ int main(int argc, char** argv)
     }
     if(useTorsionsDataBase)
     {
-      torsions_database = privateer::json::read_json_file_for_torsions_database(iptorsionsjson);
+        torsions_database = privateer::json::read_json_file_for_torsions_database(iptorsionsjson);
+        torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database(iptorsionszscorejson);
+
+        // for(int i = 0; i < torsions_zscore_database.size(); i++)
+        // {
+        //     privateer::json::TorsionsZScoreDatabase current_linkage = torsions_zscore_database[i];
+        //     std::vector<std::unordered_map<std::string, int>> bins = current_linkage.bin_data;
+
+        //     std::cout << current_linkage.donor_sugar << "-" << current_linkage.donor_end << "-" << current_linkage.acceptor_end << "-" << current_linkage.acceptor_sugar << "\t\tmean = " << current_linkage.summary.first << "\tstdev = " << current_linkage.summary.second << std::endl;
+        //     // std::cout << std::endl;
+        //     // for(int j = 0; j < bins.size(); j++)
+        //     // {
+        //     //     std::unordered_map<std::string, int> current_bin = bins[j];
+        //     //     std::cout << "\t" << "lower_phi = " << current_bin["lower_phi"] << std::endl;
+        //     //     std::cout << "\t" << "higher_phi = " << current_bin["higher_phi"] << std::endl;
+        //     //     std::cout << "\t" << "lower_psi = " << current_bin["lower_psi"] << std::endl;
+        //     //     std::cout << "\t" << "higher_psi = " << current_bin["higher_psi"] << std::endl;
+        //     //     std::cout << "\t" << "count = " << current_bin["count"] << std::endl;
+        //     //     std::cout << std::endl;
+        //     // }
+        // }
     }
 
     // Fast mode, no maps nor correlation calculations

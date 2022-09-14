@@ -14,6 +14,7 @@
 // #include "third-party/sajson.h" // Have to include it straight from gemmi, as otherwise it leads to "error: multiple definition of ‘enum sajson::type’" errors.
 #include "gemmi/third_party/sajson.h" 
 #include <vector>
+#include <unordered_map>
 #include <cstdio>    // for FILE, fopen, fclose
 #include <memory>    // for unique_ptr
 
@@ -287,8 +288,8 @@ namespace privateer
 
                                     sajson::value torsion_array = second_object.get_object_value(l);
 
-                                    if (second_object.get_object_value(l).get_type() != sajson::TYPE_ARRAY)
-                                        fail("Expected TYPE_ARRAY, got " + json_type_as_string(second_object.get_object_value(l).get_type()));
+                                    // if (second_object.get_object_value(l).get_type() != sajson::TYPE_ARRAY)
+                                        // fail("Expected TYPE_ARRAY, got " + json_type_as_string(second_object.get_object_value(l).get_type()));
 
                                     for(size_t m = 0; m != torsion_array.get_length(); m++)
                                     {
@@ -372,6 +373,252 @@ namespace privateer
             return read_json_torsions_insitu(buffer.data(), buffer.size(), path_copy);
         }
 
+        // ____________________________________TORSIONS DATABASE END__________________________________________________ //
+
+        // ____________________________________TORSIONS Z SCORE DATABASE BEGIN________________________________________ //
+        
+        struct TorsionsZScoreDatabase 
+        {
+            std::string donor_sugar;
+            std::string acceptor_sugar;
+            std::string donor_end;
+            std::string acceptor_end;
+            std::pair<float, float> summary; // .first = count_mean, .second = count_stdev
+            std::vector<std::unordered_map<std::string, int>> bin_data;
+        };
+
+        inline void generate_torsions_zscore_database(std::vector<TorsionsZScoreDatabase>& torsions_zscore_database, const sajson::document& jsonObject) 
+        {
+            sajson::value root = jsonObject.get_root();
+            if (root.get_type() != sajson::TYPE_OBJECT)
+                fail("not Privateer Torsions Z-Score Database JSON file");
+            std::string database_name_key = root.get_object_key(1).as_string();
+            std::string database_name_value = root.get_object_value(1).as_string();
+            if (database_name_key != "database_name" || database_name_value != "torsions_z_score_database")
+                fail("not Torsions Database JSON file - should be \"database_name\": \"torsions_z_score_database\", instead received \"" + database_name_key + "\": \"" + database_name_value + "\"\n");
+            
+            std::string database_last_update = root.get_object_value(2).as_string();
+
+            sajson::value entries_array = root.get_object_value(0);
+            std::string entries_name = root.get_object_key(0).as_string();
+            if (entries_array.get_type() != sajson::TYPE_ARRAY || entries_name != "data")
+                fail("Expected TYPE_ARRAY, got " + json_type_as_string(entries_array.get_type()) + " with key value equal to \"data\", instead got: \"" + entries_name + "\"");
+
+            for (size_t data_index = 0; data_index != entries_array.get_length(); ++data_index) 
+            {
+                sajson::value entry = entries_array.get_array_element(data_index);
+                if (entry.get_type() != sajson::TYPE_OBJECT)
+                fail("Expected TYPE_OBJECT, got " + json_type_as_string(entry.get_type()));
+                
+                TorsionsZScoreDatabase temp;
+                for(size_t donor_index = 0; donor_index != entry.get_length(); donor_index++) 
+                {
+                    if(entry.get_object_key(donor_index).as_string() == "donor") 
+                    {
+                        if (entry.get_object_value(donor_index).get_type() != sajson::TYPE_STRING)
+                            fail("Expected TYPE_STRING, got " + json_type_as_string(entry.get_object_value(donor_index).get_type()));
+                        temp.donor_sugar = entry.get_object_value(donor_index).as_string();
+                    }
+                    else if(entry.get_object_key(donor_index).as_string() == "acceptor") 
+                    {
+                        sajson::value acceptor_array = entry.get_object_value(donor_index);
+                        if (acceptor_array.get_type() != sajson::TYPE_ARRAY)
+                            fail("Expected TYPE_ARRAY, got " + json_type_as_string(acceptor_array.get_type()));
+                        
+                        for(size_t acceptor_index = 0; acceptor_index != acceptor_array.get_length(); acceptor_index++)
+                        {
+                            sajson::value acceptor_object = acceptor_array.get_array_element(acceptor_index);
+
+                            if (acceptor_object.get_type() != sajson::TYPE_OBJECT)
+                                fail("Expected TYPE_OBJECT, got " + json_type_as_string(acceptor_object.get_type()));
+
+                            for(size_t acceptor_object_index = 0; acceptor_object_index != acceptor_object.get_length(); acceptor_object_index++)
+                            {
+                                if(acceptor_object.get_object_key(acceptor_object_index).as_string() == "sugar")
+                                {
+                                    if (acceptor_object.get_object_value(acceptor_object_index).get_type() != sajson::TYPE_STRING)
+                                        fail("Expected TYPE_STRING, got " + json_type_as_string(acceptor_object.get_object_value(acceptor_object_index).get_type()));
+                                    
+                                    temp.acceptor_sugar = acceptor_object.get_object_value(acceptor_object_index).as_string();
+                                }
+                                else if(acceptor_object.get_object_key(acceptor_object_index).as_string() == "Linkage")
+                                {
+                                    if (acceptor_object.get_object_value(acceptor_object_index).get_type() != sajson::TYPE_ARRAY)
+                                        fail("Expected TYPE_ARRAY, got " + json_type_as_string(acceptor_object.get_object_value(acceptor_object_index).get_type()));
+
+                                    sajson::value Linkage_array = acceptor_object.get_object_value(acceptor_object_index);
+
+                                    for(size_t Linkage_index = 0; Linkage_index != Linkage_array.get_length(); Linkage_index++)
+                                    {
+                                        sajson::value Linkage_object = Linkage_array.get_array_element(Linkage_index);
+
+                                        if(Linkage_object.get_type() != sajson::TYPE_OBJECT)
+                                            fail("Expected TYPE_OBJECT, got " + json_type_as_string(Linkage_object.get_type()));
+                                        
+                                        for(size_t Linkage_object_index = 0; Linkage_object_index != Linkage_object.get_length(); Linkage_object_index++)
+                                        {
+                                            if(Linkage_object.get_object_key(Linkage_object_index).as_string() == "donor_end")
+                                            {
+                                                if (Linkage_object.get_object_value(Linkage_object_index).get_type() != sajson::TYPE_STRING)
+                                                    fail("Expected TYPE_STRING, got " + json_type_as_string(Linkage_object.get_object_value(Linkage_object_index).get_type()));
+                                                
+                                                temp.donor_end = Linkage_object.get_object_value(Linkage_object_index).as_string();
+                                            }
+                                            
+                                            else if(Linkage_object.get_object_key(Linkage_object_index).as_string() == "acceptor_end")
+                                            {
+                                                if (Linkage_object.get_object_value(Linkage_object_index).get_type() != sajson::TYPE_STRING)
+                                                    fail("Expected TYPE_STRING, got " + json_type_as_string(Linkage_object.get_object_value(Linkage_object_index).get_type()));
+                                                
+                                                temp.acceptor_end = Linkage_object.get_object_value(Linkage_object_index).as_string();
+                                            }
+
+                                            else if(Linkage_object.get_object_key(Linkage_object_index).as_string() == "Linkage_data")
+                                            {
+                                                sajson::value Linkage_data_object = Linkage_object.get_object_value(Linkage_object_index);
+                                                if(Linkage_data_object.get_type() != sajson::TYPE_OBJECT)
+                                                    fail("Expected TYPE_OBJECT, got " + json_type_as_string(Linkage_data_object.get_type()));
+
+                                                std::vector<std::unordered_map<std::string, int>> tmp_bins_for_linkage; 
+                                                for(size_t Linkage_data_object_index = 0; Linkage_data_object_index != Linkage_data_object.get_length(); Linkage_data_object_index++)
+                                                {
+                                                    if (Linkage_data_object.get_object_key(Linkage_data_object_index).as_string() == "summary")
+                                                    {
+                                                        sajson::value Linkage_data_summary_object = Linkage_data_object.get_object_value(Linkage_data_object_index);
+                                                        if(Linkage_data_summary_object.get_type() != sajson::TYPE_OBJECT)
+                                                            fail("Expected TYPE_OBJECT, got " + json_type_as_string(Linkage_data_summary_object.get_type()));
+
+                                                        for(size_t Linkage_data_object_summary_index = 0; Linkage_data_object_summary_index != Linkage_data_summary_object.get_length(); Linkage_data_object_summary_index++)
+                                                        {
+                                                            if(Linkage_data_summary_object.get_object_key(Linkage_data_object_summary_index).as_string() == "count_mean")
+                                                            {
+                                                                if (Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type() != sajson::TYPE_DOUBLE)
+                                                                    fail("Expected TYPE_DOUBLE, got " + json_type_as_string(Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type()));
+                                                                
+                                                                temp.summary.first = Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_double_value();
+                                                            }
+                                                            else if(Linkage_data_summary_object.get_object_key(Linkage_data_object_summary_index).as_string() == "count_stdev")
+                                                            {
+                                                                if (Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type() != sajson::TYPE_DOUBLE)
+                                                                    fail("Expected TYPE_DOUBLE, got " + json_type_as_string(Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type()));
+                                                                
+                                                                temp.summary.second = Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_double_value();
+                                                            }
+                                                        }
+                                                    }
+                                                    else if(Linkage_data_object.get_object_key(Linkage_data_object_index).as_string() == "bin_data")
+                                                    {
+                                                        sajson::value bin_data_array = Linkage_data_object.get_object_value(Linkage_data_object_index);
+                                                        if(bin_data_array.get_type() != sajson::TYPE_ARRAY)
+                                                            fail("Expected TYPE_ARRAY, got " + json_type_as_string(bin_data_array.get_type()));
+                                                        
+                                                        for(size_t bin_data_index = 0; bin_data_index != bin_data_array.get_length(); bin_data_index++)
+                                                        {
+                                                            std::unordered_map<std::string, int> current_bin;
+
+                                                            sajson::value current_bin_data_entry = bin_data_array.get_array_element(bin_data_index);
+                                                            if(current_bin_data_entry.get_type() != sajson::TYPE_OBJECT)
+                                                                fail("Expected TYPE_OBJECT, got " + json_type_as_string(current_bin_data_entry.get_type()));
+                                                            for(size_t current_bin_data_entry_index = 0; current_bin_data_entry_index != current_bin_data_entry.get_length(); current_bin_data_entry_index++)
+                                                            {
+                                                                if(current_bin_data_entry.get_object_key(current_bin_data_entry_index).as_string() == "lower_phi")
+                                                                {
+                                                                    if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
+                                                                        fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
+                                                                    
+                                                                    current_bin["lower_phi"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
+                                                                }
+                                                                else if(current_bin_data_entry.get_object_key(current_bin_data_entry_index).as_string() == "higher_phi")
+                                                                {
+                                                                    if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
+                                                                        fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
+                                                                    
+                                                                    current_bin["higher_phi"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
+                                                                }
+                                                                else if(current_bin_data_entry.get_object_key(current_bin_data_entry_index).as_string() == "lower_psi")
+                                                                {
+                                                                    if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
+                                                                        fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
+                                                                    
+                                                                    current_bin["lower_psi"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
+                                                                }
+                                                                else if(current_bin_data_entry.get_object_key(current_bin_data_entry_index).as_string() == "higher_psi")
+                                                                {
+                                                                    if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
+                                                                        fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
+                                                                    
+                                                                    current_bin["higher_psi"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
+                                                                }
+                                                                else if(current_bin_data_entry.get_object_key(current_bin_data_entry_index).as_string() == "count")
+                                                                {
+                                                                    if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
+                                                                        fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
+                                                                    
+                                                                    current_bin["count"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
+                                                                }
+                                                            }
+                                                            tmp_bins_for_linkage.push_back(current_bin);
+                                                        }
+                                                    }
+                                                }
+                                                temp.bin_data = tmp_bins_for_linkage;
+                                            }
+                                        }
+                                        torsions_zscore_database.push_back(temp);
+                                    }
+                                }
+                            }                  
+                        }
+                    }
+                }
+            }
+
+            std::cout << std::endl << "Successfully imported Privateer's Torsions Z-score database.\nLast database update: " << database_last_update << std::endl << std::endl;                   
+        }
+
+        inline std::vector<TorsionsZScoreDatabase> read_json_zscore_torsions_insitu(char* buffer, size_t size, const std::string& name) 
+        {
+            std::vector<TorsionsZScoreDatabase> torsions_zscore_database;
+            sajson::document json = sajson::parse(sajson::dynamic_allocation(),
+                                                sajson::mutable_string_view(size, buffer));
+            if (!json.is_valid())
+                fail(name, ":", std::to_string(json.get_error_line()), " error: ",
+                    json.get_error_message_as_string());
+            generate_torsions_zscore_database(torsions_zscore_database, json);
+            // std::cout << "___Length of torsions_zscore_database = " << torsions_zscore_database.size() << std::endl;
+            return torsions_zscore_database;
+        }
+
+        inline std::vector<TorsionsZScoreDatabase> read_json_file_for_torsions_zscore_database(const std::string& path) 
+        {
+            std::string path_copy = path;
+            if(path_copy == "nopath" || path_copy.empty()) 
+            {
+                std::string env;
+                if(std::getenv("PRIVATEERDATA"))
+                {
+                    std::string env( std::getenv("PRIVATEERDATA") );
+                    path_copy = env + "/linkage_torsions/privateer_torsions_z_score_database.json";
+                }
+                else
+                {
+                    env = std::getenv("CLIBD");
+                    path_copy = env + "/privateer_torsions_z_score_database.json";
+                }
+            }
+
+            std::cout << "Reading " << path_copy << " for Torsions Z-score database" << std::endl;
+
+            fileptr_t f = file_open(path_copy.c_str(), "rb");
+            size_t buf_size = file_size(f.get(), path_copy);
+            std::vector<char> buffer(buf_size);
+            if (std::fread(buffer.data(), buffer.size(), 1, f.get()) != 1)
+                fail(path_copy + ": fread failed");
+            
+            return read_json_zscore_torsions_insitu(buffer.data(), buffer.size(), path_copy);
+        }
+
+        // ____________________________________TORSIONS Z SCORE DATABASE END_________________________________________ //
 
         // ____________________________________SPECIFIC JSON FILES END________________________________________________ //
         
