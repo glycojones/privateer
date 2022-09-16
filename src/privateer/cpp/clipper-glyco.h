@@ -23,6 +23,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <algorithm>
+#include <regex>
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
@@ -562,9 +563,10 @@ namespace clipper
             struct MGlycanTorsionSummary 
             {
                 std::string type;
-                clipper::String first_residue_name;
-                clipper::String second_residue_name;
-                std::vector<std::pair<clipper::MAtom, clipper::MAtom>> atoms;
+                clipper::String first_residue_name; // donorResidue
+                clipper::String second_residue_name; // acceptorResidue
+                std::vector<std::pair<clipper::MAtom, clipper::MAtom>> atoms; // .first = donorAtom, .second = acceptorAtom
+                std::vector<std::pair<std::string, std::string>> linkage_descriptors; // .first = donorPosition, .second = acceptorPosition
                 std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
             };
             
@@ -790,7 +792,7 @@ namespace clipper
             }; // class Node
 
             bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom, bool noncircular ); // true if there's been any problem
-            void add_torsions_for_plots(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom);
+            void add_torsions_for_detected_linkages(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom);
             std::vector<MGlycanTorsionSummary> return_torsion_summary_within_glycan() { return all_torsions_within_mglycan; };
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
             const clipper::String& get_type () const { return kind_of_glycan; } // n-glycan, o-glycan, s-glycan, c-glycan, p-glycan or ligand

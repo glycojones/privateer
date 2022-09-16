@@ -1317,6 +1317,28 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition::get_torsions_sum
         return output;
     }
 }
+
+
+pybind11::list privateer::pyanalysis::GlycosylationComposition::get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase)
+{
+    if(!torsions.empty())
+        return torsions;
+    else
+    {
+        auto output = pybind11::list();
+        int totalGlycans = get_number_of_glycan_chains_detected();
+        for(int i = 0; i < totalGlycans; i++)
+        {
+            privateer::pyanalysis::GlycanStructure currentGlycan = get_glycan(i);
+            pybind11::list current_glycan_zscore_torsions = currentGlycan.get_torsions_zscore_summary(importedDatabase);
+
+            auto current_glycan_torsion_info = pybind11::dict("glycanIndex"_a=i, "WURCS"_a=currentGlycan.get_wurcs_notation(), "all_zscore_torsions_in_structure"_a=current_glycan_zscore_torsions);
+            output.append(current_glycan_torsion_info);
+        }
+        this->torsions_zscore = output;
+        return output;
+    }
+}
 ///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
 
 
@@ -1399,6 +1421,23 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition_memsafe::get_tors
     }
 
     return output;
+}
+
+pybind11::list privateer::pyanalysis::GlycosylationComposition_memsafe::get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase)
+{
+
+        auto output = pybind11::list();
+        int totalGlycans = get_number_of_glycan_chains_detected();
+        for(int i = 0; i < totalGlycans; i++)
+        {
+            privateer::pyanalysis::GlycanStructure currentGlycan = get_glycan(i);
+            pybind11::list current_glycan_zscore_torsions = currentGlycan.get_torsions_zscore_summary(importedDatabase);
+
+            auto current_glycan_torsion_info = pybind11::dict("glycanIndex"_a=i, "WURCS"_a=currentGlycan.get_wurcs_notation(), "all_zscore_torsions_in_structure"_a=current_glycan_zscore_torsions);
+            output.append(current_glycan_torsion_info);
+        }
+        
+        return output;
 }
 
 ///////////////////////////////////////////////// Class GlycosylationComposition_memsafe END ////////////////////////////////////////////////////////////////////
@@ -1884,6 +1923,61 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
             output.append(current_pair_dict);
         }
     }
+    return output;
+}
+
+pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase)
+{
+    std::vector<clipper::MGlycan::MGlycanTorsionSummary> glycan_torsions = glycan.return_torsion_summary_within_glycan();
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database = importedDatabase.return_imported_database();
+    auto output = pybind11::list();
+
+    for(int glycan_linkage_index = 0; glycan_linkage_index < glycan_torsions.size(); glycan_linkage_index++)
+    {
+       clipper::MGlycan::MGlycanTorsionSummary current_linkage = glycan_torsions[glycan_linkage_index];
+       if (current_linkage.type == "sugar-sugar")
+       {
+            std::string donor_sugar = current_linkage.first_residue_name;
+            std::string acceptor_sugar = current_linkage.second_residue_name;
+            if(current_linkage.linkage_descriptors.size() == current_linkage.torsions.size())
+            {
+                for(int linkage_descriptor_index = 0; linkage_descriptor_index < current_linkage.linkage_descriptors.size(); linkage_descriptor_index++)
+                {
+                    std::string donor_position = current_linkage.linkage_descriptors[linkage_descriptor_index].first;
+                    std::string donor_atom = current_linkage.atoms[linkage_descriptor_index].first.name().trim();
+                    std::string acceptor_position = current_linkage.linkage_descriptors[linkage_descriptor_index].second;
+                    std::string acceptor_atom = current_linkage.atoms[linkage_descriptor_index].second.name().trim();
+                    float currentPhi = current_linkage.torsions[linkage_descriptor_index].first;
+                    float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
+                    // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << std::endl;
+                   
+                    auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.begin(), torsions_zscore_database.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
+                    {
+                        return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
+                    });
+
+                    if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database))
+                    {
+                        privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
+                        float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description);
+                        // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << " = " << linkage_score << std::endl;
+                        std::string root_string = glycan.get_root_for_filename();
+                        if(isfinite(linkage_score) && ( !isnan(linkage_score) | !isinf(linkage_score)) )
+                        {
+                            auto current_pair_dict = pybind11::dict("donor_sugar"_a=donor_sugar, "donor_position"_a=donor_position, "acceptor_position"_a=acceptor_position, "root_descr"_a=root_string, "phi"_a=currentPhi, "psi"_a=currentPsi, "zscore"_a=linkage_score, "donor_atom"_a=donor_atom, "acceptor_atom"_a=acceptor_atom);
+                            output.append(current_pair_dict);
+                        }
+                        else
+                        {
+                            auto current_pair_dict = pybind11::dict("donor_sugar"_a=donor_sugar, "donor_position"_a=donor_position, "acceptor_position"_a=acceptor_position, "root_descr"_a=root_string, "phi"_a=currentPhi, "psi"_a=currentPsi, "zscore"_a=pybind11::cast<pybind11::none>(Py_None), "donor_atom"_a=donor_atom, "acceptor_atom"_a=acceptor_atom);
+                            output.append(current_pair_dict);
+                        }
+                    }
+                }
+            }
+       }
+    }
+    
     return output;
 }
 
@@ -4138,6 +4232,14 @@ void privateer::pyanalysis::OfflineTorsionsDatabase::import_json_file( std::stri
 }
 ///////////////////////////////////////////////// Class OfflineTorsionsDatabase END ////////////////////////////////////////////////////////////////////
 
+///////////////////////////////////////////////// Class OfflineTorsionsZScoreDatabase ////////////////////////////////////////////////////////////////////
+void privateer::pyanalysis::OfflineTorsionsZScoreDatabase::import_json_file( std::string& path_to_input_file )
+{
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_database = privateer::json::read_json_file_for_torsions_zscore_database(path_to_input_file);
+    this->torsions_zscore_database = torsions_database;
+}
+
+///////////////////////////////////////////////// Class OfflineTorsionsZScoreDatabase END ///////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS ////////////////////////////////////////////////////////////////////
 namespace py = pybind11;
@@ -4182,6 +4284,7 @@ void init_pyanalysis(py::module& m)
         .def("get_glycan",  &pa::GlycosylationComposition::get_glycan)
         .def("get_ligands",  &pa::GlycosylationComposition::get_ligands)
         .def("get_torsions_summary", &pa::GlycosylationComposition::get_torsions_summary)
+        .def("get_torsions_summary", &pa::GlycosylationComposition::get_torsions_zscore_summary)
         .def("update_with_experimental_data", static_cast<void (pa::GlycosylationComposition::*)(pa::XRayData&)>(&pa::GlycosylationComposition::update_with_experimental_data), "Update model with X-Ray Crystallography Data")
         .def("update_with_experimental_data", static_cast<void (pa::GlycosylationComposition::*)(pa::CryoEMData&)>(&pa::GlycosylationComposition::update_with_experimental_data), "Update model with CryoEM Data")
         .def("check_if_updated_with_experimental_data",  &pa::GlycosylationComposition::check_if_updated_with_experimental_data);
@@ -4194,7 +4297,8 @@ void init_pyanalysis(py::module& m)
         .def("get_number_of_glycan_chains_detected",  &pa::GlycosylationComposition_memsafe::get_number_of_glycan_chains_detected)
         .def("get_summary_of_detected_glycans",  &pa::GlycosylationComposition_memsafe::get_summary_of_detected_glycans)
         .def("get_glycan",  &pa::GlycosylationComposition_memsafe::get_glycan)
-        .def("get_torsions_summary", &pa::GlycosylationComposition_memsafe::get_torsions_summary);
+        .def("get_torsions_summary", &pa::GlycosylationComposition_memsafe::get_torsions_summary)
+        .def("get_torsions_zscore_summary", &pa::GlycosylationComposition_memsafe::get_torsions_zscore_summary);
 
     py::class_<pa::GlycanStructure>(m, "GlycanStructure")
         .def(py::init<>())
@@ -4216,6 +4320,7 @@ void init_pyanalysis(py::module& m)
         .def("query_glycomics_database", &pa::GlycanStructure::query_glycomics_database, "Function to query GlyTouCan and GlyConnect databases with a possibility to return closest matches detected on GlyConnect",
         py::arg("importedDatabase"), py::arg("returnClosestMatches") = true, py::arg("returnAllPossiblePermutations") = false, py::arg("nThreads") = -1)
         .def("get_torsions_summary", &pa::GlycanStructure::get_torsions_summary)
+        .def("get_torsions_zscore_summary", &pa::GlycanStructure::get_torsions_zscore_summary)
         .def("get_SNFG_strings", &pa::GlycanStructure::get_SNFG_strings, "Returns Privateer generated SNFG representations in SVG string that later can be parsed through Python",
         py::arg("includeClosestMatches") = true)
         .def("update_with_experimental_data", static_cast<void (pa::GlycanStructure::*)(pa::XRayData&)>(&pa::GlycanStructure::update_with_experimental_data), "Update glycan with X-Ray Crystallography Data")
@@ -4296,6 +4401,11 @@ void init_pyanalysis(py::module& m)
         .def(py::init<>())
         .def(py::init<std::string&>(), py::arg("path_to_input_file")="nopath")
         .def("import_json_file", &pa::OfflineTorsionsDatabase::import_json_file);
+
+    py::class_<pa::OfflineTorsionsZScoreDatabase>(m, "OfflineTorsionsZScoreDatabase")
+        .def(py::init<>())
+        .def(py::init<std::string&>(), py::arg("path_to_input_file")="nopath")
+        .def("import_json_file", &pa::OfflineTorsionsZScoreDatabase::import_json_file);
 }
 
 ///////////////////////////////////////////////// PYBIND11 BINDING DEFINITIONS END////////////////////////////////////////////////////////////////////

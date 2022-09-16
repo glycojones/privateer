@@ -5,13 +5,13 @@
 // York Structural Biology Laboratory
 // The University of York
 
-
 #ifndef PRIVATEER_LIB_H_INCLUDED
 #define PRIVATEER_LIB_H_INCLUDED
 
 #include <fstream>
 #include <iomanip>
 #include <algorithm>
+#include <math.h>
 #include "clipper-glyco.h"
 #include <clipper/clipper.h>
 #include <clipper/clipper-mmdb.h>
@@ -82,6 +82,7 @@ namespace privateer
         std::vector<char> number_of_conformers ( clipper::MMonomer& mmon );
         void print_monosaccharide_summary (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, FILE *output, clipper::HKL_info& hklinfo, clipper::String input_model);
         void print_monosaccharide_summary_python (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, clipper::HKL_info& hklinfo, clipper::String input_model);
+        float calculate_linkage_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage);
     }
 
     namespace glycoplot
@@ -1244,6 +1245,7 @@ namespace privateer
         std::string print_wurcs ( std::string pdb_filename, std::string expression_system = "undefined");
         std::string print_node ( const clipper::MiniMol& mmol, const clipper::MGlycan& mg, const clipper::MGlycan::Node& node, const std::string chain, const clipper::MGlycan::Linkage& connection );
         void svg_graphics_demo ( bool original_colour_scheme, bool inverted_background = false );
+        void compute_linkage_torsion_zscores_for_glycan(std::vector<privateer::json::TorsionsZScoreDatabase>& torsions_zscore_database, std::vector<clipper::MGlycan::MGlycanTorsionSummary>& glycan_torsions); 
         inline void write_refmac_keywords ( std::vector < std::string > code_list ) { return privateer::util::write_refmac_keywords(code_list); }
         inline bool write_libraries ( std::vector < std::string > code_list, float esd ) { return privateer::util::write_libraries(code_list, esd); }
     }

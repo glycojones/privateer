@@ -13,6 +13,7 @@
 #include <exception>
 #include <algorithm>
 #include <regex>
+#include <math.h>
 #include "clipper-glyco.h"
 #include "privateer-lib.h"
 #include "privateer-xray.h"
@@ -44,6 +45,7 @@ namespace privateer {
     class CryoEMData;
     class OfflineGlycomicsDatabase;
     class OfflineTorsionsDatabase;
+    class OfflineTorsionsZScoreDatabase;
 
     class CrystallographicData
     {
@@ -133,6 +135,7 @@ namespace privateer {
         pybind11::list get_ligands() { return ligands; };
         
         pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
+        pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
 
         void update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data);
         void update_with_experimental_data(privateer::pyanalysis::CryoEMData& cryoem_data);
@@ -151,6 +154,7 @@ namespace privateer {
         pybind11::list glycans;
         pybind11::list ligands;
         pybind11::list torsions;
+        pybind11::list torsions_zscore;
 
         bool updatedWithExperimentalData;
     };
@@ -176,6 +180,7 @@ namespace privateer {
         GlycanStructure get_glycan(const int id);
 
         pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
+        pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
 
       private:
         bool debug_output;
@@ -227,6 +232,7 @@ namespace privateer {
 
         pybind11::dict query_glycomics_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
         pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
+        pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
         pybind11::dict get_SNFG_strings(bool includeClosestMatches);
         
 
@@ -514,6 +520,23 @@ namespace privateer {
         std::string path_of_input_file;
         std::vector<privateer::json::TorsionsDatabase> torsionsdatabase;
 
+    };
+
+    class OfflineTorsionsZScoreDatabase 
+    {
+    public:
+        OfflineTorsionsZScoreDatabase() { this->path_of_input_file = "nopath"; this->import_json_file(path_of_input_file); };
+        OfflineTorsionsZScoreDatabase(std::string& path_to_input_file) {
+        this->import_json_file ( path_to_input_file);
+        };
+        void import_json_file( std::string& path_to_input_file );
+        ~OfflineTorsionsZScoreDatabase() { };
+
+        std::vector<privateer::json::TorsionsZScoreDatabase> return_imported_database() { return torsions_zscore_database; };
+
+    private:
+        std::string path_of_input_file;
+        std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
     };
 
   }
