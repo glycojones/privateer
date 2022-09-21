@@ -971,6 +971,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
     clipper::String path_to_model_file_clipper = path_to_model_file;
 
     privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
+    this->model_pdb_code = privateer::util::retrieve_input_PDB_code(path_to_model_file_clipper);
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
@@ -1359,6 +1360,7 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( st
     clipper::String path_to_model_file_clipper = path_to_model_file;
 
     privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
+    this->model_pdb_code = privateer::util::retrieve_input_PDB_code(path_to_model_file_clipper);
 
     this->mgl = clipper::MGlycology(mmol, debug_output, expression_system);
 
@@ -4278,6 +4280,7 @@ void init_pyanalysis(py::module& m)
         .def(py::init<std::string&, std::string&, std::string&, int, float, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mtz_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined", py::arg("debug_output")=false)
         .def(py::init<std::string&, std::string&, float, int, float, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mrc_file")="undefined", py::arg("resolution")=-1, py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined", py::arg("debug_output")=false)
         .def("get_path_of_model_file_used",  &pa::GlycosylationComposition::get_path_of_model_file_used)
+        .def("get_input_model_pdb_code",  &pa::GlycosylationComposition::get_input_model_pdb_code)
         .def("get_expression_system_used",  &pa::GlycosylationComposition::get_expression_system_used)
         .def("get_number_of_glycan_chains_detected",  &pa::GlycosylationComposition::get_number_of_glycan_chains_detected)
         .def("get_summary_of_detected_glycans",  &pa::GlycosylationComposition::get_summary_of_detected_glycans)
@@ -4293,6 +4296,7 @@ void init_pyanalysis(py::module& m)
         .def(py::init<>())
         .def(py::init<std::string&, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined", py::arg("debug_output")=false)
         .def("get_path_of_model_file_used",  &pa::GlycosylationComposition_memsafe::get_path_of_model_file_used)
+        .def("get_input_model_pdb_code",  &pa::GlycosylationComposition_memsafe::get_input_model_pdb_code)
         .def("get_expression_system_used",  &pa::GlycosylationComposition_memsafe::get_expression_system_used)
         .def("get_number_of_glycan_chains_detected",  &pa::GlycosylationComposition_memsafe::get_number_of_glycan_chains_detected)
         .def("get_summary_of_detected_glycans",  &pa::GlycosylationComposition_memsafe::get_summary_of_detected_glycans)

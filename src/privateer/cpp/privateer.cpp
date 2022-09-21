@@ -71,6 +71,7 @@ int main(int argc, char** argv)
     clipper::CCP4MAPfile mrcin;
     clipper::Xmap<double> cryo_em_map;
     clipper::String input_model             = "NONE";
+    std::string     input_pdb_code          = "NONE";
     clipper::String input_cryoem_map        = "NONE";
     clipper::String input_column_fobs       = "NONE";
     clipper::String input_reflections_cif   = "NONE";
@@ -522,11 +523,13 @@ int main(int argc, char** argv)
     clipper::MMDBfile mfile;
     clipper::MiniMol mmol;
 
-
     if ( (useMTZ && !useMRC) || noMaps )
       privateer::util::read_coordinate_file_mtz ( mfile, mmol, input_model, batch);
 
     int pos_slash = input_model.rfind("/");
+
+    input_pdb_code = privateer::util::retrieve_input_PDB_code(input_model);
+    std::cout << "PDB code of the imported model: " << input_pdb_code << std::endl;
 
     if(useWURCSDataBase)
     {

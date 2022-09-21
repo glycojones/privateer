@@ -125,6 +125,7 @@ namespace privateer {
         void initialize_summary_of_detected_glycans();
 
         std::string get_path_of_model_file_used ( ) { return path_to_model_file; };
+        std::string get_input_model_pdb_code () { return model_pdb_code; };
         std::string get_expression_system_used ( ) { return expression_system; };
         int get_number_of_glycan_chains_detected ( ) { return numberOfGlycanChains; };
         
@@ -148,6 +149,7 @@ namespace privateer {
         std::vector<std::pair<clipper::String, clipper::MSugar>> ligandList;
         std::vector<std::pair<clipper::String, clipper::MSugar>> ligandsOnly;
         std::string path_to_model_file;
+        std::string model_pdb_code;
         std::string expression_system;
         int numberOfGlycanChains;
         pybind11::list glycosylationSummary;
@@ -172,6 +174,7 @@ namespace privateer {
         void initialize_summary_of_detected_glycans( clipper::MGlycology& mglObject );
 
         std::string get_path_of_model_file_used ( ) { return path_to_model_file; };
+        std::string get_input_model_pdb_code () { return model_pdb_code; };
         std::string get_expression_system_used ( ) { return expression_system; };
         int get_number_of_glycan_chains_detected ( ) { return numberOfGlycanChains; };
         
@@ -187,6 +190,7 @@ namespace privateer {
 
         clipper::MGlycology mgl;
         std::string path_to_model_file;
+        std::string model_pdb_code;
         std::string expression_system;
         int numberOfGlycanChains;
         pybind11::list glycosylationSummary;

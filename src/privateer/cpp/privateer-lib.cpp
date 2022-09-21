@@ -1371,6 +1371,17 @@ float privateer::util::calculate_linkage_zscore(float phi, float psi, privateer:
         // return ;
 }
 
+std::string privateer::util::retrieve_input_PDB_code(clipper::String input_model_path)
+{
+    std::string input_model_path_stdstring = input_model_path;
+    std::string base_filename = input_model_path_stdstring.substr(input_model_path_stdstring.find_last_of("/\\") + 1);
+    std::string::size_type const p(base_filename.find_last_of('.'));
+    std::string file_without_extension = base_filename.substr(0, p);
+    std::transform(file_without_extension.begin(), file_without_extension.end(), file_without_extension.begin(), ::tolower);
+    
+    return file_without_extension;
+}
+
 ///////// Privateer's glycoplot /////////
 
 std::string privateer::glycoplot::get_colour ( Colour colour, bool original_style, bool inverted )
