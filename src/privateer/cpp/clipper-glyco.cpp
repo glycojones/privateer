@@ -619,6 +619,297 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
 
 }
 
+MSugar::MSugar(const clipper::MiniMol& ml, const clipper::MMonomer& mm, const clipper::MAtomNonBond& nb, char alt_conf )
+{
+
+    copy(mm,clipper::MM::COPY_MPC);	// import_data from MMonomer
+
+
+    this->sugar_supported = true;
+    this->sugar_parent_molecule = &ml;
+    this->sugar_parent_molecule_nonbond = &nb; // store pointers
+    this->sugar_index = db_not_checked;
+    this->sugar_index = 9999; // default value for "not found in database".
+    this->sugar_alternate_confcode = " "; // initially, we would like to suppose this
+    this->sugar_context = "";
+
+    #if DUMP
+        std::cout << std::endl ;
+        DBG << "looking for " << this->id() << " " << this->type().trim() << " on the database..." << std::endl;
+        // alt_conf != ' ' ? DBG << "Alternate locator supplied: " << alt_conf << std::endl : true;
+    #endif
+
+    #if DUMP
+        std::cout << "Size of (*this).size() " << (*this).size() << std::endl;
+        for(int i = 0; i < (*this).size(); i++)
+        {
+            std::cout << "Atom ID: (*this)[" << i << "].id " << (*this)[i].id() << std::endl;
+        }
+    #endif
+
+    this->sugar_found_db = lookup_database(this->type().trim());
+
+    sugar_bfactor = 0.0;
+
+    for (int i=0; i < this->size(); i++)
+    {
+        MSugar mstmp= *this;
+        sugar_bfactor += mstmp[i].u_iso();
+    }
+
+    sugar_bfactor /= this->size();
+    sugar_bfactor = clipper::Util::u2b(sugar_bfactor);
+
+    if ( this->sugar_found_db )
+    {
+        #if DUMP
+            DBG << "found it! " << std::endl;
+        #endif
+
+        std::vector<clipper::String> buffer = clipper::data::sugar_database[sugar_index].ring_atoms.trim().split(" ");
+
+
+        for (int i=0 ; i < buffer.size() ; i++)
+        {
+            int index_atom = 0;
+
+            if ( alt_conf != ' ' ) // alternate conformations are present
+            {
+                alt_conf == 'A' ? sugar_alternate_confcode = " :A" : sugar_alternate_confcode = " :B";
+
+                index_atom = this->lookup(buffer[i].trim()+sugar_alternate_confcode,clipper::MM::UNIQUE);
+
+                #if DUMP
+                    DBG << "index_atom in line 146" << index_atom << std::endl;
+                #endif
+
+                if (index_atom == -1) // we've tried A and B and it still fails... so we're going to give up for now
+                {
+                    this->sugar_supported = false;
+                    this->sugar_sane = false;
+                    this->sugar_denomination = "    unsupported    ";
+                    this->sugar_anomer = "X";
+                    this->sugar_handedness = "X";
+                    return;
+                }
+            }
+            else
+            {
+
+                index_atom = this->lookup(buffer[i],clipper::MM::ANY);
+
+
+                #if DUMP
+                    DBG << "index_atom in line 165 = " << index_atom << " value of buffer[" << i << "] =" << buffer[i] << "test" << std::endl;
+                #endif
+
+                if (index_atom == -1)
+                {
+                    this->sugar_supported = false;
+                    this->sugar_sane = false; // we don't support cyclic sugars with less or more than 5-6 ring atoms
+                    this->sugar_denomination = "    unsupported    ";
+                    this->sugar_anomer = "X";
+                    this->sugar_handedness = "X";
+
+
+                    return;
+                }
+            }
+            #if DUMP
+                DBG << "trying to push (*this)[index_atom] in line 181" << (*this)[index_atom].id() << std::endl;
+            #endif
+            sugar_ring_elements.push_back((*this)[index_atom]);
+        }
+    }
+    else
+    {
+        this->sugar_ring_elements = this->ringMembers();
+    }
+
+
+	if (this->sugar_ring_elements.size() == 5)
+	{
+		this->cremerPople_furanose(*this->sugar_parent_molecule, mm);
+		this->sugar_conformation = conformationFuranose(this->sugar_cremer_pople_params[1]);
+
+		#if DUMP
+			DBG << "After checking the conformation..." << std::endl;
+		#endif
+	}
+	else if (this->sugar_ring_elements.size() == 6)
+	{
+		this->cremerPople_pyranose(*this->sugar_parent_molecule, mm);
+		this->sugar_conformation = conformationPyranose(this->sugar_cremer_pople_params[1], this->sugar_cremer_pople_params[2]);
+
+        #if DUMP
+			DBG << "After checking the conformation..." << std::endl;
+		#endif
+	}
+	else
+	{
+		this->sugar_supported = false;
+		this->sugar_sane = false; // we don't support cyclic sugars with less or more than 5-6 ring atoms
+		this->sugar_denomination = "    unsupported    ";
+		this->sugar_anomer = "X";
+		this->sugar_handedness = "X";
+	}
+
+    if (sugar_ring_elements[1].name().trim().find("C1") != std::string::npos)
+    {
+        this->sugar_type = "aldose";
+        this->sugar_denomination = "aldo";
+    }
+    else
+    {
+        this->sugar_type = "ketose";
+        this->sugar_denomination = "keto";
+    }
+
+	if (sugar_ring_elements.size() == 5)
+        this->sugar_denomination = this->sugar_denomination + "furanose";
+	else
+        this->sugar_denomination = this->sugar_denomination + "pyranose";
+
+	this->sugar_denomination = clipper::String( this->sugar_anomer + "-" + this->sugar_handedness + "-" + this->sugar_denomination );
+
+	// sanity check:
+
+	this->sugar_sane = false;
+
+	#if DUMP
+		DBG << "Just before examining the ring..." << std::endl;
+	#endif
+
+
+	if ( examine_ring() ) sugar_diag_ring = true; else sugar_diag_ring = false;
+
+    clipper::String ref_conformation;
+    clipper::ftype  ref_puckering;
+    clipper::ftype  ref_bonds_rmsd;
+    clipper::ftype  ref_angles_rmsd;
+
+	if (this->sugar_found_db)
+	{
+
+        ref_conformation = clipper::data::sugar_database[sugar_index].ref_conformation;
+        ref_puckering    = clipper::data::sugar_database[sugar_index].ref_puckering;
+        ref_bonds_rmsd   = clipper::data::sugar_database[sugar_index].ref_bonds_rmsd;
+        ref_angles_rmsd  = clipper::data::sugar_database[sugar_index].ref_angles_rmsd;
+
+	    if ( ( ( sugar_handedness != "D" ) && ( clipper::data::sugar_database[sugar_index].handedness != "D" ) )
+          || ( ( sugar_handedness != "L" ) && (clipper::data::sugar_database[sugar_index].handedness != "L" ) ) )
+	        sugar_diag_chirality = true;
+	    else
+            sugar_diag_chirality = false;
+
+
+	    if ( ( ( sugar_anomer == "alpha") && ( clipper::data::sugar_database[sugar_index].anomer != "B" ) )
+		     || ( ( sugar_anomer == "beta") && ( clipper::data::sugar_database[sugar_index].anomer != "A" ) ) )
+	        sugar_diag_anomer = true;
+	    else
+            sugar_diag_anomer = false;
+
+        if ( ref_conformation == conformation_name() )
+            sugar_diag_conformation = true;
+        else
+        {
+            if ( ( conformation_name() == "4c1" ) && ( sugar_handedness != "L" ))
+                sugar_diag_conformation = true;
+            else if ( ( conformation_name() == "1c4" ) && ( sugar_handedness != "D" ))
+                sugar_diag_conformation = true;
+            else if ( ring_cardinality() < 6)
+               sugar_diag_conformation = true;
+            else  sugar_diag_conformation = false;
+        }
+
+        if ( sugar_diag_conformation )
+        {
+            if (( puckering_amplitude() > ref_puckering - 0.18 ) && (puckering_amplitude() < ref_puckering + 0.15 ))
+                sugar_diag_puckering = true;
+            else
+                sugar_diag_puckering = false;
+
+            if ( sugar_ring_bond_rmsd < ( ref_bonds_rmsd + 0.039 ) )
+                sugar_diag_bonds_rmsd = true;
+            else
+                sugar_diag_bonds_rmsd = false;
+
+            if ( sugar_ring_angle_rmsd < ( ref_angles_rmsd + 3.0 ) )
+                sugar_diag_angles_rmsd = true;
+            else
+                sugar_diag_angles_rmsd = false;
+        }
+        else
+        {
+            if (( puckering_amplitude() > 0.9 ) || ( puckering_amplitude() < 0.42 ))
+                sugar_diag_puckering = false;
+            else
+                sugar_diag_puckering = true;
+
+            sugar_diag_bonds_rmsd = sugar_diag_angles_rmsd = true;
+        }
+
+	    if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
+            sugar_sane = true;
+	}
+	else
+	{
+	    sugar_diag_anomer=true;
+	    sugar_diag_chirality=true;  // perform a generic test based on rough ideal values
+
+	    if (sugar_ring_elements.size() == 5)
+	    {
+            if (sugar_ring_bond_rmsd < 0.040 )
+                sugar_diag_bonds_rmsd = true;
+            else
+                sugar_diag_bonds_rmsd = false;
+	    }
+	    else
+	    {
+	        if (sugar_ring_bond_rmsd < 0.035 )
+                sugar_diag_bonds_rmsd = true;
+            else
+                sugar_diag_bonds_rmsd = false;
+	    }
+
+	    if (sugar_ring_elements.size() ==  5)
+	    {
+	        if ((sugar_ring_angle_rmsd > 4.0 ) && (sugar_ring_angle_rmsd < 8.0))
+                sugar_diag_angles_rmsd = true;
+            else
+                sugar_diag_angles_rmsd = false;
+	    }
+	    else
+	    {
+	        if (sugar_ring_angle_rmsd < 4.0 )
+                sugar_diag_angles_rmsd = true;
+	        else
+                sugar_diag_angles_rmsd = false;
+	    }
+
+        if ( ( conformation_name() == "4c1" ) && ( sugar_handedness != "L" ))
+            sugar_diag_conformation = true;
+        else if ( ( conformation_name() == "1c4" ) && ( sugar_handedness != "D" ))
+            sugar_diag_conformation = true;
+        else
+            sugar_diag_conformation = false;
+
+        if (( puckering_amplitude() > 0.9 ) || ( puckering_amplitude() < 0.42 ))
+            sugar_diag_puckering = false;
+        else
+            sugar_diag_puckering = true;
+
+	    if ( sugar_diag_puckering && sugar_diag_anomer && sugar_diag_chirality && sugar_diag_ring )
+            sugar_sane = true;
+
+	}
+
+	#if DUMP
+	    DBG << "Just after examining the ring, exiting the constructor, good job!" << std::endl;
+	#endif
+}
+
+
 
 /*! Checks if the sugar is in the database of sugars. If found, it stores
 		its index and returns true.

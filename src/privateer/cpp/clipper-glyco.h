@@ -137,6 +137,7 @@ namespace clipper
             MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, bool& debug_output, char alt_conf = ' ' ); //!< default constructor
             MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, bool& debug_output, char alt_conf = ' ' );
             MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf = ' '  );
+            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, char alt_conf = ' ' );
             //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
             const bool operator== ( const clipper::MSugar& m2 ) const { return ( this->id() == m2.id() ); }
