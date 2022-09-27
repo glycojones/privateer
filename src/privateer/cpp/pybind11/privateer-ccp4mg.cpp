@@ -59,17 +59,17 @@ void init_ccp4mg(py::module& m)
         "esd"_a );
 
 
-  pybind11::enum_<privateer::glycoplot::Colour>(m, "Colour")
-            .value("blue",    privateer::glycoplot::blue)
-            .value("red" ,    privateer::glycoplot::red )
-            .value("yellow" , privateer::glycoplot::yellow )
-            .value("orange" , privateer::glycoplot::orange )
-            .value("green" ,  privateer::glycoplot::green )
-            .value("purple" , privateer::glycoplot::purple )
-            .value("cyan" ,   privateer::glycoplot::cyan )
-            .value("tan" ,    privateer::glycoplot::tan )
-            .value("black" ,  privateer::glycoplot::black )
-            .value("white" ,  privateer::glycoplot::white )
+  pybind11::enum_<privateer::glycanbuilderplot::Colour>(m, "Colour")
+            .value("blue",    privateer::glycanbuilderplot::blue)
+            .value("red" ,    privateer::glycanbuilderplot::red )
+            .value("yellow" , privateer::glycanbuilderplot::yellow )
+            .value("orange" , privateer::glycanbuilderplot::orange )
+            .value("green" ,  privateer::glycanbuilderplot::green )
+            .value("purple" , privateer::glycanbuilderplot::purple )
+            .value("cyan" ,   privateer::glycanbuilderplot::cyan )
+            .value("tan" ,    privateer::glycanbuilderplot::tan )
+            .value("black" ,  privateer::glycanbuilderplot::black )
+            .value("white" ,  privateer::glycanbuilderplot::white )
             .export_values();
 
   pybind11::enum_<privateer::Conformation>(m, "Conformation")
@@ -134,7 +134,7 @@ void init_ccp4mg(py::module& m)
             .export_values();
 
   m.def("get_colour",
-        &privateer::glycoplot::get_colour,
+        &privateer::glycanbuilderplot::get_colour,
         "Returns RGB colour values in two keys (SNFG or Privateer)",
         "colour"_a,
         "original_style"_a,
