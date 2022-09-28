@@ -88,7 +88,7 @@ namespace privateer
 
     namespace glycanbuilderplot
     {
-        enum Colour { blue, rootblue, red, rootred, yellow, rootyellow, orange, green, purple, pink, cyan, tan, black, brown, white };
+        enum Colour { corvette, blue, rootblue, red, rootred, yellow, rootyellow, orange, green, purple, pink, cyan, tan, black, brown, white };
         enum Link_type { up, up_side, branch_side, side, down_side, down };
 
         std::string get_colour ( Colour colour, bool original_style, bool inverted = false  );

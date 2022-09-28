@@ -1396,6 +1396,8 @@ std::string privateer::glycanbuilderplot::get_colour ( Colour colour, bool origi
     {
         switch (colour)
         {
+            case corvette:
+                return "#f9cb9c";
             case blue:
                 return "#0090bc;";
             case rootblue:
@@ -1433,6 +1435,8 @@ std::string privateer::glycanbuilderplot::get_colour ( Colour colour, bool origi
     {
         switch (colour)
         {
+            case corvette:
+                return "#f9cb9c";
             case blue:
                 return "#014f87;";
             case rootblue:
@@ -1573,6 +1577,10 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
 
        // hexoses, circles
 
+       << "    <!-- shCrcl --> "
+       <<  "<circle r =\"35\" cx =\"25\" cy =\"25\" id=\"shadedcircle\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
+
        << "    <!--  Glc   --> "
        <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"glc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( blue, original_colour_scheme )
@@ -1588,10 +1596,19 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
+       << "    <!-- shTrng --> "
+       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"shadedtriangle\" transform=\"scale(1.5) translate(-8.5 -10)\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
+
        << "    <!--  Fuc   --> "
        << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- shStar --> "
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " << 
+       "transform=\"scale(1.75) translate(-10.5 -12)\" rx=\"0\" ry=\"0\" id=\"shadedstar\" style=\""
+       << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!--  Xyl   --> "
        << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx=\"0\" ry=\"0\" id=\"xyl\" style=\" stroke:"
@@ -1599,6 +1616,10 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "stroke-width:2.8;\" />\n"
 
        // n-acetyl hexosamines, squares
+
+       << "    <!-- shRec  --> "
+       <<  "<rect width =\"70\" height=\"70\" id=\"shadedrectangle\" transform=\"translate(-10 -10)\" style=\""
+       << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- GlcNAc --> "
        <<  "<rect width =\"50\" height=\"50\" id=\"glcnac\" style=\" stroke:"
@@ -1633,6 +1654,10 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "stroke-width:2.8;\" />\n"
 
        // acidic sugars, diamond shapes in one or two colours
+
+       << "    <!-- shDia  --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"shadeddiamond\" transform=\"scale(1.5) translate(-8 -8)\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- Neu5Ac --> "
        << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5ac\" style=\" stroke:"
@@ -1670,10 +1695,17 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "stroke-width:2.8;\" />\n"
 
 
+       << "    <!-- shBond --> "
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(corvette, original_colour_scheme, inverted_background ) << "; stroke-width:10; stroke-linecap:round;\" id=\"shadedbond\" />\n"
+
        << "    <!--  bond  --> "
-       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << " stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << "; stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
 
        // a generic hexagon shape for unsupported sugars
+
+       << "    <!-- shHex  --> "
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' transform=\"scale(1.5) translate(-8 -8)\" rx=\"0\" ry=\"0\" id=\"shadedhexagon\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- Other  --> "
        << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx=\"0\" ry=\"0\" id=\"unk\" style=\" stroke:"
@@ -1799,6 +1831,9 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
 
        // hexoses, circles
 
+       <<  "<circle r =\"35\" cx =\"25\" cy =\"25\" id=\"shadedcircle\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
+
        <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"glc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( blue, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
@@ -1811,15 +1846,25 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
+       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"shadedtriangle\" transform=\"scale(1.5) translate(-8.5 -10)\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
+
        << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
+
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " << 
+       "transform=\"scale(1.75) translate(-10.5 -12)\" rx=\"0\" ry=\"0\" id=\"shadedstar\" style=\""
+       << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx=\"0\" ry=\"0\" id=\"xyl\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( orange, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        // n-acetyl hexosamines, squares
+
+       <<  "<rect width =\"70\" height=\"70\" id=\"shadedrectangle\" transform=\"translate(-10 -10)\" style=\""
+       << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        <<  "<rect width =\"50\" height=\"50\" id=\"glcnac\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( blue, original_colour_scheme )
@@ -1848,6 +1893,9 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << "stroke-width:2.8;\" />\n"
 
        // acidic sugars, diamond shapes in one or two colours
+
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"shadeddiamond\" transform=\"scale(1.5) translate(-8 -8)\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5ac\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( purple, original_colour_scheme )
@@ -1878,10 +1926,14 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << "stroke-width:2.8;\" />\n"
 
        // bond types, continuous and dashed lines
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(corvette, original_colour_scheme, inverted_background ) << "; stroke-width:10; stroke-linecap:round;\" id=\"shadedbond\" />\n"
 
-       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << " stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << "; stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
 
        // a generic hexagon shape for unsupported sugars
+
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' transform=\"scale(1.5) translate(-8 -8)\" rx=\"0\" ry=\"0\" id=\"shadedhexagon\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx=\"0\" ry=\"0\" id=\"unk\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( white, original_colour_scheme )
@@ -2013,6 +2065,10 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "      </pattern>\n"
 
        // hexoses, circles
+       
+       << "    <!-- shCrcl --> "
+       <<  "<circle r =\"35\" cx =\"25\" cy =\"25\" id=\"shadedcircle\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!--  Glc   --> "
        <<  "<circle r =\"25\" cx =\"25\" cy =\"25\" id=\"glc\" style=\" stroke:"
@@ -2029,10 +2085,19 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
+       << "    <!-- shTrng --> "
+       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"shadedtriangle\" transform=\"scale(1.5) translate(-8.5 -10)\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
+
        << "    <!--  Fuc   --> "
        << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
+
+       << "    <!-- shStar --> "
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " << 
+       "transform=\"scale(1.75) translate(-10.5 -12)\" rx=\"0\" ry=\"0\" id=\"shadedstar\" style=\""
+       << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!--  Xyl   --> "
        << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx=\"0\" ry=\"0\" id=\"xyl\" style=\" stroke:"
@@ -2040,6 +2105,10 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "stroke-width:2.8;\" />\n"
 
        // n-acetyl hexosamines, squares
+
+       << "    <!-- shRec  --> "
+       <<  "<rect width =\"70\" height=\"70\" id=\"shadedrectangle\" transform=\"translate(-10 -10)\" style=\""
+       << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- GlcNAc --> "
        <<  "<rect width =\"50\" height=\"50\" id=\"glcnac\" style=\" stroke:"
@@ -2074,6 +2143,10 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "stroke-width:2.8;\" />\n"
 
        // acidic sugars, diamond shapes in one or two colours
+
+       << "    <!-- shDia  --> "
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"shadeddiamond\" transform=\"scale(1.5) translate(-8 -8)\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- Neu5Ac --> "
        << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5ac\" style=\" stroke:"
@@ -2111,10 +2184,17 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "stroke-width:2.8;\" />\n"
 
 
+       << "    <!-- shBond --> "
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(corvette, original_colour_scheme, inverted_background ) << "; stroke-width:10; stroke-linecap:round;\" id=\"shadedbond\" />\n"
+
        << "    <!--  bond  --> "
-       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << " stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << "; stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
 
        // a generic hexagon shape for unsupported sugars
+
+       << "    <!-- shHex  --> "
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' transform=\"scale(1.5) translate(-8 -8)\" rx=\"0\" ry=\"0\" id=\"shadedhexagon\" style=\" fill:"
+       << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- Other  --> "
        << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx=\"0\" ry=\"0\" id=\"unk\" style=\" stroke:"
