@@ -589,8 +589,10 @@ namespace clipper
                         this->index = index;
                         this->noncircular = noncircular;
                         this->type = anomericity;
-                        torsion_phi = torsion_psi = torsion_omega = 0.0;
+                        torsion_phi = torsion_psi = torsion_omega = torsion_omega_six = torsion_omega_seven = torsion_omega_eight = torsion_omega_nine = 0.0;
                         donorAtom = acceptorAtom = clipper::MAtom();
+                        this->linkage_zscore_calculated = false;
+                        this->linkage_zscore = -42069;
                     }
 
                     // Linkage& operator= ( const Linkage& link ) { if ( this != &link ) node = link.node; return *this;  }
@@ -672,6 +674,16 @@ namespace clipper
                         return std::make_pair(donorAtom, acceptorAtom);
                     } //!< .first=donorAtom, .second=acceptorAtom
 
+                    bool check_if_linkage_zscore_calculated () const
+                    {
+                        return linkage_zscore_calculated;
+                    }
+
+                    float get_linkage_zscore () const
+                    {
+                        return linkage_zscore;
+                    }
+
                     void set_torsions ( float phi, float psi, float omega, float omega_six, float omega_seven, float omega_eight, float omega_nine, float phi_cone_ctwo_oeight_ceight )
                     { 
                         torsion_phi         =   phi;
@@ -686,6 +698,8 @@ namespace clipper
 
                     void set_linkage_atoms( clipper::MAtom& inputDonorAtom, clipper::MAtom& inputAcceptorAtom) { donorAtom = inputDonorAtom; acceptorAtom = inputAcceptorAtom; };
 
+                    void set_linkage_zscore( float input_zscore ) { this->linkage_zscore = input_zscore; this->linkage_zscore_calculated = true; };
+
                     std::string format() const
                     {
                         std::stringstream s;
@@ -695,6 +709,9 @@ namespace clipper
                         return s.str();
                     }
 
+                    void calculate_and_set_zscore(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom, std::vector<privateer::json::TorsionsZScoreDatabase>& torsions_zscore_database);
+                    
+                    float calculate_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage);
                 private:
                     float torsion_phi;
                     float torsion_psi;
@@ -704,8 +721,10 @@ namespace clipper
                     float torsion_omega_eight;  // for 2-8 linkages
                     float torsion_omega_nine;   // for 2-8 linkages
                     float torsion_phi_cone_ctwo_oeight_ceight; // for 2-8 linkages
+                    float linkage_zscore;
                     int index;                  // carbon to which this is connected
                     int node_id;                // sugar connected to by this linkage
+                    bool linkage_zscore_calculated;
                     bool noncircular;
                     std::string type;           // anomer
                     std::string annotation;     // include validation information
@@ -791,7 +810,7 @@ namespace clipper
 
             }; // class Node
 
-            bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom, bool noncircular ); // true if there's been any problem
+            bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom, bool noncircular, std::vector<privateer::json::TorsionsZScoreDatabase>& torsions_zscore_database ); // true if there's been any problem
             void add_torsions_for_detected_linkages(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom);
             std::vector<MGlycanTorsionSummary> return_torsion_summary_within_glycan() { return all_torsions_within_mglycan; };
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
@@ -828,7 +847,7 @@ namespace clipper
             void remove_node_at_index ( int index );
             void replace_sugar_at_index ( int index, clipper::MSugar& donor );
             void update_msugar_in_root ( clipper::MSugar& newmsug );
-
+            
             int get_number_of_connections_at_index ( int index ) const { if (index>node_list.size()-1) return node_list.back().number_of_connections(); else return node_list[index].number_of_connections(); }
 
             void set_kind_of_glycan ( clipper::String input ) { kind_of_glycan = input; }
@@ -906,9 +925,9 @@ namespace clipper
 
             MGlycology () { } //!< null constructor
             MGlycology ( const clipper::MiniMol&, bool debug_output, std::string expression_system = "undefined" );
-            MGlycology ( const clipper::MiniMol&, const clipper::MAtomNonBond&, bool debug_output, std::string expression_system = "undefined" );
+            MGlycology ( const clipper::MiniMol&, const clipper::MAtomNonBond&, std::vector<privateer::json::TorsionsZScoreDatabase>&, bool debug_output, std::string expression_system = "undefined" );
 
-            void init ( const clipper::MiniMol&, const clipper::MAtomNonBond&, bool debug_output, std::string expression_system );
+            void init ( const clipper::MiniMol&, const clipper::MAtomNonBond&, std::vector<privateer::json::TorsionsZScoreDatabase>&,  bool debug_output, std::string expression_system );
             clipper::MGlycan get_glycan_by_id ( int id ) { return list_of_glycans[id]; };
             clipper::MGlycan get_glycan_by_root ( clipper::MMonomer& root )
             {
@@ -936,7 +955,7 @@ namespace clipper
             const std::vector < std::pair< clipper::String, clipper::MMonomer > > get_overlapping_residues ( const clipper::MMonomer& mm );
             const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > get_contacts ( const clipper::MMonomer& mm, const clipper::String monomer_chain_id );
             int parse_order ( clipper::MAtom& atom_in_sugar, clipper::MSugar& sugar );
-            void extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std::vector<clipper::MSugar>& accounted_for_sugars );
+            void extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std::vector<clipper::MSugar>& accounted_for_sugars, std::vector<privateer::json::TorsionsZScoreDatabase>& torsions_zscore_database );
             const char get_altconf ( const clipper::MAtom& ) const;
             std::string expression_system;
 

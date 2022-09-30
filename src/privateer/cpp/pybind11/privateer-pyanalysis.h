@@ -115,13 +115,13 @@ namespace privateer {
       public:
       // need to add constructor with both model and experimental data too. 
         GlycosylationComposition() { };
-        GlycosylationComposition(std::string& path_to_model_file, std::string expression_system, bool debug_output) {
-          this->read_from_file ( path_to_model_file, expression_system, debug_output );
+        GlycosylationComposition(std::string& path_to_model_file, std::string expression_system, bool disable_torsions, bool debug_output) {
+          this->read_from_file ( path_to_model_file, expression_system, disable_torsions, debug_output );
         };
-        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system, bool debug_output);
-        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system, bool debug_output);
+        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system, bool disable_torsions, bool debug_output);
+        GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system, bool disable_torsions, bool debug_output);
         ~GlycosylationComposition() { };
-        void read_from_file( std::string path_to_model_file, std::string expression_system, bool debug_output );
+        void read_from_file( std::string path_to_model_file, std::string expression_system, bool disable_torsions, bool debug_output );
         void initialize_summary_of_detected_glycans();
 
         std::string get_path_of_model_file_used ( ) { return path_to_model_file; };
@@ -166,11 +166,11 @@ namespace privateer {
       public:
       // need to add constructor with both model and experimental data too. 
         GlycosylationComposition_memsafe() { };
-        GlycosylationComposition_memsafe(std::string& path_to_model_file, std::string expression_system, bool debug_output) {
-          this->read_from_file ( path_to_model_file, expression_system, debug_output );
+        GlycosylationComposition_memsafe(std::string& path_to_model_file, std::string expression_system, bool disable_torsions, bool debug_output) {
+          this->read_from_file ( path_to_model_file, expression_system, disable_torsions, debug_output );
         };
         ~GlycosylationComposition_memsafe() { };
-        void read_from_file( std::string path_to_model_file, std::string expression_system, bool debug_output );
+        void read_from_file( std::string path_to_model_file, std::string expression_system, bool disable_torsions, bool debug_output );
         void initialize_summary_of_detected_glycans( clipper::MGlycology& mglObject );
 
         std::string get_path_of_model_file_used ( ) { return path_to_model_file; };
@@ -416,11 +416,11 @@ namespace privateer {
     {
       public:
         XRayData() { };
-        XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool debug_output) {
-          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads, debug_output);
+        XRayData(std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool disable_torsions, bool debug_output) {
+          this->read_from_file ( path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads, disable_torsions, debug_output);
         };
         ~XRayData() { };
-        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool debug_output);
+        void read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool disable_torsions, bool debug_output);
         pybind11::list get_sugar_summary_with_experimental_data() { return sugar_summary_of_experimental_data; };
         pybind11::list get_ligand_summary_with_experimental_data() { return ligand_summary_of_experimental_data; };
         void print_cpp_console_output_summary() 
@@ -456,11 +456,11 @@ namespace privateer {
     {
       public:
         CryoEMData() { };
-        CryoEMData(std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool debug_output) {
-          this->read_from_file ( path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads, debug_output);
+        CryoEMData(std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool disable_torsions, bool debug_output) {
+          this->read_from_file ( path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads, disable_torsions, debug_output);
         };
         ~CryoEMData() { };
-        void read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool debug_output);
+        void read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool disable_torsions, bool debug_output);
         pybind11::list get_sugar_summary_with_experimental_data() { return sugar_summary_of_experimental_data; };
         pybind11::list get_ligand_summary_with_experimental_data() { return ligand_summary_of_experimental_data; };
         void print_cpp_console_output_summary() 

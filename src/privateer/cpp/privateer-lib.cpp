@@ -2067,7 +2067,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        // hexoses, circles
        
        << "    <!-- shCrcl --> "
-       <<  "<circle r =\"35\" cx =\"25\" cy =\"25\" id=\"shadedcircle\" style=\" fill:"
+       <<  "<circle r =\"40\" cx =\"25\" cy =\"25\" id=\"shadedcircle\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!--  Glc   --> "
@@ -2185,7 +2185,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
 
 
        << "    <!-- shBond --> "
-       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(corvette, original_colour_scheme, inverted_background ) << "; stroke-width:10; stroke-linecap:round;\" id=\"shadedbond\" />\n"
+       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(corvette, original_colour_scheme, inverted_background ) << "; stroke-width:15; stroke-linecap:round;\" id=\"shadedbond\" />\n"
 
        << "    <!--  bond  --> "
        << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << "; stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
@@ -2295,7 +2295,7 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
     else                                                                                  anomerSymbol = "&#63;";
 
 
-    Bond *first_bond = new Bond( 2800, 1015, anomerSymbol, side, glycan.get_link_description(), mmdbsel );
+    Bond *first_bond = new Bond( 2800, 1015, anomerSymbol, side, glycan.get_link_description(), false, mmdbsel );
     add_link ( first_bond );
 
     // let the fun begin: paint the tree with yet another recursive function
@@ -2316,105 +2316,119 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     std::string mmdbsel = "mmdb:///" + mg.get_chain().substr(0,1) + "/" + sugar.id().trim();
     std::string sugname = clipper::data::carbname_of ( sugar.type() );
 
+    int branches = node.number_of_connections();
+    bool node_contains_highlighted_linkage = false;
+    if(branches > 0)
+    {
+        for ( int i = 0; i < node.number_of_connections(); i++)
+        {
+            clipper::MGlycan::Linkage current_link = node.get_connection(i);
+            if(current_link.check_if_linkage_zscore_calculated())
+            {
+                float link_zscore = current_link.get_linkage_zscore();
+                if(abs(link_zscore) > 1)
+                    node_contains_highlighted_linkage = true;
+            }
+        }
+    }
+
     if ( sugname == "Glc" )
     {
-        Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+        Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel );
         add_block ( glc );
     }
     else if ( sugname == "Gal" )
     {
-        Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( gal );
     }
     else if ( sugname == "Man" )
     {
-        Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( man );
     }
     else if ( sugname == "Fuc" )
     {
-        Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( fuc );
     }
     else if ( sugname == "Xyl" )
     {
-        Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( xyl );
     }
     else if ( sugname == "GlcN" )
     {
-        GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( glcn );
     }
     else if ( sugname == "GalN" )
     {
-        GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( galn );
     }
     else if ( sugname == "ManN" )
     {
-        ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+        ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel );
         add_block ( mann );
     }
     else if ( sugname == "GlcNAc" )
     {
-        GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( glcnac );
     }
     else if ( sugname == "GalNAc" )
     {
-        GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation ) , mmdbsel );
+        GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation ) , node_contains_highlighted_linkage, mmdbsel );
         add_block ( galnac );
     }
     else if ( sugname == "ManNAc" )
     {
-        ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation ) , mmdbsel );
+        ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation ) , node_contains_highlighted_linkage, mmdbsel );
         add_block ( mannac );
     }
     else if ( sugname == "GlcA" )
     {
-        GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( glca );
     }
     else if ( sugname == "GalA" )
     {
-        GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( gala );
     }
     else if ( sugname ==  "ManA" )
     {
-        ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( mana );
     }
     else if ( sugname ==  "Neu5Gc" )
     {
-        Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( neu5gc );
     }
     else if ( sugname ==  "Neu5Ac" )
     {
-        Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( neu5ac );
     }
     else if ( sugname ==  "IdoA" )
     {
-        IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( idoa );
     }
     else if ( sugname ==  "KDN" )
     {
-        KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( kdn );
     }
     else
     {
-        Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation ), node_contains_highlighted_linkage, mmdbsel  );
         add_block ( unk );
     }
 
     int up_down = 0; // number of special cases with perpendicular link
-    int branches = node.number_of_connections();
-
     // decide here based on 2D notation
     //////////////////////////////////////
     // need to change x and y values in the recursive function for both bonds and shapes.
@@ -2424,6 +2438,14 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         clipper::MGlycan::Linkage link = node.get_connection(j);
         const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
+
+        bool current_linkage_is_highlighted = false;
+        if(link.check_if_linkage_zscore_calculated())
+        {
+            float link_zscore = link.get_linkage_zscore();
+            if(abs(link_zscore) > 1)
+                current_linkage_is_highlighted = true;
+        }
 
         // first deal with a couple of special cases: Fucose and Xylose
 
@@ -2440,7 +2462,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), current_linkage_is_highlighted, mmdbsel  );
                 add_link ( new_bond );
 
                 recursive_paint ( mg, linked_node, x, y + 110 );
@@ -2455,7 +2477,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), current_linkage_is_highlighted, mmdbsel  );
                 add_link ( new_bond );
                 // }
                 recursive_paint ( mg, linked_node, x, y - 110 );
@@ -2474,7 +2496,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), current_linkage_is_highlighted, mmdbsel  );
                 add_link ( new_bond );
 
                 recursive_paint ( mg, linked_node, x, y + 110 );
@@ -2489,7 +2511,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), current_linkage_is_highlighted, mmdbsel  );
                 add_link ( new_bond );
 
                 recursive_paint ( mg, linked_node, x, y - 110 );
@@ -2568,7 +2590,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
             std::string linkagePosition = std::to_string(link.get_order());
 
-            Bond * new_bond = new Bond( x, y + 25 + (sign * 15), orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+            Bond * new_bond = new Bond( x, y + 25 + (sign * 15), orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), current_linkage_is_highlighted, mmdbsel  );
             add_link ( new_bond );
 
             recursive_paint ( mg, linked_node, x - 110, y + ( sign * 80 ) );
@@ -2616,29 +2638,29 @@ bool privateer::glycanbuilderplot::Plot::plot_demo ( )
 
     this->set_size_and_viewbox(1000, 500);
 
-    privateer::glycanbuilderplot::Glc *glc = new privateer::glycanbuilderplot::Glc (60,  60, "Glucose" );
-    privateer::glycanbuilderplot::Gal *gal = new privateer::glycanbuilderplot::Gal (170, 60, "Galactose" );
-    privateer::glycanbuilderplot::Man *man = new privateer::glycanbuilderplot::Man (280, 60, "Mannose" );
-    privateer::glycanbuilderplot::Fuc *fuc = new privateer::glycanbuilderplot::Fuc (390, 60, "Fucose" );
-    privateer::glycanbuilderplot::Xyl *xyl = new privateer::glycanbuilderplot::Xyl (500, 60, "Xylose");
+    privateer::glycanbuilderplot::Glc *glc = new privateer::glycanbuilderplot::Glc (60,  60, "Glucose", false );
+    privateer::glycanbuilderplot::Gal *gal = new privateer::glycanbuilderplot::Gal (170, 60, "Galactose", false );
+    privateer::glycanbuilderplot::Man *man = new privateer::glycanbuilderplot::Man (280, 60, "Mannose", false );
+    privateer::glycanbuilderplot::Fuc *fuc = new privateer::glycanbuilderplot::Fuc (390, 60, "Fucose", false );
+    privateer::glycanbuilderplot::Xyl *xyl = new privateer::glycanbuilderplot::Xyl (500, 60, "Xylose", false);
 
-    privateer::glycanbuilderplot::GlcN *glcn = new privateer::glycanbuilderplot::GlcN (60,  170, "Glucosamine" );
-    privateer::glycanbuilderplot::GalN *galn = new privateer::glycanbuilderplot::GalN (170, 170, "Galactosamine" );
-    privateer::glycanbuilderplot::ManN *mann = new privateer::glycanbuilderplot::ManN (280, 170, "Mannosamine" );
+    privateer::glycanbuilderplot::GlcN *glcn = new privateer::glycanbuilderplot::GlcN (60,  170, "Glucosamine", false );
+    privateer::glycanbuilderplot::GalN *galn = new privateer::glycanbuilderplot::GalN (170, 170, "Galactosamine", false );
+    privateer::glycanbuilderplot::ManN *mann = new privateer::glycanbuilderplot::ManN (280, 170, "Mannosamine", false );
 
-    privateer::glycanbuilderplot::GlcA *glca = new privateer::glycanbuilderplot::GlcA (390, 170, "Glucuronic acid" );
-    privateer::glycanbuilderplot::GalA *gala = new privateer::glycanbuilderplot::GalA (500, 170, "Galacturonic acid" );
-    privateer::glycanbuilderplot::ManA *mana = new privateer::glycanbuilderplot::ManA (610, 170, "Mannuronic acid" );
-    privateer::glycanbuilderplot::IdoA *idoa = new privateer::glycanbuilderplot::IdoA (720, 170, "Iduronic acid" );
-    privateer::glycanbuilderplot::Neu5Ac *neu5ac = new privateer::glycanbuilderplot::Neu5Ac (830, 170, "N-acetyl Neuraminic acid" );
-    privateer::glycanbuilderplot::Neu5Gc *neu5gc = new privateer::glycanbuilderplot::Neu5Gc (940, 170, "N-glycolyl Neuraminic acid" );
-    privateer::glycanbuilderplot::KDN *kdn = new privateer::glycanbuilderplot::KDN (390, 280, "KDN" );
-    privateer::glycanbuilderplot::Unk *unk = new privateer::glycanbuilderplot::Unk (500, 280, 'U', "Unknown" );
+    privateer::glycanbuilderplot::GlcA *glca = new privateer::glycanbuilderplot::GlcA (390, 170, "Glucuronic acid", false );
+    privateer::glycanbuilderplot::GalA *gala = new privateer::glycanbuilderplot::GalA (500, 170, "Galacturonic acid", false );
+    privateer::glycanbuilderplot::ManA *mana = new privateer::glycanbuilderplot::ManA (610, 170, "Mannuronic acid", false );
+    privateer::glycanbuilderplot::IdoA *idoa = new privateer::glycanbuilderplot::IdoA (720, 170, "Iduronic acid", false );
+    privateer::glycanbuilderplot::Neu5Ac *neu5ac = new privateer::glycanbuilderplot::Neu5Ac (830, 170, "N-acetyl Neuraminic acid", false );
+    privateer::glycanbuilderplot::Neu5Gc *neu5gc = new privateer::glycanbuilderplot::Neu5Gc (940, 170, "N-glycolyl Neuraminic acid", false );
+    privateer::glycanbuilderplot::KDN *kdn = new privateer::glycanbuilderplot::KDN (390, 280, "KDN", false );
+    privateer::glycanbuilderplot::Unk *unk = new privateer::glycanbuilderplot::Unk (500, 280, 'U', "Unknown", false );
 
 
-    privateer::glycanbuilderplot::GlcNAc *glcnac = new privateer::glycanbuilderplot::GlcNAc (60,  280, "N-acetyl D-Glucosamine" );
-    privateer::glycanbuilderplot::GalNAc *galnac = new privateer::glycanbuilderplot::GalNAc (170, 280, "N-acetyl D-Galactosamine" );
-    privateer::glycanbuilderplot::ManNAc *mannac = new privateer::glycanbuilderplot::ManNAc (280, 280, "N-acetyl D-Mannosamine" );
+    privateer::glycanbuilderplot::GlcNAc *glcnac = new privateer::glycanbuilderplot::GlcNAc (60,  280, "N-acetyl D-Glucosamine", false );
+    privateer::glycanbuilderplot::GalNAc *galnac = new privateer::glycanbuilderplot::GalNAc (170, 280, "N-acetyl D-Galactosamine", false );
+    privateer::glycanbuilderplot::ManNAc *mannac = new privateer::glycanbuilderplot::ManNAc (280, 280, "N-acetyl D-Mannosamine", false );
 
     privateer::glycanbuilderplot::GlycanRoot *gn = new privateer::glycanbuilderplot::GlycanRoot(160, 400, "n", "ASN", "A/62", "n-glycosylation");
     privateer::glycanbuilderplot::GlycanRoot *go = new privateer::glycanbuilderplot::GlycanRoot(460, 400, "o", "THR", "T/1000", "o-glycosylation");
@@ -2661,10 +2683,22 @@ std::string privateer::glycanbuilderplot::Glc::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#glc\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedcircle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#glc\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#glc\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
 
     return tmp.str();
@@ -2674,10 +2708,23 @@ std::string privateer::glycanbuilderplot::Man::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedcircle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
 
     return tmp.str();
@@ -2687,11 +2734,23 @@ std::string privateer::glycanbuilderplot::Gal::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#gal\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
 
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedcircle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#gal\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#gal\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
     return tmp.str();
 }
@@ -2700,10 +2759,22 @@ std::string privateer::glycanbuilderplot::Fuc::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#fuc\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedtriangle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#fuc\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#fuc\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
     return tmp.str();
 }
@@ -2712,10 +2783,22 @@ std::string privateer::glycanbuilderplot::Xyl::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#xyl\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedstar\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#xyl\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#xyl\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
 
     return tmp.str();
@@ -2728,10 +2811,22 @@ std::string privateer::glycanbuilderplot::GalN::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#galn\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedrectangle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#galn\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#galn\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
     return tmp.str();
 }
@@ -2740,10 +2835,22 @@ std::string privateer::glycanbuilderplot::GlcN::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#glcn\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedrectangle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#glcn\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#glcn\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
     return tmp.str();
 }
@@ -2752,10 +2859,22 @@ std::string privateer::glycanbuilderplot::ManN::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#mann\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedrectangle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#mann\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#mann\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
     return tmp.str();
 }
@@ -2767,10 +2886,22 @@ std::string privateer::glycanbuilderplot::GlcNAc::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedrectangle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
     return tmp.str();
 }
@@ -2779,10 +2910,22 @@ std::string privateer::glycanbuilderplot::GalNAc::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#galnac\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedrectangle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#galnac\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#galnac\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
     return tmp.str();
 }
@@ -2791,10 +2934,22 @@ std::string privateer::glycanbuilderplot::ManNAc::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#mannac\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadedrectangle\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#mannac\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#mannac\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
     return tmp.str();
 }
@@ -2806,10 +2961,22 @@ std::string privateer::glycanbuilderplot::Neu5Ac::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#neu5ac\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadeddiamond\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#neu5ac\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#neu5ac\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
 
     return tmp.str();
@@ -2819,11 +2986,22 @@ std::string privateer::glycanbuilderplot::Neu5Gc::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#neu5gc\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
-
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadeddiamond\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#neu5gc\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#neu5gc\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
     return tmp.str();
 }
@@ -2832,10 +3010,22 @@ std::string privateer::glycanbuilderplot::KDN::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#kdn\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadeddiamond\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#kdn\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#kdn\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
 
     return tmp.str();
@@ -2845,10 +3035,22 @@ std::string privateer::glycanbuilderplot::GlcA::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#glca\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadeddiamond\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#glca\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#glca\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
 
     return tmp.str();
@@ -2858,10 +3060,22 @@ std::string privateer::glycanbuilderplot::ManA::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#mana\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadeddiamond\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#mana\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#mana\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
 
     return tmp.str();
@@ -2871,10 +3085,22 @@ std::string privateer::glycanbuilderplot::GalA::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#gala\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadeddiamond\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#gala\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#gala\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
 
     return tmp.str();
@@ -2884,10 +3110,22 @@ std::string privateer::glycanbuilderplot::IdoA::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#idoa\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n";
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadeddiamond\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#idoa\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
+    else
+    {
+        tmp   <<  "  <use xlink:href=\"#idoa\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n";
+    }
 
 
     return tmp.str();
@@ -2898,13 +3136,26 @@ std::string privateer::glycanbuilderplot::Unk::get_XML ()
 {
     std::ostringstream tmp;
 
-    tmp   <<  "  <use xlink:href=\"#unk\" x=\"" << get_x() << "\""
-          <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
-          <<  "<title>" << get_tooltip() << "</title>"
-          <<  "</use>\n"
-          <<  "<text x=\"" << get_x() + 25 << "\""
-          <<  " y=\"" << get_y() +34 << "\" text-anchor=\"middle\" font-family=\"Helvetica\" font-size=\"24\" font-weight=\"bold\">" << code << "</text>\n";
-
+    if(get_highlight())
+    {
+        tmp <<  "  <use xlink:href=\"#shadeddhexagon\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >" <<  "</use>\n"
+            <<  "  <use xlink:href=\"#unk\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n"
+            <<  "<text x=\"" << get_x() + 25 << "\""
+            <<  " y=\"" << get_y() +34 << "\" text-anchor=\"middle\" font-family=\"Helvetica\" font-size=\"24\" font-weight=\"bold\">" << code << "</text>\n";
+    }
+    else
+    {
+        tmp <<  "  <use xlink:href=\"#unk\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n"
+            <<  "<text x=\"" << get_x() + 25 << "\""
+            <<  " y=\"" << get_y() +34 << "\" text-anchor=\"middle\" font-family=\"Helvetica\" font-size=\"24\" font-weight=\"bold\">" << code << "</text>\n";
+    }
 
     return tmp.str();
 }
@@ -3029,18 +3280,42 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
             anomerSymbolPosX = get_x() - 60;
             anomerSymbolPosY = get_y() + 20;
 
-            tmp << "  <g id=\"bondas\">\n"
-            <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
-            <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
-            << "</g>\n";
+            if(get_highlight())
+            {
+                tmp << "  <g id=\"bondas\">\n"
+                    <<  "  <use xlink:href=\"#shadedbond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << "</use>\n"
+                    <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
+                    <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
+                    << "</g>\n";
+            }
+            else
+            {
+                tmp << "  <g id=\"bondas\">\n"
+                    <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
+                    <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
+                    << "</g>\n";
+            }
         }
     else
         {
-            tmp << "  <g id=\"bondas\">\n"
-            <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
-            <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
-            <<  "  <text x=\"" << linkageSymbolPosX << "\"" << " y=\"" << linkageSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << linkagePosition << "</text>\n"
-            << "</g>\n";
+            if(get_highlight())
+            {
+                tmp << "  <g id=\"bondas\">\n"
+                    <<  "  <use xlink:href=\"#shadedbond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << "</use>\n"
+                    <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
+                    <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
+                    <<  "  <text x=\"" << linkageSymbolPosX << "\"" << " y=\"" << linkageSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << linkagePosition << "</text>\n"
+                    << "</g>\n";
+            }
+            else
+            {
+                tmp << "  <g id=\"bondas\">\n"
+                    <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
+                    <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
+                    <<  "  <text x=\"" << linkageSymbolPosX << "\"" << " y=\"" << linkageSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << linkagePosition << "</text>\n"
+                    << "</g>\n";
+            }
+
         }
 
     return tmp.str();
@@ -3067,7 +3342,9 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, false, expression_system);
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+     
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, false, expression_system);
 
     std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
 
@@ -3160,8 +3437,8 @@ std::string privateer::scripting::get_annotated_glycans_hierarchical ( std::stri
         mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
-
-    const clipper::MGlycology& mgl = clipper::MGlycology(mmol, manb, false, expression_system);
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    const clipper::MGlycology& mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, false, expression_system);
 
     const std::vector < clipper::MGlycan >& list_of_glycans = mgl.get_list_of_glycans();
 
@@ -3222,7 +3499,8 @@ std::string privateer::scripting::print_wurcs( std::string pdb_filename, std::st
 
     const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0);
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, false, expression_system);
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, false, expression_system);
 
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
