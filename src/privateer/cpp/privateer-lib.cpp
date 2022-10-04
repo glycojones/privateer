@@ -2545,7 +2545,6 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
         const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
 
         // first deal with a couple of special cases: Fucose and Xylose
-
         if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" )
         {
             up_down++;
@@ -2668,16 +2667,16 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
             int sign = 0;
             bool nodeHasSpecialCase = false;
 
-            for ( int j = 0; j < node.number_of_connections(); j++)
-                {
-                    clipper::MGlycan::Linkage link = node.get_connection(j);
-                    const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
+            for ( int k = 0; k < node.number_of_connections(); k++)
+            {
+                clipper::MGlycan::Linkage link = node.get_connection(k);
+                const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
 
-                    if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" || clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl")
-                        nodeHasSpecialCase = true;
+                if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" || clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl")
+                    nodeHasSpecialCase = true;
 
-                    if(nodeHasSpecialCase) break;
-                }
+                if(nodeHasSpecialCase) break;
+            }
 
             switch (branches - j - up_down)
             {
@@ -2686,15 +2685,23 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                     sign = 1; // -1
                     break;
                 case 2:
-                    if (nodeHasSpecialCase)
+                    if (branches > 2)
                     {
-                        sign = 0; // 1 not here before
-                        orientation = side;
+                        if (nodeHasSpecialCase)
+                        {
+                            sign = 0; // 1 not here before
+                            orientation = side;
+                        }
+                        else
+                        {
+                            sign = 0;
+                            orientation = branch_side;
+                        }
                     }
                     else
                     {
+                        orientation = down_side;
                         sign = 1;
-                        orientation = branch_side;
                     }
                     break;
                 case 1:
@@ -3216,18 +3223,25 @@ std::string privateer::glycanbuilderplot::shadedBond::get_XML ()
             std::stringstream stream;
             stream << " transform=\"rotate(-135 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
-
             break;
         }
-        case down_side:
+        case branch_side:
         {
             std::stringstream stream;
-            stream << " transform=\"rotate(-225 " << get_x() << " " << get_y() << ")\"";
+            stream << " transform=\"rotate(180 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
 
             break;
         }
-        case branch_side:
+        case side:
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(180 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
+
+            break;
+        }
+        case down_side:
         {
             std::stringstream stream;
             stream << " transform=\"rotate(135 " << get_x() << " " << get_y() << ")\"";
@@ -3241,15 +3255,13 @@ std::string privateer::glycanbuilderplot::shadedBond::get_XML ()
             stream << " transform=\"rotate(-90 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
 
-
             break;
         }
         default:
             std::stringstream stream;
             stream << " transform=\"rotate(180 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
-
-    }
+    } 
 
     tmp << "  <g id=\"shadedLinkage\">\n"
         <<  "  <use xlink:href=\"#shadedbond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
@@ -3289,8 +3301,34 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
             transformation = stream.str();
 
             anomerSymbolPosX = get_x() - 60;
-            anomerSymbolPosY = get_y() - 25;
+            anomerSymbolPosY = get_y() - 27;
             linkageSymbolPosX = get_x() - 20;
+            linkageSymbolPosY = get_y() + 13;
+
+            break;
+        }
+        case branch_side:
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(180 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
+
+            anomerSymbolPosX = get_x() - 55;
+            anomerSymbolPosY = get_y() + 20;
+            linkageSymbolPosX = get_x() - 20;
+            linkageSymbolPosY = get_y() + 20;
+
+            break;
+        }
+        case side:
+        {
+            std::stringstream stream;
+            stream << " transform=\"rotate(180 " << get_x() << " " << get_y() << ")\"";
+            transformation = stream.str();
+
+            anomerSymbolPosX = get_x() - 55;
+            anomerSymbolPosY = get_y() + 20;
+            linkageSymbolPosX = get_x() - 19;
             linkageSymbolPosY = get_y() + 20;
 
             break;
@@ -3298,26 +3336,13 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
         case down_side:
         {
             std::stringstream stream;
-            stream << " transform=\"rotate(-225 " << get_x() << " " << get_y() << ")\"";
-            transformation = stream.str();
-
-            anomerSymbolPosX = get_x() - 60;
-            anomerSymbolPosY = get_y() + 20;
-            linkageSymbolPosX = get_x() - 15;
-            linkageSymbolPosY = get_y() + 20;
-
-            break;
-        }
-        case branch_side:
-        {
-            std::stringstream stream;
             stream << " transform=\"rotate(135 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
 
-            anomerSymbolPosX = get_x() - 45;
-            anomerSymbolPosY = get_y() + 65;
-            linkageSymbolPosX = get_x() - 6;
-            linkageSymbolPosY = get_y() + 35;
+            anomerSymbolPosX = get_x() - 48;
+            anomerSymbolPosY = get_y() + 60;
+            linkageSymbolPosX = get_x() - 8;
+            linkageSymbolPosY = get_y() + 28;
 
             break;
         }
