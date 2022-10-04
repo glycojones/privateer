@@ -2673,9 +2673,10 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                 const clipper::MGlycan::Node& linked_node = mg.get_node(link.get_linked_node_id());
 
                 if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Fuc" || clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl")
+                {
                     nodeHasSpecialCase = true;
-
-                if(nodeHasSpecialCase) break;
+                    break;
+                }
             }
 
             switch (branches - j - up_down)
@@ -2687,6 +2688,11 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                 case 2:
                     if (branches > 2)
                     {
+                        sign = 0;
+                        orientation = branch_side;
+                    }
+                    else
+                    {
                         if (nodeHasSpecialCase)
                         {
                             sign = 0; // 1 not here before
@@ -2694,14 +2700,9 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         }
                         else
                         {
-                            sign = 0;
-                            orientation = branch_side;
+                            sign = 1;
+                            orientation = down_side;
                         }
-                    }
-                    else
-                    {
-                        orientation = down_side;
-                        sign = 1;
                     }
                     break;
                 case 1:
