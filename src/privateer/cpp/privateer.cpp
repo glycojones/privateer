@@ -88,7 +88,9 @@ int main(int argc, char** argv)
     clipper::data::sugar_database_entry external_validation;
     std::vector<privateer::json::GlycomicsDatabase> glycomics_database;
     std::vector<privateer::json::TorsionsDatabase> torsions_database;
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    privateer::json::GlobalTorsionZScore torsions_zscore_database;
+    privateer::json::TorsionsZScoreStatistics torsions_zscore_statistics;
+
     bool glucose_only = true;
     bool useSigmaa = false;
     bool oldstyleinput = false;
@@ -528,8 +530,8 @@ int main(int argc, char** argv)
 
     int pos_slash = input_model.rfind("/");
 
-    input_pdb_code = privateer::util::retrieve_input_PDB_code(input_model);
-    std::cout << "PDB code of the imported model: " << input_pdb_code << std::endl;
+    // input_pdb_code = privateer::util::retrieve_input_PDB_code(input_model);
+    // std::cout << "PDB code of the imported model: " << input_pdb_code << std::endl;
 
     if(useWURCSDataBase)
     {
@@ -538,8 +540,44 @@ int main(int argc, char** argv)
     if(useTorsionsDataBase)
     {
         torsions_database = privateer::json::read_json_file_for_torsions_database(iptorsionsjson);
-        torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database(iptorsionszscorejson);
 
+        // std::string env( std::getenv("PRIVATEERDATA") );
+        // std::string path_copy = env + "/linkage_torsions/privateer_z_score_database_new_format.json";
+
+        torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database(iptorsionszscorejson);
+        // torsions_zscore_statistics = privateer::json::read_json_file_from_torsions_zscore_statistics(iptorsionszscorejson);
+
+        
+
+        // for (int i = 0; i < torsions_zscore_database.size(); i++) { 
+        //     privateer::json::TorsionsZScoreDatabase current_linkage = torsions_zscore_database[i];
+        //     std::cout << current_linkage.donor_sugar << "-" << current_linkage.donor_end << "-" << current_linkage.acceptor_end << "-" << current_linkage.acceptor_sugar << "\t\tmean = " << current_linkage.summary.first << "\tstdev = " << current_linkage.summary.second << std::endl;
+        //     for (int j = 0; j < current_linkage.pdb_list.size(); j++) { 
+        //         std::cout << "PDB code : " << current_linkage.pdb_list[j] << std::endl;
+        //     }        
+        // }
+
+        // std::cout << "PDB code : " << input_pdb_code << std::endl;
+
+        // for (int i  = 0; i < global_torsions_zscore_database.size(); i++) { 
+        //     std::cout << "Size : " << global_torsions_zscore_database.size() << " " << i << std::endl;
+        
+        //     privateer::json::TorsionsZScoreStatistics current_pdb = global_torsions_zscore_database[i];
+
+        //     std::cout << "PDB " << current_pdb.pdb << " Z Score = " << current_pdb.z_score << std::endl;
+
+        //     // std::vector<std::unordered_map<std::string, std::string>> z_score = current_linkage.data;
+
+        //     // std::cout << "Current Linkage " << current_linkage.linkage << std::endl;
+
+        //     // for (int j = 0; j < z_score.size(); j++) { 
+        //     //     std::unordered_map<std::string, std::string> z_score_data = z_score[j];
+
+        //     //     std::cout << "Z Score for PDB" << z_score_data["PDB"] << " = " << z_score_data["Z Score"] << std::endl;
+        //     // }
+        
+        // }
+        
         // for(int i = 0; i < torsions_zscore_database.size(); i++)
         // {
         //     privateer::json::TorsionsZScoreDatabase current_linkage = torsions_zscore_database[i];
@@ -591,6 +629,7 @@ int main(int argc, char** argv)
         {
             int glycansPermutated = 0;
             clipper::String current_chain = "" ;
+            float z_score_total_for_protein = 0;
 
             for (int i = 0; i < list_of_glycans.size() ; i++ )
             {
@@ -608,7 +647,18 @@ int main(int argc, char** argv)
                 if(useTorsionsDataBase)
                 {
                     std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
-                    privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+
+                    // input_pdb_code = privateer::util::retrieve_input_PDB_code(input_model);
+
+                    float z_score_total_for_glycan = privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+                    // std::vector<privateer::scripting::ZScoreEntry> = privateer::scripting::report_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+
+
+
+                    // std::cout << "Reached part of code execution which would compute the z scores and return glycan summaries..." << std::endl;
+
+                    z_score_total_for_protein = z_score_total_for_protein + z_score_total_for_glycan;
+                    
                     // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
                 }
 
@@ -662,6 +712,13 @@ int main(int argc, char** argv)
                 }
 
             }
+
+            float average_z_score_for_protein = z_score_total_for_protein / list_of_glycans.size();
+            float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
+
+            std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
+            std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
+
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;
         }
 
@@ -1391,6 +1448,8 @@ int main(int argc, char** argv)
             int glycansPermutated = 0;
             clipper::String current_chain = "" ;
 
+            float z_score_summation = 0;
+
             for (int i = 0; i < list_of_glycans.size() ; i++ )
             {
                 clipper::String wurcs_string;
@@ -1454,8 +1513,10 @@ int main(int argc, char** argv)
                 
                 if(useTorsionsDataBase)
                 {
-                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
-                    privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+                    // std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+                    // privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+                   
+                //    std::cout << "Reached part of code execution which would compute the z scores and return glycan summaries..." << std::endl;
                     // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
                 }
                 

@@ -136,7 +136,10 @@ namespace privateer {
         pybind11::list get_ligands() { return ligands; };
         
         pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
+        pybind11::list get_torsions_per_linkage_summary();
+
         pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
+        pybind11::list get_torsions_zscore_summary_with_pdb(OfflineTorsionsZScoreDatabase& importedDatabase, std::string input_pdb_code);
 
         void update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data);
         void update_with_experimental_data(privateer::pyanalysis::CryoEMData& cryoem_data);
@@ -183,7 +186,10 @@ namespace privateer {
         GlycanStructure get_glycan(const int id);
 
         pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
+        pybind11::list get_torsions_per_linkage_summary();
+
         pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
+        pybind11::list get_torsions_zscore_summary_with_pdb(OfflineTorsionsZScoreDatabase& importedDatabase, std::string input_pdb_code);
 
       private:
         bool debug_output;
@@ -236,7 +242,11 @@ namespace privateer {
 
         pybind11::dict query_glycomics_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
         pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
+        pybind11::list get_torsions_per_linkage_summary();
+
         pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
+        pybind11::list get_torsions_zscore_summary_with_pdb(OfflineTorsionsZScoreDatabase& importedDatabase, std::string input_pdb_code);
+
         pybind11::dict get_SNFG_strings(bool includeClosestMatches);
         
 
@@ -536,11 +546,11 @@ namespace privateer {
         void import_json_file( std::string& path_to_input_file );
         ~OfflineTorsionsZScoreDatabase() { };
 
-        std::vector<privateer::json::TorsionsZScoreDatabase> return_imported_database() { return torsions_zscore_database; };
+        std::vector<privateer::json::TorsionsZScoreDatabase> return_imported_database() { return torsions_zscore_database.database_array; };
 
     private:
         std::string path_of_input_file;
-        std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+        privateer::json::GlobalTorsionZScore torsions_zscore_database;
     };
 
   }

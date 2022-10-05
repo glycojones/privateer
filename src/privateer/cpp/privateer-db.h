@@ -60,12 +60,12 @@ namespace privateer
             void import_json_file( std::string& path_to_input_file );
             ~OfflineTorsionsZScoreDatabase() { };
 
-            std::vector<privateer::json::TorsionsZScoreDatabase> return_imported_database() { return torsions_zscore_database; };
+            std::vector<privateer::json::TorsionsZScoreDatabase> return_imported_database() { return torsions_zscore_database.database_array; };
             void compute_z_score_for_glycan(std::vector<clipper::MGlycan::MGlycanTorsionSummary>& torsion_summary_of_glycan);
 
         private:
             std::string path_of_input_file;
-            std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+            privateer::json::GlobalTorsionZScore torsions_zscore_database;
         };
     }
 }
