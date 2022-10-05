@@ -93,7 +93,6 @@ int main(int argc, char** argv)
 
     bool glucose_only = true;
     bool useSigmaa = false;
-    bool oldstyleinput = false;
     bool vertical = false, original = true, invert = false;
     int n_refln = 1000;
     int n_param = 20;
@@ -391,10 +390,6 @@ int main(int argc, char** argv)
         {
           vertical = true;
         }
-        else if ( args[arg] == "-oldstyle" )
-        {
-          oldstyleinput = true;
-        }
         else if ( args[arg] == "-essentials" )
         {
           original = false;
@@ -675,42 +670,20 @@ int main(int argc, char** argv)
                             list_of_glycans_associated_to_permutations.at(i) = finalGlycanPermutationContainer;
                             for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                                 {
-                                    if(oldstyleinput)
-                                    {
-                                        privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                                        plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
-                                        std::ostringstream os;
-                                        os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
-                                        plot.write_to_file ( os.str() );
-                                    }
-                                    else
-                                    {
-                                        privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                                        plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
-                                        std::ostringstream os;
-                                        os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
-                                        plot.write_to_file ( os.str() );
-                                    }
+                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                    plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
+                                    std::ostringstream os;
+                                    os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
+                                    plot.write_to_file ( os.str() );
                                 }
                         }
                 }
-                if(oldstyleinput)
-                {
-                    privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                    plot.plot_glycan ( list_of_glycans[i] );
-                    std::ostringstream os;
-                    os << list_of_glycans[i].get_root_for_filename() << ".svg";
-                    plot.write_to_file ( os.str() );
-                }
-                else
-                {
-                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                    plot.plot_glycan ( list_of_glycans[i] );
-                    std::ostringstream os;
-                    os << list_of_glycans[i].get_root_for_filename() << ".svg";
-                    plot.write_to_file ( os.str() );
-                }
-
+                
+                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                plot.plot_glycan ( list_of_glycans[i] );
+                std::ostringstream os;
+                os << list_of_glycans[i].get_root_for_filename() << ".svg";
+                plot.write_to_file ( os.str() );
             }
 
             float average_z_score_for_protein = z_score_total_for_protein / list_of_glycans.size();
@@ -1475,41 +1448,21 @@ int main(int argc, char** argv)
                             list_of_glycans_associated_to_permutations.at(i) = finalGlycanPermutationContainer;
                             for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                                 {
-                                    if(oldstyleinput)
-                                    {
-                                        privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                                        plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
-                                        std::ostringstream os;
-                                        os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
-                                        plot.write_to_file ( os.str() );
-                                    }
-                                    else
-                                    {
-                                        privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                                        plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
-                                        std::ostringstream os;
-                                        os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
-                                        plot.write_to_file ( os.str() );
-                                    }
+
+                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                    plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
+                                    std::ostringstream os;
+                                    os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
+                                    plot.write_to_file ( os.str() );
                                 }
                         }
                 }
-                if(oldstyleinput)
-                {
-                    privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                    plot.plot_glycan ( list_of_glycans[i] );
-                    std::ostringstream os;
-                    os << list_of_glycans[i].get_root_for_filename() << ".svg";
-                    plot.write_to_file ( os.str() );
-                }
-                else
-                {
-                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                    plot.plot_glycan ( list_of_glycans[i] );
-                    std::ostringstream os;
-                    os << list_of_glycans[i].get_root_for_filename() << ".svg";
-                    plot.write_to_file ( os.str() );
-                }
+
+                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                plot.plot_glycan ( list_of_glycans[i] );
+                std::ostringstream os;
+                os << list_of_glycans[i].get_root_for_filename() << ".svg";
+                plot.write_to_file ( os.str() );
                 
                 if(useTorsionsDataBase)
                 {
@@ -1551,41 +1504,22 @@ int main(int argc, char** argv)
                         list_of_glycans_associated_to_permutations.at(i) = finalGlycanPermutationContainer;
                         for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                             {
-                                    if(oldstyleinput)
-                                    {
-                                        privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                                        plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
-                                        std::ostringstream os;
-                                        os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
-                                        plot.write_to_file ( os.str() );
-                                    }
-                                    else
-                                    {
-                                        privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                                        plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
-                                        std::ostringstream os;
-                                        os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
-                                        plot.write_to_file ( os.str() );
-                                    }
+
+                                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
+                                std::ostringstream os;
+                                os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
+                                plot.write_to_file ( os.str() );
+                                
                             }
                     }
             }
-            if(oldstyleinput)
-            {
-                privateer::glycoplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                plot.plot_glycan ( list_of_glycans[i] );
-                std::ostringstream os;
-                os << list_of_glycans[i].get_root_for_filename() << ".svg";
-                plot.write_to_file ( os.str() );
-            }
-            else
-            {
-                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
-                plot.plot_glycan ( list_of_glycans[i] );
-                std::ostringstream os;
-                os << list_of_glycans[i].get_root_for_filename() << ".svg";
-                plot.write_to_file ( os.str() );
-            }
+            
+            privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+            plot.plot_glycan ( list_of_glycans[i] );
+            std::ostringstream os;
+            os << list_of_glycans[i].get_root_for_filename() << ".svg";
+            plot.write_to_file ( os.str() );
         }
 
     }
