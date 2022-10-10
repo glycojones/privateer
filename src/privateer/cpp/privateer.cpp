@@ -544,7 +544,7 @@ int main(int argc, char** argv)
 
         
 
-        // for (int i = 0; i < torsions_zscore_database.size(); i++) { 
+        // for (int i = 0; i < torsions_zscore_database.database_array.size(); i++) { 
         //     privateer::json::TorsionsZScoreDatabase current_linkage = torsions_zscore_database[i];
         //     std::cout << current_linkage.donor_sugar << "-" << current_linkage.donor_end << "-" << current_linkage.acceptor_end << "-" << current_linkage.acceptor_sugar << "\t\tmean = " << current_linkage.summary.first << "\tstdev = " << current_linkage.summary.second << std::endl;
         //     for (int j = 0; j < current_linkage.pdb_list.size(); j++) { 
@@ -554,8 +554,8 @@ int main(int argc, char** argv)
 
         // std::cout << "PDB code : " << input_pdb_code << std::endl;
 
-        // for (int i  = 0; i < global_torsions_zscore_database.size(); i++) { 
-        //     std::cout << "Size : " << global_torsions_zscore_database.size() << " " << i << std::endl;
+        // for (int i  = 0; i < global_torsions_zscore_database.database_array.size(); i++) { 
+        //     std::cout << "Size : " << global_torsions_zscore_database.database_array.size() << " " << i << std::endl;
         
         //     privateer::json::TorsionsZScoreStatistics current_pdb = global_torsions_zscore_database[i];
 
@@ -573,7 +573,7 @@ int main(int argc, char** argv)
         
         // }
         
-        // for(int i = 0; i < torsions_zscore_database.size(); i++)
+        // for(int i = 0; i < torsions_zscore_database.database_array.size(); i++)
         // {
         //     privateer::json::TorsionsZScoreDatabase current_linkage = torsions_zscore_database[i];
         //     std::vector<std::unordered_map<std::string, int>> bins = current_linkage.bin_data;

@@ -353,7 +353,7 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
     
     this->manb_object = clipper::MAtomNonBond( this->input_model, 8.0 );
     
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    privateer::json::GlobalTorsionZScore torsions_zscore_database;
 
     this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, torsions_zscore_database, false, "undefined");
 
@@ -965,7 +965,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
         throw std::invalid_argument( "No path was provided for model file input! Aborting." );
     }
 
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    privateer::json::GlobalTorsionZScore torsions_zscore_database;
     if(!disable_torsions)
     {
         torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("nopath");
@@ -1409,7 +1409,7 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( st
     privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
     this->model_pdb_code = privateer::util::retrieve_input_PDB_code(path_to_model_file_clipper);
 
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    privateer::json::GlobalTorsionZScore torsions_zscore_database;
     if(!disable_torsions)
     {
         torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("nopath");
@@ -2048,7 +2048,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_per_linkage_
 pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summary_with_pdb(OfflineTorsionsZScoreDatabase& importedDatabase, std::string input_pdb_code)
 {
     std::vector<clipper::MGlycan::MGlycanTorsionSummary> glycan_torsions = glycan.return_torsion_summary_within_glycan();
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database = importedDatabase.return_imported_database();
+    privateer::json::GlobalTorsionZScore torsions_zscore_database = importedDatabase.return_imported_database();
     auto output = pybind11::list();
 
     for(int glycan_linkage_index = 0; glycan_linkage_index < glycan_torsions.size(); glycan_linkage_index++)
@@ -2070,12 +2070,12 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
                     float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
                     // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << std::endl;
                    
-                    auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.begin(), torsions_zscore_database.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
+                    auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
                     {
                         return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
                     });
 
-                    if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database))
+                    if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database.database_array))
                     {
                         privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description, input_pdb_code);
@@ -2103,7 +2103,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
 pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase)
 {
     std::vector<clipper::MGlycan::MGlycanTorsionSummary> glycan_torsions = glycan.return_torsion_summary_within_glycan();
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database = importedDatabase.return_imported_database();
+    privateer::json::GlobalTorsionZScore torsions_zscore_database = importedDatabase.return_imported_database();
     auto output = pybind11::list();
 
     for(int glycan_linkage_index = 0; glycan_linkage_index < glycan_torsions.size(); glycan_linkage_index++)
@@ -2125,12 +2125,12 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
                     float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
                     // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << std::endl;
                    
-                    auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.begin(), torsions_zscore_database.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
+                    auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
                     {
                         return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
                     });
 
-                    if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database))
+                    if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database.database_array))
                     {
                         privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description);
@@ -3137,7 +3137,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
     std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
 
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    privateer::json::GlobalTorsionZScore torsions_zscore_database;
     if(!disable_torsions)
     {
         torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("nopath");
@@ -3925,7 +3925,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    privateer::json::GlobalTorsionZScore torsions_zscore_database;
     if(!disable_torsions)
     {
         torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("nopath");

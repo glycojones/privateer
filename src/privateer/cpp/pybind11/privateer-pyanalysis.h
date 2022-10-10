@@ -546,7 +546,7 @@ namespace privateer {
         void import_json_file( std::string& path_to_input_file );
         ~OfflineTorsionsZScoreDatabase() { };
 
-        std::vector<privateer::json::TorsionsZScoreDatabase> return_imported_database() { return torsions_zscore_database.database_array; };
+        privateer::json::GlobalTorsionZScore return_imported_database() { return torsions_zscore_database; };
 
     private:
         std::string path_of_input_file;

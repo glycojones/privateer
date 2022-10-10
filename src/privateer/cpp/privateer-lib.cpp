@@ -3461,7 +3461,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
 
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    privateer::json::GlobalTorsionZScore torsions_zscore_database;
      
     clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, false, expression_system);
 
@@ -3556,7 +3556,7 @@ std::string privateer::scripting::get_annotated_glycans_hierarchical ( std::stri
         mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    privateer::json::GlobalTorsionZScore torsions_zscore_database;
     const clipper::MGlycology& mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, false, expression_system);
 
     const std::vector < clipper::MGlycan >& list_of_glycans = mgl.get_list_of_glycans();
@@ -3618,7 +3618,7 @@ std::string privateer::scripting::print_wurcs( std::string pdb_filename, std::st
 
     const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0);
 
-    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    privateer::json::GlobalTorsionZScore torsions_zscore_database;
     clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, false, expression_system);
 
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
@@ -3731,7 +3731,7 @@ void privateer::scripting::svg_graphics_demo ( bool original_colour_scheme, bool
 float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer::json::GlobalTorsionZScore& torsions_zscore_database, std::vector<clipper::MGlycan::MGlycanTorsionSummary>& glycan_torsions, std::string input_pdb_code)
 {
     // std::cout << "Length of glycan torsions " << glycan_torsions.size() << std::endl;
-    // std::cout << "Length of torsionsZScoreDatabase " << torsions_zscore_database.size() << std::endl;
+    // std::cout << "Length of torsionsZScoreDatabase " << torsions_zscore_database.database_array.size() << std::endl;
     
     float z_score_total_for_glycan = 0;
 
@@ -3776,7 +3776,7 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
 float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer::json::GlobalTorsionZScore& torsions_zscore_database, std::vector<clipper::MGlycan::MGlycanTorsionSummary>& glycan_torsions)
 {
     // std::cout << "Length of glycan torsions " << glycan_torsions.size() << std::endl;
-    // std::cout << "Length of torsionsZScoreDatabase " << torsions_zscore_database.size() << std::endl;
+    // std::cout << "Length of torsionsZScoreDatabase " << torsions_zscore_database.database_array.size() << std::endl;
     
     float z_score_total_for_glycan = 0;
 
@@ -3821,7 +3821,7 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
 std::vector<privateer::scripting::ZScoreEntry> privateer::scripting::report_linkage_torsion_zscores_for_glycan(privateer::json::GlobalTorsionZScore& torsions_zscore_database, std::vector<clipper::MGlycan::MGlycanTorsionSummary>& glycan_torsions)
 {
     // std::cout << "Length of glycan torsions " << glycan_torsions.size() << std::endl;
-    // std::cout << "Length of torsionsZScoreDatabase " << torsions_zscore_database.size() << std::endl;
+    // std::cout << "Length of torsionsZScoreDatabase " << torsions_zscore_database.database_array.size() << std::endl;
     
     float z_score_total_for_glycan = 0;
 
