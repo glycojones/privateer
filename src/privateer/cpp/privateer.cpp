@@ -107,7 +107,7 @@ int main(int argc, char** argv)
     bool check_unmodelled = false;
     bool ignore_set_null = false;
     bool useWURCSDataBase = false;
-    bool useTorsionsDataBase = false;
+    bool useTorsionsDataBase = true;
     bool useParallelism = true;
     bool rscc_best = false;
     bool produce_external_restraints = false;
@@ -318,9 +318,9 @@ int main(int argc, char** argv)
             return 1;
           }
         }
-        else if ( args[arg] == "-torsions" )
+        else if ( args[arg] == "-torsions_disable" )
         {
-          useTorsionsDataBase = true;
+          useTorsionsDataBase = false;
         }
         else if ( args[arg] == "-torsions_dbpath" )
         {
@@ -613,7 +613,7 @@ int main(int argc, char** argv)
         
         const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-        mgl = clipper::MGlycology(mmol, manb, debug_output, input_expression_system);
+        mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, debug_output, input_expression_system);
 
         list_of_glycans = mgl.get_list_of_glycans();
         list_of_glycans_associated_to_permutations.resize(list_of_glycans.size());
@@ -1404,7 +1404,8 @@ int main(int argc, char** argv)
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    mgl = clipper::MGlycology(mmol, manb, debug_output, input_expression_system);
+    mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, debug_output, input_expression_system);
+
 
     list_of_glycans = mgl.get_list_of_glycans();
     list_of_glycans_associated_to_permutations.resize(list_of_glycans.size());

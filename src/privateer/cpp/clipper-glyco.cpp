@@ -3017,7 +3017,7 @@ clipper::String MGlycan::print_linear ( const bool print_info, const bool html_f
 
 // Fix me: need to add support for 2-8 links (Sialic Acids)
 // TO DO: review atom assignments regarding furanoses, as the changes here were made when I misunderstood some chemistry
-bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom, bool noncircular )
+bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom, bool noncircular, std::vector<privateer::json::TorsionsZScoreDatabase>& torsions_zscore_database)
 {
     int index = 0;
     bool found = false;
@@ -3201,6 +3201,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
         add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+        if(!torsions_zscore_database.empty())
+        {
+            float Phi = clipper::Util::rad2d(phi);
+            float Psi = clipper::Util::rad2d(psi);
+            new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+        }
     }
     else if ( link == 8 )
     {
@@ -3302,6 +3308,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
         add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+        if(!torsions_zscore_database.empty())
+        {
+            float Phi = clipper::Util::rad2d(phi);
+            float Psi = clipper::Util::rad2d(psi);
+            new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+        }
     }
     else if ( link == 7 )
     {
@@ -3385,6 +3397,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
         add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+        if(!torsions_zscore_database.empty())
+        {
+            float Phi = clipper::Util::rad2d(phi);
+            float Psi = clipper::Util::rad2d(psi);
+            new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+        }
     }
     else if ( link == 6 )
     {
@@ -3452,6 +3470,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
         add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+        if(!torsions_zscore_database.empty())
+        {
+            float Phi = clipper::Util::rad2d(phi);
+            float Psi = clipper::Util::rad2d(psi);
+            new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+        }
     }
     else if ( link == 5 )
     {
@@ -3514,6 +3538,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
         add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+        if(!torsions_zscore_database.empty())
+        {
+            float Phi = clipper::Util::rad2d(phi);
+            float Psi = clipper::Util::rad2d(psi);
+            new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+        }
     }
     else if ( link == 4 )
     {
@@ -3574,6 +3604,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
         add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+        if(!torsions_zscore_database.empty())
+        {
+            float Phi = clipper::Util::rad2d(phi);
+            float Psi = clipper::Util::rad2d(psi);
+            new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+        }
     }
     else if ( link == 3 )
     {
@@ -3635,6 +3671,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
         add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+        if(!torsions_zscore_database.empty())
+        {
+            float Phi = clipper::Util::rad2d(phi);
+            float Psi = clipper::Util::rad2d(psi);
+            new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+        }
     }
     else if ( link == 2 )
     {
@@ -3693,7 +3735,13 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);  
+        if(!torsions_zscore_database.empty())
+        {
+            float Phi = clipper::Util::rad2d(phi);
+            float Psi = clipper::Util::rad2d(psi);
+            new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+        }
     }
     else if ( link == 1 )
     {
@@ -3773,6 +3821,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             }
             new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
             add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+            if(!torsions_zscore_database.empty())
+            {
+                float Phi = phi;
+                float Psi = psi;
+                new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+            }
         }
         else if(next_sugar.ring_members().size() == 5)
         {
@@ -4538,6 +4592,59 @@ void MGlycan::update_msugar_in_root ( clipper::MSugar& newmsug )
     root = std::make_pair(cmonomer, newmsug);
 }
 
+
+void MGlycan::Linkage::calculate_and_set_zscore(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom, std::vector<privateer::json::TorsionsZScoreDatabase>& torsions_zscore_database)
+{
+    std::string donor_position = std::regex_replace(first_atom.name().trim(), std::regex(R"([^\d])"), "");
+    std::string acceptor_position = std::regex_replace(second_atom.name().trim(), std::regex(R"([^\d])"), "");
+    std::string donor_sugar = first_residue_name;
+    std::string acceptor_sugar = second_residue_name;
+    
+    auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.begin(), torsions_zscore_database.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
+    {
+        return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
+    });
+
+    if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database))
+    {
+        privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
+        float linkage_score = MGlycan::Linkage::calculate_zscore(Phi, Psi, found_torsion_description);
+        if(isfinite(linkage_score) && ( !isnan(linkage_score) | !isinf(linkage_score)) )
+        {
+            this->set_linkage_zscore(linkage_score);
+        }
+    }
+}
+
+float MGlycan::Linkage::calculate_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage)
+{
+    float count_mean = matched_linkage.summary.first;
+    float count_stddev = matched_linkage.summary.second;
+    std::vector<std::unordered_map<std::string, int>> bin_data = matched_linkage.bin_data;
+
+    int count = 0;
+    for(const auto& bin: bin_data) { 
+            if ((bin.at("lower_phi") <= phi)) {
+                if (phi < bin.at("higher_phi")) {
+                    if (bin.at("lower_psi") <= psi){
+                        if  (psi < bin.at("higher_psi")) {
+                            count = bin.at("count");
+                        }
+                    }
+                } 
+            }    
+        }
+    
+    // if (count > 0)
+    // {
+        float z_score = (count - count_mean) / count_stddev;
+        return z_score;
+    // }
+    // else
+        // return ;
+}
+
+
 ///////////////////////// MGlycology ///////////////////////////////
 
 
@@ -4545,18 +4652,19 @@ void MGlycan::update_msugar_in_root ( clipper::MSugar& newmsug )
 MGlycology::MGlycology ( const clipper::MiniMol& mmol, bool debug_output, std::string expression_system )
 {
     const clipper::MAtomNonBond nb = MAtomNonBond ( mmol, 1.0 );
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
 
     this->debug_output = debug_output;
-    this->init( mmol, nb, debug_output, expression_system );
+    this->init( mmol, nb, torsions_zscore_database, debug_output, expression_system );
 }
 
 
-MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, bool debug_output, std::string expression_system )
+MGlycology::MGlycology ( const clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, std::vector<privateer::json::TorsionsZScoreDatabase>& torsions_zscore_database, bool debug_output, std::string expression_system )
 {
-    this->init(mmol, manb, debug_output, expression_system);
+    this->init(mmol, manb, torsions_zscore_database, debug_output, expression_system);
 }
 
-void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, bool debug_output, std::string expression_system )
+void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, std::vector<privateer::json::TorsionsZScoreDatabase>& torsions_zscore_database, bool debug_output, std::string expression_system )
 {
     this->debug_output = debug_output;
     this->manb = &manb;
@@ -5087,7 +5195,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
         }
         
         if(first_sugar.ring_members().size() == 5 || first_sugar.ring_members().size() == 6)
-            extend_tree ( list_of_glycans_modelled_as_glycosylation[i] , first_sugar, accounted_for_sugars );
+            extend_tree ( list_of_glycans_modelled_as_glycosylation[i] , first_sugar, accounted_for_sugars, torsions_zscore_database );
 
         list_of_glycans_modelled_as_glycosylation[i].set_annotations( this->expression_system );
 
@@ -5166,7 +5274,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
         
         int initialLength = list_of_glycans_modelled_as_ligands[i].get_sugars().size();
         if(first_sugar.ring_members().size() == 5 || first_sugar.ring_members().size() == 6)
-            extend_tree ( list_of_glycans_modelled_as_ligands[i] , first_sugar, accounted_for_sugars );
+            extend_tree ( list_of_glycans_modelled_as_ligands[i] , first_sugar, accounted_for_sugars, torsions_zscore_database );
         int lengthAfterTreeExtension = list_of_glycans_modelled_as_ligands[i].get_sugars().size();
         
         if(lengthAfterTreeExtension == initialLength)
@@ -5277,7 +5385,7 @@ const char MGlycology::get_altconf(const clipper::MAtom& ma) const
 	else return ' ';                                    // The alternate conformation code is the fifth character in the complete identificator.
 }                                                       // We will return a blank character if there is no code present or if it is, but is blank
 
-void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std::vector<clipper::MSugar>& accounted_for_sugars )
+void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std::vector<clipper::MSugar>& accounted_for_sugars, std::vector<privateer::json::TorsionsZScoreDatabase>& torsions_zscore_database )
 {
     if(debug_output)
     {
@@ -5358,8 +5466,8 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
                                 {
                                     DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first, msug ) << std::endl;
                                 }
-                                mg.link_sugars ( parse_order ( contacts[i].first, msug ), msug, tmpsug, contacts[i].first, acceptorAtom, true);
-                                extend_tree ( mg, tmpsug, accounted_for_sugars );
+                                mg.link_sugars ( parse_order ( contacts[i].first, msug ), msug, tmpsug, contacts[i].first, acceptorAtom, true, torsions_zscore_database);
+                                extend_tree ( mg, tmpsug, accounted_for_sugars, torsions_zscore_database );
                             }
                         }
                         else
@@ -5368,8 +5476,8 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
                             {
                                 DBG << "parse_order ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first, msug ) << std::endl;
                             }
-                            mg.link_sugars ( parse_order ( contacts[i].first, msug ), msug, tmpsug, contacts[i].first, acceptorAtom, true);
-                            extend_tree ( mg, tmpsug, accounted_for_sugars );
+                            mg.link_sugars ( parse_order ( contacts[i].first, msug ), msug, tmpsug, contacts[i].first, acceptorAtom, true, torsions_zscore_database);
+                            extend_tree ( mg, tmpsug, accounted_for_sugars, torsions_zscore_database );
                         }
                     }
                 }
@@ -5405,7 +5513,7 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
                             {
                                 DBG << "parse_order - terminal/root connection ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first, msug ) << std::endl;
                             }
-                            mg.link_sugars ( parse_order ( contacts[i].first, msug ), tmpsug, msug, acceptorAtom, contacts[i].first, false);
+                            mg.link_sugars ( parse_order ( contacts[i].first, msug ), tmpsug, msug, acceptorAtom, contacts[i].first, false, torsions_zscore_database);
                         }
                     }
                     else
@@ -5414,7 +5522,7 @@ void MGlycology::extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug, std:
                         {
                             DBG << "parse_order - terminal/root connection ( contacts[" << i << "].first.id()) = " << parse_order ( contacts[i].first, msug ) << std::endl;
                         }
-                        mg.link_sugars ( parse_order ( contacts[i].first, msug ), tmpsug, msug, acceptorAtom, contacts[i].first, false);
+                        mg.link_sugars ( parse_order ( contacts[i].first, msug ), tmpsug, msug, acceptorAtom, contacts[i].first, false, torsions_zscore_database);
                     }
                     currentTerminalSugarAlreadyConnectedToRoot = true;
                 }

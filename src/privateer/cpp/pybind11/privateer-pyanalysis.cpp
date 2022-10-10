@@ -352,8 +352,10 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
     
     
     this->manb_object = clipper::MAtomNonBond( this->input_model, 8.0 );
+    
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
 
-    this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, false, "undefined");
+    this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, torsions_zscore_database, false, "undefined");
 
     if(!mglycology.get_list_of_glycans().empty())
     {
@@ -940,27 +942,33 @@ std::string privateer::pyanalysis::GlycosylationInteractions::convert_three_lett
 
 
 ///////////////////////////////////////////////// Class GlycosylationComposition ////////////////////////////////////////////////////////////////////
-privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system, bool debug_output) 
+privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system, bool disable_torsions, bool debug_output) 
 {
     this->debug_output = debug_output;
-    this->read_from_file ( path_to_model_file, expression_system, debug_output );
-    privateer::pyanalysis::XRayData experimental_data(path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads, debug_output);
+    this->read_from_file ( path_to_model_file, expression_system, disable_torsions, debug_output );
+    privateer::pyanalysis::XRayData experimental_data(path_to_mtz_file, path_to_model_file, input_column_fobs_user, ipradius, nThreads, disable_torsions, debug_output);
     this->update_with_experimental_data(experimental_data);
 };
 
-privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system, bool debug_output) 
+privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system, bool disable_torsions, bool debug_output) 
 {
     this->debug_output = debug_output;
-    this->read_from_file ( path_to_model_file, expression_system, debug_output );
-    privateer::pyanalysis::CryoEMData experimental_data(path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads, debug_output);
+    this->read_from_file ( path_to_model_file, expression_system, disable_torsions, debug_output );
+    privateer::pyanalysis::CryoEMData experimental_data(path_to_mrc_file, path_to_model_file, resolution, ipradius, nThreads, disable_torsions, debug_output);
     this->update_with_experimental_data(experimental_data);
 };
 
-void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::string path_to_model_file, std::string expression_system, bool debug_output ) {
+void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::string path_to_model_file, std::string expression_system, bool disable_torsions, bool debug_output ) {
 
     if(path_to_model_file == "undefined")
     {
         throw std::invalid_argument( "No path was provided for model file input! Aborting." );
+    }
+
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    if(!disable_torsions)
+    {
+        torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("nopath");
     }
 
     this->path_to_model_file = path_to_model_file;
@@ -975,7 +983,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    this->mgl = clipper::MGlycology(mmol, manb, debug_output, expression_system);
+    this->mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, debug_output, expression_system);
     
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
     
@@ -1383,7 +1391,7 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition::get_torsions_zsc
 
 
 ///////////////////////////////////////////////// Class GlycosylationComposition_memsafe ////////////////////////////////////////////////////////////////////
-void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( std::string path_to_model_file, std::string expression_system, bool debug_output ) 
+void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( std::string path_to_model_file, std::string expression_system, bool disable_torsions, bool debug_output ) 
 {
     this->debug_output = debug_output;
     if(path_to_model_file == "undefined")
@@ -1401,7 +1409,14 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( st
     privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
     this->model_pdb_code = privateer::util::retrieve_input_PDB_code(path_to_model_file_clipper);
 
-    this->mgl = clipper::MGlycology(mmol, debug_output, expression_system);
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    if(!disable_torsions)
+    {
+        torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("nopath");
+    }
+
+    const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
+    this->mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, debug_output, expression_system);
 
     initialize_summary_of_detected_glycans(mgl);
 }
@@ -3038,7 +3053,7 @@ void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( 
 
 ///////////////////////////////////////////////// Class XRayData ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool debug_output) 
+void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool disable_torsions, bool debug_output) 
 {
     bool rscc_best = false;
     this->debug_output = debug_output;
@@ -3122,9 +3137,15 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     std::vector<std::pair< clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
     std::vector<clipper::MMonomer> sugarList; // store the original MMonomer
 
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    if(!disable_torsions)
+    {
+        torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("nopath");
+    }
+
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, debug_output, "undefined");
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, debug_output, "undefined");
 
     for ( int p = 0; p < mmol.size(); p++ )
     {
@@ -3822,7 +3843,7 @@ pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data
 
 ///////////////////////////////////////////////// Class CryoEMData ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool debug_output) 
+void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool disable_torsions, bool debug_output) 
 {
     this->debug_output = debug_output;
 
@@ -3904,7 +3925,13 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
-    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, debug_output, "undefined");
+    std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+    if(!disable_torsions)
+    {
+        torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("nopath");
+    }
+    
+    clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, debug_output, "undefined");
 
     for ( int p = 0; p < mmol.size(); p++ )
     {
@@ -4434,9 +4461,9 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::GlycosylationComposition>(m, "GlycosylationComposition")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined", py::arg("debug_output")=false)
-        .def(py::init<std::string&, std::string&, std::string&, int, float, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mtz_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined", py::arg("debug_output")=false)
-        .def(py::init<std::string&, std::string&, float, int, float, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mrc_file")="undefined", py::arg("resolution")=-1, py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined", py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string, bool, bool>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined", py::arg("disable_torsions")=false, py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string&, std::string&, int, float, std::string, bool, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mtz_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined", py::arg("disable_torsions")=false, py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string&, float, int, float, std::string, bool, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_mrc_file")="undefined", py::arg("resolution")=-1, py::arg("nThreads")=-1, py::arg("ipradius")=2.5, py::arg("expression_system")="undefined", py::arg("disable_torsions")=false, py::arg("debug_output")=false)
         .def("get_path_of_model_file_used",  &pa::GlycosylationComposition::get_path_of_model_file_used)
         .def("get_input_model_pdb_code",  &pa::GlycosylationComposition::get_input_model_pdb_code)
         .def("get_expression_system_used",  &pa::GlycosylationComposition::get_expression_system_used)
@@ -4453,7 +4480,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::GlycosylationComposition_memsafe>(m, "GlycosylationComposition_memsafe")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string, bool>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined", py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string, bool, bool>(), py::arg("path_to_model_file")="undefined", py::arg("expression_system")="undefined", py::arg("disable_torsions")=false, py::arg("debug_output")=false)
         .def("get_path_of_model_file_used",  &pa::GlycosylationComposition_memsafe::get_path_of_model_file_used)
         .def("get_input_model_pdb_code",  &pa::GlycosylationComposition_memsafe::get_input_model_pdb_code)
         .def("get_expression_system_used",  &pa::GlycosylationComposition_memsafe::get_expression_system_used)
@@ -4551,14 +4578,14 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::XRayData>(m, "XRayData")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, std::string&, float, int, bool>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("ipradius")=2.5, py::arg("nThreads")=-1, py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string&, std::string&, float, int, bool, bool>(), py::arg("path_to_mtz_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("input_column_fobs_user")="NONE", py::arg("ipradius")=2.5, py::arg("nThreads")=-1, py::arg("disable_torsions")=false, py::arg("debug_output")=false)
         .def("get_sugar_summary_with_experimental_data", &pa::XRayData::get_sugar_summary_with_experimental_data)
         .def("get_ligand_summary_with_experimental_data", &pa::XRayData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::XRayData::print_cpp_console_output_summary);
 
     py::class_<pa::CryoEMData>(m, "CryoEMData")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, float, float, int, bool>(), py::arg("path_to_mrc_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("resolution")="-1", py::arg("ipradius")=2.5, py::arg("nThreads")=-1, py::arg("debug_output")=false)
+        .def(py::init<std::string&, std::string&, float, float, int, bool, bool>(), py::arg("path_to_mrc_file")="undefined", py::arg("path_to_model_file")="undefined", py::arg("resolution")="-1", py::arg("ipradius")=2.5, py::arg("nThreads")=-1, py::arg("disable_torsions")=false, py::arg("debug_output")=false)
         .def("get_sugar_summary_with_experimental_data", &pa::CryoEMData::get_sugar_summary_with_experimental_data)
         .def("get_ligand_summary_with_experimental_data", &pa::CryoEMData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::CryoEMData::print_cpp_console_output_summary);

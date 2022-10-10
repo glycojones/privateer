@@ -1024,8 +1024,7 @@ namespace privateer
 
         std::vector<std::pair<clipper::MAtom, clipper::MAtom>> Grafter::check_for_clashes_in_glycosidic_linkage(clipper::MiniMol& input_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id)
         {
-            clipper::MAtomNonBond manb = clipper::MAtomNonBond(input_model, 1.0);
-            clipper::MGlycology mgl = clipper::MGlycology(input_model, manb, debug_output, "undefined");
+            clipper::MGlycology mgl = clipper::MGlycology(input_model, debug_output, "undefined");
             std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
             clipper::MGlycan grafted_mglycan;
@@ -1111,8 +1110,7 @@ namespace privateer
 
         std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > Grafter::check_for_clashes_outside_glycosidic_linkage(clipper::MiniMol& input_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id)
         {
-            clipper::MAtomNonBond manb = clipper::MAtomNonBond(input_model, 1.0);
-            clipper::MGlycology mgl = clipper::MGlycology(input_model, manb, debug_output, "undefined");
+            clipper::MGlycology mgl = clipper::MGlycology(input_model, debug_output, "undefined");
             std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
             clipper::MGlycan grafted_mglycan;

@@ -159,7 +159,7 @@ void privateer::pymodelling::Builder::read_from_file( std::string& path_to_recei
     if(debug_output)
         DBG << "Generated a pybind11 list with receiver sequence info. Length of output list: " << imported_receiving_model_seq_info.size() << std::endl;
 
-    privateer::pyanalysis::GlycosylationComposition glycosylation(path_to_donor_model, "undefined", false);
+    privateer::pyanalysis::GlycosylationComposition glycosylation(path_to_donor_model, "undefined", true, false);
     this->glycan_summary_donor = glycosylation.get_summary_of_detected_glycans();
     
     if(debug_output)

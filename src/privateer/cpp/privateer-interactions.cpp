@@ -95,8 +95,8 @@ namespace privateer {
 			
            
             this->manb_object = clipper::MAtomNonBond( this->input_model, 5.0);
-
-            this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, false, "undefined");
+            std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+            this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, torsions_zscore_database, false, "undefined");
         }
 
         std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_CHPi_interactions(int glycanIndex)
@@ -239,8 +239,8 @@ namespace privateer {
             this->privateer::interactions::HBondsParser::import_ener_lib();
             this->hydrogenated_input_model = mark_hbond_donors_and_acceptors(this->hydrogenated_input_model);
             this->manb_object = clipper::MAtomNonBond( this->hydrogenated_input_model, 5.0 );   // 1.2 for sugar initialization, 3.9 for max hbond distance.
-
-            this->hydrogenated_mglycology = clipper::MGlycology(this->hydrogenated_input_model, this->manb_object, false, "undefined");
+            std::vector<privateer::json::TorsionsZScoreDatabase> torsions_zscore_database;
+            this->hydrogenated_mglycology = clipper::MGlycology(this->hydrogenated_input_model, this->manb_object, torsions_zscore_database, false, "undefined");
         }
 
         clipper::MiniMol privateer::interactions::HBondsParser::mark_hbond_donors_and_acceptors(clipper::MiniMol& input_model)

@@ -127,6 +127,18 @@ namespace privateer
             return str.str();
         }
 
+        inline const bool sugar_contains_issues ( clipper::MSugar sugar )
+        {
+
+            if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
+                    sugar.ok_with_chirality() && sugar.ok_with_puckering() )
+                return false;
+            else
+            {
+                return true;
+            }
+        }
+
         class Shape
         {
             public:
@@ -300,11 +312,14 @@ namespace privateer
 
                 void recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles = false );
 
-                // we want to draw linkages first, so that the blocks are then drawn on top of them
+                // we want to draw linkages and shades first, so that the blocks are then drawn on top of them
 
+                void add_shaded_node ( Shape * shaded_node ) { list_of_shaded_shapes.push_back(shaded_node); }
+                void add_shaded_link ( Shape * shaded_link ) { list_of_shaded_shapes.insert (list_of_shaded_shapes.begin(), shaded_link); }
                 void add_block ( Shape * block ) { list_of_shapes.push_back ( block );}
                 void add_link  ( Shape * link  ) { list_of_shapes.insert ( list_of_shapes.begin(), link ); }
                 std::vector<int> viewbox;
+                std::vector < Shape * > list_of_shaded_shapes;
                 std::vector < Shape * > list_of_shapes;
 
         };
@@ -419,6 +434,14 @@ namespace privateer
 
         // hexoses
 
+        class shadedCircle : public virtual Circle
+        {
+            public:
+                shadedCircle() { } //!< null constructor
+                shadedCircle( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                std::string get_XML ( );
+        };
+
         class Glc : public virtual Circle
         {
             public:
@@ -432,7 +455,7 @@ namespace privateer
         {
             public:
                 Gal() { } //!< null constructor
-                Gal( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                Gal( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -446,6 +469,14 @@ namespace privateer
 
         };
 
+        class shadedTriangle : public virtual Triangle
+        {
+            public:
+                shadedTriangle() { } //!< null constructor
+                shadedTriangle( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                std::string get_XML ( );
+        };
+
         class Fuc : public virtual Triangle
         {
             public:
@@ -455,11 +486,19 @@ namespace privateer
 
         };
 
+        class shadedStar : public virtual Star
+        {
+            public:
+                shadedStar() { } //!< null constructor
+                shadedStar( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                std::string get_XML ( );
+        };
+
         class Xyl : public virtual Star
         {
             public:
                 Xyl() { } //!< null constructor
-                Xyl( int x, int y, std::string message,  std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                Xyl( int x, int y, std::string message,  std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -467,11 +506,19 @@ namespace privateer
 
         // hexosamines
 
+        class shadedSquare : public virtual Square
+        {
+            public:
+                shadedSquare() { } //!< null constructor
+                shadedSquare( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                std::string get_XML ( );
+        };
+
         class GlcN : public virtual Square
         {
             public:
                 GlcN() { } //!< null constructor
-                GlcN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                GlcN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -480,7 +527,7 @@ namespace privateer
         {
             public:
                 GalN() { } //!< null constructor
-                GalN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                GalN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -489,7 +536,7 @@ namespace privateer
         {
             public:
                 ManN() { } //!< null constructor
-                ManN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                ManN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -501,7 +548,7 @@ namespace privateer
         {
             public:
                 GlcNAc() { } //!< null constructor
-                GlcNAc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                GlcNAc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -510,7 +557,7 @@ namespace privateer
         {
             public:
                 GalNAc() { } //!< null constructor
-                GalNAc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                GalNAc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -519,19 +566,26 @@ namespace privateer
         {
             public:
                 ManNAc() { } //!< null constructor
-                ManNAc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                ManNAc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
 
 
         // acidic sugars
+        class shadedDiamond : public virtual Diamond
+        {
+            public:
+                shadedDiamond() { } //!< null constructor
+                shadedDiamond( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                std::string get_XML ( );
+        };
 
         class Neu5Ac : public virtual Diamond
         {
             public:
                 Neu5Ac() { } //!< null constructor
-                Neu5Ac( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                Neu5Ac( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -540,7 +594,7 @@ namespace privateer
         {
             public:
                 Neu5Gc() { } //!< null constructor
-                Neu5Gc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                Neu5Gc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -549,7 +603,7 @@ namespace privateer
         {
             public:
                 KDN() { } //!< null constructor
-                KDN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                KDN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -558,7 +612,7 @@ namespace privateer
         {
             public:
                 GlcA() { } //!< null constructor
-                GlcA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                GlcA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -576,7 +630,7 @@ namespace privateer
         {
             public:
                 GalA() { } //!< null constructor
-                GalA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                GalA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
         };
@@ -585,9 +639,17 @@ namespace privateer
         {
             public:
                 ManA() { } //!< null constructor
-                ManA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                ManA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
                 std::string get_XML ( );
 
+        };
+
+        class shadedHexagon : public virtual Hexagon
+        {
+            public:
+                shadedHexagon() { } //!< null constructor
+                shadedHexagon( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                std::string get_XML ( );
         };
 
         class Unk : public virtual Hexagon
@@ -601,28 +663,27 @@ namespace privateer
 
         };
 
-        // bond types
+        class shadedBond : public virtual Shape
+        {
+            public:
+                shadedBond() { } //!< null constructor
+                shadedBond( int x, int y, Link_type bond, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel );}
+                std::string get_XML ( );
 
-        // class AlphaBond : public virtual Shape
-        // {
-        //     public:
-        //         AlphaBond() { } //!< null constructor
-        //         AlphaBond( int x, int y, Link_type bond, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel );}
-        //         std::string get_XML ( );
+            private:
+                Link_type bond_type;
+                void set_bond_type ( Link_type bond ) { this->bond_type = bond; }
+                Link_type get_bond_type () { return bond_type; }
 
-        //     private:
-        //         Link_type bond_type;
-        //         void set_bond_type ( Link_type bond ) { this->bond_type = bond; }
-        //         Link_type get_bond_type () { return bond_type; }
-        // };
+        };
 
         class Bond : public virtual Shape
         {
             public:
                 Bond() { } //!< null constructor
-                Bond( int x, int y, Link_type bond, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel ); }
-                Bond( int x, int y, std::string anomerSymbol, Link_type bond, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->anomerSymbol = anomerSymbol; this->set_mmdbsel ( mmdbsel ); }
-                Bond( int x, int y, Link_type bond, std::string anomerSymbol, std::string linkagePosition, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->anomerSymbol = anomerSymbol; this->linkagePosition = linkagePosition; this->set_mmdbsel ( mmdbsel ); }
+                Bond( int x, int y, Link_type bond, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel );}
+                Bond( int x, int y, std::string anomerSymbol, Link_type bond, std::string message,  std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->anomerSymbol = anomerSymbol; this->set_mmdbsel ( mmdbsel );}
+                Bond( int x, int y, Link_type bond, std::string anomerSymbol, std::string linkagePosition, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->anomerSymbol = anomerSymbol; this->linkagePosition = linkagePosition; this->set_mmdbsel ( mmdbsel );}
                 std::string get_XML ( );
 
             private:
