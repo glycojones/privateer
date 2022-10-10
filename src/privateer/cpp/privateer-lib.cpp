@@ -1696,10 +1696,10 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
 
 
        << "    <!-- shBond --> "
-       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(corvette, original_colour_scheme, inverted_background ) << "; stroke-width:20; stroke-linecap:round;\" id=\"shadedbond\" />\n"
+       << "<line x1=\"-3\" y1=\"0\" x2=\"100\" y2=\"0\" style=\"stroke:" << get_colour(corvette, original_colour_scheme, inverted_background ) << "; stroke-width:20; stroke-linecap:round;\" id=\"shadedbond\" />\n"
 
        << "    <!--  bond  --> "
-       << "<line x1=\"-3\" y1=\"0\" x2=\"110\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << "; stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
+       << "<line x1=\"-3\" y1=\"0\" x2=\"100\" y2=\"0\" style=\"stroke:" << get_colour(black, original_colour_scheme, inverted_background ) << "; stroke-width:2; stroke-linecap:round;\" id=\"bond\" />\n"
 
        // a generic hexagon shape for unsupported sugars
 
