@@ -30,6 +30,8 @@ class TorsionEntry:
     glycan_bond: str
     sugar_1: str
     sugar_2: str
+    donor_position: str
+    acceptor_position: str 
     glycanIndex: int
 
 
@@ -45,6 +47,8 @@ class GlycanTorsion:
 class TorsionSet:
     sugar_1: str = ""
     sugar_2: str = ""
+    donor_position: str = ""
+    acceptor_position: str = ""
     torsions: List = field(default_factory=list)  # List[GlycanTorsion]
     database_phi: List = field(default_factory=list)  # List[Float]
     database_psi: List = field(default_factory=list)  # List[Float]
@@ -72,6 +76,8 @@ class PrivateerTorsionResultsOutputParser:
         expected_keys_glycan = [
             "first_residue",
             "second_residue",
+            "first_number", 
+            "second_number",
             "root_descr",
             "detected_torsions",
             "database_phi",
@@ -112,7 +118,9 @@ class PrivateerTorsionResultsOutputParser:
                     pair = [
                         item["first_residue"],
                         item["second_residue"],
-                    ]
+                        item["first_number"], 
+                        item["second_number"] 
+                       ]
                     if pair not in pairs:
                         pairs.append(pair)
                     else:
@@ -125,6 +133,8 @@ class PrivateerTorsionResultsOutputParser:
         for unique_pair in unique_pairs:
             first_unique_residue = unique_pair[0]
             second_unique_residue = unique_pair[1]
+            donor_position = unique_pair[2]
+            acceptor_position = unique_pair[3]
             alreadyAdded = False
 
             unique_pair = TorsionSet()
@@ -149,6 +159,14 @@ class PrivateerTorsionResultsOutputParser:
                             item["detected_torsions"][index][
                                 "sugar_2"
                             ] = second_unique_residue
+
+                            item["detected_torsions"][index][
+                                "donor_position"
+                            ] = donor_position
+                            item["detected_torsions"][index][
+                                "acceptor_position"
+                            ] = acceptor_position
+
                             item["detected_torsions"][index]["glycanIndex"] = rootItem[
                                 "glycanIndex"
                             ]
@@ -170,6 +188,8 @@ class PrivateerTorsionResultsOutputParser:
                             unique_pair = TorsionSet(
                                 sugar_1=item["first_residue"],
                                 sugar_2=item["second_residue"],
+                                donor_position = item['first_number'],
+                                acceptor_position = item['second_number'],
                                 database_phi=item["database_phi"],
                                 database_psi=item["database_psi"],
                             )
@@ -190,7 +210,7 @@ class TorsionVisualiser:
     def plot_single_pair_torsions(self, torsion_set: TorsionSet):
 
         for glycan in torsion_set.torsions:
-            outputFolderDescription = f"{torsion_set.sugar_1}-{torsion_set.sugar_2}"
+            outputFolderDescription = f"{torsion_set.sugar_1}-{torsion_set.acceptor_position},{torsion_set.donor_position}-{torsion_set.sugar_2}"
             outputFolder = os.path.join(
                 self.glycan_focused_view_output_folder, outputFolderDescription
             )
@@ -200,7 +220,7 @@ class TorsionVisualiser:
             for torsion in glycan.torsions:
                 self._init_plot()
 
-                title = f"{torsion_set.sugar_1}-{torsion_set.sugar_2} in {glycan.root_description}"
+                title = f"{torsion_set.sugar_1}-{torsion_set.acceptor_position},{torsion_set.donor_position}-{torsion_set.sugar_2} in {glycan.root_description}"
 
                 label = self._get_label(glycan, torsion_set)
 
@@ -227,7 +247,7 @@ class TorsionVisualiser:
                 label = self._get_label(glycan, torsion_set)
                 label_list.append(label)
 
-        outputFolderDescription = f"{torsion_set.sugar_1}-{torsion_set.sugar_2}"
+        outputFolderDescription = f"{torsion_set.sugar_1}-{torsion_set.acceptor_position},{torsion_set.donor_position}-{torsion_set.sugar_2}"
         outputFolder = os.path.join(
             self.structure_focused_view_output_folder, outputFolderDescription
         )
@@ -236,7 +256,7 @@ class TorsionVisualiser:
 
         col_values = sns.color_palette("hls", len(torsion_list))
 
-        title = f"{torsion_set.sugar_1}-{torsion_set.sugar_2} linkage torsions"
+        title = f"{torsion_set.sugar_1}-{torsion_set.acceptor_position},{torsion_set.donor_position}-{torsion_set.sugar_2} linkage torsions"
 
         self._init_plot()
         self._draw_base_plot(torsion_set, title)
@@ -244,7 +264,7 @@ class TorsionVisualiser:
             torsions=torsion_list, colours=col_values, labels=label_list
         )
         self._draw_legends(points)
-        imageFileName = f"{torsion_set.sugar_1}-{torsion_set.sugar_2}_{torsion_set.torsions[0].root_description}.png"
+        imageFileName = f"{torsion_set.sugar_1}-{torsion_set.acceptor_position},{torsion_set.donor_position}-{torsion_set.sugar_2}_{torsion_set.torsions[0].root_description}.png"
         self._save_figure(output_dir=outputFolder, image_name=imageFileName)
 
     def _get_label(self, glycan, torsion_set):

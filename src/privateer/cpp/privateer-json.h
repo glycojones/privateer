@@ -214,6 +214,8 @@ namespace privateer
             std::string type;
             std::string first_residue;
             std::string second_residue;
+            std::string donor_position;
+            std::string acceptor_position;
             std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
         };
 
@@ -277,6 +279,22 @@ namespace privateer
                                         fail("Expected TYPE_STRING, got " + json_type_as_string(second_object.get_object_value(l).get_type()));
                                     
                                     temp.second_residue = second_object.get_object_value(l).as_string();
+                                }
+
+                                if(second_object.get_object_key(l).as_string() == "donor_position")
+                                {
+                                    if (second_object.get_object_value(l).get_type() != sajson::TYPE_STRING)
+                                        fail("Expected TYPE_STRING, got " + json_type_as_string(second_object.get_object_value(l).get_type()));
+                                    
+                                    temp.donor_position = second_object.get_object_value(l).as_string();
+                                }
+                                
+                                if(second_object.get_object_key(l).as_string() == "acceptor_position")
+                                {
+                                    if (second_object.get_object_value(l).get_type() != sajson::TYPE_STRING)
+                                        fail("Expected TYPE_STRING, got " + json_type_as_string(second_object.get_object_value(l).get_type()));
+                                    
+                                    temp.acceptor_position = second_object.get_object_value(l).as_string();
                                 }
 
                                 else if(second_object.get_object_key(l).as_string() == "torsions")
