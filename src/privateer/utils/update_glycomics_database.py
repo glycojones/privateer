@@ -79,6 +79,7 @@ def return_json(URL):
 
 
 def return_data_from_glyconnect(outputFolder):
+
     def return_glyconnect_id_from_list(list):
         glytoucan_pattern = "[G]\d{5}[A-Z][A-Z]"
         for item in list:
@@ -96,7 +97,7 @@ def return_data_from_glyconnect(outputFolder):
 
     exceptions = {8849: "G49108TO", 8850: "G70323CJ"}
 
-    _ranges = [{"start": 0, "end": 3687}, {"start": 8847, "end": 11110}]
+    _ranges = [{"start": 0, "end": 3687}, {"start": 8847, "end": 11462}]
     # _ranges = [{"start": 0, "end": 25}, {"start": 8845, "end": 8897}]
     _structure_entries_begin = 7
     output = {}
@@ -109,7 +110,8 @@ def return_data_from_glyconnect(outputFolder):
                 download = requests.get(URL)
                 decoded_content = download.content.decode("utf-8")
 
-                split_csv = csv.reader(decoded_content.splitlines(), delimiter=";")
+                split_csv = csv.reader(decoded_content.splitlines(),
+                                       delimiter=";")
                 downloaded_list = list(split_csv)
                 condensed_list = downloaded_list[_structure_entries_begin:]
                 for row in condensed_list:
@@ -173,8 +175,7 @@ if __name__ == "__main__":
     print(f"Downloading GlyTouCan data as: {fileName} in {fullPath}")
 
     jsonObject = return_json(
-        "https://api.glycosmos.org/glytoucan/sparql/glytoucan-data"
-    )
+        "https://api.glycosmos.org/glytoucan/sparql/glytoucan-data")
 
     print(f"Finished downloading GlyTouCan data.")
 
@@ -191,8 +192,7 @@ if __name__ == "__main__":
         glytoucanID = line["AccessionNumber"]
 
         line["glyconnect"] = find_glytoucan_id_in_glyconnect_data(
-            glyconnect_data, glytoucanID
-        )
+            glyconnect_data, glytoucanID)
 
         array_of_entries.append(line)
 
