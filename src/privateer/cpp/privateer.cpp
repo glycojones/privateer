@@ -28,6 +28,7 @@
 #include "privateer-db.h"
 #include "privateer-dbquery.h"
 // #include "privateer-interactions.h"
+#include <thread>
 #include <future>
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>

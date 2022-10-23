@@ -14,6 +14,7 @@
 #include <algorithm>
 #include <regex>
 #include <math.h>
+#include <thread>
 #include "clipper-glyco.h"
 #include "privateer-lib.h"
 #include "privateer-xray.h"
