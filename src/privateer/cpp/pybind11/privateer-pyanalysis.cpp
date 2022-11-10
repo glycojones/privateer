@@ -1387,6 +1387,44 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition::get_torsions_zsc
         return output;
     }
 }
+
+pybind11::float_ privateer::pyanalysis::GlycosylationComposition::return_quality_score(OfflineTorsionsZScoreDatabase& importedDatabase) { 
+    int totalGlycans = get_number_of_glycan_chains_detected();
+
+    auto output = pybind11::list();
+
+    pybind11::float_ summation_of_zscore = 0.0;
+    pybind11::int_ total_number_of_linkages = 0; 
+
+    for(int i = 0; i < totalGlycans; i++) { 
+        privateer::pyanalysis::GlycanStructure currentGlycan = get_glycan(i);
+        
+        std::string glycan_type = currentGlycan.get_glycosylation_type();
+
+        if (glycan_type == "n-glycan") { 
+        
+            pybind11::float_ total_zscore_for_glycan = currentGlycan.calculate_total_zscore(importedDatabase);
+            pybind11::int_ number_of_linkages_in_glycan = currentGlycan.get_number_of_linkages();
+
+            summation_of_zscore = summation_of_zscore + total_zscore_for_glycan;
+            total_number_of_linkages = total_number_of_linkages + number_of_linkages_in_glycan;
+        }
+    }
+    
+    pybind11::float_ average_z_score = summation_of_zscore / total_number_of_linkages;
+
+    // std::cout << "The total number of z scores is " << summation_of_zscore << std::endl;
+    // std::cout << "The average z scores is " << average_z_score << std::endl;
+
+    privateer::json::GlobalTorsionZScore torsions_zscore_database = importedDatabase.return_imported_database();
+
+
+    float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score);
+
+
+    pybind11::float_ py_quality_score = static_cast<pybind11::float_>(quality_score);
+    return py_quality_score;
+}
 ///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
 
 
@@ -4586,7 +4624,8 @@ void init_pyanalysis(py::module& m)
         .def("get_torsions_zscore_summary", &pa::GlycosylationComposition::get_torsions_zscore_summary)
         .def("update_with_experimental_data", static_cast<void (pa::GlycosylationComposition::*)(pa::XRayData&)>(&pa::GlycosylationComposition::update_with_experimental_data), "Update model with X-Ray Crystallography Data")
         .def("update_with_experimental_data", static_cast<void (pa::GlycosylationComposition::*)(pa::CryoEMData&)>(&pa::GlycosylationComposition::update_with_experimental_data), "Update model with CryoEM Data")
-        .def("check_if_updated_with_experimental_data",  &pa::GlycosylationComposition::check_if_updated_with_experimental_data);
+        .def("check_if_updated_with_experimental_data",  &pa::GlycosylationComposition::check_if_updated_with_experimental_data)
+        .def("return_quality_score", &pa::GlycosylationComposition::return_quality_score);
 
     py::class_<pa::GlycosylationComposition_memsafe>(m, "GlycosylationComposition_memsafe")
         .def(py::init<>())
