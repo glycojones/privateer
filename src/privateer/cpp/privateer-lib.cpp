@@ -3739,8 +3739,8 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
     {
         // std::cout << "Glycan Index " << glycan_linkage_index << std::endl;
        clipper::MGlycan::MGlycanTorsionSummary current_linkage = glycan_torsions[glycan_linkage_index];
-       if (current_linkage.type == "sugar-sugar")
-       {
+    //    if (current_linkage.type == "sugar-sugar")
+    //    {
             std::string donor_sugar = current_linkage.first_residue_name;
             std::string acceptor_sugar = current_linkage.second_residue_name;
             if(current_linkage.linkage_descriptors.size() == current_linkage.torsions.size())
@@ -3767,7 +3767,7 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                     }
                 }
             }
-       }
+    //    }
     }
 
     return z_score_total_for_glycan;
@@ -3784,8 +3784,8 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
     {
         // std::cout << "Glycan Index " << glycan_linkage_index << std::endl;
        clipper::MGlycan::MGlycanTorsionSummary current_linkage = glycan_torsions[glycan_linkage_index];
-       if (current_linkage.type == "sugar-sugar")
-       {
+    //    if (current_linkage.type == "sugar-sugar")
+    //    {
             std::string donor_sugar = current_linkage.first_residue_name;
             std::string acceptor_sugar = current_linkage.second_residue_name;
             if(current_linkage.linkage_descriptors.size() == current_linkage.torsions.size())
@@ -3812,7 +3812,7 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                     }
                 }
             }
-       }
+    //    }
     }
 
     return z_score_total_for_glycan;
@@ -3831,8 +3831,8 @@ std::vector<privateer::scripting::ZScoreEntry> privateer::scripting::report_link
     {
         // std::cout << "Glycan Index " << glycan_linkage_index << std::endl;
        clipper::MGlycan::MGlycanTorsionSummary current_linkage = glycan_torsions[glycan_linkage_index];
-       if (current_linkage.type == "sugar-sugar")
-       {
+    //    if (current_linkage.type == "sugar-sugar")
+    //    {
             std::string donor_sugar = current_linkage.first_residue_name;
             std::string acceptor_sugar = current_linkage.second_residue_name;
             if(current_linkage.linkage_descriptors.size() == current_linkage.torsions.size())
@@ -3868,7 +3868,7 @@ std::vector<privateer::scripting::ZScoreEntry> privateer::scripting::report_link
                         temp_vector.push_back(temp_entry);
                     }
                 }
-            }
+            // }
        }
     }
 

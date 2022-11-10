@@ -626,6 +626,7 @@ int main(int argc, char** argv)
             int glycansPermutated = 0;
             clipper::String current_chain = "" ;
             float z_score_total_for_protein = 0;
+            int number_of_indiviual_glycans = 0; 
 
             for (int i = 0; i < list_of_glycans.size() ; i++ )
             {
@@ -649,12 +650,10 @@ int main(int argc, char** argv)
                     float z_score_total_for_glycan = privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
                     // std::vector<privateer::scripting::ZScoreEntry> = privateer::scripting::report_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
 
-
-
                     // std::cout << "Reached part of code execution which would compute the z scores and return glycan summaries..." << std::endl;
 
                     z_score_total_for_protein = z_score_total_for_protein + z_score_total_for_glycan;
-                    
+                    number_of_indiviual_glycans = number_of_indiviual_glycans + torsion_summary_of_glycan.size();
                     // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
                 }
 
@@ -687,7 +686,7 @@ int main(int argc, char** argv)
                 plot.write_to_file ( os.str() );
             }
 
-            float average_z_score_for_protein = z_score_total_for_protein / list_of_glycans.size();
+            float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
             float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
 
             std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;

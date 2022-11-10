@@ -191,6 +191,8 @@ namespace privateer {
 
         pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
         pybind11::list get_torsions_zscore_summary_with_pdb(OfflineTorsionsZScoreDatabase& importedDatabase, std::string input_pdb_code);
+        pybind11::float_ return_quality_score(OfflineTorsionsZScoreDatabase& importedDatabase);
+        pybind11::float_ calculate_total_zscore(OfflineTorsionsZScoreDatabase& importedDatabase, privateer::pyanalysis::GlycanStructure glycan);
 
       private:
         bool debug_output;
@@ -244,6 +246,9 @@ namespace privateer {
         pybind11::dict query_glycomics_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
         pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
         pybind11::list get_torsions_per_linkage_summary();
+
+        pybind11::float_ calculate_total_zscore(OfflineTorsionsZScoreDatabase& importedDatabase);
+        pybind11::int_ get_number_of_linkages();
 
         pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
         pybind11::list get_torsions_zscore_summary_with_pdb(OfflineTorsionsZScoreDatabase& importedDatabase, std::string input_pdb_code);

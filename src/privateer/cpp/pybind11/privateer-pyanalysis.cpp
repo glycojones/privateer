@@ -1532,6 +1532,44 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition_memsafe::get_tors
         
         return output;
 }
+
+pybind11::float_ privateer::pyanalysis::GlycosylationComposition_memsafe::return_quality_score(OfflineTorsionsZScoreDatabase& importedDatabase) { 
+    int totalGlycans = get_number_of_glycan_chains_detected();
+
+    auto output = pybind11::list();
+
+    pybind11::float_ summation_of_zscore = 0.0;
+    pybind11::int_ total_number_of_linkages = 0; 
+
+    for(int i = 0; i < totalGlycans; i++) { 
+        privateer::pyanalysis::GlycanStructure currentGlycan = get_glycan(i);
+        
+        std::string glycan_type = currentGlycan.get_glycosylation_type();
+
+        if (glycan_type == "n-glycan") { 
+        
+            pybind11::float_ total_zscore_for_glycan = currentGlycan.calculate_total_zscore(importedDatabase);
+            pybind11::int_ number_of_linkages_in_glycan = currentGlycan.get_number_of_linkages();
+
+            summation_of_zscore = summation_of_zscore + total_zscore_for_glycan;
+            total_number_of_linkages = total_number_of_linkages + number_of_linkages_in_glycan;
+        }
+    }
+    
+    pybind11::float_ average_z_score = summation_of_zscore / total_number_of_linkages;
+
+    // std::cout << "The total number of z scores is " << summation_of_zscore << std::endl;
+    // std::cout << "The average z scores is " << average_z_score << std::endl;
+
+    privateer::json::GlobalTorsionZScore torsions_zscore_database = importedDatabase.return_imported_database();
+
+
+    float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score);
+
+
+    pybind11::float_ py_quality_score = static_cast<pybind11::float_>(quality_score);
+    return py_quality_score;
+}
 ///////////////////////////////////////////////// Class GlycosylationComposition_memsafe END ////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////// Class GlycanStructure ////////////////////////////////////////////////////////////////////
@@ -2117,8 +2155,8 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
     for(int glycan_linkage_index = 0; glycan_linkage_index < glycan_torsions.size(); glycan_linkage_index++)
     {
        clipper::MGlycan::MGlycanTorsionSummary current_linkage = glycan_torsions[glycan_linkage_index];
-       if (current_linkage.type == "sugar-sugar")
-       {
+    //    if (current_linkage.type == "sugar-sugar")
+    //    {
             std::string donor_sugar = current_linkage.first_residue_name;
             std::string acceptor_sugar = current_linkage.second_residue_name;
             if(current_linkage.linkage_descriptors.size() == current_linkage.torsions.size())
@@ -2142,7 +2180,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
                     {
                         privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description);
-                        std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << " = " << linkage_score << std::endl;
+                        // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << " = " << linkage_score << std::endl;
                         std::string root_string = glycan.get_root_for_filename();
                         if(isfinite(linkage_score) && ( !isnan(linkage_score) | !isinf(linkage_score)) )
                         {
@@ -2157,12 +2195,76 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
                     }
                 }
             }
-       }
+    //    }
     }
     
     return output;
 }
 
+pybind11::float_ privateer::pyanalysis::GlycanStructure::calculate_total_zscore(OfflineTorsionsZScoreDatabase& importedDatabase) {
+    std::vector<clipper::MGlycan::MGlycanTorsionSummary> glycan_torsions = glycan.return_torsion_summary_within_glycan();
+    privateer::json::GlobalTorsionZScore torsions_zscore_database = importedDatabase.return_imported_database();
+    float summation_of_zscore = 0.0;
+    int number_of_linkages = 0.0;
+    for(int glycan_linkage_index = 0; glycan_linkage_index < glycan_torsions.size(); glycan_linkage_index++)
+    {
+       clipper::MGlycan::MGlycanTorsionSummary current_linkage = glycan_torsions[glycan_linkage_index];
+    //    if (current_linkage.type == "sugar-sugar")
+    //    {
+            std::string donor_sugar = current_linkage.first_residue_name;
+            std::string acceptor_sugar = current_linkage.second_residue_name;
+            if(current_linkage.linkage_descriptors.size() == current_linkage.torsions.size())
+            {
+                for(int linkage_descriptor_index = 0; linkage_descriptor_index < current_linkage.linkage_descriptors.size(); linkage_descriptor_index++)
+                {
+                    std::string donor_position = current_linkage.linkage_descriptors[linkage_descriptor_index].first;
+                    std::string donor_atom = current_linkage.atoms[linkage_descriptor_index].first.name().trim();
+                    std::string acceptor_position = current_linkage.linkage_descriptors[linkage_descriptor_index].second;
+                    std::string acceptor_atom = current_linkage.atoms[linkage_descriptor_index].second.name().trim();
+                    float currentPhi = current_linkage.torsions[linkage_descriptor_index].first;
+                    float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
+                   
+                    auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
+                    {
+                        return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
+                    });
+
+                    if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database.database_array))
+                    {
+                        privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
+                        float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description);
+                        std::string root_string = glycan.get_root_for_filename();
+                        if(isfinite(linkage_score) && ( !isnan(linkage_score) | !isinf(linkage_score)) )
+                        {   
+                            summation_of_zscore = summation_of_zscore + linkage_score;
+                            number_of_linkages = number_of_linkages + 1;
+                        }
+                    }
+                }
+            // }
+       }
+       else { 
+            std::cout << current_linkage.type << " with " << current_linkage.first_residue_name << " " << current_linkage.second_residue_name << std::endl;
+       }
+    }
+    
+
+    float average_zscore = summation_of_zscore / number_of_linkages;
+    
+    // std::cout << "The average z score calculated from the total_z_score func is " << average_zscore << std::endl;
+    
+    return static_cast<pybind11::float_>(summation_of_zscore);
+}
+
+pybind11::int_ privateer::pyanalysis::GlycanStructure::get_number_of_linkages() {
+   
+    std::vector<clipper::MGlycan::MGlycanTorsionSummary> glycan_torsions = glycan.return_torsion_summary_within_glycan();
+    
+    
+    
+    
+    return static_cast<pybind11::int_>(glycan_torsions.size());
+}
 
 pybind11::dict privateer::pyanalysis::GlycanStructure::get_SNFG_strings(bool includeClosestMatches)
 {
@@ -4499,7 +4601,9 @@ void init_pyanalysis(py::module& m)
         .def("get_torsions_per_linkage_summary", &pa::GlycosylationComposition_memsafe::get_torsions_per_linkage_summary)
 
         .def("get_torsions_zscore_summary", &pa::GlycosylationComposition_memsafe::get_torsions_zscore_summary)
-        .def("get_torsions_zscore_summary_with_pdb", &pa::GlycosylationComposition_memsafe::get_torsions_zscore_summary);
+        .def("get_torsions_zscore_summary_with_pdb", &pa::GlycosylationComposition_memsafe::get_torsions_zscore_summary_with_pdb)
+        .def("return_quality_score", &pa::GlycosylationComposition_memsafe::return_quality_score);
+
 
     py::class_<pa::GlycanStructure>(m, "GlycanStructure")
         .def(py::init<>())
@@ -4523,6 +4627,9 @@ void init_pyanalysis(py::module& m)
         
         .def("get_torsions_summary", &pa::GlycanStructure::get_torsions_summary)
         .def("get_torsions_per_linkage_summary", &pa::GlycanStructure::get_torsions_per_linkage_summary)
+        
+        .def("calculate_total_zscore", &pa::GlycanStructure::calculate_total_zscore)
+        .def("get_number_of_linkages", &pa::GlycanStructure::get_number_of_linkages)
 
         .def("get_torsions_zscore_summary", &pa::GlycanStructure::get_torsions_zscore_summary)
         .def("get_torsions_zscore_summary_with_pdb", &pa::GlycanStructure::get_torsions_zscore_summary_with_pdb)
