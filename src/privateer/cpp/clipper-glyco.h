@@ -32,9 +32,9 @@
 
 inline bool altconf_compatible ( char m1, char m2 )
 {
-    // OLD VERSION: if (( m1 == 'A' && m2 == 'B') || ( m1 == 'B' && m2 == 'A')) 
+    // OLD VERSION: if (( m1 == 'A' && m2 == 'B') || ( m1 == 'B' && m2 == 'A'))
     // would cause an endless while loop in is_stereocentre() when there would be altconfs like 'C'
-    if (( m1 != m2)) 
+    if (( m1 != m2))
         return false;
     else
         return true;
@@ -148,12 +148,12 @@ namespace clipper
             const clipper::String conformation_name_iupac() const { return clipper::data::iupac_conformational_landscape[sugar_conformation]; }
             //!< get HTML-formatted, iupac-compliant codes describing the conformation of the sugar ring
 
-            const clipper::ftype puckering_amplitude() const 
-            { 
+            const clipper::ftype puckering_amplitude() const
+            {
                 if(sugar_cremer_pople_params.empty())
                     return -1;
                 else
-                    return sugar_cremer_pople_params[0]; 
+                    return sugar_cremer_pople_params[0];
             }
             //!< convenience function for getting the puckering amplitude (in Angstroems) of the sugar ring
 
@@ -161,7 +161,7 @@ namespace clipper
             //!< function for working with a numerical denomination of sugar conformation
 
             const clipper::MAtom& anomeric_carbon() const { return this->sugar_anomeric_carbon; }
-            //!< returns the anomeric carbon
+
 
             const clipper::MAtom& anomeric_substituent() const { return this->sugar_anomeric_substituent; }
             //!< returns the anomeric substituent
@@ -201,8 +201,12 @@ namespace clipper
             int potential_linkages() const { return sugar_linked_to.size(); }
             //!<  returns the number of potential linkages to other sugars
 
-            std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > get_stacked_residues ( ) const ;
+            std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > get_stacked_residues ( std::string = "hudson" ) const ;
             //!< returns chain and monomer for stacked residues (restricted to TRP, TYR, PHE, HIS)
+            /*!
+              \sa get_stacked_residues()
+              \param algorithm Specify "hudson" (default) or "bradl-weiss".
+            */
 
             bool is_sane() const { return sugar_sane; }
             //!< checks it against the internal clipper::data sugar database for correct anomer, handedness and ring members
@@ -411,7 +415,7 @@ namespace clipper
 
     //! Stores a tree built with Node(s) and Linkage(s), which contain references to MSugar(s)
     // TO DO: Make this class a prototype that would be inherited both by MGlycan and MLigandGlycan. Currently, I'm just gonna add hack'ish way to work with
-    //        ligand glycans via the introduction of an alternative constructor. 
+    //        ligand glycans via the introduction of an alternative constructor.
     class MGlycan
     {
         public:
@@ -420,7 +424,7 @@ namespace clipper
             MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
             MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
 
-            struct MGlycanTorsionSummary 
+            struct MGlycanTorsionSummary
             {
                 std::string type;
                 clipper::String first_residue_name;
@@ -428,7 +432,7 @@ namespace clipper
                 std::vector<std::pair<clipper::MAtom, clipper::MAtom>> atoms;
                 std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
             };
-            
+
             class Node;
 
             class Linkage
@@ -505,7 +509,7 @@ namespace clipper
                         {
                             result.push_back ( torsion_omega );
                         }
-                        
+
                         if (index == 7)
                         {
                             result.push_back ( torsion_omega_six );
@@ -530,13 +534,13 @@ namespace clipper
                     } //!< .first=donorAtom, .second=acceptorAtom
 
                     void set_torsions ( float phi, float psi, float omega, float omega_six, float omega_seven, float omega_eight, float omega_nine, float phi_cone_ctwo_oeight_ceight )
-                    { 
+                    {
                         torsion_phi         =   phi;
-                        torsion_psi         =   psi; 
-                        torsion_omega       =   omega; 
+                        torsion_psi         =   psi;
+                        torsion_omega       =   omega;
                         torsion_omega_six   =   omega_six;
                         torsion_omega_seven =   omega_seven;
-                        torsion_omega_eight =   omega_eight; 
+                        torsion_omega_eight =   omega_eight;
                         torsion_omega_nine  =   omega_nine;
                         torsion_phi_cone_ctwo_oeight_ceight = phi_cone_ctwo_oeight_ceight;
                     }
@@ -673,7 +677,7 @@ namespace clipper
             std::vector < clipper::MSugar >& get_sugars () { return sugars; }
 
             const Node& get_node ( int index ) const { if (index>node_list.size()-1) return node_list.back(); else return node_list[index]; }
-            std::vector<Node> get_node_list_vector() { return node_list; }; 
+            std::vector<Node> get_node_list_vector() { return node_list; };
 
             const clipper::String& get_chain () const { return chain; }
             const clipper::String& get_root_sugar_chainID () const { return chain_root_sugar; }
@@ -698,7 +702,7 @@ namespace clipper
 
             std::string print_torsions () const
                 {
-                    std::string output; 
+                    std::string output;
 
                     output = "Phi: " + std::to_string(torsion_phi) + " Psi: " + std::to_string(torsion_psi);
 
