@@ -2499,30 +2499,55 @@ bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two) 
 }
 
 
-std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > MSugar::get_stacked_residues (  std::string algorithm ) const
+std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > MSugar::get_stacked_residues ( std::string algorithm,
+                                                                                                        float distance,
+                                                                                                        float theta,
+                                                                                                        float phi ) const
 {
+    std::vector<clipper::MAtom> ch_hydrogens;
     clipper::MAtom ma;
     clipper::Coord_orth centre_apolar;
-
-    if ( this->handedness() == "D" )
-        centre_apolar = clipper::Coord_orth((ring_members()[1].coord_orth().x() +
-                                             ring_members()[3].coord_orth().x() +
-                                             ring_members()[5].coord_orth().x() ) / 3.0,
-                                            (ring_members()[1].coord_orth().y() +
-                                             ring_members()[3].coord_orth().y() +
-                                             ring_members()[5].coord_orth().y() ) / 3.0,
-                                            (ring_members()[1].coord_orth().z() +
-                                             ring_members()[3].coord_orth().z() +
-                                             ring_members()[5].coord_orth().z() ) / 3.0 );
-    else
-        centre_apolar = clipper::Coord_orth((ring_members()[1].coord_orth().x() +
-                                             ring_members()[5].coord_orth().x() ) / 2.0,
-                                            (ring_members()[1].coord_orth().y() +
-                                             ring_members()[5].coord_orth().y() ) / 2.0,
-                                            (ring_members()[1].coord_orth().z() +
-                                             ring_members()[5].coord_orth().z() ) / 2.0 );
-
     std::vector<std::pair<clipper::MAtomIndexSymmetry, clipper::ftype > > results;
+
+    std::cout << "WE'RE ACTUALLY HERE" << std::endl;
+
+    if ( this->type_of_sugar() == "beta-D-aldopyranose" ) {
+      ch_hydrogens.push_back ( this->find("H1",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H3",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H5",clipper::MM::ANY) );
+    }
+    else if ( this->type_of_sugar() == "alpha-D-aldopyranose" ) {
+      ch_hydrogens.push_back ( this->find("H3",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H5",clipper::MM::ANY) );
+    }
+    else if ( this->type_of_sugar() == "beta-L-aldopyranose" ) {
+      ch_hydrogens.push_back ( this->find("H1",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H3",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H5",clipper::MM::ANY) );
+    }
+    else if ( this->type_of_sugar() == "alpha-L-aldopyranose" ) {
+      ch_hydrogens.push_back ( this->find("H3",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H5",clipper::MM::ANY) );
+    }
+    else if ( this->type_of_sugar() == "beta-L-ketopyranose" ) {
+      ch_hydrogens.push_back ( this->find("H4",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H6",clipper::MM::ANY) );
+    }
+    else if ( this->type_of_sugar() == "alpha-L-ketopyranose" ) {
+      ch_hydrogens.push_back ( this->find("H4",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H6",clipper::MM::ANY) );
+    }
+    else if ( this->type() == "XYP" ) {
+      ch_hydrogens.push_back ( this->find("H1B",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H3B",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H5B2",clipper::MM::ANY) );
+    }
+    else if ( this->type() == "XYS" ) {
+      ch_hydrogens.push_back ( this->find("H3",clipper::MM::ANY) );
+      ch_hydrogens.push_back ( this->find("H51",clipper::MM::ANY) );
+    }
+    else // monosaccharide is unsupported, return empty results
+      return results;
 
     const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->sugar_parent_molecule_nonbond->atoms_near(centre_apolar, 5.0);
 

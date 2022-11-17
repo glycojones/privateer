@@ -201,11 +201,17 @@ namespace clipper
             int potential_linkages() const { return sugar_linked_to.size(); }
             //!<  returns the number of potential linkages to other sugars
 
-            std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > get_stacked_residues ( std::string = "hudson" ) const ;
+            std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > get_stacked_residues ( std::string = "hudson",
+                                                                                                                  float = 4.5,
+                                                                                                                  float = 40.0,
+                                                                                                                  float = 0.0 ) const ;
             //!< returns chain and monomer for stacked residues (restricted to TRP, TYR, PHE, HIS)
             /*!
               \sa get_stacked_residues()
-              \param algorithm Specify "hudson" (default) or "bradl-weiss".
+              \param algorithm Specify "hudson" (default) or "plevin".
+              \param distance Distance between the carbon and the centre of the ring.
+              \param theta An angle, different depending on the algorithm.
+              \param phi An angle used in the Plevin calculation, has to be greater than 120 deg.
             */
 
             bool is_sane() const { return sugar_sane; }
