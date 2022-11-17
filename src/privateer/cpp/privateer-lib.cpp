@@ -3794,16 +3794,33 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                     {
                         privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description, input_pdb_code);
+                        
                         if (!linkage_check) { 
-                            std::cout << "\t" << donor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << acceptor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            if (current_linkage.type == "protein-sugar") { 
+                                std::cout << "\t" << acceptor_sugar << "--" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            }
+                            else {
+                                std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            }
                             continue;
                         }
                         if (std::isfinite(linkage_score)) { 
                             z_score_total_for_glycan = z_score_total_for_glycan + linkage_score;
-                            std::cout << "\t" << donor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << acceptor_sugar << " = " << linkage_score << std::endl;
+                            if (current_linkage.type == "protein-sugar") { 
+                                std::cout << "\t" << acceptor_sugar  << "--" << donor_sugar << " = " << linkage_score << std::endl;
+
+                            }
+                            else {
+                                std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " = " << linkage_score << std::endl;
+                            }
                         }
                         else { 
-                            std::cout << "\t" << donor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << acceptor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            if (current_linkage.type == "protein-sugar") { 
+                                std::cout << "\t" << acceptor_sugar  << "--" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            }
+                            else {
+                                std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            }
                         }
                     
                     }
@@ -3854,16 +3871,31 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description);
                         
                         if (!linkage_check) { 
-                            std::cout << "\t" << donor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << acceptor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            if (current_linkage.type == "protein-sugar") { 
+                                std::cout << "\t" << acceptor_sugar << "--" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            }
+                            else { 
+                                std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            }
                             continue;
                         }
-
                         if (std::isfinite(linkage_score)) { 
                             z_score_total_for_glycan = z_score_total_for_glycan + linkage_score;
-                            std::cout << "\t" << donor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << acceptor_sugar << " = " << linkage_score << std::endl;
-                        }
+                            if (current_linkage.type == "protein-sugar") { 
+                                std::cout << "\t" << acceptor_sugar  << "--" << donor_sugar << " = " << linkage_score << std::endl;
+
+                            }
+                            else {
+                                std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " = " << linkage_score << std::endl;
+                            }
+                        }   
                         else { 
-                            std::cout << "\t" << donor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << acceptor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            if (current_linkage.type == "protein-sugar") { 
+                                std::cout << "\t" << acceptor_sugar  << "--" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            }
+                            else { 
+                                std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
+                            }
                         }
                         
                     }
