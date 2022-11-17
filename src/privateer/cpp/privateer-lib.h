@@ -86,6 +86,8 @@ namespace privateer
         float calculate_linkage_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage);
 
         float calculate_quality_zscore(privateer::json::TorsionsZScoreStatistics& statistics, float average_z_score);
+
+        bool do_report_linkage(std::string d_pos, std::string d_atom, std::string a_atom, std::string a_pos);
         std::string retrieve_input_PDB_code(clipper::String input_model_path);
     }
 

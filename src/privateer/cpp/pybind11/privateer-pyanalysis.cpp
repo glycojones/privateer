@@ -2262,6 +2262,11 @@ pybind11::float_ privateer::pyanalysis::GlycanStructure::calculate_total_zscore(
                     float currentPhi = current_linkage.torsions[linkage_descriptor_index].first;
                     float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
                    
+                    bool linkage_check = privateer::util::do_report_linkage(donor_sugar,acceptor_position,donor_position, acceptor_sugar );
+                    
+                    if (!linkage_check) { 
+                        continue;
+                    }
                     auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
                     {
                         return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;

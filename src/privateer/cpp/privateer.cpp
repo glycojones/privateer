@@ -687,10 +687,18 @@ int main(int argc, char** argv)
             }
 
             float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
+            // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
+            // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
             float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
 
-            std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
-            std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
+            if (z_score_total_for_protein != 0) {
+                std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
+                std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
+            }
+            else { 
+                std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+            }
+            
 
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;
         }
