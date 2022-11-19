@@ -4190,6 +4190,12 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             }
             new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
             add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
+            if(!torsions_zscore_database.database_array.empty())
+            {
+                float Phi = phi;
+                float Psi = psi;
+                new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
+            }
         }
     }
 
@@ -4919,11 +4925,32 @@ void MGlycan::Linkage::calculate_and_set_zscore(float Phi, float Psi, clipper::S
     std::string acceptor_position = std::regex_replace(second_atom.name().trim(), std::regex(R"([^\d])"), "");
     std::string donor_sugar = first_residue_name;
     std::string acceptor_sugar = second_residue_name;
+
+    std::vector<std::string> list_of_linkages_with_enough_datapoints{ 
+        "ASN-1,2-NAG",
+        "NAG-1,4-NAG",
+        "NAG-1,4-BMA",
+        "BMA-1,3-MAN",
+        "BMA-1,6-MAN",
+        "MAN-1,2-MAN", 
+        "MAN-1,3-MAN",
+        "MAN-1,6-MAN", 
+        "NAG-1,6-FUC", 
+        "MAN-1,2-NAG", 
+        "NAG-1,4-GAL",
+    };
+    std::string linkage_name = donor_sugar + "-" + acceptor_position + "," + donor_position + "-" + acceptor_sugar;
     
     auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
     {
         return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
     });
+
+    auto search_result_linkage_enough_datapoints = std::find(list_of_linkages_with_enough_datapoints.begin(), list_of_linkages_with_enough_datapoints.end(), linkage_name);
+    bool linkage_enough_datapoints_result = false;
+    if (search_result_linkage_enough_datapoints != list_of_linkages_with_enough_datapoints.end())
+        linkage_enough_datapoints_result = true;
+
 
     if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database.database_array))
     {
@@ -4932,6 +4959,7 @@ void MGlycan::Linkage::calculate_and_set_zscore(float Phi, float Psi, clipper::S
         if(isfinite(linkage_score) && ( !isnan(linkage_score) | !isinf(linkage_score)) )
         {
             this->set_linkage_zscore(linkage_score);
+            this->set_linkage_enough_datapoints(linkage_enough_datapoints_result);
         }
     }
 }

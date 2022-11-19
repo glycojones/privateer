@@ -696,6 +696,11 @@ namespace clipper
                         return linkage_zscore;
                     }
 
+                    bool get_linkage_enough_datapoints () const
+                    {
+                        return linkage_enough_datapoints;
+                    }
+
                     void set_torsions ( float phi, float psi, float omega, float omega_six, float omega_seven, float omega_eight, float omega_nine, float phi_cone_ctwo_oeight_ceight )
                     {
                         torsion_phi         =   phi;
@@ -711,6 +716,8 @@ namespace clipper
                     void set_linkage_atoms( clipper::MAtom& inputDonorAtom, clipper::MAtom& inputAcceptorAtom) { donorAtom = inputDonorAtom; acceptorAtom = inputAcceptorAtom; };
 
                     void set_linkage_zscore( float input_zscore ) { this->linkage_zscore = input_zscore; this->linkage_zscore_calculated = true; };
+
+                    void set_linkage_enough_datapoints( bool input_enough_datapoints ) { this->linkage_enough_datapoints = input_enough_datapoints; };
 
                     std::string format() const
                     {
@@ -734,6 +741,7 @@ namespace clipper
                     float torsion_omega_nine;   // for 2-8 linkages
                     float torsion_phi_cone_ctwo_oeight_ceight; // for 2-8 linkages
                     float linkage_zscore;
+                    bool linkage_enough_datapoints;
                     int index;                  // carbon to which this is connected
                     int node_id;                // sugar connected to by this linkage
                     bool linkage_zscore_calculated;

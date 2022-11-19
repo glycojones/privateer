@@ -1473,6 +1473,8 @@ std::string privateer::glycanbuilderplot::get_colour ( Colour colour, bool origi
         {
             case corvette:
                 return "#f9cb9c";
+            case grey: 
+                return "#808080";
             case blue:
                 return "#0090bc;";
             case rootblue:
@@ -1512,6 +1514,8 @@ std::string privateer::glycanbuilderplot::get_colour ( Colour colour, bool origi
         {
             case corvette:
                 return "#f9cb9c";
+            case grey: 
+                return "#808080";
             case blue:
                 return "#014f87;";
             case rootblue:
@@ -1769,6 +1773,8 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#green_right);"
        << "stroke-width:2.8;\" />\n"
 
+       << "    <!-- shBondnull --> "
+       << "<line x1=\"-3\" y1=\"0\" x2=\"100\" y2=\"0\" style=\"stroke:" << get_colour(grey, original_colour_scheme, inverted_background ) << "; stroke-width:20; stroke-linecap:round;\" id=\"shadedbondnull\" />\n"
 
        << "    <!-- shBond --> "
        << "<line x1=\"-3\" y1=\"0\" x2=\"100\" y2=\"0\" style=\"stroke:" << get_colour(corvette, original_colour_scheme, inverted_background ) << "; stroke-width:20; stroke-linecap:round;\" id=\"shadedbond\" />\n"
@@ -2635,15 +2641,26 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
-                if(link.check_if_linkage_zscore_calculated())
+                if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
                 {
-                    float link_zscore = link.get_linkage_zscore();
-                    if(link_zscore < -1)
+                    if(link.get_linkage_enough_datapoints())
+                    {
+                        float link_zscore = link.get_linkage_zscore();
+                        if(link_zscore < -1)
+                        {
+                            std::ostringstream os;
+                            os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                            std::string message = os.str();
+                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mmdbsel  );
+                            add_shaded_link(new_shaded_bond);
+                        }
+                    }
+                    else
                     {
                         std::ostringstream os;
-                        os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                        os << "Linkage does not have enough information in the database to calculate a linkage score.";
                         std::string message = os.str();
-                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, mmdbsel  );
+                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
                     }
                 }
@@ -2662,15 +2679,26 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
-                if(link.check_if_linkage_zscore_calculated())
+                if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
                 {
-                    float link_zscore = link.get_linkage_zscore();
-                    if(abs(link_zscore) > 1)
+                    if(link.get_linkage_enough_datapoints())
+                    {
+                        float link_zscore = link.get_linkage_zscore();
+                        if(link_zscore < -1)
+                        {
+                            std::ostringstream os;
+                            os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                            std::string message = os.str();
+                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mmdbsel  );
+                            add_shaded_link(new_shaded_bond);
+                        }
+                    }
+                    else
                     {
                         std::ostringstream os;
-                        os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                        os << "Linkage does not have enough information in the database to calculate a linkage score.";
                         std::string message = os.str();
-                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, mmdbsel  );
+                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
                     }
                 }
@@ -2693,15 +2721,26 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
-                if(link.check_if_linkage_zscore_calculated())
+                if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
                 {
-                    float link_zscore = link.get_linkage_zscore();
-                    if(abs(link_zscore) > 1)
+                    if(link.get_linkage_enough_datapoints())
+                    {
+                        float link_zscore = link.get_linkage_zscore();
+                        if(link_zscore < -1)
+                        {
+                            std::ostringstream os;
+                            os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                            std::string message = os.str();
+                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mmdbsel  );
+                            add_shaded_link(new_shaded_bond);
+                        }
+                    }
+                    else
                     {
                         std::ostringstream os;
-                        os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                        os << "Linkage does not have enough information in the database to calculate a linkage score.";
                         std::string message = os.str();
-                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, mmdbsel  );
+                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
                     }
                 }
@@ -2720,15 +2759,26 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
                 add_link ( new_bond );
-                if(link.check_if_linkage_zscore_calculated())
+                if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
                 {
-                    float link_zscore = link.get_linkage_zscore();
-                    if(abs(link_zscore) > 1)
+                    if(link.get_linkage_enough_datapoints())
+                    {
+                        float link_zscore = link.get_linkage_zscore();
+                        if(link_zscore < -1)
+                        {
+                            std::ostringstream os;
+                            os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                            std::string message = os.str();
+                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mmdbsel  );
+                            add_shaded_link(new_shaded_bond);
+                        }
+                    }
+                    else
                     {
                         std::ostringstream os;
-                        os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                        os << "Linkage does not have enough information in the database to calculate a linkage score.";
                         std::string message = os.str();
-                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, mmdbsel  );
+                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
                     }
                 }
@@ -2820,15 +2870,26 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
             Bond * new_bond = new Bond( x, y + 25 + (sign * 15), orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
             add_link ( new_bond );
-            if(link.check_if_linkage_zscore_calculated())
+            if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
             {
-                float link_zscore = link.get_linkage_zscore();
-                if(abs(link_zscore) > 1)
+                if(link.get_linkage_enough_datapoints())
+                {
+                    float link_zscore = link.get_linkage_zscore();
+                    if(link_zscore < -1)
+                    {
+                        std::ostringstream os;
+                        os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                        std::string message = os.str();
+                        shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbond", mmdbsel  );
+                        add_shaded_link(new_shaded_bond);
+                    }
+                }
+                else
                 {
                     std::ostringstream os;
-                    os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                    os << "Linkage does not have enough information in the database to calculate a linkage score.";
                     std::string message = os.str();
-                    shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, mmdbsel  );
+                    shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbondnull", mmdbsel  );
                     add_shaded_link(new_shaded_bond);
                 }
             }
@@ -3337,11 +3398,26 @@ std::string privateer::glycanbuilderplot::shadedBond::get_XML ()
             std::stringstream stream;
             stream << " transform=\"rotate(180 " << get_x() << " " << get_y() << ")\"";
             transformation = stream.str();
-    } 
+    }
 
-    tmp << "  <g id=\"shadedLinkage\">\n"
+    if (this->get_svg_class() == "shadedbond") 
+    {
+        tmp << "  <g id=\"shadedLinkage\">\n"
         <<  "  <use xlink:href=\"#shadedbond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
         << "</g>\n";
+    }
+    else if(this->get_svg_class() == "shadedbondnull")
+    {
+        tmp << "  <g id=\"shadedLinkage\">\n"
+        <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
+        << "</g>\n";
+    }
+    else
+    {
+        tmp << "  <g id=\"shadedLinkage\">\n"
+        <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
+        << "</g>\n";
+    }
 
     return tmp.str();
 }

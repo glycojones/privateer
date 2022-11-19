@@ -92,7 +92,7 @@ namespace privateer
 
     namespace glycanbuilderplot
     {
-        enum Colour { corvette, blue, rootblue, red, rootred, yellow, rootyellow, orange, green, purple, pink, cyan, tan, black, brown, white };
+        enum Colour { corvette, grey, blue, rootblue, red, rootred, yellow, rootyellow, orange, green, purple, pink, cyan, tan, black, brown, white };
         enum Link_type { up, up_side, branch_side, side, down_side, down };
 
         std::string get_colour ( Colour colour, bool original_style, bool inverted = false  );
@@ -668,10 +668,13 @@ namespace privateer
         {
             public:
                 shadedBond() { } //!< null constructor
-                shadedBond( int x, int y, Link_type bond, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel );}
+                shadedBond( int x, int y, Link_type bond, std::string message, std::string svg_class, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel ); this->set_svg_class(svg_class); }
                 std::string get_XML ( );
 
             private:
+                std::string svgclass;
+                void set_svg_class ( std::string input_string) { this->svgclass = input_string; }
+                std::string get_svg_class () { return svgclass; };
                 Link_type bond_type;
                 void set_bond_type ( Link_type bond ) { this->bond_type = bond; }
                 Link_type get_bond_type () { return bond_type; }
