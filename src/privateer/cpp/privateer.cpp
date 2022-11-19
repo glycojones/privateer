@@ -687,17 +687,20 @@ int main(int argc, char** argv)
                 plot.write_to_file ( os.str() );
             }
 
-            float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
-            // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
-            // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
-            float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
+            if (useTorsionsDataBase)
+            {
+                float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
+                // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
+                // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
+                float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
 
-            if (z_score_total_for_protein != 0) {
-                std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
-                std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
-            }
-            else { 
-                std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+                if (z_score_total_for_protein != 0) {
+                    std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
+                    std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
+                }
+                else { 
+                    std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+                }
             }
             
 
@@ -1430,8 +1433,8 @@ int main(int argc, char** argv)
         {
             int glycansPermutated = 0;
             clipper::String current_chain = "" ;
-
-            float z_score_summation = 0;
+            float z_score_total_for_protein = 0;
+            int number_of_indiviual_glycans = 0; 
 
             for (int i = 0; i < list_of_glycans.size() ; i++ )
             {
@@ -1476,14 +1479,37 @@ int main(int argc, char** argv)
                 
                 if(useTorsionsDataBase)
                 {
-                    // std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
-                    // privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
-                   
-                //    std::cout << "Reached part of code execution which would compute the z scores and return glycan summaries..." << std::endl;
+                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+
+                    // input_pdb_code = privateer::util::retrieve_input_PDB_code(input_model);
+
+                    float z_score_total_for_glycan = privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+                    // std::vector<privateer::scripting::ZScoreEntry> = privateer::scripting::report_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+
+                    // std::cout << "Reached part of code execution which would compute the z scores and return glycan summaries..." << std::endl;
+
+                    z_score_total_for_protein = z_score_total_for_protein + z_score_total_for_glycan;
+                    number_of_indiviual_glycans = number_of_indiviual_glycans + torsion_summary_of_glycan.size();
                     // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
                 }
 
             }
+
+            if (useTorsionsDataBase)
+            {
+                float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
+                // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
+                // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
+                float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
+
+                if (z_score_total_for_protein != 0) {
+                    std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
+                    std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
+                }
+                else { 
+                    std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+                }       
+            }     
 
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;
         }

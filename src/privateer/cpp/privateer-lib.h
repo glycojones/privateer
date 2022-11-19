@@ -82,11 +82,10 @@ namespace privateer
         std::vector<char> number_of_conformers ( clipper::MMonomer& mmon );
         void print_monosaccharide_summary (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, FILE *output, clipper::HKL_info& hklinfo, clipper::String input_model);
         void print_monosaccharide_summary_python (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, clipper::HKL_info& hklinfo, clipper::String input_model);
+        
         float calculate_linkage_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage, std::string input_code);
         float calculate_linkage_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage);
-
         float calculate_quality_zscore(privateer::json::TorsionsZScoreStatistics& statistics, float average_z_score);
-
         bool do_report_linkage(std::string d_pos, std::string d_atom, std::string a_atom, std::string a_pos);
         std::string retrieve_input_PDB_code(clipper::String input_model_path);
     }

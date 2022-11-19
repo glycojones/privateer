@@ -4955,13 +4955,12 @@ float MGlycan::Linkage::calculate_zscore(float phi, float psi, privateer::json::
             }    
         }
     
-    // if (count > 0)
-    // {
-        float z_score = (count - count_mean) / count_stddev;
-        return z_score;
-    // }
-    // else
-        // return ;
+    if (count < 0) { 
+        fail("Something has gone wrong with the bin count. If the result is -1, this is likely due to presumed inclusion of the current model in torsion linkage dataset, check whether the name of the file is already a PDB code.");
+    }
+
+    float z_score = (count - count_mean) / count_stddev;
+    return z_score;
 }
 
 
