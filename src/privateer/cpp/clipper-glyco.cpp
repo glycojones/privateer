@@ -4143,8 +4143,8 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
             if(!torsions_zscore_database.database_array.empty())
             {
-                float Phi = phi;
-                float Psi = psi;
+                float Phi = clipper::Util::rad2d(phi);
+                float Psi = clipper::Util::rad2d(psi);
                 new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
             }
         }
@@ -4192,8 +4192,8 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom);
             if(!torsions_zscore_database.database_array.empty())
             {
-                float Phi = phi;
-                float Psi = psi;
+                float Phi = clipper::Util::rad2d(phi);
+                float Psi = clipper::Util::rad2d(psi);
                 new_connection.calculate_and_set_zscore(Phi, Psi, first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, torsions_zscore_database);
             }
         }
