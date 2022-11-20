@@ -1443,6 +1443,7 @@ bool privateer::util::do_report_linkage(std::string d_pos, std::string d_atom, s
     };
 
     std::string name = d_pos + "-" + d_atom + "," + a_atom + "-" + a_pos ;
+    // std::cout << name << std::endl;
 
     
     if (std::find(std::begin(list_of_allowed_linkages), std::end(list_of_allowed_linkages), name) != std::end(list_of_allowed_linkages)) { 
@@ -2392,7 +2393,7 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
     if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "alpha")     anomerSymbol = "&#945;";
     else if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "beta") anomerSymbol = "&#946;";
     else                                                                                  anomerSymbol = "&#63;";
-
+    
 
     Bond *first_bond = new Bond( 2800, 1015, anomerSymbol, side, glycan.get_link_description(), mmdbsel );
     add_link ( first_bond );
@@ -2400,6 +2401,33 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
     // let the fun begin: paint the tree with yet another recursive function
 
     const clipper::MGlycan::Node node = glycan.get_node ( 0 ); // get the first node
+
+    if(glycan.get_type() == "n-glycan")
+    {
+        if (node.get_sugar().type().trim() == "NAG" && glycan.get_root().first.type().trim() == "ASN")
+        {
+            float link_zscore = glycan.get_protein_sugar_linkage_zscore();
+            if(link_zscore < -1 && link_zscore != 42069 && glycan.get_protein_sugar_linkage_zscore_attempt_to_calculate())
+            {
+                std::ostringstream os;
+                os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                std::string message = os.str();
+                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", mmdbsel  );
+                add_shaded_link(new_shaded_bond);
+            }
+        }
+        else
+        {
+            if (glycan.get_protein_sugar_linkage_zscore_attempt_to_calculate())
+            {
+                std::ostringstream os;
+                os << "Linkage does not have enough information in the database to calculate a linkage score.";
+                std::string message = os.str();
+                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbondnull", mmdbsel  );
+                add_shaded_link(new_shaded_bond);
+            }
+        }
+    }
 
     recursive_paint ( glycan, node, 2685, 990 ); // and initiate House Party protocol
 
@@ -2426,7 +2454,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
         add_block ( glc );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading)
         {
             shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shCrcl);
@@ -2436,7 +2464,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( gal );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shCrcl);
@@ -2446,7 +2474,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( man );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shCrcl);
@@ -2457,7 +2485,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( fuc );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedTriangle * shTrngl = new shadedTriangle (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shTrngl);
@@ -2467,7 +2495,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( xyl );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedStar * shStar = new shadedStar (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shStar);
@@ -2477,7 +2505,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( glcn );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shSqr);
@@ -2487,7 +2515,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( galn );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shSqr);
@@ -2497,7 +2525,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
         add_block ( mann );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shSqr);
@@ -2507,7 +2535,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( glcnac );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shSqr);
@@ -2517,7 +2545,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation ) , mmdbsel );
         add_block ( galnac );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shSqr);
@@ -2527,7 +2555,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation ) , mmdbsel );
         add_block ( mannac );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shSqr);
@@ -2537,7 +2565,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( glca );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shSqr);
@@ -2547,7 +2575,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( gala );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shSqr);
@@ -2557,7 +2585,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( mana );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shSqr);
@@ -2567,7 +2595,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( neu5gc );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shDiam);
@@ -2577,7 +2605,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( neu5ac );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shDiam);
@@ -2587,7 +2615,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( idoa );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shDiam);
@@ -2597,7 +2625,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( kdn );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shDiam);
@@ -2607,7 +2635,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     {
         Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation ), mmdbsel  );
         add_block ( unk );
-        if (node_contains_issue_with_sugar)
+        if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
             shadedHexagon * shHex = new shadedHexagon (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
             add_shaded_node (shHex);
@@ -3577,7 +3605,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
 
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
     {
-        privateer::glycanbuilderplot::Plot plot(false, original_colour_scheme, list_of_glycans[i].get_root_by_name(), false, true, true, true);
+        privateer::glycanbuilderplot::Plot plot(false, original_colour_scheme, list_of_glycans[i].get_root_by_name(), false, true, true, true, true);
         plot.plot_glycan ( list_of_glycans[i] );
 
         of_xml << "  <glycan type=\"" << list_of_glycans[i].get_type() << "\" root=\""
@@ -3671,7 +3699,7 @@ std::string privateer::scripting::get_annotated_glycans_hierarchical ( std::stri
 
     for ( int i = 0 ; i < list_of_glycans.size() ; i++ )
     {
-        privateer::glycanbuilderplot::Plot plot(false, original_colour_scheme, list_of_glycans[i].get_root_by_name(), false, true, true, true);
+        privateer::glycanbuilderplot::Plot plot(false, original_colour_scheme, list_of_glycans[i].get_root_by_name(), false, true, true, true, true);
         plot.plot_glycan ( list_of_glycans[i] );
 
         of_xml << "  <glycan type=\"" << list_of_glycans[i].get_type() << "\" root=\""
@@ -3918,7 +3946,7 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
     for(int glycan_linkage_index = 0; glycan_linkage_index < glycan_torsions.size(); glycan_linkage_index++)
     {
         // std::cout << "Glycan Index " << glycan_linkage_index << std::endl;
-       clipper::MGlycan::MGlycanTorsionSummary current_linkage = glycan_torsions[glycan_linkage_index];
+            clipper::MGlycan::MGlycanTorsionSummary current_linkage = glycan_torsions[glycan_linkage_index];
     //    if (current_linkage.type == "sugar-sugar")
     //    {
             std::string donor_sugar = current_linkage.first_residue_name;

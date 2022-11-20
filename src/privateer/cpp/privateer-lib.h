@@ -187,7 +187,7 @@ namespace privateer
                 } //!< default constructor
                 
 
-                Plot( bool vertical, bool original_style, std::string title, bool inverted_background = false, bool smaller=false, bool validation = true, bool add_links = true )
+                Plot( bool vertical, bool original_style, std::string title, bool inverted_background = false, bool smaller=false, bool validation = true, bool add_links = true, bool potential_issue_shading = true )
                 {
                     vertical ? width  = 300 : width  = 800;
                     vertical ? height = 800 : height = 300;
@@ -204,6 +204,7 @@ namespace privateer
                     this->inverted_background = inverted_background;
                     this->validation = validation;
                     this->add_links = add_links;
+                    this->potential_issue_shading = potential_issue_shading;
                 }
 
                 /*! Set the SVG viewport
@@ -300,6 +301,7 @@ namespace privateer
                 bool inverted_background;
                 bool validation;
                 bool add_links;
+                bool potential_issue_shading;
 
                 void write_svg_header        ( std::fstream& of );
                 void write_svg_definitions   ( std::fstream& of );

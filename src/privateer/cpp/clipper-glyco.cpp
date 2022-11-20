@@ -4261,6 +4261,7 @@ void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::
         
         std::string donorPosition = std::regex_replace(first_atom.name().trim(), std::regex(R"([^\d])"), "");
         std::string acceptorPosition = std::regex_replace(second_atom.name().trim(), std::regex(R"([^\d])"), "");
+        // std::cout << first_atom.name().trim() << " " << second_atom.name().trim() << std::endl;
         first_torsion.type = type;
         first_torsion.first_residue_name = first_residue_name;
         first_torsion.second_residue_name = second_residue_name;
@@ -4918,6 +4919,33 @@ void MGlycan::update_msugar_in_root ( clipper::MSugar& newmsug )
     root = std::make_pair(cmonomer, newmsug);
 }
 
+float MGlycan::calculate_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage)
+{
+    float count_mean = matched_linkage.summary.first;
+    float count_stddev = matched_linkage.summary.second;
+    std::vector<std::unordered_map<std::string, int>> bin_data = matched_linkage.bin_data;
+
+    int count = 0;
+    for(const auto& bin: bin_data) { 
+            if ((bin.at("lower_phi") <= phi)) {
+                if (phi < bin.at("higher_phi")) {
+                    if (bin.at("lower_psi") <= psi){
+                        if  (psi < bin.at("higher_psi")) {
+                            count = bin.at("count");
+                        }
+                    }
+                } 
+            }    
+        }
+    
+    if (count < 0) { 
+        fail("Something has gone wrong with the bin count. If the result is -1, this is likely due to presumed inclusion of the current model in torsion linkage dataset, check whether the name of the file is already a PDB code.");
+    }
+
+    float z_score = (count - count_mean) / count_stddev;
+    return z_score;
+}
+
 
 void MGlycan::Linkage::calculate_and_set_zscore(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom, privateer::json::GlobalTorsionZScore& torsions_zscore_database)
 {
@@ -5096,16 +5124,19 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     {
                         aa_atom_alpha = potential_n_roots[i].first.find("CG", clipper::MM::ANY);      // CG
                         aa_atom_bravo = potential_n_roots[i].first.find("CB", clipper::MM::ANY);      // CB
+                        if(nd2.name().trim() == "XXX") nd2 = potential_n_roots[i].first.find("ND2", clipper::MM::ANY);
                     }
                     else if(potential_n_roots[i].first.type().trim() == "ARG")
                     {
                         aa_atom_alpha = potential_n_roots[i].first.find("CZ", clipper::MM::ANY);      // CZ
                         aa_atom_bravo = potential_n_roots[i].first.find("NE", clipper::MM::ANY);      // NE
+                        if(nd2.name().trim() == "XXX") nd2 = potential_n_roots[i].first.find("NH1", clipper::MM::ANY);
                     }
                     else if(potential_n_roots[i].first.type().trim() == "LYS")
                     {
                         aa_atom_alpha = potential_n_roots[i].first.find("CE", clipper::MM::ANY);      // CE
                         aa_atom_bravo = potential_n_roots[i].first.find("CD", clipper::MM::ANY);      // CD
+                        if(nd2.name().trim() == "XXX") nd2 = potential_n_roots[i].first.find("NZ", clipper::MM::ANY);
                     }
                     else
                     {
@@ -5129,6 +5160,28 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
                     mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_n_roots[i].first.type().trim(), nd2, sugar.type().trim(), c1);
 
+                    // This is hella cursed. A really cursed hacky implementation just to support linkage highlights in SNFG diagrams for ASN-NAG linkage. 
+                    // Ideally clipper::MGlycan::Linkage should have been reimplemented, but that would have taken too much time. 
+                    if(!torsions_zscore_database.database_array.empty())
+                    {
+                        mg.set_protein_sugar_linkage_zscore_attempt_to_calculate(true);
+                        std::string amino_acid = potential_n_roots[i].first.type().trim();
+                        std::string donor_position = std::regex_replace(nd2.name().trim(), std::regex(R"([^\d])"), "");
+                        std::string first_sugar = sugar.type().trim();
+                        std::string acceptor_position = std::regex_replace(c1.name().trim(), std::regex(R"([^\d])"), "");
+                        auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [amino_acid, donor_position, acceptor_position, first_sugar](privateer::json::TorsionsZScoreDatabase& element)
+                        {
+                            return amino_acid == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && first_sugar == element.acceptor_sugar;
+                        });
+
+                        if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database.database_array))
+                        {
+                            
+                            privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
+                            float linkage_score = mg.calculate_zscore(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), found_torsion_description);
+                            mg.set_protein_sugar_linkage_zscore(linkage_score);
+                        }
+                    }
 
                     if ( linked[j].second.monomer()+2 < mmol[linked[j].second.polymer()].size() )
                     {
@@ -5200,36 +5253,43 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     {
                         aa_atom_alpha = potential_o_roots[i].first.find("CB", clipper::MM::ANY);      // CB
                         aa_atom_bravo = potential_o_roots[i].first.find("CA", clipper::MM::ANY);      // CA
+                        if(og1.name().trim() == "XXX") og1 = potential_o_roots[i].first.find("OG1", clipper::MM::ANY);
                     }
                     else if(potential_o_roots[i].first.type().trim() == "SER")
                     {
                         aa_atom_alpha = potential_o_roots[i].first.find("CB", clipper::MM::ANY);      // CB
                         aa_atom_bravo = potential_o_roots[i].first.find("CA", clipper::MM::ANY);      // CA
+                        if(og1.name().trim() == "XXX") og1 = potential_o_roots[i].first.find("OG", clipper::MM::ANY);
                     }
                     else if(potential_o_roots[i].first.type().trim() == "TYR")
                     {
                         aa_atom_alpha = potential_o_roots[i].first.find("CZ", clipper::MM::ANY);      // CZ
                         aa_atom_bravo = potential_o_roots[i].first.find("CE1", clipper::MM::ANY);     // CE1 - come back to this after you figure out what to do about CE2
+                        if(og1.name().trim() == "XXX") og1 = potential_o_roots[i].first.find("OH", clipper::MM::ANY);
                     }
                     else if(potential_o_roots[i].first.type().trim() == "ASP")
                     {
                         aa_atom_alpha = potential_o_roots[i].first.find("CG", clipper::MM::ANY);      // CG
                         aa_atom_bravo = potential_o_roots[i].first.find("CB", clipper::MM::ANY);     // CB
+                        if(og1.name().trim() == "XXX") og1 = potential_o_roots[i].first.find("OD2", clipper::MM::ANY);
                     }
                     else if(potential_o_roots[i].first.type().trim() == "GLU")
                     {
                         aa_atom_alpha = potential_o_roots[i].first.find("CD", clipper::MM::ANY);      // CD
                         aa_atom_bravo = potential_o_roots[i].first.find("CG", clipper::MM::ANY);     // CG
+                        if(og1.name().trim() == "XXX") og1 = potential_o_roots[i].first.find("OE2", clipper::MM::ANY);
                     }
                     else if(potential_o_roots[i].first.type().trim() == "HYP")
                     {
                         aa_atom_alpha = potential_o_roots[i].first.find("CG", clipper::MM::ANY);      // CG
                         aa_atom_bravo = potential_o_roots[i].first.find("CB", clipper::MM::ANY);     // CB - come back to this after you figure out what to do about CD
+                        if(og1.name().trim() == "XXX") og1 = potential_o_roots[i].first.find("OD1", clipper::MM::ANY);
                     }
                     else if(potential_o_roots[i].first.type().trim() == "LYZ")
                     {
                         aa_atom_alpha = potential_o_roots[i].first.find("CD", clipper::MM::ANY);      // CD
                         aa_atom_bravo = potential_o_roots[i].first.find("CG", clipper::MM::ANY);     // CB - come back to this after you figure out what to do about CE
+                        if(og1.name().trim() == "XXX") og1 = potential_o_roots[i].first.find("OH", clipper::MM::ANY);
                     }
                     else
                     {
@@ -5314,6 +5374,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     {
                         aa_atom_alpha = potential_s_roots[i].first.find("CB", clipper::MM::ANY);      // CB
                         aa_atom_bravo = potential_s_roots[i].first.find("CA", clipper::MM::ANY);      // CA
+                        if(sg.name().trim() == "XXX") sg = potential_s_roots[i].first.find("SG", clipper::MM::ANY);
                     }
                     else
                     {
@@ -5401,6 +5462,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     {
                         aa_atom_alpha = potential_c_roots[i].first.find("CG", clipper::MM::ANY);      // CB
                         aa_atom_bravo = potential_c_roots[i].first.find("CB", clipper::MM::ANY);      // CA
+                        if(cd1.name().trim() == "XXX") cd1 = potential_c_roots[i].first.find("CD1", clipper::MM::ANY);
                     }
                     else
                     {

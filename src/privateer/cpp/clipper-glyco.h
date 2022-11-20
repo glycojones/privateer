@@ -595,6 +595,7 @@ namespace clipper
                                                          torsion_phi ( linkage.torsion_phi ),
                                                          torsion_psi ( linkage.torsion_psi ) { }
                     */
+                    // Linkage () {};
                     Linkage ( int index, std::string anomericity, int connect_to_id, bool noncircular )
                     {
                         node_id = connect_to_id;
@@ -925,6 +926,12 @@ namespace clipper
 
             void set_annotations ( std::string expression_system );  // function that annotates glycobiologic validation
 
+            void set_protein_sugar_linkage_zscore_attempt_to_calculate (bool input_value ) {this->protein_sugar_linkage_zscore_attempt_to_calculate = input_value; };
+            bool get_protein_sugar_linkage_zscore_attempt_to_calculate ( ) { return protein_sugar_linkage_zscore; };
+            void set_protein_sugar_linkage_zscore (float input_value ) {this->protein_sugar_linkage_zscore = input_value; };
+            float get_protein_sugar_linkage_zscore ( ) { return protein_sugar_linkage_zscore; };
+            float calculate_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage);
+
         private:
             bool debug_output;
             clipper::String kind_of_glycan;                 // can be n-glycan, o-glycan, s-glycan, c-glycan, p-glycan or ligand
@@ -936,6 +943,10 @@ namespace clipper
             clipper::ftype torsion_psi, torsion_phi;        // Torsions of the protein-glycan link
             std::string root_annotation, link_annotation, expression_system;
             std::vector<MGlycanTorsionSummary> all_torsions_within_mglycan;
+            float protein_sugar_linkage_zscore = 42069;    // crappy hack implemented only for ASN-NAG linkage. For anyone who is going to be working on this
+                                                            // in near future, consider modifying clipper::MGlycan::Linkage class to also be associated
+                                                            // with amino acid - sugar linkages, rather than sugar - sugar linkages.
+            bool protein_sugar_linkage_zscore_attempt_to_calculate = false;
 
     }; // class MGlycan
 

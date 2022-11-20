@@ -114,6 +114,7 @@ int main(int argc, char** argv)
     bool rscc_best = false;
     bool produce_external_restraints = false;
     bool closest_match_disable = false;
+    bool potential_issue_shading = true;
     float resolution = -1;
     float ipradius = 2.5;    // default value, punishing enough!
     float thresholdElectronDensityValue = 0.02;
@@ -323,6 +324,10 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-torsions_disable" )
         {
           useTorsionsDataBase = false;
+        }
+        else if ( args[arg] == "-potential_issue_shading_disable" )
+        {
+          potential_issue_shading = false;
         }
         else if ( args[arg] == "-torsions_dbpath" )
         {
@@ -671,7 +676,7 @@ int main(int argc, char** argv)
                             list_of_glycans_associated_to_permutations.at(i) = finalGlycanPermutationContainer;
                             for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                                 {
-                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, false);
                                     plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
                                     std::ostringstream os;
                                     os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
@@ -680,7 +685,7 @@ int main(int argc, char** argv)
                         }
                 }
                 
-                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, potential_issue_shading);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
                 os << list_of_glycans[i].get_root_for_filename() << ".svg";
@@ -1462,7 +1467,7 @@ int main(int argc, char** argv)
                             for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                                 {
 
-                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, false);
                                     plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
                                     std::ostringstream os;
                                     os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
@@ -1471,7 +1476,7 @@ int main(int argc, char** argv)
                         }
                 }
 
-                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, potential_issue_shading);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
                 os << list_of_glycans[i].get_root_for_filename() << ".svg";
@@ -1541,7 +1546,7 @@ int main(int argc, char** argv)
                         for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                             {
 
-                                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, false);
                                 plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
                                 std::ostringstream os;
                                 os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
@@ -1551,7 +1556,7 @@ int main(int argc, char** argv)
                     }
             }
             
-            privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+            privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, potential_issue_shading);
             plot.plot_glycan ( list_of_glycans[i] );
             std::ostringstream os;
             os << list_of_glycans[i].get_root_for_filename() << ".svg";
