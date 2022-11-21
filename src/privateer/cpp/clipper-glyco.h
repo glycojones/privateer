@@ -201,6 +201,7 @@ namespace clipper
             MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, bool& debug_output, char alt_conf = ' ' ); //!< default constructor
             MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, bool& debug_output, char alt_conf = ' ' );
             MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf = ' '  );
+            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, char alt_conf = ' ' );
             //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
             class Diagnostics 
@@ -286,12 +287,12 @@ namespace clipper
             const clipper::String conformation_name_iupac() const { return clipper::data::iupac_conformational_landscape[sugar_conformation]; }
             //!< get HTML-formatted, iupac-compliant codes describing the conformation of the sugar ring
 
-            const clipper::ftype puckering_amplitude() const 
-            { 
+            const clipper::ftype puckering_amplitude() const
+            {
                 if(sugar_cremer_pople_params.empty())
                     return -1;
                 else
-                    return sugar_cremer_pople_params[0]; 
+                    return sugar_cremer_pople_params[0];
             }
             //!< convenience function for getting the puckering amplitude (in Angstroems) of the sugar ring
 
@@ -299,7 +300,7 @@ namespace clipper
             //!< function for working with a numerical denomination of sugar conformation
 
             const clipper::MAtom& anomeric_carbon() const { return this->sugar_anomeric_carbon; }
-            //!< returns the anomeric carbon
+
 
             const clipper::MAtom& anomeric_substituent() const { return this->sugar_anomeric_substituent; }
             //!< returns the anomeric substituent
@@ -338,9 +339,20 @@ namespace clipper
 
             int potential_linkages() const { return sugar_linked_to.size(); }
             //!<  returns the number of potential linkages to other sugars
-
-            std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > get_stacked_residues ( ) const ;
+            
+            std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > get_stacked_residues ( std::string = "hudson",
+                                                                                                                  float = 4.5,
+                                                                                                                  float = 40.0,
+                                                                                                                  float = 0.0 ) const ;
             //!< returns chain and monomer for stacked residues (restricted to TRP, TYR, PHE, HIS)
+            /*!
+              \sa get_stacked_residues()
+              \param algorithm Specify "hudson" (default) or "plevin".
+              \param distance Distance between the carbon and the centre of the ring.
+              \param theta An angle, different depending on the algorithm.
+              \param phi An angle used in the Plevin calculation, has to be greater than 120 deg.
+            */
+
 
             bool is_sane() const { return sugar_sane; }
             //!< checks it against the internal clipper::data sugar database for correct anomer, handedness and ring members
@@ -551,7 +563,7 @@ namespace clipper
 
     //! Stores a tree built with Node(s) and Linkage(s), which contain references to MSugar(s)
     // TO DO: Make this class a prototype that would be inherited both by MGlycan and MLigandGlycan. Currently, I'm just gonna add hack'ish way to work with
-    //        ligand glycans via the introduction of an alternative constructor. 
+    //        ligand glycans via the introduction of an alternative constructor.
     class MGlycan
     {
         public:
@@ -560,7 +572,7 @@ namespace clipper
             MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
             MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
 
-            struct MGlycanTorsionSummary 
+            struct MGlycanTorsionSummary
             {
                 std::string type;
                 clipper::String first_residue_name; // donorResidue
@@ -569,7 +581,7 @@ namespace clipper
                 std::vector<std::pair<std::string, std::string>> linkage_descriptors; // .first = donorPosition, .second = acceptorPosition
                 std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
             };
-            
+
             class Node;
 
             class Linkage
@@ -583,6 +595,7 @@ namespace clipper
                                                          torsion_phi ( linkage.torsion_phi ),
                                                          torsion_psi ( linkage.torsion_psi ) { }
                     */
+                    // Linkage () {};
                     Linkage ( int index, std::string anomericity, int connect_to_id, bool noncircular )
                     {
                         node_id = connect_to_id;
@@ -650,7 +663,7 @@ namespace clipper
                         {
                             result.push_back ( torsion_omega );
                         }
-                        
+
                         if (index == 7)
                         {
                             result.push_back ( torsion_omega_six );
@@ -684,14 +697,19 @@ namespace clipper
                         return linkage_zscore;
                     }
 
+                    bool get_linkage_enough_datapoints () const
+                    {
+                        return linkage_enough_datapoints;
+                    }
+
                     void set_torsions ( float phi, float psi, float omega, float omega_six, float omega_seven, float omega_eight, float omega_nine, float phi_cone_ctwo_oeight_ceight )
-                    { 
+                    {
                         torsion_phi         =   phi;
-                        torsion_psi         =   psi; 
-                        torsion_omega       =   omega; 
+                        torsion_psi         =   psi;
+                        torsion_omega       =   omega;
                         torsion_omega_six   =   omega_six;
                         torsion_omega_seven =   omega_seven;
-                        torsion_omega_eight =   omega_eight; 
+                        torsion_omega_eight =   omega_eight;
                         torsion_omega_nine  =   omega_nine;
                         torsion_phi_cone_ctwo_oeight_ceight = phi_cone_ctwo_oeight_ceight;
                     }
@@ -699,6 +717,8 @@ namespace clipper
                     void set_linkage_atoms( clipper::MAtom& inputDonorAtom, clipper::MAtom& inputAcceptorAtom) { donorAtom = inputDonorAtom; acceptorAtom = inputAcceptorAtom; };
 
                     void set_linkage_zscore( float input_zscore ) { this->linkage_zscore = input_zscore; this->linkage_zscore_calculated = true; };
+
+                    void set_linkage_enough_datapoints( bool input_enough_datapoints ) { this->linkage_enough_datapoints = input_enough_datapoints; };
 
                     std::string format() const
                     {
@@ -722,6 +742,7 @@ namespace clipper
                     float torsion_omega_nine;   // for 2-8 linkages
                     float torsion_phi_cone_ctwo_oeight_ceight; // for 2-8 linkages
                     float linkage_zscore;
+                    bool linkage_enough_datapoints;
                     int index;                  // carbon to which this is connected
                     int node_id;                // sugar connected to by this linkage
                     bool linkage_zscore_calculated;
@@ -837,7 +858,7 @@ namespace clipper
             std::vector < clipper::MSugar >& get_sugars () { return sugars; }
 
             const Node& get_node ( int index ) const { if (index>node_list.size()-1) return node_list.back(); else return node_list[index]; }
-            std::vector<Node> get_node_list_vector() { return node_list; }; 
+            std::vector<Node> get_node_list_vector() { return node_list; };
 
             const clipper::String& get_chain () const { return chain; }
             const clipper::String& get_root_sugar_chainID () const { return chain_root_sugar; }
@@ -862,7 +883,7 @@ namespace clipper
 
             std::string print_torsions () const
                 {
-                    std::string output; 
+                    std::string output;
 
                     output = "Phi: " + std::to_string(torsion_phi) + " Psi: " + std::to_string(torsion_psi);
 
@@ -905,6 +926,12 @@ namespace clipper
 
             void set_annotations ( std::string expression_system );  // function that annotates glycobiologic validation
 
+            void set_protein_sugar_linkage_zscore_attempt_to_calculate (bool input_value ) {this->protein_sugar_linkage_zscore_attempt_to_calculate = input_value; };
+            bool get_protein_sugar_linkage_zscore_attempt_to_calculate ( ) { return protein_sugar_linkage_zscore; };
+            void set_protein_sugar_linkage_zscore (float input_value ) {this->protein_sugar_linkage_zscore = input_value; };
+            float get_protein_sugar_linkage_zscore ( ) { return protein_sugar_linkage_zscore; };
+            float calculate_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage);
+
         private:
             bool debug_output;
             clipper::String kind_of_glycan;                 // can be n-glycan, o-glycan, s-glycan, c-glycan, p-glycan or ligand
@@ -916,6 +943,10 @@ namespace clipper
             clipper::ftype torsion_psi, torsion_phi;        // Torsions of the protein-glycan link
             std::string root_annotation, link_annotation, expression_system;
             std::vector<MGlycanTorsionSummary> all_torsions_within_mglycan;
+            float protein_sugar_linkage_zscore = 42069;    // crappy hack implemented only for ASN-NAG linkage. For anyone who is going to be working on this
+                                                            // in near future, consider modifying clipper::MGlycan::Linkage class to also be associated
+                                                            // with amino acid - sugar linkages, rather than sugar - sugar linkages.
+            bool protein_sugar_linkage_zscore_attempt_to_calculate = false;
 
     }; // class MGlycan
 

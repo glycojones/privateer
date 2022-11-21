@@ -2384,14 +2384,14 @@ pybind11::int_ privateer::pyanalysis::GlycanStructure::get_number_of_linkages() 
     return static_cast<pybind11::int_>(glycan_torsions.size());
 }
 
-pybind11::dict privateer::pyanalysis::GlycanStructure::get_SNFG_strings(bool includeClosestMatches)
+pybind11::dict privateer::pyanalysis::GlycanStructure::get_SNFG_strings(bool includeClosestMatches, bool enable_potential_issue_shading)
 {
     clipper::MGlycan inputGlycan = glycan;
 
     clipper::String inputWURCSClipper = inputGlycan.generate_wurcs();
     std::string inputWURCS = inputWURCSClipper;
 
-    privateer::glycanbuilderplot::Plot inputGlycanPlot(false, true, inputGlycan.get_root_by_name(), false, true);
+    privateer::glycanbuilderplot::Plot inputGlycanPlot(false, true, inputGlycan.get_root_by_name(), false, true, true, true, enable_potential_issue_shading);
     inputGlycanPlot.plot_glycan ( inputGlycan );
     std::string inputGlycanSNFG = inputGlycanPlot.write_to_string();
 
@@ -2406,7 +2406,7 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::get_SNFG_strings(bool inc
             clipper::String permutationWURCSClipper = permutationGlycan.generate_wurcs();
             std::string permutationWURCS = permutationWURCSClipper;
 
-            privateer::glycanbuilderplot::Plot permutationGlycanPlot(false, true, inputGlycan.get_root_by_name(), false, true);
+            privateer::glycanbuilderplot::Plot permutationGlycanPlot(false, true, inputGlycan.get_root_by_name(), false, true, true, true, false);
             permutationGlycanPlot.plot_glycan ( permutationGlycan );
             std::string permutationGlycanSNFG = permutationGlycanPlot.write_to_string();
 
@@ -4756,7 +4756,7 @@ void init_pyanalysis(py::module& m)
         .def("get_torsions_zscore_summary_with_pdb", &pa::GlycanStructure::get_torsions_zscore_summary_with_pdb)
 
         .def("get_SNFG_strings", &pa::GlycanStructure::get_SNFG_strings, "Returns Privateer generated SNFG representations in SVG string that later can be parsed through Python",
-        py::arg("includeClosestMatches") = true)
+        py::arg("includeClosestMatches") = true, py::arg("enable_potential_issue_shading") = true)
         .def("update_with_experimental_data", static_cast<void (pa::GlycanStructure::*)(pa::XRayData&)>(&pa::GlycanStructure::update_with_experimental_data), "Update glycan with X-Ray Crystallography Data")
         .def("update_with_experimental_data", static_cast<void (pa::GlycanStructure::*)(pa::CryoEMData&)>(&pa::GlycanStructure::update_with_experimental_data), "Update glycan with CryoEM Data")
         .def("check_if_updated_with_experimental_data", &pa::GlycanStructure::check_if_updated_with_experimental_data);

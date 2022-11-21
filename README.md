@@ -1,7 +1,7 @@
 
 
 # Privateer
-
+![ScreenShot](/logo.png)
 Synopsis: Privateer is a tool for carbohydrate structure validation, re-refinement and graphical analysis.
 
 Languages: C++11 and Python3 (via pybind11), produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
@@ -151,4 +151,4 @@ Some examples where Privateer has been useful (thank _you_ for the citations!):
 * 2019-2023 Royal Society Research Grant awarded to Jon Agirre (York), covering 4-year studentship awarded to Haroldas Bagdonas
 
 #### Acknowledgements
-Marcin Wojdyr, Robbie Joosten, Gideon Davies, Wendy Offen, Christian Roth, Paul Emsley, Garib Murshudov, Eleanor Dodson, Jacob Sorensen, Stuart McNicholas... 
+Lucy Schofield, Marcin Wojdyr, Robbie Joosten, Gideon Davies, Wendy Offen, Christian Roth, Paul Emsley, Garib Murshudov, Eleanor Dodson, Jacob Sorensen, Stuart McNicholas... 

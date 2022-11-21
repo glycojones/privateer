@@ -8,6 +8,7 @@
 // York Structural Biology Laboratory
 // The University of York
 
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -104,6 +105,7 @@ int main(int argc, char** argv)
     bool batch = false;
     bool noMaps = false;
     bool allSugars = true;
+    bool excludeNucleicAcids = false;
     bool showGeom = false;
     bool check_unmodelled = false;
     bool ignore_set_null = false;
@@ -113,6 +115,7 @@ int main(int argc, char** argv)
     bool rscc_best = false;
     bool produce_external_restraints = false;
     bool closest_match_disable = false;
+    bool potential_issue_shading = true;
     float resolution = -1;
     float ipradius = 2.5;    // default value, punishing enough!
     float thresholdElectronDensityValue = 0.02;
@@ -234,6 +237,10 @@ int main(int argc, char** argv)
             }
           }
         }
+        else if ( args[arg] == "-exclude_nucleic_acids" )
+        {
+          excludeNucleicAcids = true;
+        }
         else if ( args[arg] == "-closest_match_disable" )
         {
           closest_match_disable = true;
@@ -322,6 +329,10 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-torsions_disable" )
         {
           useTorsionsDataBase = false;
+        }
+        else if ( args[arg] == "-potential_issue_shading_disable" )
+        {
+          potential_issue_shading = false;
         }
         else if ( args[arg] == "-torsions_dbpath" )
         {
@@ -611,7 +622,7 @@ int main(int argc, char** argv)
 
         std::vector < std::pair <clipper::String , clipper::MSugar> > ligandList; // we store the Chain ID and create an MSugar to be scored
         std::vector < clipper::MMonomer > sugarList; // store the original MMonomer
-        
+
         const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
         mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, debug_output, input_expression_system);
@@ -670,7 +681,7 @@ int main(int argc, char** argv)
                             list_of_glycans_associated_to_permutations.at(i) = finalGlycanPermutationContainer;
                             for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                                 {
-                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, false);
                                     plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
                                     std::ostringstream os;
                                     os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
@@ -679,24 +690,27 @@ int main(int argc, char** argv)
                         }
                 }
                 
-                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, potential_issue_shading);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
                 os << list_of_glycans[i].get_root_for_filename() << ".svg";
                 plot.write_to_file ( os.str() );
             }
 
-            float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
-            // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
-            // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
-            float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
+            if (useTorsionsDataBase)
+            {
+                float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
+                // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
+                // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
+                float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
 
-            if (z_score_total_for_protein != 0) {
-                std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
-                std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
-            }
-            else { 
-                std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+                if (z_score_total_for_protein != 0) {
+                    std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
+                    std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
+                }
+                else { 
+                    std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+                }
             }
             
 
@@ -726,6 +740,14 @@ int main(int argc, char** argv)
                         ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar()));
                     }
                     else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // true if strings are different
+                    {
+                        for (int id = 0; id < mmol[p][m].size(); id++ )
+                        {
+                            mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                            allAtoms.push_back(mmol[p][m][id]);
+                        }
+                    }
+                    else if ( excludeNucleicAcids && clipper::data::is_nucleic_acid(mmol[p][m].type().c_str()) && clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // treat nucleic acids as protein rather than sugar
                     {
                         for (int id = 0; id < mmol[p][m].size(); id++ )
                         {
@@ -948,7 +970,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
-                    
+
                     ligandList[index].second.set_context ( "ligand" );
                     fprintf ( output, "\t(l) ");
                 }
@@ -1048,7 +1070,7 @@ int main(int argc, char** argv)
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
-                                
+
                                 std::cout << "\t(n) ";
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
@@ -1065,13 +1087,13 @@ int main(int argc, char** argv)
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
-                                
+
                                 std::cout << "\t(o) ";
                             }
                             else if ( list_of_glycans[i].get_type() == "s-glycan" )
                             {
                                 ligandList[index].second.set_context ( "s-glycan" );
-                                
+
                                 std::cout << "\t(s) ";
                             }
                             else if ( list_of_glycans[i].get_type() == "p-glycan" )
@@ -1094,7 +1116,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
-                    
+
                     ligandList[index].second.set_context ( "ligand" );
                     std::cout << "\t(l) ";
                 }
@@ -1429,8 +1451,8 @@ int main(int argc, char** argv)
         {
             int glycansPermutated = 0;
             clipper::String current_chain = "" ;
-
-            float z_score_summation = 0;
+            float z_score_total_for_protein = 0;
+            int number_of_indiviual_glycans = 0; 
 
             for (int i = 0; i < list_of_glycans.size() ; i++ )
             {
@@ -1458,7 +1480,7 @@ int main(int argc, char** argv)
                             for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                                 {
 
-                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, false);
                                     plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
                                     std::ostringstream os;
                                     os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
@@ -1467,7 +1489,7 @@ int main(int argc, char** argv)
                         }
                 }
 
-                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, potential_issue_shading);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
                 os << list_of_glycans[i].get_root_for_filename() << ".svg";
@@ -1475,14 +1497,37 @@ int main(int argc, char** argv)
                 
                 if(useTorsionsDataBase)
                 {
-                    // std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
-                    // privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
-                   
-                //    std::cout << "Reached part of code execution which would compute the z scores and return glycan summaries..." << std::endl;
+                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+
+                    // input_pdb_code = privateer::util::retrieve_input_PDB_code(input_model);
+
+                    float z_score_total_for_glycan = privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+                    // std::vector<privateer::scripting::ZScoreEntry> = privateer::scripting::report_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+
+                    // std::cout << "Reached part of code execution which would compute the z scores and return glycan summaries..." << std::endl;
+
+                    z_score_total_for_protein = z_score_total_for_protein + z_score_total_for_glycan;
+                    number_of_indiviual_glycans = number_of_indiviual_glycans + torsion_summary_of_glycan.size();
                     // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
                 }
-                
+
             }
+
+            if (useTorsionsDataBase)
+            {
+                float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
+                // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
+                // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
+                float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
+
+                if (z_score_total_for_protein != 0) {
+                    std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
+                    std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
+                }
+                else { 
+                    std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+                }       
+            }     
 
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;
         }
@@ -1514,7 +1559,7 @@ int main(int argc, char** argv)
                         for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                             {
 
-                                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, false);
                                 plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
                                 std::ostringstream os;
                                 os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
@@ -1524,7 +1569,7 @@ int main(int argc, char** argv)
                     }
             }
             
-            privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+            privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, potential_issue_shading);
             plot.plot_glycan ( list_of_glycans[i] );
             std::ostringstream os;
             os << list_of_glycans[i].get_root_for_filename() << ".svg";
@@ -1811,6 +1856,14 @@ int main(int argc, char** argv)
                         allAtoms.push_back(mmol[p][m][id]);
                     }
                 }
+                else if ( excludeNucleicAcids && clipper::data::is_nucleic_acid(mmol[p][m].type().c_str()) && clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // treat nucleic acids as protein rather than sugar
+                {
+                    for (int id = 0; id < mmol[p][m].size(); id++ )
+                    {
+                        mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                        allAtoms.push_back(mmol[p][m][id]);
+                    }
+                }
                 else // it's one of the sugars contained in the database
                 {
                     clipper::MSugar msug, msug_b;
@@ -1943,7 +1996,7 @@ int main(int argc, char** argv)
         if(useParallelism && nThreads >= 2)
         {
             std::vector<std::future<void>> thread_results;
-            thread_results.push_back(std::async(std::launch::async, 
+            thread_results.push_back(std::async(std::launch::async,
                 [](clipper::Xmap<double>& cryo_em_dif_map_all, clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients)
                 {
                     cryo_em_dif_map_all.fft_from( difference_coefficients );
@@ -1951,7 +2004,7 @@ int main(int argc, char** argv)
                 std::ref(cryo_em_dif_map_all), std::ref(difference_coefficients)
                 ));
 
-            thread_results.push_back(std::async(std::launch::async, 
+            thread_results.push_back(std::async(std::launch::async,
                 [](clipper::Xmap<double>& modelmap, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data)
                 {
                     modelmap.fft_from( fc_all_cryoem_data );
@@ -1959,14 +2012,14 @@ int main(int argc, char** argv)
                 std::ref(modelmap), std::ref(fc_all_cryoem_data)
                 ));
 
-            thread_results.push_back(std::async(std::launch::async, 
+            thread_results.push_back(std::async(std::launch::async,
                 [](clipper::Xmap<double>& ligandmap, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data)
                 {
                     ligandmap.fft_from( fc_ligands_only_cryoem_data );
                 },
                 std::ref(ligandmap), std::ref(fc_ligands_only_cryoem_data)
                 ));
-            
+
             for (auto& r: thread_results)
                 r.get();
 
@@ -2004,7 +2057,7 @@ int main(int argc, char** argv)
 			if(useParallelism && nThreads >= 2)
 			{
 				std::vector<std::future<void>> thread_results;
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::CCP4MAPfile& diff_mapOut, clipper::Xmap<double>& cryo_em_dif_map_all)
 					{
 						diff_mapOut.open_write( "cryoem_diff.map" );
@@ -2014,7 +2067,7 @@ int main(int argc, char** argv)
 					std::ref(diff_mapOut), std::ref(cryo_em_dif_map_all)
 					));
 
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::CCP4MAPfile& modelmapout, clipper::Xmap<double>& modelmap)
 					{
 						modelmapout.open_write( "cryoem_calcmodel.map" );
@@ -2023,7 +2076,7 @@ int main(int argc, char** argv)
 					},
 					std::ref(modelmapout), std::ref(modelmap)
 					));
-				
+
 				for (auto& r: thread_results)
 					r.get();
 
@@ -2062,8 +2115,8 @@ int main(int argc, char** argv)
 			for (size_t i = 0; i < nThreads; i++)
 			{
 				end = std::min(start + sugars_per_thread, ligandList.size());
-				thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& input_model, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, 
-				clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<double>& cryo_em_map, clipper::Xmap<double>& ligandmap, clipper::MGlycology& mgl, 
+				thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& input_model, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList,
+				clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<double>& cryo_em_map, clipper::Xmap<double>& ligandmap, clipper::MGlycology& mgl,
 				std::vector<std::string>& enable_torsions_for, bool showGeom, float ipradius, int pos_slash, size_t start, size_t end, bool batch, bool debug_output)
 				{
 					for(size_t index = start; index < end; index++)
@@ -2189,7 +2242,7 @@ int main(int argc, char** argv)
 						ligandList[index].second.set_occupancy_check ( occupancy_check );
 					}
 				},
-				std::ref(sugarList), std::ref(input_model), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(cryo_em_map), std::ref(ligandmap), std::ref(mgl), std::ref(enable_torsions_for), showGeom, ipradius, pos_slash, start, end, batch, debug_output 
+				std::ref(sugarList), std::ref(input_model), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(cryo_em_map), std::ref(ligandmap), std::ref(mgl), std::ref(enable_torsions_for), showGeom, ipradius, pos_slash, start, end, batch, debug_output
 				));
 				start += sugars_per_thread;
 			}
@@ -2271,7 +2324,7 @@ int main(int argc, char** argv)
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
-                                
+
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
@@ -2285,12 +2338,12 @@ int main(int argc, char** argv)
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
-                                
+
                             }
                             else if ( list_of_glycans[i].get_type() == "s-glycan" )
                             {
                                 ligandList[index].second.set_context ( "s-glycan" );
-                                
+
                             }
                             else if ( list_of_glycans[i].get_type() == "p-glycan" )
                             {
@@ -2357,7 +2410,7 @@ int main(int argc, char** argv)
             if(useParallelism && nThreads >= 2)
             {
 				std::vector<std::future<void>> thread_results;
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::SFcalc_obs_bulk<float>& sfcbligands, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_bsc, clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::Atom_list& ligandAtoms)
 					{
 						sfcbligands( fc_ligands_bsc, fobs, ligandAtoms ); // was fobs_scaled
@@ -2365,7 +2418,7 @@ int main(int argc, char** argv)
 					std::ref(sfcbligands), std::ref(fc_ligands_bsc), std::ref(fobs), std::ref(ligandAtoms)
 					));
 
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::SFcalc_obs_bulk<float>& sfcb, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc, clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::Atom_list& mainAtoms)
 					{
 						sfcb( fc_omit_bsc, fobs, mainAtoms ); // was fobs_scaled
@@ -2373,14 +2426,14 @@ int main(int argc, char** argv)
 					std::ref(sfcb), std::ref(fc_omit_bsc), std::ref(fobs), std::ref(mainAtoms)
 					));
 
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::SFcalc_obs_bulk<float>& sfcball, clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc, clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::Atom_list& allAtoms)
 					{
 						sfcball( fc_all_bsc, fobs, allAtoms ); // was fobs_scaled
 					},
 					std::ref(sfcball), std::ref(fc_all_bsc), std::ref(fobs), std::ref(allAtoms)
 					));
-				
+
 				for (auto& r: thread_results)
 					r.get();
 
@@ -2427,14 +2480,14 @@ int main(int argc, char** argv)
         if(useParallelism && nThreads >= 2)
             {
 				std::vector<std::future<void>> thread_results;
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::SFscale_aniso<float>& sfscale, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc)
 					{
 						sfscale( fobs_scaled, fc_all_bsc ); // was fobs_scaled
 					},
 					std::ref(sfscale), std::ref(fobs_scaled), std::ref(fc_all_bsc)
 					));
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::HKL_data<clipper::datatypes::Flag>& flag, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, HRI& ih)
 					{
 						for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
@@ -2446,8 +2499,8 @@ int main(int argc, char** argv)
 					},
 					std::ref(flag), std::ref(fobs_scaled), std::ref(ih)
 					));
-                
-				
+
+
 				for (auto& r: thread_results)
 					r.get();
 
@@ -2478,8 +2531,8 @@ int main(int argc, char** argv)
         if(useParallelism && nThreads >= 2)
         {
 			std::vector<std::future<void>> thread_results;
-			thread_results.push_back(std::async(std::launch::async, 
-				[](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_omit, clipper::HKL_data<clipper::data32::F_phi>& fd_omit, 
+			thread_results.push_back(std::async(std::launch::async,
+				[](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_omit, clipper::HKL_data<clipper::data32::F_phi>& fd_omit,
 				clipper::HKL_data<clipper::data32::Phi_fom>& phiw_omit, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc,
 				clipper::HKL_data<clipper::datatypes::Flag>& flag)
 				{
@@ -2489,8 +2542,8 @@ int main(int argc, char** argv)
 				n_refln, n_param, std::ref(fb_omit), std::ref(fd_omit), std::ref(phiw_omit), std::ref(fobs_scaled), std::ref(fc_omit_bsc), std::ref(flag)
 				));
 
-			thread_results.push_back(std::async(std::launch::async, 
-				[](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_all, clipper::HKL_data<clipper::data32::F_phi>& fd_all, 
+			thread_results.push_back(std::async(std::launch::async,
+				[](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_all, clipper::HKL_data<clipper::data32::F_phi>& fd_all,
 				clipper::HKL_data<clipper::data32::Phi_fom>& phiw_all, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc,
 				clipper::HKL_data<clipper::datatypes::Flag>& flag)
 				{
@@ -2499,10 +2552,10 @@ int main(int argc, char** argv)
 				},
 				n_refln, n_param, std::ref(fb_all), std::ref(fd_all), std::ref(phiw_all), std::ref(fobs_scaled), std::ref(fc_all_bsc), std::ref(flag)
 				));
-			
+
             for (auto& r: thread_results)
 				r.get();
-            
+
 
 			thread_results.clear();
         }
@@ -2537,7 +2590,7 @@ int main(int argc, char** argv)
         if(useParallelism && nThreads >= 2)
         {
 			std::vector<std::future<void>> thread_results;
-			thread_results.push_back(std::async(std::launch::async, 
+			thread_results.push_back(std::async(std::launch::async,
 				[](clipper::Xmap<float>& sigmaa_all_map, clipper::HKL_data<clipper::data32::F_phi>& fb_all)
 				{
 					sigmaa_all_map.fft_from( fb_all );
@@ -2545,7 +2598,7 @@ int main(int argc, char** argv)
 				std::ref(sigmaa_all_map), std::ref(fb_all)
 				));
 
-			thread_results.push_back(std::async(std::launch::async, 
+			thread_results.push_back(std::async(std::launch::async,
 				[](clipper::Xmap<float>& sigmaa_dif_map, clipper::HKL_data<clipper::data32::F_phi>& fd_all)
 				{
 					sigmaa_dif_map.fft_from( fd_all );
@@ -2553,7 +2606,7 @@ int main(int argc, char** argv)
 				std::ref(sigmaa_dif_map), std::ref(fd_all)
 				));
 
-			thread_results.push_back(std::async(std::launch::async, 
+			thread_results.push_back(std::async(std::launch::async,
 				[](clipper::Xmap<float>& sigmaa_omit_fb, clipper::HKL_data<clipper::data32::F_phi>& fb_omit)
 				{
 					sigmaa_omit_fb.fft_from( fb_omit );
@@ -2561,7 +2614,7 @@ int main(int argc, char** argv)
 				std::ref(sigmaa_omit_fb), std::ref(fb_omit)
 				));
 
-			thread_results.push_back(std::async(std::launch::async, 
+			thread_results.push_back(std::async(std::launch::async,
 				[](clipper::Xmap<float>& sigmaa_omit_fd, clipper::HKL_data<clipper::data32::F_phi>& fd_omit)
 				{
 					sigmaa_omit_fd.fft_from( fd_omit );
@@ -2569,7 +2622,7 @@ int main(int argc, char** argv)
 				std::ref(sigmaa_omit_fd), std::ref(fd_omit)
 				));
 
-            thread_results.push_back(std::async(std::launch::async, 
+            thread_results.push_back(std::async(std::launch::async,
 				[](clipper::Xmap<float>& ligandmap, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_bsc)
 				{
 					ligandmap.fft_from( fc_ligands_bsc );
@@ -2577,9 +2630,9 @@ int main(int argc, char** argv)
 				std::ref(ligandmap), std::ref(fc_ligands_bsc)
 				));
 
-			thread_results.push_back(std::async(std::launch::async, 
+			thread_results.push_back(std::async(std::launch::async,
 				[](clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::ResolutionFn& wrk_scale_all, clipper::ResolutionFn& wrk_scale_omit,
-					clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc, HRI& ih, 
+					clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc, HRI& ih,
 					double& Fo, double& Fc_all, double& Fc_omit, double& FobsFcalcAllSum, double& FobsFcalcSum, double& FobsSum)
 				{
 					for ( ih = fobs_scaled.first(); !ih.last(); ih.next() )
@@ -2597,7 +2650,7 @@ int main(int argc, char** argv)
 				},
 				std::ref(fobs_scaled), std::ref(wrk_scale_all), std::ref(wrk_scale_omit), std::ref(fc_all_bsc), std::ref(fc_omit_bsc), std::ref(ih), std::ref(Fo), std::ref(Fc_all), std::ref(Fc_omit), std::ref(FobsFcalcAllSum), std::ref(FobsFcalcSum), std::ref(FobsSum)
 				));
-			
+
 			for (auto& r: thread_results)
 				r.get();
 			thread_results.clear();
@@ -2709,7 +2762,7 @@ int main(int argc, char** argv)
             if(useParallelism && nThreads >= 2)
             {
 				std::vector<std::future<void>> thread_results;
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::CCP4MAPfile& sigmaa_all_MapOut, clipper::Xmap<float>& sigmaa_all_map)
 					{
 						sigmaa_all_MapOut.open_write( "sigmaa_best.map" );      // write maps
@@ -2719,7 +2772,7 @@ int main(int argc, char** argv)
 					std::ref(sigmaa_all_MapOut), std::ref(sigmaa_all_map)
 					));
 
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::CCP4MAPfile& sigmaa_dif_MapOut, clipper::Xmap<float>& sigmaa_dif_map)
 					{
 						sigmaa_dif_MapOut.open_write( "sigmaa_diff.map" );      // write maps
@@ -2729,7 +2782,7 @@ int main(int argc, char** argv)
 					std::ref(sigmaa_dif_MapOut), std::ref(sigmaa_dif_map)
 					));
 
-				thread_results.push_back(std::async(std::launch::async, 
+				thread_results.push_back(std::async(std::launch::async,
 					[](clipper::CCP4MAPfile& sigmaa_omit_fd_MapOut, clipper::Xmap<float>& sigmaa_omit_fd)
 					{
 						sigmaa_omit_fd_MapOut.open_write( "sigmaa_omit.map" );      // write maps
@@ -2738,7 +2791,7 @@ int main(int argc, char** argv)
 					},
 					std::ref(sigmaa_omit_fd_MapOut), std::ref(sigmaa_omit_fd)
 					));
-				
+
 				for (auto& r: thread_results)
 					r.get();
 
@@ -2777,8 +2830,8 @@ int main(int argc, char** argv)
             for (size_t i = 0; i < nThreads; i++)
             {
                 end = std::min(start + sugars_per_thread, ligandList.size());
-				thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& input_model, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, 
-				clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<float>& sigmaa_all_map, clipper::Xmap<float>& sigmaa_omit_fb, clipper::Xmap<float>& sigmaa_omit_fd, clipper::Xmap<float>& ligandmap, clipper::MGlycology& mgl, 
+				thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& input_model, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList,
+				clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<float>& sigmaa_all_map, clipper::Xmap<float>& sigmaa_omit_fb, clipper::Xmap<float>& sigmaa_omit_fd, clipper::Xmap<float>& ligandmap, clipper::MGlycology& mgl,
 				std::vector<std::string>& enable_torsions_for, bool showGeom, float ipradius, int pos_slash, bool useSigmaa, bool rscc_best, size_t start, size_t end, bool batch, bool debug_output)
 				{
 					for(size_t index = start; index < end; index++)
@@ -2904,14 +2957,14 @@ int main(int argc, char** argv)
 						ligandList[index].second.set_occupancy_check ( occupancy_check );
 					}
                 },
-                std::ref(sugarList), std::ref(input_model), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(sigmaa_all_map), std::ref(sigmaa_omit_fb), std::ref(sigmaa_omit_fd), std::ref(ligandmap), std::ref(mgl), std::ref(enable_torsions_for), showGeom, ipradius, pos_slash, useSigmaa, rscc_best, start, end, batch, debug_output 
+                std::ref(sugarList), std::ref(input_model), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(sigmaa_all_map), std::ref(sigmaa_omit_fb), std::ref(sigmaa_omit_fd), std::ref(ligandmap), std::ref(mgl), std::ref(enable_torsions_for), showGeom, ipradius, pos_slash, useSigmaa, rscc_best, start, end, batch, debug_output
 				));
 				start += sugars_per_thread;
             }
 
 			for (auto& r: thread_results)
           		r.get();
-			
+
 			thread_results.clear();
             privateer::util::print_monosaccharide_summary (batch, showGeom, pos_slash, useMRC, ligandList, output, hklinfo, input_model);
         }
@@ -2990,7 +3043,7 @@ int main(int argc, char** argv)
                             if ( list_of_glycans[i].get_type() == "n-glycan" )
                             {
                                 ligandList[index].second.set_context ( "n-glycan" );
-                                
+
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
@@ -3004,11 +3057,11 @@ int main(int argc, char** argv)
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
                                 ligandList[index].second.set_context ( "o-glycan" );
-                                
+
                             }
                             else if ( list_of_glycans[i].get_type() == "s-glycan" )
                             {
-                                ligandList[index].second.set_context ( "s-glycan" ); 
+                                ligandList[index].second.set_context ( "s-glycan" );
                             }
                             else if ( list_of_glycans[i].get_type() == "p-glycan" )
                             {
@@ -3028,7 +3081,7 @@ int main(int argc, char** argv)
 
                 if ( !found_in_tree )
                 {
-                    
+
                     ligandList[index].second.set_context ( "ligand" );
                 }
 
