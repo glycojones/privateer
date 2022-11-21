@@ -105,6 +105,7 @@ int main(int argc, char** argv)
     bool batch = false;
     bool noMaps = false;
     bool allSugars = true;
+    bool excludeNucleicAcids = false;
     bool showGeom = false;
     bool check_unmodelled = false;
     bool ignore_set_null = false;
@@ -235,6 +236,10 @@ int main(int argc, char** argv)
               return 1;
             }
           }
+        }
+        else if ( args[arg] == "-exclude_nucleic_acids" )
+        {
+          excludeNucleicAcids = true;
         }
         else if ( args[arg] == "-closest_match_disable" )
         {
@@ -735,6 +740,14 @@ int main(int argc, char** argv)
                         ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar()));
                     }
                     else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // true if strings are different
+                    {
+                        for (int id = 0; id < mmol[p][m].size(); id++ )
+                        {
+                            mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                            allAtoms.push_back(mmol[p][m][id]);
+                        }
+                    }
+                    else if ( excludeNucleicAcids && clipper::data::is_nucleic_acid(mmol[p][m].type().c_str()) && clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // treat nucleic acids as protein rather than sugar
                     {
                         for (int id = 0; id < mmol[p][m].size(); id++ )
                         {
@@ -1836,6 +1849,14 @@ int main(int argc, char** argv)
 
                 }
                 else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) )
+                {
+                    for (int id = 0; id < mmol[p][m].size(); id++ )
+                    {
+                        mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                        allAtoms.push_back(mmol[p][m][id]);
+                    }
+                }
+                else if ( excludeNucleicAcids && clipper::data::is_nucleic_acid(mmol[p][m].type().c_str()) && clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // treat nucleic acids as protein rather than sugar
                 {
                     for (int id = 0; id < mmol[p][m].size(); id++ )
                     {
