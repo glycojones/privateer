@@ -82,18 +82,17 @@ namespace privateer
         std::vector<char> number_of_conformers ( clipper::MMonomer& mmon );
         void print_monosaccharide_summary (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, FILE *output, clipper::HKL_info& hklinfo, clipper::String input_model);
         void print_monosaccharide_summary_python (bool batch, bool showGeom, int pos_slash, bool useMRC, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, clipper::HKL_info& hklinfo, clipper::String input_model);
+        
         float calculate_linkage_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage, std::string input_code);
         float calculate_linkage_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage);
-
         float calculate_quality_zscore(privateer::json::TorsionsZScoreStatistics& statistics, float average_z_score);
-
         bool do_report_linkage(std::string d_pos, std::string d_atom, std::string a_atom, std::string a_pos);
         std::string retrieve_input_PDB_code(clipper::String input_model_path);
     }
 
     namespace glycanbuilderplot
     {
-        enum Colour { corvette, blue, rootblue, red, rootred, yellow, rootyellow, orange, green, purple, pink, cyan, tan, black, brown, white };
+        enum Colour { corvette, grey, blue, rootblue, red, rootred, yellow, rootyellow, orange, green, purple, pink, cyan, tan, black, brown, white };
         enum Link_type { up, up_side, branch_side, side, down_side, down };
 
         std::string get_colour ( Colour colour, bool original_style, bool inverted = false  );
@@ -188,7 +187,7 @@ namespace privateer
                 } //!< default constructor
                 
 
-                Plot( bool vertical, bool original_style, std::string title, bool inverted_background = false, bool smaller=false, bool validation = true, bool add_links = true )
+                Plot( bool vertical, bool original_style, std::string title, bool inverted_background = false, bool smaller=false, bool validation = true, bool add_links = true, bool potential_issue_shading = true )
                 {
                     vertical ? width  = 300 : width  = 800;
                     vertical ? height = 800 : height = 300;
@@ -205,6 +204,7 @@ namespace privateer
                     this->inverted_background = inverted_background;
                     this->validation = validation;
                     this->add_links = add_links;
+                    this->potential_issue_shading = potential_issue_shading;
                 }
 
                 /*! Set the SVG viewport
@@ -301,6 +301,7 @@ namespace privateer
                 bool inverted_background;
                 bool validation;
                 bool add_links;
+                bool potential_issue_shading;
 
                 void write_svg_header        ( std::fstream& of );
                 void write_svg_definitions   ( std::fstream& of );
@@ -669,10 +670,13 @@ namespace privateer
         {
             public:
                 shadedBond() { } //!< null constructor
-                shadedBond( int x, int y, Link_type bond, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel );}
+                shadedBond( int x, int y, Link_type bond, std::string message, std::string svg_class, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel ); this->set_svg_class(svg_class); }
                 std::string get_XML ( );
 
             private:
+                std::string svgclass;
+                void set_svg_class ( std::string input_string) { this->svgclass = input_string; }
+                std::string get_svg_class () { return svgclass; };
                 Link_type bond_type;
                 void set_bond_type ( Link_type bond ) { this->bond_type = bond; }
                 Link_type get_bond_type () { return bond_type; }

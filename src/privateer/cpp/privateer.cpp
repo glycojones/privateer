@@ -105,6 +105,7 @@ int main(int argc, char** argv)
     bool batch = false;
     bool noMaps = false;
     bool allSugars = true;
+    bool excludeNucleicAcids = false;
     bool showGeom = false;
     bool check_unmodelled = false;
     bool ignore_set_null = false;
@@ -114,6 +115,7 @@ int main(int argc, char** argv)
     bool rscc_best = false;
     bool produce_external_restraints = false;
     bool closest_match_disable = false;
+    bool potential_issue_shading = true;
     float resolution = -1;
     float ipradius = 2.5;    // default value, punishing enough!
     float thresholdElectronDensityValue = 0.02;
@@ -235,6 +237,10 @@ int main(int argc, char** argv)
             }
           }
         }
+        else if ( args[arg] == "-exclude_nucleic_acids" )
+        {
+          excludeNucleicAcids = true;
+        }
         else if ( args[arg] == "-closest_match_disable" )
         {
           closest_match_disable = true;
@@ -323,6 +329,10 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-torsions_disable" )
         {
           useTorsionsDataBase = false;
+        }
+        else if ( args[arg] == "-potential_issue_shading_disable" )
+        {
+          potential_issue_shading = false;
         }
         else if ( args[arg] == "-torsions_dbpath" )
         {
@@ -671,7 +681,7 @@ int main(int argc, char** argv)
                             list_of_glycans_associated_to_permutations.at(i) = finalGlycanPermutationContainer;
                             for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                                 {
-                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, false);
                                     plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
                                     std::ostringstream os;
                                     os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
@@ -680,24 +690,27 @@ int main(int argc, char** argv)
                         }
                 }
                 
-                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, potential_issue_shading);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
                 os << list_of_glycans[i].get_root_for_filename() << ".svg";
                 plot.write_to_file ( os.str() );
             }
 
-            float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
-            // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
-            // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
-            float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
+            if (useTorsionsDataBase)
+            {
+                float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
+                // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
+                // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
+                float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
 
-            if (z_score_total_for_protein != 0) {
-                std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
-                std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
-            }
-            else { 
-                std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+                if (z_score_total_for_protein != 0) {
+                    std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
+                    std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
+                }
+                else { 
+                    std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+                }
             }
             
 
@@ -727,6 +740,14 @@ int main(int argc, char** argv)
                         ligandList.push_back ( std::pair < clipper::String, clipper::MSugar> (id, md.get_second_sugar()));
                     }
                     else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // true if strings are different
+                    {
+                        for (int id = 0; id < mmol[p][m].size(); id++ )
+                        {
+                            mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                            allAtoms.push_back(mmol[p][m][id]);
+                        }
+                    }
+                    else if ( excludeNucleicAcids && clipper::data::is_nucleic_acid(mmol[p][m].type().c_str()) && clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // treat nucleic acids as protein rather than sugar
                     {
                         for (int id = 0; id < mmol[p][m].size(); id++ )
                         {
@@ -1430,8 +1451,8 @@ int main(int argc, char** argv)
         {
             int glycansPermutated = 0;
             clipper::String current_chain = "" ;
-
-            float z_score_summation = 0;
+            float z_score_total_for_protein = 0;
+            int number_of_indiviual_glycans = 0; 
 
             for (int i = 0; i < list_of_glycans.size() ; i++ )
             {
@@ -1459,7 +1480,7 @@ int main(int argc, char** argv)
                             for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                                 {
 
-                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                    privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, false);
                                     plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
                                     std::ostringstream os;
                                     os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
@@ -1468,7 +1489,7 @@ int main(int argc, char** argv)
                         }
                 }
 
-                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, potential_issue_shading);
                 plot.plot_glycan ( list_of_glycans[i] );
                 std::ostringstream os;
                 os << list_of_glycans[i].get_root_for_filename() << ".svg";
@@ -1476,14 +1497,37 @@ int main(int argc, char** argv)
                 
                 if(useTorsionsDataBase)
                 {
-                    // std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
-                    // privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
-                   
-                //    std::cout << "Reached part of code execution which would compute the z scores and return glycan summaries..." << std::endl;
+                    std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = list_of_glycans[i].return_torsion_summary_within_glycan();
+
+                    // input_pdb_code = privateer::util::retrieve_input_PDB_code(input_model);
+
+                    float z_score_total_for_glycan = privateer::scripting::compute_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+                    // std::vector<privateer::scripting::ZScoreEntry> = privateer::scripting::report_linkage_torsion_zscores_for_glycan(torsions_zscore_database, torsion_summary_of_glycan);
+
+                    // std::cout << "Reached part of code execution which would compute the z scores and return glycan summaries..." << std::endl;
+
+                    z_score_total_for_protein = z_score_total_for_protein + z_score_total_for_glycan;
+                    number_of_indiviual_glycans = number_of_indiviual_glycans + torsion_summary_of_glycan.size();
                     // privateer::scripting::produce_torsions_plot_for_individual_glycan(list_of_glycans[i], torsion_summary_of_glycan, torsions_database);
                 }
 
             }
+
+            if (useTorsionsDataBase)
+            {
+                float average_z_score_for_protein = z_score_total_for_protein / number_of_indiviual_glycans;
+                // std::cout << "Number of individual glycans used in calculation is " << number_of_indiviual_glycans << std::endl;
+                // std::cout << "Z score total used in calculation is " << z_score_total_for_protein << std::endl;
+                float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score_for_protein);
+
+                if (z_score_total_for_protein != 0) {
+                    std::cout << "Average Z Score for glycan : " << average_z_score_for_protein << std::endl;
+                    std::cout << "Quality Z Score for detected glycans : " << quality_score << std::endl;
+                }
+                else { 
+                    std::cout << "Cannot calculate average z score or quality score due to lack of information on this models linkages" << std::endl;
+                }       
+            }     
 
             if(useWURCSDataBase && glycansPermutated > 0) std::cout << "Originally modelled glycans not found on GlyConnect database: " << glycansPermutated << "/" << list_of_glycans.size() << std::endl;
         }
@@ -1515,7 +1559,7 @@ int main(int argc, char** argv)
                         for(int j = 0; j < finalGlycanPermutationContainer.size(); j++)
                             {
 
-                                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+                                privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, false);
                                 plot.plot_glycan ( finalGlycanPermutationContainer[j].first.first );
                                 std::ostringstream os;
                                 os << finalGlycanPermutationContainer[j].first.first.get_root_for_filename() << "-" << j << "-PERMUTATION.svg";
@@ -1525,7 +1569,7 @@ int main(int argc, char** argv)
                     }
             }
             
-            privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true);
+            privateer::glycanbuilderplot::Plot plot(vertical, original, list_of_glycans[i].get_root_by_name(), invert, true, true, true, potential_issue_shading);
             plot.plot_glycan ( list_of_glycans[i] );
             std::ostringstream os;
             os << list_of_glycans[i].get_root_for_filename() << ".svg";
@@ -1805,6 +1849,14 @@ int main(int argc, char** argv)
 
                 }
                 else if ( !clipper::MSugar::search_database(mmol[p][m].type().c_str()) )
+                {
+                    for (int id = 0; id < mmol[p][m].size(); id++ )
+                    {
+                        mainAtoms.push_back(mmol[p][m][id]); // cycle through atoms and copy them
+                        allAtoms.push_back(mmol[p][m][id]);
+                    }
+                }
+                else if ( excludeNucleicAcids && clipper::data::is_nucleic_acid(mmol[p][m].type().c_str()) && clipper::MSugar::search_database(mmol[p][m].type().c_str()) ) // treat nucleic acids as protein rather than sugar
                 {
                     for (int id = 0; id < mmol[p][m].size(); id++ )
                     {
