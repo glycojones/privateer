@@ -33,7 +33,7 @@
 
 inline bool altconf_compatible ( char m1, char m2 )
 {
-    // OLD VERSION: 
+    // OLD VERSION:
         // if (( m1 == 'A' && m2 == 'B') || ( m1 == 'B' && m2 == 'A'))
         //     return false;
         // else
@@ -43,7 +43,7 @@ inline bool altconf_compatible ( char m1, char m2 )
         return true;
     else if((m1 == ' ' && m2 != ' ') || (m1 != ' ' && m2 == ' '))
         return true;
-    else 
+    else
         return false;
 
 }
@@ -204,7 +204,7 @@ namespace clipper
             MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, char alt_conf = ' ' );
             //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
-            class Diagnostics 
+            class Diagnostics
             {
                 public:
 
@@ -276,7 +276,7 @@ namespace clipper
                 private:
                     bool diagnostic_complete;
                     bool sugar_sane;
-                    
+
             };
 
             const bool operator== ( const clipper::MSugar& m2 ) const { return ( this->id() == m2.id() ); }
@@ -339,11 +339,11 @@ namespace clipper
 
             int potential_linkages() const { return sugar_linked_to.size(); }
             //!<  returns the number of potential linkages to other sugars
-            
-            std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > get_stacked_residues ( std::string = "hudson",
-                                                                                                                  float = 4.5,
-                                                                                                                  float = 40.0,
-                                                                                                                  float = 0.0 ) const ;
+
+            std::vector < std::pair< clipper::MAtomIndexSymmetry, float > > get_stacked_residues ( std::string = "hudson",
+                                                                                                         float = 4.5,
+                                                                                                         float = 40.0,
+                                                                                                         float = 0.0 ) const ;
             //!< returns chain and monomer for stacked residues (restricted to TRP, TYR, PHE, HIS)
             /*!
               \sa get_stacked_residues()
@@ -730,7 +730,7 @@ namespace clipper
                     }
 
                     void calculate_and_set_zscore(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom, privateer::json::GlobalTorsionZScore& torsions_zscore_database);
-                    
+
                     float calculate_zscore(float phi, float psi, privateer::json::TorsionsZScoreDatabase& matched_linkage);
                 private:
                     float torsion_phi;
@@ -868,7 +868,7 @@ namespace clipper
             void remove_node_at_index ( int index );
             void replace_sugar_at_index ( int index, clipper::MSugar& donor );
             void update_msugar_in_root ( clipper::MSugar& newmsug );
-            
+
             int get_number_of_connections_at_index ( int index ) const { if (index>node_list.size()-1) return node_list.back().number_of_connections(); else return node_list[index].number_of_connections(); }
 
             void set_kind_of_glycan ( clipper::String input ) { kind_of_glycan = input; }

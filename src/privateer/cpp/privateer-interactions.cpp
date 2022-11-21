@@ -11,27 +11,27 @@
 
 namespace privateer {
 	namespace interactions {
-        
+
         void hydrogenate_input_model(std::string input_model, std::string output_path)
         {
             std::cout << "Hydrogenating '" << input_model << "' using project-gemmi/gemmi third party library." << std::endl;
-            try 
+            try
             {
-                std::string output; 
+                std::string output;
                 if(output == "undefined")
                     output = "hydrogenated_input_model.pdb";
-                else 
+                else
                     output = output_path;
                 gemmi::HydrogenChange h_change = gemmi::HydrogenChange::ReAdd;
                 std::string monomer_dir = privateer::restraints::check_monlib_access();
                 if (monomer_dir.empty())
                     throw std::runtime_error("Failed to locate $CLIBD_MON. Have ccp4 env variables been sourced?");
-                
+
                 gemmi::Structure st = gemmi::read_structure_file(input_model);
 
-                if (st.models.empty() || st.models[0].chains.empty()) 
+                if (st.models.empty() || st.models[0].chains.empty())
                     throw std::runtime_error("No atoms in the input file.");
-                
+
                 gemmi::setup_entities(st);
                 size_t initial_h = 0;
                 initial_h = gemmi::count_hydrogen_sites(st);
@@ -40,13 +40,13 @@ namespace privateer {
 
                 std::printf("Reading %zu monomers and all links from %s\n",
                         res_names.size(), input_model.c_str());
-                
+
                 gemmi::MonLib monlib = gemmi::read_monomer_lib(monomer_dir, res_names,
                                                         gemmi::cif::read_file);
-                                
+
                 for (size_t i = 0; i != st.models.size(); ++i)
                     gemmi::prepare_topology(st, monlib, i, h_change, false);
-                
+
                 std::printf("Hydrogen site count: %zu in input, %zu in output.\n",
                     initial_h, gemmi::count_hydrogen_sites(st));
 
@@ -79,7 +79,7 @@ namespace privateer {
 
                 std::cout << input_model << " was successfully hydrogenated!" << std::endl;
             }
-            catch (std::exception& e) 
+            catch (std::exception& e)
             {
                 std::fprintf(stderr, "ERROR: %s\n", e.what());
                 throw stderr;
@@ -92,8 +92,8 @@ namespace privateer {
             clipper::MMDBfile mfile;
             clipper::String clipperfied_input_model_path = input_model;
             privateer::util::read_coordinate_file_mtz(mfile, this->input_model, clipperfied_input_model_path, true);
-			
-           
+
+
             this->manb_object = clipper::MAtomNonBond( this->input_model, 5.0);
             privateer::json::GlobalTorsionZScore torsions_zscore_database;
             this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, torsions_zscore_database, false, "undefined");
@@ -104,7 +104,7 @@ namespace privateer {
             std::vector<clipper::MGlycan> list_of_glycans = this->mglycology.get_list_of_glycans();
             if(glycanIndex >= list_of_glycans.size() || glycanIndex < 0)
                 throw std::runtime_error("Out of bounds access to std::vector storing MGlycans. Supplied index: " + std::to_string(glycanIndex) + "\tsize of vector: " + std::to_string(list_of_glycans.size()));
-            
+
             std::vector<privateer::interactions::CHPiBond> result;
 
             clipper::MGlycan inputGlycan = list_of_glycans[glycanIndex];
@@ -112,7 +112,7 @@ namespace privateer {
             for(int sugar = 0; sugar < sugars_in_glycan.size(); sugar++)
             {
                 clipper::MSugar currentSugar = sugars_in_glycan[sugar];
-                std::vector < std::pair< clipper::MAtomIndexSymmetry, float > > contacts = privateer::interactions::CHPiBondsParser::get_stacked_residues_python(currentSugar);
+                std::vector < std::pair< clipper::MAtomIndexSymmetry, float > > contacts = currentSugar.get_stacked_residues();
                 if(contacts.size() > 0)
                 {
                     for(int contact = 0; contact < contacts.size(); contact++)
@@ -163,7 +163,7 @@ namespace privateer {
                                                     (input_sugar.ring_members()[1].coord_orth().z() +
                                                     input_sugar.ring_members()[5].coord_orth().z() ) / 2.0 );
 
-            
+
 
             const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(centre_apolar, 5.0);
 
@@ -227,7 +227,7 @@ namespace privateer {
         privateer::interactions::HBondsParser::HBondsParser(std::string& input_model, std::string output_path)
         {
             hydrogenate_input_model(input_model, output_path);
-            
+
             clipper::MMDBfile mfile;
             clipper::String clipperfied_input_model_path;
             if(output_path == "undefined")
@@ -235,7 +235,7 @@ namespace privateer {
             else
                 clipperfied_input_model_path = output_path;
             privateer::util::read_coordinate_file_mtz(mfile, this->hydrogenated_input_model, clipperfied_input_model_path, true);
-			
+
             this->privateer::interactions::HBondsParser::import_ener_lib();
             this->hydrogenated_input_model = mark_hbond_donors_and_acceptors(this->hydrogenated_input_model);
             this->manb_object = clipper::MAtomNonBond( this->hydrogenated_input_model, 5.0 );   // 1.2 for sugar initialization, 3.9 for max hbond distance.
@@ -272,7 +272,7 @@ namespace privateer {
             //             if(output[chain][residue][atom].exists_property("hb_type"))
             //             {
             //                 const hb_type& atom_hb_potential = dynamic_cast<const clipper::Property<hb_type>& >(output[chain][residue][atom].get_property( "hb_type" )).value(); // kurwa biski ugly, bet kak pap tak
-            //                 // std::cout   << "Chain " << output[chain].id().trim() << ": " << output[chain][residue].type().trim() << "/" << output[chain][residue].id().trim() 
+            //                 // std::cout   << "Chain " << output[chain].id().trim() << ": " << output[chain][residue].type().trim() << "/" << output[chain][residue].id().trim()
             //                 //             << " - " << output[chain][residue][atom].id().trim() << "\t\t\t" << atom_hb_potential << std::endl;
             //             }
             //         }
@@ -318,7 +318,7 @@ namespace privateer {
                                 [&current_atom_energy_type](energy_library_entry& entry) {
                                     return  entry.type == current_atom_energy_type;
                                 });
-                            
+
                             if(search_result_for_hb_type_of_current_atom != std::end(energy_library))
                             {
                                 std::string dict_hb_type = search_result_for_hb_type_of_current_atom->hb_type;
@@ -339,7 +339,7 @@ namespace privateer {
             }
             else
                 throw std::runtime_error("get_h_bond_type: input_residue_type " + input_residue_type + " does not match dict.monomer_name " + dict.monomer_name);
-                
+
             return hb_t;
         }
 
@@ -383,7 +383,7 @@ namespace privateer {
                         [&retrieved_energy_type](energy_library_entry& entry) {
                             return  entry.type == retrieved_energy_type;
                         });
-                    
+
                     if(search_result_for_energy_type_of_atom_bonded_to != std::end(energy_library))
                     {
                         energy_library_entry row_of_hydrogen_bonded_to = *search_result_for_energy_type_of_atom_bonded_to;
@@ -407,12 +407,12 @@ namespace privateer {
         std::vector<clipper::MGlycan> list_of_hydrogenated_glycans = this->hydrogenated_mglycology.get_list_of_glycans();
         if(glycanIndex >= list_of_hydrogenated_glycans.size() || glycanIndex < 0)
             throw std::runtime_error("Out of bounds access to std::vector storing MGlycans. Supplied index: " + std::to_string(glycanIndex) + "\tsize of vector: " + std::to_string(list_of_hydrogenated_glycans.size()));
-        
+
         std::vector<privateer::interactions::HBond> output;
-        
+
         float min_dist = 0.1;
         clipper::MGlycan inputGlycan = list_of_hydrogenated_glycans[glycanIndex];
-        // TO DO: This needs to be reworked after mmdb::Atom atom->GetChainID() equivalent is implemented. 
+        // TO DO: This needs to be reworked after mmdb::Atom atom->GetChainID() equivalent is implemented.
         std::vector<clipper::MSugar> inputGlycanSugars = inputGlycan.get_sugars();
         for(int sugar = 0; sugar < inputGlycanSugars.size(); sugar++)
         {
@@ -436,20 +436,20 @@ namespace privateer {
                         // passing 'this' to lambda function is needed to capture class variable - 'clipper::MiniMol hydrogenated_input_model'
                         auto check_if_neighbour_is_in_currentMGlycan = std::find_if(std::begin(inputGlycanSugars), std::end(inputGlycanSugars),
                             [this, &detected_chain, &detected_monomer, &detected_atom, &glycanChainID](clipper::MSugar& element) {
-            
-                                
+
+
                                 return  element.id().trim() == hydrogenated_input_model[detected_chain][detected_monomer].id().trim() && element.type().trim() == hydrogenated_input_model[detected_chain][detected_monomer].type().trim() &&
-                                        element.seqnum() == hydrogenated_input_model[detected_chain][detected_monomer].seqnum() && glycanChainID == hydrogenated_input_model[detected_chain].id().trim() && 
+                                        element.seqnum() == hydrogenated_input_model[detected_chain][detected_monomer].seqnum() && glycanChainID == hydrogenated_input_model[detected_chain].id().trim() &&
                                         element.size() == hydrogenated_input_model[detected_chain][detected_monomer].size();
                             });
-                        
+
                         if(check_if_neighbour_is_in_currentMGlycan == std::end(inputGlycanSugars) && clipper::Coord_orth::length(currentAtom.coord_orth(), hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) <= max_dist)
                         {
                             if(currentAtom.exists_property("hb_type") && hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].exists_property("hb_type"))
                             {
                                 const hb_type& atom_hb_potential_target = dynamic_cast<const clipper::Property<hb_type>& >(currentAtom.get_property( "hb_type" )).value();
                                 const hb_type& atom_hb_potential_neighbour = dynamic_cast<const clipper::Property<hb_type>& >(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].get_property( "hb_type" )).value();
-                    
+
                                 if(atom_hb_potential_target == HB_HYDROGEN)
                                 {
                                     if(atom_hb_potential_neighbour == HB_ACCEPTOR || atom_hb_potential_neighbour == HB_BOTH)
@@ -462,13 +462,13 @@ namespace privateer {
                                         new_h_bond.second.glycanSize = inputGlycanSugars.size();
                                         if(new_h_bond.first)
                                             output.push_back(new_h_bond.second);
-                                        
-                                        // std::cout   << "DEBUG:: ===> pushing back new_h_bond from sugar_hydrogen, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
+
+                                        // std::cout   << "DEBUG:: ===> pushing back new_h_bond from sugar_hydrogen, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim()
                                         //             << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
                                         //             << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
-                                        //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
+                                        //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom
                                         //             << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
-                                        
+
                                     }
                                 }
                                 if(atom_hb_potential_target == HB_ACCEPTOR || atom_hb_potential_target == HB_BOTH)
@@ -482,11 +482,11 @@ namespace privateer {
                                         new_h_bond.second.glycanSize = inputGlycanSugars.size();
                                         if(new_h_bond.first)
                                             output.push_back(new_h_bond.second);
-                                        
-                                        // std::cout   << "DEBUG:: ===> pushing back new_h_bond from environment_residue, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim() 
+
+                                        // std::cout   << "DEBUG:: ===> pushing back new_h_bond from environment_residue, " << new_h_bond.second.donor_chainID << "/" << new_h_bond.second.donor_residue.type().trim() << "-" << new_h_bond.second.donor_residue.id().trim() << "_H: " << new_h_bond.second.HBonding_hydrogen.id().trim()
                                         //             << " donor: " << new_h_bond.second.donor.id().trim() << " acceptor: " << new_h_bond.second.acceptor.id().trim()
                                         //             << " acceptor_neighbour: " << new_h_bond.second.acceptor_neighbour.id().trim() << "_" << new_h_bond.second.acceptor_chainID << "/" << new_h_bond.second.acceptor_residue.type().trim() << "-" << new_h_bond.second.acceptor_residue.id().trim() << " angles:  " << new_h_bond.second.angle_1 << " " << new_h_bond.second.angle_2 << " " << new_h_bond.second.angle_3
-                                        //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom 
+                                        //             << " HBondLength: " << new_h_bond.second.HBondLength << std::boolalpha << " sugar_is_atom_donor: " << new_h_bond.second.sugar_atom_is_donor << " hydrogen_is_sugar_atom " << new_h_bond.second.hydrogen_is_sugar_atom
                                         //             << " bond_has_hydrogen_flag " << new_h_bond.second.bond_has_hydrogen_flag << "\tactually getting pushed in: " << new_h_bond.first << std::endl;
 
                                     }
@@ -513,10 +513,10 @@ namespace privateer {
 
     std::vector<std::pair<clipper::MAtom, float>> privateer::interactions::HBondsParser::get_closest_neighbour_atoms(clipper::MAtom& input_atom, clipper::MMonomer& residue_atom_located_in, clipper::String chainID)
     {
-        
+
         std::vector<clipper::MAtomIndexSymmetry> neighbourhood = manb_object.atoms_near(input_atom.coord_orth(), 1.8);
         // Validate the length via clipper::Coord_orth::length
-        
+
         std::vector<std::pair<clipper::MAtom, float>> atoms_in_current_residue_only;
         for(int i = 0; i < neighbourhood.size(); i++)
         {
@@ -533,19 +533,19 @@ namespace privateer {
                 if( hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].element().trim() != "H" &&
                     hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].id().trim() != input_atom.id().trim() &&
                     hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth() != input_atom.coord_orth() &&
-                    hydrogenated_input_model[detected_chain][detected_monomer].type().trim() == residue_atom_located_in.type().trim() && 
+                    hydrogenated_input_model[detected_chain][detected_monomer].type().trim() == residue_atom_located_in.type().trim() &&
                     hydrogenated_input_model[detected_chain][detected_monomer].id().trim() == residue_atom_located_in.id().trim() &&
                     hydrogenated_input_model[detected_chain][detected_monomer].seqnum() == residue_atom_located_in.seqnum() &&
                     hydrogenated_input_model[detected_chain].id().trim() == chainID &&
                     clipper::Coord_orth::length(input_atom.coord_orth(), hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) <= 1.8)
                     {
                         float dist = clipper::Coord_orth::length(input_atom.coord_orth(), hydrogenated_input_model[detected_chain][detected_monomer][detected_atom].coord_orth());
-                        atoms_in_current_residue_only.push_back(std::make_pair(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], dist));  
+                        atoms_in_current_residue_only.push_back(std::make_pair(hydrogenated_input_model[detected_chain][detected_monomer][detected_atom], dist));
                     }
             }
-                        
+
         }
-        
+
 
         std::sort(atoms_in_current_residue_only.begin(), atoms_in_current_residue_only.end(), [](std::pair<clipper::MAtom, float>& a, std::pair<clipper::MAtom, float>& b){
             return a.second < b.second;
@@ -569,10 +569,10 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
     std::pair<clipper::MAtom, float> hydrogen_neighbour = hydrogen_neighbours.front();
     double D_H_A_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen_neighbour.first.coord_orth(), hydrogen.coord_orth(), acceptor.coord_orth()));
     double D_A_dist = clipper::Coord_orth::length(hydrogen_neighbour.first.coord_orth(), acceptor.coord_orth());
-    
+
     if(D_A_dist < 3.9)
         good_donor_acceptor_dist = true;
-    
+
     if(bond.donor.is_null())
     {
         bond.donor = hydrogen_neighbour.first;
@@ -580,16 +580,16 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
     }
     if(D_H_A_angle < 90)
         neighbour_distances_and_angles_are_good = false;
-    
+
     // Angle H-Acceptor-AcceptorNeighbour
     for(int i = 0; i < acceptor_neighbours.size(); i++)
     {
         double H_A_AA_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen.coord_orth(), acceptor.coord_orth(), acceptor_neighbours[i].first.coord_orth()));
-        
+
         bond.angle_2 = H_A_AA_angle;
         if(H_A_AA_angle < 90)
             neighbour_distances_and_angles_are_good = false;
-        
+
         // Angle Donor-Acceptor-AcceptorNeighbour
         double D_A_AA_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen_neighbour.first.coord_orth(), acceptor.coord_orth(), acceptor_neighbours[i].first.coord_orth()));
 
@@ -598,7 +598,7 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
 
         if(D_A_AA_angle < 90)
             neighbour_distances_and_angles_are_good = false;
-        
+
         if(!neighbour_distances_and_angles_are_good)
             break;
     }
@@ -615,7 +615,7 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
 std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsParser::make_h_bond_from_environment_residue_hydrogen(std::string input_hydrogen_chainID, clipper::MMonomer& input_hydrogen_residue, clipper::MAtom& hydrogen, std::string input_acceptor_on_sugar_chainID, clipper::MMonomer& input_acceptor_on_sugar_residue, clipper::MAtom& acceptor_on_sugar, std::vector<std::pair<clipper::MAtom, float>>& hydrogen_neighbours, std::vector<std::pair<clipper::MAtom, float>>& acceptor_on_sugar_neighbours)
 {
     double water_dist_max = 3.25;
-    bool ligand_atom_is_H_flag = false; 
+    bool ligand_atom_is_H_flag = false;
 
     // HBond(std::string input_hydrogen_chainID, clipper::MMonomer& input_hydrogen_residue, clipper::MAtom& input_hydrogen, std::string input_acceptor_chainID, clipper::MMonomer& input_acceptor_residue, clipper::MAtom& input_acceptor, bool input_sugar_atom_is_H_flag)
     privateer::interactions::HBond bond(input_hydrogen_chainID, input_hydrogen_residue, hydrogen, input_acceptor_on_sugar_chainID, input_acceptor_on_sugar_residue, acceptor_on_sugar, ligand_atom_is_H_flag);
@@ -628,10 +628,10 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
     if(!hydrogen_neighbours.empty())
          hydrogen_neighbour = hydrogen_neighbours.front();
     double D_A_dist = clipper::Coord_orth::length(hydrogen_neighbour.first.coord_orth(), acceptor_on_sugar.coord_orth());
-    
+
     if(D_A_dist < 3.9)
         good_donor_acceptor_dist = true;
-    
+
     if(input_hydrogen_residue.type().trim() == "HOH" && hydrogen.element() == "O")
     {
         if(D_A_dist < water_dist_max)
@@ -645,7 +645,7 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
     double D_H_A_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen_neighbour.first.coord_orth(), hydrogen.coord_orth(), acceptor_on_sugar.coord_orth()));
     if(D_H_A_angle < 90)
         neighbour_distances_and_angles_are_good = false;
-    
+
 
     bond.donor = hydrogen_neighbour.first;
     bond.angle_1 = D_H_A_angle;
@@ -656,7 +656,7 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
         double H_A_AA_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen.coord_orth(), acceptor_on_sugar.coord_orth(), acceptor_on_sugar_neighbours[i].first.coord_orth()));
         if(H_A_AA_angle < 90)
             neighbour_distances_and_angles_are_good = false;
-        
+
 
         bond.acceptor = acceptor_on_sugar;
         bond.angle_2 = H_A_AA_angle;
@@ -667,7 +667,7 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
             double D_A_AA_angle = clipper::Util::rad2d(clipper::Coord_orth::angle(hydrogen_neighbour.first.coord_orth(), acceptor_on_sugar.coord_orth(), acceptor_on_sugar_neighbours[i].first.coord_orth()));
             if(D_A_AA_angle < 90)
                 neighbour_distances_and_angles_are_good = false;
-            
+
 
             bond.acceptor_neighbour = acceptor_on_sugar_neighbours[i].first;
             bond.angle_3 = D_A_AA_angle;
@@ -682,7 +682,7 @@ std::pair<bool, privateer::interactions::HBond> privateer::interactions::HBondsP
         if(!neighbour_distances_and_angles_are_good)
             break;
     }
-    
+
     if(bond.angle_2 < 90 || bond.angle_3 < 90)
         neighbour_distances_and_angles_are_good = false;
 
@@ -700,10 +700,10 @@ void privateer::interactions::HBondsParser::import_ener_lib()
         throw std::runtime_error("Failed to locate $CLIBD_MON. Have ccp4 env variables been sourced?");
 
     std::stringstream path;
-    
+
     int expected_ncolumns_in_energy_library_table = 9;
 
-    if (!monomer_dir.empty()) 
+    if (!monomer_dir.empty())
     {
         path << monomer_dir << "ener_lib" << ".cif";
         std::cout << "Path to 'ener_lib.cif': " << path.str() << std::endl;
@@ -712,15 +712,15 @@ void privateer::interactions::HBondsParser::import_ener_lib()
         {
             if (!block.name.empty() && block.name == "energy")
             {
-                gemmi::cif::Table energy_library_table = block.find("_lib_atom.", 
+                gemmi::cif::Table energy_library_table = block.find("_lib_atom.",
                                                     {"type", "weight", "hb_type", "vdw_radius", "vdwh_radius", "ion_radius", "element", "valency", "sp"});
 
                 if(energy_library_table.width() != expected_ncolumns_in_energy_library_table)
                         throw std::runtime_error("Number of expected columns doesn't match the number of columns retrieved from 'ener_lib.cif'. Please report this issue to the developers of Privateer.");
-                
+
                 for(size_t i = 0; i != energy_library_table.length(); ++i)
                 {
-                    
+
                     gemmi::cif::Table::Row currentGemmiRow = energy_library_table[i];
                     energy_library_entry export_row;
                     export_row.type = currentGemmiRow[0];
@@ -729,7 +729,7 @@ void privateer::interactions::HBondsParser::import_ener_lib()
                     export_row.vdw_radius = currentGemmiRow[3];
                     export_row.vdwh_radius = currentGemmiRow[4];
                     export_row.ion_radius = currentGemmiRow[5];
-                    export_row.element = currentGemmiRow[6]; 
+                    export_row.element = currentGemmiRow[6];
                     export_row.valency = currentGemmiRow[7];
                     export_row.sp = currentGemmiRow[8];
 
@@ -751,7 +751,7 @@ void privateer::interactions::HBondsParser::import_ener_lib()
                         export_row.valency = "null";
                     if(export_row.sp == "." || export_row.sp == "n/a" || export_row.sp.empty())
                         export_row.sp = "null";
-                    
+
 
                     this->energy_library.push_back(export_row);
 
@@ -765,7 +765,7 @@ void privateer::interactions::HBondsParser::import_ener_lib()
     // std::cout << std::endl;
     // for(int i = 0; i < energy_library.size(); i++)
     // {
-    //     std::cout   << i << "/" << energy_library.size() << ": " 
+    //     std::cout   << i << "/" << energy_library.size() << ": "
     //                 << energy_library[i].type << "\t"
     //                 << energy_library[i].weight << "\t"
     //                 << energy_library[i].hb_type << "\t"
@@ -801,8 +801,8 @@ privateer::interactions::HBondsParser::monomer_dictionary privateer::interaction
         std::locale loc;
 
         char initial = std::tolower(input_residue_type[0],loc);
-    
-        if (!monomer_dir.empty()) 
+
+        if (!monomer_dir.empty())
         {
             path << monomer_dir << initial << "/" << input_residue_type << ".cif";
             // std::cout << path.str() << std::endl;
@@ -816,12 +816,12 @@ privateer::interactions::HBondsParser::monomer_dictionary privateer::interaction
             {
                 if (!block.name.empty() && block.name == block_name_search_string)
                 {
-                    gemmi::cif::Table chem_comp_atom_table = block.find("_chem_comp_atom.", 
+                    gemmi::cif::Table chem_comp_atom_table = block.find("_chem_comp_atom.",
                                                                         {"comp_id", "atom_id", "type_symbol", "type_energy", "?charge", "?partial_charge"});
-                    
-                    gemmi::cif::Table chem_comp_bond_table = block.find("_chem_comp_bond.", 
+
+                    gemmi::cif::Table chem_comp_bond_table = block.find("_chem_comp_bond.",
                                                                         {"comp_id", "atom_id_1", "atom_id_2", "type"});
-                    
+
                     for(size_t i = 0; i != chem_comp_atom_table.length(); ++i)
                     {
                         gemmi::cif::Table::Row currentAtomTableGemmiRow = chem_comp_atom_table[i];
@@ -899,7 +899,7 @@ privateer::interactions::HBondsParser::monomer_dictionary privateer::interaction
 
 
                                     dict_of_atoms.push_back(export_row);
-                                } 
+                                }
                             }
                         }
 
