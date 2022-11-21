@@ -142,6 +142,7 @@ namespace privateer {
         pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
         pybind11::list get_torsions_zscore_summary_with_pdb(OfflineTorsionsZScoreDatabase& importedDatabase, std::string input_pdb_code);
         pybind11::float_ return_quality_score(OfflineTorsionsZScoreDatabase& importedDatabase);
+        pybind11::float_ return_average_zscore(OfflineTorsionsZScoreDatabase& importedDatabase);
 
         void update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data);
         void update_with_experimental_data(privateer::pyanalysis::CryoEMData& cryoem_data);
@@ -193,6 +194,8 @@ namespace privateer {
         pybind11::list get_torsions_zscore_summary(OfflineTorsionsZScoreDatabase& importedDatabase);
         pybind11::list get_torsions_zscore_summary_with_pdb(OfflineTorsionsZScoreDatabase& importedDatabase, std::string input_pdb_code);
         pybind11::float_ return_quality_score(OfflineTorsionsZScoreDatabase& importedDatabase);
+        pybind11::float_ return_average_zscore(OfflineTorsionsZScoreDatabase& importedDatabase);
+
         pybind11::float_ calculate_total_zscore(OfflineTorsionsZScoreDatabase& importedDatabase, privateer::pyanalysis::GlycanStructure glycan);
 
       private:
