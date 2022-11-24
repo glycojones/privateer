@@ -3639,16 +3639,16 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
                    << "      <hand>"             << sugars[j].handedness()                  << "</hand>\n"
                    << "      <stacked_against>\n";
 
-            std::vector < std::pair < clipper::MAtomIndexSymmetry, float > > contacts = sugars[j].get_stacked_residues();
-
-            for ( int cont = 0 ; cont < contacts.size() ; cont++ )
-                of_xml << "        <residue id=\"/" << mmol[contacts[cont].first.polymer()].id().substr(0,1) << "/"
-                                                   << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].id().trim()
-                                                   << "(" << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].type().trim()
-                                                   << ")\" >\n"
-                                                   << "          <angle>" << contacts[cont].second << "</angle>\n"
-                                                   << "        </residue>\n";
-               of_xml << "      </stacked_against>\n";
+            // std::vector < std::pair < clipper::MAtomIndexSymmetry, float > > contacts = sugars[j].get_stacked_residues();
+            //
+            // for ( int cont = 0 ; cont < contacts.size() ; cont++ )
+            //     of_xml << "        <residue id=\"/" << mmol[contacts[cont].first.polymer()].id().substr(0,1) << "/"
+            //                                        << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].id().trim()
+            //                                        << "(" << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].type().trim()
+            //                                        << ")\" >\n"
+            //                                        << "          <angle>" << contacts[cont].second << "</angle>\n"
+            //                                        << "        </residue>\n";
+            //    of_xml << "      </stacked_against>\n";
 
 
             of_xml << "      <validation>\n"
@@ -3819,20 +3819,20 @@ std::string privateer::scripting::print_node ( const clipper::MiniMol& mmol, con
 
            << "      <stacked_against>\n";
 
-           std::vector < std::pair < clipper::MAtomIndexSymmetry, float > > contacts = sugar.get_stacked_residues();
+           // std::vector < std::pair < clipper::MAtomIndexSymmetry, float > > contacts = sugar.get_stacked_residues();
+           //
+           // for ( int cont = 0 ; cont < contacts.size() ; cont++ )
+           //     of_xml << "        <residue id=\"/" << mmol[contacts[cont].first.polymer()].id().substr(0,1) << "/"
+           //                                         << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].id().trim()
+           //                                         << "(" << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].type().trim()
+           //                                         << ")\" >\n"
+           //                                         << "          <angle>" << contacts[cont].second << "</angle>\n"
+           //                                         << "        </residue>\n";
+           //     of_xml << "      </stacked_against>\n"
 
-           for ( int cont = 0 ; cont < contacts.size() ; cont++ )
-               of_xml << "        <residue id=\"/" << mmol[contacts[cont].first.polymer()].id().substr(0,1) << "/"
-                                                   << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].id().trim()
-                                                   << "(" << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].type().trim()
-                                                   << ")\" >\n"
-                                                   << "          <angle>" << contacts[cont].second << "</angle>\n"
-                                                   << "        </residue>\n";
-               of_xml << "      </stacked_against>\n"
 
 
-
-           << "      <validation>\n"
+    of_xml << "      <validation>\n"
            << "        <conformation>"   << b2s(sugar.ok_with_conformation())   << "</conformation>\n"
            << "        <anomer>"         << b2s(sugar.ok_with_anomer())         << "</anomer>\n"
            << "        <hand>"           << b2s(sugar.ok_with_chirality())      << "</hand>\n"

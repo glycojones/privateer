@@ -3001,7 +3001,7 @@ bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two, 
 }
 
 
-std::vector < std::pair< clipper::MAtomIndexSymmetry, float > > MSugar::get_stacked_residues ( std::string algorithm,
+/*std::vector < std::pair< clipper::MAtomIndexSymmetry, float > > MSugar::get_stacked_residues ( std::string algorithm,
                                                                                                         float distance,
                                                                                                         float theta,
                                                                                                         float phi ) const
@@ -3114,7 +3114,7 @@ std::vector < std::pair< clipper::MAtomIndexSymmetry, float > > MSugar::get_stac
 	}
     return results;
 }
-
+*/
 
 
 ///////////////////////// MDisaccharide ///////////////////////////////

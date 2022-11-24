@@ -29,7 +29,7 @@ namespace privateer {
 	namespace interactions {
 		void hydrogenate_input_model(std::string input_model, std::string output_path);
 
-		class HBond 
+		class HBond
 		{
 			public:
 				std::string donor_chainID;
@@ -50,7 +50,7 @@ namespace privateer {
 				bool hydrogen_is_sugar_atom;
 				bool bond_has_hydrogen_flag;
 
-				HBond() 
+				HBond()
 				{
 					donor_chainID = "-1";
 					acceptor_chainID = "-1";
@@ -67,7 +67,7 @@ namespace privateer {
 					angle_2 = -1;
 					angle_3 = -1;
 					HBondLength = -1;
-					
+
 					hydrogen_is_sugar_atom = false;
 					bond_has_hydrogen_flag = false;
 				}
@@ -89,7 +89,7 @@ namespace privateer {
 					angle_2 = -1;
 					angle_3 = -1;
 					HBondLength = -1;
-					
+
 					hydrogen_is_sugar_atom = false;
 					bond_has_hydrogen_flag = false;
 				}
@@ -112,7 +112,7 @@ namespace privateer {
 					angle_2 = -1;
 					angle_3 = -1;
 					HBondLength = -1;
-					
+
 					hydrogen_is_sugar_atom = input_sugar_atom_is_H_flag;
 				}
 
@@ -149,12 +149,16 @@ namespace privateer {
 				CHPiBondsParser() { }
 				CHPiBondsParser(std::string& input_model);
 				std::vector<privateer::interactions::CHPiBond> get_CHPi_interactions(int glycanIndex);
-				std::vector <std::pair<clipper::MAtomIndexSymmetry, float>> get_stacked_residues_python(clipper::MSugar& input_sugar);
+				std::vector <std::pair<clipper::MAtomIndexSymmetry, float>> get_stacked_residues_python(clipper::MSugar& input_sugar,
+																																															 std::string = "hudson",
+																																																		 float = 4.5,
+																																																		 float = 40.0,
+																																																		 float = 0.0 ) const ;
 			private:
 				clipper::MiniMol input_model;
 				clipper::MAtomNonBond manb_object;
 				clipper::MGlycology mglycology;
-				
+
 		};
 
 		class HBondsParser
@@ -165,7 +169,7 @@ namespace privateer {
 					HB_UNASSIGNED = -1,
 					HB_NEITHER = 0,
 					HB_DONOR = 1,
-					HB_ACCEPTOR = 2, 
+					HB_ACCEPTOR = 2,
 					HB_BOTH = 3,
 					HB_HYDROGEN = 4
 				};
@@ -173,13 +177,13 @@ namespace privateer {
 
 				struct energy_library_entry
 				{
-					std::string type; 
-					std::string weight; 
+					std::string type;
+					std::string weight;
 					std::string hb_type;
 					std::string vdw_radius;
 					std::string vdwh_radius;
 					std::string ion_radius;
-					std::string element; 
+					std::string element;
 					std::string valency;
 					std::string sp;
 				};
@@ -223,7 +227,7 @@ namespace privateer {
 				// std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > MSugar::get_stacked_residues
 		};
 
-        
+
   	}
 }
 
