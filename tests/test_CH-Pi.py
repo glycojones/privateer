@@ -1,8 +1,8 @@
 from privateer import privateer_core as pvtcore
 
 interactions = pvtcore.GlycosylationInteractions(
-    path_to_model_file="test_data/3pic.pdb",
-    path_to_output_file="test_data/3pic_hydrogenated.pdb",
+    path_to_model_file="test_data/5fji.pdb",
+    path_to_output_file="test_data/5fji_hydrogenated.pdb",
     enableHBonds=True )
 
 interactions_summary=interactions.get_all_detected_interactions()

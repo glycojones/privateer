@@ -13,7 +13,7 @@
 
 ///////////////////////////////////////////////// Class CrystallographicData  ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& path_to_model_file) 
+void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& path_to_model_file)
 {
     if(path_to_model_file == "undefined")
     {
@@ -36,7 +36,7 @@ void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& 
     if ( mmol.cell().is_null() )
         mmol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
 
-    
+
     float totalModelScatter = 0;
     int totalAtomsInModel = 0;
     float global_B_fac_sum = 0;
@@ -82,12 +82,12 @@ void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& 
                 atoms.append(currentAtom);
             }
             float residue_avg_B_fac = residue_B_fac_sum / numberOfAtoms;
-            
+
             auto currentMonomer = pybind11::dict("index"_a=monomer, "monomerID"_a=monomerID, "monomerType"_a=monomer_type, "monomerSeqnum"_a=monomer_seqnum, "monomer_B_fac_sum"_a=residue_B_fac_sum, "monomer_avg_B_fac"_a=residue_avg_B_fac, "numberOfAtoms"_a=numberOfAtoms, "atoms"_a=atoms);
             monomers.append(currentMonomer);
         }
         float chain_avg_B_fac = chain_B_fac_sum / totalAtomsInChain;
-        
+
         auto currentPolymer = pybind11::dict("index"_a=chain, "chainID"_a=chainID, "numberOfMonomers"_a=numberOfMonomers, "chain_B_fac_sum"_a=chain_B_fac_sum, "chain_avg_B_fac"_a=chain_avg_B_fac, "totalAtomsInChain"_a=totalAtomsInChain, "monomers"_a=monomers);
         polymers.append(currentPolymer);
     }
@@ -123,7 +123,7 @@ void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& 
     int spacegroup_num_centering_symops = mmol.spacegroup().num_centering_symops();
     int spacegroup_num_inversion_symops = mmol.spacegroup().num_inversion_symops();
     int spacegroup_num_primitive_noninversion_symops = mmol.spacegroup().num_primitive_noninversion_symops();
-    
+
     pybind11::list symops;
     for(int i = 0; i < spacegroup_num_symops; i++)
     {
@@ -151,7 +151,7 @@ void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& 
         std::string centering_symop = mmol.spacegroup().centering_symop(i).format();
         auto currentCenteringSymop = pybind11::dict("index"_a=i, "centering_symop"_a=centering_symop);
         centering_symops.append(currentCenteringSymop);
-    } 
+    }
     auto symop = pybind11::dict("symops"_a=symops, "primitive_symops"_a=primitive_symops, "inversion_symops"_a=inversion_symops, "centering_symops"_a=centering_symops);
 
     bool spacegroup_invariant_under_change_of_hand = mmol.spacegroup().invariant_under_change_of_hand();
@@ -159,14 +159,14 @@ void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& 
     std::string spacegroup_symbol_hall = mmol.spacegroup().symbol_hall();
     std::string spacegroup_symbol_hm = mmol.spacegroup().symbol_hm();
     std::string spacegroup_symbol_laue = mmol.spacegroup().symbol_laue();
-    
+
     clipper::Coord_frac spacegroup_asu_max = mmol.spacegroup().asu_max();
     std::string spacegroup_asu_max_uvw = std::to_string(spacegroup_asu_max.u()) + "," + std::to_string(spacegroup_asu_max.v()) + "," + std::to_string(spacegroup_asu_max.w());
     float spacegroup_asu_max_u = spacegroup_asu_max.u();
     float spacegroup_asu_max_v = spacegroup_asu_max.v();
     float spacegroup_asu_max_w = spacegroup_asu_max.w();
     auto dict_spacegroup_asu_max_uvw = pybind11::dict("u"_a=spacegroup_asu_max_u, "v"_a=spacegroup_asu_max_v, "w"_a=spacegroup_asu_max_w);
-    
+
     clipper::Coord_frac spacegroup_asu_min = mmol.spacegroup().asu_min();
     std::string spacegroup_asu_min_uvw = std::to_string(spacegroup_asu_min.u()) + "," + std::to_string(spacegroup_asu_min.v()) + "," + std::to_string(spacegroup_asu_min.w());
     float spacegroup_asu_min_u = spacegroup_asu_min.u();
@@ -178,7 +178,7 @@ void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& 
                                     "num_centering_symops"_a=spacegroup_num_centering_symops, "num_inversion_symops"_a=spacegroup_num_inversion_symops, "num_primitive_noninversion_symops"_a=spacegroup_num_primitive_noninversion_symops,
                                     "spacegroup_invariant_under_change_of_hand"_a=spacegroup_invariant_under_change_of_hand, "spacegroup_number"_a=spacegroup_number, "symbol_hall"_a=spacegroup_symbol_hall, "symbol_hm"_a=spacegroup_symbol_hm,
                                     "symbol_laue"_a=spacegroup_symbol_laue, "asu_max_uvw"_a=spacegroup_asu_max_uvw, "asu_max"_a=dict_spacegroup_asu_max_uvw, "asu_min_uvw"_a=spacegroup_asu_min_uvw, "asu_min"_a=dict_spacegroup_asu_min_uvw, "symop"_a=symop);
-    
+
 
 
     result["input_path"] = path_to_model_file;
@@ -195,7 +195,7 @@ void privateer::pyanalysis::CrystallographicData::parse_model_file(std::string& 
 }
 
 
-void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::string& path_to_mtz_file) 
+void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::string& path_to_mtz_file)
 {
     if(path_to_mtz_file == "undefined")
     {
@@ -250,7 +250,7 @@ void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::strin
     int spacegroup_num_centering_symops = hklinfo.spacegroup().num_centering_symops();
     int spacegroup_num_inversion_symops = hklinfo.spacegroup().num_inversion_symops();
     int spacegroup_num_primitive_noninversion_symops = hklinfo.spacegroup().num_primitive_noninversion_symops();
-    
+
     pybind11::list symops;
     for(int i = 0; i < spacegroup_num_symops; i++)
     {
@@ -278,7 +278,7 @@ void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::strin
         std::string centering_symop = hklinfo.spacegroup().centering_symop(i).format();
         auto currentCenteringSymop = pybind11::dict("index"_a=i, "centering_symop"_a=centering_symop);
         centering_symops.append(currentCenteringSymop);
-    } 
+    }
     auto symop = pybind11::dict("symops"_a=symops, "primitive_symops"_a=primitive_symops, "inversion_symops"_a=inversion_symops, "centering_symops"_a=centering_symops);
 
     bool spacegroup_invariant_under_change_of_hand = hklinfo.spacegroup().invariant_under_change_of_hand();
@@ -286,14 +286,14 @@ void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::strin
     std::string spacegroup_symbol_hall = hklinfo.spacegroup().symbol_hall();
     std::string spacegroup_symbol_hm = hklinfo.spacegroup().symbol_hm();
     std::string spacegroup_symbol_laue = hklinfo.spacegroup().symbol_laue();
-    
+
     clipper::Coord_frac spacegroup_asu_max = hklinfo.spacegroup().asu_max();
     std::string spacegroup_asu_max_uvw = std::to_string(spacegroup_asu_max.u()) + "," + std::to_string(spacegroup_asu_max.v()) + "," + std::to_string(spacegroup_asu_max.w());
     float spacegroup_asu_max_u = spacegroup_asu_max.u();
     float spacegroup_asu_max_v = spacegroup_asu_max.v();
     float spacegroup_asu_max_w = spacegroup_asu_max.w();
     auto dict_spacegroup_asu_max_uvw = pybind11::dict("u"_a=spacegroup_asu_max_u, "v"_a=spacegroup_asu_max_v, "w"_a=spacegroup_asu_max_w);
-    
+
     clipper::Coord_frac spacegroup_asu_min = hklinfo.spacegroup().asu_min();
     std::string spacegroup_asu_min_uvw = std::to_string(spacegroup_asu_min.u()) + "," + std::to_string(spacegroup_asu_min.v()) + "," + std::to_string(spacegroup_asu_min.w());
     float spacegroup_asu_min_u = spacegroup_asu_min.u();
@@ -328,18 +328,18 @@ void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::strin
     result["HKL_sampling_limit"] = HKL_sampling_limit;
     result["resolution_limit"] = resolution_limit;
     result["resolution_invresolsq_limit"] = resolution_invresolsq_limit;
-    
+
 
     this->mtz_data = result;
 }
-    
-    
+
+
 
 ///////////////////////////////////////////////// Class CrystallographicData END /////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////// Class GlycosylationComposition  ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds) 
+void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds)
 {
     if(path_to_model_file == "undefined")
     {
@@ -349,10 +349,10 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
     clipper::MMDBfile mfile;
     clipper::String clipperfied_input_model_path = path_to_model_file;
     privateer::util::read_coordinate_file_mtz(mfile, this->input_model, clipperfied_input_model_path, true);
-    
-    
+
+
     this->manb_object = clipper::MAtomNonBond( this->input_model, 8.0 );
-    
+
     privateer::json::GlobalTorsionZScore torsions_zscore_database;
 
     this->mglycology = clipper::MGlycology(this->input_model, this->manb_object, torsions_zscore_database, false, "undefined");
@@ -362,7 +362,7 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
         if(enableHBonds)
             this->hbonds = privateer::interactions::HBondsParser(path_to_model_file, path_to_output_file);
 
-        this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file);
+        this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file, path_to_output_file);
     }
 }
 
@@ -387,7 +387,7 @@ pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_detecte
         entry["HBonds"] = retrieved_hbonds["HBonds"];
         result.append(entry);
     }
-    
+
     return result;
 }
 
@@ -410,7 +410,7 @@ pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_detecte
         entry["HBonds"] = retrieved_hbonds["HBonds"];
         result.append(entry);
     }
-    
+
 
     return result;
 }
@@ -434,7 +434,7 @@ pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_detecte
         entry["CH_Pi"] = retrieved_chpi["CH_Pi"];
         result.append(entry);
     }
-    
+
 
     return result;
 }
@@ -582,7 +582,7 @@ pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_all_glycan_
         pybind11::dict item = get_neighborhood_for_specific_glycan(i, -1, 10);
         result.append(item);
     }
-    
+
 
     return result;
 }
@@ -627,7 +627,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
         {
             std::string ChainID;
             std::string ChainType;
-            int MiniMolChainIndex; 
+            int MiniMolChainIndex;
             int smallest_residue_index = -42069;
             int biggest_residue_index = -42069;
             int detected_contacts = 0;
@@ -669,26 +669,26 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
             if ( (( clipper::data::is_amino_acid( tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() ) ||
                     clipper::data::is_nucleic_acid( tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() ) ) &&
                     inputGlycan.get_chain().trim() != tmpmol[contacts[i].polymer()].id().trim() ||
-                    rootMMonomer.id().trim() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() || 
-                    rootMMonomer.type().trim() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() || 
-                    rootMMonomer.seqnum() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum() ) && 
-                    (clipper::Coord_orth::length ( tmpmol[contacts[i].polymer()][contacts[i].monomer()][contacts[i].atom()].coord_orth(), originAtom.coord_orth() ) <= radius ))  
-            {          
-                auto search_result_already_accounted_for = std::find_if(refined_contact_results.begin(), refined_contact_results.end(), [tmpmol, &originAtom, &contacts, i](const clipper::MAtomIndexSymmetry& element) 
-                { 
+                    rootMMonomer.id().trim() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() ||
+                    rootMMonomer.type().trim() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() ||
+                    rootMMonomer.seqnum() != tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum() ) &&
+                    (clipper::Coord_orth::length ( tmpmol[contacts[i].polymer()][contacts[i].monomer()][contacts[i].atom()].coord_orth(), originAtom.coord_orth() ) <= radius ))
+            {
+                auto search_result_already_accounted_for = std::find_if(refined_contact_results.begin(), refined_contact_results.end(), [tmpmol, &originAtom, &contacts, i](const clipper::MAtomIndexSymmetry& element)
+                {
                     return      tmpmol[element.polymer()].id().trim() == tmpmol[contacts[i].polymer()].id().trim() &&
                                 tmpmol[element.polymer()][element.monomer()].id().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() &&
-                                tmpmol[element.polymer()][element.monomer()].type().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() && 
+                                tmpmol[element.polymer()][element.monomer()].type().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() &&
                                 tmpmol[element.polymer()][element.monomer()].seqnum() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum();
                 });
 
-                if(search_result_already_accounted_for == std::end(refined_contact_results))                
+                if(search_result_already_accounted_for == std::end(refined_contact_results))
                     refined_contact_results.push_back(contacts[i]);
             }
             else if ((  inputGlycan.get_chain().trim() == tmpmol[contacts[i].polymer()].id().trim() &&
-                        rootMMonomer.id().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() && 
-                        rootMMonomer.type().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() && 
-                        rootMMonomer.seqnum() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum() )) 
+                        rootMMonomer.id().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].id().trim() &&
+                        rootMMonomer.type().trim() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].type().trim() &&
+                        rootMMonomer.seqnum() == tmpmol[contacts[i].polymer()][contacts[i].monomer()].seqnum() ))
             {
                 rootMMonomerPolymerIndex = contacts[i].polymer();
                 rootMMonomerResidueIndex = contacts[i].monomer();
@@ -721,7 +721,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
             result["rootAminoAcid"] = pybind11::cast<pybind11::none>(Py_None);
             result["glycosylationType"] = "ligand";
         }
-        
+
         if(!refined_contact_results.empty())
         {
             for(int i = 0; i < tmpmol.size(); i++)
@@ -730,7 +730,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                 object.MiniMolChainIndex = i;
                 object.ChainID = tmpmol[i].id().trim().substr(0,1);
                 std::string chainType;
-                
+
                 pybind11::list residues;
                 std::string complete_polymer_seq;
                 if(tmpmol[i].size() > 0)
@@ -745,7 +745,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                 }
                 else
                     continue;
-                
+
                 object.ChainType = chainType;
                 for(int j = 0; j < tmpmol[i].size(); j++)
                 {
@@ -783,7 +783,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                             ChainInfo[index].biggest_residue_index = refined_contact_results[i].monomer();
                         else if(refined_contact_results[i].monomer() < ChainInfo[index].smallest_residue_index)
                             ChainInfo[index].smallest_residue_index = refined_contact_results[i].monomer();
-                        
+
                         ChainInfo[index].detected_contacts++;
                     }
                     else
@@ -798,7 +798,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                             ChainInfo[index].biggest_residue_index = refined_contact_results[i].monomer();
                         else if(refined_contact_results[i].monomer() < ChainInfo[index].smallest_residue_index)
                             ChainInfo[index].smallest_residue_index = refined_contact_results[i].monomer();
-                        
+
                         ChainInfo[index].detected_contacts++;
                     }
                 }
@@ -845,7 +845,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
                     contacts_list.append(contact_dict);
                 }
             }
-            
+
             result["Contacts"] = contacts_list;
         }
         else
@@ -871,7 +871,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_neighborhoo
     return result;
 }
 
-pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_protein_sequence_information_for_entire_model( ) 
+pybind11::list privateer::pyanalysis::GlycosylationInteractions::get_protein_sequence_information_for_entire_model( )
 {
     pybind11::list output;
     for(int i = 0; i < input_model.size(); i++)
@@ -898,7 +898,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_protein_seq
 {
     if(chainMiniMolIndex >= input_model.size() || chainMiniMolIndex < 0 )
          throw std::invalid_argument( "Provided ID is out of bounds and exceeds/inceeds number of chains in the model. \nInput: " + std::to_string(chainMiniMolIndex) + "\tPermitted Range: [0-" + std::to_string(input_model.size() - 1) + "]");
-    
+
     pybind11::list residues;
     std::string complete_polymer_seq;
     for(int j = 0; j < input_model[chainMiniMolIndex].size(); j++)
@@ -919,7 +919,7 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_protein_seq
 // Private methods
 std::string privateer::pyanalysis::GlycosylationInteractions::convert_three_letter_code_to_single_letter(std::string three_letter_code)
 {
-    std::unordered_map<std::string, std::string> code_conversion = 
+    std::unordered_map<std::string, std::string> code_conversion =
     {
         {"ALA", "A"}, {"ARG", "R"}, {"ASN", "N"}, {"ASP", "D"},
         {"CYS", "C"}, {"GLN", "Q"}, {"GLU", "E"}, {"GLY", "G"},
@@ -942,7 +942,7 @@ std::string privateer::pyanalysis::GlycosylationInteractions::convert_three_lett
 
 
 ///////////////////////////////////////////////// Class GlycosylationComposition ////////////////////////////////////////////////////////////////////
-privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system, bool disable_torsions, bool debug_output) 
+privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mtz_file, std::string& input_column_fobs_user, int nThreads, float ipradius, std::string expression_system, bool disable_torsions, bool debug_output)
 {
     this->debug_output = debug_output;
     this->read_from_file ( path_to_model_file, expression_system, disable_torsions, debug_output );
@@ -950,7 +950,7 @@ privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::s
     this->update_with_experimental_data(experimental_data);
 };
 
-privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system, bool disable_torsions, bool debug_output) 
+privateer::pyanalysis::GlycosylationComposition::GlycosylationComposition(std::string& path_to_model_file, std::string& path_to_mrc_file, float resolution, int nThreads, float ipradius, std::string expression_system, bool disable_torsions, bool debug_output)
 {
     this->debug_output = debug_output;
     this->read_from_file ( path_to_model_file, expression_system, disable_torsions, debug_output );
@@ -973,7 +973,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
 
     this->path_to_model_file = path_to_model_file;
     this->expression_system = expression_system;
-    
+
     clipper::MiniMol mmol;
     clipper::MMDBfile mfile;
     clipper::String path_to_model_file_clipper = path_to_model_file;
@@ -984,9 +984,9 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 ); // was 1.0
 
     this->mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, debug_output, expression_system);
-    
+
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
-    
+
     clipper::Atom_list mainAtoms;
     clipper::Atom_list ligandAtoms;
     clipper::Atom_list allAtoms;
@@ -1118,15 +1118,15 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
 
             for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
             {
-                if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() && 
+                if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() &&
                         list_of_sugars[j].chain_id().trim() == ligandList[index].second.chain_id().trim() &&
-                        list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() && 
+                        list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() &&
                         list_of_sugars[j].seqnum() == ligandList[index].second.seqnum() )
                 {
                     if ( list_of_glycans[i].get_type() == "n-glycan" )
                     {
                         ligandList[index].second.set_context ( "n-glycan" );
-                        
+
                     }
                     else if ( list_of_glycans[i].get_type() == "c-glycan" )
                     {
@@ -1140,7 +1140,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
                     else if ( list_of_glycans[i].get_type() == "o-glycan" )
                     {
                         ligandList[index].second.set_context ( "o-glycan" );
-                        
+
                     }
                     else if ( list_of_glycans[i].get_type() == "s-glycan" )
                     {
@@ -1167,7 +1167,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
             ligandsOnly.push_back(ligandList[index]);
         }
 
-    
+
         bool occupancy_check = false;
         std::vector<clipper::MAtom> ringcomponents = ligandList[index].second.ring_members();
 
@@ -1210,7 +1210,7 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
     }
     this->glycans = glycanList;
     this->ligands = ligandPyList;
-    
+
     initialize_summary_of_detected_glycans();
 }
 
@@ -1226,11 +1226,11 @@ void privateer::pyanalysis::GlycosylationComposition::initialize_summary_of_dete
         std::string wurcsNotation = glycanObject.get_wurcs_notation();
         std::string kindOfGlycan = glycanObject.get_glycosylation_type();
         std::string glycanChainID = glycanObject.get_root_sugar_chain_id();
-        
+
         auto rootSummary = glycanObject.get_root_info();
-        
+
         auto protein_glycan_linkage_torsion = glycanObject.get_protein_glycan_linkage_torsions();
-        
+
         auto dict = pybind11::dict ("GlycanID"_a=glycanID, "WURCS"_a=wurcsNotation, "GlycosylationType"_a=kindOfGlycan, "RootInfo"_a=rootSummary, "glycanChainID"_a=glycanChainID, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion, "ExperimentalData"_a=updatedWithExperimentalData);
         list.append(dict);
     }
@@ -1302,7 +1302,7 @@ void privateer::pyanalysis::GlycosylationComposition::update_with_experimental_d
     }
     this->ligands = ligandPyList;
 
-    
+
     initialize_summary_of_detected_glycans();
 }
 
@@ -1352,12 +1352,12 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition::get_torsions_zsc
     {
         auto output = pybind11::list();
         int totalGlycans = get_number_of_glycan_chains_detected();
-        
+
         for(int i = 0; i < totalGlycans; i++)
         {
             privateer::pyanalysis::GlycanStructure currentGlycan = get_glycan(i);
             pybind11::list current_glycan_zscore_torsions = currentGlycan.get_torsions_zscore_summary(importedDatabase);
-            
+
             auto current_glycan_torsion_info = pybind11::dict("glycanIndex"_a=i, "WURCS"_a=currentGlycan.get_wurcs_notation(), "all_zscore_torsions_in_structure"_a=current_glycan_zscore_torsions);
             output.append(current_glycan_torsion_info);
         }
@@ -1374,7 +1374,7 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition::get_torsions_zsc
     {
         auto output = pybind11::list();
         int totalGlycans = get_number_of_glycan_chains_detected();
-        
+
         for(int i = 0; i < totalGlycans; i++)
         {
             privateer::pyanalysis::GlycanStructure currentGlycan = get_glycan(i);
@@ -1388,21 +1388,21 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition::get_torsions_zsc
     }
 }
 
-pybind11::float_ privateer::pyanalysis::GlycosylationComposition::return_quality_score(OfflineTorsionsZScoreDatabase& importedDatabase) { 
+pybind11::float_ privateer::pyanalysis::GlycosylationComposition::return_quality_score(OfflineTorsionsZScoreDatabase& importedDatabase) {
     int totalGlycans = get_number_of_glycan_chains_detected();
 
     auto output = pybind11::list();
 
     pybind11::float_ summation_of_zscore = 0.0;
-    pybind11::int_ total_number_of_linkages = 0; 
+    pybind11::int_ total_number_of_linkages = 0;
 
-    for(int i = 0; i < totalGlycans; i++) { 
+    for(int i = 0; i < totalGlycans; i++) {
         privateer::pyanalysis::GlycanStructure currentGlycan = get_glycan(i);
-        
+
         std::string glycan_type = currentGlycan.get_glycosylation_type();
 
-        if (glycan_type == "n-glycan") { 
-        
+        if (glycan_type == "n-glycan") {
+
             pybind11::float_ total_zscore_for_glycan = currentGlycan.calculate_total_zscore(importedDatabase);
             pybind11::int_ number_of_linkages_in_glycan = currentGlycan.get_number_of_linkages();
 
@@ -1410,7 +1410,7 @@ pybind11::float_ privateer::pyanalysis::GlycosylationComposition::return_quality
             total_number_of_linkages = total_number_of_linkages + number_of_linkages_in_glycan;
         }
     }
-    
+
     pybind11::float_ average_z_score = summation_of_zscore / total_number_of_linkages;
 
     // std::cout << "The total number of z scores is " << summation_of_zscore << std::endl;
@@ -1429,7 +1429,7 @@ pybind11::float_ privateer::pyanalysis::GlycosylationComposition::return_quality
 
 
 ///////////////////////////////////////////////// Class GlycosylationComposition_memsafe ////////////////////////////////////////////////////////////////////
-void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( std::string path_to_model_file, std::string expression_system, bool disable_torsions, bool debug_output ) 
+void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( std::string path_to_model_file, std::string expression_system, bool disable_torsions, bool debug_output )
 {
     this->debug_output = debug_output;
     if(path_to_model_file == "undefined")
@@ -1439,7 +1439,7 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::read_from_file( st
 
     this->path_to_model_file = path_to_model_file;
     this->expression_system = expression_system;
-    
+
     clipper::MiniMol mmol;
     clipper::MMDBfile mfile;
     clipper::String path_to_model_file_clipper = path_to_model_file;
@@ -1469,7 +1469,7 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::initialize_summary
     {
         std::string wurcsNotation = list_of_glycans[i].generate_wurcs();
         std::string kindOfGlycan = list_of_glycans[i].get_type();
-        
+
         std::string proteinResidue = list_of_glycans[i].get_root().first.type().trim();
         std::string proteinResidueID = list_of_glycans[i].get_root().first.id().trim();
         int proteinResidueSeqnum = list_of_glycans[i].get_root().first.seqnum();
@@ -1477,10 +1477,10 @@ void privateer::pyanalysis::GlycosylationComposition_memsafe::initialize_summary
         std::string sugarRootChainID = list_of_glycans[i].get_root_sugar_chainID();
 
         auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinResidueSeqnum"_a=proteinResidueSeqnum, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=sugarRootChainID);
-        
+
         std::vector<float> torsions = list_of_glycans[i].get_glycosylation_torsions();
         auto protein_glycan_linkage_torsion = pybind11::dict ("Phi"_a=torsions[0], "Psi"_a=torsions[1]);
-        
+
         auto dict = pybind11::dict ("GlycanID"_a=i, "WURCS"_a=wurcsNotation, "GlycosylationType"_a=kindOfGlycan, "RootInfo"_a=rootSummary, "ProteinGlycanLinkageTorsion"_a=protein_glycan_linkage_torsion);
         list.append(dict);
     }
@@ -1496,7 +1496,7 @@ privateer::pyanalysis::GlycanStructure privateer::pyanalysis::GlycosylationCompo
     }
 
     auto glycanObject = privateer::pyanalysis::GlycanStructure(mgl, glycanID);
-    
+
     return glycanObject;
 }
 
@@ -1550,7 +1550,7 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition_memsafe::get_tors
             auto current_glycan_torsion_info = pybind11::dict("glycanIndex"_a=i, "WURCS"_a=currentGlycan.get_wurcs_notation(), "all_zscore_torsions_in_structure"_a=current_glycan_zscore_torsions);
             output.append(current_glycan_torsion_info);
         }
-        
+
         return output;
 }
 
@@ -1567,25 +1567,25 @@ pybind11::list privateer::pyanalysis::GlycosylationComposition_memsafe::get_tors
             auto current_glycan_torsion_info = pybind11::dict("glycanIndex"_a=i, "WURCS"_a=currentGlycan.get_wurcs_notation(), "all_zscore_torsions_in_structure"_a=current_glycan_zscore_torsions);
             output.append(current_glycan_torsion_info);
         }
-        
+
         return output;
 }
 
-pybind11::float_ privateer::pyanalysis::GlycosylationComposition_memsafe::return_quality_score(OfflineTorsionsZScoreDatabase& importedDatabase) { 
+pybind11::float_ privateer::pyanalysis::GlycosylationComposition_memsafe::return_quality_score(OfflineTorsionsZScoreDatabase& importedDatabase) {
     int totalGlycans = get_number_of_glycan_chains_detected();
 
     auto output = pybind11::list();
 
     pybind11::float_ summation_of_zscore = 0.0;
-    pybind11::int_ total_number_of_linkages = 0; 
+    pybind11::int_ total_number_of_linkages = 0;
 
-    for(int i = 0; i < totalGlycans; i++) { 
+    for(int i = 0; i < totalGlycans; i++) {
         privateer::pyanalysis::GlycanStructure currentGlycan = get_glycan(i);
-        
+
         std::string glycan_type = currentGlycan.get_glycosylation_type();
 
-        if (glycan_type == "n-glycan") { 
-        
+        if (glycan_type == "n-glycan") {
+
             pybind11::float_ total_zscore_for_glycan = currentGlycan.calculate_total_zscore(importedDatabase);
             pybind11::int_ number_of_linkages_in_glycan = currentGlycan.get_number_of_linkages();
 
@@ -1593,7 +1593,7 @@ pybind11::float_ privateer::pyanalysis::GlycosylationComposition_memsafe::return
             total_number_of_linkages = total_number_of_linkages + number_of_linkages_in_glycan;
         }
     }
-    
+
     pybind11::float_ average_z_score = summation_of_zscore / total_number_of_linkages;
 
     // std::cout << "The total number of z scores is " << summation_of_zscore << std::endl;
@@ -1620,7 +1620,7 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
 
     this->glycan = inputGlycan;
     this->sugars_in_glycan = inputGlycan.get_sugars();
-    
+
     this->glycanID = glycanID;
     this->numberOfSugars = inputGlycan.number_of_nodes();
     this->glycanWURCS = inputGlycan.generate_wurcs();
@@ -1634,13 +1634,13 @@ void privateer::pyanalysis::GlycanStructure::pyinit( const clipper::MGlycology& 
     this->uniqueMonosaccharides = uniqueMonosaccharidesPyList;
     this->numberOfGlycosidicBonds = inputGlycan.obtain_total_number_of_glycosidic_bonds();
     this->glycosylationType = inputGlycan.get_type();
-    
+
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
     int         proteinResidueSeqnum = inputGlycan.get_root().first.seqnum();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
     this->chain_root_sugar_ID = inputGlycan.get_root_sugar_chainID();
-    
+
     auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinResidueSeqnum"_a=proteinResidueSeqnum, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
     this->rootSummary = rootSummary;
 
@@ -1670,7 +1670,7 @@ void privateer::pyanalysis::GlycanStructure::pyinit_memsafe( const clipper::MGly
 
     this->glycan = inputGlycan;
     this->sugars_in_glycan = inputGlycan.get_sugars();
-    
+
     this->glycanID = glycanID;
     this->numberOfSugars = inputGlycan.number_of_nodes();
     this->glycanWURCS = inputGlycan.generate_wurcs();
@@ -1684,13 +1684,13 @@ void privateer::pyanalysis::GlycanStructure::pyinit_memsafe( const clipper::MGly
     this->uniqueMonosaccharides = uniqueMonosaccharidesPyList;
     this->numberOfGlycosidicBonds = inputGlycan.obtain_total_number_of_glycosidic_bonds();
     this->glycosylationType = inputGlycan.get_type();
-    
+
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
     int         proteinResidueSeqnum = inputGlycan.get_root().first.seqnum();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
     this->chain_root_sugar_ID = inputGlycan.get_root_sugar_chainID();
-    
+
     auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinResidueSeqnum"_a=proteinResidueSeqnum, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
     this->rootSummary = rootSummary;
 
@@ -1720,7 +1720,7 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
 
     this->glycan = inputGlycan;
     this->sugars_in_glycan = inputGlycan.get_sugars();
-    
+
     this->glycanID = glycanID;
     this->numberOfSugars = inputGlycan.number_of_nodes();
     this->glycanWURCS = inputGlycan.generate_wurcs();
@@ -1734,13 +1734,13 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
     this->uniqueMonosaccharides = uniqueMonosaccharidesPyList;
     this->numberOfGlycosidicBonds = inputGlycan.obtain_total_number_of_glycosidic_bonds();
     this->glycosylationType = inputGlycan.get_type();
-    
+
     std::string proteinResidue = inputGlycan.get_root().first.type().trim();
     std::string proteinResidueID = inputGlycan.get_root().first.id().trim();
     int         proteinResidueSeqnum = inputGlycan.get_root().first.seqnum();
     std::string proteinChainID = inputGlycan.get_chain().substr(0,1);
     this->chain_root_sugar_ID = inputGlycan.get_root_sugar_chainID();
-    
+
     auto rootSummary = pybind11::dict("ProteinResidueType"_a=proteinResidue, "ProteinResidueID"_a=proteinResidueID, "ProteinResidueSeqnum"_a=proteinResidueSeqnum, "ProteinChainID"_a=proteinChainID, "RootSugarChainID"_a=chain_root_sugar_ID);
     this->rootSummary = rootSummary;
 
@@ -1771,7 +1771,7 @@ void privateer::pyanalysis::GlycanStructure::pyinitWithExperimentalData( const c
             }
         }
     }
-    
+
     auto list = pybind11::list();
     for(int sugarID = 0; sugarID < list_of_sugars_modified.size(); sugarID++)
     {
@@ -1874,18 +1874,18 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
 
             int detectedThreads = std::thread::hardware_concurrency();
             bool useParallelism = true;
-            
+
             if(nThreads < 0)
                 nThreads = detectedThreads;
-            
+
             else if(nThreads < 2 && nThreads > -1)
             {
                 useParallelism = false;
             }
             else if(nThreads > detectedThreads)
             {
-                std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system." 
-                << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads 
+                std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system."
+                << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads
                 << "\n\tNumber of Cores/Threads requested via input argument: " << nThreads << "." << std::endl;
 
                 throw std::invalid_argument( "Number of inputted threads exceed the number of detected threads." );
@@ -1897,10 +1897,10 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
             }
 
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
-            
+
             if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, returnAllPossiblePermutations, false, nThreads, useParallelism);
-            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, returnAllPossiblePermutations, false);   
-            
+            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, returnAllPossiblePermutations, false);
+
             if(!alternativeGlycans.empty())
             {
                 std::vector<std::pair<clipper::MGlycan, std::vector<int>>> uniqueAlternativeGlycans;
@@ -1909,7 +1909,7 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
                     auto tempObject = alternativeGlycans[i];
                     clipper::MGlycan currentPermutatedGlycan = tempObject.first;
                     clipper::String currentPermutatedGlycanWURCS = currentPermutatedGlycan.generate_wurcs();
-                    
+
                     if(uniqueAlternativeGlycans.empty())
                     {
                         uniqueAlternativeGlycans.push_back(tempObject);
@@ -1928,7 +1928,7 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
                             uniqueAlternativeGlycans.push_back(tempObject);
                     }
                 }
-                
+
                 std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>> finalGlycanPermutationContainer;
                 for (int i = 0; i < uniqueAlternativeGlycans.size(); i++)
                 {
@@ -1938,7 +1938,7 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
                     int anomerPermutations = uniqueAlternativeGlycans[i].second[0],
                         residuePermutations = uniqueAlternativeGlycans[i].second[1],
                         residueDeletions = uniqueAlternativeGlycans[i].second[2];
-                    
+
                     float finalScore, maxPermutationScore, currentPermutationScore;
 
                     maxPermutationScore = ( ( (currentGlycanLength * 5) + (currentGlycanLength * 25) + ((originalGlycanLength - 1) * 100) ) / originalGlycanLength );
@@ -1948,13 +1948,13 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
                     auto tempObject = std::make_pair(uniqueAlternativeGlycans[i], finalScore);
                     finalGlycanPermutationContainer.push_back(tempObject);
                 }
-                
+
                 // sort by permutation score for sensical output to the user.
                 std::sort(finalGlycanPermutationContainer.begin(), finalGlycanPermutationContainer.end(), [](std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> a, std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float> b){
                     return a.second < b.second;
                 });
 
-                
+
                 this->outputGlycanPermutationContainer = finalGlycanPermutationContainer;
                 auto permutationDatabaseOutputList = pybind11::list();
                 for(int i = 0; i < finalGlycanPermutationContainer.size(); i++)
@@ -1968,7 +1968,7 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
                     {
                         permutationGlyTouCanID.erase(0, 1);
                         permutationGlyTouCanID.pop_back();
-                    }                    
+                    }
                     std::string permutationWURCS = temporaryWURCS;
                     auto permutationGlyConnectID = glycomics_database[valueLocation].GlyConnectID;
                     if (permutationGlyConnectID.front() == '"' && permutationGlyConnectID.front() == '"')
@@ -1983,7 +1983,7 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
 
                     auto permutationInfo = pybind11::dict ("wurcs"_a=permutationWURCS, "glytoucan_id"_a=permutationGlyTouCanID, "glyconnect_id"_a=permutationGlyConnectID, "permutation_score"_a=permutationScore, "anomer_permutations"_a=anomerPermutations, "residue_permutations"_a=residuePermutations, "residue_deletions"_a=residueDeletions);
                     permutationDatabaseOutputList.append(permutationInfo);
-                }   
+                }
                 auto databaseOutput = pybind11::dict ("wurcs"_a=currentWURCS, "comment"_a="Permutations were generated with closest matches detected", "glytoucan_id"_a=glytoucanID, "glyconnect_id"_a="Not Found", "permutations"_a=permutationDatabaseOutputList);
                 this->glycoproteomicsDB = databaseOutput;
                 update_summary_of_glycan_after_dbquery();
@@ -1997,7 +1997,7 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
                 return databaseOutput;
             }
         }
-        else 
+        else
         {
             std::string glytoucanID = "Not Found";
             if(valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID != "NotFound")
@@ -2049,16 +2049,16 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
     std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = glycan.return_torsion_summary_within_glycan();
     std::vector<privateer::json::TorsionsDatabase> torsions_database = importedDatabase.return_imported_database();
     auto output = pybind11::list();
-    
+
     for(int i = 0; i < torsion_summary_of_glycan.size(); i++)
     {
         clipper::MGlycan::MGlycanTorsionSummary current_torsion = torsion_summary_of_glycan[i];
-       
+
         for(int linkage_number = 0; linkage_number < current_torsion.linkage_descriptors.size(); linkage_number++) {
 
             auto search_result = std::find_if(torsions_database.begin(), torsions_database.end(), [current_torsion, linkage_number](privateer::json::TorsionsDatabase& element)
             {
-                return 
+                return
                 current_torsion.first_residue_name == element.first_residue &&
                 current_torsion.second_residue_name == element.second_residue &&
                 current_torsion.type == element.type &&
@@ -2070,14 +2070,14 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
             {
                 privateer::json::TorsionsDatabase& found_torsions_in_database = *search_result;
                 std::vector<std::pair<float, float>> database_torsions = found_torsions_in_database.torsions;
-            
+
                 std::vector<std::pair<float, float>> current_glycan_torsions = current_torsion.torsions;
                 std::vector<std::pair<clipper::MAtom, clipper::MAtom>> current_glycan_atoms = current_torsion.atoms;
 
                 auto database_psi = pybind11::list();
                 auto database_phi = pybind11::list();
                 auto glycan_torsions = pybind11::list();
-                
+
                 for(int j = 0; j < database_torsions.size(); j++)
                 {
                     database_phi.append(database_torsions[j].first);
@@ -2092,7 +2092,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
                     auto torsion_dict = pybind11::dict("Phi"_a=currentPhi, "Psi"_a=currentPsi, "glycan_bond"_a=current_bond_descr);
                     glycan_torsions.append(torsion_dict);
                 }
-                
+
                 std::string root_string = glycan.get_root_for_filename();
                 auto current_pair_dict = pybind11::dict("first_residue"_a=std::string(current_torsion.first_residue_name), "second_residue"_a=std::string(current_torsion.second_residue_name), "first_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].first), "second_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].second), "root_descr"_a=root_string, "detected_torsions"_a=glycan_torsions, "database_phi"_a=database_phi, "database_psi"_a=database_psi);
                 output.append(current_pair_dict);
@@ -2107,15 +2107,15 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_per_linkage_
     // std::cout << "Reached nested function" << std::endl;
     std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary_of_glycan = glycan.return_torsion_summary_within_glycan();
     auto output = pybind11::list();
-    
+
     for(int i = 0; i < torsion_summary_of_glycan.size(); i++)
     {
         clipper::MGlycan::MGlycanTorsionSummary current_torsion = torsion_summary_of_glycan[i];
         // std::cout << torsion_summary_of_glycan.size() << " " << current_torsion.linkage_descriptors.size() << " " <<  current_torsion.torsions.size() << std::endl;
 
         for(int j =0; j < current_torsion.linkage_descriptors.size(); j++) {
-            for(int k = 0; k < current_torsion.torsions.size(); k++) { 
-                    // std::cout << current_torsion.first_residue_name << " " <<  current_torsion.second_residue_name << " " << current_torsion.linkage_descriptors[j].first << " " << current_torsion.linkage_descriptors[j].second << " " << current_torsion.torsions[k].first << " " << current_torsion.torsions[k].second << std::endl; 
+            for(int k = 0; k < current_torsion.torsions.size(); k++) {
+                    // std::cout << current_torsion.first_residue_name << " " <<  current_torsion.second_residue_name << " " << current_torsion.linkage_descriptors[j].first << " " << current_torsion.linkage_descriptors[j].second << " " << current_torsion.torsions[k].first << " " << current_torsion.torsions[k].second << std::endl;
                     // auto current_pair_dict = pybind11::dict("first_residue_name"_a=current_torsion.first_residue_name, "second_residue_name"_a=current_torsion.second_residue_name, "donor_pos"_a= current_torsion.linkage_descriptors[j].first,"acceptor_pos"_a= current_torsion.linkage_descriptors[j].second,"phi"_a = current_torsion.torsions[k].first,"psi"_a = current_torsion.torsions[k].second );
                     std::string first_residue_name = static_cast<std::string>(current_torsion.first_residue_name);
                     std::string second_residue_name = static_cast<std::string>(current_torsion.second_residue_name);
@@ -2123,7 +2123,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_per_linkage_
                     output.append(current_pair_dict);
             }
         }
-        
+
     }
     return output;
 }
@@ -2153,7 +2153,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
                     float currentPhi = current_linkage.torsions[linkage_descriptor_index].first;
                     float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
                     // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << std::endl;
-                   
+
                     auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
                     {
                         return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
@@ -2180,7 +2180,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
             }
        }
     }
-    
+
     return output;
 }
 
@@ -2208,7 +2208,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
                     float currentPhi = current_linkage.torsions[linkage_descriptor_index].first;
                     float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
                     // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << std::endl;
-                   
+
                     auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
                     {
                         return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
@@ -2235,7 +2235,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_zscore_summa
             }
     //    }
     }
-    
+
     return output;
 }
 
@@ -2261,10 +2261,10 @@ pybind11::float_ privateer::pyanalysis::GlycanStructure::calculate_total_zscore(
                     std::string acceptor_atom = current_linkage.atoms[linkage_descriptor_index].second.name().trim();
                     float currentPhi = current_linkage.torsions[linkage_descriptor_index].first;
                     float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
-                   
+
                     bool linkage_check = privateer::util::do_report_linkage(donor_sugar,acceptor_position,donor_position, acceptor_sugar );
-                    
-                    if (!linkage_check) { 
+
+                    if (!linkage_check) {
                         continue;
                     }
                     auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
@@ -2278,7 +2278,7 @@ pybind11::float_ privateer::pyanalysis::GlycanStructure::calculate_total_zscore(
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description);
                         std::string root_string = glycan.get_root_for_filename();
                         if(isfinite(linkage_score) && ( !isnan(linkage_score) | !isinf(linkage_score)) )
-                        {   
+                        {
                             summation_of_zscore = summation_of_zscore + linkage_score;
                             number_of_linkages = number_of_linkages + 1;
                         }
@@ -2286,26 +2286,26 @@ pybind11::float_ privateer::pyanalysis::GlycanStructure::calculate_total_zscore(
                 }
             // }
        }
-       else { 
+       else {
             std::cout << current_linkage.type << " with " << current_linkage.first_residue_name << " " << current_linkage.second_residue_name << std::endl;
        }
     }
-    
+
 
     float average_zscore = summation_of_zscore / number_of_linkages;
-    
+
     // std::cout << "The average z score calculated from the total_z_score func is " << average_zscore << std::endl;
-    
+
     return static_cast<pybind11::float_>(summation_of_zscore);
 }
 
 pybind11::int_ privateer::pyanalysis::GlycanStructure::get_number_of_linkages() {
-   
+
     std::vector<clipper::MGlycan::MGlycanTorsionSummary> glycan_torsions = glycan.return_torsion_summary_within_glycan();
-    
-    
-    
-    
+
+
+
+
     return static_cast<pybind11::int_>(glycan_torsions.size());
 }
 
@@ -2377,7 +2377,7 @@ void privateer::pyanalysis::GlycanStructure::update_with_experimental_data(priva
             }
         }
     }
-    
+
     auto list = pybind11::list();
     for(int sugarID = 0; sugarID < list_of_sugars_modified.size(); sugarID++)
     {
@@ -2406,7 +2406,7 @@ void privateer::pyanalysis::GlycanStructure::update_with_experimental_data(priva
         }
     }
 
-    
+
     while(list_of_sugars_modified.size() > list_of_sugars_original.size())
     {
         for(int i = 0; i < list_of_sugars_modified.size(); i++)
@@ -2419,7 +2419,7 @@ void privateer::pyanalysis::GlycanStructure::update_with_experimental_data(priva
             }
         }
     }
-    
+
     auto list = pybind11::list();
     for(int sugarID = 0; sugarID < list_of_sugars_modified.size(); sugarID++)
     {
@@ -2438,11 +2438,11 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
 {
     this->parentGlycosylation = parentGlycosylationComposition;
     this->parentGlycanStructure = parentGlycanStructure;
-    
+
     std::vector<clipper::MSugar> list_of_sugars = mglycan.get_sugars();
 
     clipper::MSugar inputSugar = list_of_sugars[sugarID];
-    
+
     this->parentGlycan = mglycan;
     this->sugar = inputSugar;
     this->sugar_chain_id = inputSugar.chain_id().trim().substr(0,1);
@@ -2481,9 +2481,9 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
         float measured_distance = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].measured_distance;
         bool atom_result = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result;
 
-        auto ring_atom_dict = pybind11::dict(   "bond"_a=bond, 
-                                                "firstAtom"_a=firstAtom, 
-                                                "secondAtom"_a=secondAtom, 
+        auto ring_atom_dict = pybind11::dict(   "bond"_a=bond,
+                                                "firstAtom"_a=firstAtom,
+                                                "secondAtom"_a=secondAtom,
                                                 "maxDistance"_a=distance_max,
                                                 "minDistance"_a=distance_min,
                                                 "calculatedDistance"_a=measured_distance,
@@ -2494,7 +2494,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
         if(detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result == false)
             isolated_ring_atom_diagnostics_with_issues.append(ring_atom_dict);
     }
-    
+
     bool    puckering_sugar_found_db = detailed_diagnostics.get_puckering_diagnostics().sugar_found_db;
     float   puckering_range_min = detailed_diagnostics.get_puckering_diagnostics().range_min;
     float   puckering_range_max = detailed_diagnostics.get_puckering_diagnostics().range_max;
@@ -2505,17 +2505,17 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     bool    puckering_initialized = detailed_diagnostics.get_puckering_diagnostics().initialized;
     bool    puckering_final_result = detailed_diagnostics.get_puckering_diagnostics().final_result;
 
-    auto puckering_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=puckering_sugar_found_db, 
+    auto puckering_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=puckering_sugar_found_db,
                                                     "minValue"_a=puckering_range_min,
-                                                    "maxValue"_a=puckering_range_max, 
+                                                    "maxValue"_a=puckering_range_max,
                                                     "operator"_a=puckering_comparison_operator,
                                                     "sugar_diag_conformation"_a=puckering_sugar_diag_conformation,
-                                                    "referencePuckering"_a=puckering_reference_puckering, 
+                                                    "referencePuckering"_a=puckering_reference_puckering,
                                                     "calculatedPuckering"_a=puckering_calculated_puckering_amplitude,
                                                     "initialized"_a=puckering_initialized,
                                                     "result"_a=puckering_final_result);
-    
-    
+
+
     bool    anomer_sugar_found_db = detailed_diagnostics.get_anomer_diagnostics().sugar_found_db;
     std::string anomer_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().sugar_anomer;
     std::string anomer_database_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().database_sugar_anomer;
@@ -2523,20 +2523,20 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     bool    anomer_final_result = detailed_diagnostics.get_anomer_diagnostics().final_result;
 
 
-    auto anomer_diagnostics = pybind11::dict(       "sugarFromDatabase"_a=anomer_sugar_found_db, 
+    auto anomer_diagnostics = pybind11::dict(       "sugarFromDatabase"_a=anomer_sugar_found_db,
                                                     "computedAnomer"_a=anomer_sugar_anomer,
                                                     "referenceAnomer"_a=anomer_database_sugar_anomer,
                                                     "initialized"_a=anomer_initialized,
                                                     "result"_a=anomer_final_result);
-    
+
 
     bool    chirality_sugar_found_db = detailed_diagnostics.get_chirality_diagnostics().sugar_found_db;
     std::string chirality_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().sugar_handedness;
     std::string chirality_database_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().database_sugar_handedness;
     bool    chirality_initialized = detailed_diagnostics.get_chirality_diagnostics().initialized;
     bool    chirality_final_result = detailed_diagnostics.get_chirality_diagnostics().final_result;
-    
-    auto chirality_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=chirality_sugar_found_db, 
+
+    auto chirality_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=chirality_sugar_found_db,
                                                     "computedChirality"_a=chirality_sugar_handedness,
                                                     "referenceChirality"_a=chirality_database_sugar_handedness,
                                                     "initialized"_a=chirality_initialized,
@@ -2544,19 +2544,19 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
 
     bool    ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
     bool    ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
-    
+
     auto ring_diagnostics = pybind11::dict(     "initialized"_a=ring_initialized,
                                                 "result"_a=ring_final_result,
                                                 "ring_atoms"_a=ring_atom_diagnostics);
-    
+
     bool    isolated_ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
     bool    isolated_ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
-    
+
     auto isolated_ring_diagnostics = pybind11::dict(    "initialized"_a=isolated_ring_initialized,
                                                         "result"_a=isolated_ring_final_result,
                                                         "ring_atoms"_a=isolated_ring_atom_diagnostics_with_issues);
 
-    
+
     this->complete_diagnostics = pybind11::dict("PuckeringDiagnostics"_a=puckering_diagnostics, "AnomerDiagnostics"_a=anomer_diagnostics, "ChiralityDiagnostics"_a=chirality_diagnostics, "RingDiagnostics"_a=ring_diagnostics);
 
 
@@ -2579,7 +2579,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
         this->condensed_diagnostics["RingDiagnostics"] = ring_diagnostics;
     else
         this->condensed_diagnostics["RingDiagnostics"] = pybind11::cast<pybind11::none>(Py_None);
-    
+
     std::string sugardiagnostic;
     if(inputSugar.is_sane())
     {
@@ -2705,7 +2705,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
 void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugarID, std::vector<std::pair<clipper::String, clipper::MSugar>>& inputSugarList, privateer::pyanalysis::GlycosylationComposition& parentGlycosylationComposition )
 {
     this->parentGlycosylation = parentGlycosylationComposition;
-    
+
     std::pair<clipper::String, clipper::MSugar> inputSugar = inputSugarList[sugarID];
     this->parentGlycan = clipper::MGlycan();
     this->sugar = inputSugar.second;
@@ -2744,9 +2744,9 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
         float measured_distance = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].measured_distance;
         bool atom_result = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result;
 
-        auto ring_atom_dict = pybind11::dict(   "bond"_a=bond, 
-                                                "firstAtom"_a=firstAtom, 
-                                                "secondAtom"_a=secondAtom, 
+        auto ring_atom_dict = pybind11::dict(   "bond"_a=bond,
+                                                "firstAtom"_a=firstAtom,
+                                                "secondAtom"_a=secondAtom,
                                                 "maxDistance"_a=distance_max,
                                                 "minDistance"_a=distance_min,
                                                 "calculatedDistance"_a=measured_distance,
@@ -2757,7 +2757,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
         if(detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result == false)
             isolated_ring_atom_diagnostics_with_issues.append(ring_atom_dict);
     }
-    
+
     bool    puckering_sugar_found_db = detailed_diagnostics.get_puckering_diagnostics().sugar_found_db;
     float   puckering_range_min = detailed_diagnostics.get_puckering_diagnostics().range_min;
     float   puckering_range_max = detailed_diagnostics.get_puckering_diagnostics().range_max;
@@ -2768,17 +2768,17 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     bool    puckering_initialized = detailed_diagnostics.get_puckering_diagnostics().initialized;
     bool    puckering_final_result = detailed_diagnostics.get_puckering_diagnostics().final_result;
 
-    auto puckering_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=puckering_sugar_found_db, 
+    auto puckering_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=puckering_sugar_found_db,
                                                     "minValue"_a=puckering_range_min,
-                                                    "maxValue"_a=puckering_range_max, 
+                                                    "maxValue"_a=puckering_range_max,
                                                     "operator"_a=puckering_comparison_operator,
                                                     "sugar_diag_conformation"_a=puckering_sugar_diag_conformation,
-                                                    "referencePuckering"_a=puckering_reference_puckering, 
+                                                    "referencePuckering"_a=puckering_reference_puckering,
                                                     "calculatedPuckering"_a=puckering_calculated_puckering_amplitude,
                                                     "initialized"_a=puckering_initialized,
                                                     "result"_a=puckering_final_result);
-    
-    
+
+
     bool    anomer_sugar_found_db = detailed_diagnostics.get_anomer_diagnostics().sugar_found_db;
     std::string anomer_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().sugar_anomer;
     std::string anomer_database_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().database_sugar_anomer;
@@ -2786,20 +2786,20 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     bool    anomer_final_result = detailed_diagnostics.get_anomer_diagnostics().final_result;
 
 
-    auto anomer_diagnostics = pybind11::dict(       "sugarFromDatabase"_a=anomer_sugar_found_db, 
+    auto anomer_diagnostics = pybind11::dict(       "sugarFromDatabase"_a=anomer_sugar_found_db,
                                                     "computedAnomer"_a=anomer_sugar_anomer,
                                                     "referenceAnomer"_a=anomer_database_sugar_anomer,
                                                     "initialized"_a=anomer_initialized,
                                                     "result"_a=anomer_final_result);
-    
+
 
     bool    chirality_sugar_found_db = detailed_diagnostics.get_chirality_diagnostics().sugar_found_db;
     std::string chirality_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().sugar_handedness;
     std::string chirality_database_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().database_sugar_handedness;
     bool    chirality_initialized = detailed_diagnostics.get_chirality_diagnostics().initialized;
     bool    chirality_final_result = detailed_diagnostics.get_chirality_diagnostics().final_result;
-    
-    auto chirality_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=chirality_sugar_found_db, 
+
+    auto chirality_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=chirality_sugar_found_db,
                                                     "computedChirality"_a=chirality_sugar_handedness,
                                                     "referenceChirality"_a=chirality_database_sugar_handedness,
                                                     "initialized"_a=chirality_initialized,
@@ -2807,19 +2807,19 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
 
     bool    ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
     bool    ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
-    
+
     auto ring_diagnostics = pybind11::dict(     "initialized"_a=ring_initialized,
                                                 "result"_a=ring_final_result,
                                                 "ring_atoms"_a=ring_atom_diagnostics);
-    
+
     bool    isolated_ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
     bool    isolated_ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
-    
+
     auto isolated_ring_diagnostics = pybind11::dict(    "initialized"_a=isolated_ring_initialized,
                                                         "result"_a=isolated_ring_final_result,
                                                         "ring_atoms"_a=isolated_ring_atom_diagnostics_with_issues);
 
-    
+
     this->complete_diagnostics = pybind11::dict("PuckeringDiagnostics"_a=puckering_diagnostics, "AnomerDiagnostics"_a=anomer_diagnostics, "ChiralityDiagnostics"_a=chirality_diagnostics, "RingDiagnostics"_a=ring_diagnostics);
 
 
@@ -2924,7 +2924,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     this->sugar_rscc=inputSugar.second.get_rscc();
     this->sugar_accum=inputSugar.second.get_accum();
     this->sugar_occupancy_check=inputSugar.second.get_occupancy_check();
-    
+
 
     this->sugarNode = clipper::MGlycan::Node(); // we don't have an MGlycan object with free float ligands...
     this->sugar_connections = 0;
@@ -2941,7 +2941,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
     this->parentGlycanStructure = parentGlycanStructure;
 
     clipper::MSugar inputSugar = list_of_sugars[sugarID];
-    
+
     this->parentGlycan = mglycan;
     this->sugar = inputSugar;
     this->sugarID = sugarID;
@@ -2980,9 +2980,9 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
         float measured_distance = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].measured_distance;
         bool atom_result = detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result;
 
-        auto ring_atom_dict = pybind11::dict(   "bond"_a=bond, 
-                                                "firstAtom"_a=firstAtom, 
-                                                "secondAtom"_a=secondAtom, 
+        auto ring_atom_dict = pybind11::dict(   "bond"_a=bond,
+                                                "firstAtom"_a=firstAtom,
+                                                "secondAtom"_a=secondAtom,
                                                 "maxDistance"_a=distance_max,
                                                 "minDistance"_a=distance_min,
                                                 "calculatedDistance"_a=measured_distance,
@@ -2993,7 +2993,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
         if(detailed_diagnostics.get_ring_diagnostics().ring_atom_diagnostic[i].atom_result == false)
             isolated_ring_atom_diagnostics_with_issues.append(ring_atom_dict);
     }
-    
+
     bool    puckering_sugar_found_db = detailed_diagnostics.get_puckering_diagnostics().sugar_found_db;
     float   puckering_range_min = detailed_diagnostics.get_puckering_diagnostics().range_min;
     float   puckering_range_max = detailed_diagnostics.get_puckering_diagnostics().range_max;
@@ -3004,17 +3004,17 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
     bool    puckering_initialized = detailed_diagnostics.get_puckering_diagnostics().initialized;
     bool    puckering_final_result = detailed_diagnostics.get_puckering_diagnostics().final_result;
 
-    auto puckering_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=puckering_sugar_found_db, 
+    auto puckering_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=puckering_sugar_found_db,
                                                     "minValue"_a=puckering_range_min,
-                                                    "maxValue"_a=puckering_range_max, 
+                                                    "maxValue"_a=puckering_range_max,
                                                     "operator"_a=puckering_comparison_operator,
                                                     "sugar_diag_conformation"_a=puckering_sugar_diag_conformation,
-                                                    "referencePuckering"_a=puckering_reference_puckering, 
+                                                    "referencePuckering"_a=puckering_reference_puckering,
                                                     "calculatedPuckering"_a=puckering_calculated_puckering_amplitude,
                                                     "initialized"_a=puckering_initialized,
                                                     "result"_a=puckering_final_result);
-    
-    
+
+
     bool    anomer_sugar_found_db = detailed_diagnostics.get_anomer_diagnostics().sugar_found_db;
     std::string anomer_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().sugar_anomer;
     std::string anomer_database_sugar_anomer = detailed_diagnostics.get_anomer_diagnostics().database_sugar_anomer;
@@ -3022,20 +3022,20 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
     bool    anomer_final_result = detailed_diagnostics.get_anomer_diagnostics().final_result;
 
 
-    auto anomer_diagnostics = pybind11::dict(       "sugarFromDatabase"_a=anomer_sugar_found_db, 
+    auto anomer_diagnostics = pybind11::dict(       "sugarFromDatabase"_a=anomer_sugar_found_db,
                                                     "computedAnomer"_a=anomer_sugar_anomer,
                                                     "referenceAnomer"_a=anomer_database_sugar_anomer,
                                                     "initialized"_a=anomer_initialized,
                                                     "result"_a=anomer_final_result);
-    
+
 
     bool    chirality_sugar_found_db = detailed_diagnostics.get_chirality_diagnostics().sugar_found_db;
     std::string chirality_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().sugar_handedness;
     std::string chirality_database_sugar_handedness = detailed_diagnostics.get_chirality_diagnostics().database_sugar_handedness;
     bool    chirality_initialized = detailed_diagnostics.get_chirality_diagnostics().initialized;
     bool    chirality_final_result = detailed_diagnostics.get_chirality_diagnostics().final_result;
-    
-    auto chirality_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=chirality_sugar_found_db, 
+
+    auto chirality_diagnostics = pybind11::dict(    "sugarFromDatabase"_a=chirality_sugar_found_db,
                                                     "computedChirality"_a=chirality_sugar_handedness,
                                                     "referenceChirality"_a=chirality_database_sugar_handedness,
                                                     "initialized"_a=chirality_initialized,
@@ -3043,19 +3043,19 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
 
     bool    ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
     bool    ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
-    
+
     auto ring_diagnostics = pybind11::dict(     "initialized"_a=ring_initialized,
                                                 "result"_a=ring_final_result,
                                                 "ring_atoms"_a=ring_atom_diagnostics);
-    
+
     bool    isolated_ring_initialized = detailed_diagnostics.get_ring_diagnostics().initialized;
     bool    isolated_ring_final_result = detailed_diagnostics.get_ring_diagnostics().final_result;
-    
+
     auto isolated_ring_diagnostics = pybind11::dict(    "initialized"_a=isolated_ring_initialized,
                                                         "result"_a=isolated_ring_final_result,
                                                         "ring_atoms"_a=isolated_ring_atom_diagnostics_with_issues);
 
-    
+
     this->complete_diagnostics = pybind11::dict("PuckeringDiagnostics"_a=puckering_diagnostics, "AnomerDiagnostics"_a=anomer_diagnostics, "ChiralityDiagnostics"_a=chirality_diagnostics, "RingDiagnostics"_a=ring_diagnostics);
 
 
@@ -3206,7 +3206,7 @@ void privateer::pyanalysis::CarbohydrateStructure::initialize_summary_of_sugar( 
 
 ///////////////////////////////////////////////// Class XRayData ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool disable_torsions, bool debug_output) 
+void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_file, std::string& path_to_model_file, std::string& input_column_fobs_user, float ipradius, int nThreads, bool disable_torsions, bool debug_output)
 {
     bool rscc_best = false;
     this->debug_output = debug_output;
@@ -3216,7 +3216,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     bool useParallelism = true;
     bool showGeom = false;
 
-    
+
     if(nThreads < 0)
         nThreads = detectedThreads;
     else if(nThreads < 2 && nThreads > -1)
@@ -3225,8 +3225,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     }
     else if(nThreads > detectedThreads)
     {
-        std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system." 
-        << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads 
+        std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system."
+        << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads
         << "\n\tNumber of Cores/Threads requested via input argument: " << nThreads << "." << std::endl;
 
         throw std::invalid_argument( "Number of inputted threads exceed the number of detected threads." );
@@ -3399,7 +3399,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         if(useParallelism && nThreads >= 2)
         {
             std::vector<std::future<void>> thread_results;
-            thread_results.push_back(std::async(std::launch::async, 
+            thread_results.push_back(std::async(std::launch::async,
                 [](clipper::SFcalc_obs_bulk<float>& sfcbligands, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_bsc, clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::Atom_list& ligandAtoms)
                 {
                     sfcbligands( fc_ligands_bsc, fobs, ligandAtoms ); // was fobs_scaled
@@ -3407,7 +3407,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 std::ref(sfcbligands), std::ref(fc_ligands_bsc), std::ref(fobs), std::ref(ligandAtoms)
                 ));
 
-            thread_results.push_back(std::async(std::launch::async, 
+            thread_results.push_back(std::async(std::launch::async,
                 [](clipper::SFcalc_obs_bulk<float>& sfcb, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc, clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::Atom_list& mainAtoms)
                 {
                     sfcb( fc_omit_bsc, fobs, mainAtoms ); // was fobs_scaled
@@ -3415,14 +3415,14 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                 std::ref(sfcb), std::ref(fc_omit_bsc), std::ref(fobs), std::ref(mainAtoms)
                 ));
 
-            thread_results.push_back(std::async(std::launch::async, 
+            thread_results.push_back(std::async(std::launch::async,
                 [](clipper::SFcalc_obs_bulk<float>& sfcball, clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc, clipper::HKL_data<clipper::data32::F_sigF>& fobs, clipper::Atom_list& allAtoms)
                 {
                     sfcball( fc_all_bsc, fobs, allAtoms ); // was fobs_scaled
                 },
                 std::ref(sfcball), std::ref(fc_all_bsc), std::ref(fobs), std::ref(allAtoms)
                 ));
-            
+
             for (auto& r: thread_results)
                 r.get();
 
@@ -3465,14 +3465,14 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     if(useParallelism && nThreads >= 2)
     {
         std::vector<std::future<void>> thread_results;
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::SFscale_aniso<float>& sfscale, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc)
             {
                 sfscale( fobs_scaled, fc_all_bsc ); // was fobs_scaled
             },
             std::ref(sfscale), std::ref(fobs_scaled), std::ref(fc_all_bsc)
             ));
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::HKL_data<clipper::datatypes::Flag>& flag, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, HRI& ih)
             {
                 for ( ih = flag.first(); !ih.last(); ih.next() ) // we want to use all available reflections
@@ -3484,8 +3484,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             },
             std::ref(flag), std::ref(fobs_scaled), std::ref(ih)
             ));
-        
-        
+
+
         for (auto& r: thread_results)
             r.get();
 
@@ -3518,8 +3518,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     if(useParallelism && nThreads >= 2)
     {
         std::vector<std::future<void>> thread_results;
-        thread_results.push_back(std::async(std::launch::async, 
-            [](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_omit, clipper::HKL_data<clipper::data32::F_phi>& fd_omit, 
+        thread_results.push_back(std::async(std::launch::async,
+            [](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_omit, clipper::HKL_data<clipper::data32::F_phi>& fd_omit,
             clipper::HKL_data<clipper::data32::Phi_fom>& phiw_omit, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc,
             clipper::HKL_data<clipper::datatypes::Flag>& flag)
             {
@@ -3529,8 +3529,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             n_refln, n_param, std::ref(fb_omit), std::ref(fd_omit), std::ref(phiw_omit), std::ref(fobs_scaled), std::ref(fc_omit_bsc), std::ref(flag)
             ));
 
-        thread_results.push_back(std::async(std::launch::async, 
-            [](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_all, clipper::HKL_data<clipper::data32::F_phi>& fd_all, 
+        thread_results.push_back(std::async(std::launch::async,
+            [](int n_refln, int n_param, clipper::HKL_data<clipper::data32::F_phi>& fb_all, clipper::HKL_data<clipper::data32::F_phi>& fd_all,
             clipper::HKL_data<clipper::data32::Phi_fom>& phiw_all, clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc,
             clipper::HKL_data<clipper::datatypes::Flag>& flag)
             {
@@ -3539,10 +3539,10 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             },
             n_refln, n_param, std::ref(fb_all), std::ref(fd_all), std::ref(phiw_all), std::ref(fobs_scaled), std::ref(fc_all_bsc), std::ref(flag)
             ));
-        
+
         for (auto& r: thread_results)
             r.get();
-        
+
 
         thread_results.clear();
     }
@@ -3554,7 +3554,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         clipper::SFweight_spline<float> sfw_all( n_refln, n_param );
         sfw_all( fb_all,  fd_all,  phiw_all, fobs_scaled, fc_all_bsc, flag );
     }
-    
+
     // fb:          output best map coefficients
     // fd:          output difference map coefficients
     // phiw:        output phase and fom
@@ -3576,7 +3576,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
     if(useParallelism && nThreads >= 2)
     {
         std::vector<std::future<void>> thread_results;
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::Xmap<float>& sigmaa_all_map, clipper::HKL_data<clipper::data32::F_phi>& fb_all)
             {
                 sigmaa_all_map.fft_from( fb_all );
@@ -3584,7 +3584,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             std::ref(sigmaa_all_map), std::ref(fb_all)
             ));
 
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::Xmap<float>& sigmaa_dif_map, clipper::HKL_data<clipper::data32::F_phi>& fd_all)
             {
                 sigmaa_dif_map.fft_from( fd_all );
@@ -3592,7 +3592,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             std::ref(sigmaa_dif_map), std::ref(fd_all)
             ));
 
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::Xmap<float>& sigmaa_omit_fb, clipper::HKL_data<clipper::data32::F_phi>& fb_omit)
             {
                 sigmaa_omit_fb.fft_from( fb_omit );
@@ -3600,7 +3600,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             std::ref(sigmaa_omit_fb), std::ref(fb_omit)
             ));
 
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::Xmap<float>& sigmaa_omit_fd, clipper::HKL_data<clipper::data32::F_phi>& fd_omit)
             {
                 sigmaa_omit_fd.fft_from( fd_omit );
@@ -3608,7 +3608,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             std::ref(sigmaa_omit_fd), std::ref(fd_omit)
             ));
 
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::Xmap<float>& ligandmap, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_bsc)
             {
                 ligandmap.fft_from( fc_ligands_bsc );
@@ -3616,9 +3616,9 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             std::ref(ligandmap), std::ref(fc_ligands_bsc)
             ));
 
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::HKL_data<clipper::data32::F_sigF>& fobs_scaled, clipper::ResolutionFn& wrk_scale_all, clipper::ResolutionFn& wrk_scale_omit,
-                clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc, HRI& ih, 
+                clipper::HKL_data<clipper::data32::F_phi>& fc_all_bsc, clipper::HKL_data<clipper::data32::F_phi>& fc_omit_bsc, HRI& ih,
                 double& Fo, double& Fc_all, double& Fc_omit, double& FobsFcalcAllSum, double& FobsFcalcSum, double& FobsSum)
             {
                 for ( ih = fobs_scaled.first(); !ih.last(); ih.next() )
@@ -3636,7 +3636,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
             },
             std::ref(fobs_scaled), std::ref(wrk_scale_all), std::ref(wrk_scale_omit), std::ref(fc_all_bsc), std::ref(fc_omit_bsc), std::ref(ih), std::ref(Fo), std::ref(Fc_all), std::ref(Fc_omit), std::ref(FobsFcalcAllSum), std::ref(FobsFcalcSum), std::ref(FobsSum)
             ));
-        
+
         for (auto& r: thread_results)
             r.get();
         thread_results.clear();
@@ -3684,8 +3684,8 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         for (size_t i = 0; i < nThreads; i++)
         {
             end = std::min(start + sugars_per_thread, ligandList.size());
-            thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& path_to_model_file_clipper, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, 
-            clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<float>& sigmaa_all_map, clipper::Xmap<float>& sigmaa_omit_fb, clipper::Xmap<float>& sigmaa_omit_fd, clipper::Xmap<float>& ligandmap, clipper::MGlycology& mgl, 
+            thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& path_to_model_file_clipper, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList,
+            clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<float>& sigmaa_all_map, clipper::Xmap<float>& sigmaa_omit_fb, clipper::Xmap<float>& sigmaa_omit_fd, clipper::Xmap<float>& ligandmap, clipper::MGlycology& mgl,
             bool showGeom, float ipradius, int pos_slash, bool useSigmaa, bool rscc_best, size_t start, size_t end, bool debug_output)
             {
                 for(size_t index = start; index < end; index++)
@@ -3750,9 +3750,9 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
                         for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
                         {
-                            if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() && 
+                            if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() &&
                                     list_of_sugars[j].chain_id().trim() == ligandList[index].second.chain_id().trim() &&
-                                    list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() && 
+                                    list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() &&
                                     list_of_sugars[j].seqnum() == ligandList[index].second.seqnum() )
                             {
                                 if ( list_of_glycans[i].get_type() == "n-glycan" )
@@ -3807,14 +3807,14 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                     ligandList[index].second.set_occupancy_check ( occupancy_check );
                 }
             },
-            std::ref(sugarList), std::ref(path_to_model_file_clipper), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(sigmaa_all_map), std::ref(sigmaa_omit_fb), std::ref(sigmaa_omit_fd), std::ref(ligandmap), std::ref(mgl), showGeom, ipradius, pos_slash, useSigmaa, rscc_best, start, end, debug_output 
+            std::ref(sugarList), std::ref(path_to_model_file_clipper), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(sigmaa_all_map), std::ref(sigmaa_omit_fb), std::ref(sigmaa_omit_fd), std::ref(ligandmap), std::ref(mgl), showGeom, ipradius, pos_slash, useSigmaa, rscc_best, start, end, debug_output
             ));
             start += sugars_per_thread;
         }
 
         for (auto& r: thread_results)
             r.get();
-        
+
         thread_results.clear();
     }
     else
@@ -3884,9 +3884,9 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 
                 for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
                 {
-                    if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() && 
+                    if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() &&
                             list_of_sugars[j].chain_id().trim() == ligandList[index].second.chain_id().trim() &&
-                            list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() && 
+                            list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() &&
                             list_of_sugars[j].seqnum() == ligandList[index].second.seqnum() )
                     {
                         if ( list_of_glycans[i].get_type() == "n-glycan" )
@@ -3950,7 +3950,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
         }
     }
 
-        
+
     this->final_LigandsOnly = ligandsOnly;
     this->finalLigandList = ligandList;
     this->sugar_summary_of_experimental_data = generate_sugar_experimental_data_summary(finalLigandList);
@@ -3960,7 +3960,7 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
 // private methods //
 pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList)
 {
-    pybind11::list output; 
+    pybind11::list output;
 
     for(int index = 0; index < finalLigandList.size(); index++)
     {
@@ -3996,7 +3996,7 @@ pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data
 
 ///////////////////////////////////////////////// Class CryoEMData ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool disable_torsions, bool debug_output) 
+void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc_file, std::string& path_to_model_file, float resolution, float ipradius, int nThreads, bool disable_torsions, bool debug_output)
 {
     this->debug_output = debug_output;
 
@@ -4004,12 +4004,12 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
     int detectedThreads = std::thread::hardware_concurrency();
     bool useParallelism = true;
     bool showGeom = false;
-    
+
     if ( resolution == -1)
     {
         throw std::invalid_argument( "\nFATAL: An MRC file was inputted, but no resolution value was given. To import a Cryo-EM map please use input resolution value as the third argument!" );
     }
-    
+
     if(nThreads < 0)
         nThreads = detectedThreads;
     else if(nThreads < 2 && nThreads > -1)
@@ -4018,8 +4018,8 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
     }
     else if(nThreads > detectedThreads)
     {
-        std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system." 
-        << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads 
+        std::cout << "Error: More cores/threads were inputted as an argument, than detected on the system."
+        << "\n\tNumber of Available Cores/Threads detected on the system: " << detectedThreads
         << "\n\tNumber of Cores/Threads requested via input argument: " << nThreads << "." << std::endl;
 
         throw std::invalid_argument( "Number of inputted threads exceed the number of detected threads." );
@@ -4063,7 +4063,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
     fc_cryoem_obs = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo, cryo_em_map.cell() );
     fc_all_cryoem_data = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
     fc_ligands_only_cryoem_data = clipper::HKL_data<clipper::data32::F_phi> ( hklinfo );
-    
+
     cryo_em_map.fft_to(fc_cryoem_obs);
 
     this->hklinfo = hklinfo;
@@ -4083,7 +4083,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
     {
         torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("nopath");
     }
-    
+
     clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, debug_output, "undefined");
 
     for ( int p = 0; p < mmol.size(); p++ )
@@ -4204,7 +4204,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
     if(useParallelism && nThreads >= 2)
     {
         std::vector<std::future<void>> thread_results;
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::Xmap<double>& cryo_em_dif_map_all, clipper::HKL_data<clipper::data32::F_phi>& difference_coefficients)
             {
                 cryo_em_dif_map_all.fft_from( difference_coefficients );
@@ -4212,7 +4212,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
             std::ref(cryo_em_dif_map_all), std::ref(difference_coefficients)
             ));
 
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::Xmap<double>& modelmap, clipper::HKL_data<clipper::data32::F_phi>& fc_all_cryoem_data)
             {
                 modelmap.fft_from( fc_all_cryoem_data );
@@ -4220,14 +4220,14 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
             std::ref(modelmap), std::ref(fc_all_cryoem_data)
             ));
 
-        thread_results.push_back(std::async(std::launch::async, 
+        thread_results.push_back(std::async(std::launch::async,
             [](clipper::Xmap<double>& ligandmap, clipper::HKL_data<clipper::data32::F_phi>& fc_ligands_only_cryoem_data)
             {
                 ligandmap.fft_from( fc_ligands_only_cryoem_data );
             },
             std::ref(ligandmap), std::ref(fc_ligands_only_cryoem_data)
             ));
-        
+
         for (auto& r: thread_results)
             r.get();
 
@@ -4241,7 +4241,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
         ligandmap.fft_from( fc_ligands_only_cryoem_data );       // this is the map that will serve as Fc map for the RSCC calculation
     }
-    
+
     if(useParallelism && nThreads >= 2)
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
@@ -4251,8 +4251,8 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
         for (size_t i = 0; i < nThreads; i++)
         {
             end = std::min(start + sugars_per_thread, ligandList.size());
-            thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& input_model, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList, 
-            clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<double>& cryo_em_map, clipper::Xmap<double>& ligandmap, clipper::MGlycology& mgl, 
+            thread_results.push_back(std::async(std::launch::async, [](std::vector < clipper::MMonomer >& sugarList, clipper::String& input_model, std::vector<std::pair<clipper::String, clipper::MSugar>>& ligandList,
+            clipper::HKL_info& hklinfo,clipper::Grid_sampling& mygrid, clipper::Xmap<double>& cryo_em_map, clipper::Xmap<double>& ligandmap, clipper::MGlycology& mgl,
             bool showGeom, float ipradius, int pos_slash, size_t start, size_t end, bool debug_output)
             {
                 for(size_t index = start; index < end; index++)
@@ -4317,9 +4317,9 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
                         for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
                         {
-                            if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() && 
+                            if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() &&
                                     list_of_sugars[j].chain_id().trim() == ligandList[index].second.chain_id().trim() &&
-                                    list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() && 
+                                    list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() &&
                                     list_of_sugars[j].seqnum() == ligandList[index].second.seqnum() )
                             {
                                 if ( list_of_glycans[i].get_type() == "n-glycan" )
@@ -4373,7 +4373,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
                     ligandList[index].second.set_occupancy_check ( occupancy_check );
                 }
             },
-            std::ref(sugarList), std::ref(path_to_model_file_clipper), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(cryo_em_map), std::ref(ligandmap), std::ref(mgl), showGeom, ipradius, pos_slash, start, end, debug_output 
+            std::ref(sugarList), std::ref(path_to_model_file_clipper), std::ref(ligandList), std::ref(hklinfo), std::ref(mygrid), std::ref(cryo_em_map), std::ref(ligandmap), std::ref(mgl), showGeom, ipradius, pos_slash, start, end, debug_output
             ));
             start += sugars_per_thread;
         }
@@ -4446,9 +4446,9 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 
                 for ( int j = 0 ; j < list_of_sugars.size() ; j++ )
                 {
-                    if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() && 
+                    if (    list_of_sugars[j].id().trim() == ligandList[index].second.id().trim() &&
                             list_of_sugars[j].chain_id().trim() == ligandList[index].second.chain_id().trim() &&
-                            list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() && 
+                            list_of_sugars[j].type().trim() == ligandList[index].second.type().trim() &&
                             list_of_sugars[j].seqnum() == ligandList[index].second.seqnum() )
                     {
                         if ( list_of_glycans[i].get_type() == "n-glycan" )
@@ -4512,7 +4512,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
             if(debug_output) DBG << "Processed " << processedMonomers << "/" << ligandList.size() << " monomers..." << std::endl;
         }
     }
-        
+
     this->final_LigandsOnly = ligandsOnly;
     this->finalLigandList = ligandList;
     this->sugar_summary_of_experimental_data = generate_sugar_experimental_data_summary(finalLigandList);
@@ -4522,7 +4522,7 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
 // private methods //
 pybind11::list privateer::pyanalysis::CryoEMData::generate_sugar_experimental_data_summary(std::vector<std::pair< clipper::String , clipper::MSugar>>& finalLigandList)
 {
-    pybind11::list output; 
+    pybind11::list output;
 
     for(int index = 0; index < finalLigandList.size(); index++)
     {
@@ -4588,7 +4588,7 @@ namespace pa = privateer::pyanalysis;
 void init_pyanalysis(py::module& m)
 {
     // Need to pa::GlycosylationComposition_memorysafe(and probably pa::GlycanStructure_memorysafe) class or something like that for them huge ribosomes that
-    // cause the Python process to hog all the Computer's memory. 
+    // cause the Python process to hog all the Computer's memory.
     // Basically change the paradigm from compute everything first and then rely on getters to call getter that then initiates a computation
     py::class_<pa::CrystallographicData>(m, "CrystallographicData")
         .def(py::init<>())
@@ -4668,10 +4668,10 @@ void init_pyanalysis(py::module& m)
         .def("get_all_monosaccharides", &pa::GlycanStructure::get_all_monosaccharides)
         .def("query_glycomics_database", &pa::GlycanStructure::query_glycomics_database, "Function to query GlyTouCan and GlyConnect databases with a possibility to return closest matches detected on GlyConnect",
         py::arg("importedDatabase"), py::arg("returnClosestMatches") = true, py::arg("returnAllPossiblePermutations") = false, py::arg("nThreads") = -1)
-        
+
         .def("get_torsions_summary", &pa::GlycanStructure::get_torsions_summary)
         .def("get_torsions_per_linkage_summary", &pa::GlycanStructure::get_torsions_per_linkage_summary)
-        
+
         .def("calculate_total_zscore", &pa::GlycanStructure::calculate_total_zscore)
         .def("get_number_of_linkages", &pa::GlycanStructure::get_number_of_linkages)
 
@@ -4748,7 +4748,7 @@ void init_pyanalysis(py::module& m)
         .def("get_sugar_summary_with_experimental_data", &pa::CryoEMData::get_sugar_summary_with_experimental_data)
         .def("get_ligand_summary_with_experimental_data", &pa::CryoEMData::get_ligand_summary_with_experimental_data)
         .def("print_cpp_console_output_summary", &pa::CryoEMData::print_cpp_console_output_summary);
-    
+
     py::class_<pa::OfflineGlycomicsDatabase>(m, "OfflineGlycomicsDatabase")
         .def(py::init<>())
         .def(py::init<std::string&>(), py::arg("path_to_input_file")="nopath")
