@@ -1419,11 +1419,21 @@ pybind11::float_ privateer::pyanalysis::GlycosylationComposition::return_quality
     privateer::json::GlobalTorsionZScore torsions_zscore_database = importedDatabase.return_imported_database();
 
 
-    float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score);
+    float zero = 0.0f;
+    pybind11::float_ pybind_zero = static_cast<pybind11::float_>(zero);
 
+    if (average_z_score != pybind_zero ) { 
+        float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score);
+        pybind11::float_ py_quality_score = static_cast<pybind11::float_>(quality_score);
+        return py_quality_score;
+    }
+    else { 
+        float invalid_quality_score = 1000000;
+        pybind11::float_ py_quality_score = static_cast<pybind11::float_>(invalid_quality_score);
 
-    pybind11::float_ py_quality_score = static_cast<pybind11::float_>(quality_score);
-    return py_quality_score;
+        return py_quality_score;
+    }
+    
 }
 
 pybind11::float_ privateer::pyanalysis::GlycosylationComposition::return_average_zscore(OfflineTorsionsZScoreDatabase& importedDatabase) { 
@@ -1641,12 +1651,24 @@ pybind11::float_ privateer::pyanalysis::GlycosylationComposition_memsafe::return
 
     privateer::json::GlobalTorsionZScore torsions_zscore_database = importedDatabase.return_imported_database();
 
+    float zero = 0.0f;
+    pybind11::float_ pybind_zero = static_cast<pybind11::float_>(zero);
 
-    float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score);
+    float average_z_score_float = static_cast<float>(average_z_score);
 
+    if (average_z_score_float != 0.0f ) { 
+        // std::cout << "The average z score is not 0 " << average_z_score << std::endl;
+        float quality_score = privateer::util::calculate_quality_zscore(torsions_zscore_database.statistics, average_z_score);
+        pybind11::float_ py_quality_score = static_cast<pybind11::float_>(quality_score);
+        return py_quality_score;
+    }
+    else { 
+        float invalid_quality_score = 1000000;
+        pybind11::float_ py_quality_score = static_cast<pybind11::float_>(invalid_quality_score);
 
-    pybind11::float_ py_quality_score = static_cast<pybind11::float_>(quality_score);
-    return py_quality_score;
+        return py_quality_score;
+    }
+
 }
 
 pybind11::float_ privateer::pyanalysis::GlycosylationComposition_memsafe::return_average_zscore(OfflineTorsionsZScoreDatabase& importedDatabase) { 
@@ -2326,6 +2348,7 @@ pybind11::float_ privateer::pyanalysis::GlycanStructure::calculate_total_zscore(
     //    {
             std::string donor_sugar = current_linkage.first_residue_name;
             std::string acceptor_sugar = current_linkage.second_residue_name;
+            // std::cout << "[calculate_total_z_score]: current_linkage.linkage_descriptors.size() is " << current_linkage.linkage_descriptors.size() << std::endl;
             if(current_linkage.linkage_descriptors.size() == current_linkage.torsions.size())
             {
                 for(int linkage_descriptor_index = 0; linkage_descriptor_index < current_linkage.linkage_descriptors.size(); linkage_descriptor_index++)
@@ -2340,35 +2363,76 @@ pybind11::float_ privateer::pyanalysis::GlycanStructure::calculate_total_zscore(
                     bool linkage_check = privateer::util::do_report_linkage(donor_sugar,acceptor_position,donor_position, acceptor_sugar );
                     
                     if (!linkage_check) { 
+                        
+                        // std::cout << "Linkage not recognised!" << std::endl;
                         continue;
                     }
-                    auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
-                    {
-                        return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
-                    });
+                    // else { 
+                    //     std::cout << donor_sugar << " " << acceptor_position << " " << donor_position << " " << acceptor_sugar << std::endl;
+                    // }
+                    
+                    bool in_database = false; 
+                    privateer::json::TorsionsZScoreDatabase found_torsion_description;
 
-                    if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database.database_array))
+                    if (current_linkage.type == "sugar-sugar")
+                    {        
+                        auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
+                        {
+                            return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
+                        });
+
+                        if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database.database_array)) { 
+                            in_database = true;
+                            found_torsion_description = *search_result_in_torsions_zscore_db;
+                        }
+     
+                    }
+                    
+                    else { 
+                        auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
+                        {
+                            return donor_sugar == element.donor_sugar && acceptor_sugar == element.acceptor_sugar;
+                        });
+                        if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database.database_array)) { 
+                            in_database = true;
+                            found_torsion_description = *search_result_in_torsions_zscore_db;
+                        }
+                    }
+
+
+                    if(in_database == true)
                     {
-                        privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
+                        
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description);
                         std::string root_string = glycan.get_root_for_filename();
-                        if(isfinite(linkage_score) && ( !isnan(linkage_score) | !isinf(linkage_score)) )
+
+                        // std::cout << "Checking " << linkage_score << " for realism ..." << std::endl;
+                        if(isfinite(linkage_score) && !isnan(linkage_score) && !isinf(linkage_score) )
                         {   
                             summation_of_zscore = summation_of_zscore + linkage_score;
                             number_of_linkages = number_of_linkages + 1;
+
+                            // std::cout << "Linkage Score from calculate_linkage_zscore is " << linkage_score << std::endl;
+                        } else { 
+                            // std::cout << "Linkage is nan or inf!" << std::endl;
                         }
                     }
                 }
             // }
-       }
-       else { 
-            std::cout << current_linkage.type << " with " << current_linkage.first_residue_name << " " << current_linkage.second_residue_name << std::endl;
-       }
+            }
+            else { 
+                    std::cout << current_linkage.type << " with " << current_linkage.first_residue_name << " " << current_linkage.second_residue_name << std::endl;
+            }
     }
     
+    //  std::cout << donor_sugar << " " << element.donor_sugar << std::endl;
+                            // std::cout << donor_position << " " << element.donor_end << std::endl;
+                            // std::cout << acceptor_position << " " << element.acceptor_end << std::endl;
+                            // std::cout << acceptor_sugar << " " << element.acceptor_sugar << std::endl;
 
     float average_zscore = summation_of_zscore / number_of_linkages;
     
+    // std::cout << "Summation of z score " << summation_of_zscore << " and number of linkages is " << number_of_linkages << std::endl;
     // std::cout << "The average z score calculated from the total_z_score func is " << average_zscore << std::endl;
     
     return static_cast<pybind11::float_>(summation_of_zscore);

@@ -1438,6 +1438,7 @@ bool privateer::util::do_report_linkage(std::string d_pos, std::string d_atom, s
         "MAN-1,3-MAN",
         "MAN-1,6-MAN", 
         "NAG-1,6-FUC", 
+        "NAG-1,3-FUC",
         "MAN-1,2-NAG", 
         "NAG-1,4-GAL",
     };
@@ -1776,7 +1777,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
 
        << "    <!-- shBondnull --> "
        << "<line x1=\"-3\" y1=\"0\" x2=\"100\" y2=\"0\" style=\"stroke:" << get_colour(grey, original_colour_scheme, inverted_background ) << "; stroke-width:20; stroke-linecap:round;\" id=\"shadedbondnull\" />\n"
-
+    
        << "    <!-- shBond --> "
        << "<line x1=\"-3\" y1=\"0\" x2=\"100\" y2=\"0\" style=\"stroke:" << get_colour(corvette, original_colour_scheme, inverted_background ) << "; stroke-width:20; stroke-linecap:round;\" id=\"shadedbond\" />\n"
 
@@ -2674,8 +2675,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                     if(link.get_linkage_enough_datapoints())
                     {
                         float link_zscore = link.get_linkage_zscore();
-                        if(link_zscore < -1)
-                        {
+                        if(link_zscore < -1) { 
                             std::ostringstream os;
                             os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
                             std::string message = os.str();
@@ -2903,8 +2903,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                 if(link.get_linkage_enough_datapoints())
                 {
                     float link_zscore = link.get_linkage_zscore();
-                    if(link_zscore < -1)
-                    {
+                    if(link_zscore < -1) {
                         std::ostringstream os;
                         os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
                         std::string message = os.str();
