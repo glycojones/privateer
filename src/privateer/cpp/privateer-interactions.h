@@ -133,6 +133,7 @@ namespace privateer {
 					angle = input_angle;
 					sugarIndex = -1;
 					glycanSize = -1;
+
 				}
 				std::string get_sugar_chainID ( ) {
 					return this->sugar_chainID;
@@ -187,6 +188,7 @@ namespace privateer {
 				std::string algorithm;
 				int sugarIndex;
 				int glycanSize;
+				std::pair< clipper::MAtom > xh_pair;
 		};
 
 		class CHPiBondsParser
