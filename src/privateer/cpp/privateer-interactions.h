@@ -193,7 +193,7 @@ namespace privateer {
 		{
 			public:
 				CHPiBondsParser() { }
-				CHPiBondsParser(std::string& input_model, std::string output_path = "undefined");
+				CHPiBondsParser(std::string& input_model, std::string output_path = "undefined", std::string algorithm = "hudson");
 				std::vector<privateer::interactions::CHPiBond> get_CHPi_interactions(int glycanIndex);
 				std::vector <std::pair<clipper::MAtomIndexSymmetry, float>> get_stacked_residues_python(clipper::MSugar& input_sugar,
 																																															 std::string = "hudson",
@@ -206,6 +206,7 @@ namespace privateer {
 				clipper::MGlycology mglycology;
 				clipper::MiniMol hydrogenated_input_model;
 				clipper::MGlycology hydrogenated_mglycology;
+				std::string algorithm;
 
 		};
 

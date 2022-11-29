@@ -86,9 +86,9 @@ namespace privateer {
             }
         }
 
-        privateer::interactions::CHPiBondsParser::CHPiBondsParser(std::string& input_model, std::string output_path)
+        privateer::interactions::CHPiBondsParser::CHPiBondsParser(std::string& input_model, std::string output_path, std::string algorithm )
         {
-
+						this->algorithm = algorithm;
 						hydrogenate_input_model(input_model, output_path);
 
 						clipper::MMDBfile mfile;
@@ -117,7 +117,7 @@ namespace privateer {
             for(int sugar = 0; sugar < sugars_in_glycan.size(); sugar++)
             {
                 clipper::MSugar currentSugar = sugars_in_glycan[sugar];
-                std::vector < std::pair< clipper::MAtomIndexSymmetry, float > > contacts = get_stacked_residues_python(currentSugar);
+                std::vector < std::pair< clipper::MAtomIndexSymmetry, float > > contacts = get_stacked_residues_python(currentSugar, this->algorithm);
                 if(contacts.size() > 0)
                 {
                     for(int contact = 0; contact < contacts.size(); contact++)
