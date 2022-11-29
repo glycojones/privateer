@@ -550,17 +550,17 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_chpibonds_f
         pybind11::list chpi_interactions;
         for(int i = 0; i < output.size(); i++)
         {
-            clipper::MSugar target_sugar = output[i].sugar;
-            clipper::MMonomer stacked_residue = output[i].stacked_residue;
+            clipper::MSugar target_sugar = output[i].get_sugar();
+            clipper::MMonomer stacked_residue = output[i].get_stacked_residue();
             std::string target_sugar_type = target_sugar.type().trim();
             int target_sugar_seqnum = target_sugar.seqnum();
             std::string target_sugar_pdb_id = target_sugar.id().trim();
             std::string stacked_residue_type = stacked_residue.type().trim();
             int stacked_residue_seqnum = stacked_residue.seqnum();
             std::string stacked_residue_pdb_id = stacked_residue.id().trim();
-            auto targetSugar = pybind11::dict("targetSugarChainID"_a=output[i].sugar_chainID, "target_sugar_type"_a=target_sugar_type, "target_sugar_seqnum"_a=target_sugar_seqnum, "target_sugar_pdb_id"_a=target_sugar_pdb_id);
-            auto stackedResidue = pybind11::dict("stackedResidueChainID"_a=output[i].stacked_residue_chainID, "stacked_residue_type"_a=stacked_residue_type, "stacked_residue_seqnum"_a=stacked_residue_seqnum, "stacked_residue_pdb_id"_a=stacked_residue_pdb_id);
-            auto entry = pybind11::dict("sugarIndex"_a=output[i].sugarIndex, "glycanSize"_a=output[i].glycanSize, "interaction_angle"_a=output[i].angle, "targetSugar"_a=targetSugar, "stackedResidue"_a=stackedResidue);
+            auto targetSugar = pybind11::dict("targetSugarChainID"_a=output[i].get_sugar_chainID(), "target_sugar_type"_a=target_sugar_type, "target_sugar_seqnum"_a=target_sugar_seqnum, "target_sugar_pdb_id"_a=target_sugar_pdb_id);
+            auto stackedResidue = pybind11::dict("stackedResidueChainID"_a=output[i].get_stacked_residue_chainID(), "stacked_residue_type"_a=stacked_residue_type, "stacked_residue_seqnum"_a=stacked_residue_seqnum, "stacked_residue_pdb_id"_a=stacked_residue_pdb_id);
+            auto entry = pybind11::dict("sugarIndex"_a=output[i].get_sugar_index(), "glycanSize"_a=output[i].get_glycan_size(), "interaction_angle"_a=output[i].get_angle(), "targetSugar"_a=targetSugar, "stackedResidue"_a=stackedResidue);
             chpi_interactions.append(entry);
         }
         result["CH_Pi"] = chpi_interactions;

@@ -125,8 +125,8 @@ namespace privateer {
                         std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > current_contact = contacts[contact];
                         float angle = clipper::Util::rad2d(current_contact.second);
                         CHPiBond new_bond(currentSugar.chain_id().substr(0,1), input_model[current_contact.first.polymer()].id().trim().substr(0,1), currentSugar, input_model[current_contact.first.polymer()][current_contact.first.monomer()], angle);
-                        new_bond.sugarIndex = sugar;
-                        new_bond.glycanSize = sugars_in_glycan.size();
+                        new_bond.set_sugar_index ( sugar );
+                        new_bond.set_glycan_size ( sugars_in_glycan.size() );
                         result.push_back(new_bond);
                     }
                 }
@@ -395,8 +395,6 @@ namespace privateer {
 
 					clipper::ftype distance = 0.0;
 
-// Need to do this for each of the vectors in c_to_h_vectors
-
 					if ( neighbourhood[k].symmetry() == 0 )
 					{
 						distance = clipper::Coord_orth::length(this->hydrogenated_input_model.atom(neighbourhood[k]).coord_orth(), centre_apolar);
@@ -411,7 +409,19 @@ namespace privateer {
 						distance = sqrt(( f2 - f1 ).lengthsq( this->hydrogenated_input_model.cell() ));
 					}
 
+// Need to do this for each of the vectors in c_to_h_vectors
+
 					if ( algorithm == "hudson" ) { // Parameters: Theta(CH^normal), CX(C..ring centre), ?Cp(C..Cprojection)?
+						if ( mmon.type().trim() == "TRP" ) { // we need to calculate everything for both rings
+
+						}
+
+
+
+
+
+
+
 						if ( distance < 4.5 ) // check distance, "compliant" with Hudson et al., JACS 2015
 						{
 										clipper::Vec3<clipper::ftype> aromatic_plane = find_aromatic_plane ( mmon );

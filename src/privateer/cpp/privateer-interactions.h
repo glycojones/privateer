@@ -123,24 +123,70 @@ namespace privateer {
 		class CHPiBond
 		{
 			public:
-				std::string sugar_chainID;
-				std::string stacked_residue_chainID;
-				clipper::MSugar sugar;
-				clipper::MMonomer stacked_residue;
-				float angle;
-				int sugarIndex;
-				int glycanSize;
-
-				CHPiBond(std::string input_sugar_chainID, std::string input_stacked_residue_chainID, clipper::MSugar& input_sugar, clipper::MMonomer& input_stacked_residue, float input_angle)
+				CHPiBond(std::string input_sugar_chainID, std::string input_stacked_residue_chainID, clipper::MSugar& input_sugar, clipper::MMonomer& input_stacked_residue, float input_angle, std::string algorithm_used = "hudson" )
 				{
 					sugar_chainID = input_sugar_chainID;
 					stacked_residue_chainID = input_stacked_residue_chainID;
 					sugar = input_sugar;
 					stacked_residue = input_stacked_residue;
+					algorithm = algorithm_used;
 					angle = input_angle;
 					sugarIndex = -1;
 					glycanSize = -1;
 				}
+				std::string get_sugar_chainID ( ) {
+					return this->sugar_chainID;
+				}
+
+				int get_sugar_index ( ) {
+					return this->sugarIndex;
+				}
+
+				void set_sugar_index ( int sugar_index ) {
+					this->sugarIndex = sugar_index;
+				}
+
+				int get_glycan_size ( ) {
+					return this->glycanSize;
+				}
+
+				void set_glycan_size ( int glycan_size ) {
+					this->glycanSize = glycan_size;
+				}
+
+				clipper::MSugar get_sugar () {
+					return this->sugar;
+				}
+
+				void set_sugar ( clipper::MSugar sugar ) {
+					this->sugar = sugar;
+				}
+
+				clipper::MMonomer get_stacked_residue ( ){
+					return this->stacked_residue;
+				}
+
+				std::string get_stacked_residue_chainID ( ){
+					return this->stacked_residue_chainID;
+				}
+
+				float get_angle ( ){
+					return this->angle;
+				}
+
+				void set_angle ( float angle ){
+					this->angle = angle;
+				}
+
+			private:
+				std::string sugar_chainID;
+				std::string stacked_residue_chainID;
+				clipper::MSugar sugar;
+				clipper::MMonomer stacked_residue;
+				float angle;
+				std::string algorithm;
+				int sugarIndex;
+				int glycanSize;
 		};
 
 		class CHPiBondsParser
