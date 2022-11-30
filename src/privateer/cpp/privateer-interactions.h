@@ -177,6 +177,47 @@ namespace privateer {
 
 				void set_angle ( float angle ){
 					this->angle = angle;
+
+				}
+
+				float get_angle_theta_h ( ) {
+					return this->angle_theta_h;
+				}
+
+				void set_angle_theta_h ( float angle_theta_h ) {
+					this->angle_theta_h = angle_theta_h;
+				}
+
+				float get_angle_theta_p ( ) {
+					return this->angle_theta_p;
+				}
+
+				void set_angle_theta_p ( float angle_theta_p ) {
+					this->angle_theta_p = angle_theta_p;
+				}
+
+				float get_angle_phi ( ) {
+					return this->angle_phi;
+				}
+
+				void set_angle_phi ( float angle_phi ) {
+					this->angle_phi = angle_phi;
+				}
+
+				float get_distance_cx ( ) {
+					return this->distance_cx;
+				}
+
+				void set_distance_cx ( ) {
+					this->distance_cx = distance_cx;
+				}
+
+				float get_distance_cp ( ) {
+					return this->distance_cp;
+				}
+
+				void set_distance_cp ( ) {
+					this->distance_cp = distance_cp;
 				}
 
 			private:
@@ -188,7 +229,13 @@ namespace privateer {
 				std::string algorithm;
 				int sugarIndex;
 				int glycanSize;
-				std::pair< clipper::MAtom > xh_pair;
+				std::pair<clipper::MAtom, clipper::MAtom> xh_pair;
+				float angle_theta_h;
+				float angle_theta_p;
+				float angle_phi;
+				float distance_cx;
+				float distance_cp;
+
 		};
 
 		class CHPiBondsParser
