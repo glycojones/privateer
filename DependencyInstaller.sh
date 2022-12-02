@@ -1,13 +1,28 @@
 cmake --version || "CMake is not found!. Install CMake then re-run this script " || exit 3
 gcc --version  || "GCC is not found!. Install GCC then re-run this script " || exit 3
 
-GCC="$(which gcc)"
-GPLUSPLUS="$(which g++)"
-echo "GCC: $GCC"
-echo "GCC: $GPLUSPLUS"
-GFORTRAN="$(which gfortran)"
-echo "GFORTRAN: $GFORTRAN"
-Threads="$(nproc --all)"
+if [[ $(uname -m) == 'arm64' ]]; then
+  echo "Configuring compilers for Apple Silicon"
+  GCC="/opt/homebrew/bin/gcc-12"
+  GPLUSPLUS="/opt/homebrew/bin/g++-12"
+  echo "GCC: $GCC"
+  echo "GCC: $GPLUSPLUS"
+  GFORTRAN="/opt/homebrew/bin/gfortran"
+  echo "GFORTRAN: $GFORTRAN"
+  Threads="$(nproc --all)"
+
+  export CC=$GCC
+  export CXX=$GPLUSPLUS
+  export FC=$GFORTRAN
+else 
+  GCC="$(which gcc)"
+  GPLUSPLUS="$(which g++)"
+  echo "GCC: $GCC"
+  echo "GCC: $GPLUSPLUS"
+  GFORTRAN="$(which gfortran)"
+  echo "GFORTRAN: $GFORTRAN"
+  Threads="$(nproc --all)"
+fi
 
 export CC=$GCC
 export CXX=$GPLUSPLUS
@@ -21,25 +36,29 @@ export CPPFLAGS="-I$mainDir/dependencies/include"
 
 
 cd $dependencyDir
-# Clipper only works with fftw2
+# Clipper requires fftw2 for now
+
 if [[ ! -f include/fftw.h ]]; then
-cd $dependencyDir
-if [[  -d fftw ]]; then
-rm -rf fftw
-fi
-mkdir fftw
-cd fftw
-wget ftp://ftp.fftw.org/pub/fftw/fftw-2.1.5.tar.gz
-tar -zxvf fftw-2.1.5.tar.gz
-cd fftw-2.1.5
-CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' CCFLAGS='-g -O2 -w' --prefix=$dependencyDir --enable-single --enable-float --enable-shared F77=gfortran
-make
-make install
+  cd $dependencyDir
+
+  if [[ ! -d fftw ]]; then
+    mkdir fftw
+    cd fftw
+    wget ftp://ftp.fftw.org/pub/fftw/fftw-2.1.5.tar.gz
+    tar -zxvf fftw-2.1.5.tar.gz
+  else
+    cd fftw
+  fi
+
+  cd fftw-2.1.5
+  CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' CCFLAGS='-g -O2 -w' --prefix=$dependencyDir --enable-single --enable-float --enable-shared F77=gfortran
+  make
+  make install
 fi
 
 cd $dependencyDir
 if [[ ! -f include/fftw.h ]]; then
-echo "fftw installation ... falied. We can not continue the rest of the installation steps."
+echo "fftw2 installation FAILED. Cannot continue without fftw2."
 exit 3
 fi
 

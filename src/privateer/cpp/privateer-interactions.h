@@ -188,7 +188,7 @@ namespace privateer {
 				std::string algorithm;
 				int sugarIndex;
 				int glycanSize;
-				std::pair< clipper::MAtom > xh_pair;
+				std::pair< clipper::MAtom, clipper::MAtom > xh_pair;
 		};
 
 		class CHPiBondsParser
