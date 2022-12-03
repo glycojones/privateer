@@ -51,6 +51,8 @@ if [[ ! -f include/fftw.h ]]; then
   fi
 
   cd fftw-2.1.5
+  curl https://git.savannah.gnu.org/cgit/config.git/plain/config.guess --output config.guess
+  curl https://git.savannah.gnu.org/cgit/config.git/plain/config.sub --output ./build/config.sub
   CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' CCFLAGS='-g -O2 -w' --prefix=$dependencyDir --enable-single --enable-float --enable-shared F77=gfortran
   make
   make install
