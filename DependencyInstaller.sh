@@ -40,7 +40,7 @@ cd $dependencyDir
 # Clipper requires fftw2 for now
 
 if [[ ! -f include/fftw.h ]]; then
-  cd $dependencyDir
+#  cd $dependencyDir
 
   if [[ ! -d fftw ]]; then
     mkdir fftw

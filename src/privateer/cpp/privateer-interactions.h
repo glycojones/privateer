@@ -208,7 +208,7 @@ namespace privateer {
 					return this->distance_cx;
 				}
 
-				void set_distance_cx ( ) {
+				void set_distance_cx ( float distance_cx ) {
 					this->distance_cx = distance_cx;
 				}
 
@@ -216,8 +216,16 @@ namespace privateer {
 					return this->distance_cp;
 				}
 
-				void set_distance_cp ( ) {
+				void set_distance_cp ( float distance_cp ) {
 					this->distance_cp = distance_cp;
+				}
+
+				char get_trp_ring () {
+					return trp_ring;
+				}
+
+				void set_trp_ring ( char trp_ring ) {
+					this->trp_ring = trp_ring;
 				}
 
 			private:
@@ -235,7 +243,10 @@ namespace privateer {
 				float angle_phi;
 				float distance_cx;
 				float distance_cp;
-
+				char trp_ring; // For TRP exclusively, A + B
+				clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
+				clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
+				clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon );
 		};
 
 		class CHPiBondsParser
