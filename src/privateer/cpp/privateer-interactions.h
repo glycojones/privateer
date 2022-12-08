@@ -220,11 +220,11 @@ namespace privateer {
 					this->distance_cp = distance_cp;
 				}
 
-				char get_trp_ring () {
+				std::string get_trp_ring () {
 					return trp_ring;
 				}
 
-				void set_trp_ring ( char trp_ring ) {
+				void set_trp_ring ( std::string trp_ring ) {
 					this->trp_ring = trp_ring;
 				}
 
@@ -243,7 +243,7 @@ namespace privateer {
 				float angle_phi;
 				float distance_cx;
 				float distance_cp;
-				char trp_ring; // For TRP exclusively, A + B
+				std::string trp_ring; // For TRP exclusively, A + B
 				clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
 				clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
 				clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon );
@@ -255,11 +255,11 @@ namespace privateer {
 				CHPiBondsParser() { }
 				CHPiBondsParser(std::string& input_model, std::string output_path = "undefined", std::string algorithm = "hudson");
 				std::vector<privateer::interactions::CHPiBond> get_CHPi_interactions(int glycanIndex);
-				std::vector <std::pair<clipper::MAtomIndexSymmetry, float>> get_stacked_residues_python(clipper::MSugar& input_sugar,
-																																															 std::string = "hudson",
-																																																		 float = 4.5,
-																																																		 float = 40.0,
-																																																		 float = 0.0 ) const ;
+				std::vector <privateer::interactions::CHPiBond> get_stacked_residues_python(clipper::MSugar& input_sugar,
+																																										std::string = "hudson",
+																																										float = 4.5,
+																																										float = 40.0,
+																																										float = 0.0 ) const ;
 			private:
 				clipper::MiniMol input_model;
 				clipper::MAtomNonBond manb_object;
