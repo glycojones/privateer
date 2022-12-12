@@ -655,8 +655,123 @@ namespace privateer {
 							}
 						}
 					}
-					else {
-					// need to do the same thing for the other algorithm
+					else { // plevin algortihm
+						if ( mmon.type() == "TRP" ) {
+							clipper::Coord_orth aromatic_centre_a = get_aromatic_centre (mmon, "A");
+							if ( neighbourhood[k].symmetry() == 0 )
+							{
+								distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre_a );
+							}
+							else // this neighbour is actually a symmetry mate
+							{
+								clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
+								clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac( this->hydrogenated_input_model.cell() );
+								clipper::Coord_frac f2 = aromatic_centre_a.coord_frac( this->hydrogenated_input_model.cell() );
+								f1 = spgr.symop ( neighbourhood[k].symmetry() ) * f1;
+								f1 = f1.lattice_copy_near( f2 );
+								distance = sqrt(( f2 - f1 ).lengthsq ( this->hydrogenated_input_model.cell() ));
+							}
+							if ( distance < 4.3 ) {
+								clipper::Vec3<clipper::ftype> ox_vector (aromatic_centre_a.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
+																												 aromatic_centre_a.y() - ch_atoms[j].first.coord_orth().y(),
+																												 aromatic_centre_a.z() - ch_atoms[j].first.coord_orth().z() );
+								clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane ( mmon );
+								clipper::ftype theta = get_angle ( ox_vector, aromatic_vector );
+								if ( theta <= 25.0 ) {
+									clipper::Vec3<clipper::ftype> hx_vector (ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // heavy atom-hydrogen
+																													 ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
+																													 ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z() );
+									clipper::Vec3<clipper::ftype> oh_vector (ch_atoms[j].second.coord_orth().x() - aromatic_centre_a.x(), // centre of ring-hydrogen
+																			 										 ch_atoms[j].second.coord_orth().y() - aromatic_centre_a.y(),
+																			 										 ch_atoms[j].second.coord_orth().z() - aromatic_centre_a.z() );
+									clipper::ftype theta = get_angle ( oh_vector, hx_vector );
+								if ( phi >= 120.0 )
+								{
+									privateer::interactions::CHPiBond the_interaction ( input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson" );
+									the_interaction.set_distance_cx ( distance );
+									the_interaction.set_trp_ring ( "A" );
+									results.push_back ( the_interaction );
+									}
+								}
+							}
+
+							clipper::Coord_orth aromatic_centre_b = get_aromatic_centre (mmon, "B");
+							if ( neighbourhood[k].symmetry() == 0 )
+							{
+								distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre_b );
+							}
+							else // this neighbour is actually a symmetry mate
+							{
+								clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
+								clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac( this->hydrogenated_input_model.cell() );
+								clipper::Coord_frac f2 = aromatic_centre_b.coord_frac( this->hydrogenated_input_model.cell() );
+								f1 = spgr.symop ( neighbourhood[k].symmetry() ) * f1;
+								f1 = f1.lattice_copy_near( f2 );
+								distance = sqrt(( f2 - f1 ).lengthsq ( this->hydrogenated_input_model.cell() ));
+							}
+							if ( distance < 4.3 ) {
+								clipper::Vec3<clipper::ftype> ox_vector (aromatic_centre_b.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
+																												 aromatic_centre_b.y() - ch_atoms[j].first.coord_orth().y(),
+																												 aromatic_centre_b.z() - ch_atoms[j].first.coord_orth().z() );
+								clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane ( mmon );
+								clipper::ftype theta = get_angle ( ox_vector, aromatic_vector );
+								if ( theta <= 25.0 ) {
+									clipper::Vec3<clipper::ftype> hx_vector (ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // heavy atom-hydrogen
+																													 ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
+																													 ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z() );
+									clipper::Vec3<clipper::ftype> oh_vector (ch_atoms[j].second.coord_orth().x() - aromatic_centre_b.x(), // centre of ring-hydrogen
+																			 										 ch_atoms[j].second.coord_orth().y() - aromatic_centre_b.y(),
+																			 										 ch_atoms[j].second.coord_orth().z() - aromatic_centre_b.z() );
+									clipper::ftype theta = get_angle ( oh_vector, hx_vector );
+								if ( phi >= 120.0 )
+								{
+									privateer::interactions::CHPiBond the_interaction ( input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson" );
+									the_interaction.set_distance_cx ( distance );
+									the_interaction.set_trp_ring ( "A" );
+									results.push_back ( the_interaction );
+									}
+								}
+							}
+						}
+						else if ( mmon.type() == "TYR" || mmon.type() == "PHE" || mmon.type() == "HIS") {
+							clipper::Coord_orth aromatic_centre = get_aromatic_centre ( mmon );
+							if ( neighbourhood[k].symmetry() == 0 )
+							{
+								distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre );
+							}
+							else // this neighbour is actually a symmetry mate
+							{
+								clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
+								clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac( this->hydrogenated_input_model.cell() );
+								clipper::Coord_frac f2 = aromatic_centre.coord_frac( this->hydrogenated_input_model.cell() );
+								f1 = spgr.symop ( neighbourhood[k].symmetry() ) * f1;
+								f1 = f1.lattice_copy_near( f2 );
+								distance = sqrt(( f2 - f1 ).lengthsq ( this->hydrogenated_input_model.cell() ));
+							}
+							if ( distance < 4.3 ) {
+								clipper::Vec3<clipper::ftype> ox_vector (aromatic_centre.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
+																												 aromatic_centre.y() - ch_atoms[j].first.coord_orth().y(),
+																												 aromatic_centre.z() - ch_atoms[j].first.coord_orth().z() );
+								clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane ( mmon );
+								clipper::ftype theta = get_angle ( ox_vector, aromatic_vector );
+								if ( theta <= 25.0 ) {
+									clipper::Vec3<clipper::ftype> hx_vector (ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // hydrogen-heavy atom
+																													 ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
+																													 ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z() );
+									clipper::Vec3<clipper::ftype> oh_vector (ch_atoms[j].second.coord_orth().x() - aromatic_centre.x(), // centre of ring-hydrogen
+																			 										 ch_atoms[j].second.coord_orth().y() - aromatic_centre.y(),
+																			 										 ch_atoms[j].second.coord_orth().z() - aromatic_centre.z() );
+									clipper::ftype theta = get_angle ( oh_vector, hx_vector );
+								if ( phi >= 120.0 )
+								{
+									privateer::interactions::CHPiBond the_interaction ( input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson" );
+									the_interaction.set_distance_cx ( distance );
+									the_interaction.set_trp_ring ( "A" );
+									results.push_back ( the_interaction );
+									}
+								}
+							}
+						}
 					}
 				}
 			}
