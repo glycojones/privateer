@@ -15,13 +15,13 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 
 **Requirements:** 
 
-**bzr** 
+**bzr (breezy on Mac homebrew)** 
 
 **cmake** (minimum version required 3.12)
 
-**python3 virtualenv** 
+**python3 virtualenv (pyenv recommended) coreutils wget** 
 
-
+0.) Select your preferred Python (up to 3.10 suppported) using pyenv install [version] and then pyenv global [version]
 
 1.) git clone https://github.com/glycojones/privateer.git privateer_master
 
@@ -40,7 +40,6 @@ Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://
 8.) pip install -r requirements.txt
 
 9.) python setup.py install
-
 
 
 
