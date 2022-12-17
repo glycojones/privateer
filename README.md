@@ -2,45 +2,59 @@
 
 # Privateer
 ![ScreenShot](/logo.png)
-Synopsis: Privateer is a tool for carbohydrate structure validation, re-refinement and graphical analysis.
+**Synopsis:** Privateer is a tool for carbohydrate structure validation, re-refinement and graphical analysis.
 
-Languages: C++11 and Python3 (via pybind11), produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
+**Authors:** Jon Agirre (@glycojones), with contributions from Haroldas Bagdonas (@GABRAH), Jordan Dialpuri (@Dialpuri) and Lucy Schofield (@lcs551) 
 
-Dependencies: Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://github.com/pybind/pybind11), CMake and a few CCP4 LGPLv3-compatible development libraries.
+**Languages:** C++11 and Python3 (via pybind11), produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
+
+**Dependencies:** Gemmi (https://github.com/project-gemmi/gemmi), Pybind11 (https://github.com/pybind/pybind11), CMake and a few CCP4 LGPLv3-compatible development libraries.
 
 
-## **Installation instructions:**
+## **Build it yourself:**
+Stable versions of Privateer are routinely released by CCP4 and CCP-EM. While we recommend that users download and install those suites for X-ray crystallography and Electron cryo-microscopy respectively, we recognise that they do not always come with the latest functionality. Is you would like to test the latest versions, you'll need to build Privateer yourself. It is not as hard as it sounds, thanks in part to the work Haroldas Bagdonas (@GABRAH) put into a build script that gathers and builds all dependencies.  
 
-**Operating systems supported** - **MacOS**(tested on Mojave 10.14.6) and **Linux**(tested on Ubuntu Linux 18.04/20.04). For **MacOS** "Catalina"(aka 10.15.X) there are additional pre-installation steps involved(scroll down).
+**Operating systems supported** - **MacOS** (tested up to Ventura) and **GNU/Linux** (tested on Ubuntu 22.04). **MacOS** might require additional pre-installation steps (scroll down).
 
-**Requirements:** 
+**Other software you'll need to install in order to build Privateer:** 
 
-**bzr (breezy on Mac homebrew)** 
+**bzr** (breezy on Mac homebrew)
+> This is CCP4's version control system, and it will be required until CCP4 starts using git.
 
 **cmake** (minimum version required 3.12)
+> Privateer itself requires cmake.
 
-**python3 virtualenv (pyenv recommended) coreutils wget** 
+**python3 virtualenv coreutils wget** 
+> Python3 and virtualenv will allow you to have you own little Python with access to the Privateer module (import privateer). We need coreutils and wget so the build scripts can function.
 
-0.) Select your preferred Python (up to 3.10 suppported) using pyenv install [version] and then pyenv global [version]
+**gcc g++ gfortran m4** (Debian/Ubuntu: apt-get install buildessential m4 gfortran; Mac OS X: brew install gcc gfortran m4)
+> These are the compilers, for C/C++/Fortran
 
-1.) git clone https://github.com/glycojones/privateer.git privateer_master
+0. Select your preferred Python (up to 3.10 suppported) using pyenv install [version] and then pyenv global [version]
 
-2.) cd privateer_master
+1. git clone https://github.com/glycojones/privateer.git
+> Creates a copy of the repository on your machine and switches it to the *master* branch.
 
-3.) git checkout master 
+2. cd privateer
+> Goes into the directory with the repository, which has been created by the previous command.
 
-4.) git submodule update --init --recursive
+3. git submodule update --init --recursive
+> This will fetch those dependencies that are managed by git.
 
-5.) virtualenv privateerpython
+4. virtualenv privateerpython
+> It creates your own Python environment within the repository.
 
-6.) source ccp4.envsetup-sh
+5. source ccp4.envsetup-sh
+> CCP4 environment variables, required for Privateer to work.
 
-7.) source privateerpython/bin/activate
+6. source privateerpython/bin/activate
+> Will setup the Python environment.
 
-8.) pip install -r requirements.txt
+7. pip install -r requirements.txt
+> Installs the list of Python dependencies.
 
-9.) python setup.py install
-
+8. python setup.py install
+> This is the one command that actually builds something. It will take a while.
 
 
 
