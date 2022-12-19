@@ -5,7 +5,7 @@ Privateer is a tool for carbohydrate structure validation, re-refinement and gra
 
 Privateer is implemented in C++11 and Python3 (via pybind11), and produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
 
-Skip to sections: [Build it yourself!](https://github.com/glycojones/privateer/edit/master/README.md#build-it-yourself) – [Step by step build](https://github.com/glycojones/privateer/edit/master/README.md#step-by-step-build) - [Validating a model programmatically](https://github.com/glycojones/privateer/edit/master/README.md#validating-a-model-programmatically) 
+Skip to sections: [Build it yourself!](#build-it-yourself) – [Step by step build](#step-by-step-build) - [Validating a model programmatically](#validating-a-model-programmatically) 
 
 ## Authors
 Jon Agirre (@glycojones), with contributions from Haroldas Bagdonas (@GABRAH), Jordan Dialpuri (@Dialpuri) and Lucy Schofield (@lcs551), York Structural Biology Laboratory (YSBL), Department of Chemistry, The University of York, UK. We have implemented great suggestions and feedback from Gideon Davies FRS, Wendy Offen, Christian Roth, Marcin Wojdyr, Robbie Joosten, Paul Emsley, Garib Murshudov, Eleanor Dodson FRS, Saioa Urresti, Jacob Sorensen and Stuart McNicholas. 
