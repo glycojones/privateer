@@ -51,28 +51,44 @@ MacOS (tested up to Ventura) and GNU/Linux (tested on Ubuntu 22.04). We do not t
 First, select your preferred Python (up to 3.10 suppported) using `pyenv install [version]` and then `pyenv global [version]`
 This will give you that particular version of Python in your virtualenv.
 
-* `git clone https://github.com/glycojones/privateer.git`
+```
+git clone https://github.com/glycojones/privateer.git
+```
 > Creates a copy of the repository on your machine and switches it to the *master* branch.
 
-* `cd privateer`
+```
+cd privateer
+```
 > Goes into the directory with the repository, which has been created by the previous command.
 
-* `git submodule update --init --recursive`
+```
+git submodule update --init --recursive
+```
 > This will fetch those dependencies that are managed by git.
 
-* `virtualenv privateerpython`
+```
+virtualenv privateerpython
+```
 > It creates your own Python environment within the repository.
 
-* `source ccp4.envsetup-sh`
+```
+source ccp4.envsetup-sh
+```
 > CCP4 environment variables, required for Privateer to work.
 
-* `source privateerpython/bin/activate`
+```
+source privateerpython/bin/activate
+```
 > Will setup the Python environment.
 
-* `pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 > Installs the list of Python dependencies.
 
-* `python setup.py install`
+```
+python setup.py install
+```
 > This is the one command that actually builds something. It will take a while.
 
 
