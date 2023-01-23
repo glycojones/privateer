@@ -593,6 +593,7 @@ namespace privateer
                 { // Parameters: Theta(CH^normal), CX(C..ring centre), ?Cp(C..Cprojection)?
                     if (mmon.type().trim() == "TRP")
                     {
+                        std::cout << "Inside Trp hudson algorithm" << std::endl;
                         clipper::Coord_orth aromatic_centre_a = get_aromatic_centre(mmon, "A");
                         std::cout << "TrpA aromatic centre: " << aromatic_centre_a.x() << ", " << aromatic_centre_a.y() << ", " << aromatic_centre_a.z() << std::endl;
                         if (neighbourhood[k].symmetry() == 0)
