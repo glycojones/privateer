@@ -57,7 +57,7 @@ class CMakeBuild(build_ext):
             build_args += ['--', '-j2']
 
         if platform.system() == "Darwin" :
-            cmake_args += ['-DCMAKE_C_COMPILER=/opt/homebrew/bin/gcc-12', '-DCMAKE_CXX_COMPILER=/opt/homebrew/bin/g++-12']
+            cmake_args += ['-DCMAKE_C_COMPILER=/usr/local/bin/gcc-12', '-DCMAKE_CXX_COMPILER=/usr/local/bin/g++-12']
 
         env = os.environ.copy()
         env['CXXFLAGS'] = '{} -DVERSION_INFO=\\"{}\\"'.format(
