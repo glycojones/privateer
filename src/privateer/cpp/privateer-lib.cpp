@@ -3623,7 +3623,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
         for ( int j = 0 ; j < sugars.size(); j++ )
         {
             of_xml << "    <sugar id=\""
-                   << "/" + list_of_glycans[i].get_chain().substr(0,1)
+                   << "/" + sugars[j].chain_id().substr(0,1)
                           + "/" + sugars[j].id().trim()
                           + "(" + sugars[j].type().trim() << ")\" >\n";
 
@@ -3637,7 +3637,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
                    << "      <conformation>"     << sugars[j].conformation_name()           << "</conformation>\n"
                    << "      <anomer>"           << sugars[j].anomer()                      << "</anomer>\n"
                    << "      <hand>"             << sugars[j].handedness()                  << "</hand>\n"
-                   << "      <stacked_against>\n";
+                   << "      <stacked_against></stacked_against>\n";
 
             // std::vector < std::pair < clipper::MAtomIndexSymmetry, float > > contacts = sugars[j].get_stacked_residues();
             //
