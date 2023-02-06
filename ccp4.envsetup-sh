@@ -3,7 +3,7 @@
 
 export CCP4_MASTER=${PWD}
 export CCP4=$CCP4_MASTER/dependencies
-
+export LD_LIBRARY_PATH=$CCP4_MASTER/dependencies/lib:$LD_LIBRARY_PATH
 export CLIB=$CCP4/lib
 export CLIBD=$CCP4/lib/data
 export CINCL=$CCP4/include

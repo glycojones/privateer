@@ -857,8 +857,8 @@ clipper::Xmap<float> privateer::util::read_map_file ( std::string mapin )
 
 int privateer::util::find_index_of_value_from_wurcs ( std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, std::string inputwurcs )
 {
-    auto result = std::find_if(glycomics_database.begin(), 
-             glycomics_database.end(), 
+    auto result = std::find_if(glycomics_database.begin(),
+             glycomics_database.end(),
              [&inputwurcs]
              (const privateer::json::GlycomicsDatabase& entry) -> bool { return inputwurcs == entry.WURCS; });
 
@@ -1259,7 +1259,7 @@ void privateer::util::print_monosaccharide_summary_python (bool batch, bool show
         printf("%1.2f\t", ligandList[index].second.get_rscc());                                                                                              // output RSCC and data resolution
         printf("%s\t", ligandList[index].second.type_of_sugar().c_str());                   // output the type of sugar, e.g. alpha-D-aldopyranose
         printf("%s\t", ligandList[index].second.conformation_name().c_str());               // output a 3 letter code for the conformation
-        printf("%1.3f \t", ligandList[index].second.get_accum());     
+        printf("%1.3f \t", ligandList[index].second.get_accum());
 
         float bfac = 0.0;
 
@@ -1356,26 +1356,26 @@ float privateer::util::calculate_linkage_zscore(float phi, float psi, privateer:
     bool pdb_is_contained_in_dataset = (pdb_search_iterator != std::end(pdb_list));
 
     int count = 0;
-    for(const auto& bin: bin_data) { 
+    for(const auto& bin: bin_data) {
             if ((bin.at("lower_phi") <= phi)) {
                 if (phi < bin.at("higher_phi")) {
                     if (bin.at("lower_psi") <= psi){
                         if  (psi < bin.at("higher_psi")) {
-                            
-                            if (pdb_is_contained_in_dataset == true) { 
+
+                            if (pdb_is_contained_in_dataset == true) {
                                 // std::cout << "The current file is contained in the dataset, adjusting z score calculations accordingly..." << std::endl;
-                                count = bin.at("count") - 1; 
+                                count = bin.at("count") - 1;
                             }
-                            else { 
+                            else {
                                 count = bin.at("count");
                             }
                         }
                     }
-                } 
-            }    
+                }
+            }
         }
-    
-    if (count < 0) { 
+
+    if (count < 0) {
         fail("Something has gone wrong with the bin count. If the result is -1, this is likely due to presumed inclusion of the current model in torsion linkage dataset, check whether the name of the file is already a PDB code.");
     }
 
@@ -1390,7 +1390,7 @@ float privateer::util::calculate_linkage_zscore(float phi, float psi, privateer:
     std::vector<std::unordered_map<std::string, int>> bin_data = matched_linkage.bin_data;
 
     int count = 0;
-    for(const auto& bin: bin_data) { 
+    for(const auto& bin: bin_data) {
             if ((bin.at("lower_phi") <= phi)) {
                 if (phi < bin.at("higher_phi")) {
                     if (bin.at("lower_psi") <= psi){
@@ -1398,11 +1398,11 @@ float privateer::util::calculate_linkage_zscore(float phi, float psi, privateer:
                             count = bin.at("count");
                         }
                     }
-                } 
-            }    
+                }
+            }
         }
-    
-    if (count < 0) { 
+
+    if (count < 0) {
         fail("Something has gone wrong with the bin count. If the result is -1, this is likely due to presumed inclusion of the current model in torsion linkage dataset, check whether the name of the file is already a PDB code.");
     }
 
@@ -1410,7 +1410,7 @@ float privateer::util::calculate_linkage_zscore(float phi, float psi, privateer:
     return z_score;
 }
 
-float privateer::util::calculate_quality_zscore(privateer::json::TorsionsZScoreStatistics& statistics, float average_z_score) { 
+float privateer::util::calculate_quality_zscore(privateer::json::TorsionsZScoreStatistics& statistics, float average_z_score) {
     return (average_z_score - statistics.average_z_score_for_database) / statistics.stddev_z_score_for_database;
 }
 
@@ -1423,18 +1423,18 @@ std::string privateer::util::retrieve_input_PDB_code(clipper::String input_model
     std::string::size_type const p(base_filename.find_last_of('.'));
     std::string file_without_extension = base_filename.substr(0, p);
     std::transform(file_without_extension.begin(), file_without_extension.end(), file_without_extension.begin(), ::tolower);
-    
+
     return file_without_extension;
 }
 
-bool privateer::util::do_report_linkage(std::string d_pos, std::string d_atom, std::string a_atom, std::string a_pos) { 
-    std::vector<std::string> list_of_allowed_linkages{ 
+bool privateer::util::do_report_linkage(std::string d_pos, std::string d_atom, std::string a_atom, std::string a_pos) {
+    std::vector<std::string> list_of_allowed_linkages{
         "ASN-1,2-NAG",
         "NAG-1,4-NAG",
         "NAG-1,4-BMA",
         "BMA-1,3-MAN",
         "BMA-1,6-MAN",
-        "MAN-1,2-MAN", 
+        "MAN-1,2-MAN",
         "MAN-1,3-MAN",
         "MAN-1,6-MAN", 
         "NAG-1,6-FUC", 
@@ -1446,12 +1446,12 @@ bool privateer::util::do_report_linkage(std::string d_pos, std::string d_atom, s
     std::string name = d_pos + "-" + d_atom + "," + a_atom + "-" + a_pos ;
     // std::cout << name << std::endl;
 
-    
-    if (std::find(std::begin(list_of_allowed_linkages), std::end(list_of_allowed_linkages), name) != std::end(list_of_allowed_linkages)) { 
+
+    if (std::find(std::begin(list_of_allowed_linkages), std::end(list_of_allowed_linkages), name) != std::end(list_of_allowed_linkages)) {
         // std::cout << "This name is in the database and return true: " << name << std::endl;
         return true;
     }
-    else { 
+    else {
         // std::cout << "This name is NOT the database and return FALSE: " << name << std::endl;
         return false;
     }
@@ -1475,7 +1475,7 @@ std::string privateer::glycanbuilderplot::get_colour ( Colour colour, bool origi
         {
             case corvette:
                 return "#f9cb9c";
-            case grey: 
+            case grey:
                 return "#808080";
             case blue:
                 return "#0090bc;";
@@ -1516,7 +1516,7 @@ std::string privateer::glycanbuilderplot::get_colour ( Colour colour, bool origi
         {
             case corvette:
                 return "#f9cb9c";
-            case grey: 
+            case grey:
                 return "#808080";
             case blue:
                 return "#014f87;";
@@ -1687,7 +1687,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- shStar --> "
-       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " << 
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " <<
        "transform=\"scale(1.75) translate(-10.5 -12)\" rx=\"0\" ry=\"0\" id=\"shadedstar\" style=\""
        << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
@@ -1941,7 +1941,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
-       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " << 
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " <<
        "transform=\"scale(1.75) translate(-10.5 -12)\" rx=\"0\" ry=\"0\" id=\"shadedstar\" style=\""
        << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
@@ -2161,7 +2161,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "      </pattern>\n"
 
        // hexoses, circles
-       
+
        << "    <!-- shCrcl --> "
        <<  "<circle r =\"40\" cx =\"25\" cy =\"25\" id=\"shadedcircle\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
@@ -2191,7 +2191,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- shStar --> "
-       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " << 
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " <<
        "transform=\"scale(1.75) translate(-10.5 -12)\" rx=\"0\" ry=\"0\" id=\"shadedstar\" style=\""
        << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
@@ -2394,11 +2394,11 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
     if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "alpha")     anomerSymbol = "&#945;";
     else if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "beta") anomerSymbol = "&#946;";
     else                                                                                  anomerSymbol = "&#63;";
-    
+
 
     Bond *first_bond = new Bond( 2800, 1015, anomerSymbol, side, glycan.get_link_description(), mmdbsel );
     add_link ( first_bond );
-    
+
     // let the fun begin: paint the tree with yet another recursive function
 
     const clipper::MGlycan::Node node = glycan.get_node ( 0 ); // get the first node
@@ -3207,7 +3207,7 @@ std::string privateer::glycanbuilderplot::ManNAc::get_XML ()
             <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
-    
+
     return tmp.str();
 }
 
@@ -3427,7 +3427,7 @@ std::string privateer::glycanbuilderplot::shadedBond::get_XML ()
             transformation = stream.str();
     }
 
-    if (this->get_svg_class() == "shadedbond") 
+    if (this->get_svg_class() == "shadedbond")
     {
         tmp << "  <g id=\"shadedLinkage\">\n"
         <<  "  <use xlink:href=\"#shadedbond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
@@ -3595,7 +3595,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
     const clipper::MAtomNonBond& manb = clipper::MAtomNonBond( mmol, 1.0 );
 
     privateer::json::GlobalTorsionZScore torsions_zscore_database;
-     
+
     clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, false, expression_system);
 
     std::vector < clipper::MGlycan > list_of_glycans = mgl.get_list_of_glycans();
@@ -3622,7 +3622,7 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
         for ( int j = 0 ; j < sugars.size(); j++ )
         {
             of_xml << "    <sugar id=\""
-                   << "/" + list_of_glycans[i].get_chain().substr(0,1)
+                   << "/" + sugars[j].chain_id().substr(0,1)
                           + "/" + sugars[j].id().trim()
                           + "(" + sugars[j].type().trim() << ")\" >\n";
 
@@ -3636,18 +3636,18 @@ std::string privateer::scripting::get_annotated_glycans ( std::string pdb_filena
                    << "      <conformation>"     << sugars[j].conformation_name()           << "</conformation>\n"
                    << "      <anomer>"           << sugars[j].anomer()                      << "</anomer>\n"
                    << "      <hand>"             << sugars[j].handedness()                  << "</hand>\n"
-                   << "      <stacked_against>\n";
+                   << "      <stacked_against></stacked_against>\n";
 
-            std::vector < std::pair < clipper::MAtomIndexSymmetry, clipper::ftype > > contacts = sugars[j].get_stacked_residues();
-
-            for ( int cont = 0 ; cont < contacts.size() ; cont++ )
-                of_xml << "        <residue id=\"/" << mmol[contacts[cont].first.polymer()].id().substr(0,1) << "/"
-                                                   << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].id().trim()
-                                                   << "(" << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].type().trim()
-                                                   << ")\" >\n"
-                                                   << "          <angle>" << contacts[cont].second << "</angle>\n"
-                                                   << "        </residue>\n";
-               of_xml << "      </stacked_against>\n";
+            // std::vector < std::pair < clipper::MAtomIndexSymmetry, float > > contacts = sugars[j].get_stacked_residues();
+            //
+            // for ( int cont = 0 ; cont < contacts.size() ; cont++ )
+            //     of_xml << "        <residue id=\"/" << mmol[contacts[cont].first.polymer()].id().substr(0,1) << "/"
+            //                                        << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].id().trim()
+            //                                        << "(" << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].type().trim()
+            //                                        << ")\" >\n"
+            //                                        << "          <angle>" << contacts[cont].second << "</angle>\n"
+            //                                        << "        </residue>\n";
+            //    of_xml << "      </stacked_against>\n";
 
 
             of_xml << "      <validation>\n"
@@ -3818,20 +3818,20 @@ std::string privateer::scripting::print_node ( const clipper::MiniMol& mmol, con
 
            << "      <stacked_against>\n";
 
-           std::vector < std::pair < clipper::MAtomIndexSymmetry, clipper::ftype > > contacts = sugar.get_stacked_residues();
+           // std::vector < std::pair < clipper::MAtomIndexSymmetry, float > > contacts = sugar.get_stacked_residues();
+           //
+           // for ( int cont = 0 ; cont < contacts.size() ; cont++ )
+           //     of_xml << "        <residue id=\"/" << mmol[contacts[cont].first.polymer()].id().substr(0,1) << "/"
+           //                                         << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].id().trim()
+           //                                         << "(" << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].type().trim()
+           //                                         << ")\" >\n"
+           //                                         << "          <angle>" << contacts[cont].second << "</angle>\n"
+           //                                         << "        </residue>\n";
+           //     of_xml << "      </stacked_against>\n"
 
-           for ( int cont = 0 ; cont < contacts.size() ; cont++ )
-               of_xml << "        <residue id=\"/" << mmol[contacts[cont].first.polymer()].id().substr(0,1) << "/"
-                                                   << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].id().trim()
-                                                   << "(" << mmol[contacts[cont].first.polymer()][contacts[cont].first.monomer()].type().trim()
-                                                   << ")\" >\n"
-                                                   << "          <angle>" << contacts[cont].second << "</angle>\n"
-                                                   << "        </residue>\n";
-               of_xml << "      </stacked_against>\n"
 
 
-
-           << "      <validation>\n"
+    of_xml << "      <validation>\n"
            << "        <conformation>"   << b2s(sugar.ok_with_conformation())   << "</conformation>\n"
            << "        <anomer>"         << b2s(sugar.ok_with_anomer())         << "</anomer>\n"
            << "        <hand>"           << b2s(sugar.ok_with_chirality())      << "</hand>\n"
@@ -3865,7 +3865,7 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
 {
     // std::cout << "Length of glycan torsions " << glycan_torsions.size() << std::endl;
     // std::cout << "Length of torsionsZScoreDatabase " << torsions_zscore_database.database_array.size() << std::endl;
-    
+
     float z_score_total_for_glycan = 0;
 
     for(int glycan_linkage_index = 0; glycan_linkage_index < glycan_torsions.size(); glycan_linkage_index++)
@@ -3886,8 +3886,8 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                     float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
                     // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << std::endl;
                     bool linkage_check = privateer::util::do_report_linkage(donor_sugar,acceptor_position,donor_position, acceptor_sugar );
-                    
-                 
+
+
                     auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
                     {
                         return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
@@ -3897,9 +3897,9 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                     {
                         privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description, input_pdb_code);
-                        
-                        if (!linkage_check) { 
-                            if (current_linkage.type == "protein-sugar") { 
+
+                        if (!linkage_check) {
+                            if (current_linkage.type == "protein-sugar") {
                                 std::cout << "\t" << acceptor_sugar << "--" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
                             }
                             else {
@@ -3907,9 +3907,9 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                             }
                             continue;
                         }
-                        if (std::isfinite(linkage_score)) { 
+                        if (std::isfinite(linkage_score)) {
                             z_score_total_for_glycan = z_score_total_for_glycan + linkage_score;
-                            if (current_linkage.type == "protein-sugar") { 
+                            if (current_linkage.type == "protein-sugar") {
                                 std::cout << "\t" << acceptor_sugar  << "--" << donor_sugar << " = " << linkage_score << std::endl;
 
                             }
@@ -3917,15 +3917,15 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                                 std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " = " << linkage_score << std::endl;
                             }
                         }
-                        else { 
-                            if (current_linkage.type == "protein-sugar") { 
+                        else {
+                            if (current_linkage.type == "protein-sugar") {
                                 std::cout << "\t" << acceptor_sugar  << "--" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
                             }
                             else {
                                 std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
                             }
                         }
-                    
+
                     }
                 }
             }
@@ -3939,7 +3939,7 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
 {
     // std::cout << "Length of glycan torsions " << glycan_torsions.size() << std::endl;
     // std::cout << "Length of torsionsZScoreDatabase " << torsions_zscore_database.database_array.size() << std::endl;
-    
+
     float z_score_total_for_glycan = 0;
 
     for(int glycan_linkage_index = 0; glycan_linkage_index < glycan_torsions.size(); glycan_linkage_index++)
@@ -3961,8 +3961,8 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                     // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << std::endl;
 
                     bool linkage_check = privateer::util::do_report_linkage(donor_sugar,acceptor_position,donor_position, acceptor_sugar );
-                    
-                    
+
+
                     auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
                     {
                         return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
@@ -3972,35 +3972,35 @@ float privateer::scripting::compute_linkage_torsion_zscores_for_glycan(privateer
                     {
                         privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description);
-                        
-                        if (!linkage_check) { 
-                            if (current_linkage.type == "protein-sugar") { 
+
+                        if (!linkage_check) {
+                            if (current_linkage.type == "protein-sugar") {
                                 std::cout << "\t" << acceptor_sugar << "--" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
                             }
-                            else { 
+                            else {
                                 std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
                             }
                             continue;
                         }
-                        if (std::isfinite(linkage_score)) { 
+                        if (std::isfinite(linkage_score)) {
                             z_score_total_for_glycan = z_score_total_for_glycan + linkage_score;
-                            if (current_linkage.type == "protein-sugar") { 
+                            if (current_linkage.type == "protein-sugar") {
                                 std::cout << "\t" << acceptor_sugar  << "--" << donor_sugar << " = " << linkage_score << std::endl;
 
                             }
                             else {
                                 std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " = " << linkage_score << std::endl;
                             }
-                        }   
-                        else { 
-                            if (current_linkage.type == "protein-sugar") { 
+                        }
+                        else {
+                            if (current_linkage.type == "protein-sugar") {
                                 std::cout << "\t" << acceptor_sugar  << "--" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
                             }
-                            else { 
+                            else {
                                 std::cout << "\t" << acceptor_sugar << "-" << acceptor_position << "--" << donor_position  << "-" << donor_sugar << " does not have enough information in the database to calculate a linkage score." << std::endl;
                             }
                         }
-                        
+
                     }
                 }
             }
@@ -4014,7 +4014,7 @@ std::vector<privateer::scripting::ZScoreEntry> privateer::scripting::report_link
 {
     // std::cout << "Length of glycan torsions " << glycan_torsions.size() << std::endl;
     // std::cout << "Length of torsionsZScoreDatabase " << torsions_zscore_database.database_array.size() << std::endl;
-    
+
     float z_score_total_for_glycan = 0;
 
     std::vector<privateer::scripting::ZScoreEntry> temp_vector;
@@ -4036,7 +4036,7 @@ std::vector<privateer::scripting::ZScoreEntry> privateer::scripting::report_link
                     float currentPhi = current_linkage.torsions[linkage_descriptor_index].first;
                     float currentPsi = current_linkage.torsions[linkage_descriptor_index].second;
                     // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << std::endl;
-                   
+
                     auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [donor_sugar, donor_position, acceptor_position, acceptor_sugar](privateer::json::TorsionsZScoreDatabase& element)
                     {
                         return donor_sugar == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && acceptor_sugar == element.acceptor_sugar;
@@ -4048,13 +4048,13 @@ std::vector<privateer::scripting::ZScoreEntry> privateer::scripting::report_link
                         float linkage_score = privateer::util::calculate_linkage_zscore(currentPhi, currentPsi, found_torsion_description);
                         z_score_total_for_glycan = z_score_total_for_glycan + linkage_score;
                         // std::cout << "\t" << donor_sugar << "-" << donor_position << "--" << acceptor_position << "-" << acceptor_sugar << " = " << linkage_score << std::endl;
-                        
+
                         privateer::scripting::ZScoreEntry temp_entry;
-                        
-                        temp_entry.donor_sugar = donor_sugar; 
+
+                        temp_entry.donor_sugar = donor_sugar;
                         temp_entry.donor_end = donor_position;
-                        temp_entry.acceptor_sugar = acceptor_sugar; 
-                        temp_entry.acceptor_end = acceptor_position; 
+                        temp_entry.acceptor_sugar = acceptor_sugar;
+                        temp_entry.acceptor_end = acceptor_position;
                         temp_entry.z_score = linkage_score;
 
                         temp_vector.push_back(temp_entry);

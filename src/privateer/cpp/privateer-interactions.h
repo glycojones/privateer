@@ -29,7 +29,7 @@ namespace privateer {
 	namespace interactions {
 		void hydrogenate_input_model(std::string input_model, std::string output_path);
 
-		class HBond 
+		class HBond
 		{
 			public:
 				std::string donor_chainID;
@@ -50,7 +50,7 @@ namespace privateer {
 				bool hydrogen_is_sugar_atom;
 				bool bond_has_hydrogen_flag;
 
-				HBond() 
+				HBond()
 				{
 					donor_chainID = "-1";
 					acceptor_chainID = "-1";
@@ -67,7 +67,7 @@ namespace privateer {
 					angle_2 = -1;
 					angle_3 = -1;
 					HBondLength = -1;
-					
+
 					hydrogen_is_sugar_atom = false;
 					bond_has_hydrogen_flag = false;
 				}
@@ -89,7 +89,7 @@ namespace privateer {
 					angle_2 = -1;
 					angle_3 = -1;
 					HBondLength = -1;
-					
+
 					hydrogen_is_sugar_atom = false;
 					bond_has_hydrogen_flag = false;
 				}
@@ -112,7 +112,7 @@ namespace privateer {
 					angle_2 = -1;
 					angle_3 = -1;
 					HBondLength = -1;
-					
+
 					hydrogen_is_sugar_atom = input_sugar_atom_is_H_flag;
 				}
 
@@ -123,38 +123,151 @@ namespace privateer {
 		class CHPiBond
 		{
 			public:
-				std::string sugar_chainID;
-				std::string stacked_residue_chainID;
-				clipper::MSugar sugar;
-				clipper::MMonomer stacked_residue;
-				float angle;
-				int sugarIndex;
-				int glycanSize;
-
-				CHPiBond(std::string input_sugar_chainID, std::string input_stacked_residue_chainID, clipper::MSugar& input_sugar, clipper::MMonomer& input_stacked_residue, float input_angle)
+				CHPiBond(std::string input_sugar_chainID, std::string input_stacked_residue_chainID, clipper::MSugar& input_sugar, clipper::MMonomer& input_stacked_residue, float input_angle, std::string algorithm_used = "hudson" )
 				{
 					sugar_chainID = input_sugar_chainID;
 					stacked_residue_chainID = input_stacked_residue_chainID;
 					sugar = input_sugar;
 					stacked_residue = input_stacked_residue;
+					algorithm = algorithm_used;
 					angle = input_angle;
 					sugarIndex = -1;
 					glycanSize = -1;
+
 				}
+				std::string get_sugar_chainID ( ) {
+					return this->sugar_chainID;
+				}
+
+				int get_sugar_index ( ) {
+					return this->sugarIndex;
+				}
+
+				void set_sugar_index ( int sugar_index ) {
+					this->sugarIndex = sugar_index;
+				}
+
+				int get_glycan_size ( ) {
+					return this->glycanSize;
+				}
+
+				void set_glycan_size ( int glycan_size ) {
+					this->glycanSize = glycan_size;
+				}
+
+				clipper::MSugar get_sugar () {
+					return this->sugar;
+				}
+
+				void set_sugar ( clipper::MSugar sugar ) {
+					this->sugar = sugar;
+				}
+
+				clipper::MMonomer get_stacked_residue ( ){
+					return this->stacked_residue;
+				}
+
+				std::string get_stacked_residue_chainID ( ){
+					return this->stacked_residue_chainID;
+				}
+
+				float get_angle ( ){
+					return this->angle;
+				}
+
+				void set_angle ( float angle ){
+					this->angle = angle;
+
+				}
+
+				float get_angle_theta_h ( ) {
+					return this->angle_theta_h;
+				}
+
+				void set_angle_theta_h ( float angle_theta_h ) {
+					this->angle_theta_h = angle_theta_h;
+				}
+
+				float get_angle_theta_p ( ) {
+					return this->angle_theta_p;
+				}
+
+				void set_angle_theta_p ( float angle_theta_p ) {
+					this->angle_theta_p = angle_theta_p;
+				}
+
+				float get_angle_phi ( ) {
+					return this->angle_phi;
+				}
+
+				void set_angle_phi ( float angle_phi ) {
+					this->angle_phi = angle_phi;
+				}
+
+				float get_distance_cx ( ) {
+					return this->distance_cx;
+				}
+
+				void set_distance_cx ( float distance_cx ) {
+					this->distance_cx = distance_cx;
+				}
+
+				float get_distance_cp ( ) {
+					return this->distance_cp;
+				}
+
+				void set_distance_cp ( float distance_cp ) {
+					this->distance_cp = distance_cp;
+				}
+
+				std::string get_trp_ring () {
+					return trp_ring;
+				}
+
+				void set_trp_ring ( std::string trp_ring ) {
+					this->trp_ring = trp_ring;
+				}
+
+			private:
+				std::string sugar_chainID;
+				std::string stacked_residue_chainID;
+				clipper::MSugar sugar;
+				clipper::MMonomer stacked_residue;
+				float angle;
+				std::string algorithm;
+				int sugarIndex;
+				int glycanSize;
+				std::pair<clipper::MAtom, clipper::MAtom> xh_pair;
+				float angle_theta_h;
+				float angle_theta_p;
+				float angle_phi;
+				float distance_cx;
+				float distance_cp;
+				std::string trp_ring; // For TRP exclusively, A + B
+				clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
+				clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
+				clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon );
 		};
 
 		class CHPiBondsParser
 		{
 			public:
 				CHPiBondsParser() { }
-				CHPiBondsParser(std::string& input_model);
+				CHPiBondsParser(std::string& input_model, std::string output_path = "undefined", std::string algorithm = "hudson");
 				std::vector<privateer::interactions::CHPiBond> get_CHPi_interactions(int glycanIndex);
-				std::vector <std::pair<clipper::MAtomIndexSymmetry, float>> get_stacked_residues_python(clipper::MSugar& input_sugar);
+				std::vector <privateer::interactions::CHPiBond> get_stacked_residues_python(clipper::MSugar& input_sugar,
+																																										std::string = "hudson",
+																																										float = 4.5,
+																																										float = 40.0,
+																																										float = 0.0 ) const ;
 			private:
 				clipper::MiniMol input_model;
 				clipper::MAtomNonBond manb_object;
 				clipper::MGlycology mglycology;
-				
+				clipper::MiniMol hydrogenated_input_model;
+				clipper::MGlycology hydrogenated_mglycology;
+				std::string algorithm;
+
 		};
 
 		class HBondsParser
@@ -165,7 +278,7 @@ namespace privateer {
 					HB_UNASSIGNED = -1,
 					HB_NEITHER = 0,
 					HB_DONOR = 1,
-					HB_ACCEPTOR = 2, 
+					HB_ACCEPTOR = 2,
 					HB_BOTH = 3,
 					HB_HYDROGEN = 4
 				};
@@ -173,13 +286,13 @@ namespace privateer {
 
 				struct energy_library_entry
 				{
-					std::string type; 
-					std::string weight; 
+					std::string type;
+					std::string weight;
 					std::string hb_type;
 					std::string vdw_radius;
 					std::string vdwh_radius;
 					std::string ion_radius;
-					std::string element; 
+					std::string element;
 					std::string valency;
 					std::string sp;
 				};
@@ -223,7 +336,7 @@ namespace privateer {
 				// std::vector < std::pair< clipper::MAtomIndexSymmetry, clipper::ftype > > MSugar::get_stacked_residues
 		};
 
-        
+
   	}
 }
 

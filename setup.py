@@ -3,6 +3,7 @@ import re
 import sys
 import platform
 import subprocess
+import shutil
 
 from distutils.version import LooseVersion
 import distutils.command.build
@@ -55,6 +56,12 @@ class CMakeBuild(build_ext):
         else:
             cmake_args += ['-DCMAKE_BUILD_TYPE=' + cfg]
             build_args += ['--', '-j2']
+
+        if platform.system() == "Darwin" :
+            if shutil.which('brew') == '/usr/local/bin/brew':
+                cmake_args += ['-DCMAKE_C_COMPILER=/usr/local/bin/gcc-12', '-DCMAKE_CXX_COMPILER=/usr/local/bin/g++-12']
+            else:
+                cmake_args += ['-DCMAKE_C_COMPILER=/opt/homebrew/bin/gcc-12', '-DCMAKE_CXX_COMPILER=/opt/homebrew/bin/g++-12']
 
         env = os.environ.copy()
         env['CXXFLAGS'] = '{} -DVERSION_INFO=\\"{}\\"'.format(

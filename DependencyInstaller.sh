@@ -1,45 +1,87 @@
-cmake --version || "CMake is not found!. Install CMake then re-run this script " || exit 3
-gcc --version  || "GCC is not found!. Install GCC then re-run this script " || exit 3
+cmake --version || "CMake is not found!. Please install CMake and try again" || exit 3
+cmake --version || "nproc is not found!. Please install nproc and try again " || exit 3
 
-GCC="$(which gcc)"
-GPLUSPLUS="$(which g++)"
-echo "GCC: $GCC"
-echo "GCC: $GPLUSPLUS"
-GFORTRAN="$(which gfortran)"
-echo "GFORTRAN: $GFORTRAN"
-Threads="$(nproc --all)"
+OS_NAME="$(uname)"
+CPU_NAME="$(uname -m)"
+
+if [[ "${OS_NAME}" == 'Darwin' ]]; then
+  echo "MacOS detected"
+  which -s brew
+  if [[ $? != 0 ]] ; then
+    # Install Homebrew
+    echo "Homebrew is required on MacOS but could not detected - please install it and try again"
+    exit 3
+  else
+    echo "Homebrew found!"
+  fi
+
+  HOMEBREW_PREFIX="$(brew info gcc | grep Cellar | awk '{print $1}')"
+
+  if [[ "${CPU_NAME}" == 'arm64' ]]; then # identical to intel for now, but we might want to add other things here
+    echo "Configuring compilers for Apple Silicon CPU"
+    GCC_VERSION="$(brew info gcc | grep Cellar | awk -F"/gcc/" '{print $2}' | awk -F"." '{print $1}')"
+    GCC=$HOMEBREW_PREFIX/bin/gcc-$GCC_VERSION
+    GPLUSPLUS=$HOMEBREW_PREFIX/bin/g++-$GCC_VERSION
+    GFORTRAN=$HOMEBREW_PREFIX/bin/gfortran
+    Threads="$(nproc --all)"
+  else
+    echo "Configuring compilers for Intel CPU"
+    GCC_VERSION="$(brew info gcc | grep Cellar | awk -F"/gcc/" '{print $2}' | awk -F"." '{print $1}')"
+    GCC=$HOMEBREW_PREFIX/bin/gcc-$GCC_VERSION
+    GPLUSPLUS=$HOMEBREW_PREFIX/bin/g++-$GCC_VERSION
+    GFORTRAN=$HOMEBREW_PREFIX/bin/gfortran
+    Threads="$(nproc --all)"
+  fi
+else # assuming GNU/Linux
+  echo "Configuring compilers for GNU/Linux"
+  GCC="$(which gcc)"
+  GPLUSPLUS="$(which g++)"
+  GFORTRAN="$(which gfortran)"
+  Threads="$(nproc --all)"
+fi
 
 export CC=$GCC
 export CXX=$GPLUSPLUS
 export FC=$GFORTRAN
 
+$CC --version  || echo "gcc not found. Please install gcc then re-run this script " || exit 3
+$CXX --version  || echo "g++ not found. Please install g++ then re-run this script " || exit 3
+$FC --version  || echo "gfortran not found. Please install gfortran then re-run this script " || exit 3
+
 mainDir=$PWD
 dependencyDir=$mainDir/dependencies
 
+export LD_LIBRARY_PATH=$mainDir/dependencies/lib:$LD_LIBRARY_PATH
 export LDFLAGS="-L$mainDir/dependencies/lib -L$mainDir/dependencies/lib64"
 export CPPFLAGS="-I$mainDir/dependencies/include"
 
 
 cd $dependencyDir
-# Clipper only works with fftw2
+# Clipper requires fftw2 for now
+
 if [[ ! -f include/fftw.h ]]; then
-cd $dependencyDir
-if [[  -d fftw ]]; then
-rm -rf fftw
-fi
-mkdir fftw
-cd fftw
-wget ftp://ftp.fftw.org/pub/fftw/fftw-2.1.5.tar.gz
-tar -zxvf fftw-2.1.5.tar.gz
-cd fftw-2.1.5
-CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' CCFLAGS='-g -O2 -w' --prefix=$dependencyDir --enable-single --enable-float --enable-shared F77=gfortran
-make
-make install
+#  cd $dependencyDir
+
+  if [[ ! -d fftw ]]; then
+    mkdir fftw
+    cd fftw
+    wget ftp://ftp.fftw.org/pub/fftw/fftw-2.1.5.tar.gz
+    tar -zxvf fftw-2.1.5.tar.gz
+  else
+    cd fftw
+  fi
+
+  cd fftw-2.1.5
+  curl https://git.savannah.gnu.org/cgit/config.git/plain/config.guess --output config.guess
+  curl https://git.savannah.gnu.org/cgit/config.git/plain/config.sub --output config.sub
+  CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' CCFLAGS='-g -O2 -w' --prefix=$dependencyDir --enable-single --enable-float --enable-shared F77=gfortran
+  make
+  make install
 fi
 
 cd $dependencyDir
 if [[ ! -f include/fftw.h ]]; then
-echo "fftw installation ... falied. We can not continue the rest of the installation steps."
+echo "fftw2 installation FAILED. Cannot continue without fftw2."
 exit 3
 fi
 
