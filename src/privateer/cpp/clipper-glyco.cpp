@@ -4962,9 +4962,10 @@ void MGlycan::Linkage::calculate_and_set_zscore(float Phi, float Psi, clipper::S
         "BMA-1,6-MAN",
         "MAN-1,2-MAN",
         "MAN-1,3-MAN",
-        "MAN-1,6-MAN",
-        "NAG-1,6-FUC",
-        "MAN-1,2-NAG",
+        "MAN-1,6-MAN", 
+        "NAG-1,6-FUC", 
+        "NAG-1,3-FUC", 
+        "MAN-1,2-NAG", 
         "NAG-1,4-GAL",
     };
     std::string linkage_name = donor_sugar + "-" + acceptor_position + "," + donor_position + "-" + acceptor_sugar;
