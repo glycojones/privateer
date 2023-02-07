@@ -149,42 +149,32 @@ class PrivateerTorsionResultsOutputParser:
                 all_torsions = rootItem["all_torsions_in_structure"]
                 # print("All torsions = " , len(all_torsions))
                 for item in all_torsions:
-
-                    if (item["first_residue"] == first_unique_residue
-                            and item["second_residue"] == second_unique_residue
-                            and item["first_number"] == donor_position
-                            and item["second_number"] == acceptor_position):
-                        # print(item["first_residue"], item["second_residue"], item["first_number"], item["second_number"],
-                        #     first_unique_residue, second_unique_residue, donor_position, acceptor_position, len(item["detected_torsions"]))
-                        # print("Conditions satisfied")
-
+                    if (
+                        item["first_residue"] == first_unique_residue
+                        and item["second_residue"] == second_unique_residue
+                    ):
                         detected_torsions = {
                             "glycanIndex": rootItem["glycanIndex"],
                             "WURCS": rootItem["WURCS"],
                             "glycan_torsions": item["detected_torsions"],
                         }
 
-                        # print(item)
-                        # print(item["first_residue"], item["second_residue"], item["first_number"], item["second_number"], first_unique_residue, second_unique_residue, donor_position, acceptor_position)
-                        # print(len(item["detected_torsions"]))
-                        # print(item)
-                        # print()
-                        for index, torsion in enumerate(
-                                item["detected_torsions"]):
+                        for index, torsion in enumerate(item["detected_torsions"]):
                             item["detected_torsions"][index][
                                 "sugar_1"] = first_unique_residue
                             item["detected_torsions"][index][
                                 "sugar_2"] = second_unique_residue
 
                             item["detected_torsions"][index][
-                                "donor_position"] = donor_position
+                                "donor_position"
+                            ] = donor_position
                             item["detected_torsions"][index][
-                                "acceptor_position"] = acceptor_position
+                                "acceptor_position"
+                            ] = acceptor_position
 
-                            item["detected_torsions"][index][
-                                "glycanIndex"] = rootItem["glycanIndex"]
-
-                        # print(item)
+                            item["detected_torsions"][index]["glycanIndex"] = rootItem[
+                                "glycanIndex"
+                            ]
 
                         glycan_torsions = [
                             TorsionEntry(**data)
@@ -582,20 +572,7 @@ if __name__ == "__main__":
 
     wrapper = PrivateerTorsionResultsOutputParser(total_torsions_in_structure)
 
-    parsed_structure_output = wrapper.getSortedOutputOfTorsionsForEntireStructure(
-    )
-
-    # for index in range(len(parsed_structure_output)):
-
-    #     print(
-    #         parsed_structure_output[index].sugar_1,
-    #         parsed_structure_output[index].sugar_2,
-    #         parsed_structure_output[index].donor_position,
-    #         parsed_structure_output[index].acceptor_position,
-    #         len(parsed_structure_output[index].torsions),
-
-    #     )
-
+    parsed_structure_output = wrapper.getSortedOutputOfTorsionsForEntireStructure()
     t_1 = time.time()
 
     print(f"Time taken to initialise - {t_1 - t_0} seconds ")
@@ -640,16 +617,8 @@ if __name__ == "__main__":
     if parsed_structure_output is not None:
         print(f"Total time taken -  {t_4 - t_0} seconds")
 
-        print(
-            f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}"
-        )
-        print("Task Completed Successfully!")
-    else:
-        print(f"Total time taken -  {t_4 - t_0} seconds")
-
-        print(
-            "The script was unable to locate any sugar-sugar torsion angles or ASN-NAG sugar-amino acid torsion angle in the imported structure.\nIt is very likely that the structure does not contain any glycans or exlusively contain non N-glycans."
-        )
+    print(f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}")
+    print("Task Completed Successfully!")
 
         print("Task Completed Without generating any torsion plots.")
 # Single thread time taken - 220 seconds / 3 minutes 40 seconds
