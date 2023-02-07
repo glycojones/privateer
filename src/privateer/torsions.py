@@ -149,32 +149,28 @@ class PrivateerTorsionResultsOutputParser:
                 all_torsions = rootItem["all_torsions_in_structure"]
                 # print("All torsions = " , len(all_torsions))
                 for item in all_torsions:
-                    if (
-                        item["first_residue"] == first_unique_residue
-                        and item["second_residue"] == second_unique_residue
-                    ):
+                    if (item["first_residue"] == first_unique_residue and
+                            item["second_residue"] == second_unique_residue):
                         detected_torsions = {
                             "glycanIndex": rootItem["glycanIndex"],
                             "WURCS": rootItem["WURCS"],
                             "glycan_torsions": item["detected_torsions"],
                         }
 
-                        for index, torsion in enumerate(item["detected_torsions"]):
+                        for index, torsion in enumerate(
+                                item["detected_torsions"]):
                             item["detected_torsions"][index][
                                 "sugar_1"] = first_unique_residue
                             item["detected_torsions"][index][
                                 "sugar_2"] = second_unique_residue
 
                             item["detected_torsions"][index][
-                                "donor_position"
-                            ] = donor_position
+                                "donor_position"] = donor_position
                             item["detected_torsions"][index][
-                                "acceptor_position"
-                            ] = acceptor_position
+                                "acceptor_position"] = acceptor_position
 
-                            item["detected_torsions"][index]["glycanIndex"] = rootItem[
-                                "glycanIndex"
-                            ]
+                            item["detected_torsions"][index][
+                                "glycanIndex"] = rootItem["glycanIndex"]
 
                         glycan_torsions = [
                             TorsionEntry(**data)
@@ -572,7 +568,8 @@ if __name__ == "__main__":
 
     wrapper = PrivateerTorsionResultsOutputParser(total_torsions_in_structure)
 
-    parsed_structure_output = wrapper.getSortedOutputOfTorsionsForEntireStructure()
+    parsed_structure_output = wrapper.getSortedOutputOfTorsionsForEntireStructure(
+    )
     t_1 = time.time()
 
     print(f"Time taken to initialise - {t_1 - t_0} seconds ")
@@ -617,7 +614,9 @@ if __name__ == "__main__":
     if parsed_structure_output is not None:
         print(f"Total time taken -  {t_4 - t_0} seconds")
 
-    print(f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}")
+    print(
+        f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}"
+    )
     print("Task Completed Successfully!")
 
         print("Task Completed Without generating any torsion plots.")
