@@ -220,35 +220,6 @@ def _get_NGlycosylation_targets_via_consensus_seq(sequences):
     return output
 
 
-def _glycosylate_receiving_model_using_manual_instructions(
-    receiverpath,
-    donorpath,
-    outputpath,
-    glycanIndex,
-    receiverChainIndex,
-    receiverResidueIndex,
-    enableUserMessages,
-    trimGlycanIfClashesDetected,
-):
-    builder = pvtmodelling.Builder(
-        receiverpath,
-        donorpath,
-        -1,
-        trimGlycanIfClashesDetected,
-        True,
-        enableUserMessages,
-        False,
-    )
-
-    builder.graft_glycan_to_receiver(glycanIndex, receiverChainIndex,
-                                     receiverResidueIndex)
-
-    graftedGlycanSummary = builder.get_summary_of_grafted_glycans()
-    builder.export_grafted_model(outputpath)
-
-    return graftedGlycanSummary
-
-
 def _glycosylate_receiving_model_using_consensus_seq(
     receiverpath,
     donorpath,
@@ -396,6 +367,76 @@ def _online_input_model_pipeline(uniprotID, donorpath, defaultInputModelPath,
     graftedGlycans = _glycosylate_receiving_model_using_uniprot_info(
         receiverpath, donorpath, outputpath, targets, True, False)
     _print_grafted_glycans_summary(graftedGlycans)
+
+
+def glycosylate_receiving_model_using_manual_instructions(
+        receiverpath,
+        donorpath,
+        outputpath,
+        glycanIndex,
+        receiverChainIndex,
+        receiverResidueIndex,
+        enableUserMessages=True,
+        trimGlycanIfClashesDetected=False,
+        nThreads=-1):
+    builder = pvtmodelling.Builder(
+        receiverpath,
+        donorpath,
+        nThreads,
+        trimGlycanIfClashesDetected,
+        True,
+        enableUserMessages,
+        False,
+    )
+
+    builder.graft_glycan_to_receiver(glycanIndex, receiverChainIndex,
+                                     receiverResidueIndex)
+
+    graftedGlycanSummary = builder.get_summary_of_grafted_glycans()
+    builder.export_grafted_model(outputpath)
+
+    return graftedGlycanSummary
+
+
+def glycosylate_receiving_model_using_schema(schema, print_messages=True):
+    initialInputPath = schema["receiver_path"]
+    initialOutputSubsequentInputOutputPath = schema["output_path"]
+    glycosylations = schema["glycosylations"]
+    graftedGlycansSummary = []
+    detailed_graftedGlycansSummary = []
+    for count, item in enumerate(glycosylations):
+        donorPath = item["donor_path"]
+        glycanIndex = item["glycan_index"]
+        receivingChainIndex = item["receiving_chain_index"]
+        receivingAminoAcidIndex = item["receiving_aa_index"]
+        if count == 0:
+            currentGraftedGlycanSummary = (
+                glycosylate_receiving_model_using_manual_instructions(
+                    initialInputPath, donorPath,
+                    initialOutputSubsequentInputOutputPath, glycanIndex,
+                    receivingChainIndex, receivingAminoAcidIndex, True, False,
+                    -1))
+            detailed_graftedGlycansSummary.append(currentGraftedGlycanSummary)
+            messageString = _store_grafted_glycans_summary(
+                currentGraftedGlycanSummary, count, len(glycosylations))
+            graftedGlycansSummary.append(messageString)
+        else:
+            currentGraftedGlycanSummary = (
+                glycosylate_receiving_model_using_manual_instructions(
+                    initialOutputSubsequentInputOutputPath, donorPath,
+                    initialOutputSubsequentInputOutputPath, glycanIndex,
+                    receivingChainIndex, receivingAminoAcidIndex, True, False,
+                    -1))
+            detailed_graftedGlycansSummary.append(currentGraftedGlycanSummary)
+            messageString = _store_grafted_glycans_summary(
+                currentGraftedGlycanSummary, count, len(glycosylations))
+            graftedGlycansSummary.append(messageString)
+    if print_messages:
+        print("\n")
+        for message in graftedGlycansSummary:
+            print(message + "\n")
+
+    return detailed_graftedGlycansSummary, graftedGlycansSummary
 
 
 if __name__ == "__main__":
@@ -573,31 +614,21 @@ if __name__ == "__main__":
             receivingAminoAcidIndex = item["receiving_aa_index"]
             if count == 0:
                 currentGraftedGlycanSummary = (
-                    _glycosylate_receiving_model_using_manual_instructions(
-                        initialInputPath,
-                        donorPath,
-                        initialOutputSubsequentInputOutputPath,
-                        glycanIndex,
-                        receivingChainIndex,
-                        receivingAminoAcidIndex,
-                        True,
-                        False,
-                    ))
+                    glycosylate_receiving_model_using_manual_instructions(
+                        initialInputPath, donorPath,
+                        initialOutputSubsequentInputOutputPath, glycanIndex,
+                        receivingChainIndex, receivingAminoAcidIndex, True,
+                        False, -1))
                 messageString = _store_grafted_glycans_summary(
                     currentGraftedGlycanSummary, count, len(glycosylations))
                 graftedGlycansSummary.append(messageString)
             else:
                 currentGraftedGlycanSummary = (
-                    _glycosylate_receiving_model_using_manual_instructions(
-                        initialOutputSubsequentInputOutputPath,
-                        donorPath,
-                        initialOutputSubsequentInputOutputPath,
-                        glycanIndex,
-                        receivingChainIndex,
-                        receivingAminoAcidIndex,
-                        True,
-                        False,
-                    ))
+                    glycosylate_receiving_model_using_manual_instructions(
+                        initialOutputSubsequentInputOutputPath, donorPath,
+                        initialOutputSubsequentInputOutputPath, glycanIndex,
+                        receivingChainIndex, receivingAminoAcidIndex, True,
+                        False, -1))
                 messageString = _store_grafted_glycans_summary(
                     currentGraftedGlycanSummary, count, len(glycosylations))
                 graftedGlycansSummary.append(messageString)
