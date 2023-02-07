@@ -5,3 +5,7 @@ import argparse
 import requests
 from privateer import privateer_core as pvtcore
 from privateer import privateer_modelling as pvtmodelling
+
+
+def test():
+    print("Hello from grafter.py")

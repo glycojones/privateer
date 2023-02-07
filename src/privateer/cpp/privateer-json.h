@@ -191,7 +191,7 @@ namespace privateer
                 else
                 {
                     env = std::getenv("CLIBD");
-                    path_copy = env + "/privateer_glycomics_database.json";
+                    path_copy = env + "/privateer_data/glycomics/privateer_glycomics_database.json";
                 }
             }
 
@@ -376,7 +376,7 @@ namespace privateer
                 else
                 {
                     env = std::getenv("CLIBD");
-                    path_copy = env + "/privateer_torsion_database.json";
+                    path_copy = env + "/privateer_data/linkage_torsions/privateer_torsion_database.json";
                 }
             }
 
@@ -689,7 +689,7 @@ namespace privateer
                 else
                 {
                     env = std::getenv("CLIBD");
-                    path_copy = env + "/privateer_torsions_z_score_database.json";
+                    path_copy = env + "/privateer_data/linkage_torsions/privateer_torsions_z_score_database.json";
                 }
             }
 

@@ -3,7 +3,6 @@ import json
 from datetime import date
 from re import split
 
-
 amino_acids = [
     "ALA",
     "ARG",
@@ -42,9 +41,8 @@ def split_initial_list_into_two_categories(importedList):
     return sorted(amino_acid_containing_list), sorted(sugar_sugar_only_list)
 
 
-def get_unique_keys_for_output_dictionary(
-    contains_amino_acid_list, sugar_sugar_only_list
-):
+def get_unique_keys_for_output_dictionary(contains_amino_acid_list,
+                                          sugar_sugar_only_list):
     output = []
 
     for item in contains_amino_acid_list:
@@ -64,9 +62,8 @@ def get_unique_keys_for_output_dictionary(
     return output
 
 
-def populate_torsions(
-    jsonTemplate, contains_amino_acid_list, sugar_sugar_only_list, unprocessedDataPath
-):
+def populate_torsions(jsonTemplate, contains_amino_acid_list,
+                      sugar_sugar_only_list, unprocessedDataPath):
     output = {
         "date_last_updated": date.today().strftime("%m/%d/%Y"),
         "database_name": "torsion_database",
@@ -85,14 +82,19 @@ def populate_torsions(
             for second_sugar in currentValues:
                 currentFileName = f"{currentKey}-{second_sugar}_reduced.json"
                 if currentFileName in contains_amino_acid_list:
-                    currentFullPath = os.path.join(unprocessedDataPath, currentFileName)
+                    currentFullPath = os.path.join(unprocessedDataPath,
+                                                   currentFileName)
                     with open(currentFullPath) as jsonFile:
-                        imported_torsions_for_current_pair = json.load(jsonFile)
+                        imported_torsions_for_current_pair = json.load(
+                            jsonFile)
                     torsions_for_current_pair = []
                     for torsion in imported_torsions_for_current_pair:
-                        torsions_for_current_pair.append(
-                            {"Phi": float(torsion["Phi"]), "Psi": float(torsion["Psi"])}
-                        )
+                        torsions_for_current_pair.append({
+                            "Phi":
+                            float(torsion["Phi"]),
+                            "Psi":
+                            float(torsion["Psi"])
+                        })
                     current_second_sugar_dict = {
                         "sugar": second_sugar,
                         "torsions": torsions_for_current_pair,
@@ -104,18 +106,27 @@ def populate_torsions(
                     )
             output["data"].append(currentKeyDict)
         else:
-            currentKeyDict = {"first": currentKey, "type": "sugar-sugar", "second": []}
+            currentKeyDict = {
+                "first": currentKey,
+                "type": "sugar-sugar",
+                "second": []
+            }
             for second_sugar in currentValues:
                 currentFileName = f"{currentKey}-{second_sugar}_reduced.json"
                 if currentFileName in sugar_sugar_only_list:
-                    currentFullPath = os.path.join(unprocessedDataPath, currentFileName)
+                    currentFullPath = os.path.join(unprocessedDataPath,
+                                                   currentFileName)
                     with open(currentFullPath) as jsonFile:
-                        imported_torsions_for_current_pair = json.load(jsonFile)
+                        imported_torsions_for_current_pair = json.load(
+                            jsonFile)
                     torsions_for_current_pair = []
                     for torsion in imported_torsions_for_current_pair:
-                        torsions_for_current_pair.append(
-                            {"Phi": float(torsion["Phi"]), "Psi": float(torsion["Psi"])}
-                        )
+                        torsions_for_current_pair.append({
+                            "Phi":
+                            float(torsion["Phi"]),
+                            "Psi":
+                            float(torsion["Psi"])
+                        })
                     current_second_sugar_dict = {
                         "sugar": second_sugar,
                         "torsions": torsions_for_current_pair,
@@ -131,25 +142,26 @@ def populate_torsions(
 
 
 if __name__ == "__main__":
-    PRIVATEERDATAPATH = os.getenv("PRIVATEERDATA")
-    if PRIVATEERDATAPATH is not None:
-        unprocessedDataPath = os.path.join(
-            PRIVATEERDATAPATH, "linkage_torsions/unprocessed_files"
-        )
-        processedDataPath = os.path.join(PRIVATEERDATAPATH, "linkage_torsions")
+    if os.getenv("PRIVATEERDATA", None) is not None:
+        ROOTPATH = os.getenv("PRIVATEERDATA", None)
     else:
-        raise EnvironmentError(
-            "Unable to retrieve 'PRIVATEERDATA' environment variable. Please try sourcing the ccp4.envsetup-sh file again"
-        )
+        ROOTPATH = os.getenv("CLIBD", None)
+        if ROOTPATH is None:
+            raise EnvironmentError(
+                "Unable to retrieve 'PRIVATEERDATA' nor 'CLIBD' environment variable. Please try sourcing the ccp4.envsetup-sh file again"
+            )
+        ROOTPATH = os.path.join(ROOTPATH, "privateer_data")
+
+    unprocessedDataPath = os.path.join(ROOTPATH,
+                                       "linkage_torsions/unprocessed_files")
+    processedDataPath = os.path.join(ROOTPATH, "linkage_torsions")
 
     if os.path.isdir(unprocessedDataPath):
         files = os.listdir(unprocessedDataPath)
         contains_amino_acid, sugar_sugar_only = split_initial_list_into_two_categories(
-            files
-        )
+            files)
         dict_keys = get_unique_keys_for_output_dictionary(
-            contains_amino_acid, sugar_sugar_only
-        )
+            contains_amino_acid, sugar_sugar_only)
         jsonTemplate = []
         for key in dict_keys:
             pairs_for_current_key = []
@@ -170,16 +182,18 @@ if __name__ == "__main__":
             currentDict = {"first": key, "second": pairs_for_current_key}
             jsonTemplate.append(currentDict)
 
-        exportJSON = populate_torsions(
-            jsonTemplate, contains_amino_acid, sugar_sugar_only, unprocessedDataPath
-        )
+        exportJSON = populate_torsions(jsonTemplate, contains_amino_acid,
+                                       sugar_sugar_only, unprocessedDataPath)
         print(jsonTemplate)
         with open(
-            os.path.join(processedDataPath, "torsion_database.json"),
-            "w",
-            encoding="utf-8",
+                os.path.join(processedDataPath, "torsion_database.json"),
+                "w",
+                encoding="utf-8",
         ) as export_json_file:
-            json.dump(exportJSON, export_json_file, indent=4, ensure_ascii=False)
+            json.dump(exportJSON,
+                      export_json_file,
+                      indent=4,
+                      ensure_ascii=False)
         print(
             f'Torsions database has been successfully updated, and saved locally as: {os.path.join(processedDataPath, "torsion_database.json")}'
         )

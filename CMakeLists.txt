@@ -55,11 +55,18 @@ include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${PRIVATEER_SOURCE_DIR}/cpp
                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
 
-file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json 
-    DESTINATION ${CLIBDENV})
+# file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json 
+#     DESTINATION ${CLIBDENV})
 
-file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json 
-    DESTINATION ${CLIBDENV})
+# file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json 
+#     DESTINATION ${CLIBDENV})
+
+# Copy directories
+add_custom_target(copy_resources ALL
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/data
+        ${CLIBDENV}/privateer_data
+        COMMENT "Copying Privateer Data files to ${CLIBDENV}/privateer_data")
 
 add_library(privateer_lib
             ${PRIVATEER_SOURCE_DIR}/cpp/third-party/gemmi_compilation_unit.cpp
