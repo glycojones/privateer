@@ -37,15 +37,15 @@ def _parse_json_for_grafting_instructions(uniprotIDListPath):
 def _download_and_prepare_alphafoldDB_model(uniprotID, downloadLocation):
     outputFileName = uniprotID + ".pdb"
     outputFilePath = os.path.join(downloadLocation, outputFileName)
-    requestURL = f"https://alphafold.ebi.ac.uk/files/AF-{uniprotID}-F1-model_v1.pdb"
+    requestURL = f"https://alphafold.ebi.ac.uk/files/AF-{uniprotID}-F1-model_v4.pdb"
     query = requests.get(requestURL, allow_redirects=True)
 
     outputLines = []
     downloadedLines = query.iter_lines()
     for line in downloadedLines:
         decodedLine = line.decode("utf-8")
-        if decodedLine[:5] != "MODEL":
-            outputLines.append(decodedLine)
+        # if decodedLine[:5] != "MODEL":
+        outputLines.append(decodedLine)
 
     with open(outputFilePath, "w") as file:
         file.writelines("%s\n" % l for l in outputLines)
