@@ -339,7 +339,7 @@ void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::strin
 
 ///////////////////////////////////////////////// Class GlycosylationComposition  ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds)
+void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file, bool enableHydrogenation)
 {
     if(path_to_model_file == "undefined")
     {
@@ -359,10 +359,12 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
 
     if(!mglycology.get_list_of_glycans().empty())
     {
-        if(enableHBonds)
+        if(enableHydrogenation)
+        {
+            privateer::interactions::hydrogenate_input_model(path_to_model_file, path_to_output_file);
             this->hbonds = privateer::interactions::HBondsParser(path_to_model_file, path_to_output_file);
-
-        this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file, path_to_output_file);
+            this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file, path_to_output_file);
+        }
     }
 }
 
@@ -4737,7 +4739,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::GlycosylationInteractions>(m, "GlycosylationInteractions")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_output_file")="undefined", py::arg("enableHBonds")=true)
+        .def(py::init<std::string&, std::string&, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_output_file")="undefined", py::arg("enableHydrogenation")=true)
         .def("get_path_of_model_file_used",  &pa::GlycosylationInteractions::get_path_of_model_file_used)
         .def("get_all_detected_interactions",  &pa::GlycosylationInteractions::get_all_detected_interactions)
         .def("get_all_detected_hbonds",  &pa::GlycosylationInteractions::get_all_detected_hbonds)
