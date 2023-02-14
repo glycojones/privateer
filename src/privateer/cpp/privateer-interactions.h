@@ -135,8 +135,21 @@ namespace privateer {
 					glycanSize = -1;
 
 				}
+				
+				std::string get_algorithm ( ) {
+					return this->algorithm;
+				}
+
+				void set_algorithm ( ) {
+					this->algorithm = algorithm;
+				}
+				
 				std::string get_sugar_chainID ( ) {
 					return this->sugar_chainID;
+				}
+
+				void set_sugar_chainID ( ) {
+					this->sugar_chainID = sugar_chainID;
 				}
 
 				int get_sugar_index ( ) {
@@ -256,10 +269,12 @@ namespace privateer {
 				CHPiBondsParser(std::string& input_model, std::string output_path = "undefined", std::string algorithm = "hudson");
 				std::vector<privateer::interactions::CHPiBond> get_CHPi_interactions(int glycanIndex);
 				std::vector <privateer::interactions::CHPiBond> get_stacked_residues_python(clipper::MSugar& input_sugar,
-																																										std::string = "hudson",
-																																										float = 4.5,
-																																										float = 40.0,
-																																										float = 0.0 ) const ;
+																							int sugarIndex,
+																							int glycanSize,
+																							std::string = "hudson",
+																							float = 4.5,
+																							float = 40.0,
+																							float = 0.0 ) const ;
 			private:
 				clipper::MiniMol input_model;
 				clipper::MAtomNonBond manb_object;
