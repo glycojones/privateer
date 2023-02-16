@@ -133,6 +133,11 @@ namespace privateer {
 					angle = input_angle;
 					sugarIndex = -1;
 					glycanSize = -1;
+					angle_theta_h = 0.0f;
+					angle_theta_p = 0.0f;
+					angle_phi = 0.0f;
+					distance_cx = 0.0f;
+					distance_cp = 0.0f;
 
 				}
 				
