@@ -772,15 +772,14 @@ namespace privateer
                             distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
                         }
                         
-                        std::cout << "distance: " << distance << std::endl;
-                        
                         if (distance < 4.3)
                         {
                             clipper::Vec3<clipper::ftype> ox_vector(aromatic_centre_a.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
                                                                     aromatic_centre_a.y() - ch_atoms[j].first.coord_orth().y(),
                                                                     aromatic_centre_a.z() - ch_atoms[j].first.coord_orth().z());
                             clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = get_angle(ox_vector, aromatic_vector);
+                            clipper::ftype theta = (180/3.14) * (get_angle(ox_vector, aromatic_vector));
+                            
                             if (theta <= 25.0)
                             {
                                 clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // heavy atom-hydrogen
@@ -789,7 +788,7 @@ namespace privateer
                                 clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre_a.x(), // centre of ring-hydrogen
                                                                         ch_atoms[j].second.coord_orth().y() - aromatic_centre_a.y(),
                                                                         ch_atoms[j].second.coord_orth().z() - aromatic_centre_a.z());
-                                clipper::ftype theta = get_angle(oh_vector, hx_vector);
+                                clipper::ftype phi = (180/3.14) * (get_angle(oh_vector, hx_vector));
                                 if (phi >= 120.0)
                                 {
                                     privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "plevin");
@@ -829,15 +828,14 @@ namespace privateer
                             distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
                         }
                         
-                        std::cout << "distance: " << distance << std::endl;
-                        
                         if (distance < 4.3)
                         {
                             clipper::Vec3<clipper::ftype> ox_vector(aromatic_centre_b.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
                                                                     aromatic_centre_b.y() - ch_atoms[j].first.coord_orth().y(),
                                                                     aromatic_centre_b.z() - ch_atoms[j].first.coord_orth().z());
                             clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = get_angle(ox_vector, aromatic_vector);
+                            clipper::ftype theta = (180/3.14) * (get_angle(ox_vector, aromatic_vector));
+                            
                             if (theta <= 25.0)
                             {
                                 clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // heavy atom-hydrogen
@@ -846,7 +844,7 @@ namespace privateer
                                 clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre_b.x(), // centre of ring-hydrogen
                                                                         ch_atoms[j].second.coord_orth().y() - aromatic_centre_b.y(),
                                                                         ch_atoms[j].second.coord_orth().z() - aromatic_centre_b.z());
-                                clipper::ftype theta = get_angle(oh_vector, hx_vector);
+                                clipper::ftype phi = (180/3.12) * (get_angle(oh_vector, hx_vector));
                                 if (phi >= 120.0)
                                 {
                                     privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "plevin");
@@ -888,13 +886,15 @@ namespace privateer
                             f1 = f1.lattice_copy_near(f2);
                             distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
                         }
+                        
                         if (distance < 4.3)
                         {
                             clipper::Vec3<clipper::ftype> ox_vector(aromatic_centre.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
                                                                     aromatic_centre.y() - ch_atoms[j].first.coord_orth().y(),
                                                                     aromatic_centre.z() - ch_atoms[j].first.coord_orth().z());
                             clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = get_angle(ox_vector, aromatic_vector);
+                            clipper::ftype theta = (180/3.14) * (get_angle(ox_vector, aromatic_vector));
+                            
                             if (theta <= 25.0)
                             {
                                 clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // hydrogen-heavy atom
@@ -903,7 +903,7 @@ namespace privateer
                                 clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre.x(), // centre of ring-hydrogen
                                                                         ch_atoms[j].second.coord_orth().y() - aromatic_centre.y(),
                                                                         ch_atoms[j].second.coord_orth().z() - aromatic_centre.z());
-                                clipper::ftype theta = get_angle(oh_vector, hx_vector);
+                                clipper::ftype phi = (180/3.14) * (get_angle(oh_vector, hx_vector));
                                 if (phi >= 120.0)
                                 {
                                     privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "plevin");
