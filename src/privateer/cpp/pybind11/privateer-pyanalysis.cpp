@@ -339,7 +339,7 @@ void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::strin
 
 ///////////////////////////////////////////////// Class GlycosylationComposition  ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds)
+void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds, std::string chpi_algorithm)
 {
     if(path_to_model_file == "undefined")
     {
@@ -362,7 +362,7 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
         if(enableHBonds)
             this->hbonds = privateer::interactions::HBondsParser(path_to_model_file, path_to_output_file);
 
-        this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file, path_to_output_file);
+        this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file, path_to_output_file, chpi_algorithm);
     }
 }
 
@@ -558,9 +558,11 @@ pybind11::dict privateer::pyanalysis::GlycosylationInteractions::get_chpibonds_f
             std::string stacked_residue_type = stacked_residue.type().trim();
             int stacked_residue_seqnum = stacked_residue.seqnum();
             std::string stacked_residue_pdb_id = stacked_residue.id().trim();
-            auto targetSugar = pybind11::dict("targetSugarChainID"_a=output[i].get_sugar_chainID(), "target_sugar_type"_a=target_sugar_type, "target_sugar_seqnum"_a=target_sugar_seqnum, "target_sugar_pdb_id"_a=target_sugar_pdb_id);
-            auto stackedResidue = pybind11::dict("stackedResidueChainID"_a=output[i].get_stacked_residue_chainID(), "stacked_residue_type"_a=stacked_residue_type, "stacked_residue_seqnum"_a=stacked_residue_seqnum, "stacked_residue_pdb_id"_a=stacked_residue_pdb_id);
-            auto entry = pybind11::dict("sugarIndex"_a=output[i].get_sugar_index(), "glycanSize"_a=output[i].get_glycan_size(), "interaction_angle"_a=output[i].get_angle(), "targetSugar"_a=targetSugar, "stackedResidue"_a=stackedResidue);
+            std::string target_sugar_c_atom = output[i].get_xh_pair().first.id().trim();
+            std::string glycan_type = inputGlycan.get_type();
+            auto targetSugar = pybind11::dict("targetSugarChainID"_a=output[i].get_sugar_chainID(), "target_sugar_type"_a=target_sugar_type, "target_sugar_seqnum"_a=target_sugar_seqnum, "target_sugar_pdb_id"_a=target_sugar_pdb_id, "target_sugar_c_atom"_a=target_sugar_c_atom);
+            auto stackedResidue = pybind11::dict("stackedResidueChainID"_a=output[i].get_stacked_residue_chainID(), "stacked_residue_type"_a=stacked_residue_type, "Trp_ring"_a=output[i].get_trp_ring(), "stacked_residue_seqnum"_a=stacked_residue_seqnum, "stacked_residue_pdb_id"_a=stacked_residue_pdb_id);
+            auto entry = pybind11::dict("sugarIndex"_a=output[i].get_sugar_index(), "glycanSize"_a=output[i].get_glycan_size(), "glycan_type"_a=glycan_type, "theta_angle"_a=output[i].get_angle_theta_h(), "co_distance"_a=output[i].get_distance_cx(), "cp_distance"_a=output[i].get_distance_cp(), "targetSugar"_a=targetSugar, "stackedResidue"_a=stackedResidue);
             chpi_interactions.append(entry);
         }
         result["CH_Pi"] = chpi_interactions;
@@ -4598,7 +4600,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::GlycosylationInteractions>(m, "GlycosylationInteractions")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_output_file")="undefined", py::arg("enableHBonds")=true)
+        .def(py::init<std::string&, std::string&, bool, std::string>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_output_file")="undefined", py::arg("enableHBonds")=true, py::arg("chpi_algorithm")="hudson")
         .def("get_path_of_model_file_used",  &pa::GlycosylationInteractions::get_path_of_model_file_used)
         .def("get_all_detected_interactions",  &pa::GlycosylationInteractions::get_all_detected_interactions)
         .def("get_all_detected_hbonds",  &pa::GlycosylationInteractions::get_all_detected_hbonds)

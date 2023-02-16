@@ -241,6 +241,14 @@ namespace privateer {
 					this->trp_ring = trp_ring;
 				}
 
+				std::pair<clipper::MAtom, clipper::MAtom> get_xh_pair () {
+					return xh_pair;
+				}
+				
+				void set_xh_pair ( std::pair<clipper::MAtom, clipper::MAtom> xh_pair) {
+					this->xh_pair = xh_pair;
+				}
+
 			private:
 				std::string sugar_chainID;
 				std::string stacked_residue_chainID;

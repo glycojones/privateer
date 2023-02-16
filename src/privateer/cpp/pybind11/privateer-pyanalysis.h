@@ -77,12 +77,13 @@ namespace privateer {
     {
       public:
         GlycosylationInteractions() { }
-        GlycosylationInteractions(std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds) {
+        GlycosylationInteractions(std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds, std::string chpi_algorithm) {
           this->input_path = path_to_model_file;
           this->output_path = path_to_output_file;
-          this->read_from_file(path_to_model_file, path_to_output_file, enableHBonds);
+          this->chpi_algorithm = chpi_algorithm;
+          this->read_from_file(path_to_model_file, path_to_output_file, enableHBonds, chpi_algorithm);
         }
-        void read_from_file (std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds);
+        void read_from_file (std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds, std::string chpi_algorithm);
         std::string get_path_of_model_file_used ( ) { return input_path; };
         
         pybind11::list get_all_detected_interactions();
@@ -105,6 +106,7 @@ namespace privateer {
         clipper::MiniMol input_model;
 				clipper::MAtomNonBond manb_object;
 				clipper::MGlycology mglycology;
+        std::string chpi_algorithm;
         privateer::interactions::HBondsParser hbonds;
         privateer::interactions::CHPiBondsParser chpibonds;
 
