@@ -402,7 +402,7 @@ namespace privateer
                 tmp_clash_model.insert(minimized_clashes_glycan);
 
                 
-                std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes_after_manipulation = check_for_clashes_outside_glycosidic_linkage(tmp_clash_model, converted_mglycan, input_protein_side_chain_residue, root_chain_id, chainID);
+                std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes_after_manipulation = check_for_clashes_outside_glycosidic_linkage(tmp_clash_model, minimized_clashes_glycan, input_protein_side_chain_residue, root_chain_id, chainID);
             
                 currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(ring_oxygen.coord_orth(), sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth()));
                 currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
