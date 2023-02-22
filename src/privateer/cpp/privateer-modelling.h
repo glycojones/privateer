@@ -66,7 +66,7 @@ namespace privateer {
 				Grafter(clipper::MiniMol receiving_model, clipper::MiniMol donor_model, int nThreads, bool trim_donor_when_clashes_detected, bool enable_user_messages, bool debug_output);
 				int get_number_of_glycans_detected() { return donor_glycans.size(); };
 				clipper::MiniMol& get_final_receiving_model() { return export_model; };
-				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > get_grafted_clashes() { return clashes; };
+				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > get_grafted_clashes() { return clashes; };
 				clipper::MGlycan& get_grafted_glycan() { return grafted_glycan; };
 				std::string get_grafted_glycan_chainID() { return grafted_glycan_chainID; };
 				clipper::MiniMol& get_donor_model() { return donor_model; };
@@ -83,15 +83,15 @@ namespace privateer {
 				clipper::MPolymer rotate_mglycan_until_clashes_are_minimized_parallelized(clipper::MiniMol& export_model, clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, std::vector<std::pair<clipper::MAtom, std::string>>& phiTorsionAtoms, std::vector<std::pair<clipper::MAtom, std::string>>& psiTorsionAtoms, double phiError, double psiError, clipper::String root_chain_id, clipper::String root_sugar_chain_id, bool debug_output);
 				clipper::MPolymer rotate_mglycan_until_clashes_are_minimized_singlethreaded(clipper::MiniMol& export_model, clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, std::vector<std::pair<clipper::MAtom, std::string>>& phiTorsionAtoms, std::vector<std::pair<clipper::MAtom, std::string>>& psiTorsionAtoms, double phiError, double psiError, clipper::String root_chain_id, clipper::String root_sugar_chain_id, bool debug_output);
 				std::vector<std::pair<clipper::MAtom, clipper::MAtom>> check_for_clashes_in_glycosidic_linkage(clipper::MiniMol& input_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id);
-				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > check_for_clashes_outside_glycosidic_linkage(clipper::MiniMol& input_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id);
-				clipper::MiniMol trim_graft_until_no_clashes_left(clipper::MiniMol& current_model, clipper::MGlycan& grafted_glycan, std::pair<clipper::MMonomer, clipper::String> root_residue, clipper::String graft_chain_id, std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > current_clashes);
+				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > check_for_clashes_outside_glycosidic_linkage(clipper::MiniMol& input_model, clipper::MPolymer& converted_mglycan, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id);
+				clipper::MiniMol trim_graft_until_no_clashes_left(clipper::MiniMol& current_model, clipper::MPolymer& grafted_glycan, std::pair<clipper::MMonomer, clipper::String> root_residue, clipper::String graft_chain_id, std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > current_clashes);
 
 				clipper::MiniMol get_model_with_trimmed_glycan(clipper::MiniMol& current_model, std::vector<std::pair<clipper::MMonomer, clipper::String>>& residues_to_delete);
 				std::vector<std::pair<clipper::MMonomer, clipper::String>> get_designated_residues_for_deletion(clipper::MGlycan& original_graft, clipper::MGlycan& trimmed_graft, clipper::String graft_chain_id);
 				bool check_if_residue_has_hydrogens(clipper::MMonomer residue_to_check);
 				clipper::MPolymer delete_atom_from_mglycan(clipper::MPolymer& converted_mglycan, clipper::MAtom& atom_to_be_deleted);
 
-				double get_average_distance_between_clashing_residues(std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > >& input_clashes);
+				double get_average_distance_between_clashing_residues(std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > >& input_clashes);
 				int lookup_protein_backbone_glycosylation_database( clipper::String name);
 				int lookup_glycan_type_glycosylation_database( clipper::String type);
 
@@ -124,7 +124,7 @@ namespace privateer {
 				clipper::MGlycan grafted_glycan;
 				std::string grafted_glycan_chainID;
 
-				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > clashes;
+				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes;
 
 				float graftedPhi = -42069;
 				float graftedPsi = -42069;

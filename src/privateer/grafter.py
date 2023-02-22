@@ -382,7 +382,7 @@ def glycosylate_receiving_model_using_manual_instructions(
     builder = pvtmodelling.Builder(
         receiverpath,
         donorpath,
-        nThreads,
+        -1,
         trimGlycanIfClashesDetected,
         True,
         enableUserMessages,
