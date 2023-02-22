@@ -382,7 +382,6 @@ namespace privateer {
         clipper::MGlycan::Node sugarNode;
 
         pybind11::dict sugarSummary;
-
         int sugarID;
         int glycanID;
         int sugar_seqnum;

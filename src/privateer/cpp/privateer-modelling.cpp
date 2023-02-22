@@ -69,7 +69,7 @@ namespace privateer
             this->receiving_model = receiving_model;
             this->export_model = receiving_model;
             this->trim_donor_when_clashes_detected = trim_donor_when_clashes_detected;
-            clipper::MGlycology donor_model_mgl = clipper::MGlycology(donor_model, debug_output, "undefined");
+            clipper::MGlycology donor_model_mgl = clipper::MGlycology(donor_model, false, "undefined");
             std::vector<clipper::MGlycan> list_of_glycans_from_donor = donor_model_mgl.get_list_of_glycans();
 
             if(debug_output)
@@ -1024,7 +1024,7 @@ namespace privateer
 
         std::vector<std::pair<clipper::MAtom, clipper::MAtom>> Grafter::check_for_clashes_in_glycosidic_linkage(clipper::MiniMol& input_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id)
         {
-            clipper::MGlycology mgl = clipper::MGlycology(input_model, debug_output, "undefined");
+            clipper::MGlycology mgl = clipper::MGlycology(input_model, false, "undefined");
             std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
             clipper::MGlycan grafted_mglycan;
@@ -1110,7 +1110,7 @@ namespace privateer
 
         std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > Grafter::check_for_clashes_outside_glycosidic_linkage(clipper::MiniMol& input_model, clipper::MMonomer& root_sugar, clipper::MMonomer& input_protein_side_chain_residue, clipper::String root_chain_id, clipper::String root_sugar_chain_id)
         {
-            clipper::MGlycology mgl = clipper::MGlycology(input_model, debug_output, "undefined");
+            clipper::MGlycology mgl = clipper::MGlycology(input_model, false, "undefined");
             std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
             clipper::MGlycan grafted_mglycan;
@@ -1149,14 +1149,14 @@ namespace privateer
                         int detected_chain      = neighbourhood_atoms[i].polymer();
                         int detected_monomer    = neighbourhood_atoms[i].monomer();
                         int detected_atom       = neighbourhood_atoms[i].atom();
-
+                        
+                        // Assume donor glycan has got no clashes between itself, ensure clashes are not detected between the sugars in donor glycan.
                         auto search_result = std::find_if(std::begin(sugars_in_grafted_mglycan), std::end(sugars_in_grafted_mglycan),
-                        [&input_model, &detected_chain, &detected_monomer](clipper::MSugar& sugar) {
-                            return sugar.id().trim() == input_model[detected_chain][detected_monomer].id().trim() && sugar.type().trim() == input_model[detected_chain][detected_monomer].type().trim() &&
-                                   sugar.seqnum() == input_model[detected_chain][detected_monomer].seqnum();
+                        [&input_model, &detected_chain, &detected_monomer, &root_sugar_chain_id](clipper::MSugar& sugar) {
+                            return input_model[detected_chain].id().trim() == root_sugar_chain_id;
                         });
 
-                        if(search_result == std::end(sugars_in_grafted_mglycan) && clipper::Coord_orth::length(currentSugarAtomCoord, input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) < 2.25)
+                        if(search_result == std::end(sugars_in_grafted_mglycan) && clipper::Coord_orth::length(currentSugarAtomCoord, input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) < 2.5)
                         {
                             auto previously_identified = std::find_if(std::begin(clashing_residues), std::end(clashing_residues),
                             [&](std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> >& element) {
@@ -1175,8 +1175,11 @@ namespace privateer
                             }
                         }
                         
-                        // DBG << "Detected " << input_model[detected_chain].id().trim() << "/" << input_model[detected_chain][detected_monomer].type().trim() << "-" << input_model[detected_chain][detected_monomer].id().trim()
-                            // << " with the distance of: " << clipper::Coord_orth::length(currentSugarAtomCoord, input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) << "\t\t\t" << currentSugar[atom].id().trim() << std::endl;
+                        // if (debug_output)
+                        // {
+                        //     DBG << "Detected " << input_model[detected_chain].id().trim() << "/" << input_model[detected_chain][detected_monomer].type().trim() << "-" << input_model[detected_chain][detected_monomer].id().trim()
+                        //         << " with the distance of: " << clipper::Coord_orth::length(currentSugarAtomCoord, input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) << "\t\t\t" << currentSugar[atom].id().trim() << std::endl;
+                        // }
                     }
                 }
             }

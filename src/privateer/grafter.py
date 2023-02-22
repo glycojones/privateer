@@ -3,7 +3,7 @@ import re
 import sys
 import argparse
 import requests
-import datetime
+from datetime import datetime
 import warnings
 import json
 from privateer import privateer_core as pvtcore
@@ -443,9 +443,11 @@ if __name__ == "__main__":
     dt_string = datetime.now().strftime("%d_%m_%Y-%H_%M_%S")
     if os.getenv("PRIVATEERDATA", None) is not None:
         ROOTENV = os.getenv("PRIVATEERDATA", None)
+        envbased = True
     elif os.getenv("CLIBD", None) is not None:
         ROOTENV = os.getenv("CLIBD", None)
         ROOTENV = os.path.join(ROOTENV, "privateer_data")
+        envbased = True
 
     else:
         envbased = False
