@@ -94,14 +94,15 @@ class PrivateerTorsionResultsOutputParser:
                 self.__type = "glycan"
             elif sorted(rootKeys) == sorted(expected_keys_structure):
                 glycan = item["all_torsions_in_structure"]
-                glycanItem = glycan[0]
-                glycanKeys = glycanItem.keys()
-                if sorted(glycanKeys) == sorted(expected_keys_glycan):
-                    self.__type = "structure"
-                else:
-                    raise AttributeError(
-                        f"Root structure of imported output resembles that of a glycan, but keys of individual glycans do not match.\nReceived keys {sorted(glycanKeys)}\nExpected keys {expected_keys_glycan}"
-                    )
+                if len(glycan):
+                    glycanItem = glycan[0]
+                    glycanKeys = glycanItem.keys()
+                    if sorted(glycanKeys) == sorted(expected_keys_glycan):
+                        self.__type = "structure"
+                    else:
+                        raise AttributeError(
+                            f"Root structure of imported output resembles that of a glycan, but keys of individual glycans do not match.\nReceived keys {sorted(glycanKeys)}\nExpected keys {expected_keys_glycan}"
+                        )
             else:
                 raise AttributeError(
                     f"Imported Privateer output does not match expected output from Privateer."
@@ -562,10 +563,10 @@ if __name__ == "__main__":
 
     t_3 = time.time()
 
-    if multiprocessing_enabled:
+    if parsed_structure_output is not None and multiprocessing_enabled:
         for torsion_set in parsed_structure_output:
             p1 = multiprocessing.Process(target=visualizer.plot_all,
-                                         args=(torsion_set, ))
+                                            args=(torsion_set, ))
             p1.start()
             processes.append(p1)
 
@@ -578,18 +579,25 @@ if __name__ == "__main__":
         for process in processes:
             process.join()
     else:
-        for torsion_set in parsed_structure_output:
-            visualizer.plot_all(torsion_set=torsion_set)
-            visualizer.plot_single_pair_torsions(torsion_set=torsion_set)
+        if parsed_structure_output is not None:
+            for torsion_set in parsed_structure_output:
+                visualizer.plot_all(torsion_set=torsion_set)
+                visualizer.plot_single_pair_torsions(torsion_set=torsion_set)
 
     t_4 = time.time()
 
-    print(f"Total time taken -  {t_4 - t_0} seconds")
+    if parsed_structure_output is not None:
+        print(f"Total time taken -  {t_4 - t_0} seconds")
 
-    print(
-        f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}"
-    )
-    print("Task Completed Successfully!")
+        print(
+            f"Outputting produced figures to {os.path.join(currentStructureResultsPath)}"
+        )
+        print("Task Completed Successfully!")
+    else:
+        print(f"Total time taken -  {t_4 - t_0} seconds")
+        
+        print("The script was unable to locate any sugar-sugar torsion angles or ASN-NAG sugar-amino acid torsion angle in the imported structure.\nIt is very likely that the structure does not contain any glycans or exlusively contain non N-glycans.")
 
+        print("Task Completed Without generating any torsion plots.")
 # Single thread time taken - 220 seconds / 3 minutes 40 seconds
 # Multithread time taken -  82 seconds with 5fjj / 15 seconds with 2wah
