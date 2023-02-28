@@ -2158,8 +2158,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
 
             auto search_result = std::find_if(torsions_database.begin(), torsions_database.end(), [current_torsion, linkage_number](privateer::json::TorsionsDatabase& element)
             {
-                return
-                current_torsion.first_residue_name == element.first_residue &&
+                return current_torsion.first_residue_name == element.first_residue &&
                 current_torsion.second_residue_name == element.second_residue &&
                 current_torsion.type == element.type &&
                 static_cast<std::string>(current_torsion.linkage_descriptors[linkage_number].first) == static_cast<std::string>(element.acceptor_position) &&
