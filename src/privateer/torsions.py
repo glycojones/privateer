@@ -7,7 +7,6 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from logging import root
 from typing import List, Tuple
-import random
 import matplotlib.colors as mcolors
 import matplotlib.lines as mlines
 import matplotlib.patheffects as pe
@@ -150,28 +149,28 @@ class PrivateerTorsionResultsOutputParser:
                 all_torsions = rootItem["all_torsions_in_structure"]
                 # print("All torsions = " , len(all_torsions))
                 for item in all_torsions:
-                   
-                    if (item["first_residue"] == first_unique_residue and
-                            item["second_residue"] == second_unique_residue and
-                            item["first_number"] == donor_position and 
-                            item["second_number"] == acceptor_position
-                            ):
-                        # print(item["first_residue"], item["second_residue"], item["first_number"], item["second_number"], 
+
+                    if (item["first_residue"] == first_unique_residue
+                            and item["second_residue"] == second_unique_residue
+                            and item["first_number"] == donor_position
+                            and item["second_number"] == acceptor_position):
+                        # print(item["first_residue"], item["second_residue"], item["first_number"], item["second_number"],
                         #     first_unique_residue, second_unique_residue, donor_position, acceptor_position, len(item["detected_torsions"]))
                         # print("Conditions satisfied")
-                        
+
                         detected_torsions = {
                             "glycanIndex": rootItem["glycanIndex"],
                             "WURCS": rootItem["WURCS"],
                             "glycan_torsions": item["detected_torsions"],
                         }
-                        
+
                         # print(item)
                         # print(item["first_residue"], item["second_residue"], item["first_number"], item["second_number"], first_unique_residue, second_unique_residue, donor_position, acceptor_position)
-                        # print(len(item["detected_torsions"])) 
+                        # print(len(item["detected_torsions"]))
                         # print(item)
                         # print()
-                        for index, torsion in enumerate(item["detected_torsions"]):
+                        for index, torsion in enumerate(
+                                item["detected_torsions"]):
                             item["detected_torsions"][index][
                                 "sugar_1"] = first_unique_residue
                             item["detected_torsions"][index][
@@ -193,7 +192,7 @@ class PrivateerTorsionResultsOutputParser:
                         ]
 
                         # print(glycan_torsions, len(glycan_torsions))
-                        # print(item["detected_torsions"], len(item["detected_torsions"])) 
+                        # print(item["detected_torsions"], len(item["detected_torsions"]))
                         # print()
 
                         detected_torsions = GlycanTorsion(
@@ -215,14 +214,13 @@ class PrivateerTorsionResultsOutputParser:
                                 acceptor_position=item['second_number'],
                                 database_phi=item["database_phi"],
                                 database_psi=item["database_psi"],
-                                torsions=[detected_torsions]
-                            )
+                                torsions=[detected_torsions])
                             # unique_pair.torsions.append(detected_torsions)
                             alreadyAdded = True
 
             # print(unique_pair)
             output.append(unique_pair)
-        
+
         return output
 
 
@@ -267,8 +265,6 @@ class TorsionVisualiser:
 
         torsion_list = []
 
-        import random
-
         label_list = []
 
         for glycan in torsion_set.torsions:
@@ -307,10 +303,8 @@ class TorsionVisualiser:
         sugar_2_tmp_descr = sugar_2_tmp_descr[2].split("]")
         sugar_2_tmp_descr = sugar_2_tmp_descr[0]
 
-
-        sugar_1_tmp_descr = random.randint(0,1000)
-        sugar_2_tmp_descr = random.randint(0,1000)
-
+        sugar_1_tmp_descr = random.randint(0, 1000)
+        sugar_2_tmp_descr = random.randint(0, 1000)
 
         label = (
             f"{glycan.glycanIndex} {torsion_set.sugar_1}/{sugar_2_tmp_descr}-{torsion_set.sugar_2}/{sugar_1_tmp_descr}"
@@ -578,18 +572,18 @@ if __name__ == "__main__":
     torsionsdb = pvtcore.OfflineTorsionsDatabase()
     total_torsions_in_structure = structure.get_torsions_summary(torsionsdb)
 
-    print(total_torsions_in_structure)
+    # print(total_torsions_in_structure)
 
-    # for x in total_torsions_in_structure[0]["all_torsions_in_structure"]:
-    #     print(f"{x['first_residue']}-{x['first_number']},{x['second_number']}-{x['second_residue']}\t{len(x['detected_torsions'])}")
-    #     # print(x)
+    for x in total_torsions_in_structure[0]["all_torsions_in_structure"]:
+        print(
+            f"{x['first_residue']}-{x['first_number']},{x['second_number']}-{x['second_residue']}\t{len(x['detected_torsions'])}"
+        )
+    # print(x)
 
     wrapper = PrivateerTorsionResultsOutputParser(total_torsions_in_structure)
 
     parsed_structure_output = wrapper.getSortedOutputOfTorsionsForEntireStructure(
     )
-
-    
 
     # for index in range(len(parsed_structure_output)):
 
