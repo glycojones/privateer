@@ -2158,6 +2158,9 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
 
             auto search_result = std::find_if(torsions_database.begin(), torsions_database.end(), [current_torsion, linkage_number](privateer::json::TorsionsDatabase& element)
             {
+
+                std::cout << current_torsion.linkage_descriptors[linkage_number].first << " " << current_torsion.linkage_descriptors[linkage_number].second << " " << element.acceptor_position << " " << element.donor_position << std::endl;
+
                 return current_torsion.first_residue_name == element.first_residue &&
                 current_torsion.second_residue_name == element.second_residue &&
                 current_torsion.type == element.type &&
@@ -2165,12 +2168,16 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
                 static_cast<std::string>(current_torsion.linkage_descriptors[linkage_number].second) == static_cast<std::string>(element.donor_position);
             });
 
+            std::cout << current_torsion.first_residue_name << "-" << current_torsion.linkage_descriptors[linkage_number].first << "," << 
+            current_torsion.linkage_descriptors[linkage_number].second << "-" << current_torsion.second_residue_name << " " << current_torsion.torsions.size() << std::endl;
+
             if(search_result != std::end(torsions_database))
             {
                 privateer::json::TorsionsDatabase& found_torsions_in_database = *search_result;
                 std::vector<std::pair<float, float>> database_torsions = found_torsions_in_database.torsions;
 
                 std::vector<std::pair<float, float>> current_glycan_torsions = current_torsion.torsions;
+                std::cout << "Current glycan torsions size is " << current_glycan_torsions.size() << std::endl;
                 std::vector<std::pair<clipper::MAtom, clipper::MAtom>> current_glycan_atoms = current_torsion.atoms;
 
                 auto database_psi = pybind11::list();

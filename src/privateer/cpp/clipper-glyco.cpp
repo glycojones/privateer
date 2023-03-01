@@ -4218,7 +4218,11 @@ void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::
     {
         auto search_result = std::find_if(all_torsions_within_mglycan.begin(), all_torsions_within_mglycan.end(), [first_residue_name, second_residue_name](MGlycanTorsionSummary& element)
         {
-            return first_residue_name == element.first_residue_name && second_residue_name == element.second_residue_name;
+            return 
+            first_residue_name == element.first_residue_name && 
+            second_residue_name == element.second_residue_name 
+            // NEED TO ADD CHECK FOR CORRECT LINKAGE DESIGNATION HERE
+            ;
         });
 
         if(search_result != std::end(all_torsions_within_mglycan))
