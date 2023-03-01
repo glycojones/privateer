@@ -2159,7 +2159,7 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
             auto search_result = std::find_if(torsions_database.begin(), torsions_database.end(), [current_torsion, linkage_number](privateer::json::TorsionsDatabase& element)
             {
 
-                std::cout << current_torsion.linkage_descriptors[linkage_number].first << " " << current_torsion.linkage_descriptors[linkage_number].second << " " << element.acceptor_position << " " << element.donor_position << std::endl;
+                // std::cout << current_torsion.linkage_descriptors[linkage_number].first << " " << current_torsion.linkage_descriptors[linkage_number].second << " " << element.acceptor_position << " " << element.donor_position << std::endl;
 
                 return current_torsion.first_residue_name == element.first_residue &&
                 current_torsion.second_residue_name == element.second_residue &&
@@ -2190,17 +2190,35 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
                     database_psi.append(database_torsions[j].second);
                 }
 
-                for(int j = 0; j < current_glycan_torsions.size(); j++)
-                {
-                    float currentPhi = current_glycan_torsions[j].first;
-                    float currentPsi = current_glycan_torsions[j].second;
-                    std::string current_bond_descr = current_glycan_atoms[j].first.id().trim() + "-" + current_glycan_atoms[j].second.id().trim();
-                    auto torsion_dict = pybind11::dict("Phi"_a=currentPhi, "Psi"_a=currentPsi, "glycan_bond"_a=current_bond_descr);
-                    glycan_torsions.append(torsion_dict);
-                }
+                std::string linkage_discriptor_first = current_torsion.linkage_descriptors[linkage_number].first;
+                std::string linkage_discriptor_second = current_torsion.linkage_descriptors[linkage_number].second;
+
+                std::cout << "Current torsion size " << current_torsion.combined_torsions.size() << std::endl;
+
+                auto torsion_search_result = std::find_if(current_torsion.combined_torsions.begin(), current_torsion.combined_torsions.end(), [linkage_discriptor_first, linkage_discriptor_second](std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>>& element) { 
+                    return linkage_discriptor_first == element.first.first && 
+                    linkage_discriptor_second == element.first.second;
+                });
+
+                if (torsion_search_result != std::end(current_torsion.combined_torsions)) { 
+                    
+                    std::cout << "Reached here" << std::endl;
+                    std::vector<std::pair<float, float>> returned_torsions = current_torsion.combined_torsions[torsion_search_result-current_torsion.combined_torsions.begin()].second; 
+
+                    for(int j = 0; j < returned_torsions.size(); j++)
+                        {
+                            float currentPhi = returned_torsions[j].first;
+                            float currentPsi = returned_torsions[j].second;
+                            std::string current_bond_descr = current_glycan_atoms[j].first.id().trim() + "-" + current_glycan_atoms[j].second.id().trim();
+                            auto torsion_dict = pybind11::dict("Phi"_a=currentPhi, "Psi"_a=currentPsi, "glycan_bond"_a=current_bond_descr);
+                            glycan_torsions.append(torsion_dict);
+                        }
+                } 
+              
 
                 std::string root_string = glycan.get_root_for_filename();
-                auto current_pair_dict = pybind11::dict("first_residue"_a=std::string(current_torsion.first_residue_name), "second_residue"_a=std::string(current_torsion.second_residue_name), "first_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].first), "second_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].second), "root_descr"_a=root_string, "detected_torsions"_a=glycan_torsions, "database_phi"_a=database_phi, "database_psi"_a=database_psi);
+                auto current_pair_dict = pybind11::dict("first_residue"_a=std::string(current_torsion.first_residue_name), "second_residue"_a=std::string(current_torsion.second_residue_name), "first_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].first), "second_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].second), "root_descr"_a=root_string, "detected_torsions"_a=glycan_torsions);
+                //  "database_phi"_a=database_phi, "database_psi"_a=database_psi);
                 output.append(current_pair_dict);
             }
         }

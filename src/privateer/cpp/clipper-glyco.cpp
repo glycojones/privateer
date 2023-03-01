@@ -4233,6 +4233,25 @@ void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::
             found_torsion_description.linkage_descriptors.push_back(std::make_pair(donorPosition, acceptorPosition));
             found_torsion_description.atoms.push_back(std::make_pair(first_atom, second_atom));
             found_torsion_description.torsions.push_back(std::make_pair(Phi, Psi));
+
+            auto torsion_seach_result = std::find_if(found_torsion_description.combined_torsions.begin(), found_torsion_description.combined_torsions.end(), [donorPosition, acceptorPosition](std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>>& element)
+                {
+                    std::cout << donorPosition << " " << element.first.first << " " << acceptorPosition << " " << element.first.second << std::endl;
+                    return donorPosition == element.first.first && 
+                    acceptorPosition == element.first.second;
+                });
+
+            if (torsion_seach_result != std::end(found_torsion_description.combined_torsions)) { 
+                std::cout << "4262 reached here" << std::endl;
+                found_torsion_description.combined_torsions[torsion_seach_result-found_torsion_description.combined_torsions.begin()].second.push_back(std::make_pair(Phi, Psi));
+            }
+            else { 
+                std::pair<float,float> tmp_torsions = std::make_pair(Phi, Psi);
+                std::vector<std::pair<float,float>> tmp_torsion_vector; 
+                tmp_torsion_vector.push_back(tmp_torsions);
+                found_torsion_description.combined_torsions.push_back(std::make_pair(std::make_pair(donorPosition, acceptorPosition),tmp_torsion_vector));
+            }
+
         }
         else
         {
@@ -4249,6 +4268,13 @@ void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::
             new_torsion.first_residue_name = first_residue_name;
             new_torsion.second_residue_name = second_residue_name;
             new_torsion.atoms.push_back(std::make_pair(first_atom, second_atom));
+            // If donorPosition adn acceptorPositon are in linkkage_ddesc
+            // Go to vector vector and add to that one not the top level vector 
+
+
+            std::vector<std::pair<float,float>> tmp_vector = {std::make_pair(Phi, Psi)};
+            new_torsion.combined_torsions.push_back(std::make_pair(std::make_pair(donorPosition, acceptorPosition), tmp_vector));
+            
             new_torsion.linkage_descriptors.push_back(std::make_pair(donorPosition, acceptorPosition));
             new_torsion.torsions.push_back(std::make_pair(Phi, Psi));
             all_torsions_within_mglycan.push_back(new_torsion);

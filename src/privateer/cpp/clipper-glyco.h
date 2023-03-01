@@ -578,6 +578,7 @@ namespace clipper
                 clipper::String second_residue_name; // acceptorResidue
                 std::vector<std::pair<clipper::MAtom, clipper::MAtom>> atoms; // .first = donorAtom, .second = acceptorAtom
                 std::vector<std::pair<std::string, std::string>> linkage_descriptors; // .first = donorPosition, .second = acceptorPosition
+                std::vector<std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>>> combined_torsions; // This needs to be changed 
                 std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
             };
 

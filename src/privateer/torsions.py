@@ -578,9 +578,11 @@ if __name__ == "__main__":
     torsionsdb = pvtcore.OfflineTorsionsDatabase()
     total_torsions_in_structure = structure.get_torsions_summary(torsionsdb)
 
-    for x in total_torsions_in_structure[0]["all_torsions_in_structure"]:
-        print(f"{x['first_residue']}-{x['first_number']},{x['second_number']}-{x['second_residue']}\t{len(x['detected_torsions'])}")
-        # print(x)
+    print(total_torsions_in_structure)
+
+    # for x in total_torsions_in_structure[0]["all_torsions_in_structure"]:
+    #     print(f"{x['first_residue']}-{x['first_number']},{x['second_number']}-{x['second_residue']}\t{len(x['detected_torsions'])}")
+    #     # print(x)
 
     wrapper = PrivateerTorsionResultsOutputParser(total_torsions_in_structure)
 
