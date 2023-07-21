@@ -10,8 +10,10 @@
 #include "gemmi/cif.hpp"
 #include "gemmi/calculate.hpp"
 #include "gemmi/to_cif.hpp"  // for write_cif_to_stream
-#include <pybind11/pybind11.h>
-#include <pybind11/stl.h>
+#if !defined(__EMSCRIPTEN__)
+// #include <pybind11/pybind11.h>
+// #include <pybind11/stl.h>
+#endif
 #include <string>
 #include <locale>
 #include <fstream>
@@ -81,8 +83,9 @@ namespace privateer {
         float get_torsion_from_conformer (std::string a1, std::string a2, std::string a3, std::string a4);
         void add_inverted_torsions ();
         void print_torsion_restraints ();
-        pybind11::dict get_bond (std::string atom_1, std::string atom_2);
-
+        #if !defined(__EMSCRIPTEN__)
+        // pybind11::dict get_bond (std::string atom_1, std::string atom_2);
+#endif
       private:
         gemmi::ChemComp chemical_component;
         gemmi::cif::Document cif_document;

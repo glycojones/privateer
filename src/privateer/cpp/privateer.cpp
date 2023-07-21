@@ -31,6 +31,11 @@
 // #include "privateer-interactions.h"
 #include <thread>
 #include <future>
+
+// #if defined(__EMSCRIPTEN__)
+#include <emscripten.h>
+// #endif
+
 #include <clipper/clipper.h>
 #include <clipper/clipper-cif.h>
 #include <clipper/clipper-mmdb.h>
@@ -42,6 +47,13 @@
 
 
 #define DBG std::cout << "[" << __FUNCTION__ << "] - "
+
+#ifdef NODERAWFS
+#define CWD ""
+#else
+#define CWD "/working/"
+#endif
+
 
 clipper::String program_version = "MKV";
 using clipper::data32::F_sigF;
@@ -55,6 +67,16 @@ typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
 int main(int argc, char** argv)
 {
+
+    #ifndef NODERAWFS
+        // mount the current folder as a NODEFS instance
+        // inside of emscripten
+        EM_ASM(
+                FS.mkdir('/working');
+                FS.mount(NODEFS, { root: '.' }, '/working');
+              );
+    #endif
+
     CCP4Program prog( "Privateer", program_version.c_str(), "$Date: 2021/02/06" );
 
     prog.set_termination_message( "Failed" );
@@ -153,21 +175,24 @@ int main(int argc, char** argv)
         {
           if ( ++arg < args.size() )
           {
-            output_mapcoeffs_mtz = args[arg];
+            // output_mapcoeffs_mtz = args[arg];
+            output_mapcoeffs_mtz = std::string(CWD) + args[arg];
             output_mtz = true;
           }
         }
         else if ( args[arg] == "-pdbin" )
         {
           if ( ++arg < args.size() )
-            input_model = args[arg];
+            // input_model = args[arg];
+            input_model = std::string(CWD) + args[arg];
         }
         else if ( args[arg] == "-mtzin" )
         {
           if ( ++arg < args.size() )
           {
             useMTZ = true;
-            input_reflections_mtz = args[arg];
+            // input_reflections_mtz = args[arg];
+            input_reflections_mtz = std::string(CWD) + args[arg];
           }
         }
         else if ( args[arg] == "-mapin" )
@@ -175,7 +200,8 @@ int main(int argc, char** argv)
           if ( ++arg < args.size() )
           {
             useMRC = true;
-            input_cryoem_map = args[arg];
+            // input_cryoem_map = args[arg];
+            input_cryoem_map = std::string(CWD) + args[arg];
           }
         }
         else if ( args[arg] == "-resolution" )
@@ -194,7 +220,8 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-cifin" )
         {
           if ( ++arg < args.size() )
-            input_reflections_cif = args[arg];
+            // input_reflections_cif = args[arg];
+            input_reflections_cif = std::string(CWD) + args[arg];
         }
         else if ( args[arg] == "-list" )
         {
@@ -301,7 +328,8 @@ int main(int argc, char** argv)
             if(clipper::String(args[arg])[0] != '-')
             {
               ipwurcsjson = args[arg];
-              std::string fileName = ipwurcsjson.tail();
+            //   std::string fileName = ipwurcsjson.tail();
+              std::string fileName = std::string(CWD) + ipwurcsjson.tail();
               std::string fileExtension = fileName.substr( fileName.length() - 5 );
 
               if (fileExtension != ".json" || fileExtension.empty() || fileExtension.length() != 5)

@@ -1,0 +1,67 @@
+#!/bin/sh
+
+mkdir -p checkout
+cd checkout
+
+if [ -d "libccp4" ]; then
+    echo "Found libccp4"
+else
+    echo "Checking out libccp4"
+    bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/libccp4/trunk/ libccp4
+    echo
+fi 
+
+
+if [ -d "clipper" ]; then
+    echo "Found clipper"
+else
+    echo "Checking out clipper"
+    bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/clipper/trunk/ clipper
+    echo
+fi 
+
+if [ -d "mmdb2" ]; then
+    echo "Found mmdb2"
+else
+echo "Checking out mmdb2"
+bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/mmdb2/trunk/ mmdb2
+echo
+fi
+
+if [ -d "ccp4srs" ]; then 
+    echo "Found ccp4srs"
+else 
+    echo "Checking out ccp4srs"
+    bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/ccp4srs/trunk/ ccp4srs
+    echo
+fi
+
+if [ -d "gemmi" ]; then
+    echo "Found gemmi"
+else
+echo "Checking out gemmi"
+git clone https://github.com/project-gemmi/gemmi.git gemmi
+cd gemmi
+git checkout v0.5.8
+cd ..
+echo
+echo "Unpacking gemmi v0.5.8"
+tar xf gemmi-v0.5.8.tar.gz
+ln -s gemmi-0.5.8 gemmi
+echo
+fi
+
+if [ -d "fftw-2.1.5" ]; then
+    echo "Found fftw-2.1.5"
+else
+
+echo "Downloading out fftw-2.1.5"
+curl -L http://www.fftw.org/fftw-2.1.5.tar.gz -o fftw-2.1.5.tar.gz
+echo
+echo "Unpacking fftw-2.1.5"
+tar xf fftw-2.1.5.tar.gz
+echo
+fi
+# patch -p0 < ../patches/privateer-emscripten.patch
+
+cd ..

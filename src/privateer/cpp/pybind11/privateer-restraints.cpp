@@ -6,8 +6,9 @@
 // The University of York
 
 #include "privateer-restraints.h"
-
-using namespace pybind11::literals;
+// if !defined(__EMSCRIPTEN__)
+// using namespace pybind11::literals;
+// #endif
 
 std::string privateer::restraints::check_monlib_access ( ) {
 
@@ -437,22 +438,24 @@ void privateer::restraints::CarbohydrateDictionary::print_torsion_restraints () 
   }
 }
 
-// This function is similar to gemmi's but returns a standard python object
-pybind11::dict privateer::restraints::CarbohydrateDictionary::get_bond (std::string atom_1, std::string atom_2) {
+// #if !defined(__EMSCRIPTEN__)
+// // This function is similar to gemmi's but returns a standard python object
+// pybind11::dict privateer::restraints::CarbohydrateDictionary::get_bond (std::string atom_1, std::string atom_2) {
 
-  for ( auto bond : this->chemical_component.rt.bonds ) {
-    if (( bond.id1 == atom_1 ) && (bond.id2 == atom_2)) {
-      auto result = pybind11::dict ("length"_a=bond.value, "esd"_a=bond.esd);
-      return result;
-    }
-    else if (( bond.id1 == atom_2 ) && (bond.id2 == atom_1)) {
-      auto result = pybind11::dict ("length"_a=bond.value, "esd"_a=bond.esd);
-      return result;
-    }
-  }
-  auto result = pybind11::dict ("length"_a="", "esd"_a="");
-  return result;
-}
+//   for ( auto bond : this->chemical_component.rt.bonds ) {
+//     if (( bond.id1 == atom_1 ) && (bond.id2 == atom_2)) {
+//       auto result = pybind11::dict ("length"_a=bond.value, "esd"_a=bond.esd);
+//       return result;
+//     }
+//     else if (( bond.id1 == atom_2 ) && (bond.id2 == atom_1)) {
+//       auto result = pybind11::dict ("length"_a=bond.value, "esd"_a=bond.esd);
+//       return result;
+//     }
+//   }
+//   auto result = pybind11::dict ("length"_a="", "esd"_a="");
+//   return result;
+// }
+// #endif
 // End CarbohydrateDictionary class
 
 
@@ -501,35 +504,35 @@ void privateer::restraints::sign_library_header() {
 
 }
 
-namespace py = pybind11;
+// namespace py = pybind11;
 namespace pr = privateer::restraints;
 
-void init_restraints(py::module& m)
-{
-  // m.doc() = "Python module for patching and modifying .cif files through Privateer's Python interface";
+// void init_restraints(py::module& m)
+// {
+//   // m.doc() = "Python module for patching and modifying .cif files through Privateer's Python interface";
 
-  m.def("check_monlib_access",
-    &pr::check_monlib_access,
-    "Checks if the CCP4 monomer library is accessible via environment, returns either a valid pathname or an empty string" );
+//   m.def("check_monlib_access",
+//     &pr::check_monlib_access,
+//     "Checks if the CCP4 monomer library is accessible via environment, returns either a valid pathname or an empty string" );
   
-  pybind11::class_<pr::CarbohydrateDictionary>(m, "CarbohydrateDictionary")
-          .def(pybind11::init<>())
-          .def(pybind11::init<std::string&>())
-          .def("get_chemcomp_id",  &pr::CarbohydrateDictionary::get_chemcomp_id)
-          .def("read_from_file",   &pr::CarbohydrateDictionary::read_from_file)
-          .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib)
-          .def("write_to_file",    &pr::CarbohydrateDictionary::write_to_file)
-          .def("get_bond",         &pr::CarbohydrateDictionary::get_bond)
-          .def("add_inverted_torsions", &pr::CarbohydrateDictionary::add_inverted_torsions)
-          .def("print_torsion_restraints", &pr::CarbohydrateDictionary::print_torsion_restraints)
-          .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal)
-          .def("restrain_rings_unimodal_from_conformer", &pr::CarbohydrateDictionary::restrain_rings_unimodal_from_conformer);
+//   pybind11::class_<pr::CarbohydrateDictionary>(m, "CarbohydrateDictionary")
+//           .def(pybind11::init<>())
+//           .def(pybind11::init<std::string&>())
+//           .def("get_chemcomp_id",  &pr::CarbohydrateDictionary::get_chemcomp_id)
+//           .def("read_from_file",   &pr::CarbohydrateDictionary::read_from_file)
+//           .def("read_from_monlib", &pr::CarbohydrateDictionary::read_from_monlib)
+//           .def("write_to_file",    &pr::CarbohydrateDictionary::write_to_file)
+//           .def("get_bond",         &pr::CarbohydrateDictionary::get_bond)
+//           .def("add_inverted_torsions", &pr::CarbohydrateDictionary::add_inverted_torsions)
+//           .def("print_torsion_restraints", &pr::CarbohydrateDictionary::print_torsion_restraints)
+//           .def("restrain_rings_unimodal", &pr::CarbohydrateDictionary::restrain_rings_unimodal)
+//           .def("restrain_rings_unimodal_from_conformer", &pr::CarbohydrateDictionary::restrain_rings_unimodal_from_conformer);
 
-pybind11::class_<pr::CarbohydrateLibrary>(m, "CarbohydrateLibrary")
-          .def(pybind11::init<>())
-          .def(pybind11::init<std::string&>())
-          .def("read_from_file",    &pr::CarbohydrateLibrary::read_from_file)
-          .def("write_to_file",     &pr::CarbohydrateLibrary::write_to_file)
-          .def("number_of_entries", &pr::CarbohydrateLibrary::number_of_entries)
-          .def("add_dictionary",    &pr::CarbohydrateLibrary::add_dictionary);
-}
+// pybind11::class_<pr::CarbohydrateLibrary>(m, "CarbohydrateLibrary")
+//           .def(pybind11::init<>())
+//           .def(pybind11::init<std::string&>())
+//           .def("read_from_file",    &pr::CarbohydrateLibrary::read_from_file)
+//           .def("write_to_file",     &pr::CarbohydrateLibrary::write_to_file)
+//           .def("number_of_entries", &pr::CarbohydrateLibrary::number_of_entries)
+//           .def("add_dictionary",    &pr::CarbohydrateLibrary::add_dictionary);
+// }

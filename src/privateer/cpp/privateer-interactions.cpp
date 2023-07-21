@@ -84,7 +84,7 @@ namespace privateer
             catch (std::exception &e)
             {
                 std::fprintf(stderr, "ERROR: %s\n", e.what());
-                throw stderr;
+                // throw stderr;
             }
         }
 
