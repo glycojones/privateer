@@ -273,10 +273,16 @@ namespace privateer {
 				clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
 				clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
 				clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon );
+				float calculate_cp_distance ( clipper::Coord_orth& c1, clipper::Coord_orth& c2, float threshold);
 		};
 
 		class CHPiBondsParser
 		{
+			
+			typedef std::vector <privateer::interactions::CHPiBond> chpibonds;
+	
+			enum algorithm_type {HUDSON, PLEVIN};
+			
 			public:
 				CHPiBondsParser() { }
 				CHPiBondsParser(std::string& input_model, std::string output_path = "undefined", std::string algorithm = "hudson");
