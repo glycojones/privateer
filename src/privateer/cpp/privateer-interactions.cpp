@@ -294,7 +294,8 @@ namespace privateer
                                                                                                                             std::string algorithm,
                                                                                                                             float distance,
                                                                                                                             float theta,
-                                                                                                                            float phi) const
+                                                                                                                            float phi,
+                                                                                                                            std::string sugarFace) const
     {
         std::vector<std::pair<clipper::MAtom, clipper::MAtom>> ch_atoms;
         std::vector<clipper::Vec3<clipper::ftype>> c_to_h_vectors;
@@ -319,13 +320,13 @@ namespace privateer
 
         // Find the pairs of carbon and hydrogen atoms based on the sugar type
         auto it = sugarToAtomPairs.find(sugarType);
-        if (it != sugarToAtomPairs.end())
+        if (sugarToAtomPairs.find(sugarType) != sugarToAtomPairs.end())
         {
             const std::vector<std::pair<std::string, std::string>>& atomPairs = it->second;
 
             for (const auto& carbonHydrogenPair : atomPairs)
             {
-                // Find the specified carbon and hydrogen atoms in the input_sugar molecule
+                // Find the specified carbon and hydrogen atoms
                 std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find(carbonHydrogenPair.first, clipper::MM::ANY),
                                                                input_sugar.find(carbonHydrogenPair.second, clipper::MM::ANY));
 
@@ -495,9 +496,10 @@ namespace privateer
                                     
                                     if (cp_distance <= 2.0)
                                     {
-                                        std::cout << get_sugar_face(input_sugar, ch_atoms) << std::endl;
+                                        sugarFace = get_sugar_face(input_sugar, ch_atoms);
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
+                                        the_interaction.set_sugar_face(sugarFace);
                                         the_interaction.set_glycan_size(glycanSize);
                                         the_interaction.set_distance_cp(cp_distance);
                                         the_interaction.set_angle_theta_h(theta);

@@ -138,6 +138,7 @@ namespace privateer {
 					angle_phi = 0.0f;
 					distance_cx = 0.0f;
 					distance_cp = 0.0f;
+					sugarFace = "β";
 
 				}
 				
@@ -254,6 +255,14 @@ namespace privateer {
 					this->xh_pair = xh_pair;
 				}
 
+				std::string get_sugar_face ( ) {
+					return this->sugarFace;
+				}
+
+				void set_sugar_face ( std::string sugar_face ) {
+					this->sugarFace = sugar_face;
+				}
+
 			private:
 				std::string sugar_chainID;
 				std::string stacked_residue_chainID;
@@ -269,6 +278,7 @@ namespace privateer {
 				float angle_phi;
 				float distance_cx;
 				float distance_cp;
+				std::string sugarFace;
 				std::string trp_ring; // For TRP exclusively, A + B
 				clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
 				clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
@@ -293,7 +303,8 @@ namespace privateer {
 																							std::string = "hudson",
 																							float = 4.5,
 																							float = 40.0,
-																							float = 0.0 ) const ;
+																							float = 0.0,
+																							std::string sugarFace = "β") const ;
 			private:
 				clipper::MiniMol input_model;
 				clipper::MAtomNonBond manb_object;
