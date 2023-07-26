@@ -84,7 +84,7 @@ namespace privateer
             catch (std::exception &e)
             {
                 std::fprintf(stderr, "ERROR: %s\n", e.what());
-                throw stderr;
+                // throw stderr;
             }
         }
 
@@ -246,6 +246,48 @@ namespace privateer
         return vector;
     }
 
+    std::string get_sugar_face(clipper::MSugar &input_sugar, std::vector<std::pair<clipper::MAtom, clipper::MAtom>> &ch_atoms)
+    {
+        std::string sugar_face = "β";
+        std::string atom_id = ch_atoms[0].first.id();
+
+        std::vector<std::string> aldopyranose_alpha_face = {" C1 ", "C3", "C5"}; // find way to get rid of spaces
+        std::vector<std::string> ketopyranose_alpha_face = {"C4", "C6"};
+        std::vector<std::string> xyp_alpha_face = {"C1B", "C3B", "C5B2"};
+        std::vector<std::string> xys_alpha_face = {"C3", "C51"};
+        
+        if (input_sugar.type_of_sugar() == "beta-D-aldopyranose" || input_sugar.type_of_sugar() == "beta-L-aldopyranose" || input_sugar.type_of_sugar() == "alpha-D-aldopyranose" || input_sugar.type_of_sugar() == "alpha-L-aldopyranose")
+        {
+            if (std::find(aldopyranose_alpha_face.begin(), aldopyranose_alpha_face.end(), atom_id) != aldopyranose_alpha_face.end())
+            {
+                // std::cout << "sugar face is alpha" << std::endl;
+                sugar_face = "α";
+            }
+        }
+        else if (input_sugar.type_of_sugar() == "beta-L-ketopyranose" || input_sugar.type_of_sugar() == "alpha-L-ketopyranose")
+        {
+            if (std::find(ketopyranose_alpha_face.begin(), ketopyranose_alpha_face.end(), atom_id) != ketopyranose_alpha_face.end())
+            {
+                sugar_face = "α";
+            }
+        }
+        else if (input_sugar.type_of_sugar() == "XYP")
+        {
+            if (std::find(xyp_alpha_face.begin(), xyp_alpha_face.end(), atom_id) != xyp_alpha_face.end())
+            {
+                sugar_face = "α";
+            }
+        }
+        else if (input_sugar.type_of_sugar() == "XYS")
+        {
+            if (std::find(xys_alpha_face.begin(), xys_alpha_face.end(), atom_id) != xys_alpha_face.end())
+            {
+                sugar_face = "α";
+            }
+        }
+        return sugar_face;
+    }
+
     std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_stacked_residues_python(   clipper::MSugar &input_sugar,
                                                                                                                             int sugarIndex,
                                                                                                                             int glycanSize,
@@ -261,129 +303,41 @@ namespace privateer
         clipper::Coord_orth centre_apolar = input_sugar.ring_centre();
         std::vector<privateer::interactions::CHPiBond> results;
 
-        if (input_sugar.type_of_sugar() == "beta-D-aldopyranose" || input_sugar.type_of_sugar() == "beta-L-aldopyranose")
+        std::unordered_map<std::string, std::vector<std::pair<std::string, std::string>>> sugarToAtomPairs = 
         {
+        {"beta-D-aldopyranose", {{"C1", "H1 "}, {"C3", "H3 "}, {"C5", "H5 "}}},
+        {"beta-L-aldopyranose", {{"C1", "H1 "}, {"C3", "H3 "}, {"C5", "H5 "}}},
+        {"alpha-D-aldopyranose", {{"C3", "H3 "}, {"C5", "H5 "}}},
+        {"alpha-L-aldopyranose", {{"C3", "H3 "}, {"C5", "H5 "}}},
+        {"beta-L-ketopyranose", {{"C4", "H4"}, {"C6", "H6 "}}},
+        {"alpha-L-ketopyranose", {{"C4", "H4"}, {"C6", "H6 "}}},
+        {"XYP", {{"C1B", "H1B"}, {"C3B", "H3B"}, {"C5B", "H5B2"}}},
+        {"XYS", {{"C3", "H3 "}, {"C5", "H51"}}}
+        };
+
+        std::string sugarType = input_sugar.type_of_sugar();
+
+        // Find the pairs of carbon and hydrogen atoms based on the sugar type
+        auto it = sugarToAtomPairs.find(sugarType);
+        if (it != sugarToAtomPairs.end())
+        {
+            const std::vector<std::pair<std::string, std::string>>& atomPairs = it->second;
+
+            for (const auto& carbonHydrogenPair : atomPairs)
             {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C1", clipper::MM::ANY),
-                                                               input_sugar.find("H1 ", clipper::MM::ANY));
-                
+                // Find the specified carbon and hydrogen atoms in the input_sugar molecule
+                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find(carbonHydrogenPair.first, clipper::MM::ANY),
+                                                               input_sugar.find(carbonHydrogenPair.second, clipper::MM::ANY));
+
                 vector = get_sugar_ch_coords(pair);
                 ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-                std::cout<< "beta-d or L-aldopyranose, " << input_sugar.type() << std::endl;
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3", clipper::MM::ANY),
-                                                               input_sugar.find("H3 ", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5", clipper::MM::ANY),
-                                                               input_sugar.find("H5 ", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
+                c_to_h_vectors.push_back(vector);
             }
         }
-        else if (input_sugar.type_of_sugar() == "alpha-D-aldopyranose")
+        else
         {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3", clipper::MM::ANY),
-                                                               input_sugar.find("H3 ", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-                std::cout<< "alpha-aldopyranose, " << input_sugar.type() << std::endl;
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5", clipper::MM::ANY),
-                                                               input_sugar.find("H5 ", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type_of_sugar() == "alpha-L-aldopyranose")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3", clipper::MM::ANY),
-                                                               input_sugar.find("H3 ", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-                std::cout<< "alpha-L-aldopyranose, " << input_sugar.type() << std::endl;
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5", clipper::MM::ANY),
-                                                               input_sugar.find("H5 ", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type_of_sugar() == "beta-L-ketopyranose" || input_sugar.type_of_sugar() == "alpha-L-ketopyranose")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C4", clipper::MM::ANY),
-                                                               input_sugar.find("H4", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-                std::cout<< "beta or alpha-L-ketopyranose, " << input_sugar.type() << std::endl;
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C6", clipper::MM::ANY),
-                                                               input_sugar.find("H6 ", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type().trim() == "XYP")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C1B", clipper::MM::ANY),
-                                                               input_sugar.find("H1B", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3B", clipper::MM::ANY),
-                                                               input_sugar.find("H3B", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5B", clipper::MM::ANY),
-                                                               input_sugar.find("H5B2", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type().trim() == "XYS")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3", clipper::MM::ANY),
-                                                               input_sugar.find("H3 ", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5", clipper::MM::ANY),
-                                                               input_sugar.find("H51", clipper::MM::ANY));
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                // c_to_h_vectors.push_back(vector);
-            }
-        }
-        else // this monosaccharide is unsupported, return empty results
             return results;
+        }
 
         // std::cout << "Centre_apolar output" << centre_apolar.x() << " " << centre_apolar.y() << " " << centre_apolar.z() << std::endl;
         const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(centre_apolar, 5.0);
@@ -541,6 +495,7 @@ namespace privateer
                                     
                                     if (cp_distance <= 2.0)
                                     {
+                                        std::cout << get_sugar_face(input_sugar, ch_atoms) << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_glycan_size(glycanSize);
