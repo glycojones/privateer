@@ -1341,7 +1341,7 @@ int main(int argc, char** argv)
         if ( enable_torsions_for.size() > 0 )
         {
             privateer::util::write_refmac_keywords ( enable_torsions_for );
-            privateer::util::write_libraries( enable_torsions_for );
+            // privateer::util::write_libraries( enable_torsions_for );
         }
 
         if ( produce_external_restraints ) {
@@ -3412,7 +3412,7 @@ int main(int argc, char** argv)
     if ( enable_torsions_for.size() > 0 )
     {
         privateer::util::write_refmac_keywords ( enable_torsions_for );
-        privateer::util::write_libraries( enable_torsions_for );
+        // privateer::util::write_libraries( enable_torsions_for );
     }
 
     if ( produce_external_restraints ) {

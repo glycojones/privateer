@@ -18,8 +18,8 @@
 #include <clipper/clipper-ccp4.h>
 #include <clipper/clipper-contrib.h>
 #include <clipper/clipper-minimol.h>
-#include <ccp4srs/ccp4srs_manager.h>
-#include <ccp4srs/ccp4srs_defs.h>
+// #include <ccp4srs/ccp4srs_manager.h>
+// #include <ccp4srs/ccp4srs_defs.h>
 #include "privateer-restraints.h"
 #include "privateer-interactions.h"
 
