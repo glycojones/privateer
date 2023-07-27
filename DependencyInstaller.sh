@@ -178,8 +178,8 @@ rm -rf clipper
 fi
 mkdir clipper
 cd clipper
-bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/clipper/trunk/
-cd trunk
+bzr checkout http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/clipper/clipper_gemmi/
+cd clipper_gemmi
 patch -p0 < $dependencyDir/localfftw2_clipper.patch
  CC=$GCC CXX=$GPLUSPLUS ./configure CXXFLAGS='-g -O2 -w -std=c++11' \
  CCFLAGS='-g -O2 -w' \
