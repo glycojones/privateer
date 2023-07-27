@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.12)
 project(privateer VERSION 0.5 LANGUAGES C CXX)
 
 SET(PRIVATEER_CC_FLAGS "-g -O0 -w")
-SET(PRIVATEER_CXX_FLAGS "-g -O2 -w -fwasm-exceptions -I${CMAKE_INSTALL_PREFIX}/include")
+SET(PRIVATEER_CXX_FLAGS "-g -O0 -w -fwasm-exceptions -I${CMAKE_INSTALL_PREFIX}/include")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PRIVATEER_CC_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS}")
 
@@ -21,6 +21,9 @@ add_link_options(-sDEFAULT_PTHREAD_STACK_SIZE=2MB -sSTACK_SIZE=5MB)
 
 set(CLIBDENV $ENV{CLIBD})
 
+# find_package(zlib)
+# add_subdirectory(checkout/zlib)
+
 add_subdirectory(ccp4)
 add_subdirectory(rfftw)
 add_subdirectory(fftw)
@@ -33,7 +36,9 @@ add_subdirectory(clipper/cns)
 add_subdirectory(clipper/mmdb)
 add_subdirectory(clipper/cif)
 add_subdirectory(clipper/phs)
-add_subdirectory(ccp4srs)
+add_subdirectory(clipper/gemmi)
+
+# add_subdirectory(ccp4srs)
 
 
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
@@ -44,18 +49,21 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
  checkout/ssm/ssm 
  checkout/libccp4/ccp4 
  checkout/clipper 
- checkout/ccp4srs 
  checkout/gemmi/include
+ dependencies/gemmi
+ checkout/zlib
  ${PRIVATEER_SOURCE_DIR}/cpp
  ${PRIVATEER_SOURCE_DIR}/cpp/pybind11
+#  checkout/ccp4srs   
  )
 
  link_directories( checkout/mmdb2 
  checkout/ssm/ssm 
  checkout/libccp4/ccp4 
  checkout/clipper 
- checkout/ccp4srs 
+#  checkout/ccp4srs 
  checkout/gemmi/include
+ checkout/zlib
  ${PRIVATEER_SOURCE_DIR}/cpp
  ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
 
@@ -102,27 +110,36 @@ add_library(privateer_lib
             # ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
             # ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco_data.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-bind.cpp
+
             )
 
 
-add_executable(privateer_exec ${PRIVATEER_SOURCE})
-set_target_properties (privateer_lib  PROPERTIES OUTPUT_NAME privateer )
+add_executable(privateer_exec ${PRIVATEER_SOURCE_DIR}/cpp/privateer-bind.cpp)
+               
 
+set_target_properties (privateer_exec  PROPERTIES OUTPUT_NAME privateer )
+
+target_link_options(privateer_exec PRIVATE -sDEMANGLE_SUPPORT=1 -sASSERTIONS=2 -fexceptions -sALLOW_MEMORY_GROWTH=1 --bind -sFORCE_FILESYSTEM=1 -sMODULARIZE=1 -sEXPORT_NAME=privateer_module -sEXPORTED_RUNTIME_METHODS=['FS'])
 
 target_link_directories(privateer_exec
  PUBLIC 
- ../mmdb2 
- ../clipper/mmdb 
- ../clipper/cif 
- ../clipper/core 
- ../clipper/contrib 
- ../clipper/ccp4 
- ../clipper/minimol
- ../fftw 
- ../rfftw 
- ../ccp4 
- ../ccp4srs
- ../gemmi)
+ mmdb2 
+ clipper/mmdb 
+ clipper/cif 
+ clipper/core 
+ clipper/contrib 
+ clipper/ccp4 
+ clipper/gemmi
+ clipper/minimol
+ fftw 
+ rfftw 
+ ccp4 
+#  ../ccp4srs
+ ../checkout/gemmi
+#  ../checkout/zlib
+ )
+
 
 target_link_libraries(
   privateer_exec
@@ -133,17 +150,20 @@ target_link_libraries(
  clipper-core 
  clipper-contrib 
  clipper-ccp4 
+ clipper-gemmi
  clipper-minimol
  fftw 
  rfftw 
  ccp4 
- ccp4srs
+#  ccp4srs
  nodefs.js 
- Threads::Threads)
+ Threads::Threads
+#  z
+ )
                                
 
-set_target_properties ( privateer_exec  PROPERTIES OUTPUT_NAME privateer )
-SET_SOURCE_FILES_PROPERTIES(privateer-frontend_scripting.i PROPERTIES CPLUSPLUS ON)
+# set_target_properties ( privateer_exec  PROPERTIES OUTPUT_NAME privateer )
+# SET_SOURCE_FILES_PROPERTIES(privateer-frontend_scripting.i PROPERTIES CPLUSPLUS ON)
 
 set(privateer_HEADERS
 ${PRIVATEER_SOURCE_DIR}/cpp/privateer-restraints.h
@@ -158,17 +178,21 @@ ${PRIVATEER_SOURCE_DIR}/cpp/privateer-json.h
 ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.h
 ${PRIVATEER_SOURCE_DIR}/cpp/privateer-parallelism.h
 ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.h
-
 )
 
-set_target_properties(privateer_lib PROPERTIES PUBLIC_HEADER "${privateer_HEADERS}")
+set_target_properties(privateer_exec PROPERTIES PUBLIC_HEADER "${privateer_HEADERS}")
 
+set_target_properties(privateer_exec PROPERTIES COMPILE_FLAGS "-s ENVIRONMENT='web'")
 install(TARGETS privateer_lib
 LIBRARY DESTINATION lib
 PUBLIC_HEADER DESTINATION include/privateer
 )
 
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/privateer.wasm
+${CMAKE_CURRENT_BINARY_DIR}/privateer.js
+DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/web/privateer_wasm/wasm)
 
+set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 
 # install ( TARGETS privateer_lib LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})
 # install ( TARGETS privateer_exec DESTINATION ${PROJECT_SOURCE_DIR})

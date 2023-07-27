@@ -92,7 +92,7 @@ target_link_libraries(ccp4srs PRIVATE
 target_include_directories(ccp4srs PRIVATE .
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/ccp4srs
-    .. ../checkout/mmdb2 ../checkout/libccp/ccp4
+    .. ../checkout/mmdb2 ../checkout/libccp/ccp4 ../checkout/zlib
     ${CMAKE_BINARY_DIR}
 )
 
@@ -119,7 +119,7 @@ target_link_libraries(srsgen PRIVATE
 target_include_directories(srsgen PRIVATE .
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/ccp4srs
-    .. ../checkout/mmdb2 ../checkout/libccp4/ccp4
+    .. ../checkout/mmdb2 ../checkout/libccp4/ccp4 ../checkout/zlib
     ${CMAKE_BINARY_DIR}
 )
                                  
@@ -133,7 +133,7 @@ target_link_libraries(srsview PRIVATE
 target_include_directories(srsview PRIVATE .
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/ccp4srs
-    .. ../checkout/mmdb2 ../checkout/libccp4/ccp4
+    .. ../checkout/mmdb2 ../checkout/libccp4/ccp4 ../checkout/zlib
     ${CMAKE_BINARY_DIR}
 )
 
@@ -142,14 +142,15 @@ add_executable(pdb2to3 ${ssm_src}/srsrem.cpp)
 target_include_directories(pdb2to3 PRIVATE .
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/ccp4srs
-    .. ../checkout/mmdb2 ../checkout/libccp4/ccp4
+    .. ../checkout/mmdb2 ../checkout/libccp4/ccp4 ../checkout/zlib
     ${CMAKE_BINARY_DIR}
 )
 
-target_link_directories(pdb2to3 PUBLIC ../mmdb2 ../ccp4)
+target_link_directories(pdb2to3 PUBLIC ../mmdb2 ../ccp4 ../checkout/zlib)
 target_link_libraries(pdb2to3 PRIVATE 
                              ccp4srs::ccp4srs
                              mmdb2 ccp4 nodefs.js
+                             
                              ${EXTRA_LIBS}
 )
 target_include_directories(srsgen PRIVATE .
