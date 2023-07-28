@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      // See https://github.com/facebook/react/issues/20829#issuecomment-802088260
+      // FOR VITE FIX https://github.com/chaosprint/vite-plugin-cross-origin-isolation
+      if (!crossOriginIsolated) SharedArrayBuffer = ArrayBuffer;
+   
+      window.onload = () => {
+        createCCP4Module({
+          print(t) { console.log(["output", t]) },
+          printErr(t) { console.log(["output", t]); }
+        })
+          .then(function (CCP4Mod) {
+            window.CCP4Module = CCP4Mod;
+          })
+          .catch((e) => {
+            console.log("CCP4 problem :(");
+            console.log(e);
+          });
+      }
+    </script>
+    
+    <script src="baby-gru/wasm/web_example.js"></script>
+    <title>Privateer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
