@@ -4,6 +4,6 @@ source ~/Development/privateer/emsdk/emsdk_env.sh
 emcmake cmake .
 emmake make -j 
 
-mv privateer.js web/privateer/privateer/wasm/privateer.js
-mv privateer.wasm web/privateer/privateer/wasm/privateer.wasm
-mv privateer.data web/privateer/privateer/wasm/privateer.data
+mv privateer.js web/privateer/privateer/src/wasm/privateer.js
+mv privateer.wasm web/privateer/privateer/src/wasm/privateer.wasm
+mv privateer.data web/privateer/privateer/src/wasm/privateer.data
