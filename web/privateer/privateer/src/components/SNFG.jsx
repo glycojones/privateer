@@ -16,7 +16,6 @@ export default function SNFG() {
         privateer_module().then((Module) => { 
             var reader = new FileReader();
             reader.onload = () => {
-                console.log(reader.result)
                 let x = Module.read_structure(reader.result, file.name)
                 
                 let svgs = [];
@@ -35,7 +34,8 @@ export default function SNFG() {
         <div>
             {file == null ? <Upload setFile={setFile}/> : 
             submit == null ? <Submit file={file} submitPressed={setSubmit}/> :
-            svgs == null ? <Loading/> : <SVGCarousel svgs={svgs} />}
+            svgs == null ? <Loading/> : <SVGCarousel svgs={svgs} />
+            }
         </div>
     )
 }

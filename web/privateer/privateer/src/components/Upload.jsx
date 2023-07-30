@@ -3,9 +3,7 @@ export default function Upload({setFile}) {
 
     const fileUpload = (e) => { 
         if (e.target.files) { 
-            console.log(setFile)
             setFile(e.target.files[0])
-            console.log(e.target.files[0] )
         }
     } 
 
