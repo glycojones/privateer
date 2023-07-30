@@ -30,24 +30,33 @@ export default function SVGCarousel({svgs}) {
     })
 
     const ref = useCallback((node) => {
-        let use_list = document.querySelectorAll('use')
+        let useList = document.querySelectorAll('use')
 
-        for (let i = 0; i < x.length; i++) { 
-            use_list[i].addEventListener("click", (e) => {console.log(use_list[i].id)})
+        for (let i = 0; i < useList.length; i++) {
+            useList[i].addEventListener("click", (e) => {console.log(useList[i].id)})
         }
+
+        // document.getElementById('cercle1').setAttribute("height", "10px");
+        // document.getElementsByClassName("svg")[0].setAttribute("width", )
 
     })
 
     return (
-        <div className="flex flex-col items-center ">
-            <div className="flex w-128 h-96 justify-center">
+        <div className="flex flex-col items-center text-left">
+
+            <div className="w-full">
+                <h2 className="">Glycans</h2>
+            </div>
+
+            <div className="flex w-96 h-96 justify-center">
                 {/* <SVG src ={svgs[index]}/> */}
-                <div className="w-full my-auto" dangerouslySetInnerHTML={{ __html: svgs[index]}} ref={ref} />
+                <div className="my-auto" dangerouslySetInnerHTML={{ __html: svgs[index]}} ref={ref} />
 
             </div>
 
             <div className="my-4">
                     <button onClick={prev} className="mx-4">Prev</button>
+                    <span>{index+1}/{svgs.length}</span>
                     <button onClick={next} className="mx-4">Next</button>
                 </div>
         </div>

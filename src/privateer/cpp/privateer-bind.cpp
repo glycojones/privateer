@@ -60,11 +60,11 @@ extern "C" std::vector<std::string> read_file(const std::string &file, const std
       // std::cout << wurcs_string << std::endl;
 
       privateer::glycanbuilderplot::Plot plot(true, false, list_of_glycans[i].get_root_by_name());
-      std::vector<int> viewbox = {0,0,300,300};
-      plot.set_viewbox(viewbox);
+      // std::vector<int> viewbox = {0,0,300,300};
+      // plot.set_viewbox(viewbox);
       plot.plot_glycan(list_of_glycans[i]);
 
-      plot.get_viewbox();
+      // plot.get_viewbox();
 
       std::ostringstream os;
       os << list_of_glycans[i].get_root_for_filename() << ".svg";
