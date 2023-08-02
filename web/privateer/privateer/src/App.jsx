@@ -3,7 +3,7 @@ import './App.css'
 import NavBar from './components/navbar.jsx'
 import Upload from './components/Upload'
 import Main from './components/Main'
-
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,9 +15,12 @@ function App() {
   // })
 
   return (
-    <div className='h-screen'>
+    <div className='h-screen flex flex-col justify-between'>
       <NavBar></NavBar>
-      <Main/>
+      <div className='mb-auto'>
+        <Main/>
+      </div>
+      <Footer></Footer>
     </div>
   )
 }

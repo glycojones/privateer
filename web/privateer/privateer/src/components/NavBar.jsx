@@ -5,7 +5,7 @@ export default function NavBar() {
 
   return (
     <nav className="">
-      <div className="h-16 bg-dark-900 border-bottom max-w-full mx-2 py-2 mb-2">
+      <div className="h-16 dark:bg-gray-800 shadow border-bottom max-w-full py-2 mb-2">
         <div className="flex justify-between px-4 py-2 first:mr-2 last:ml-2">
           <div className="flex flex-1 justify-center">
             <h1 className="text-3xl">Privateer</h1>

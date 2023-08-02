@@ -36,9 +36,8 @@ export default function SVGCarousel({svgs}) {
             useList[i].addEventListener("click", (e) => {console.log(useList[i].id)})
         }
 
-        // document.getElementById('cercle1').setAttribute("height", "10px");
-        // document.getElementsByClassName("svg")[0].setAttribute("width", )
-
+        document.querySelectorAll("svg")[0].setAttribute("width", "50vw")
+        document.querySelectorAll("svg")[0].setAttribute("height", "100%")
     })
 
     return (
@@ -48,8 +47,7 @@ export default function SVGCarousel({svgs}) {
                 <h2 className="">Glycans</h2>
             </div>
 
-            <div className="flex w-96 h-96 justify-center">
-                {/* <SVG src ={svgs[index]}/> */}
+            <div className="flex w-full h-96 justify-center">
                 <div className="my-auto" dangerouslySetInnerHTML={{ __html: svgs[index]}} ref={ref} />
 
             </div>
