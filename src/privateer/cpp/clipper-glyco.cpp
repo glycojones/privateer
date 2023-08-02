@@ -2646,6 +2646,107 @@ bool MSugar::examine_ring()
  * 	\return A boolean value with the obvious answer
  */
 
+bool MSugar::check_if_bonded ( const clipper::MAtom& origin_atom, const clipper::MAtom& alt_atom) // accesses object
+{
+    ////////////// CRITICAL: check symm mates ///////////////
+    double distance = clipper::Coord_orth::length(origin_atom.coord_orth(), alt_atom.coord_orth());
+    
+    if ( origin_atom.element().trim() == "C" )
+    {
+        if ( alt_atom.element().trim() == "C" )
+        {
+            if ((distance >  1.18 ) && ( distance < 1.62 ))
+                return true; // C-C or C=C
+            else
+                return false;
+        }
+        else if ( alt_atom.element().trim() == "N" )
+        {
+            if ((distance >  1.24 ) && ( distance < 1.62 ))
+                return true; // C-N or C=N
+            else
+                return false;
+        }
+        else if ( alt_atom.element().trim() == "O" )
+        {
+            if ((distance >  1.16 ) && ( distance < 1.60 ))
+                return true; // C-O or C=O
+            else
+                return false;
+        }
+        else if ( alt_atom.element().trim() == "S" )
+        {
+            if ((distance >  1.50 ) && ( distance < 2.00 ))
+                return true; // C-S or C=S
+            else
+                return false;
+        }
+        else if ( alt_atom.element().trim() == "H" )
+        {
+            if ((distance >  0.96 ) && ( distance < 1.14 ))
+                return true; // C-H
+            else
+                return false;
+        }
+    }
+    else if ( origin_atom.element().trim() == "N" )
+    {
+        if ( alt_atom.element().trim() == "C" )
+        {
+            if ((distance >  1.24 ) && ( distance < 1.62 ))
+                return true; // N-C or N=C
+            else
+                return false;
+        }
+        else if ( alt_atom.element().trim() == "H" )
+        {
+            if ((distance >  0.90 ) && ( distance < 1.10 ))
+                return true; // N-H
+            else
+                return false;
+        }
+    }
+    else if ( origin_atom.element().trim() == "O" )
+    {
+        if ( alt_atom.element().trim() == "C" )
+        {
+            if ((distance >  1.16 ) && ( distance < 1.61 ))
+                return true; // O-C or O=C
+            else
+                return false;
+        }
+        else if ( alt_atom.element().trim() == "H" )
+        {
+            if ((distance >  0.88 ) && ( distance < 1.04 ))
+                return true; // O-H
+            else
+                return false;
+        }
+    }
+    else if ( origin_atom.element().trim() == "S" )
+    {
+        if ( alt_atom.element().trim() == "C" )
+        {
+            if ((distance >  1.26 ) && ( distance < 2.00 ))
+                return true; // S-C or S=C
+            else return false;
+        }
+        else if ( alt_atom.element().trim() == "H" )
+        {
+            if ((distance >  0.78 ) && ( distance < 1.44 ))
+                return true; // S-H
+            else return false;
+        }
+    }
+    else     /// unknown bond
+        if (( distance > 1.2) && (distance < 1.8))
+            return true;
+        else
+            return false;
+
+    return false; // in case we haven't found any match
+}
+
 bool MSugar::bonded(const clipper::MAtom& ma_one, const clipper::MAtom& ma_two, std::vector<clipper::MSugar::Diagnostics::sugar_diag_ring_diagnostics_atom_pair>& ring_atom_diagnostic) const
 {
     clipper::ftype distance = clipper::Coord_orth::length( ma_one.coord_orth(), ma_two.coord_orth() );

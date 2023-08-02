@@ -429,6 +429,8 @@ namespace clipper
 
             Diagnostics get_detailed_diagnostics () const { return sugar_diagnostics; };
 
+            bool check_if_bonded ( const clipper::MAtom& origin_atom, const clipper::MAtom& alt_atom); // accesses object
+
         private:
 
             typedef std::vector< std::pair< clipper::MAtom, clipper::MAtom > > visited_arcs;
@@ -512,10 +514,9 @@ namespace clipper
 
             std::vector<clipper::ftype>                     cremerPople_pyranose ( const clipper::MiniMol& , clipper::MMonomer); // modifies object
             std::vector<clipper::ftype>                     cremerPople_furanose ( const clipper::MiniMol& , clipper::MMonomer); // modifies object
-            std::vector<clipper::MAtom&>                    find_bonded ( const clipper::MAtom& ) const; // accesses object
             int                                             conformationPyranose ( const clipper::ftype&, const clipper::ftype& ) const;
             int                                             conformationFuranose ( const clipper::ftype& ) const;
-
+            bool                                            bonded ( const clipper::MAtomIndexSymmetry&, const clipper::MAtom& ) const;
             std::vector<clipper::MAtom>                     ringMembers ( ) const; // internal function, accesses object
             const std::vector<clipper::MAtom>               findPath ( const clipper::MMonomer&, int, MSugar::visited_arcs& ) const;
             bool                                            closes_ring ( const clipper::MAtom&, MSugar::visited_arcs& ) const;
@@ -524,7 +525,6 @@ namespace clipper
             stereochemistry_pairs                           get_stereochemistry ( const clipper::MiniMol& ); // accesses object
             bool                                            is_stereocentre ( const clipper::MAtom&, const clipper::MiniMol& ); // accesses object
             bool                                            is_part_of_ring ( const clipper::MAtom&, const std::vector<clipper::MAtom> ) const;
-            bool                                            bonded ( const clipper::MAtomIndexSymmetry&, const clipper::MAtom& ) const;
             bool                                            bonded ( const clipper::MAtom&, const clipper::MAtom&, std::vector<clipper::MSugar::Diagnostics::sugar_diag_ring_diagnostics_atom_pair>& ring_atom_diagnostic ) const;
             bool                                            lookup_database ( clipper::String );
             bool                                            examine_ring();

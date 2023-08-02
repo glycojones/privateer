@@ -360,9 +360,10 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
     if(!mglycology.get_list_of_glycans().empty())
     {
         if(enableHBonds)
+        {
             this->hbonds = privateer::interactions::HBondsParser(path_to_model_file, path_to_output_file);
-
-        this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file, path_to_output_file, chpi_algorithm);
+            this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file, path_to_output_file, chpi_algorithm);
+        }
     }
 }
 

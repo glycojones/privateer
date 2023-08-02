@@ -249,10 +249,10 @@ namespace privateer
     std::string get_sugar_face(clipper::MSugar &input_sugar, std::vector<std::pair<clipper::MAtom, clipper::MAtom>> &ch_atoms)
     {
         std::string sugar_face = "β";
-        std::string atom_id = ch_atoms[0].first.id();
+        std::string atom_id = ch_atoms[0].first.id().trim();
 
-        std::vector<std::string> aldopyranose_alpha_face = {" C1 ", "C3", "C5"}; // find way to get rid of spaces
-        std::vector<std::string> ketopyranose_alpha_face = {"C4", "C6"};
+        std::vector<std::string> aldopyranose_alpha_face = {"C1", "C3", "C5"};
+        std::vector<std::string> ketopyranose_alpha_face = {"C4", "C6 "};
         std::vector<std::string> xyp_alpha_face = {"C1B", "C3B", "C5B2"};
         std::vector<std::string> xys_alpha_face = {"C3", "C51"};
         
@@ -288,6 +288,10 @@ namespace privateer
         return sugar_face;
     }
 
+
+
+
+
     std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_stacked_residues_python(   clipper::MSugar &input_sugar,
                                                                                                                             int sugarIndex,
                                                                                                                             int glycanSize,
@@ -304,41 +308,83 @@ namespace privateer
         clipper::Coord_orth centre_apolar = input_sugar.ring_centre();
         std::vector<privateer::interactions::CHPiBond> results;
 
-        std::unordered_map<std::string, std::vector<std::pair<std::string, std::string>>> sugarToAtomPairs = 
-        {
-        {"beta-D-aldopyranose", {{"C1", "H1 "}, {"C3", "H3 "}, {"C5", "H5 "}}},
-        {"beta-L-aldopyranose", {{"C1", "H1 "}, {"C3", "H3 "}, {"C5", "H5 "}}},
-        {"alpha-D-aldopyranose", {{"C3", "H3 "}, {"C5", "H5 "}}},
-        {"alpha-L-aldopyranose", {{"C3", "H3 "}, {"C5", "H5 "}}},
-        {"beta-L-ketopyranose", {{"C4", "H4"}, {"C6", "H6 "}}},
-        {"alpha-L-ketopyranose", {{"C4", "H4"}, {"C6", "H6 "}}},
-        {"XYP", {{"C1B", "H1B"}, {"C3B", "H3B"}, {"C5B", "H5B2"}}},
-        {"XYS", {{"C3", "H3 "}, {"C5", "H51"}}}
-        };
+        clipper::MAtom h_atom;
+        clipper::MAtom x_atom;
+        std::vector<clipper::MAtom> bonded_atoms;
 
-        std::string sugarType = input_sugar.type_of_sugar();
-
-        // Find the pairs of carbon and hydrogen atoms based on the sugar type
-        auto it = sugarToAtomPairs.find(sugarType);
-        if (sugarToAtomPairs.find(sugarType) != sugarToAtomPairs.end())
-        {
-            const std::vector<std::pair<std::string, std::string>>& atomPairs = it->second;
-
-            for (const auto& carbonHydrogenPair : atomPairs)
+        for (int atom = 0; atom < input_sugar.size(); atom++)
+        {            
+            if (input_sugar[atom].element().trim() == "H")
             {
-                // Find the specified carbon and hydrogen atoms
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find(carbonHydrogenPair.first, clipper::MM::ANY),
-                                                               input_sugar.find(carbonHydrogenPair.second, clipper::MM::ANY));
+                h_atom = input_sugar[atom];
+                const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(h_atom.coord_orth(), 2.0); // find neighbourhood atoms of h_atom
+                // std::cout << h_atom.id() << std::endl;
 
-                vector = get_sugar_ch_coords(pair);
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
+                for (int i = 0; i < neighbourhood.size(); i++)
+                {   
+                    clipper::MAtom sug_atom = this->hydrogenated_input_model[neighbourhood[i].polymer()][neighbourhood[i].monomer()][neighbourhood[i].atom()];
+                    std::cout << sug_atom.id() << std::endl; 
+                    
+                    // find closest atom
+
+                    if (input_sugar.check_if_bonded(h_atom, sug_atom) &&
+                        sug_atom.element().trim() == "C" || 
+                        sug_atom.element().trim() == "N" || 
+                        sug_atom.element().trim() == "O" ||
+                        sug_atom.element().trim() == "S" )
+                    {
+                        std::cout << "inside second if statement" << std::endl;
+                        x_atom = sug_atom.atom();
+                        std::pair<clipper::MAtom, clipper::MAtom> pair(x_atom, h_atom);
+                        vector = get_sugar_ch_coords(pair);
+                        ch_atoms.push_back(pair);
+                        c_to_h_vectors.push_back(vector);
+                    }
+                }
+            }    
+            else
+            {
+                continue;
             }
         }
-        else
-        {
-            return results;
-        }
+
+        // std::unordered_map<std::string, std::vector<std::pair<std::string, std::string>>> sugarToAtomPairs = 
+        // {
+        // {"beta-D-aldopyranose", {{"C1", "H1 "}, {"C2", "H2 "}, {"C3", "H3 "}, {"C4", "H4 "}, {"C5", "H5 "}}},
+        // {"beta-L-aldopyranose", {{"C1", "H1 "}, {"C3", "H3 "}, {"C5", "H5 "}}},
+        // {"alpha-D-aldopyranose", {{"C3", "H3 "}, {"C5", "H5 "}}},
+        // {"alpha-L-aldopyranose", {{"C3", "H3 "}, {"C5", "H5 "}}},
+        // {"beta-L-ketopyranose", {{"C4", "H4"}, {"C6", "H6 "}}},
+        // {"alpha-L-ketopyranose", {{"C4", "H4"}, {"C6", "H6 "}}},
+        // {"XYP", {{"C1B", "H1B"}, {"C3B", "H3B"}, {"C5B", "H5B2"}}},
+        // {"XYS", {{"C3", "H3 "}, {"C5", "H51"}}}
+        // };
+
+        // std::string sugarType = input_sugar.type_of_sugar();
+
+        // // Find the pairs of carbon and hydrogen atoms based on the sugar type
+        // auto it = sugarToAtomPairs.find(sugarType);
+        // if (sugarToAtomPairs.find(sugarType) != sugarToAtomPairs.end())
+        // {
+        //     const std::vector<std::pair<std::string, std::string>>& atomPairs = it->second;
+
+        //     for (const auto& carbonHydrogenPair : atomPairs)
+        //     {
+        //         // Find the specified carbon and hydrogen atoms
+        //         std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find(carbonHydrogenPair.first, clipper::MM::ANY),
+        //                                                        input_sugar.find(carbonHydrogenPair.second, clipper::MM::ANY));
+
+        //         vector = get_sugar_ch_coords(pair);
+        //         ch_atoms.push_back(pair);
+        //         c_to_h_vectors.push_back(vector);
+        //     }
+        // }
+        // else
+        // {
+        //     return results;
+        // }
+
+        
 
         // std::cout << "Centre_apolar output" << centre_apolar.x() << " " << centre_apolar.y() << " " << centre_apolar.z() << std::endl;
         const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(centre_apolar, 5.0);
@@ -575,7 +621,8 @@ namespace privateer
                                 clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
                                 clipper::ftype theta = clipper::Util::rad2d(get_angle(hx_vector, aromatic_vector));
                             
-                                std::cout << "theta: " << theta << std::endl;
+                                // std::cout << get_sugar_face(input_sugar, ch_atoms);
+                                // std::cout << "theta: " << theta << std::endl;
                                 
                                 if (theta <= 45) 
                                 {
@@ -587,7 +634,7 @@ namespace privateer
                                     clipper::ftype angle1 = clipper::Util::rad2d(get_angle(aromatic_vector, co_vector));
                                     clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
                                     
-                                    std::cout << "cp_distance: " << cp_distance << std::endl;
+                                    // std::cout << "cp_distance: " << cp_distance << std::endl;
 
                                     if (cp_distance <= 2.0)
                                     {
