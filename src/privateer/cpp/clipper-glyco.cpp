@@ -2684,7 +2684,10 @@ bool MSugar::check_if_bonded ( const clipper::MAtom& origin_atom, const clipper:
         else if ( alt_atom.element().trim() == "H" )
         {
             if ((distance >  0.96 ) && ( distance < 1.14 ))
+            {
+                // std::cout << origin_atom.id() << alt_atom.id() << ", C-H distance: " << distance << std::endl;
                 return true; // C-H
+            }
             else
                 return false;
         }
@@ -2701,7 +2704,10 @@ bool MSugar::check_if_bonded ( const clipper::MAtom& origin_atom, const clipper:
         else if ( alt_atom.element().trim() == "H" )
         {
             if ((distance >  0.90 ) && ( distance < 1.10 ))
+            {
+                // std::cout << origin_atom.id() << alt_atom.id() << ", N-H distance: " << distance << std::endl;
                 return true; // N-H
+            }
             else
                 return false;
         }
@@ -2718,7 +2724,10 @@ bool MSugar::check_if_bonded ( const clipper::MAtom& origin_atom, const clipper:
         else if ( alt_atom.element().trim() == "H" )
         {
             if ((distance >  0.88 ) && ( distance < 1.04 ))
+            {
+                // std::cout << origin_atom.id() << alt_atom.id() << ", O-H distance: " << distance << std::endl;
                 return true; // O-H
+            }
             else
                 return false;
         }

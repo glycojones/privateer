@@ -260,7 +260,6 @@ namespace privateer
         {
             if (std::find(aldopyranose_alpha_face.begin(), aldopyranose_alpha_face.end(), atom_id) != aldopyranose_alpha_face.end())
             {
-                // std::cout << "sugar face is alpha" << std::endl;
                 sugar_face = "α";
             }
         }
@@ -318,27 +317,34 @@ namespace privateer
             {
                 h_atom = input_sugar[atom];
                 const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(h_atom.coord_orth(), 2.0); // find neighbourhood atoms of h_atom
-                // std::cout << h_atom.id() << std::endl;
 
                 for (int i = 0; i < neighbourhood.size(); i++)
                 {   
                     clipper::MAtom sug_atom = this->hydrogenated_input_model[neighbourhood[i].polymer()][neighbourhood[i].monomer()][neighbourhood[i].atom()];
-                    std::cout << sug_atom.id() << std::endl; 
+                    clipper::MMonomer sug_mmon = this->hydrogenated_input_model[neighbourhood[i].polymer()][neighbourhood[i].monomer()];
                     
-                    // find closest atom
+                    if (input_sugar.id() == sug_mmon.id() && input_sugar.check_if_bonded(sug_atom, h_atom))
+                    {    
+                        if (sug_atom.element().trim() == "C" || 
+                            sug_atom.element().trim() == "N" || 
+                            sug_atom.element().trim() == "O" ||
+                            sug_atom.element().trim() == "S" )
+                        {
+                            
+                            x_atom = sug_atom;
+                            std::pair<clipper::MAtom, clipper::MAtom> pair(x_atom, h_atom);
 
-                    if (input_sugar.check_if_bonded(h_atom, sug_atom) &&
-                        sug_atom.element().trim() == "C" || 
-                        sug_atom.element().trim() == "N" || 
-                        sug_atom.element().trim() == "O" ||
-                        sug_atom.element().trim() == "S" )
-                    {
-                        std::cout << "inside second if statement" << std::endl;
-                        x_atom = sug_atom.atom();
-                        std::pair<clipper::MAtom, clipper::MAtom> pair(x_atom, h_atom);
-                        vector = get_sugar_ch_coords(pair);
-                        ch_atoms.push_back(pair);
-                        c_to_h_vectors.push_back(vector);
+                            vector = get_sugar_ch_coords(pair);
+                            ch_atoms.push_back(pair);
+                            // std::cout << pair.first.id() << pair.second.id() << std::endl;
+                            c_to_h_vectors.push_back(vector);
+
+                            // DEBUG
+                            // if (pair.first.element().trim() == "O")
+                            //     {
+                            //         // std::cout << pair.first.id() << pair.second.id() << std::endl;
+                            //     }
+                        }
                     }
                 }
             }    
@@ -405,8 +411,6 @@ namespace privateer
             
             for (int j = 0; j < ch_atoms.size(); j++)
             {
-
-                // std::cout << "j: " << j << "\n" << "k: " << k << "\n";
                 if (algorithm == "hudson")
                 { // Parameters: Theta(CH^normal), CX(C..ring centre), ?Cp(C..Cprojection)?
                     if (mmon.type().trim() == "TRP")
@@ -439,7 +443,6 @@ namespace privateer
                                 clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(),
                                                                         ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
                                                                         ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                                
                                 clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
                                 clipper::ftype theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector)));   
                                 
@@ -448,13 +451,12 @@ namespace privateer
                                     clipper::Vec3<clipper::ftype> co_vector(aromatic_centre_a.x() - ch_atoms[j].first.coord_orth().x(),
                                                                             aromatic_centre_a.y() - ch_atoms[j].first.coord_orth().y(),
                                                                             aromatic_centre_a.z() - ch_atoms[j].first.coord_orth().z());
-
                                     clipper::ftype angle1 = clipper::Util::rad2d((get_angle(aromatic_vector, co_vector)));
-
                                     clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
 
                                     if (cp_distance <= 1.6)
                                     {
+                                        // std::cout << ch_atoms[j].first.id() << " " << ch_atoms[j].second.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_glycan_size(glycanSize);
@@ -463,8 +465,7 @@ namespace privateer
                                         the_interaction.set_distance_cx(distance);
                                         the_interaction.set_trp_ring("A");
                                         the_interaction.set_xh_pair(ch_atoms[j]);
-                                        // std::cout << "currently appending for k index " << k << " current residue " << this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() << " atom " << this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()][neighbourhood[k].atom()].id().trim() << std::endl;
-                                        
+
                                         if (results.empty())
                                         {
                                             results.push_back(the_interaction);
@@ -528,7 +529,6 @@ namespace privateer
                                     clipper::Vec3<clipper::ftype> co_vector(aromatic_centre_b.x() - ch_atoms[j].first.coord_orth().x(),
                                                                             aromatic_centre_b.y() - ch_atoms[j].first.coord_orth().y(),
                                                                             aromatic_centre_b.z() - ch_atoms[j].first.coord_orth().z());
-
                                     clipper::ftype angle1 = clipper::Util::rad2d(get_angle(aromatic_vector, co_vector));
                                     clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
 
@@ -542,7 +542,7 @@ namespace privateer
                                     
                                     if (cp_distance <= 2.0)
                                     {
-                                        sugarFace = get_sugar_face(input_sugar, ch_atoms);
+                                        // std::cout << ch_atoms[j].first.id() << " " << ch_atoms[j].second.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_sugar_face(sugarFace);
@@ -552,8 +552,7 @@ namespace privateer
                                         the_interaction.set_distance_cx(distance);
                                         the_interaction.set_trp_ring("B");
                                         the_interaction.set_xh_pair(ch_atoms[j]);
-                                        // std::cout << "currently appending for k index " << k << " current residue " << this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() << " atom " << this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()][neighbourhood[k].atom()].id().trim() << std::endl;
-                                    
+
                                         if (results.empty())
                                         {
                                             results.push_back(the_interaction);
@@ -561,7 +560,20 @@ namespace privateer
                                         else
                                         {
                                             privateer::interactions::CHPiBond last_element = results.back();
-                                            if(last_element.get_stacked_residue().id() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() || last_element.get_stacked_residue().type().trim() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() || last_element.get_stacked_residue_chainID() != this->hydrogenated_input_model[neighbourhood[k].polymer()].id() || last_element.get_trp_ring() != "B")
+                                            if(last_element.get_stacked_residue().id() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && // don't push the same aromatic residue, but this is wrong as one residue could form multiple xh-π interactions
+                                            last_element.get_stacked_residue().type().trim() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && // don't push the same aromatic residue???
+                                            last_element.get_stacked_residue_chainID() != this->hydrogenated_input_model[neighbourhood[k].polymer()].id() && // don't push any aromatic residues from the same chain?
+                                            last_element.get_trp_ring() != "B") // don't push the same trp ring in over and over, but allow for anohter trp ring?
+
+                                            /*
+                                             need to say if:
+                                             - same chain id AND 
+                                             - same monomer id AND 
+                                             - same xh_pair 
+                                            then don't push
+                                            */
+                                            
+
                                             {
                                                 results.push_back(the_interaction);  
 
@@ -620,9 +632,6 @@ namespace privateer
                                                                         ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
                                 clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
                                 clipper::ftype theta = clipper::Util::rad2d(get_angle(hx_vector, aromatic_vector));
-                            
-                                // std::cout << get_sugar_face(input_sugar, ch_atoms);
-                                // std::cout << "theta: " << theta << std::endl;
                                 
                                 if (theta <= 45) 
                                 {
@@ -633,11 +642,10 @@ namespace privateer
 
                                     clipper::ftype angle1 = clipper::Util::rad2d(get_angle(aromatic_vector, co_vector));
                                     clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
-                                    
-                                    // std::cout << "cp_distance: " << cp_distance << std::endl;
-
+                                
                                     if (cp_distance <= 2.0)
                                     {
+                                        std::cout << ch_atoms[j].first.id() << " " << ch_atoms[j].second.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_glycan_size(glycanSize);
@@ -653,7 +661,9 @@ namespace privateer
                                         else
                                         {
                                             privateer::interactions::CHPiBond last_element = results.back();
-                                            if(last_element.get_stacked_residue().id() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() || last_element.get_stacked_residue().type().trim() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() || last_element.get_stacked_residue_chainID() != this->hydrogenated_input_model[neighbourhood[k].polymer()].id())
+                                            if(last_element.get_stacked_residue().id() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && 
+                                            last_element.get_stacked_residue().type().trim() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
+                                            last_element.get_stacked_residue_chainID() != this->hydrogenated_input_model[neighbourhood[k].polymer()].id())
                                             {
                                             results.push_back(the_interaction);  
                                                 }
@@ -718,7 +728,9 @@ namespace privateer
                                     else
                                     {
                                         privateer::interactions::CHPiBond last_element = results.back();
-                                        if(last_element.get_stacked_residue().id() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() || last_element.get_stacked_residue().type().trim() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() || last_element.get_stacked_residue_chainID() != this->hydrogenated_input_model[neighbourhood[k].polymer()].id() || last_element.get_trp_ring() != "A")
+                                        if(last_element.get_stacked_residue().id() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() || 
+                                        last_element.get_stacked_residue().type().trim() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() || 
+                                        last_element.get_stacked_residue_chainID() != this->hydrogenated_input_model[neighbourhood[k].polymer()].id() || last_element.get_trp_ring() != "A")
                                         {
                                             results.push_back(the_interaction);  
 
@@ -805,8 +817,6 @@ namespace privateer
                             f1 = f1.lattice_copy_near(f2);
                             distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
                         }
-                        
-                        std::cout << "distance: " << distance << std::endl;
 
                         if (distance < 4.3)
                         {
@@ -815,8 +825,6 @@ namespace privateer
                                                                     aromatic_centre.z() - ch_atoms[j].first.coord_orth().z());
                             clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
                             clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector));
-                            
-                            std::cout << "theta: " << theta << std::endl;
                             
                             if (theta <= 25.0)
                             {
@@ -827,8 +835,6 @@ namespace privateer
                                                                         ch_atoms[j].second.coord_orth().y() - aromatic_centre.y(),
                                                                         ch_atoms[j].second.coord_orth().z() - aromatic_centre.z());
                                 clipper::ftype phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector));
-                                
-                                std::cout << "phi: " << phi << std::endl;
                                 
                                 if (phi >= 120.0)
                                 {
@@ -847,7 +853,9 @@ namespace privateer
                                     else
                                     {
                                         privateer::interactions::CHPiBond last_element = results.back();
-                                        if(last_element.get_stacked_residue().id() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() || last_element.get_stacked_residue().type().trim() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() || last_element.get_stacked_residue_chainID() != this->hydrogenated_input_model[neighbourhood[k].polymer()].id())
+                                        if(last_element.get_stacked_residue().id() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() || 
+                                        last_element.get_stacked_residue().type().trim() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() || 
+                                        last_element.get_stacked_residue_chainID() != this->hydrogenated_input_model[neighbourhood[k].polymer()].id())
                                         {
                                             results.push_back(the_interaction);  
 
