@@ -19,6 +19,9 @@ export default function SNFG({ tableData, pdbString }) {
         controls.current = forwardedControls
     }
 
+    const [yScrollPosition, setYScrollPosition] = useState(0)
+
+
     // DEBUG ONLY 
     useEffect(() => {
         if (cootInitialized && controls.current) {
@@ -29,7 +32,7 @@ export default function SNFG({ tableData, pdbString }) {
 
 
     useEffect(() => {
-
+        setYScrollPosition(window.scrollY)
         console.log(tableData[rowID].id)
 
         if (cootInitialized) {
@@ -39,13 +42,11 @@ export default function SNFG({ tableData, pdbString }) {
                 newMolecule.fetchIfDirtyAndDraw('CBs').then(
                     newMolecule.centreOn("B/NAG")
                 )
-            }
-            )
+            })
+            window.scrollTo(0,0)
             setHideMoorhen(false)
         }
     }, [rowClicked])
-
-   
 
     return (
         <>
@@ -56,7 +57,9 @@ export default function SNFG({ tableData, pdbString }) {
             hideMoorhen={hideMoorhen} 
             setHideMoorhen={setHideMoorhen}
             rowID={rowID} 
-            forwardControls={forwardControls}  />
+            forwardControls={forwardControls} 
+            scrollPosition={yScrollPosition}
+            />
 
         </>
     )

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { useTable } from 'react-table';
-import {COLUMNS} from "./Constants"
+import {COLUMNS} from "../data/Constants"
 import styled from 'styled-components'
 import {MoorhenContextProvider, MoorhenMolecule, MoorhenContainer, itemReducer} from 'moorhen'
 
@@ -28,12 +28,17 @@ const Styles = styled.div`
     //     color: #000000
     // }
      
-    table tr:hover {
-        // background-color: #ddd;
+    // table tr:hover {
+    //     // background-color: #ddd;
+    //     scale: 101%;
+    //     cursor: grab;
+    // }
+     
+    #row:hover { 
         scale: 101%;
         cursor: grab;
     }
-     
+
     table th {
         padding-top: 12px;
         padding-bottom: 12px;
@@ -75,7 +80,7 @@ export default function SVGTable({tableData, rowClick, setRowClicked, setRowID})
                     {rows.map((row) => {
                         prepareRow(row);
                         return (
-                            <tr {...row.getRowProps()} onClick={() => handleRowClick(row.id)}>
+                            <tr {...row.getRowProps()} onClick={() => handleRowClick(row.id)} id='row'>
                                 {row.cells.map((cell) => {
                                 
                                     return (

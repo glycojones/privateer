@@ -1,24 +1,18 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import NavBar from './components/navbar.jsx'
+import NavBar from './layouts/Navbar'
 import Upload from './components/Upload'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import Main from './pages/Main/Main'
+import Footer from './layouts/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  // useEffect(() => {
-  //   privateer_module().then((Module) => { 
-  //     console.log("Privateer Module loaded!")
-  //   });
-  // })
+  const [resetApp, setResetApp] = useState(false)
 
   return (
     <div className='h-screen flex flex-col justify-between'>
-      <NavBar></NavBar>
+      <NavBar setResetApp={setResetApp}></NavBar>
       <div className='mb-auto'>
-        <Main/>
+        <Main resetApp={resetApp}/>
       </div>
       <Footer></Footer>
     </div>

@@ -1,14 +1,14 @@
 import { useState } from "react"
-import { GITHUB_REPO, GENERAL_CITATION } from "./Constants"
+import { GITHUB_REPO, GENERAL_CITATION } from "../data/Constants"
 
-export default function NavBar() {
+export default function NavBar({setResetApp}) {
 
   return (
     <nav className="">
       <div className="h-16 bg-gray-800 shadow border-bottom max-w-full py-2 mb-2">
         <div className="flex justify-between px-4 py-2 first:mr-2 last:ml-2">
           <div className="flex flex-1 justify-center">
-            <h1 className="text-3xl">Privateer</h1>
+            <h1 className="text-3xl"><button id="title" onClick={() => {setResetApp(true)}}>Privateer</button></h1>
           </div>
           
           <div className="flex flex-1 justify-center"> 

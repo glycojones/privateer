@@ -3,7 +3,7 @@ import SVGTable from "./SVGTable";
 import { MoorhenContextProvider, MoorhenMolecule, MoorhenContainer, itemReducer } from 'moorhen'
 
 
-export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls }) {
+export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition}) {
 
     const ref = useCallback((node) => {
         let useList = document.querySelectorAll('use')
@@ -20,7 +20,11 @@ export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, r
     <div className="flex-col justify-center items-center" style={{ display: !hideMoorhen ? 'flex' : 'none' }}>
 
         <div className="flex flex-row w-full justify-between">
-        <button onClick={() => { setHideMoorhen(true)}}><span>&#8592;</span></button>
+        <button onClick={() => { 
+            setHideMoorhen(true);
+            window.scrollTo(0, scrollPosition);
+            
+            }}><span>&#8592;</span></button>
         <h2>{tableData[rowID].id}</h2>
         </div>
             
