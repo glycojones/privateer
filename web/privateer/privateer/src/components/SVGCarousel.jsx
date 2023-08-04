@@ -49,7 +49,6 @@ export default function SVGCarousel({svgs}) {
 
             <div className="flex w-full h-96 justify-center">
                 <div className="my-auto" dangerouslySetInnerHTML={{ __html: svgs[index]}} ref={ref} />
-
             </div>
 
             <div className="my-4">

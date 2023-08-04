@@ -1,18 +1,10 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useTable } from 'react-table';
 import {COLUMNS} from "./Constants"
 import styled from 'styled-components'
+import {MoorhenContextProvider, MoorhenMolecule, MoorhenContainer, itemReducer} from 'moorhen'
 
-export default function SVGTable({tableData}) {
-    const [data, setData] = useState(tableData);
-    // useeffect ...
-
-    // console.log(tableData)
-
-    const columns = useMemo(() => COLUMNS, []);
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
-
-    const Styles = styled.div`
+const Styles = styled.div`
     table {
         border-collapse: collapse;
         border-spacing: 0;
@@ -51,9 +43,22 @@ export default function SVGTable({tableData}) {
     }
     `
 
+export default function SVGTable({tableData, rowClick, setRowClicked, setRowID}) {
+    const [data, setData] = useState(tableData);
+    const controls = useRef()
+
+    const columns = useMemo(() => COLUMNS, []);
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
+
+
+    const handleRowClick = ((rowId) => { 
+        setRowClicked(!rowClick)
+        setRowID(rowId)
+    })
+
     return (
         <Styles>
-        <div className="container">
+        <div className="container" id='table'>
             <table {...getTableProps()}>
                 <thead>
                     {headerGroups.map((headerGroup) => (
@@ -70,7 +75,7 @@ export default function SVGTable({tableData}) {
                     {rows.map((row) => {
                         prepareRow(row);
                         return (
-                            <tr {...row.getRowProps()} onClick={() => {console.log(row.id)}}>
+                            <tr {...row.getRowProps()} onClick={() => handleRowClick(row.id)}>
                                 {row.cells.map((cell) => {
                                 
                                     return (

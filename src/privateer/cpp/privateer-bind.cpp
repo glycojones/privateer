@@ -83,6 +83,7 @@ struct TableEntry
   std::string chain;
   std::string glyconnect_id = "NotFound";
   std::string glytoucan_id = "NotFound";
+  std::string id; 
 };
 
 struct GlycanData
@@ -249,7 +250,8 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
       // table_entry.glytoucan_id = glycan_data.glytoucan_id;
       table_entry.wurcs = wurcs_string;
       table_entry.chain = current_chain;
-
+      table_entry.id = list_of_glycans[i].get_root_by_name();
+      // table_entry.description = list_of_glycans[i].get_description();
       table_list.emplace_back(table_entry);
       // svg_list.emplace_back(plot.write_to_string());
     }
@@ -269,7 +271,9 @@ EMSCRIPTEN_BINDINGS(privateer_module)
       .field("wurcs", &TableEntry::wurcs)
       .field("chain", &TableEntry::chain)
       .field("glyconnect_id", &TableEntry::glyconnect_id)
-      .field("glytoucan_id", &TableEntry::glytoucan_id);
+      .field("glytoucan_id", &TableEntry::glytoucan_id)
+      .field("id", &TableEntry::id);
+      // .field("description", &TableEntry::description);
 
   function("read_structure_to_table", &read_file_to_table);
   register_vector<TableEntry>("Table");
