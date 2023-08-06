@@ -46,7 +46,6 @@ export default function SNFG({ tableData, fileName, pdbString }) {
                     let sugar_id = id.split("-")[1].split(":")[0]
                     let sugar_chain = id.split("/")[1].split("_")[0]
 
-                    console.log(sugar_id)
                     let center_string = sugar_chain + "/" + sugar_id + "(" + sugar_name + ")"
                     newMolecule.centreOn(center_string)
                 })
@@ -59,8 +58,8 @@ export default function SNFG({ tableData, fileName, pdbString }) {
     return (
         <div className = "flex flex-col">
             <div style={{ display: (hideMoorhen ? 'block' : 'none') }} id="tableContainer">
-                <div className="flex flex-col">
-                    <h2 className="my-4">Detected {tableData.length} Glycans in {fileName}</h2>
+                <div className="flex flex-col px-6 sm:py-0 text-center sm:text-left">
+                    <h2 className="my-4 ">Detected {tableData.length} Glycans in {fileName}</h2>
                     <SVGTable tableData={tableData} rowClick={rowClicked} setRowClicked={setRowClicked} setRowID={setRowID} />
                 </div>
                     
