@@ -31,7 +31,7 @@ export function Header({
                     </div>
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center mb-6">
                 {file == null ? <Upload setFile={setFile} /> : submit == null ? <Submit file={file} submitPressed={setSubmit} /> : tableData == null ? <Loading loadingText={loadingText} /> : <SNFG tableData={tableData} fileName={file.name} pdbString={fileContent}></SNFG>}
                 </div>
 

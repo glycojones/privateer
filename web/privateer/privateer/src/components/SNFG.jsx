@@ -52,7 +52,7 @@ export default function SNFG({ tableData, fileName, pdbString }) {
         <div className = "flex flex-col">
             <div style={{ display: (hideMoorhen ? 'block' : 'none') }} id="tableContainer">
                 <div className="flex flex-col">
-                    <h2 className="my-4">Detected Glycans in {fileName}</h2>
+                    <h2 className="my-4">Detected {tableData.length} Glycans in {fileName}</h2>
                     <SVGTable tableData={tableData} rowClick={rowClicked} setRowClicked={setRowClicked} setRowID={setRowID} />
                 </div>
                     

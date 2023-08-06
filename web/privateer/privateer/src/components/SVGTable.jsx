@@ -9,43 +9,60 @@ const Styles = styled.div`
         border-collapse: collapse;
         border-spacing: 0;
         width: 100%;
-        border: 1px solid #ddd;
+        // border: 0px solid #ddd;
     }
      
-    table th{ 
+    table th { 
         text-align: left;
         padding: 16px;
-        border: 1px solid #ddd;
+        // border: 1px solid #ddd;
     }
     table td {
         text-align: center;
         padding: 16px;
         border: 1px solid #ddd;
+        border-style: solid none;
+    }
+
+    table td { 
+        border-style: none none;
     }
      
-    // table tr:nth-child(even) {
-    //     background-color: #f2f2f2;
-    //     color: #000000
-    // }
+    table tr:nth-child(even) { 
+        background-color: #f6f6f6;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #F4F9FF;
+        // color: #000000
+    }
      
-    // table tr:hover {
-    //     // background-color: #ddd;
-    //     scale: 101%;
-    //     cursor: grab;
-    // }
-     
+    table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #F4F9FF;
+        color: black;
+    }
+
+    table th:first-of-type {
+        border-top-left-radius: 30px;
+      }
+    table th:last-of-type {
+        border-top-right-radius: 30px;
+      }
+    table tr:last-of-type td:first-of-type {
+        border-bottom-left-radius: 30px;
+      }
+      table tr:last-of-type td:last-of-type {
+        border-bottom-right-radius: 30px;
+      }
     #row:hover { 
         scale: 101%;
         cursor: grab;
     }
 
-    table th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: center;
-        background-color: #4CAF50;
-        color: white;
-    }
+    
     `
 
 export default function SVGTable({tableData, rowClick, setRowClicked, setRowID}) {

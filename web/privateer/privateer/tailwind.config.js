@@ -9,8 +9,9 @@ export default {
       gray: "#eef2ff",
       primary: '#1b202b',
       secondary: '#4a5568',
-      tertiary: '#fafafa',
+      tertiary: '#F4F9FF',
       hover: "#e0e7ff",
+      darkgray: "#B6BAC6"
 
     },
     extend: { 

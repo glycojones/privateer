@@ -5,6 +5,7 @@ import { useState, useReducer, useRef, useEffect} from "react";
 import privateer_module from "../wasm/privateer.js"
 import loadGlytoucan from "../utils/loadGlytoucan"
 import Footer from "../layouts/Footer"
+import BorderElement from './BorderElement';
 
 export default function HomeSection() {
     const [file, setFile] = useState(null);
@@ -56,7 +57,9 @@ export default function HomeSection() {
     return (
         <>
             <Header setResetApp={setResetApp} file={file} setFile={setFile} submit={submit} setSubmit={setSubmit} tableData={tableData} loadingText={loadingText} fileContent={fileContent}  />
-            <Components     />
+            <BorderElement topColor={"#eef2ff"} bottomColor={"#F4F9FF"}></BorderElement>
+            <Components/>
+            <BorderElement topColor={"#F4F9FF"} bottomColor={"#eef2ff"} ></BorderElement>
             <Footer></Footer>
         </>
     )
