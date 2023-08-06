@@ -19,6 +19,9 @@ export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, r
         document.querySelectorAll("svg")[0].setAttribute("height", "100%")
     })
 
+    const [width, setWidth] = useState(800);
+    const [height, setHeight] = useState(600);
+
     return (
         <div className="flex-col justify-center items-center" style={{ display: !hideMoorhen ? 'flex' : 'none' }}>
 
@@ -46,7 +49,7 @@ export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, r
 
             <MoorhenContextProvider defaultBackgroundColor={[51, 65, 85, 1]}>
                 <MoorhenContainer forwardControls={forwardControls} setMoorhenDimensions={() => {
-                    return [800, 600];
+                    return [width, height];
                 }} viewOnly={true} />
 
             </MoorhenContextProvider>
