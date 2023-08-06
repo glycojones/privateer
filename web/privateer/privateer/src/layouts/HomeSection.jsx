@@ -1,21 +1,18 @@
-import SNFG from '../../components/SNFG'
+import { Header } from './Header';
+import { Components } from './Components';
+
 import { useState, useReducer, useRef, useEffect} from "react";
-import Upload from "../../components/Upload";
-import Submit from "../../common/Submit";
-import Loading from "../../common/Loading";
-import privateer_module from "../../wasm/privateer.js"
-import loadGlytoucan from "../../utils/loadGlytoucan"
-import loadGlyconnect from "../../utils/loadGlyconnect"
+import privateer_module from "../wasm/privateer.js"
+import loadGlytoucan from "../utils/loadGlytoucan"
+import Footer from "../layouts/Footer"
 
-export default function Main({resetApp}) { 
-
+export default function HomeSection() {
     const [file, setFile] = useState(null);
     const [fileContent, setFileContent] = useState(null)
     const [submit, setSubmit] = useState(null);
-    // const [svgs, setSVGs] = useState(null);
     const [tableData, setTableData] = useState(null);
     const [loadingText, setLoadingText] = useState("Validating Glycans...");
-
+    const [resetApp, setResetApp] = useState(false)
 
     useEffect(() => {
         privateer_module().then((Module) => { 
@@ -57,12 +54,10 @@ export default function Main({resetApp}) {
     }, [resetApp])
 
     return (
-        <div className="flex flex-grow bg-slate-700 justify-center items-center mb-5 my-5 p-5">
-            {file == null ? <Upload setFile={setFile}/> : 
-            submit == null ? <Submit file={file} submitPressed={setSubmit}/> :
-            tableData == null ? <Loading loadingText={loadingText}/> : 
-            <SNFG tableData = {tableData} pdbString={fileContent}></SNFG>
-            }
-        </div>
+        <>
+            <Header setResetApp={setResetApp} file={file} setFile={setFile} submit={submit} setSubmit={setSubmit} tableData={tableData} loadingText={loadingText} fileContent={fileContent}  />
+            <Components     />
+            <Footer></Footer>
+        </>
     )
 }

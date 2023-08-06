@@ -5,7 +5,7 @@ import GlycanDetail from "./GlycanDetail"
 
 const initialMoleculesState = []
 
-export default function SNFG({ tableData, pdbString }) {
+export default function SNFG({ tableData, fileName, pdbString }) {
 
     const [rowClicked, setRowClicked] = useState(false)
     const [rowID, setRowID] = useState(0)
@@ -49,9 +49,13 @@ export default function SNFG({ tableData, pdbString }) {
     }, [rowClicked])
 
     return (
-        <>
+        <div className = "flex flex-col">
             <div style={{ display: (hideMoorhen ? 'block' : 'none') }} id="tableContainer">
-                <SVGTable tableData={tableData} rowClick={rowClicked} setRowClicked={setRowClicked} setRowID={setRowID} />
+                <div className="flex flex-col">
+                    <h2 className="my-4">Detected Glycans in {fileName}</h2>
+                    <SVGTable tableData={tableData} rowClick={rowClicked} setRowClicked={setRowClicked} setRowID={setRowID} />
+                </div>
+                    
             </div>
             <GlycanDetail tableData={tableData}
             hideMoorhen={hideMoorhen} 
@@ -61,7 +65,7 @@ export default function SNFG({ tableData, pdbString }) {
             scrollPosition={yScrollPosition}
             />
 
-        </>
+        </div>
     )
 
     }

@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useMemo } from "react";
 import { useTable } from 'react-table';
-import {COLUMNS} from "../data/Constants"
 import styled from 'styled-components'
-import {MoorhenContextProvider, MoorhenMolecule, MoorhenContainer, itemReducer} from 'moorhen'
+
 
 const Styles = styled.div`
     table {
@@ -10,6 +9,7 @@ const Styles = styled.div`
         border-spacing: 0;
         width: 100%;
         border: 1px solid #ddd;
+        margin
     }
      
     table th{ 
@@ -23,22 +23,6 @@ const Styles = styled.div`
         border: 1px solid #ddd;
     }
      
-    // table tr:nth-child(even) {
-    //     background-color: #f2f2f2;
-    //     color: #000000
-    // }
-     
-    // table tr:hover {
-    //     // background-color: #ddd;
-    //     scale: 101%;
-    //     cursor: grab;
-    // }
-     
-    #row:hover { 
-        scale: 101%;
-        cursor: grab;
-    }
-
     table th {
         padding-top: 12px;
         padding-bottom: 12px;
@@ -47,14 +31,33 @@ const Styles = styled.div`
         color: white;
     }
     `
+export default function GlycanDetailTable({row}) { 
+    const DATA = {}
+    DATA["chain"] = row.chain
+    DATA['id'] = row.id
+    DATA['glytoucan_id'] = row.glytoucan_id
 
-export default function SVGTable({tableData, rowClick, setRowClicked, setRowID}) {
-    const [data, setData] = useState(tableData);
-    const controls = useRef()
+    console.log(DATA)
+
+    const [data, setData] = useState([DATA]);
+
+    const COLUMNS = [
+        {
+            Header: 'Chain',
+            accessor: 'chain',
+        },
+        {
+            Header: 'ID',
+            accessor: 'id',
+        },
+        {
+            Header: 'GlytoucanID',
+            accessor: 'glytoucan_id',
+        },
+    ]
 
     const columns = useMemo(() => COLUMNS, []);
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
-
 
     const handleRowClick = ((rowId) => { 
         setRowClicked(!rowClick)
@@ -97,4 +100,5 @@ export default function SVGTable({tableData, rowClick, setRowClicked, setRowID})
         </div>
         </Styles>
     );
-};
+
+}
