@@ -59,7 +59,7 @@ export default function HomeSection() {
             <Header setResetApp={setResetApp} file={file} setFile={setFile} submit={submit} setSubmit={setSubmit} tableData={tableData} loadingText={loadingText} fileContent={fileContent}  />
             <BorderElement topColor={"#D6D9E5"} bottomColor={"#F4F9FF"}></BorderElement>
             <Information/>
-            <BorderElement topColor={"#F4F9FF"} bottomColor={"#D6D9E5"} ></BorderElement>
+            <BorderElement topColor={"#F4F9FF"} bottomColor={"#D6D9E5"} reverse={true}></BorderElement>
             <Footer></Footer>
         </>
     )
