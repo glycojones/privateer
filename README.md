@@ -61,8 +61,6 @@ If you find Privateer useful, please cite:
 `emcmake cmake .`  
 `emmake make .`
 
-
-5. To run the Moorhen molecular graphics application:  
-`cd baby-gru`  
-`npm start`  
-And then point a web browser at `http://localhost:3000/` .  
+5. To run the Privateer application use: 
+`cd web/privateer/privateer`
+`npm run dev`

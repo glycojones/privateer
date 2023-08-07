@@ -6,7 +6,7 @@ project(privateer VERSION 0.5 LANGUAGES C CXX)
 SET(PRIVATEER_CC_FLAGS "-g -O0 -w")
 SET(PRIVATEER_CXX_FLAGS "-g -O0 -w -fwasm-exceptions -I${CMAKE_INSTALL_PREFIX}/include")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PRIVATEER_CC_FLAGS}")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS} ")
 
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
 set(CMAKE_CXX_STANDARD 11)
@@ -17,7 +17,7 @@ set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/privateer)
 set(PRIVATEERDATA ${CMAKE_SOURCE_DIR}/data)
 
 add_link_options(-sDEFAULT_PTHREAD_STACK_SIZE=2MB -sSTACK_SIZE=5MB)
-
+add_compile_options(--preload-file /home/jordan/dev/privateer_wasm/privateer/data/linkage_torsions@/)
 
 set(CLIBDENV $ENV{CLIBD})
 
@@ -120,7 +120,7 @@ add_executable(privateer_exec ${PRIVATEER_SOURCE_DIR}/cpp/privateer-bind.cpp)
 
 set_target_properties (privateer_exec  PROPERTIES OUTPUT_NAME privateer )
 
-target_link_options(privateer_exec PRIVATE -sDEMANGLE_SUPPORT=1 -sASSERTIONS=2 -fexceptions -sALLOW_MEMORY_GROWTH=1 --bind -sFORCE_FILESYSTEM=1 -sMODULARIZE=1 -sEXPORT_NAME=privateer_module -sEXPORTED_RUNTIME_METHODS=['FS'])
+target_link_options(privateer_exec PRIVATE --preload-file /Users/dialpuri/Development/privateer/data/linkage_torsions@/ -sDEMANGLE_SUPPORT=1 -sASSERTIONS=2 -fexceptions -sALLOW_MEMORY_GROWTH=1 --bind -sFORCE_FILESYSTEM=1 -sMODULARIZE=1 -sEXPORT_NAME=privateer_module -sEXPORTED_RUNTIME_METHODS=['FS'] -sMODULARIZE=1 -sEXPORT_ES6=1 )
 
 target_link_directories(privateer_exec
  PUBLIC 
@@ -181,6 +181,7 @@ ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.h
 )
 
 set_target_properties(privateer_exec PROPERTIES PUBLIC_HEADER "${privateer_HEADERS}")
+# target_compile_options(privateer_exec PUBLIC --preload-file /home/jordan/dev/privateer_wasm/privateer/data/linkage_torsions@/)
 
 set_target_properties(privateer_exec PROPERTIES COMPILE_FLAGS "-s ENVIRONMENT='web'")
 install(TARGETS privateer_lib

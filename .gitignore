@@ -44,7 +44,7 @@ install_manifest.txt
 
 # project specific
 dependencies/ccp4srs/
-dependencies/clipper/
+dependencies/*clipper/
 dependencies/fftw/
 dependencies/include
 dependencies/info
@@ -76,8 +76,7 @@ ccp4srs/*
 fftw/*
 rfftw/*
 mmdb2/*
-clipper/*
-!clipper/CMakeLists.txt
+# clipper/*
 !ccp4/CMakeLists.txt
 !ccp4srs/CMakeLists.txt
 !fftw/CMakeLists.txt
@@ -89,3 +88,20 @@ web/*
 dependencies/*
 *.a
 *.txt
+
+!clipper/ccp4/CMakeLists.txt
+!clipper/core/CMakeLists.txt
+!clipper/contrib/CMakeLists.txt
+!clipper/cif/CMakeLists.txt
+!clipper/minimol/CMakeLists.txt
+!clipper/mmdb/CMakeLists.txt
+!clipper/phs/CMakeLists.txt
+
+*node_modules*
+lib*
+old_cmake*/*
+.idea
+._*
+*.mov
+*.zip
+dependencies/gemmi
