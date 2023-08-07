@@ -10,7 +10,7 @@ const Styles = styled.div`
         border: 0px solid #ddd;
         border-collapse: seperate;
     }
-    
+
     table th { 
         text-align: left;
         padding: 16px;
@@ -24,14 +24,14 @@ const Styles = styled.div`
     }
 
     table tbody tr { 
-        border: 1px solid #ddd;
+        border: 1px solid #000000;
         border-style: solid none; 
     }
 
     table td { 
         border-style: none none;
     }
-    
+
     table tr:nth-child(even) { 
         background-color: #f6f6f6;
     }
@@ -39,7 +39,7 @@ const Styles = styled.div`
     table tr:nth-child(even) {
         background-color: #F4F9FF;
     }
-    
+
     table th {
         padding-top: 12px;
         padding-bottom: 12px;
@@ -59,7 +59,7 @@ const Styles = styled.div`
     }
     table tr:last-of-type td:last-of-type {
         border-bottom-right-radius: 30px;
-  }
+    }
 
     `
 export default function GlycanDetailTable({ row }) {
@@ -68,6 +68,7 @@ export default function GlycanDetailTable({ row }) {
     DATA['id'] = row.id
     DATA['glytoucan_id'] = row.glytoucan_id
 
+    
     console.log(DATA)
 
     const [data, setData] = useState([DATA]);
@@ -90,10 +91,7 @@ export default function GlycanDetailTable({ row }) {
     const columns = useMemo(() => COLUMNS, []);
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
 
-    const handleRowClick = ((rowId) => {
-        setRowClicked(!rowClick)
-        setRowID(rowId)
-    })
+
 
     return (
         <Styles>
@@ -114,7 +112,7 @@ export default function GlycanDetailTable({ row }) {
                         {rows.map((row) => {
                             prepareRow(row);
                             return (
-                                <tr {...row.getRowProps()} onClick={() => handleRowClick(row.id)} title="Click to visualise." id='row'>
+                                <tr {...row.getRowProps()} id='row'>
                                     {row.cells.map((cell) => {
 
                                         return (

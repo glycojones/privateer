@@ -17,7 +17,7 @@ set(PRIVATEER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/privateer)
 set(PRIVATEERDATA ${CMAKE_SOURCE_DIR}/data)
 
 add_link_options(-sDEFAULT_PTHREAD_STACK_SIZE=2MB -sSTACK_SIZE=5MB)
-add_compile_options(--preload-file /home/jordan/dev/privateer_wasm/privateer/data/linkage_torsions@/)
+add_compile_options(--preload-file data/linkage_torsions@/)
 
 set(CLIBDENV $ENV{CLIBD})
 
@@ -120,7 +120,7 @@ add_executable(privateer_exec ${PRIVATEER_SOURCE_DIR}/cpp/privateer-bind.cpp)
 
 set_target_properties (privateer_exec  PROPERTIES OUTPUT_NAME privateer )
 
-target_link_options(privateer_exec PRIVATE --preload-file /Users/dialpuri/Development/privateer/data/linkage_torsions@/ -sDEMANGLE_SUPPORT=1 -sASSERTIONS=2 -fexceptions -sALLOW_MEMORY_GROWTH=1 --bind -sFORCE_FILESYSTEM=1 -sMODULARIZE=1 -sEXPORT_NAME=privateer_module -sEXPORTED_RUNTIME_METHODS=['FS'] -sMODULARIZE=1 -sEXPORT_ES6=1 )
+target_link_options(privateer_exec PRIVATE --preload-file data/linkage_torsions@/ -sDEMANGLE_SUPPORT=1 -sASSERTIONS=2 -fexceptions -sALLOW_MEMORY_GROWTH=1 --bind -sFORCE_FILESYSTEM=1 -sMODULARIZE=1 -sEXPORT_NAME=privateer_module -sEXPORTED_RUNTIME_METHODS=['FS'] -sMODULARIZE=1 -sEXPORT_ES6=1 )
 
 target_link_directories(privateer_exec
  PUBLIC 

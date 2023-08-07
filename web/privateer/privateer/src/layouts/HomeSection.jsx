@@ -1,5 +1,5 @@
 import { Header } from './Header';
-import { Components } from './Components';
+import { Information } from './Information';
 
 import { useState, useReducer, useRef, useEffect} from "react";
 import privateer_module from "../wasm/privateer.js"
@@ -57,9 +57,9 @@ export default function HomeSection() {
     return (
         <>
             <Header setResetApp={setResetApp} file={file} setFile={setFile} submit={submit} setSubmit={setSubmit} tableData={tableData} loadingText={loadingText} fileContent={fileContent}  />
-            <BorderElement topColor={"#eef2ff"} bottomColor={"#F4F9FF"}></BorderElement>
-            <Components/>
-            <BorderElement topColor={"#F4F9FF"} bottomColor={"#eef2ff"} ></BorderElement>
+            <BorderElement topColor={"#D6D9E5"} bottomColor={"#F4F9FF"}></BorderElement>
+            <Information/>
+            <BorderElement topColor={"#F4F9FF"} bottomColor={"#D6D9E5"} ></BorderElement>
             <Footer></Footer>
         </>
     )

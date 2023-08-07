@@ -6,8 +6,8 @@ export default {
   ],
   theme: {
     colors: { 
-      gray: "#eef2ff",
-      primary: '#1b202b',
+      gray: "#D6D9E5",
+      primary: '#12161E',
       secondary: '#4a5568',
       tertiary: '#F4F9FF',
       hover: "#e0e7ff",

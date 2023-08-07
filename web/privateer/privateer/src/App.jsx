@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import NavBar from './layouts/Navbar'
-import Main from './pages/Main/Main'
-import Footer from './layouts/Footer'
 import HomeSection from './layouts/HomeSection'
 
 function App() {
