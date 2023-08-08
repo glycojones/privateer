@@ -245,51 +245,33 @@ namespace privateer
                                              pair.second.coord_orth().z() - pair.first.coord_orth().z());
         return vector;
     }
-
-    std::string get_sugar_face(clipper::MSugar &input_sugar, std::vector<std::pair<clipper::MAtom, clipper::MAtom>> &ch_atoms)
+    
+    bool isSameSide(const clipper::Coord_orth& h_coords, const clipper::Coord_orth& anomeric_O_coords, const clipper::Vec3<clipper::ftype>& sugar_normal) 
     {
-        std::string sugar_face = "β";
-        std::string atom_id = ch_atoms[0].first.id().trim();
-
-        std::vector<std::string> aldopyranose_alpha_face = {"C1", "C3", "C5"};
-        std::vector<std::string> ketopyranose_alpha_face = {"C4", "C6 "};
-        std::vector<std::string> xyp_alpha_face = {"C1B", "C3B", "C5B2"};
-        std::vector<std::string> xys_alpha_face = {"C3", "C51"};
+        double dotProduct = ((h_coords.x() - anomeric_O_coords.x()) * sugar_normal[0] +
+                             (h_coords.y() - anomeric_O_coords.y()) * sugar_normal[1] +
+                             (h_coords.z() - anomeric_O_coords.z()) * sugar_normal[2]) / 
+                             std::sqrt(sugar_normal[0] * sugar_normal[0] +
+                                       sugar_normal[1] * sugar_normal[1] +
+                                       sugar_normal[2] * sugar_normal[2]);
         
-        if (input_sugar.type_of_sugar() == "beta-D-aldopyranose" || input_sugar.type_of_sugar() == "beta-L-aldopyranose" || input_sugar.type_of_sugar() == "alpha-D-aldopyranose" || input_sugar.type_of_sugar() == "alpha-L-aldopyranose")
+        return dotProduct >= 0; // Points on the same side have a non-negative dot product
+    }
+
+    std::string get_sugar_face(clipper::MSugar &input_sugar, std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms)
+    {
+        std::string sugar_face = "α";
+        const clipper::Vec3<clipper::ftype>& sugar_normal = input_sugar.ring_mean_plane(); // normal vector of the plane
+        clipper::Coord_orth anomeric_O_coords = input_sugar.find("O5", clipper::MM::ANY).coord_orth(); // point on the plane
+
+        clipper::Coord_orth h_coords = ch_atoms.second.coord_orth(); // point to check
+        
+        if (isSameSide(h_coords, anomeric_O_coords, sugar_normal)) // if point is on same side as anomeric oxygen, then it is alpha face.
         {
-            if (std::find(aldopyranose_alpha_face.begin(), aldopyranose_alpha_face.end(), atom_id) != aldopyranose_alpha_face.end())
-            {
-                sugar_face = "α";
-            }
-        }
-        else if (input_sugar.type_of_sugar() == "beta-L-ketopyranose" || input_sugar.type_of_sugar() == "alpha-L-ketopyranose")
-        {
-            if (std::find(ketopyranose_alpha_face.begin(), ketopyranose_alpha_face.end(), atom_id) != ketopyranose_alpha_face.end())
-            {
-                sugar_face = "α";
-            }
-        }
-        else if (input_sugar.type_of_sugar() == "XYP")
-        {
-            if (std::find(xyp_alpha_face.begin(), xyp_alpha_face.end(), atom_id) != xyp_alpha_face.end())
-            {
-                sugar_face = "α";
-            }
-        }
-        else if (input_sugar.type_of_sugar() == "XYS")
-        {
-            if (std::find(xys_alpha_face.begin(), xys_alpha_face.end(), atom_id) != xys_alpha_face.end())
-            {
-                sugar_face = "α";
-            }
+            sugar_face = "β";
         }
         return sugar_face;
     }
-
-
-
-
 
     std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_stacked_residues_python(   clipper::MSugar &input_sugar,
                                                                                                                             int sugarIndex,
@@ -424,6 +406,7 @@ namespace privateer
                                         the_interaction.set_distance_cx(distance);
                                         the_interaction.set_trp_ring("A");
                                         the_interaction.set_xh_pair(ch_atoms[j]);
+                                        the_interaction.set_sugar_face(get_sugar_face(input_sugar, ch_atoms[j]));
 
                                         int residue;
                                         for (residue = 0; residue < results.size(); residue++)
@@ -501,6 +484,7 @@ namespace privateer
                                         the_interaction.set_distance_cx(distance);
                                         the_interaction.set_trp_ring("B");
                                         the_interaction.set_xh_pair(ch_atoms[j]);
+                                        the_interaction.set_sugar_face(get_sugar_face(input_sugar, ch_atoms[j]));
 
                                         int residue;
                                         for (residue = 0; residue < results.size(); residue++)
@@ -572,7 +556,8 @@ namespace privateer
                                         the_interaction.set_angle_theta_h(theta);
                                         the_interaction.set_distance_cx(distance);
                                         the_interaction.set_xh_pair(ch_atoms[j]);
-                                        // std::cout << "currently appending for k index " << k << " current residue " << this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() << " atom " << this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()][neighbourhood[k].atom()].id().trim() << std::endl;
+                                        the_interaction.set_sugar_face(get_sugar_face(input_sugar, ch_atoms[j]));
+                                        
                                         if (results.empty())
                                         {
                                             results.push_back(the_interaction);
