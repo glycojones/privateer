@@ -33,7 +33,7 @@ export default function SNFG({ tableData, fileName, pdbString }) {
 
     useEffect(() => {
         setYScrollPosition(window.scrollY)
-        console.log(tableData[rowID].id)
+        
 
         if (cootInitialized) {
             let newMolecule = new MoorhenMolecule(controls.current.commandCentre, controls.current.glRef, controls.current.monomerLibrary)
@@ -59,8 +59,8 @@ export default function SNFG({ tableData, fileName, pdbString }) {
     return (
         <div className="flex flex-col">
             <div style={{ display: (hideMoorhen ? 'block' : 'none') }} id="tableContainer">
-                <div className="flex flex-col">
-                    <h2 className="my-4">Detected {tableData.length} Glycans in {fileName}</h2>
+                <div className="flex flex-col ">
+                    <h2 className="my-4 text-lg sm:text-2xl text-center sm:text-left">Detected {tableData.length} Glycans in {fileName}</h2>
                     <SVGTable tableData={tableData} rowClick={rowClicked} setRowClicked={setRowClicked} setRowID={setRowID} />
                 </div>
 
