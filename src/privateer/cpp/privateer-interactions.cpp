@@ -418,7 +418,8 @@ namespace privateer
                                         {
                                             if(results[residue].get_stacked_residue().id() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && 
                                                results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
-                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() && 
+                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() &&
+                                               results[residue].get_xh_pair().first.id().trim() == ch_atoms[j].first.id().trim() &&
                                                results[residue].get_trp_ring() == "A")
                                                break;
                                         }
@@ -497,7 +498,8 @@ namespace privateer
                                         {
                                             if(results[residue].get_stacked_residue().id() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && 
                                                results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
-                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() && 
+                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() &&
+                                               results[residue].get_xh_pair().first.id().trim() == ch_atoms[j].first.id().trim() &&
                                                results[residue].get_trp_ring() == "B")
                                                break;
                                         }
@@ -555,7 +557,7 @@ namespace privateer
                                 
                                     if (cp_distance <= 2.0)
                                     {
-                                        // std::cout << ch_atoms[j].first.id() << std::endl;
+                                        std::cout << ch_atoms[j].first.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_glycan_size(glycanSize);
@@ -570,7 +572,8 @@ namespace privateer
                                         {
                                             if(results[residue].get_stacked_residue().id() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && 
                                                results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
-                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id())
+                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() &&
+                                               results[residue].get_xh_pair().first.id().trim() == ch_atoms[j].first.id().trim())
                                                break;
                                         }
                                         if (residue == results.size())
@@ -752,7 +755,7 @@ namespace privateer
                                     the_interaction.set_angle_theta_p(theta);
                                     the_interaction.set_distance_cx(distance);
                                     the_interaction.set_xh_pair(ch_atoms[j]);
-                                    // std::cout << "currently appending for k index " << k << " current residue " << this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() << " atom " << this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()][neighbourhood[k].atom()].id().trim() << std::endl;
+
                                     if (results.empty())
                                     {
                                         results.push_back(the_interaction);
