@@ -235,6 +235,10 @@ namespace privateer
                                     (sqrt(pow(vec1[0], 2) + pow(vec1[1], 2) + pow(vec1[2], 2)) *
                                      sqrt(pow(vec2[0], 2) + pow(vec2[1], 2) + pow(vec2[2], 2))));
 
+        if(clipper::Vec3<clipper::ftype>::dot(vec1, vec2) < 0) // the angle is obtuse
+        {
+            angle = M_PI - angle;
+        }
         return angle;
     }
     
@@ -398,6 +402,7 @@ namespace privateer
 
                                     if (cp_distance <= 1.6)
                                     {
+                                        // std::cout << ch_atoms[j].first.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_glycan_size(glycanSize);
@@ -475,6 +480,7 @@ namespace privateer
                                     
                                     if (cp_distance <= 2.0)
                                     {
+                                        // std::cout << ch_atoms[j].first.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_sugar_face(sugarFace);
@@ -549,6 +555,7 @@ namespace privateer
                                 
                                     if (cp_distance <= 2.0)
                                     {
+                                        // std::cout << ch_atoms[j].first.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_glycan_size(glycanSize);
@@ -558,19 +565,16 @@ namespace privateer
                                         the_interaction.set_xh_pair(ch_atoms[j]);
                                         the_interaction.set_sugar_face(get_sugar_face(input_sugar, ch_atoms[j]));
                                         
-                                        if (results.empty())
+                                        int residue;
+                                        for (residue = 0; residue < results.size(); residue++)
                                         {
-                                            results.push_back(the_interaction);
+                                            if(results[residue].get_stacked_residue().id() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && 
+                                               results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
+                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id())
+                                               break;
                                         }
-                                        else
-                                        {
-                                            privateer::interactions::CHPiBond last_element = results.back();
-                                            if(last_element.get_stacked_residue().id() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && 
-                                            last_element.get_stacked_residue().type().trim() != this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
-                                            last_element.get_stacked_residue_chainID() != this->hydrogenated_input_model[neighbourhood[k].polymer()].id() && 
-                                            last_element.get_trp_ring() != "B")
-                                            results.push_back(the_interaction);
-                                        }
+                                        if (residue == results.size())
+                                        results.push_back(the_interaction);
                                     }
                                 }
                             }
