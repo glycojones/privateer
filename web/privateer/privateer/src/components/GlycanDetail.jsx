@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import SVGTable from "./SVGTable";
 import { MoorhenContextProvider, MoorhenMolecule, MoorhenContainer, itemReducer } from 'moorhen'
-import BarChart from "./BarChart";
+// import BarChart from "./BarChart";
 import { useTable } from 'react-table';
 import GlycanDetailTable from "./GlycanDetailTable";
 

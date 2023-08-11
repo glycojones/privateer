@@ -15,6 +15,8 @@ export default function HomeSection() {
     const [loadingText, setLoadingText] = useState("Validating Glycans...");
     const [resetApp, setResetApp] = useState(false)
 
+    
+
     useEffect(() => {
         privateer_module().then((Module) => { 
             var reader = new FileReader();
@@ -42,10 +44,11 @@ export default function HomeSection() {
 
                 setTableData(table_data);
             }
+
             if(file) {
                 reader.readAsText(file);
             }
-          });
+          }).catch((e) => console.log(e));
     }, [submit])
 
     useEffect(() => {

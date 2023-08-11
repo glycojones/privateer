@@ -9,7 +9,7 @@ export function Information({}) {
 
                     <div className="flex flex-col mx-24 gap-6">
                         <div className="flex mr-auto gap-6">
-                            <img className="w-48 h-48 hidden sm:block" src="../../public/Cremer-Pople.png"></img>
+                            <img className="w-48 h-48 hidden sm:block" src="/Cremer-Pople.png"></img>
                             <div className="flex flex-col gap-6 justify-center">
                                 <span className="text-xl font-body">Stereochemical Validation</span>
                                 <span className="text-m font-body">
@@ -24,12 +24,12 @@ export function Information({}) {
                                 <span className="text-xl font-body">Real Space Correlation Coefficient Validation </span>
                                 <span className="text-m font-body">The real space correlation coefficient metric in quantitative terms describes how well a modelled residue fits its associated experimental density, by calculating the difference between observed(experimental) structural factors and calculated structural factors associated with the fitted model. For monosaccharides that are modelled as components of glycans, RSCC values of above 0.80 are considered to signify a good model fit to its associated experimental density.</span>
                             </div>
-                            <img className="w-48 h-48 hidden sm:block" src="../../public/Cremer-Pople.png"></img>
+                            <img className="w-48 h-48 hidden sm:block" src="/Cremer-Pople.png"></img>
 
                         </div>
 
                         <div className="flex mr-auto gap-6">
-                            <img className="w-48 h-48 hidden sm:block" src="../../public/Cremer-Pople.png"></img>
+                            <img className="w-48 h-48 hidden sm:block" src="/Cremer-Pople.png"></img>
                             <div className="flex flex-col gap-6 justify-center">
                                 <span className="text-xl font-body">Anomer Validation</span>
                                 <span className="text-m font-body">Occasionally, the glycans modelled in a structure can exhibit anomeric configurations which have not been seen before, and are most likely the result of slightly incorrect glycan positioning. Privateer can highlight this to allow a user to correct the mistakes.</span>
