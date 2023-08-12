@@ -1,4 +1,3 @@
-import React from "react";
 export function Information({}) {
   return <div className="text-secondary bg-tertiary pb-12">
                 <div className="flex flex-col">

@@ -3,7 +3,8 @@ import SVGTable from "./SVGTable";
 import { MoorhenContextProvider, MoorhenMolecule, MoorhenContainer, itemReducer } from 'moorhen'
 // import BarChart from "./BarChart";
 import { useTable } from 'react-table';
-import GlycanDetailTable from "./GlycanDetailTable";
+// import GlycanDetailTable from "./GlycanDetailTable";
+const GlycanDetailTable = lazy(() => import('./GlycanDetailTable'));
 
 
 export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition }) {

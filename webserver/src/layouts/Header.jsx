@@ -1,8 +1,15 @@
+import {lazy} from 'react'
+
 import SNFG from '../components/PrivateerDisplay/SNFG'
-import Upload from "../common/Upload";
-import Submit from "../common/Submit";
-import Loading from "../common/Loading";
+// import Upload from "../common/Upload";
+// import Submit from "../common/Submit";
+// import Loading from "../common/Loading";
 import { GITHUB_REPO } from "../data/Constants"
+
+const Upload = lazy(() => import('../common/Upload'));
+const Submit = lazy(() => import('../common/Submit'));
+const Loading = lazy(() => import('../common/Loading'));
+
 
 export function Header({
     setResetApp,

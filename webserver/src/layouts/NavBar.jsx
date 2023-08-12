@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { GITHUB_REPO, GENERAL_CITATION } from "../data/Constants"
 
 export default function NavBar({setResetApp}) {

@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import { useTable } from 'react-table';
 import {COLUMNS} from "../../data/Constants"
 import styled from 'styled-components'
-import {MoorhenContextProvider, MoorhenMolecule, MoorhenContainer, itemReducer} from 'moorhen'
 
 const Styles = styled.div`
     table {

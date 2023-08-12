@@ -1,10 +1,8 @@
-import { useState, useEffect, useRef, useCallback } from "react";
-import SVGTable from "../SVGTable/SVGTable";
-import { MoorhenContextProvider, MoorhenMolecule, MoorhenContainer, itemReducer } from 'moorhen'
-// import BarChart from "./BarChart";
-import { useTable } from 'react-table';
-import GlycanDetailTable from "./GlycanDetailTable";
+import { useState, lazy, useCallback } from "react";
+import { MoorhenContextProvider, MoorhenContainer } from 'moorhen'
+// import GlycanDetailTable from "./GlycanDetailTable";
 
+const GlycanDetailTable = lazy(() => import('./GlycanDetailTable'));
 
 export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition }) {
 

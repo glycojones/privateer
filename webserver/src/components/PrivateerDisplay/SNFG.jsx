@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef, useCallback } from "react";
-import SVGTable from "../SVGTable/SVGTable";
-import { MoorhenContextProvider, MoorhenMolecule, MoorhenContainer, itemReducer } from 'moorhen'
+import { useState, useEffect, useRef, lazy } from "react";
+// import SVGTable from "../SVGTable/SVGTable";
+import { MoorhenMolecule } from 'moorhen'
 import GlycanDetail from "../GlycanDetail/GlycanDetail"
+
+const SVGTable = lazy(() => import('../SVGTable/SVGTable'));
 
 const initialMoleculesState = []
 

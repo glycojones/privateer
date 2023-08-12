@@ -1,11 +1,18 @@
+import { useState, lazy, useEffect} from "react";
+
 import { Header } from '../../layouts/Header';
 import { Information } from '../../components/Information/Information';
 
-import { useState, useReducer, useRef, useEffect} from "react";
-import privateer_module from "/privateer.js?url"
+import privateer_module from "../../wasm/privateer.js"
 import loadGlytoucan from "../../utils/loadGlytoucan"
-import Footer from "../../layouts/Footer"
-import BorderElement from '../../layouts/BorderElement';
+// import Footer from "../../layouts/Footer"
+// import BorderElement from '../../layouts/BorderElement';
+
+const Footer = lazy(() => import('../../layouts/Footer'));
+const BorderElement = lazy(() => import('../../layouts/BorderElement'));
+// const Header = lazy(() => import('../../layouts/Header'));
+// const Information = lazy(() => import('../../components/Information/Information'));
+
 
 export default function HomeSection() {
     const [file, setFile] = useState(null);
