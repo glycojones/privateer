@@ -2,7 +2,7 @@ import { Header } from '../../layouts/Header';
 import { Information } from '../../components/Information/Information';
 
 import { useState, useReducer, useRef, useEffect} from "react";
-import privateer_module from "../../wasm/privateer.js"
+import privateer_module from "/privateer.js?url"
 import loadGlytoucan from "../../utils/loadGlytoucan"
 import Footer from "../../layouts/Footer"
 import BorderElement from '../../layouts/BorderElement';
