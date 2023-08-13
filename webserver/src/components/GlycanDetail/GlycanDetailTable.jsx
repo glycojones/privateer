@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { useTable } from 'react-table';
+import {useMemo, useState} from "react";
+import {useTable} from 'react-table';
 import styled from 'styled-components'
 
 
@@ -62,13 +62,13 @@ const Styles = styled.div`
     }
 
     `
-export default function GlycanDetailTable({ row }) {
+export default function GlycanDetailTable({row}) {
     const DATA = {}
     DATA["chain"] = row.chain
     DATA['id'] = row.id
     DATA['glytoucan_id'] = row.glytoucan_id
 
-    
+
     console.log(DATA)
 
     const [data, setData] = useState([DATA]);
@@ -89,8 +89,7 @@ export default function GlycanDetailTable({ row }) {
     ]
 
     const columns = useMemo(() => COLUMNS, []);
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
-
+    const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = useTable({columns, data});
 
 
     return (
@@ -98,32 +97,32 @@ export default function GlycanDetailTable({ row }) {
             <div className="container" id='table'>
                 <table {...getTableProps()}>
                     <thead>
-                        {headerGroups.map((headerGroup) => (
-                            <tr {...headerGroup.getHeaderGroupProps()}>
-                                {headerGroup.headers.map((column) => (
-                                    <th {...column.getHeaderProps()}>
-                                        {column.render('Header')}
-                                    </th>
-                                ))}
-                            </tr>
-                        ))}
+                    {headerGroups.map((headerGroup) => (
+                        <tr {...headerGroup.getHeaderGroupProps()}>
+                            {headerGroup.headers.map((column) => (
+                                <th {...column.getHeaderProps()}>
+                                    {column.render('Header')}
+                                </th>
+                            ))}
+                        </tr>
+                    ))}
                     </thead>
                     <tbody {...getTableBodyProps()}>
-                        {rows.map((row) => {
-                            prepareRow(row);
-                            return (
-                                <tr {...row.getRowProps()} id='row'>
-                                    {row.cells.map((cell) => {
+                    {rows.map((row) => {
+                        prepareRow(row);
+                        return (
+                            <tr {...row.getRowProps()} id='row'>
+                                {row.cells.map((cell) => {
 
-                                        return (
-                                            <td {...cell.getCellProps()}>
-                                                {cell.render('Cell')}
-                                            </td>
-                                        );
-                                    })}
-                                </tr>
-                            );
-                        })}
+                                    return (
+                                        <td {...cell.getCellProps()}>
+                                            {cell.render('Cell')}
+                                        </td>
+                                    );
+                                })}
+                            </tr>
+                        );
+                    })}
                     </tbody>
                 </table>
             </div>

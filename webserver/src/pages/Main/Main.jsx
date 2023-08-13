@@ -1,13 +1,12 @@
 import SNFG from '../../components/SNFG'
-import { useState, useReducer, useRef, useEffect} from "react";
+import {useEffect, useState} from "react";
 import Upload from "../../components/Upload";
 import Submit from "../../common/Submit";
 import Loading from "../../common/Loading";
 import privateer_module from "../../wasm/privateer.js"
 import loadGlytoucan from "../../utils/loadGlytoucan"
-import loadGlyconnect from "../../utils/loadGlyconnect"
 
-export default function Main({resetApp}) { 
+export default function Main({resetApp}) {
 
     const [file, setFile] = useState(null);
     const [fileContent, setFileContent] = useState(null)
@@ -18,11 +17,11 @@ export default function Main({resetApp}) {
 
 
     useEffect(() => {
-        privateer_module().then((Module) => { 
+        privateer_module().then((Module) => {
             var reader = new FileReader();
             reader.onload = async () => {
                 // let x = Module.read_structure(reader.result, file.name)
-                
+
                 // let svgs = [];
                 // for (var i = 0; i < x.size(); i++) {
                 //   svgs.push(x.get(i))
@@ -30,7 +29,7 @@ export default function Main({resetApp}) {
                 // setSVGs(svgs);
                 setFileContent(reader.result)
                 let x = Module.read_structure_to_table(reader.result, file.name)
-                
+
                 let table_data = [];
                 for (var i = 0; i < x.size(); i++) {
                     table_data.push(x.get(i))
@@ -44,10 +43,10 @@ export default function Main({resetApp}) {
 
                 setTableData(table_data);
             }
-            if(file) {
+            if (file) {
                 reader.readAsText(file);
             }
-          });
+        });
     }, [submit])
 
     useEffect(() => {
@@ -58,10 +57,10 @@ export default function Main({resetApp}) {
 
     return (
         <div className="flex flex-grow bg-slate-700 justify-center items-center mb-5 my-5 p-5">
-            {file == null ? <Upload setFile={setFile}/> : 
-            submit == null ? <Submit file={file} submitPressed={setSubmit}/> :
-            tableData == null ? <Loading loadingText={loadingText}/> : 
-            <SNFG tableData = {tableData} pdbString={fileContent}></SNFG>
+            {file == null ? <Upload setFile={setFile}/> :
+                submit == null ? <Submit file={file} submitPressed={setSubmit}/> :
+                    tableData == null ? <Loading loadingText={loadingText}/> :
+                        <SNFG tableData={tableData} pdbString={fileContent}></SNFG>
             }
         </div>
     )

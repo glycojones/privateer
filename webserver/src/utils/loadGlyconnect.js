@@ -1,4 +1,3 @@
-
 async function get_glyconnect_id(glytoucan_id) {
     let url = "https://glyconnect.expasy.org/api/structures/search/glytoucan"
 
@@ -12,10 +11,9 @@ async function get_glyconnect_id(glytoucan_id) {
         }
     }).then((response) => {
         const contentType = response.headers.get("content-type")
-        if (contentType && contentType.indexOf("application/json") !== -1) { 
+        if (contentType && contentType.indexOf("application/json") !== -1) {
             return response.json()
-        }
-        else if (response.status == 404) { 
+        } else if (response.status == 404) {
             return Promise.reject("404 Error")
         }
     }).catch((error) => {
@@ -28,18 +26,17 @@ export default async function load_glyconnect(table_data) {
 
     let promises = [];
 
-    for (var i = 0; i < table_data.length; i++){
+    for (var i = 0; i < table_data.length; i++) {
         let item = table_data[i]
         promises.push(get_glyconnect_id(item.glytoucan_id))
     }
-    
+
     try {
         const data = await Promise.all(promises)
+    } catch {
+
     }
-    catch { 
-        
-    }
-    data.forEach((data, index) => { 
+    data.forEach((data, index) => {
         // console.log(data)
         // table_data[index].glytoucan_id = data[0].id;
     })

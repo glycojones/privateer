@@ -1,25 +1,24 @@
-
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { Carousel } from 'react-responsive-carousel';
-import { useCallback, useState } from "react";
+import {useCallback, useState} from "react";
 
 export default function SVGCarousel({svgs}) {
 
     let [index, setIndex] = useState(0);
 
-    const next = (() => { 
-        let newIndex = index + 1 
-        if (newIndex >= svgs.length) { 
+    const next = (() => {
+        let newIndex = index + 1
+        if (newIndex >= svgs.length) {
             newIndex = 0;
         }
         setIndex(newIndex);
 
     })
 
-    const prev = (() => { 
-        let newIndex = index - 1 
-        if (newIndex < 0) { 
-            newIndex = svgs.length-1
+    const prev = (() => {
+        let newIndex = index - 1
+        if (newIndex < 0) {
+            newIndex = svgs.length - 1
         }
         setIndex(newIndex);
     })
@@ -33,7 +32,9 @@ export default function SVGCarousel({svgs}) {
         let useList = document.querySelectorAll('use')
 
         for (let i = 0; i < useList.length; i++) {
-            useList[i].addEventListener("click", (e) => {console.log(useList[i].id)})
+            useList[i].addEventListener("click", (e) => {
+                console.log(useList[i].id)
+            })
         }
 
         document.querySelectorAll("svg")[0].setAttribute("width", "50vw")
@@ -48,15 +49,15 @@ export default function SVGCarousel({svgs}) {
             </div>
 
             <div className="flex w-full h-96 justify-center">
-                <div className="my-auto" dangerouslySetInnerHTML={{ __html: svgs[index]}} ref={ref} />
+                <div className="my-auto" dangerouslySetInnerHTML={{__html: svgs[index]}} ref={ref}/>
             </div>
 
             <div className="my-4">
-                    <button onClick={prev} className="mx-4">Prev</button>
-                    <span>{index+1}/{svgs.length}</span>
-                    <button onClick={next} className="mx-4">Next</button>
-                </div>
+                <button onClick={prev} className="mx-4">Prev</button>
+                <span>{index + 1}/{svgs.length}</span>
+                <button onClick={next} className="mx-4">Next</button>
+            </div>
         </div>
 
-);
+    );
 }

@@ -1,7 +1,7 @@
-import { useState, lazy, useEffect} from "react";
+import {lazy, useEffect, useState} from "react";
 
-import { Header } from '../../layouts/Header';
-import { Information } from '../../components/Information/Information';
+import {Header} from '../../layouts/Header';
+import {Information} from '../../components/Information/Information';
 
 import privateer_module from "../../wasm/privateer.js"
 import loadGlytoucan from "../../utils/loadGlytoucan"
@@ -22,14 +22,13 @@ export default function HomeSection() {
     const [loadingText, setLoadingText] = useState("Validating Glycans...");
     const [resetApp, setResetApp] = useState(false)
 
-    
 
     useEffect(() => {
-        privateer_module().then((Module) => { 
+        privateer_module().then((Module) => {
             var reader = new FileReader();
             reader.onload = async () => {
                 // let x = Module.read_structure(reader.result, file.name)
-                
+
                 // let svgs = [];
                 // for (var i = 0; i < x.size(); i++) {
                 //   svgs.push(x.get(i))
@@ -37,7 +36,7 @@ export default function HomeSection() {
                 // setSVGs(svgs);
                 setFileContent(reader.result)
                 let x = Module.read_structure_to_table(reader.result, file.name)
-                
+
                 let table_data = [];
                 for (var i = 0; i < x.size(); i++) {
                     table_data.push(x.get(i))
@@ -52,10 +51,10 @@ export default function HomeSection() {
                 setTableData(table_data);
             }
 
-            if(file) {
+            if (file) {
                 reader.readAsText(file);
             }
-          }).catch((e) => console.log(e));
+        }).catch((e) => console.log(e));
     }, [submit])
 
     useEffect(() => {
@@ -66,7 +65,8 @@ export default function HomeSection() {
 
     return (
         <>
-            <Header setResetApp={setResetApp} file={file} setFile={setFile} submit={submit} setSubmit={setSubmit} tableData={tableData} loadingText={loadingText} fileContent={fileContent}  />
+            <Header setResetApp={setResetApp} file={file} setFile={setFile} submit={submit} setSubmit={setSubmit}
+                    tableData={tableData} loadingText={loadingText} fileContent={fileContent}/>
             <BorderElement topColor={"#D6D9E5"} bottomColor={"#F4F9FF"}></BorderElement>
             <Information/>
             <BorderElement topColor={"#F4F9FF"} bottomColor={"#D6D9E5"} reverse={true}></BorderElement>

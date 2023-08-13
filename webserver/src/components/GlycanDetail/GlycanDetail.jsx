@@ -1,16 +1,18 @@
-import { useState, lazy, useCallback } from "react";
-import { MoorhenContextProvider, MoorhenContainer } from 'moorhen'
+import {lazy, useCallback, useState} from "react";
+import {MoorhenContainer, MoorhenContextProvider} from 'moorhen'
 // import GlycanDetailTable from "./GlycanDetailTable";
 
 const GlycanDetailTable = lazy(() => import('./GlycanDetailTable'));
 
-export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition }) {
+export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition}) {
 
     const ref = useCallback((node) => {
         let useList = document.querySelectorAll('use')
 
         for (let i = 0; i < useList.length; i++) {
-            useList[i].addEventListener("click", (e) => { console.log(useList[i].id) })
+            useList[i].addEventListener("click", (e) => {
+                console.log(useList[i].id)
+            })
         }
 
         document.querySelectorAll("svg")[0].setAttribute("width", "50vw")
@@ -21,7 +23,7 @@ export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, r
     const [height, setHeight] = useState(600);
 
     return (
-        <div className="flex-col justify-center items-center" style={{ display: !hideMoorhen ? 'flex' : 'none' }}>
+        <div className="flex-col justify-center items-center" style={{display: !hideMoorhen ? 'flex' : 'none'}}>
 
             <div className="flex items-center justify-center w-full">
                 <div className="flex-1">
@@ -43,12 +45,12 @@ export default function GlycanDetail({ tableData, hideMoorhen, setHideMoorhen, r
 
             <div className="mt-4 py-4" id='svgContainer' dangerouslySetInnerHTML={{
                 __html: tableData[rowID].svg
-            }} ref={ref} />
+            }} ref={ref}/>
 
             <MoorhenContextProvider defaultBackgroundColor={[51, 65, 85, 1]}>
                 <MoorhenContainer forwardControls={forwardControls} setMoorhenDimensions={() => {
                     return [width, height];
-                }} viewOnly={true} />
+                }} viewOnly={true}/>
 
             </MoorhenContextProvider>
 

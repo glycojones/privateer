@@ -1,87 +1,92 @@
-import { useState, useRef, useMemo } from 'react';
-import { useTable } from 'react-table';
+import {useMemo, useRef, useState} from 'react';
+import {useTable} from 'react-table';
 import {COLUMNS} from "../../data/Constants"
 import styled from 'styled-components'
 
 const Styles = styled.div`
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 100%;
-        // border: 0px solid #ddd;
-    }
-     
-    table th { 
-        text-align: left;
-        padding: 16px;
-        // border: 1px solid #ddd;
-    }
-    table td {
-        text-align: center;
-        padding: 16px;
-        border: 1px solid #ddd;
-        border-style: solid none;
-    }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    // border: 0px solid #ddd;
+  }
 
-    table td { 
-        border-style: none none;
-    }
-     
-    table tr:nth-child(even) { 
-        background-color: #f6f6f6;
-    }
+  table th {
+    text-align: left;
+    padding: 16px;
+    // border: 1px solid #ddd;
+  }
 
-    table tr:nth-child(even) {
-        background-color: #F4F9FF;
-        // color: #000000
-    }
-     
-    table th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: center;
-        background-color: #F4F9FF;
-        color: black;
-    }
+  table td {
+    text-align: center;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-style: solid none;
+  }
 
-    table th:first-of-type {
-        border-top-left-radius: 30px;
-      }
-    table th:last-of-type {
-        border-top-right-radius: 30px;
-      }
-    table tr:last-of-type td:first-of-type {
-        border-bottom-left-radius: 30px;
-      }
-      table tr:last-of-type td:last-of-type {
-        border-bottom-right-radius: 30px;
-      }
-    #row:hover { 
-        scale: 101%;
-        cursor: grab;
-    }
+  table td {
+    border-style: none none;
+  }
 
-    
-    `
+  table tr:nth-child(even) {
+    background-color: #f6f6f6;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #F4F9FF;
+    // color: #000000
+  }
+
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #F4F9FF;
+    color: black;
+  }
+
+  table th:first-of-type {
+    border-top-left-radius: 30px;
+  }
+
+  table th:last-of-type {
+    border-top-right-radius: 30px;
+  }
+
+  table tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 30px;
+  }
+
+  table tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 30px;
+  }
+
+  #row:hover {
+    scale: 101%;
+    cursor: grab;
+  }
+
+
+`
 
 export default function SVGTable({tableData, rowClick, setRowClicked, setRowID}) {
     const [data, setData] = useState(tableData);
     const controls = useRef()
 
     const columns = useMemo(() => COLUMNS, []);
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
+    const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = useTable({columns, data});
 
 
-    const handleRowClick = ((rowId) => { 
+    const handleRowClick = ((rowId) => {
         setRowClicked(!rowClick)
         setRowID(rowId)
     })
 
     return (
         <Styles>
-        <div className="container" id='table'>
-            <table {...getTableProps()}>
-                <thead>
+            <div className="container" id='table'>
+                <table {...getTableProps()}>
+                    <thead>
                     {headerGroups.map((headerGroup) => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map((column) => (
@@ -91,14 +96,15 @@ export default function SVGTable({tableData, rowClick, setRowClicked, setRowID})
                             ))}
                         </tr>
                     ))}
-                </thead>
-                <tbody {...getTableBodyProps()}>
+                    </thead>
+                    <tbody {...getTableBodyProps()}>
                     {rows.map((row) => {
                         prepareRow(row);
                         return (
-                            <tr {...row.getRowProps()} onClick={() => handleRowClick(row.id)} title="Click to visualise." id='row'>
+                            <tr {...row.getRowProps()} onClick={() => handleRowClick(row.id)}
+                                title="Click to visualise." id='row'>
                                 {row.cells.map((cell) => {
-                                
+
                                     return (
                                         <td {...cell.getCellProps()}>
                                             {cell.render('Cell')}
@@ -108,9 +114,9 @@ export default function SVGTable({tableData, rowClick, setRowClicked, setRowID})
                             </tr>
                         );
                     })}
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
         </Styles>
     );
 };
