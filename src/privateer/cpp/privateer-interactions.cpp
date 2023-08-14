@@ -229,16 +229,17 @@ namespace privateer
             return result;
     }
 
-    clipper::ftype get_angle(clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2)
+    clipper::ftype get_angle(clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2, std::string parameter)
     {
         clipper::ftype angle = acos(clipper::Vec3<clipper::ftype>::dot(vec1, vec2) /
                                     (sqrt(pow(vec1[0], 2) + pow(vec1[1], 2) + pow(vec1[2], 2)) *
                                      sqrt(pow(vec2[0], 2) + pow(vec2[1], 2) + pow(vec2[2], 2))));
 
-        if(clipper::Vec3<clipper::ftype>::dot(vec1, vec2) < 0) // the angle is obtuse
-        {
-            angle = M_PI - angle;
-        }
+        if(parameter == "theta")
+            if(clipper::Vec3<clipper::ftype>::dot(vec1, vec2) < 0) // the angle is obtuse
+            {
+                angle = M_PI - angle;
+            }
         return angle;
     }
     
@@ -250,7 +251,7 @@ namespace privateer
         return vector;
     }
     
-    bool is_same_side(const clipper::Coord_orth& h_coords, const clipper::Coord_orth& anomeric_O_coords, const clipper::Vec3<clipper::ftype>& sugar_normal) // is the hydrogen atom on the same side as anomeric (beta) or other (alpha)
+    bool is_same_side(const clipper::Coord_orth& h_coords, const clipper::Coord_orth& anomeric_O_coords, const clipper::Vec3<clipper::ftype>& sugar_normal) // is h-atom on the same side as anomeric oxygen (beta) or not (alpha)
     {
         double dot_product = ((h_coords.x() - anomeric_O_coords.x()) * sugar_normal[0] +
                               (h_coords.y() - anomeric_O_coords.y()) * sugar_normal[1] +
@@ -305,54 +306,53 @@ namespace privateer
                                                                         const clipper::Coord_orth &aromatic_centre,
                                                                         const clipper::ftype &distance)
     {
-        clipper::ftype theta;
-        clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms.second.coord_orth(), aromatic_centre);             
-        if (distance > distance_ho)
-        {
-            clipper::Vec3<clipper::ftype> hx_vector(ch_atoms.second.coord_orth().x() - ch_atoms.first.coord_orth().x(),
-                                                    ch_atoms.second.coord_orth().y() - ch_atoms.first.coord_orth().y(),
-                                                    ch_atoms.second.coord_orth().z() - ch_atoms.first.coord_orth().z());
-            clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-            theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector)));
-            return theta;
-        }
+        clipper::Vec3<clipper::ftype> hx_vector(ch_atoms.second.coord_orth().x() - ch_atoms.first.coord_orth().x(),
+                                                ch_atoms.second.coord_orth().y() - ch_atoms.first.coord_orth().y(),
+                                                ch_atoms.second.coord_orth().z() - ch_atoms.first.coord_orth().z());
+        clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
+        clipper::ftype theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector, "theta")));
+        return theta;
     }
 
-    clipper::ftype privateer::interactions::CHPiBond::calculate_cp_distance (const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
-                                                                        const clipper::MMonomer &mmon,
-                                                                        const clipper::Coord_orth &aromatic_centre,
-                                                                        const clipper::ftype &distance)
+    clipper::ftype privateer::interactions::CHPiBond::calculate_cp_distance(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+                                                                            const clipper::MMonomer &mmon,
+                                                                            const clipper::Coord_orth &aromatic_centre,
+                                                                            const clipper::ftype &distance)
     {
         clipper::Vec3<clipper::ftype> co_vector(aromatic_centre.x() - ch_atoms.first.coord_orth().x(),
                                                 aromatic_centre.y() - ch_atoms.first.coord_orth().y(),
                                                 aromatic_centre.z() - ch_atoms.first.coord_orth().z());
         clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-        clipper::ftype angle1 = clipper::Util::rad2d((get_angle(aromatic_vector, co_vector)));
+        clipper::ftype angle1 = clipper::Util::rad2d((get_angle(aromatic_vector, co_vector, "cp_distance")));
         clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
         
         return cp_distance;
     }
 
-    // clipper::ftype privateer::interactions::CHPiBond::calculate_theta_p ( clipper::Coord_orth& c1, clipper::Coord_orth& c2)
-    // {
-    //     clipper::Vec3<clipper::ftype> ox_vector(aromatic_centre_a.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
-    //                                                                 aromatic_centre_a.y() - ch_atoms[j].first.coord_orth().y(),
-    //                                                                 aromatic_centre_a.z() - ch_atoms[j].first.coord_orth().z());
-    //                         clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-    //                         clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector));
-                            
-    // }
+    clipper::ftype privateer::interactions::CHPiBond::calculate_theta_p(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+                                                                        const clipper::MMonomer &mmon,
+                                                                        const clipper::Coord_orth &aromatic_centre)
+    {
+        clipper::Vec3<clipper::ftype> ox_vector(aromatic_centre.x() - ch_atoms.first.coord_orth().x(), // centre of ring-x atom
+                                                aromatic_centre.y() - ch_atoms.first.coord_orth().y(),
+                                                aromatic_centre.z() - ch_atoms.first.coord_orth().z());
+        clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
+        clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector, "theta"));
+        return theta;
+    }
 
-    // clipper::ftype privateer::interactions::CHPiBond::calculate_phi ( clipper::Coord_orth& c1, clipper::Coord_orth& c2)
-    // {
-    //     clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // heavy atom-hydrogen
-    //                                                                     ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-    //                                                                     ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-    //                             clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre_a.x(), // centre of ring-hydrogen
-    //                                                                     ch_atoms[j].second.coord_orth().y() - aromatic_centre_a.y(),
-    //                                                                     ch_atoms[j].second.coord_orth().z() - aromatic_centre_a.z());
-    //                             clipper::ftype phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector));
-    // }
+    clipper::ftype privateer::interactions::CHPiBond::calculate_phi(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+                                                                    const clipper::Coord_orth &aromatic_centre)
+    {
+        clipper::Vec3<clipper::ftype> hx_vector(ch_atoms.second.coord_orth().x() - ch_atoms.first.coord_orth().x(), // x atom-hydrogen
+                                                ch_atoms.second.coord_orth().y() - ch_atoms.first.coord_orth().y(),
+                                                ch_atoms.second.coord_orth().z() - ch_atoms.first.coord_orth().z());
+        clipper::Vec3<clipper::ftype> oh_vector(ch_atoms.second.coord_orth().x() - aromatic_centre.x(), // centre of ring-hydrogen
+                                                ch_atoms.second.coord_orth().y() - aromatic_centre.y(),
+                                                ch_atoms.second.coord_orth().z() - aromatic_centre.z());
+        clipper::ftype phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector, "phi"));
+        return phi;
+    }
 
     std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_stacked_residues_python(   clipper::MSugar &input_sugar,
                                                                                                                             int sugarIndex,
@@ -565,7 +565,7 @@ namespace privateer
                                                                     aromatic_centre_a.y() - ch_atoms[j].first.coord_orth().y(),
                                                                     aromatic_centre_a.z() - ch_atoms[j].first.coord_orth().z());
                             clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector));
+                            clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector, "theta"));
                             
                             if (theta <= 25.0)
                             {
@@ -575,7 +575,7 @@ namespace privateer
                                 clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre_a.x(), // centre of ring-hydrogen
                                                                         ch_atoms[j].second.coord_orth().y() - aromatic_centre_a.y(),
                                                                         ch_atoms[j].second.coord_orth().z() - aromatic_centre_a.z());
-                                clipper::ftype phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector));
+                                clipper::ftype phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector, "phi"));
 
                                 if (phi >= 120.0)
                                 {
@@ -613,7 +613,7 @@ namespace privateer
                                                                     aromatic_centre_b.y() - ch_atoms[j].first.coord_orth().y(),
                                                                     aromatic_centre_b.z() - ch_atoms[j].first.coord_orth().z());
                             clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector));
+                            clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector, "theta"));
                             
                             if (theta <= 25.0)
                             {
@@ -623,7 +623,8 @@ namespace privateer
                                 clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre_b.x(), // centre of ring-hydrogen
                                                                         ch_atoms[j].second.coord_orth().y() - aromatic_centre_b.y(),
                                                                         ch_atoms[j].second.coord_orth().z() - aromatic_centre_b.z());
-                                clipper::ftype phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector));
+                                clipper::ftype phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector, "phi"));
+
                                 if (phi >= 120.0)
                                 {
                                     privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "plevin");
@@ -662,7 +663,7 @@ namespace privateer
                                                                     aromatic_centre.y() - ch_atoms[j].first.coord_orth().y(),
                                                                     aromatic_centre.z() - ch_atoms[j].first.coord_orth().z());
                             clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector));
+                            clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector, "theta"));
                             
                             if (theta <= 25.0)
                             {
@@ -672,7 +673,7 @@ namespace privateer
                                 clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre.x(), // centre of ring-hydrogen
                                                                         ch_atoms[j].second.coord_orth().y() - aromatic_centre.y(),
                                                                         ch_atoms[j].second.coord_orth().z() - aromatic_centre.z());
-                                clipper::ftype phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector));
+                                clipper::ftype phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector, "phi"));
                                 
                                 if (phi >= 120.0)
                                 {

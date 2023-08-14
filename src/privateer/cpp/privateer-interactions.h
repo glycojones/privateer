@@ -257,7 +257,9 @@ namespace privateer {
 				static clipper::ftype calculate_co_distance (const clipper::MAtomIndexSymmetry &neighbourhood, const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::Coord_orth &aromatic_centre, const clipper::MiniMol &hydrogenated_input_model);
 				static clipper::ftype calculate_theta_h(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::MMonomer &mmon, const clipper::Coord_orth &aromatic_centre, const clipper::ftype &distance);
 				static clipper::ftype calculate_cp_distance(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::MMonomer &mmon, const clipper::Coord_orth &aromatic_centre, const clipper::ftype &distance);
-				
+				static clipper::ftype calculate_theta_p(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::MMonomer &mmon, const clipper::Coord_orth &aromatic_centre);
+				static clipper::ftype calculate_phi(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms,const clipper::Coord_orth &aromatic_centre);
+
 			private:
 				clipper::MiniMol hydrogenated_input_model;
 				std::string sugar_chainID;
