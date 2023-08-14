@@ -190,15 +190,6 @@ namespace privateer {
 					return this->stacked_residue_chainID;
 				}
 
-				float get_angle ( ){
-					return this->angle;
-				}
-
-				void set_angle ( float angle ){
-					this->angle = angle;
-
-				}
-
 				float get_angle_theta_h ( ) {
 					return this->angle_theta_h;
 				}
@@ -263,9 +254,10 @@ namespace privateer {
 					this->sugarFace = sugar_face;
 				}
 
-				static clipper::ftype calculate_co_distance ( const clipper::MAtomIndexSymmetry &neighbourhood, const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::Coord_orth &aromatic_centre, const clipper::MiniMol &hydrogenated_input_model);
-
-			
+				static clipper::ftype calculate_co_distance (const clipper::MAtomIndexSymmetry &neighbourhood, const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::Coord_orth &aromatic_centre, const clipper::MiniMol &hydrogenated_input_model);
+				static clipper::ftype calculate_theta_h(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::MMonomer &mmon, const clipper::Coord_orth &aromatic_centre, const clipper::ftype &distance);
+				static clipper::ftype calculate_cp_distance(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::MMonomer &mmon, const clipper::Coord_orth &aromatic_centre, const clipper::ftype &distance);
+				
 			private:
 				clipper::MiniMol hydrogenated_input_model;
 				std::string sugar_chainID;
@@ -285,8 +277,8 @@ namespace privateer {
 				std::string sugarFace;
 				std::string trp_ring; // For TRP exclusively, A + B
 				clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
-				clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
-				clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon );
+				// clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
+				// clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon );
     	};
 
 		class CHPiBondsParser

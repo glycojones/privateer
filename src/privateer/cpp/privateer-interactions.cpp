@@ -250,16 +250,16 @@ namespace privateer
         return vector;
     }
     
-    bool isSameSide(const clipper::Coord_orth& h_coords, const clipper::Coord_orth& anomeric_O_coords, const clipper::Vec3<clipper::ftype>& sugar_normal) 
+    bool is_same_side(const clipper::Coord_orth& h_coords, const clipper::Coord_orth& anomeric_O_coords, const clipper::Vec3<clipper::ftype>& sugar_normal) // is the hydrogen atom on the same side as anomeric (beta) or other (alpha)
     {
-        double dotProduct = ((h_coords.x() - anomeric_O_coords.x()) * sugar_normal[0] +
-                             (h_coords.y() - anomeric_O_coords.y()) * sugar_normal[1] +
-                             (h_coords.z() - anomeric_O_coords.z()) * sugar_normal[2]) / 
-                             std::sqrt(sugar_normal[0] * sugar_normal[0] +
-                                       sugar_normal[1] * sugar_normal[1] +
-                                       sugar_normal[2] * sugar_normal[2]);
+        double dot_product = ((h_coords.x() - anomeric_O_coords.x()) * sugar_normal[0] +
+                              (h_coords.y() - anomeric_O_coords.y()) * sugar_normal[1] +
+                              (h_coords.z() - anomeric_O_coords.z()) * sugar_normal[2]) / 
+                              std::sqrt(sugar_normal[0] * sugar_normal[0] +
+                                        sugar_normal[1] * sugar_normal[1] +
+                                        sugar_normal[2] * sugar_normal[2]);
         
-        return dotProduct >= 0; // Points on the same side have a non-negative dot product
+        return dot_product >= 0; // Points on the same side have a non-negative dot product
     }
 
     std::string get_sugar_face(clipper::MSugar &input_sugar, std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms)
@@ -270,17 +270,17 @@ namespace privateer
 
         clipper::Coord_orth h_coords = ch_atoms.second.coord_orth(); // point to check
         
-        if (isSameSide(h_coords, anomeric_O_coords, sugar_normal)) // if point is on same side as anomeric oxygen, then it is alpha face.
+        if (is_same_side(h_coords, anomeric_O_coords, sugar_normal)) // if point is on same side as anomeric oxygen, then it is beta
         {
             sugar_face = "β";
         }
         return sugar_face;
     }
 
-    clipper::ftype privateer::interactions::CHPiBond::calculate_co_distance ( const clipper::MAtomIndexSymmetry &neighbourhood, 
-                                                                              const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
-                                                                              const clipper::Coord_orth &aromatic_centre,
-                                                                              const clipper::MiniMol &hydrogenated_input_model)
+    clipper::ftype privateer::interactions::CHPiBond::calculate_co_distance(const clipper::MAtomIndexSymmetry &neighbourhood, 
+                                                                            const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+                                                                            const clipper::Coord_orth &aromatic_centre,
+                                                                            const clipper::MiniMol &hydrogenated_input_model)
     {
         clipper::ftype distance = 0.0;
         if (neighbourhood.symmetry() == 0)
@@ -300,28 +300,38 @@ namespace privateer
         return distance;
     }
 
-    // clipper::ftype privateer::interactions::CHPiBond::calculate_theta_h( clipper::Coord_orth& c1, clipper::Coord_orth& c2)
-    // {
-    //     clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms[j].second.coord_orth(), aromatic_centre_a);
-                            
-    //                         if (distance > distance_ho)
-    //                         {
-    //                             clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(),
-    //                                                                     ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-    //                                                                     ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-    //                             clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-    //                             clipper::ftype theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector)));   
-    // }
+    clipper::ftype privateer::interactions::CHPiBond::calculate_theta_h(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+                                                                        const clipper::MMonomer &mmon,
+                                                                        const clipper::Coord_orth &aromatic_centre,
+                                                                        const clipper::ftype &distance)
+    {
+        clipper::ftype theta;
+        clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms.second.coord_orth(), aromatic_centre);             
+        if (distance > distance_ho)
+        {
+            clipper::Vec3<clipper::ftype> hx_vector(ch_atoms.second.coord_orth().x() - ch_atoms.first.coord_orth().x(),
+                                                    ch_atoms.second.coord_orth().y() - ch_atoms.first.coord_orth().y(),
+                                                    ch_atoms.second.coord_orth().z() - ch_atoms.first.coord_orth().z());
+            clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
+            theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector)));
+            return theta;
+        }
+    }
 
-    // clipper::ftype privateer::interactions::CHPiBond::calculate_cp_distance ( clipper::Coord_orth& c1, clipper::Coord_orth& c2)
-    // {
-    //     clipper::Vec3<clipper::ftype> co_vector(aromatic_centre_a.x() - ch_atoms[j].first.coord_orth().x(),
-    //                                                                         aromatic_centre_a.y() - ch_atoms[j].first.coord_orth().y(),
-    //                                                                         aromatic_centre_a.z() - ch_atoms[j].first.coord_orth().z());
-    //                                 clipper::ftype angle1 = clipper::Util::rad2d((get_angle(aromatic_vector, co_vector)));
-    //                                 clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
-
-    // }
+    clipper::ftype privateer::interactions::CHPiBond::calculate_cp_distance (const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+                                                                        const clipper::MMonomer &mmon,
+                                                                        const clipper::Coord_orth &aromatic_centre,
+                                                                        const clipper::ftype &distance)
+    {
+        clipper::Vec3<clipper::ftype> co_vector(aromatic_centre.x() - ch_atoms.first.coord_orth().x(),
+                                                aromatic_centre.y() - ch_atoms.first.coord_orth().y(),
+                                                aromatic_centre.z() - ch_atoms.first.coord_orth().z());
+        clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
+        clipper::ftype angle1 = clipper::Util::rad2d((get_angle(aromatic_vector, co_vector)));
+        clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
+        
+        return cp_distance;
+    }
 
     // clipper::ftype privateer::interactions::CHPiBond::calculate_theta_p ( clipper::Coord_orth& c1, clipper::Coord_orth& c2)
     // {
@@ -359,7 +369,6 @@ namespace privateer
         clipper::MAtom ma;
         clipper::Coord_orth centre_apolar = input_sugar.ring_centre();
         std::vector<privateer::interactions::CHPiBond> results;
-
         clipper::MAtom h_atom;
         clipper::MAtom x_atom;
         std::vector<clipper::MAtom> bonded_atoms;
@@ -383,28 +392,16 @@ namespace privateer
                             sug_atom.element().trim() == "O" ||
                             sug_atom.element().trim() == "S" )
                         {
-                            
                             x_atom = sug_atom;
                             std::pair<clipper::MAtom, clipper::MAtom> pair(x_atom, h_atom);
-
                             vector = get_sugar_ch_coords(pair);
                             ch_atoms.push_back(pair);
-                            // std::cout << pair.first.id() << pair.second.id() << std::endl;
                             c_to_h_vectors.push_back(vector);
-
-                            // DEBUG
-                            // if (pair.first.element().trim() == "O")
-                            //     {
-                            //         // std::cout << pair.first.id() << pair.second.id() << std::endl;
-                            //     }
                         }
                     }
                 }
             }    
-            else
-            {
-                continue;
-            }
+            continue;
         }
 
         const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(centre_apolar, 5.0);
@@ -417,48 +414,29 @@ namespace privateer
                 (mmon.type().trim() != "PHE") &&
                 (mmon.type().trim() != "HIS"))
                 continue;
-
-            clipper::ftype distance = 0.0;
-
-            // Need to do this for each of the vectors in c_to_h_vectors
             
-            for (int j = 0; j < ch_atoms.size(); j++)
+            for (int j = 0; j < ch_atoms.size(); j++)  // Need to do this for each of the vectors in c_to_h_vectors
             {
                 if (algorithm == "hudson")
                 { // Parameters: Theta(CH^normal), CX(C..ring centre), ?Cp(C..Cprojection)?
                     if (mmon.type().trim() == "TRP")
                     {
                         clipper::Coord_orth aromatic_centre_a = get_aromatic_centre(mmon, "A");
-                        // std::cout << "TrpA aromatic centre: " << aromatic_centre_a.x() << ", " << aromatic_centre_a.y() << ", " << aromatic_centre_a.z() << std::endl;
-                        
-                        distance = privateer::interactions::CHPiBond::calculate_co_distance(neighbourhood[k], ch_atoms[j], aromatic_centre_a, this->hydrogenated_input_model);
-                        
-                            // std::cout<< "distance: " << distance << std::endl;
-                        if (distance < 4.5)
-                        {
-                            
+                        clipper::ftype distance = privateer::interactions::CHPiBond::calculate_co_distance(neighbourhood[k], ch_atoms[j], aromatic_centre_a, this->hydrogenated_input_model);
 
-                            clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms[j].second.coord_orth(), aromatic_centre_a);
-                            
+                        if (distance < 4.5)
+                        {   
+                            clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms[j].second.coord_orth(), aromatic_centre_a);             
                             if (distance > distance_ho)
                             {
-                                clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(),
-                                                                        ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-                                                                        ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                                clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                                clipper::ftype theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector)));   
-                                
+                                clipper::ftype theta = privateer::interactions::CHPiBond::calculate_theta_h(ch_atoms[j], mmon, aromatic_centre_a, distance);
+                                    
                                 if (theta <= 45.0) 
                                 {
-                                    clipper::Vec3<clipper::ftype> co_vector(aromatic_centre_a.x() - ch_atoms[j].first.coord_orth().x(),
-                                                                            aromatic_centre_a.y() - ch_atoms[j].first.coord_orth().y(),
-                                                                            aromatic_centre_a.z() - ch_atoms[j].first.coord_orth().z());
-                                    clipper::ftype angle1 = clipper::Util::rad2d((get_angle(aromatic_vector, co_vector)));
-                                    clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
+                                    clipper::ftype cp_distance = privateer::interactions::CHPiBond::calculate_cp_distance(ch_atoms[j], mmon, aromatic_centre_a, distance);
 
                                     if (cp_distance <= 1.6)
                                     {
-                                        // std::cout << ch_atoms[j].first.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_glycan_size(glycanSize);
@@ -473,56 +451,35 @@ namespace privateer
                                         for (residue = 0; residue < results.size(); residue++)
                                         {
                                             if(results[residue].get_stacked_residue().id() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && 
-                                               results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
-                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() &&
-                                               results[residue].get_xh_pair().first.id().trim() == ch_atoms[j].first.id().trim() &&
-                                               results[residue].get_trp_ring() == "A")
-                                               break;
+                                                results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
+                                                results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() &&
+                                                results[residue].get_xh_pair().first.id().trim() == ch_atoms[j].first.id().trim() &&
+                                                results[residue].get_trp_ring() == "A")
+                                                break;
                                         }
                                         if (residue == results.size())
                                         results.push_back(the_interaction);
                                     }
-                                }
+                                } 
                             }
                         }
+                        
                         clipper::Coord_orth aromatic_centre_b = get_aromatic_centre(mmon, "B");
                         distance = privateer::interactions::CHPiBond::calculate_co_distance(neighbourhood[k], ch_atoms[j], aromatic_centre_b, this->hydrogenated_input_model);
 
                         if (distance < 4.5)
-                        {
-                            clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms[j].second.coord_orth(), aromatic_centre_b);
-                            
+                        {   
+                            clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms[j].second.coord_orth(), aromatic_centre_b);             
                             if (distance > distance_ho)
                             {
-
-                                clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(),
-                                                                        ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-                                                                        ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                                clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                                clipper::ftype theta = clipper::Util::rad2d(get_angle(hx_vector, aromatic_vector));
-                                
-                                // std::cout << "B Theta: " << theta << std::endl;
-                                
+                                clipper::ftype theta = privateer::interactions::CHPiBond::calculate_theta_h(ch_atoms[j], mmon, aromatic_centre_a, distance);
+                                    
                                 if (theta <= 45) 
                                 {
-
-                                    clipper::Vec3<clipper::ftype> co_vector(aromatic_centre_b.x() - ch_atoms[j].first.coord_orth().x(),
-                                                                            aromatic_centre_b.y() - ch_atoms[j].first.coord_orth().y(),
-                                                                            aromatic_centre_b.z() - ch_atoms[j].first.coord_orth().z());
-                                    clipper::ftype angle1 = clipper::Util::rad2d(get_angle(aromatic_vector, co_vector));
-                                    clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
-
-                                    // if(input_sugar.chain_id() == "I")
-                                    // {
-                                    //     std::cout << "Ring B " << input_sugar.chain_id() << " " << "distance = " << distance << " theta " << theta << "B Cp distance: " << cp_distance << std::endl;
-                                    //     std::cout << "\tRing B angle1 " << angle1 << " co_vector = " << co_vector.format() << std::endl;
-                                    // }
-
-                                        
+                                    clipper::ftype cp_distance = privateer::interactions::CHPiBond::calculate_cp_distance(ch_atoms[j], mmon, aromatic_centre_b, distance);
                                     
                                     if (cp_distance <= 2.0)
                                     {
-                                        // std::cout << ch_atoms[j].first.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_sugar_face(sugarFace);
@@ -538,11 +495,11 @@ namespace privateer
                                         for (residue = 0; residue < results.size(); residue++)
                                         {
                                             if(results[residue].get_stacked_residue().id() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && 
-                                               results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
-                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() &&
-                                               results[residue].get_xh_pair().first.id().trim() == ch_atoms[j].first.id().trim() &&
-                                               results[residue].get_trp_ring() == "B")
-                                               break;
+                                                results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
+                                                results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() &&
+                                                results[residue].get_xh_pair().first.id().trim() == ch_atoms[j].first.id().trim() &&
+                                                results[residue].get_trp_ring() == "B")
+                                                break;
                                         }
                                         if (residue == results.size())
                                         results.push_back(the_interaction);
@@ -557,32 +514,18 @@ namespace privateer
                         distance = privateer::interactions::CHPiBond::calculate_co_distance(neighbourhood[k], ch_atoms[j], aromatic_centre, this->hydrogenated_input_model);
 
                         if (distance < 4.5)
-                        {
-                            
-                            clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms[j].second.coord_orth(), aromatic_centre);
-                            
+                        {   
+                            clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms[j].second.coord_orth(), aromatic_centre);             
                             if (distance > distance_ho)
                             {
-                            
-                                clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(),
-                                                                        ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-                                                                        ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                                clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                                clipper::ftype theta = clipper::Util::rad2d(get_angle(hx_vector, aromatic_vector));
-                                
+                                clipper::ftype theta = privateer::interactions::CHPiBond::calculate_theta_h(ch_atoms[j], mmon, aromatic_centre, distance);
+                                    
                                 if (theta <= 45) 
                                 {
-
-                                    clipper::Vec3<clipper::ftype> co_vector(aromatic_centre.x() - ch_atoms[j].first.coord_orth().x(),
-                                                                            aromatic_centre.y() - ch_atoms[j].first.coord_orth().y(),
-                                                                            aromatic_centre.z() - ch_atoms[j].first.coord_orth().z());
-
-                                    clipper::ftype angle1 = clipper::Util::rad2d(get_angle(aromatic_vector, co_vector));
-                                    clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
+                                    clipper::ftype cp_distance = privateer::interactions::CHPiBond::calculate_cp_distance(ch_atoms[j], mmon, aromatic_centre, distance);
                                 
                                     if (cp_distance <= 2.0)
                                     {
-                                        std::cout << ch_atoms[j].first.id() << std::endl;
                                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                                         the_interaction.set_sugar_index(sugarIndex);
                                         the_interaction.set_glycan_size(glycanSize);
@@ -596,15 +539,15 @@ namespace privateer
                                         for (residue = 0; residue < results.size(); residue++)
                                         {
                                             if(results[residue].get_stacked_residue().id() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].id() && 
-                                               results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
-                                               results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() &&
-                                               results[residue].get_xh_pair().first.id().trim() == ch_atoms[j].first.id().trim())
-                                               break;
+                                            results[residue].get_stacked_residue().type().trim() == this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()].type().trim() && 
+                                            results[residue].get_stacked_residue_chainID() == this->hydrogenated_input_model[neighbourhood[k].polymer()].id() &&
+                                            results[residue].get_xh_pair().first.id().trim() == ch_atoms[j].first.id().trim())
+                                            break;
                                         }
                                         if (residue == results.size())
                                         results.push_back(the_interaction);
                                     }
-                                }
+                                }  
                             }
                         }
                     }
@@ -614,19 +557,7 @@ namespace privateer
                     if (mmon.type().trim() == "TRP")
                     {
                         clipper::Coord_orth aromatic_centre_a = get_aromatic_centre(mmon, "A");
-                        if (neighbourhood[k].symmetry() == 0)
-                        {
-                            distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre_a);
-                        }
-                        else // this neighbour is actually a symmetry mate
-                        {
-                            clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
-                            clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac(this->hydrogenated_input_model.cell());
-                            clipper::Coord_frac f2 = aromatic_centre_a.coord_frac(this->hydrogenated_input_model.cell());
-                            f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                            f1 = f1.lattice_copy_near(f2);
-                            distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
-                        }
+                        distance = privateer::interactions::CHPiBond::calculate_co_distance(neighbourhood[k], ch_atoms[j], aromatic_centre_a, this->hydrogenated_input_model);
                         
                         if (distance < 4.3)
                         {
@@ -674,19 +605,7 @@ namespace privateer
                         }
 
                         clipper::Coord_orth aromatic_centre_b = get_aromatic_centre(mmon, "B");
-                        if (neighbourhood[k].symmetry() == 0)
-                        {
-                            distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre_b);
-                        }
-                        else // this neighbour is actually a symmetry mate
-                        {
-                            clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
-                            clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac(this->hydrogenated_input_model.cell());
-                            clipper::Coord_frac f2 = aromatic_centre_b.coord_frac(this->hydrogenated_input_model.cell());
-                            f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                            f1 = f1.lattice_copy_near(f2);
-                            distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
-                        }
+                        distance = privateer::interactions::CHPiBond::calculate_co_distance(neighbourhood[k], ch_atoms[j], aromatic_centre_b, this->hydrogenated_input_model);
                         
                         if (distance < 4.3)
                         {
@@ -735,19 +654,7 @@ namespace privateer
                     else if (mmon.type().trim() == "TYR" || mmon.type().trim() == "PHE" || mmon.type().trim() == "HIS")
                     {
                         clipper::Coord_orth aromatic_centre = get_aromatic_centre(mmon);
-                        if (neighbourhood[k].symmetry() == 0)
-                        {
-                            distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre);
-                        }
-                        else // this neighbour is actually a symmetry mate
-                        {
-                            clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
-                            clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac(this->hydrogenated_input_model.cell());
-                            clipper::Coord_frac f2 = aromatic_centre.coord_frac(this->hydrogenated_input_model.cell());
-                            f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                            f1 = f1.lattice_copy_near(f2);
-                            distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
-                        }
+                        distance = privateer::interactions::CHPiBond::calculate_co_distance(neighbourhood[k], ch_atoms[j], aromatic_centre, this->hydrogenated_input_model);
 
                         if (distance < 4.3)
                         {
