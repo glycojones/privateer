@@ -24,8 +24,6 @@ If you find Privateer useful, please cite:
 - Bagdonas, H., Ungar, D. and Agirre, J., 2020. Leveraging glycomics data in glycoprotein 3D structure validation with Privateer. Beilstein Journal of Organic Chemistry, 16(1), 2523-2533.
 - Agirre, J., 2017. Strategies for carbohydrate model building, refinement and validation. Acta Crystallographica Section D, 73(2), pp.171-186.
 
-
-
 ## **Compilation instructions**
 
 **Requirements** 
@@ -62,5 +60,8 @@ If you find Privateer useful, please cite:
 `emmake make .`
 
 5. To run the Privateer application use: 
-`cd web/privateer/privateer`
+`cd webserver`
 `npm run dev`
+
+## Releases
+- V0.1 16.8.23 - Full UI Redesign with ID correction - Initial Release
