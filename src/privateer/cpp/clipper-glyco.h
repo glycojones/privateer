@@ -836,7 +836,13 @@ namespace clipper
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
             const clipper::String& get_type () const { return kind_of_glycan; } // n-glycan, o-glycan, s-glycan, c-glycan, p-glycan or ligand
             // std::string get_root_by_name () const { return get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
-            std::string get_root_by_name () const { return get_root().second.type().trim() + "-" + get_root().second.id().trim() + "/" + get_root_sugar_chainID().trim().substr(0,1) + "_" + get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
+            std::string get_root_by_name () const { 
+                return get_root().second.type().trim() +
+                 "-" + get_root().second.id().trim().substr(0, get_root().second.id().trim().find(":")) + 
+                 "/" + get_root_sugar_chainID().trim().substr(0,1) + "_" + get_root().first.type().trim() + 
+                 "-" + get_root().first.id().trim().substr(0, get_root().first.id().trim().find(":")) + 
+                 "/" + get_chain().substr(0,1); }
+
             std::string get_root_for_filename () { return  get_root().second.type().trim() + get_root().second.id().trim() + "-[" + get_root_sugar_chainID().trim().substr(0,1) + "]_[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
 
             std::string write_ring_ext_restraints ( float weight );

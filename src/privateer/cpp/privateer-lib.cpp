@@ -2368,20 +2368,21 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 
     const clipper::String type = glycan.get_type();
     privateer::glycanbuilderplot::GlycanRoot *root;
-    std::string mmdbsel = "mmdb:///" + glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim();
+    clipper::String id = glycan.get_root().first.id().trim().substr(0,glycan.get_root().first.id().trim().find(":"));
+    std::string mmdbsel = "mmdb:///" + glycan.get_chain().substr(0,1) + "/" + id;
 
     // first, let us draw the root
 
     if ( type == "n-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "N", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "N-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "N", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + id, "N-glycosylation. " + glycan.get_root_description(), mmdbsel );
     else if ( type == "o-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "O", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "O-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "O", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + id, "O-glycosylation. " + glycan.get_root_description(), mmdbsel );
     else if ( type == "s-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "S", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "S-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "S", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + id, "S-glycosylation. " + glycan.get_root_description(), mmdbsel );
     else if ( type == "c-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "C", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "C-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "C", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + id, "C-glycosylation. " + glycan.get_root_description(), mmdbsel );
     else if ( type == "p-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "P", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "P-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "P", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + id, "P-glycosylation. " + glycan.get_root_description(), mmdbsel );
     else if ( type == "ligand" )
         root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "L-", "N/A", "Ligand", mmdbsel );
     else return true;
