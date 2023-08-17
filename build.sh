@@ -1,12 +1,14 @@
-source /Applications/ccp4-8.0/bin/ccp4.setup-sh 
-source ~/Development/privateer/emsdk/emsdk_env.sh
-# source /opt/xtal/ccp4-8.0/bin/ccp4.setup-sh 
-# source ~/dev/privateer_wasm/emsdk/emsdk_env.sh
+# source /Applications/ccp4-8.0/bin/ccp4.setup-sh 
+# source ~/Development/privateer/emsdk/emsdk_env.sh
+source /opt/xtal/ccp4-8.0/bin/ccp4.setup-sh 
+source ~/dev/privateer_wasm/emsdk/emsdk_env.sh
 
 emcmake cmake .
 emmake make -j 
 
-
+cp privateer.js webserver/api/privateer.js
+cp privateer.wasm webserver/api/privateer.wasm
+cp privateer.data webserver/api/privateer.data
 
 mv privateer.js webserver/src/wasm/privateer.js
 mv privateer.wasm webserver/src/wasm/privateer.wasm
