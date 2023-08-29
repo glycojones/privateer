@@ -27,13 +27,7 @@ export default function HomeSection() {
         privateer_module().then((Module) => {
             var reader = new FileReader();
             reader.onload = async () => {
-                // let x = Module.read_structure(reader.result, file.name)
-
-                // let svgs = [];
-                // for (var i = 0; i < x.size(); i++) {
-                //   svgs.push(x.get(i))
-                // }
-                // setSVGs(svgs);
+     
                 setFileContent(reader.result)
                 let x = Module.read_structure_to_table(reader.result, file.name)
 
@@ -41,6 +35,11 @@ export default function HomeSection() {
                 for (var i = 0; i < x.size(); i++) {
                     table_data.push(x.get(i))
                 }
+
+                if (x.size() == 0 ) { 
+                    setLoadingText("There were no detected glycans in this file.")
+                }
+
                 // Get Glyconnect ID from WURCS
                 setLoadingText("Querying Glytoucan...")
                 await loadGlytoucan(table_data)
@@ -54,6 +53,7 @@ export default function HomeSection() {
             if (file) {
                 reader.readAsText(file);
             }
+
         }).catch((e) => console.log(e));
     }, [submit])
 

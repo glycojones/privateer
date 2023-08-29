@@ -64,14 +64,11 @@ const Styles = styled.div`
     `
 export default function GlycanDetailTable({row}) {
     const DATA = {}
-    DATA["chain"] = row.chain
-    DATA['id'] = row.id
-    DATA['glytoucan_id'] = row.glytoucan_id
-
+ 
 
     console.log(DATA)
 
-    const [data, setData] = useState([DATA]);
+    const [data, setData] = useState();
 
     const COLUMNS = [
         {

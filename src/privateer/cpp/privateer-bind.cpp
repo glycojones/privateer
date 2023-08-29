@@ -84,6 +84,11 @@ struct TableEntry
   std::string glyconnect_id = "NotFound";
   std::string glytoucan_id = "NotFound";
   std::string id; 
+  int torsion_err = 0; 
+  int conformation_err = 0; 
+  int anomer_err = 0; 
+  int puckering_err = 0; 
+  int chirality_err = 0; 
 };
 
 struct GlycanData
@@ -235,8 +240,11 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
       }
       wurcs_string = list_of_glycans[i].generate_wurcs();
 
+
+      privateer::glycanbuilderplot::GlycanErrorCount* err = new privateer::glycanbuilderplot::GlycanErrorCount; 
+
       privateer::glycanbuilderplot::Plot plot(true, false, list_of_glycans[i].get_root_by_name());
-      plot.plot_glycan(list_of_glycans[i]);
+      plot.plot_glycan(list_of_glycans[i], err);
 
       std::ostringstream os;
       os << list_of_glycans[i].get_root_for_filename() << ".svg";
@@ -251,8 +259,16 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
       table_entry.wurcs = wurcs_string;
       table_entry.chain = current_chain;
       table_entry.id = list_of_glycans[i].get_root_by_name();
+
+      table_entry.torsion_err = err->torsion_err; 
+      table_entry.conformation_err = err->conformation_err; 
+      table_entry.anomer_err = err->anomer_err; 
+      table_entry.puckering_err = err->puckering_err; 
+      table_entry.chirality_err = err->chirality_err; 
+
       // table_entry.description = list_of_glycans[i].get_description();
       table_list.emplace_back(table_entry);
+      delete err; 
       // svg_list.emplace_back(plot.write_to_string());
     }
 
@@ -272,7 +288,14 @@ EMSCRIPTEN_BINDINGS(privateer_module)
       .field("chain", &TableEntry::chain)
       .field("glyconnect_id", &TableEntry::glyconnect_id)
       .field("glytoucan_id", &TableEntry::glytoucan_id)
-      .field("id", &TableEntry::id);
+      .field("id", &TableEntry::id)
+      .field("torsion_err", &TableEntry::torsion_err)
+      .field("conformation_err", &TableEntry::conformation_err)
+      .field("anomer_err", &TableEntry::anomer_err)
+      .field("puckering_err", &TableEntry::puckering_err)
+      .field("chirality_err", &TableEntry::chirality_err)
+      ;
+
       // .field("description", &TableEntry::description);
 
   function("read_structure_to_table", &read_file_to_table);

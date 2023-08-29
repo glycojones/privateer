@@ -2361,9 +2361,9 @@ std::string privateer::glycanbuilderplot::Plot::get_XML  ( )
 }
 
 
-bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
+bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan,  privateer::glycanbuilderplot::GlycanErrorCount* error_count)
 {
-
+    
     this->set_size(3000,3000);
 
     const clipper::String type = glycan.get_type();
@@ -2385,7 +2385,8 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
         root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "P", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + id, "P-glycosylation. " + glycan.get_root_description(), mmdbsel );
     else if ( type == "ligand" )
         root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "L-", "N/A", "Ligand", mmdbsel );
-    else return true;
+    else
+     return true;
 
     add_block ( root );
 
@@ -2395,7 +2396,6 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
     if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "alpha")     anomerSymbol = "&#945;";
     else if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "beta") anomerSymbol = "&#946;";
     else                                                                                  anomerSymbol = "&#63;";
-
 
     Bond *first_bond = new Bond( 2800, 1015, anomerSymbol, side, glycan.get_link_description(), mmdbsel );
     add_link ( first_bond );
@@ -2416,6 +2416,7 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
                 std::string message = os.str();
                 shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", mmdbsel  );
                 add_shaded_link(new_shaded_bond);
+                error_count->torsion_err++; 
             }
         }
         else
@@ -2427,20 +2428,30 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
                 std::string message = os.str();
                 shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbondnull", mmdbsel  );
                 add_shaded_link(new_shaded_bond);
+                error_count->torsion_err++;
             }
         }
     }
 
-    recursive_paint ( glycan, node, 2685, 990 ); // and initiate House Party protocol
+    recursive_paint ( glycan, node, 2685, 990, false, error_count); // and initiate House Party protocol
 
     this->tighten_viewbox();
 
     return false;
 }
 
-void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles )
+void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles, GlycanErrorCount* errors)
 {
     const clipper::MSugar& sugar = node.get_sugar();
+    GlycanErrorCount node_errors = privateer::glycanbuilderplot::get_error_counts(sugar);
+
+    // std::cout << "Erorrs noted " << node_errors.torsion_err << " " << node_errors.conformation_err << " " << node_errors.anomer_err << " " << node_errors.puckering_err << " " << node_errors.chirality_err << std::endl;
+
+    errors->torsion_err += node_errors.torsion_err; 
+    errors->conformation_err += node_errors.conformation_err; 
+    errors->anomer_err +=node_errors.anomer_err; 
+    errors->puckering_err += node_errors.puckering_err; 
+    errors->chirality_err += node_errors.chirality_err; 
 
     std::string mmdbsel = "mmdb:///" + mg.get_chain().substr(0,1) + "/" + sugar.id().trim();
     std::string sugname = clipper::data::carbname_of ( sugar.type() );
@@ -2682,6 +2693,8 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::string message = os.str();
                             shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mmdbsel  );
                             add_shaded_link(new_shaded_bond);
+                            errors->torsion_err++; 
+
                         }
                     }
                     else
@@ -2691,10 +2704,12 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++; 
+
                     }
                 }
 
-                recursive_paint ( mg, linked_node, x, y + 110 );
+                recursive_paint ( mg, linked_node, x, y + 110, false, errors);
             }
             else // up it goes, then
             {
@@ -2720,6 +2735,8 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::string message = os.str();
                             shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mmdbsel  );
                             add_shaded_link(new_shaded_bond);
+                            errors->torsion_err++; 
+
                         }
                     }
                     else
@@ -2729,10 +2746,12 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++; 
+
                     }
                 }
                 // }
-                recursive_paint ( mg, linked_node, x, y - 110 );
+                recursive_paint ( mg, linked_node, x, y - 110, false, errors );
             }
         }
         else if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl" )
@@ -2762,6 +2781,8 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::string message = os.str();
                             shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mmdbsel  );
                             add_shaded_link(new_shaded_bond);
+                            errors->torsion_err++; 
+
                         }
                     }
                     else
@@ -2771,10 +2792,12 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++; 
+
                     }
                 }
 
-                recursive_paint ( mg, linked_node, x, y + 110 );
+                recursive_paint ( mg, linked_node, x, y + 110, false, errors );
             }
             else // up it goes, then
             {
@@ -2800,6 +2823,8 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::string message = os.str();
                             shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mmdbsel  );
                             add_shaded_link(new_shaded_bond);
+                            errors->torsion_err++; 
+
                         }
                     }
                     else
@@ -2809,10 +2834,11 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++; 
                     }
                 }
 
-                recursive_paint ( mg, linked_node, x, y - 110 );
+                recursive_paint ( mg, linked_node, x, y - 110, false, errors );
             }
         }
         else // pseudo-general case
@@ -2910,6 +2936,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbond", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++; 
                     }
                 }
                 else
@@ -2919,10 +2946,11 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                     std::string message = os.str();
                     shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbondnull", mmdbsel  );
                     add_shaded_link(new_shaded_bond);
+                    errors->torsion_err++; 
                 }
             }
 
-            recursive_paint ( mg, linked_node, x - 110, y + ( sign * 80 ) );
+            recursive_paint ( mg, linked_node, x - 110, y + ( sign * 80 ), false, errors);
         }
     }
 }

@@ -1,5 +1,6 @@
 import {lazy, useCallback, useState} from "react";
 import {MoorhenContainer, MoorhenContextProvider} from 'moorhen'
+import GlycanDetailInfoBox from "./GlycanDetailInfoBox";
 // import GlycanDetailTable from "./GlycanDetailTable";
 
 const GlycanDetailTable = lazy(() => import('./GlycanDetailTable'));
@@ -39,14 +40,17 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
             </div>
 
             {/* <h4 className="my-4">Glycan ID: {tableData[rowID].id}</h4> */}
-            <div className="my-5">
-                <GlycanDetailTable row={tableData[rowID]}/>
+            <div className="my-5 w-full">
+                <GlycanDetailInfoBox row={tableData[rowID]}/>
             </div>
+            
+            <div className="text-sm text-center text-primary" >
+                <div className="mt-4 py-4" id='svgContainer' dangerouslySetInnerHTML={{
+                    __html: tableData[rowID].svg
+                }} ref={ref}/>
+                Hover over a linkage to see a summary
 
-            <div className="mt-4 py-4" id='svgContainer' dangerouslySetInnerHTML={{
-                __html: tableData[rowID].svg
-            }} ref={ref}/>
-
+            </div>
             <MoorhenContextProvider defaultBackgroundColor={[51, 65, 85, 1]}>
                 <MoorhenContainer forwardControls={forwardControls} setMoorhenDimensions={() => {
                     return [width, height];

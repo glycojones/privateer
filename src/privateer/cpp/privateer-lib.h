@@ -129,6 +129,48 @@ namespace privateer
             return str.str();
         }
 
+        struct GlycanErrorCount { 
+            int torsion_err = 0; 
+            int conformation_err = 0; 
+            int anomer_err = 0; 
+            int puckering_err = 0; 
+            int chirality_err = 0; 
+
+            GlycanErrorCount operator+(const GlycanErrorCount& err) { 
+                GlycanErrorCount new_err; 
+                new_err.torsion_err = this->torsion_err; 
+                new_err.conformation_err = this->conformation_err; 
+                new_err.anomer_err = this->anomer_err; 
+                new_err.puckering_err = this->puckering_err; 
+                new_err.chirality_err = this->chirality_err; 
+                return new_err;
+            } 
+        };
+
+        static inline const GlycanErrorCount get_error_counts ( clipper::MSugar sugar )
+        {
+            
+            GlycanErrorCount err; 
+
+                if ( ! sugar.ok_with_anomer() ) {
+                    err.anomer_err++; 
+                }
+                if ( ! sugar.ok_with_chirality() ) {
+                    err.chirality_err++; 
+                }
+                if ( ! sugar.ok_with_puckering() ){
+
+                    err.puckering_err++;
+                }
+                if ( ! sugar.ok_with_conformation() ) {
+
+                    err.conformation_err++; 
+                }
+            
+            
+            return err;
+        };
+
         inline const bool sugar_contains_issues ( clipper::MSugar sugar )
         {
 
@@ -281,7 +323,7 @@ namespace privateer
 
                 void set_title ( std::string title ) { this->title = title; }
                 std::string get_title () { return this->title; }
-                bool plot_glycan ( clipper::MGlycan glycan );
+                bool plot_glycan ( clipper::MGlycan glycan,  privateer::glycanbuilderplot::GlycanErrorCount* error_count = nullptr);
                 bool plot_demo ( ); //!< creates a demo plot with all the blocks, links and roots Privateer can generate
                 bool write_to_file  ( std::string file_path ); //!< returns true if there have been any problems
                 std::string write_to_string ( );
@@ -314,7 +356,7 @@ namespace privateer
                 void write_svg_contents_ostringstream      ( std::ostringstream& of );
                 void write_svg_footer_ostringstream        ( std::ostringstream& of );
 
-                void recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles = false );
+                void recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles = false, GlycanErrorCount* errors=nullptr);
 
                 // we want to draw linkages and shades first, so that the blocks are then drawn on top of them
 
@@ -325,6 +367,11 @@ namespace privateer
                 std::vector<int> viewbox;
                 std::vector < Shape * > list_of_shaded_shapes;
                 std::vector < Shape * > list_of_shapes;
+
+                int anomer_err_no = 0; 
+                int torsion_err_no = 0; 
+                int conformation_err_no = 0;
+
 
         };
 
