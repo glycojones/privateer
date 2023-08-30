@@ -280,7 +280,7 @@ namespace privateer {
 																			   const std::string &trp_ring,
 																			   const clipper::MiniMol &hydrogenated_input_model,
 																			   const clipper::MMonomer &mmon);
-												
+				
 				private:
 				clipper::MiniMol hydrogenated_input_model;
 				std::string sugar_chainID;

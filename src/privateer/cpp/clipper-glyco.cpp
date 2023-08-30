@@ -2703,7 +2703,7 @@ bool MSugar::check_if_bonded ( const clipper::MAtom& origin_atom, const clipper:
         }
         else if ( alt_atom.element().trim() == "H" )
         {
-            if ((distance >  0.90 ) && ( distance < 1.10 ))
+            if ((distance >  0.87 ) && ( distance < 1.10 )) // changed lower bound from 0.90... should we have a lower bound???
             {
                 // std::cout << origin_atom.id() << alt_atom.id() << ", N-H distance: " << distance << std::endl;
                 return true; // N-H
@@ -2723,7 +2723,7 @@ bool MSugar::check_if_bonded ( const clipper::MAtom& origin_atom, const clipper:
         }
         else if ( alt_atom.element().trim() == "H" )
         {
-            if ((distance >  0.88 ) && ( distance < 1.04 ))
+            if ((distance >  0.84 ) && ( distance < 1.04 )) // changed lower bound from 0.88
             {
                 // std::cout << origin_atom.id() << alt_atom.id() << ", O-H distance: " << distance << std::endl;
                 return true; // O-H

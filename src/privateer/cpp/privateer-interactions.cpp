@@ -278,7 +278,7 @@ namespace privateer
         return sugar_face;
     }
 
-    std::vector<clipper::ftype> privateer::interactions::CHPiBond::calculate_hudson_parameters(const clipper::MAtomIndexSymmetry &neighbourhood, 
+    std::vector<clipper::ftype> privateer::interactions::CHPiBond::calculate_hudson_parameters(const clipper::MAtomIndexSymmetry &neighbourhood,
                                                                                                const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
                                                                                                const std::string &trp_ring,
                                                                                                const clipper::MiniMol &hydrogenated_input_model,
@@ -303,9 +303,9 @@ namespace privateer
         }
 
         if (distance > 4.5) return {};
-        clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms.second.coord_orth(), aromatic_centre);             
+        clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms.second.coord_orth(), aromatic_centre);      
         
-        if (distance < distance_ho) return {};
+        if (distance < distance_ho) return {}; // makes sure the ch is pointing at the ring - the C-π-ring distance must be longer than the H-π-ring distance
         clipper::Vec3<clipper::ftype> hx_vector = ch_atoms.second.coord_orth() - ch_atoms.first.coord_orth();
         clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
         clipper::ftype theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector, "theta")));
@@ -349,9 +349,13 @@ namespace privateer
         }
 
         if (distance >= 4.3) return {};
+        clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms.second.coord_orth(), aromatic_centre);             
+        
+        if (distance < distance_ho) return {};
         clipper::Vec3<clipper::ftype> ox_vector(aromatic_centre.x() - ch_atoms.first.coord_orth().x(), // centre of ring-x atom
                                                 aromatic_centre.y() - ch_atoms.first.coord_orth().y(),
                                                 aromatic_centre.z() - ch_atoms.first.coord_orth().z());
+        
         clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
         clipper::ftype theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector, "theta"));
 
@@ -416,6 +420,8 @@ namespace privateer
                             vector = get_sugar_ch_coords(pair);
                             ch_atoms.push_back(pair);
                             c_to_h_vectors.push_back(vector);
+
+                            std::cout << x_atom.id() << std::endl;
                         }
                     }
                 }
@@ -435,7 +441,7 @@ namespace privateer
                 continue;
             
             for (int j = 0; j < ch_atoms.size(); j++)  // Need to do this for each of the vectors in c_to_h_vectors
-            {
+            {   
                 if (algorithm == "hudson")
                 { // Parameters: Theta(CH^normal), CX(C..ring centre), Cp(C..Cprojection)
                     if (mmon.type().trim() == "TRP")
