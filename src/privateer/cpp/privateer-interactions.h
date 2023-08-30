@@ -268,20 +268,19 @@ namespace privateer {
 				void set_sugar_face ( std::string sugar_face ) {
 					this->sugarFace = sugar_face;
 				}
-
-
-				static clipper::ftype calculate_co_distance(const clipper::MAtomIndexSymmetry &neighbourhood, const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::Coord_orth &aromatic_centre, const clipper::MiniMol &hydrogenated_input_model);
-				static clipper::ftype calculate_theta_h(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::MMonomer &mmon, const clipper::Coord_orth &aromatic_centre, const clipper::ftype &distance);
-				static clipper::ftype calculate_cp_distance(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::MMonomer &mmon, const clipper::Coord_orth &aromatic_centre, const clipper::ftype &distance);
-				static clipper::ftype calculate_theta_p(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, const clipper::MMonomer &mmon, const clipper::Coord_orth &aromatic_centre);
-				static clipper::ftype calculate_phi(const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms,const clipper::Coord_orth &aromatic_centre);
-
+				
 				static std::vector<clipper::ftype> calculate_hudson_parameters(const clipper::MAtomIndexSymmetry &neighbourhood, 
-                                                                  const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
-                                                                  const clipper::Coord_orth &aromatic_centre,
-                                                                  const clipper::MiniMol &hydrogenated_input_model,
-                                                                  const clipper::MMonomer &mmon);
+                                                                  			   const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+																			   const std::string &trp_ring,
+																			   const clipper::MiniMol &hydrogenated_input_model,
+																			   const clipper::MMonomer &mmon);
 
+				static std::vector<clipper::ftype> calculate_plevin_parameters(const clipper::MAtomIndexSymmetry &neighbourhood, 
+                                                                  			   const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+																			   const std::string &trp_ring,
+																			   const clipper::MiniMol &hydrogenated_input_model,
+																			   const clipper::MMonomer &mmon);
+												
 				private:
 				clipper::MiniMol hydrogenated_input_model;
 				std::string sugar_chainID;
