@@ -269,6 +269,13 @@ namespace privateer {
 					this->sugarFace = sugar_face;
 				}
 				
+				static std::vector<CHPiBond> get_hudson_interaction(clipper::MSugar &input_sugar,
+																	const clipper::MAtomIndexSymmetry &neighbourhood, 
+													   				const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+													   				const std::string &trp_ring,
+													   				const clipper::MiniMol &hydrogenated_input_model,
+													   				clipper::MMonomer &mmon);
+				
 				static std::vector<clipper::ftype> calculate_hudson_parameters(const clipper::MAtomIndexSymmetry &neighbourhood, 
                                                                   			   const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
 																			   const std::string &trp_ring,
