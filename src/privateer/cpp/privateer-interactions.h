@@ -139,23 +139,7 @@ namespace privateer {
 					distance_cx = 0.0f;
 					distance_cp = 0.0f;
 					sugarFace = "β";
-
 				}
-				
-				struct chpi_hudson_parameters
-                {
-                    clipper::ftype xo_distance;
-                    clipper::ftype theta;
-                    clipper::ftype xp_distance;
-                
-                chpi_hudson_parameters(clipper::ftype xo_distance, clipper::ftype theta, clipper::ftype xp_distance)
-                {
-                    this->xo_distance = xo_distance;
-                    this->theta = theta;
-                    this->xp_distance = xp_distance;
-                }
-                };
-
 				
 				std::string get_algorithm ( ) {
 					return this->algorithm;
@@ -269,12 +253,14 @@ namespace privateer {
 					this->sugarFace = sugar_face;
 				}
 				
-				static std::vector<CHPiBond> get_hudson_interaction(clipper::MSugar &input_sugar,
-																	const clipper::MAtomIndexSymmetry &neighbourhood, 
-													   				const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
-													   				const std::string &trp_ring,
-													   				const clipper::MiniMol &hydrogenated_input_model,
-													   				clipper::MMonomer &mmon);
+				static bool get_hudson_interaction(clipper::MSugar &input_sugar,
+												   const clipper::MAtomIndexSymmetry &neighbourhood, 
+												   std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+												   const std::string &trp_ring,
+												   const clipper::MiniMol &hydrogenated_input_model,
+												   clipper::MMonomer &mmon,
+												   std::vector<privateer::interactions::CHPiBond> results,
+												   privateer::interactions::CHPiBond &the_interaction);
 				
 				static std::vector<clipper::ftype> calculate_hudson_parameters(const clipper::MAtomIndexSymmetry &neighbourhood, 
                                                                   			   const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
