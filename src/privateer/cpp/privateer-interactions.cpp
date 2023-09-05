@@ -394,8 +394,6 @@ namespace privateer
         clipper::ftype distance = 0.0;
         std::vector<clipper::ftype> parameters;
         clipper::Coord_orth aromatic_centre = get_aromatic_centre(mmon, trp_ring);
-        bool interaction_found = true;
-        bool interaction_possible = true;
         
         if (neighbourhood.symmetry() == 0)
         {
@@ -411,7 +409,7 @@ namespace privateer
             distance = sqrt((f2 - f1).lengthsq(hydrogenated_input_model.cell()));
         }
 
-        if (distance > 4.5) interaction_found = false;
+        if (distance > 4.5) return false;
         clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms.second.coord_orth(), aromatic_centre);      
         
         if (distance < distance_ho) interaction_found = false; // ensures CH is pointing towards the ring - the C-πring distance must be longer than the H-πring distance
@@ -419,20 +417,20 @@ namespace privateer
         clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
         clipper::ftype theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector, "theta")));
 
-        if (theta > 40) interaction_found = false;
+        if (theta > 40) return false;
         clipper::Vec3<clipper::ftype> co_vector = aromatic_centre - ch_atoms.first.coord_orth();
         clipper::Vec3<clipper::ftype> theta_aromatic_vector = find_aromatic_plane(mmon);
         clipper::ftype angle1 = clipper::Util::rad2d((get_angle(theta_aromatic_vector, co_vector, "cp_distance")));
-        clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance);
+        clipper::ftype cp_distance = abs(cos(clipper::Util::d2rad(90) - clipper::Util::d2rad(angle1)) * distance); // Think this can be combined to be 90-angle1
 
         if (mmon.type().trim() == "HIS" || trp_ring == "A")
         {
-            if (cp_distance > 1.6) interaction_found = false; // different cp restrictions for TrpA & His (<= 1.6)
+            if (cp_distance > 1.6) return false; // different cp restrictions for TrpA & His (<= 1.6)
             parameters.push_back(cp_distance);
         }
         else
         {
-            if (cp_distance > 2.0) interaction_found = false; // different cp restrictions for TrpB & Tyr & Phe (<= 2.0)
+            if (cp_distance > 2.0) return false; // different cp restrictions for TrpB & Tyr & Phe (<= 2.0)
             parameters.push_back(cp_distance);
         }
         parameters.push_back(distance);
@@ -441,39 +439,38 @@ namespace privateer
         // if (input_sugar.chain_id().trim() == "O")
         // std::cout << "CHAIN O: cp_distance: " << parameters[0] << ", cx_distance: " << parameters[1] << ", theta: " << parameters[2] << std::endl;
         
-        if (interaction_found)
+        // Because we return early if something is wrong, it will only ever be true if we get to this point, so don't need to check again.  
+
+        // the_interaction(input_sugar.chain_id(), hydrogenated_input_model[neighbourhood.polymer()].id(), input_sugar, mmon, theta, "hudson");
+
+        // the_interaction.set_sugar_index(sugarIndex);
+        // the_interaction.set_glycan_size(glycanSize);
+        the_interaction.set_distance_cp(parameters[0]);
+        the_interaction.set_angle_theta_h(parameters[2]);
+        the_interaction.set_distance_cx(parameters[1]);
+        the_interaction.set_trp_ring(trp_ring);
+        the_interaction.set_xh_pair(ch_atoms);
+        the_interaction.set_sugar_face(find_sugar_face(input_sugar, ch_atoms));
+
+        int residue;
+        for (residue = 0; residue < results.size(); residue++)
         {
-            privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), hydrogenated_input_model[neighbourhood.polymer()].id(), input_sugar, mmon, theta, "hudson");
-
-            // the_interaction.set_sugar_index(sugarIndex);
-            // the_interaction.set_glycan_size(glycanSize);
-            the_interaction.set_distance_cp(parameters[0]);
-            the_interaction.set_angle_theta_h(parameters[2]);
-            the_interaction.set_distance_cx(parameters[1]);
-            the_interaction.set_trp_ring(trp_ring);
-            the_interaction.set_xh_pair(ch_atoms);
-            the_interaction.set_sugar_face(find_sugar_face(input_sugar, ch_atoms));
-
-            int residue;
-            for (residue = 0; residue < results.size(); residue++)
-            {
-                if(results[residue].get_stacked_residue().id() == hydrogenated_input_model[neighbourhood.polymer()][neighbourhood.monomer()].id() && 
-                   results[residue].get_stacked_residue().type().trim() == hydrogenated_input_model[neighbourhood.polymer()][neighbourhood.monomer()].type().trim() && 
-                   results[residue].get_stacked_residue_chainID() == hydrogenated_input_model[neighbourhood.polymer()].id() &&
-                   results[residue].get_xh_pair().first.id().trim() == ch_atoms.first.id().trim() &&
-                   results[residue].get_trp_ring() == trp_ring)
-                break;
-            }
-            
-            if (input_sugar.chain_id().trim() == "H")
-            {
+            if(results[residue].get_stacked_residue().id() == hydrogenated_input_model[neighbourhood.polymer()][neighbourhood.monomer()].id() && 
+                results[residue].get_stacked_residue().type().trim() == hydrogenated_input_model[neighbourhood.polymer()][neighbourhood.monomer()].type().trim() && 
+                results[residue].get_stacked_residue_chainID() == hydrogenated_input_model[neighbourhood.polymer()].id() &&
+                results[residue].get_xh_pair().first.id().trim() == ch_atoms.first.id().trim() &&
+                results[residue].get_trp_ring() == trp_ring)
+            break;
+        }
+        
+        if (input_sugar.chain_id().trim() == "H")
+        {
             std::cout << "CHAIN H: cp_distance: " << parameters[0] << ", cx_distance: " << parameters[1] << ", theta: " << parameters[2] << std::endl; //  Chain H definitely has an interaction
             std::cout << the_interaction.get_distance_cx() << std::endl;
-            }
-
-            return interaction_possible = true;
         }
-        else return interaction_possible = false;
+
+        return true;
+       
     }
 
 
