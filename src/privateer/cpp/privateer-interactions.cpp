@@ -389,7 +389,9 @@ namespace privateer
                                                                    const clipper::MiniMol &hydrogenated_input_model,
                                                                    clipper::MMonomer &mmon,
                                                                    std::vector<privateer::interactions::CHPiBond> results,
-                                                                   privateer::interactions::CHPiBond &the_interaction)
+                                                                   privateer::interactions::CHPiBond &the_interaction,
+                                                                   int sugarIndex,
+                                                                   int glycanSize)
     {
         clipper::ftype distance = 0.0;
         std::vector<clipper::ftype> parameters;
@@ -412,7 +414,7 @@ namespace privateer
         if (distance > 4.5) return false;
         clipper::ftype distance_ho = clipper::Coord_orth::length(ch_atoms.second.coord_orth(), aromatic_centre);      
         
-        if (distance < distance_ho) interaction_found = false; // ensures CH is pointing towards the ring - the C-πring distance must be longer than the H-πring distance
+        if (distance < distance_ho) return false; // ensures CH is pointing towards the ring - the C-πring distance must be longer than the H-πring distance
         clipper::Vec3<clipper::ftype> hx_vector = ch_atoms.second.coord_orth() - ch_atoms.first.coord_orth();
         clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
         clipper::ftype theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector, "theta")));
@@ -439,12 +441,8 @@ namespace privateer
         // if (input_sugar.chain_id().trim() == "O")
         // std::cout << "CHAIN O: cp_distance: " << parameters[0] << ", cx_distance: " << parameters[1] << ", theta: " << parameters[2] << std::endl;
         
-        // Because we return early if something is wrong, it will only ever be true if we get to this point, so don't need to check again.  
-
-        // the_interaction(input_sugar.chain_id(), hydrogenated_input_model[neighbourhood.polymer()].id(), input_sugar, mmon, theta, "hudson");
-
-        // the_interaction.set_sugar_index(sugarIndex);
-        // the_interaction.set_glycan_size(glycanSize);
+        the_interaction.set_sugar_index(sugarIndex);
+        the_interaction.set_glycan_size(glycanSize);
         the_interaction.set_distance_cp(parameters[0]);
         the_interaction.set_angle_theta_h(parameters[2]);
         the_interaction.set_distance_cx(parameters[1]);
@@ -460,17 +458,9 @@ namespace privateer
                 results[residue].get_stacked_residue_chainID() == hydrogenated_input_model[neighbourhood.polymer()].id() &&
                 results[residue].get_xh_pair().first.id().trim() == ch_atoms.first.id().trim() &&
                 results[residue].get_trp_ring() == trp_ring)
-            break;
+            return false;
         }
-        
-        if (input_sugar.chain_id().trim() == "H")
-        {
-            std::cout << "CHAIN H: cp_distance: " << parameters[0] << ", cx_distance: " << parameters[1] << ", theta: " << parameters[2] << std::endl; //  Chain H definitely has an interaction
-            std::cout << the_interaction.get_distance_cx() << std::endl;
-        }
-
         return true;
-       
     }
 
 
@@ -543,7 +533,7 @@ namespace privateer
                     {             
                         privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
                         // std::vector<clipper::ftype> parameters_trpA = privateer::interactions::CHPiBond::calculate_hudson_parameters(neighbourhood[k], ch_atoms[j], "A", this->hydrogenated_input_model, mmon);        
-                        bool interaction_found = privateer::interactions::CHPiBond::get_hudson_interaction(input_sugar, neighbourhood[k], ch_atoms[j], "A", this->hydrogenated_input_model, mmon, results, the_interaction);
+                        bool interaction_found = privateer::interactions::CHPiBond::get_hudson_interaction(input_sugar, neighbourhood[k], ch_atoms[j], "A", this->hydrogenated_input_model, mmon, results, the_interaction, sugarIndex, glycanSize);
                 
                         if (interaction_found) // need this if statement because it can return an empty function - could turn this into a guard funciton
                         {

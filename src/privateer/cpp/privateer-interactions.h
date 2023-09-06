@@ -260,7 +260,9 @@ namespace privateer {
 												   const clipper::MiniMol &hydrogenated_input_model,
 												   clipper::MMonomer &mmon,
 												   std::vector<privateer::interactions::CHPiBond> results,
-												   privateer::interactions::CHPiBond &the_interaction);
+												   privateer::interactions::CHPiBond &the_interaction,
+												   int sugarIndex,
+												   int glycanSize);
 				
 				static std::vector<clipper::ftype> calculate_hudson_parameters(const clipper::MAtomIndexSymmetry &neighbourhood, 
                                                                   			   const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
