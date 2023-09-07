@@ -136,8 +136,8 @@ namespace privateer {
 					angle_theta_h = 0.0f;
 					angle_theta_p = 0.0f;
 					angle_phi = 0.0f;
-					distance_cx = 0.0f;
-					distance_cp = 0.0f;
+					distance_xo = 0.0f;
+					distance_xp = 0.0f;
 					sugarFace = "β";
 				}
 				
@@ -213,20 +213,20 @@ namespace privateer {
 					this->angle_phi = angle_phi;
 				}
 
-				float get_distance_cx ( ) {
-					return this->distance_cx;
+				float get_distance_xo ( ) {
+					return this->distance_xo;
 				}
 
-				void set_distance_cx ( float distance_cx ) {
-					this->distance_cx = distance_cx;
+				void set_distance_xo ( float distance_xo ) {
+					this->distance_xo = distance_xo;
 				}
 
-				float get_distance_cp ( ) {
-					return this->distance_cp;
+				float get_distance_xp ( ) {
+					return this->distance_xp;
 				}
 
-				void set_distance_cp ( float distance_cp ) {
-					this->distance_cp = distance_cp;
+				void set_distance_xp ( float distance_xp ) {
+					this->distance_xp = distance_xp;
 				}
 
 				std::string get_trp_ring () {
@@ -255,7 +255,7 @@ namespace privateer {
 				
 				static bool get_hudson_interaction(clipper::MSugar &input_sugar,
 												   const clipper::MAtomIndexSymmetry &neighbourhood, 
-												   std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+												   std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms, 
 												   const std::string &trp_ring,
 												   const clipper::MiniMol &hydrogenated_input_model,
 												   clipper::MMonomer &mmon,
@@ -264,14 +264,8 @@ namespace privateer {
 												   int sugarIndex,
 												   int glycanSize);
 				
-				static std::vector<clipper::ftype> calculate_hudson_parameters(const clipper::MAtomIndexSymmetry &neighbourhood, 
-                                                                  			   const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
-																			   const std::string &trp_ring,
-																			   const clipper::MiniMol &hydrogenated_input_model,
-																			   const clipper::MMonomer &mmon);
-
 				static std::vector<clipper::ftype> calculate_plevin_parameters(const clipper::MAtomIndexSymmetry &neighbourhood, 
-                                                                  			   const std::pair<clipper::MAtom, clipper::MAtom> &ch_atoms, 
+                                                                  			   const std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms, 
 																			   const std::string &trp_ring,
 																			   const clipper::MiniMol &hydrogenated_input_model,
 																			   const clipper::MMonomer &mmon);
@@ -290,8 +284,8 @@ namespace privateer {
 				float angle_theta_h;
 				float angle_theta_p;
 				float angle_phi;
-				float distance_cx;
-				float distance_cp;
+				float distance_xo;
+				float distance_xp;
 				std::string sugarFace;
 				std::string trp_ring; // For TRP exclusively, A + B
 				// clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
