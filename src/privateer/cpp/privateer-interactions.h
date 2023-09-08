@@ -264,11 +264,16 @@ namespace privateer {
 												   int sugarIndex,
 												   int glycanSize);
 				
-				static std::vector<clipper::ftype> calculate_plevin_parameters(const clipper::MAtomIndexSymmetry &neighbourhood, 
-                                                                  			   const std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms, 
-																			   const std::string &trp_ring,
-																			   const clipper::MiniMol &hydrogenated_input_model,
-																			   const clipper::MMonomer &mmon);
+				static bool get_plevin_interaction(clipper::MSugar &input_sugar,
+												   const clipper::MAtomIndexSymmetry &neighbourhood, 
+												   std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms, 
+												   const std::string &trp_ring,
+												   const clipper::MiniMol &hydrogenated_input_model,
+												   clipper::MMonomer &mmon,
+												   std::vector<privateer::interactions::CHPiBond> results,
+												   privateer::interactions::CHPiBond &the_interaction,
+												   int sugarIndex,
+												   int glycanSize);
 				
 				private:
 				clipper::MiniMol hydrogenated_input_model;
@@ -287,7 +292,7 @@ namespace privateer {
 				float distance_xo;
 				float distance_xp;
 				std::string sugarFace;
-				std::string trp_ring; // For TRP exclusively, A + B
+				std::string trp_ring; // A, B, or blank (for Tyr/Phe/His)
 				// clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
 				// clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
 				// clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon );
