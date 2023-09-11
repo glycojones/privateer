@@ -253,7 +253,7 @@ namespace privateer {
 					this->sugarFace = sugar_face;
 				}
 				
-				static bool get_hudson_interaction(clipper::MSugar &input_sugar,
+				static bool get_chpi_interaction(clipper::MSugar &input_sugar,
 												   const clipper::MAtomIndexSymmetry &neighbourhood, 
 												   std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms, 
 												   const std::string &trp_ring,
@@ -262,18 +262,8 @@ namespace privateer {
 												   std::vector<privateer::interactions::CHPiBond> results,
 												   privateer::interactions::CHPiBond &the_interaction,
 												   int sugarIndex,
-												   int glycanSize);
-				
-				static bool get_plevin_interaction(clipper::MSugar &input_sugar,
-												   const clipper::MAtomIndexSymmetry &neighbourhood, 
-												   std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms, 
-												   const std::string &trp_ring,
-												   const clipper::MiniMol &hydrogenated_input_model,
-												   clipper::MMonomer &mmon,
-												   std::vector<privateer::interactions::CHPiBond> results,
-												   privateer::interactions::CHPiBond &the_interaction,
-												   int sugarIndex,
-												   int glycanSize);
+												   int glycanSize,
+												   std::string algorithm);
 				
 				private:
 				clipper::MiniMol hydrogenated_input_model;
