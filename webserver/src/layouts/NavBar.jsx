@@ -3,38 +3,25 @@ import {GENERAL_CITATION, GITHUB_REPO} from "../data/Constants"
 export default function NavBar({setResetApp}) {
 
     return (
-        <nav className="">
-            <div className="h-16 bg-gray-800 shadow border-bottom max-w-full py-2 mb-2">
-                <div className="flex justify-between px-4 py-2 first:mr-2 last:ml-2">
-                    <div className="flex flex-1 justify-center">
-                        <h1 className="text-3xl font-title">
-                            <button id="title" title="Home" onClick={() => {
-                                setResetApp(true)
-                            }}>Privateer
-                            </button>
-                        </h1>
-                    </div>
-
-                    <div className="flex flex-1 justify-center">
-                        <ul className="flex items-center justify-between">
-                            <li className="pr-4 hover:scale-110">
-                                <a href={GENERAL_CITATION} className=" transition-all">
-                                    Cite
-                                </a>
-                            </li>
-                            <li className="pl-4">
-                                <a href={GITHUB_REPO}>
-                                    <img className="h-6 hover:scale-125 transition-all hidden dark:block"
-                                         src="github-mark-white.png"/>
-                                    <img className="h-6 hover:scale-125 transition-all block dark:hidden"
-                                         src="github-mark.png"/>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <div className="flex flex-col sm:flex-row sm:justify-between">
+        <div className="text-center sm:text-left px-12 pt-12 sm:p-12 flex flex-col">
+            <span
+                className="font-primary text-xl text-secondary sm:text-3xl">Validate your carbohydrates online with</span>
+            <span className="font-body text-4xl sm:text-6xl my-2 sm:my-1"><button id="title" title="Home"
+                                                                                  className="bg-gray"
+                                                                                  onClick={() => {
+                                                                                      setResetApp(true);
+                                                                                  }}>Privateer</button></span>
+            <span className="font-primary text-l text-secondary sm:text-xl sm:my-4 my-2">The Swiss Army knife for carbohydrate structure validation, refinement and analysis</span>
+        </div>
+        <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-12 flex items-center ">
+            <a href={GITHUB_REPO}>
+                <img className="w-full hover:scale-125 transition-all hidden dark:block" src="/github-mark.png"/>
+                <img className="w-full hover:scale-125 transition-all block dark:hidden"
+                     src="/github-mark-white.png"/>
+            </a>
+        </div>
+    </div>
     )
 }
     

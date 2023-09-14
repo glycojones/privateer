@@ -21,6 +21,7 @@ export default function HomeSection() {
     const [tableData, setTableData] = useState(null);
     const [loadingText, setLoadingText] = useState("Validating Glycans...");
     const [resetApp, setResetApp] = useState(false)
+    const [fallback, setFallBack] = useState(false)
 
 
     useEffect(() => {
@@ -38,6 +39,7 @@ export default function HomeSection() {
 
                 if (x.size() == 0 ) { 
                     setLoadingText("There were no detected glycans in this file.")
+                    setFallBack(true)
                 }
 
                 // Get Glyconnect ID from WURCS
@@ -66,7 +68,7 @@ export default function HomeSection() {
     return (
         <>
             <Header setResetApp={setResetApp} file={file} setFile={setFile} submit={submit} setSubmit={setSubmit}
-                    tableData={tableData} loadingText={loadingText} fileContent={fileContent}/>
+                    tableData={tableData} loadingText={loadingText} fileContent={fileContent} fallback={fallback}/>
             <BorderElement topColor={"#D6D9E5"} bottomColor={"#F4F9FF"}></BorderElement>
             <Information/>
             <BorderElement topColor={"#F4F9FF"} bottomColor={"#D6D9E5"} reverse={true}></BorderElement>
