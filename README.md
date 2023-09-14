@@ -2,6 +2,7 @@
 
 # Privateer
 ![Privateer Build](https://github.com/glycojones/privateer/actions/workflows/main.yml/badge.svg)
+
 Privateer is a tool for carbohydrate structure validation, re-refinement and graphical analysis. It carries out automatic assignments of ring conformation (IUPAC nomenclature), anomeric form, absolute configuration and comparison to reference values for validation. It computes omit mFo-DFc maps and calculates a correlation coefficient between model and electron density. For structure refinement, it is able to generate chemical dictionaries with unimodal torsion restraints which will help keep the lowest energy conformation. In terms of graphical analysis, it will produce vector diagrams in SNFG nomenclature (SVG format), which are annotated using the validation information (ring conformation, anomeric form, etc).
 
 Privateer is implemented in C++11 and Python3 (via pybind11), and produces Scheme and Python scripts for use with Coot (https://github.com/pemsley/coot).
