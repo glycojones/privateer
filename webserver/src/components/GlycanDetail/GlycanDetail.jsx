@@ -1,7 +1,8 @@
-import {lazy, useCallback, useState} from "react";
+import {lazy, useCallback, useEffect, useState} from "react";
 import {MoorhenContainer, MoorhenContextProvider} from 'moorhen'
 import GlycanDetailInfoBox from "./GlycanDetailInfoBox";
 // import GlycanDetailTable from "./GlycanDetailTable";
+import TorsionPlot from "../TorsionPlot/TorsionPlot";
 
 const GlycanDetailTable = lazy(() => import('./GlycanDetailTable'));
 
@@ -19,6 +20,25 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
         document.querySelectorAll("svg")[0].setAttribute("width", "50vw")
         document.querySelectorAll("svg")[0].setAttribute("height", "100%")
     })
+
+    // useEffect( () => {
+    //     function handleMoorhenResize() { 
+
+    //         let wWidth = window.innerWidth;
+
+    //         if (wWidth < 800) { 
+    //             setWidth(wWidth - 200)
+    //             setHeight((wWidth - 200)*0.75)
+    //             console.log("Resizing window to ", wWidth - 100,  (wWidth - 100)*0.75)
+    //         }
+
+    //     }
+    //     window.addEventListener('resize', handleMoorhenResize)
+
+    //     return _ => {
+    //         window.removeEventListener('resize', handleMoorhenResize)
+    //     }
+    // })
 
     const [width, setWidth] = useState(800);
     const [height, setHeight] = useState(600);
@@ -44,20 +64,27 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
                 <GlycanDetailInfoBox row={tableData[rowID]}/>
             </div>
             
+            <h3 className="text-left text-xl w-full">SNFG</h3>
+
             <div className="text-sm text-center text-primary" >
                 <div className="mt-4 py-4" id='svgContainer' dangerouslySetInnerHTML={{
                     __html: tableData[rowID].svg
                 }} ref={ref}/>
                 Hover over a linkage to see a summary
-
             </div>
+
+            <h3 className="text-left text-xl w-full">Visualise</h3>
+
             <MoorhenContextProvider defaultBackgroundColor={[51, 65, 85, 1]}>
                 <MoorhenContainer forwardControls={forwardControls} setMoorhenDimensions={() => {
                     return [width, height];
                 }} viewOnly={true}/>
 
             </MoorhenContextProvider>
+            
+            <h3 className="text-left text-xl w-full">SNFG</h3>
 
+            <TorsionPlot/>
 
         </div>);
 }
