@@ -19,41 +19,63 @@ set(PRIVATEERDATA ${CMAKE_SOURCE_DIR}/data)
 set(CLIBDENV $ENV{CLIBD})
 
 ## Find Privateer's dependencies that have been compiled locally. 
-#
-find_library(MMDB2DEP NAMES mmdb2
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CCP4CDEP NAMES ccp4c
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CCP4SRSDEP NAMES ccp4srs
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERCOREDEP NAMES clipper-core
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERMMDBDEP NAMES clipper-mmdb
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERMINIMOLDEP NAMES clipper-minimol
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERCONTRIBDEP NAMES clipper-contrib
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERCCP4DEP NAMES clipper-ccp4
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
-find_library(CLIPPERCIFDEP NAMES clipper-cif
-            HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+if (MODE STREQUAL "TESTING")
+    set (MMDB2DEP ${CMAKE_SOURCE_DIR}/privateer_dependencies/lib/libmmdb2.so)
+    set (CCP4CDEP ${CMAKE_SOURCE_DIR}/privateer_dependencies/lib/libccp4srs.so)
+    set (CCP4SRSDEP ${CMAKE_SOURCE_DIR}/privateer_dependencies/lib/libccp4c.so)
+    set (CLIPPERCOREDEP ${CMAKE_SOURCE_DIR}/privateer_dependencies/lib/libclipper-core.so)
+    set (CLIPPERMMDBDEP ${CMAKE_SOURCE_DIR}/privateer_dependencies/lib/libclipper-mmdb.so)
+    set (CLIPPERMINIMOLDEP ${CMAKE_SOURCE_DIR}/privateer_dependencies/lib/libclipper-minimol.so)
+    set (CLIPPERCONTRIBDEP ${CMAKE_SOURCE_DIR}/privateer_dependencies/lib/libclipper-contrib.so)
+    set (CLIPPERCCP4DEP ${CMAKE_SOURCE_DIR}/privateer_dependencies/lib/libclipper-ccp4.so)
+    set (CLIPPERCIFDEP ${CMAKE_SOURCE_DIR}/privateer_dependencies/lib/libclipper-cif.so)
+else()
+    find_library(MMDB2DEP NAMES mmdb2
+                HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+    find_library(CCP4CDEP NAMES ccp4c
+                HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+    find_library(CCP4SRSDEP NAMES ccp4srs
+                HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+    find_library(CLIPPERCOREDEP NAMES clipper-core
+                HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+    find_library(CLIPPERMMDBDEP NAMES clipper-mmdb
+                HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+    find_library(CLIPPERMINIMOLDEP NAMES clipper-minimol
+                HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+    find_library(CLIPPERCONTRIBDEP NAMES clipper-contrib
+                HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+    find_library(CLIPPERCCP4DEP NAMES clipper-ccp4
+                HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+    find_library(CLIPPERCIFDEP NAMES clipper-cif
+                HINTS ${CMAKE_SOURCE_DIR}/dependencies/lib)
+endif()
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
-
+if (MODE STREQUAL "TESTING")
+    add_subdirectory(${CMAKE_SOURCE_DIR}/privateer_dependencies/pybind11)
+else()
+    add_subdirectory(${CMAKE_SOURCE_DIR}/dependencies/pybind11)
+endif()
 find_package(Threads REQUIRED)
-
 
 #Find Privateer's main.cpp file
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 
 #Location of include files to be linked
-include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
+if (MODE STREQUAL "TESTING")
+    include_directories(${CMAKE_SOURCE_DIR}/privateer_dependencies/include
+                    ${CMAKE_SOURCE_DIR}/privateer_dependencies/gemmi/include
+                    ${PYBIND11_INCLUDE_DIR}
+                    ${PYTHON_INCLUDE_DIRS}
+                    ${PRIVATEER_SOURCE_DIR}/cpp
+                    ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
+else()
+    include_directories(${CMAKE_SOURCE_DIR}/dependencies/include
                     ${CMAKE_SOURCE_DIR}/dependencies/gemmi/include
                     ${PYBIND11_INCLUDE_DIR}
                     ${PYTHON_INCLUDE_DIRS}
                     ${PRIVATEER_SOURCE_DIR}/cpp
                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
+endif()
 
 file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json 
     DESTINATION ${CLIBDENV})
