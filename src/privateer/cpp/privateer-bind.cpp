@@ -207,14 +207,22 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
 
   char *c_data = (char *)file.c_str();
   size_t size = file.length();
-  ::gemmi::Structure structure = ::gemmi::read_structure_from_char_array(c_data, size, name);
 
+  if (size == 0) {
+    return {};
+  }
+
+  ::gemmi::Structure structure = ::gemmi::read_structure_from_char_array(c_data, size, name);
+  std::cout << "structure read" << std::endl;
   clipper::GEMMIFile gemmi_file;
   clipper::GemmiStructure *gemmi_structure = &gemmi_file;
   gemmi_structure->structure_ = structure;
 
+
   clipper::MiniMol mol;
   gemmi_file.import_minimol(mol);
+
+  std::cout << "Mol imported" << std::endl;
 
   // std::vector<privateer::json::GlycomicsDatabase> importedDatabase = privateer::json::read_json_file_for_glycomics_database("privateer_glycomics_database.json");
   privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("privateer_torsions_z_score_database.json");
@@ -225,7 +233,7 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
 
   std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
-  std::vector<TableEntry> table_list;
+  std::vector<TableEntry> table_list  = {};
 
   if (list_of_glycans.size() > 0)
   {
@@ -239,7 +247,6 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
         current_chain = list_of_glycans[i].get_chain();
       }
       wurcs_string = list_of_glycans[i].generate_wurcs();
-
 
       privateer::glycanbuilderplot::GlycanErrorCount* err = new privateer::glycanbuilderplot::GlycanErrorCount; 
 
@@ -274,6 +281,8 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
 
     return table_list;
   }
+  std::cout << "Table list is empty" << std::endl;
+  return {};
 }
 
 EMSCRIPTEN_BINDINGS(privateer_module)
