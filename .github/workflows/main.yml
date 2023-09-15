@@ -41,8 +41,11 @@ jobs:
  
     - name: Build
       run : |
-        pwd
         export CLIBD=privateer_dependencies/lib/data
-
         python setup_test.py install 
     
+    - name: Python Tests
+      run : |
+        export LD_LIBRARY_PATH=privateer_dependencies/lib
+        export CLIBD_MON=privateer_dependencies/lib/data/monomers/
+        pytest tests/test_glycosylation_interaction.py -m fast
