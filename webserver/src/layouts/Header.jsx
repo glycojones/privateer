@@ -26,14 +26,14 @@ export function Header({
 }) {
     return (
         <div className="bg-gray text-primary">
-            <NavBar/>
+            <NavBar setResetApp={setResetApp}/>
             <div className="flex justify-center mb-6">
                 {fallback != true ?
                     <Suspense fallback={<Loading loadingText={"Loading"} />}>
                         {file == null ?
                             <Upload setFile={setFile} />
                             : submit == null ?
-                                <Submit file={file} submitPressed={setSubmit} cancelPressed={setResetApp} />
+                                <Submit file={file} submitPressed={setSubmit} setResetApp={setResetApp} />
                                 : tableData == null ?
                                     <Loading loadingText={loadingText} /> :
                                     <SNFG tableData={tableData} fileName={file.name} pdbString={fileContent}></SNFG>}

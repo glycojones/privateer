@@ -9,9 +9,7 @@ export default function NavBar({setResetApp}) {
                 className="font-primary text-xl text-secondary sm:text-3xl">Validate your carbohydrates online with</span>
             <span className="font-body text-4xl sm:text-6xl my-2 sm:my-1"><button id="title" title="Home"
                                                                                   className="bg-gray"
-                                                                                  onClick={() => {
-                                                                                      setResetApp(true);
-                                                                                  }}>Privateer</button></span>
+                                                                                  onClick={() => {setResetApp(true)}}>Privateer</button></span>
             <span className="font-primary text-l text-secondary sm:text-xl sm:my-4 my-2">The Swiss Army knife for carbohydrate structure validation, refinement and analysis</span>
         </div>
         <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-12 flex items-center ">

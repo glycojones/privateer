@@ -23,7 +23,6 @@ export default function HomeSection() {
     const [resetApp, setResetApp] = useState(false)
     const [fallback, setFallBack] = useState(false)
 
-
     useEffect(() => {
         privateer_module().then((Module) => {
             var reader = new FileReader();
@@ -63,6 +62,8 @@ export default function HomeSection() {
         setFile(null)
         setSubmit(null)
         setTableData(null)
+        setFallBack(false)
+        setResetApp(false)
     }, [resetApp])
 
     return (

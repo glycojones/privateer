@@ -1,6 +1,6 @@
 import Molecule from "../assets/Molecule"
 
-export default function Submit({file, submitPressed, cancelPressed}) {
+export default function Submit({file, submitPressed, setResetApp}) {
 
     return (
         <div
@@ -24,7 +24,7 @@ export default function Submit({file, submitPressed, cancelPressed}) {
             <div className="flex space-x-4 py-6">
             <button
                     className="bg-gray hover:bg-hover border-gray-800 border-2 text-primary opacity-60 font-bold py-2 px-4 rounded"
-                    onClick={() => cancelPressed(true)}>Cancel
+                    onClick={() => setResetApp(true)}>Cancel
             </button>
 
             <button

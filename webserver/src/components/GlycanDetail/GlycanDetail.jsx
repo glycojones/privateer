@@ -82,9 +82,9 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
 
             </MoorhenContextProvider>
             
-            <h3 className="text-left text-xl w-full">SNFG</h3>
+            {/* <h3 className="text-left text-xl w-full">Torsion Plots</h3>
 
-            <TorsionPlot/>
+            <TorsionPlot/> */}
 
         </div>);
 }
