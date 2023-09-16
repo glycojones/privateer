@@ -1,0 +1,41 @@
+name: Privateer Webserver Frontend CI/CD
+
+on:
+  push:
+    branches: [ "wasm" ]
+    paths: 
+      - webserver/**
+  pull_request:
+    branches: [ "wasm" ]
+    paths: 
+      - webserver/**
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build frontend
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - run: |
+          export NODE_OPTIONS=--max-old-space-size=8192
+          cd webserver
+          npm ci
+          npm run build 
+          cp .htaccess webserver/dist
+          mv webserver/dist webserver/public_html
+      
+      - name: Push to server!
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.ftp_username}}
+          username: ${{ secrets.ftp_username }}
+          password: ${{ secrets.ftp_password }}
+          protocol: ${{ secrets.ftp_protocol}} 
+          port: ${{ secrets.ftp_port }}
+          local_dir: webserver/public_html
+          server_dir: ${{ secrets.server_dir }}
+          dry-run: true
