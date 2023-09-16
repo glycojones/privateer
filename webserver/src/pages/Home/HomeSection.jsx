@@ -45,8 +45,6 @@ export default function HomeSection() {
                 setLoadingText("Querying Glytoucan...")
                 await loadGlytoucan(table_data)
 
-                // setLoadingText("Querying GlyConnect...")
-                // await load_glyconnect(table_data)
 
                 setTableData(table_data);
             }
