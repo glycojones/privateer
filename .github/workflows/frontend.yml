@@ -25,7 +25,7 @@ jobs:
           cd webserver
           npm ci
           npm run build 
-          cp ../htaccess webserver/dist
+          cp ../.htaccess webserver/dist
           mv webserver/dist webserver/public_html
       
       - name: Push to server!
