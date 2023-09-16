@@ -25,8 +25,9 @@ jobs:
           cd webserver
           npm ci
           npm run build 
-          cp ../.htaccess webserver/dist
-          mv webserver/dist webserver/public_html
+          cp ../.htaccess dist
+          mv dist public_html
+          cd ..
       
       - name: Push to server!
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
