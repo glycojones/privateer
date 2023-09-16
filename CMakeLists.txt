@@ -24,19 +24,22 @@ set(CLIBDENV $ENV{CLIBD})
 # find_package(zlib)
 # add_subdirectory(checkout/zlib)
 
-add_subdirectory(ccp4)
-add_subdirectory(rfftw)
-add_subdirectory(fftw)
-add_subdirectory(mmdb2)
-add_subdirectory(clipper/minimol)
-add_subdirectory(clipper/core)
-add_subdirectory(clipper/ccp4)
-add_subdirectory(clipper/contrib)
-add_subdirectory(clipper/cns)
-add_subdirectory(clipper/mmdb)
-add_subdirectory(clipper/cif)
-add_subdirectory(clipper/phs)
-add_subdirectory(clipper/gemmi)
+if (MODE STREQUAL "TESTING") 
+else() 
+  add_subdirectory(ccp4)
+  add_subdirectory(rfftw)
+  add_subdirectory(fftw)
+  add_subdirectory(mmdb2)
+  add_subdirectory(clipper/minimol)
+  add_subdirectory(clipper/core)
+  add_subdirectory(clipper/ccp4)
+  add_subdirectory(clipper/contrib)
+  add_subdirectory(clipper/cns)
+  add_subdirectory(clipper/mmdb)
+  add_subdirectory(clipper/cif)
+  add_subdirectory(clipper/phs)
+  add_subdirectory(clipper/gemmi)
+endif()
 
 # add_subdirectory(ccp4srs)
 
@@ -63,7 +66,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
  checkout/clipper 
 #  checkout/ccp4srs 
  checkout/gemmi/include
- checkout/zlib
  ${PRIVATEER_SOURCE_DIR}/cpp
  ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
 
@@ -135,9 +137,7 @@ target_link_directories(privateer_exec
  fftw 
  rfftw 
  ccp4 
-#  ../ccp4srs
  ../checkout/gemmi
-#  ../checkout/zlib
  )
 
 
@@ -155,10 +155,8 @@ target_link_libraries(
  fftw 
  rfftw 
  ccp4 
-#  ccp4srs
  nodefs.js 
  Threads::Threads
-#  z
  )
                                
 
