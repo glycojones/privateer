@@ -89,6 +89,10 @@ struct TableEntry
   int anomer_err = 0; 
   int puckering_err = 0; 
   int chirality_err = 0; 
+
+  // std::vector<std::string> glycan_types;
+
+
 };
 
 struct GlycanData
@@ -273,6 +277,8 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
       table_entry.puckering_err = err->puckering_err; 
       table_entry.chirality_err = err->chirality_err; 
 
+
+      // std::vector<clipper::MGlycan::MGlycanTorsionSummary> list_of_glycans[i].return_torsion_summary_within_glycan()
       // table_entry.description = list_of_glycans[i].get_description();
       table_list.emplace_back(table_entry);
       delete err; 
@@ -285,11 +291,22 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
   return {};
 }
 
+// struct MGlycanTorsionSummary
+//             {
+//                 std::string type;
+//                 clipper::String first_residue_name; // donorResidue
+//                 clipper::String second_residue_name; // acceptorResidue
+//                 std::vector<std::pair<clipper::MAtom, clipper::MAtom>> atoms; // .first = donorAtom, .second = acceptorAtom
+//                 std::vector<std::pair<std::string, std::string>> linkage_descriptors; // .first = donorPosition, .second = acceptorPosition
+//                 std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
+//             };
+
 EMSCRIPTEN_BINDINGS(privateer_module)
 {
 
   function("read_structure", &read_file);
   register_vector<std::string>("vector<string>");
+
 
   value_object<TableEntry>("TableEntry")
       .field("svg", &TableEntry::svg)
