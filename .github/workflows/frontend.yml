@@ -38,5 +38,5 @@ jobs:
           protocol: ${{ secrets.ftp_protocol}} 
           port: ${{ secrets.ftp_port }}
           local-dir: webserver/public_html/
-          server-dir: ${{ secrets.ftp_server_dir }}
+          server-dir: ${{ secrets.ftp_server_dir }}/
           dry-run: true
