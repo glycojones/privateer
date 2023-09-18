@@ -32,11 +32,11 @@ jobs:
       - name: Push to server!
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.ftp_username}}
+          server: ${{ secrets.ftp_server_ip}}
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           protocol: ${{ secrets.ftp_protocol}} 
           port: ${{ secrets.ftp_port }}
           local_dir: webserver/public_html
-          server_dir: ${{ secrets.server_dir }}
+          server_dir: ${{ secrets.ftp_server_dir }}
           dry-run: true
