@@ -33,10 +33,10 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.ftp_server_ip}}
-          username: ${{ secrets.ftp_username }}
+          username: ${{ secrets.ftp_username }}@privateer.hosted.york.ac.uk
           password: ${{ secrets.ftp_password }}
-          protocol: SFTP
-          port: ${{ secrets.ftp_port }}
+          protocol: ftps
+          port: 21
           local-dir: webserver/public_html/
           server-dir: ${{ secrets.ftp_server_dir }}/
           dry-run: true
