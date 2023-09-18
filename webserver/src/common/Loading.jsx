@@ -11,7 +11,6 @@ export default function Loading({loadingText}) {
                 size={100}
                 aria-label="Loading Spinner"
                 data-testid="loader"
-                
             />
 
         </div>
