@@ -76,6 +76,15 @@ extern "C" std::vector<std::string> read_file(const std::string &file, const std
   }
 }
 
+struct TorsionEntry { 
+  std::string sugar_1; 
+  std::string sugar_2; 
+  std::string atom_number_1; 
+  std::string atom_number_2; 
+  float phi; 
+  float psi; 
+};
+
 struct TableEntry
 {
   std::string svg;
@@ -90,121 +99,9 @@ struct TableEntry
   int puckering_err = 0; 
   int chirality_err = 0; 
 
-  // std::vector<std::string> glycan_types;
-
-
+  std::vector<TorsionEntry> torsions;
 };
 
-struct GlycanData
-{
-  std::string glyconnect_id;
-  std::string glytoucan_id;
-  std::string wurcs;
-};
-
-GlycanData
-query_glycomics_database(clipper::MGlycan &currentGlycan, const std::string& WURCS, std::vector<privateer::json::GlycomicsDatabase> &glycomics_database, bool returnClosestMatches = false, bool returnAllPossiblePermutations = false, int nThreads = 1)
-{
-
-  std::string currentWURCS = WURCS;
-
-  int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, WURCS);
-  if (!returnClosestMatches && currentGlycan.number_of_nodes() > 1)
-  {
-    if (valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID != "NotFound")
-    {
-      std::string glytoucanID, glyconnectID;
-      glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
-      if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
-      {
-        glytoucanID.erase(0, 1);
-        glytoucanID.pop_back();
-      }
-      glyconnectID = glycomics_database[valueLocation].GlyConnectID;
-      if (glyconnectID.front() == '"' && glyconnectID.front() == '"')
-      {
-        glyconnectID.erase(0, 1);
-        glyconnectID.pop_back();
-      }
-
-      GlycanData glycan_data;
-      glycan_data.wurcs = currentWURCS;
-      glycan_data.glyconnect_id = glyconnectID;
-      glycan_data.glytoucan_id = glytoucanID;
-      return glycan_data;
-    }
-    else if (valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID == "NotFound")
-    {
-      std::string glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
-      if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
-      {
-        glytoucanID.erase(0, 1);
-        glytoucanID.pop_back();
-      }
-
-      GlycanData glycan_data;
-      glycan_data.wurcs = currentWURCS;
-      glycan_data.glyconnect_id = "NotFound";
-      glycan_data.glytoucan_id = glytoucanID;
-      return glycan_data;
-    }
-    else
-    {
-      GlycanData glycan_data;
-      glycan_data.wurcs = currentWURCS;
-      glycan_data.glyconnect_id = "Not Found";
-      glycan_data.glytoucan_id = "NotFound";
-      return glycan_data;
-    }
-  }
-  else
-  {
-    std::string glytoucanID = "Not Found";
-    if (valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID != "NotFound")
-    {
-      std::string glytoucanID, glyconnectID;
-      glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
-      if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
-      {
-        glytoucanID.erase(0, 1);
-        glytoucanID.pop_back();
-      }
-      glyconnectID = glycomics_database[valueLocation].GlyConnectID;
-      if (glyconnectID.front() == '"' && glyconnectID.front() == '"')
-      {
-        glyconnectID.erase(0, 1);
-        glyconnectID.pop_back();
-      }
-      GlycanData glycan_data;
-      glycan_data.wurcs = currentWURCS;
-      glycan_data.glyconnect_id = glyconnectID;
-      glycan_data.glytoucan_id = glytoucanID;
-      return glycan_data;
-    }
-    else if (valueLocation != -1 && glycomics_database[valueLocation].GlyConnectID == "NotFound")
-    {
-      std::string glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
-      if (glytoucanID.front() == '"' && glytoucanID.front() == '"')
-      {
-        glytoucanID.erase(0, 1);
-        glytoucanID.pop_back();
-      }
-      GlycanData glycan_data;
-      glycan_data.wurcs = currentWURCS;
-      glycan_data.glyconnect_id = "NotFound";
-      glycan_data.glytoucan_id = glytoucanID;
-      return glycan_data;
-    }
-    else
-    {
-      GlycanData glycan_data;
-      glycan_data.wurcs = currentWURCS;
-      glycan_data.glyconnect_id = "Not Found";
-      glycan_data.glytoucan_id = "Not Found";
-      return glycan_data;
-    }
-  }
-}
 
 extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, const std::string &name)
 {
@@ -278,7 +175,24 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
       table_entry.chirality_err = err->chirality_err; 
 
 
-      // std::vector<clipper::MGlycan::MGlycanTorsionSummary> list_of_glycans[i].return_torsion_summary_within_glycan()
+      std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_list = list_of_glycans[i].return_torsion_summary_within_glycan();
+       for(int i = 0; i < torsion_list.size(); i++) {
+        for(int j = 0; j < torsion_list[i].combined_torsions.size(); j++)
+        {
+            std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>> torsion = torsion_list[i].combined_torsions[j];
+            for (int k = 0; k < torsion.second.size(); k++) {
+              TorsionEntry te; 
+              te.sugar_1 = torsion_list[i].first_residue_name; 
+              te.sugar_2 = torsion_list[i].second_residue_name; 
+              te.atom_number_1 = torsion.first.first; 
+              te.atom_number_2 = torsion.first.second; 
+              te.phi = torsion.second[k].first; 
+              te.psi = torsion.second[k].second; 
+              table_entry.torsions.emplace_back(te);
+            }
+        }
+       }
+
       // table_entry.description = list_of_glycans[i].get_description();
       table_list.emplace_back(table_entry);
       delete err; 
@@ -307,6 +221,16 @@ EMSCRIPTEN_BINDINGS(privateer_module)
   function("read_structure", &read_file);
   register_vector<std::string>("vector<string>");
 
+    value_object<TorsionEntry>("TorsionEntry")
+      .field("sugar_1", &TorsionEntry::sugar_1)
+      .field("sugar_2", &TorsionEntry::sugar_2)
+      .field("atom_number_1", &TorsionEntry::atom_number_1)
+      .field("atom_number_2", &TorsionEntry::atom_number_2)
+      .field("phi", &TorsionEntry::phi)
+      .field("psi", &TorsionEntry::psi);
+    
+    register_vector<TorsionEntry>("vector<TorsionEntry>");
+
 
   value_object<TableEntry>("TableEntry")
       .field("svg", &TableEntry::svg)
@@ -320,10 +244,12 @@ EMSCRIPTEN_BINDINGS(privateer_module)
       .field("anomer_err", &TableEntry::anomer_err)
       .field("puckering_err", &TableEntry::puckering_err)
       .field("chirality_err", &TableEntry::chirality_err)
+      .field("torsions", &TableEntry::torsions)
       ;
 
       // .field("description", &TableEntry::description);
 
   function("read_structure_to_table", &read_file_to_table);
   register_vector<TableEntry>("Table");
+
 }
