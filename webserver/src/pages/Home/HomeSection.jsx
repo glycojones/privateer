@@ -33,9 +33,17 @@ export default function HomeSection() {
 
                 let table_data = [];
                 for (var i = 0; i < x.size(); i++) {
-                    table_data.push(x.get(i))
-                }
+                    let table_entry = x.get(i)
 
+                    let collected_torsions = []
+                    for(var j = 0; j < table_entry.torsions.size(); j++) { 
+                        collected_torsions.push(table_entry.torsions.get(j)); 
+                    }
+                    table_entry.torsions = collected_torsions
+                    table_data.push(table_entry)
+
+                }
+                
                 if (x.size() == 0 ) { 
                     setLoadingText("There were no detected glycans in this file.")
                     setFallBack(true)
