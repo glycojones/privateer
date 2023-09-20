@@ -1,31 +1,13 @@
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
+import { linkage_db, bin_db} from '../../data/Constants';
 
 export default function TorsionPlot({linkage_type, sorted_torsion_list}) {
 
-    const linkage_db = { 
-      "ASN-1,2-NAG": 'https://raw.githubusercontent.com/glycojones/privateer/master/data/linkage_torsions/unprocessed_files/ASN-NAG_reduced.json', 
-      "NAG-1,4-NAG": 'https://raw.githubusercontent.com/glycojones/privateer/master/data/linkage_torsions/unprocessed_files/NAG-NAG_reduced.json', 
-      "NAG-1,4-MAN": 'https://raw.githubusercontent.com/glycojones/privateer/master/data/linkage_torsions/unprocessed_files/NAG-MAN_reduced.json', 
-      "MAN-1,3-MAN": 'https://raw.githubusercontent.com/glycojones/privateer/master/data/linkage_torsions/unprocessed_files/MAN-MAN_reduced.json', 
-      "MAN-1,6-MAN": 'https://raw.githubusercontent.com/glycojones/privateer/master/data/linkage_torsions/unprocessed_files/MAN-MAN_reduced.json', 
-      "MAN-1,3-BMA": 'https://raw.githubusercontent.com/glycojones/privateer/master/data/linkage_torsions/unprocessed_files/BMA-MAN_reduced.json', 
-
-    }
-
-    const bin_db = {
-      "ASN-1,2-NAG": {start: 0, end: 360,size: 4},
-      "NAG-1,4-NAG": {start: -180, end: 180, size: 4},
-      "NAG-1,4-MAN": {start: -180, end: 180, size: 4},
-      "MAN-1,3-MAN": {start: -180, end: 180, size: 4},
-      "MAN-1,6-MAN": {start: -180, end: 180, size: 4},
-      "MAN-1,3-BMA": {start: -180, end: 180, size: 4},
-    }
-
+ 
     const [trace, setTrace] = useState({})
     const [overlay, setOverlay] = useState({})
-
-    useEffect(() => {console.log("sorted_torsion_list updated", sorted_torsion_list)},[sorted_torsion_list])
+    const [linkageFound, setLinkageFound] = useState({})
 
     useEffect(() => {
         fetch(linkage_db[linkage_type])
@@ -35,8 +17,8 @@ export default function TorsionPlot({linkage_type, sorted_torsion_list}) {
             let yData = []
 
             for (let i = 0; i < responseJson.length; i++) { 
-                xData.push(parseFloat(responseJson[i].Phi))
-                yData.push(parseFloat(responseJson[i].Psi))
+                xData.push(parseFloat(responseJson[i].phi))
+                yData.push(parseFloat(responseJson[i].psi))
             }
 
             setTrace({
@@ -58,11 +40,12 @@ export default function TorsionPlot({linkage_type, sorted_torsion_list}) {
                   autobiny: false,
                   ybins: bin_db[linkage_type]
               })
-
+              setLinkageFound(true)
         })
         .catch((error) => {
             console.error(error);
             console.log(linkage_type, " is not in the DB most likely ")
+            setLinkageFound(false)
         });
         
         let overlay_phi = []
@@ -89,13 +72,24 @@ export default function TorsionPlot({linkage_type, sorted_torsion_list}) {
     }, [linkage_type])
 
     return (
+      !linkageFound? (
+        <h3>{linkage_type} does not have enough datapoints to generate a torsion plot.</h3>
+      ): 
       <Plot
         data={[
             trace, overlay 
         ]}
         layout={ {width: 500, height: 500, title: linkage_type, 
-        yaxis: {fixedrange: true},
-        xaxis : {fixedrange: true},} }
+        yaxis: {
+          fixedrange: true, 
+          range: (linkage_type in bin_db)? [bin_db[linkage_type].start, bin_db[linkage_type].end] : [-180,180],
+          showgrid:false
+        },
+        xaxis : {
+          fixedrange: true, 
+          range:[-180,180], 
+          showgrid:false
+        },} }
       />
     );
   }

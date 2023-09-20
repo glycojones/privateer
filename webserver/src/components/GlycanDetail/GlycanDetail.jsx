@@ -43,6 +43,7 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
 
     const [width, setWidth] = useState(800);
     const [height, setHeight] = useState(600);
+    const [torsionTab, setTorsionTab] = useState(0)
 
     return (
         <div className="flex-col justify-center items-center" style={{display: !hideMoorhen ? 'flex' : 'none'}}>
@@ -52,6 +53,7 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
                     <button onClick={() => {
                         setHideMoorhen(true);
                         window.scrollTo(0, scrollPosition);
+                        setTorsionTab(0)
                     }}>
                         <span className="">&#8592; Back To Table</span>
                     </button>
@@ -85,7 +87,7 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
             
             <h3 className="text-left text-xl w-full">Torsion Plots</h3>
 
-            <TorsionMultiPlot torsions={tableData[rowID].torsions}/>
+            <TorsionMultiPlot torsions={tableData[rowID].torsions} tab={torsionTab} setTab={setTorsionTab}/>
 
         </div>);
 }
