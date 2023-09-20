@@ -44,7 +44,7 @@ export default function TorsionPlot({linkage_type, sorted_torsion_list}) {
         })
         .catch((error) => {
             console.error(error);
-            console.log(linkage_type, " is not in the DB most likely ")
+            console.log(linkage_type," is not in the DB most likely ")
             setLinkageFound(false)
         });
         
