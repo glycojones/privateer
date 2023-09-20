@@ -47,5 +47,23 @@ This web server allows for online validation of carbohydrate-containing macromol
 `cd webserver`
 `npm run dev`
 
+## **Ubuntu Compilation instructions**
+To compile on Ubuntu with precompiled dependency libraries, use the following commands 
+```
+  git clone https://github.com/emscripten-core/emsdk.git
+  cd emsdk
+  git pull
+  ./emsdk install latest
+  ./emsdk activate latest
+  cd ..
+  git clone https://github.com/Dialpuri/privateer_webserver_dependencies.git 
+  cd privateer_webserver_dependencies
+  cp -r * ../
+  cd .. 
+  source ./emsdk/emsdk_env.sh
+  emcmake cmake . -D MODE=TESTING
+  emmake make -j 
+```
+
 ## Releases
 - V0.1 16.8.23 - Full UI Redesign with ID correction - Initial Release
