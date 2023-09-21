@@ -45,11 +45,11 @@ export default function SNFG({tableData, fileName, pdbString}) {
                         let id = tableData[rowID].id
 
                         let sugar_name = id.split("-")[0]
-                        let sugar_id = id.split("-")[1].split("/")[0]
+                        let sugar_id = id.split("-")[1].split("/")[0].split(":")[0]
                         let sugar_chain = id.split("/")[1].split("_")[0]
 
                         let center_string = sugar_chain + "/" + sugar_id + "(" + sugar_name + ")"
-                        console.log(center_string)
+                        console.log("PRIVATEER", center_string)
                         newMolecule.centreOn(center_string)
                     }
                 )
