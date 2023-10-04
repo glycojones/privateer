@@ -23,6 +23,12 @@ export default function HomeSection() {
     const [resetApp, setResetApp] = useState(false)
     const [fallback, setFallBack] = useState(false)
 
+    let sanitize_id = (id) => { 
+        const regex = /: *32/g;
+        const new_id = id.replace(regex, "")
+        return new_id
+    }
+
     useEffect(() => {
         privateer_module().then((Module) => {
             var reader = new FileReader();
@@ -34,6 +40,8 @@ export default function HomeSection() {
                 let table_data = [];
                 for (var i = 0; i < x.size(); i++) {
                     let table_entry = x.get(i)
+
+                    table_entry.id = sanitize_id(table_entry.id)
 
                     let collected_torsions = []
                     for(var j = 0; j < table_entry.torsions.size(); j++) { 
