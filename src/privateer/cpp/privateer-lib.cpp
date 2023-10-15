@@ -2373,17 +2373,17 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
     // first, let us draw the root
 
     if ( type == "n-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "N", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "N-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "N", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "N-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "o-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "O", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "O-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "O", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "O-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "s-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "S", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "S-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "S", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "S-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "c-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "C", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "C-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "C", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "C-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "p-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "P", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "P-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "P", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "P-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "ligand" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "L-", "N/A", "Ligand", mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "L-", "N/A", "Ligand", "Ligand", glycan.get_root_sugar_chainID().trim(), glycan.get_root().second.type().trim(), glycan.get_root().second.seqnum(), mmdbsel );
     else return true;
 
     add_block ( root );
@@ -2453,192 +2453,192 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
     if ( sugname == "Glc" )
     {
-        Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+        Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( glc );
         if (node_contains_issue_with_sugar && this->potential_issue_shading)
         {
-            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shCrcl);
         }
     }
     else if ( sugname == "Gal" )
     {
-        Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( gal );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shCrcl);
         }
     }
     else if ( sugname == "Man" )
     {
-        Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( man );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shCrcl);
         }
 
     }
     else if ( sugname == "Fuc" )
     {
-        Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( fuc );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedTriangle * shTrngl = new shadedTriangle (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedTriangle * shTrngl = new shadedTriangle (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shTrngl);
         }
     }
     else if ( sugname == "Xyl" )
     {
-        Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( xyl );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedStar * shStar = new shadedStar (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedStar * shStar = new shadedStar (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shStar);
         }
     }
     else if ( sugname == "GlcN" )
     {
-        GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( glcn );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GalN" )
     {
-        GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( galn );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "ManN" )
     {
-        ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+        ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( mann );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GlcNAc" )
     {
-        GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( glcnac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GalNAc" )
     {
-        GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation ) , mmdbsel );
+        GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( galnac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "ManNAc" )
     {
-        ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation ) , mmdbsel );
+        ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( mannac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GlcA" )
     {
-        GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( glca );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GalA" )
     {
-        GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( gala );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname ==  "ManA" )
     {
-        ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( mana );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname ==  "Neu5Gc" )
     {
-        Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( neu5gc );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else if ( sugname ==  "Neu5Ac" )
     {
-        Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( neu5ac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else if ( sugname ==  "IdoA" )
     {
-        IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( idoa );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else if ( sugname ==  "KDN" )
     {
-        KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( kdn );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else
     {
-        Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation ), mmdbsel  );
+        Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( unk );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedHexagon * shHex = new shadedHexagon (x, y, get_svg_tooltip ( sugar, validation ), mmdbsel );
+            shadedHexagon * shHex = new shadedHexagon (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shHex);
         }
     }
@@ -3035,7 +3035,7 @@ std::string privateer::glycanbuilderplot::Glc::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#glc\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3049,7 +3049,7 @@ std::string privateer::glycanbuilderplot::Man::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3062,7 +3062,7 @@ std::string privateer::glycanbuilderplot::Gal::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#gal\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3086,7 +3086,7 @@ std::string privateer::glycanbuilderplot::Fuc::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#fuc\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3110,7 +3110,7 @@ std::string privateer::glycanbuilderplot::Xyl::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#xyl\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3138,7 +3138,7 @@ std::string privateer::glycanbuilderplot::GalN::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#galn\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3150,7 +3150,7 @@ std::string privateer::glycanbuilderplot::GlcN::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#glcn\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3163,7 +3163,7 @@ std::string privateer::glycanbuilderplot::ManN::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#mann\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3178,7 +3178,7 @@ std::string privateer::glycanbuilderplot::GlcNAc::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3191,7 +3191,7 @@ std::string privateer::glycanbuilderplot::GalNAc::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#galnac\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3204,7 +3204,7 @@ std::string privateer::glycanbuilderplot::ManNAc::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#mannac\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3230,7 +3230,7 @@ std::string privateer::glycanbuilderplot::Neu5Ac::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#neu5ac\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3243,7 +3243,7 @@ std::string privateer::glycanbuilderplot::Neu5Gc::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#neu5gc\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3255,7 +3255,7 @@ std::string privateer::glycanbuilderplot::KDN::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#kdn\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3268,7 +3268,7 @@ std::string privateer::glycanbuilderplot::GlcA::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#glca\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3282,7 +3282,7 @@ std::string privateer::glycanbuilderplot::ManA::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#mana\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3294,7 +3294,7 @@ std::string privateer::glycanbuilderplot::GalA::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#gala\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3307,7 +3307,7 @@ std::string privateer::glycanbuilderplot::IdoA::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#idoa\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3332,7 +3332,7 @@ std::string privateer::glycanbuilderplot::Unk::get_XML ()
     std::ostringstream tmp;
 
     tmp <<  "  <use xlink:href=\"#unk\" x=\"" << get_x() << "\""
-        <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+        <<  " y=\"" << get_y() << "\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\"" << ">"
         <<  "<title>" << get_tooltip() << "</title>"
         <<  "</use>\n"
         <<  "<text x=\"" << get_x() + 25 << "\""
@@ -3352,7 +3352,7 @@ std::string privateer::glycanbuilderplot::GlycanRoot::get_XML ()
     if ( link_name == "o" ) link_colour = "my_red";
     else if ( link_name == "s" ) link_colour = "my_yellow";
 
-    tmp << "  <g id=\"glycan_root\" transform=\"translate(" << get_x() << " " << get_y() << ")\" >\n"
+    tmp << "  <g id=\"glycan_root\" chainID=\"" << get_chainID() << "\" resname=\"" << get_resname() << "\" seqnum=\"" << get_seqnum() << "\" transform=\"translate(" << get_x() << " " << get_y() << ")\" >\n"
         << "    <rect width=\"160\" height=\"50\" rx=\"10\" ry=\"10\" style=\"stroke:#000000;"
         << " fill:#ffffff; stroke-width:2.0;\" />\n"
         << "    <line x1=\"30\" y1=\"0\" x2=\"30\" y2=\"50\" style=\"stroke:#000000;"
