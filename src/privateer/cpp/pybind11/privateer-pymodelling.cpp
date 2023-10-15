@@ -233,7 +233,7 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
 
     grafter.graft_mpolymer_to_receiving_model(glycan_to_graft, receiver_monomer, imported_receiving_model[receiver_chain_index].id().trim(), ANY_search_policy);
     
-    std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MSugar, clipper::String> > > grafted_clashes = grafter.get_grafted_clashes();
+    std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > grafted_clashes = grafter.get_grafted_clashes();
 
     double currentAverageDistanceBetweenResidues = 0.0;
     double totalAveragesOfPerResidueDistances = 0.0;

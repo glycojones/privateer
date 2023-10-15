@@ -77,12 +77,13 @@ namespace privateer {
     {
       public:
         GlycosylationInteractions() { }
-        GlycosylationInteractions(std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds) {
+        GlycosylationInteractions(std::string& path_to_model_file, std::string& path_to_output_file, bool enableHydrogenation) {
           this->input_path = path_to_model_file;
           this->output_path = path_to_output_file;
-          this->read_from_file(path_to_model_file, path_to_output_file, enableHBonds);
+          this->enable_hydrogenation = enableHydrogenation;
+          this->read_from_file(path_to_model_file, path_to_output_file, enableHydrogenation);
         }
-        void read_from_file (std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds);
+        void read_from_file (std::string& path_to_model_file, std::string& path_to_output_file, bool enableHydrogenation);
         std::string get_path_of_model_file_used ( ) { return input_path; };
         
         pybind11::list get_all_detected_interactions();
@@ -100,6 +101,7 @@ namespace privateer {
         pybind11::dict get_protein_sequence_information_for_single_chain (int chainMiniMolIndex);
         
       private:
+        bool enable_hydrogenation;
         std::string input_path;
         std::string output_path;
         clipper::MiniMol input_model;
@@ -380,7 +382,6 @@ namespace privateer {
         clipper::MGlycan::Node sugarNode;
 
         pybind11::dict sugarSummary;
-
         int sugarID;
         int glycanID;
         int sugar_seqnum;

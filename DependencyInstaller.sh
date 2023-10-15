@@ -124,15 +124,20 @@ echo "CCP4 (libccp4) installation ... falied. We can not continue the rest of th
 exit 3
 fi
 
-if [[ ! -d share/ccp4srs ]]; then
-cd $dependencyDir/share
+
+
+if [[ -d share ]]; then
+  cd $dependencyDir/share
+else
+  mkdir share
+  cd $dependencyDir/share
+fi
 if [[  -d ccp4srs ]]; then
-rm -rf ccp4srs
+  rm -rf ccp4srs
 fi
 mkdir ccp4srs
 cd ccp4srs
-tar -zxvf $dependencyDir/ccp4srs-data-20180406.tar.gz --directory $dependencyDir/share/ccp4srs
-fi
+tar -zxvf $dependencyDir/ccp4srs-data-20180406.tar.gz
 cd $dependencyDir
 
 if [[ ! -d include/ccp4srs ]]; then

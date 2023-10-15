@@ -339,7 +339,7 @@ void privateer::pyanalysis::CrystallographicData::parse_mtz_data_file(std::strin
 
 ///////////////////////////////////////////////// Class GlycosylationComposition  ////////////////////////////////////////////////////////////////////
 
-void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file, bool enableHBonds)
+void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::string& path_to_model_file, std::string& path_to_output_file, bool enableHydrogenation)
 {
     if(path_to_model_file == "undefined")
     {
@@ -359,10 +359,12 @@ void privateer::pyanalysis::GlycosylationInteractions::read_from_file( std::stri
 
     if(!mglycology.get_list_of_glycans().empty())
     {
-        if(enableHBonds)
+        if(enableHydrogenation)
+        {
+            privateer::interactions::hydrogenate_input_model(path_to_model_file, path_to_output_file);
             this->hbonds = privateer::interactions::HBondsParser(path_to_model_file, path_to_output_file);
-
-        this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file, path_to_output_file);
+            this->chpibonds = privateer::interactions::CHPiBondsParser(path_to_model_file, path_to_output_file);
+        }
     }
 }
 
@@ -2156,13 +2158,18 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
 
             auto search_result = std::find_if(torsions_database.begin(), torsions_database.end(), [current_torsion, linkage_number](privateer::json::TorsionsDatabase& element)
             {
-                return
-                current_torsion.first_residue_name == element.first_residue &&
+
+                // std::cout << current_torsion.linkage_descriptors[linkage_number].first << " " << current_torsion.linkage_descriptors[linkage_number].second << " " << element.acceptor_position << " " << element.donor_position << std::endl;
+
+                return current_torsion.first_residue_name == element.first_residue &&
                 current_torsion.second_residue_name == element.second_residue &&
                 current_torsion.type == element.type &&
                 static_cast<std::string>(current_torsion.linkage_descriptors[linkage_number].first) == static_cast<std::string>(element.acceptor_position) &&
                 static_cast<std::string>(current_torsion.linkage_descriptors[linkage_number].second) == static_cast<std::string>(element.donor_position);
             });
+
+            // std::cout << current_torsion.first_residue_name << "-" << current_torsion.linkage_descriptors[linkage_number].first << "," << 
+            // current_torsion.linkage_descriptors[linkage_number].second << "-" << current_torsion.second_residue_name << " " << current_torsion.torsions.size() << std::endl;
 
             if(search_result != std::end(torsions_database))
             {
@@ -2182,14 +2189,29 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
                     database_psi.append(database_torsions[j].second);
                 }
 
-                for(int j = 0; j < current_glycan_torsions.size(); j++)
-                {
-                    float currentPhi = current_glycan_torsions[j].first;
-                    float currentPsi = current_glycan_torsions[j].second;
-                    std::string current_bond_descr = current_glycan_atoms[j].first.id().trim() + "-" + current_glycan_atoms[j].second.id().trim();
-                    auto torsion_dict = pybind11::dict("Phi"_a=currentPhi, "Psi"_a=currentPsi, "glycan_bond"_a=current_bond_descr);
-                    glycan_torsions.append(torsion_dict);
-                }
+                std::string linkage_discriptor_first = current_torsion.linkage_descriptors[linkage_number].first;
+                std::string linkage_discriptor_second = current_torsion.linkage_descriptors[linkage_number].second;
+
+
+                auto torsion_search_result = std::find_if(current_torsion.combined_torsions.begin(), current_torsion.combined_torsions.end(), [linkage_discriptor_first, linkage_discriptor_second](std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>>& element) { 
+                    return linkage_discriptor_first == element.first.first && 
+                    linkage_discriptor_second == element.first.second;
+                });
+
+                if (torsion_search_result != std::end(current_torsion.combined_torsions)) { 
+                    
+                    std::vector<std::pair<float, float>> returned_torsions = current_torsion.combined_torsions[torsion_search_result-current_torsion.combined_torsions.begin()].second; 
+
+                    for(int j = 0; j < returned_torsions.size(); j++)
+                        {
+                            float currentPhi = returned_torsions[j].first;
+                            float currentPsi = returned_torsions[j].second;
+                            std::string current_bond_descr = current_glycan_atoms[j].first.id().trim() + "-" + current_glycan_atoms[j].second.id().trim();
+                            auto torsion_dict = pybind11::dict("Phi"_a=currentPhi, "Psi"_a=currentPsi, "glycan_bond"_a=current_bond_descr);
+                            glycan_torsions.append(torsion_dict);
+                        }
+                } 
+              
 
                 std::string root_string = glycan.get_root_for_filename();
                 auto current_pair_dict = pybind11::dict("first_residue"_a=std::string(current_torsion.first_residue_name), "second_residue"_a=std::string(current_torsion.second_residue_name), "first_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].first), "second_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].second), "root_descr"_a=root_string, "detected_torsions"_a=glycan_torsions, "database_phi"_a=database_phi, "database_psi"_a=database_psi);
@@ -4737,7 +4759,7 @@ void init_pyanalysis(py::module& m)
 
     py::class_<pa::GlycosylationInteractions>(m, "GlycosylationInteractions")
         .def(py::init<>())
-        .def(py::init<std::string&, std::string&, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_output_file")="undefined", py::arg("enableHBonds")=true)
+        .def(py::init<std::string&, std::string&, bool>(), py::arg("path_to_model_file")="undefined", py::arg("path_to_output_file")="undefined", py::arg("enableHydrogenation")=true)
         .def("get_path_of_model_file_used",  &pa::GlycosylationInteractions::get_path_of_model_file_used)
         .def("get_all_detected_interactions",  &pa::GlycosylationInteractions::get_all_detected_interactions)
         .def("get_all_detected_hbonds",  &pa::GlycosylationInteractions::get_all_detected_hbonds)

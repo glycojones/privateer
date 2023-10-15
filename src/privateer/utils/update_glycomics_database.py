@@ -152,9 +152,17 @@ def find_glytoucan_id_in_glyconnect_data(glyconnect_data, glytoucan_id):
 if __name__ == "__main__":
     fileName = "privateer_glycomics_database.json"
 
-    PRIVATEERDATAPATH = os.getenv("PRIVATEERDATA")
-    if PRIVATEERDATAPATH is not None:
-        outputFolder = os.path.join(PRIVATEERDATAPATH, "glycomics")
+    if os.getenv("PRIVATEERDATA", None) is not None:
+        ROOTPATH = os.getenv("PRIVATEERDATA", None)
+    else:
+        ROOTPATH = os.getenv("CLIBD", None)
+        if ROOTPATH is None:
+            raise EnvironmentError(
+                "Unable to retrieve 'PRIVATEERDATA' nor 'CLIBD' environment variable. Please try sourcing the ccp4.envsetup-sh file again"
+            )
+        ROOTPATH = os.path.join(ROOTPATH, "privateer_data")
+    if ROOTPATH is not None:
+        outputFolder = os.path.join(ROOTPATH, "glycomics")
         fullPath = os.path.join(outputFolder, fileName)
     else:
         raise EnvironmentError(
