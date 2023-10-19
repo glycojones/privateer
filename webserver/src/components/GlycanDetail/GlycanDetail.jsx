@@ -7,19 +7,30 @@ import TorsionMultiPlot from "../TorsionPlot/TorsionMultiPlot";
 
 const GlycanDetailTable = lazy(() => import('./GlycanDetailTable'));
 
-export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition}) {
+export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition, controls, molecule}) {
+
+    async function handle_click(e) { 
+
+        let new_center_string = e.target.dataset.chainid + "/" + e.target.dataset.seqnum + "(" + e.target.dataset.resname + ")"
+        const selectedMolecule = controls.current.molecules.find((molecule) => molecule.name === "mol-1")
+        await selectedMolecule.centreOn(new_center_string)
+       
+    }
 
     const ref = useCallback((node) => {
-        let useList = document.querySelectorAll('use')
+        if (node !== null) {
 
-        for (let i = 0; i < useList.length; i++) {
-            useList[i].addEventListener("click", (e) => {
-                console.log(useList[i].id)
-            })
+            let useList = node.querySelectorAll('use')
+
+            for (let i = 0; i < useList.length; i++) {
+                useList[i].addEventListener('click', handle_click)
+            }
         }
+
 
         document.querySelectorAll("svg")[0].setAttribute("width", "50vw")
         document.querySelectorAll("svg")[0].setAttribute("height", "100%")
+        
     })
 
     // useEffect( () => {
