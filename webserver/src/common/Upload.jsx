@@ -10,7 +10,6 @@ export default function Upload({coordinateFile, setCoordinateFile, reflectionFil
 
     useEffect(() => { 
         if (coordinateFile && reflectionFile) {
-            console.log("Ready for submit")
             setShowSubmit(true)
             setShowUploadAgain(false)
             setAllowSubmit(true)
@@ -34,17 +33,15 @@ export default function Upload({coordinateFile, setCoordinateFile, reflectionFil
             setAllowSubmit(false)
 
         }
-
-        console.log(coordinateFile, reflectionFile)
     }, [coordinateFile, reflectionFile])
 
     return (
-        <>
+        <div className="flex flex-wrap align-middle items-center justify-center">
             
             { showUploadAgain == true ? <UploadButton setCoordinateFile={setCoordinateFile} setReflectionFile={setReflectionFile}/>: <></>}
             {showSubmit == true ? 
              <Submit coordinateFile={coordinateFile} reflectionFile={reflectionFile} submitPressed={submitPressed} setResetApp={setResetApp} allowSubmit={allowSubmit}/> : <></>}
             
-        </>
+        </div>
     )
 }

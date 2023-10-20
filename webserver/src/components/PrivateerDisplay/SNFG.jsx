@@ -1,13 +1,13 @@
 import {lazy, useEffect, useRef, useState} from "react";
 // import SVGTable from "../SVGTable/SVGTable";
-import {MoorhenMolecule} from 'moorhen'
+import {MoorhenMap, MoorhenMolecule} from 'moorhen'
 import GlycanDetail from "../GlycanDetail/GlycanDetail"
 
 const SVGTable = lazy(() => import('../SVGTable/SVGTable'));
 
 const initialMoleculesState = []
 
-export default function SNFG({tableData, fileName, pdbString}) {
+export default function SNFG({tableData, fileName, pdbString, mtzData}) {
 
     const [rowClicked, setRowClicked] = useState(false)
     const [rowID, setRowID] = useState(0)
@@ -23,7 +23,6 @@ export default function SNFG({tableData, fileName, pdbString}) {
     }
 
     const [yScrollPosition, setYScrollPosition] = useState(0)
-
 
     // DEBUG ONLY 
     useEffect(() => {
@@ -49,13 +48,32 @@ export default function SNFG({tableData, fileName, pdbString}) {
                         let sugar_chain = id.split("/")[1].split("_")[0]
 
                         let center_string = sugar_chain + "/" + sugar_id + "(" + sugar_name + ")"
-                        console.log("PRIVATEER", center_string)
+
                         newMolecule.centreOn(center_string)
                     }
                 )
             })
             window.scrollTo(0, 0)
             setHideMoorhen(false)
+
+            const map = new MoorhenMap(controls.current.commandCentre, controls.current.glRef);
+            const mapMetadata = {
+                F: "FWT",
+                PHI: "PHWT",
+                Fobs: "FP",
+                SigFobs: "SIGFP",
+                FreeR: "FREE",
+                isDifference: false,
+                useWeight: false,
+                calcStructFact: true,
+            }
+            map.loadToCootFromMtzData(mtzData, "map-1", mapMetadata).then(() => { 
+                    controls.current.changeMaps({ action: "Add", item: map })
+                    controls.current.setActiveMap(map)
+            });
+            
+            
+            
         }
     }, [rowClicked])
 

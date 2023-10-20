@@ -4,7 +4,6 @@ export default function Upload({setCoordinateFile, setReflectionFile}) {
 
     const fileUpload = (e) => {
         if (e.target.files) {
-            console.log(e.target.files)
             for (let i = 0; i < e.target.files.length; i++) { 
                 let splitname = e.target.files[i].name.split(".")
                 let ext = splitname[splitname.length-1]

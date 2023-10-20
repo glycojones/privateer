@@ -24,7 +24,8 @@ export function Header({
     tableData,
     loadingText,
     fileContent,
-    fallback
+    fallback, 
+    mtzData
 }) {
     return (
         <div className="bg-gray text-primary">
@@ -34,11 +35,9 @@ export function Header({
                     <Suspense fallback={<Loading loadingText={"Loading"} />}>
                         {submit == null ?
                             <Upload coordinateFile={coordinateFile} setCoordinateFile={setCoordinateFile} reflectionFile={reflectionFile} setReflectionFile={setReflectionFile} submitPressed={setSubmit} setResetApp={setResetApp} />
-                            // : submit == null ?
-                            //     <Submit coordinateFile={coordinateFile} submitPressed={setSubmit} setResetApp={setResetApp} />
                                 : tableData == null ?
                                     <Loading loadingText={loadingText} /> :
-                                    <SNFG tableData={tableData} fileName={coordinateFile.name} pdbString={fileContent}></SNFG>}
+                                    <SNFG tableData={tableData} fileName={coordinateFile.name} pdbString={fileContent} mtzData={mtzData}></SNFG>}
                     </Suspense>
                     : <NoGlycans setResetApp={setResetApp} />
                 } </div>
