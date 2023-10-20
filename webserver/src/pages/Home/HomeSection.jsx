@@ -19,6 +19,8 @@ export default function HomeSection() {
     const [reflectionFile, setReflectionFile] = useState(null);
 
     const [fileContent, setFileContent] = useState(null)
+    const [mtzData, setMtzData] = useState()
+
     const [submit, setSubmit] = useState(null);
     const [tableData, setTableData] = useState(null);
     const [loadingText, setLoadingText] = useState("Validating Glycans...");
@@ -74,10 +76,15 @@ export default function HomeSection() {
                 coordinateReader.readAsText(coordinateFile);
             }
 
+            reflectionReader.onload = async () => {
+                let map_data = new Uint8Array(reflectionReader.result);
+                setMtzData(map_data)
+
+                Module['FS_createDataFile']('/', "input.mtz", map_data, true, true, true)
+            }
+
             if (reflectionFile) { 
                 reflectionReader.readAsArrayBuffer(reflectionFile)
-                let map_data = new Uint8Array(reflectionReader.result);
-                Module['FS_createDataFile']('/', "input.mtz", map_data, true, true, true)
             }
 
         }).catch((e) => console.log(e));
@@ -98,7 +105,7 @@ export default function HomeSection() {
             <Header setResetApp={setResetApp} coordinateFile={coordinateFile} setCoordinateFile={setCoordinateFile}
             reflectionFile={reflectionFile} setReflectionFile={setReflectionFile}
              submit={submit} setSubmit={setSubmit}
-            tableData={tableData} loadingText={loadingText} fileContent={fileContent} fallback={fallback}/>
+            tableData={tableData} loadingText={loadingText} fileContent={fileContent} fallback={fallback} mtzData={mtzData}/>
             <BorderElement topColor={"#D6D9E5"} bottomColor={"#F4F9FF"}></BorderElement>
             <Information/>
             <BorderElement topColor={"#F4F9FF"} bottomColor={"#D6D9E5"} reverse={true}></BorderElement>

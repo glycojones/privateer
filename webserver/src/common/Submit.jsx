@@ -3,11 +3,11 @@ import Molecule from "../assets/Molecule"
 function FileLine({icon, name}) { 
     return (
         <div className="flex flex-row w-64 justify-center px-12 py-2 rounded-lg min-w-0">
-                    <div className="pr-2">
-                        {icon}
-                    </div>
-                        <p className="text-ellipsis overflow-hidden">{name}</p>  
-                </div>
+            <div className="pr-2">
+                {icon}
+            </div>
+            <p className="text-ellipsis overflow-hidden">{name}</p>  
+        </div>
     )
 }
 
@@ -16,10 +16,10 @@ export default function Submit({coordinateFile, reflectionFile, submitPressed, s
     const getFileList = () => { 
         const array = []
         if (coordinateFile) {
-            array.push(<FileLine icon={<Molecule/>} name={coordinateFile.name}/>)
+            array.push(<FileLine icon={<Molecule/>} name={coordinateFile.name} key={"c"}/>)
         }
         if (reflectionFile) {
-            array.push(<FileLine icon={<Molecule/>} name={reflectionFile.name}/>)
+            array.push(<FileLine icon={<Molecule/>} name={reflectionFile.name} key={"r"}/>)
         }
         return array
     }
