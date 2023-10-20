@@ -15,7 +15,9 @@ const BorderElement = lazy(() => import('../../layouts/BorderElement'));
 
 
 export default function HomeSection() {
-    const [file, setFile] = useState(null);
+    const [coordinateFile, setCoordinateFile] = useState(null);
+    const [reflectionFile, setReflectionFile] = useState(null);
+
     const [fileContent, setFileContent] = useState(null)
     const [submit, setSubmit] = useState(null);
     const [tableData, setTableData] = useState(null);
@@ -31,11 +33,14 @@ export default function HomeSection() {
 
     useEffect(() => {
         privateer_module().then((Module) => {
-            var reader = new FileReader();
-            reader.onload = async () => {
+            var coordinateReader = new FileReader();
+            var reflectionReader = new FileReader();
+            
+            coordinateReader.onload = async () => {
      
-                setFileContent(reader.result)
-                let x = Module.read_structure_to_table(reader.result, file.name)
+                setFileContent(coordinateReader.result)
+
+                let x = Module.read_structure_to_table(coordinateReader.result, coordinateFile.name)
 
                 let table_data = [];
                 for (var i = 0; i < x.size(); i++) {
@@ -65,15 +70,23 @@ export default function HomeSection() {
                 setTableData(table_data);
             }
 
-            if (file) {
-                reader.readAsText(file);
+            if (coordinateFile) {
+                coordinateReader.readAsText(coordinateFile);
+            }
+
+            if (reflectionFile) { 
+                reflectionReader.readAsArrayBuffer(reflectionFile)
+                let map_data = new Uint8Array(reflectionReader.result);
+                Module['FS_createDataFile']('/', "input.mtz", map_data, true, true, true)
             }
 
         }).catch((e) => console.log(e));
     }, [submit])
 
     useEffect(() => {
-        setFile(null)
+        
+        setReflectionFile(null)
+        setCoordinateFile(null)
         setSubmit(null)
         setTableData(null)
         setFallBack(false)
@@ -82,8 +95,10 @@ export default function HomeSection() {
 
     return (
         <>
-            <Header setResetApp={setResetApp} file={file} setFile={setFile} submit={submit} setSubmit={setSubmit}
-                    tableData={tableData} loadingText={loadingText} fileContent={fileContent} fallback={fallback}/>
+            <Header setResetApp={setResetApp} coordinateFile={coordinateFile} setCoordinateFile={setCoordinateFile}
+            reflectionFile={reflectionFile} setReflectionFile={setReflectionFile}
+             submit={submit} setSubmit={setSubmit}
+            tableData={tableData} loadingText={loadingText} fileContent={fileContent} fallback={fallback}/>
             <BorderElement topColor={"#D6D9E5"} bottomColor={"#F4F9FF"}></BorderElement>
             <Information/>
             <BorderElement topColor={"#F4F9FF"} bottomColor={"#D6D9E5"} reverse={true}></BorderElement>

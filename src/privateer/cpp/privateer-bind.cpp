@@ -1,7 +1,10 @@
 #include <emscripten/bind.h>
 #include <privateer-lib.h>
 #include <privateer-json.h>
+#include <clipper/clipper-ccp4.h>
 #include <clipper/clipper-minimol.h>
+#include <clipper/clipper-contrib.h>
+
 #include <gemmi/mmread.hpp>
 #include "clipper-glyco.h"
 #include "clipper-glyco.cpp"
@@ -119,13 +122,27 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
   clipper::GemmiStructure *gemmi_structure = &gemmi_file;
   gemmi_structure->structure_ = structure;
 
+  // CHECK FOR AN PROVIDED MTZ
+  std::string filename = "/input.mtz";
+  std::ifstream infile(filename);
+  if (infile.good()) { 
+    // clipper::CCP4MTZfile mtzin;
+    // mtzin.open_read( filename );  
+    // clipper::HKL_info myhkl();
+    // mtzin.import_hkl_info( myhkl ); 
+    // clipper::HKL_data<clipper::data32::F_phi> fphidata( myhkl );
+    // mtzin.import_hkl_data( fphidata, "/*/*/[FWT,PHWT]" );
+    std::cout << "Found the input mtz, ready to use..." << std::endl;
+  } else {
+    std::cout << "MTZ not found" << std::endl;
+  }
+
 
   clipper::MiniMol mol;
   gemmi_file.import_minimol(mol);
 
   std::cout << "Mol imported" << std::endl;
 
-  // std::vector<privateer::json::GlycomicsDatabase> importedDatabase = privateer::json::read_json_file_for_glycomics_database("privateer_glycomics_database.json");
   privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("privateer_torsions_z_score_database.json");
 
   const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mol, 1.0); // was 1.0

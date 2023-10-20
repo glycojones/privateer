@@ -1,6 +1,28 @@
 import Molecule from "../assets/Molecule"
 
-export default function Submit({file, submitPressed, setResetApp}) {
+function FileLine({icon, name}) { 
+    return (
+        <div className="flex flex-row w-64 justify-center px-12 py-2 rounded-lg min-w-0">
+                    <div className="pr-2">
+                        {icon}
+                    </div>
+                        <p className="text-ellipsis overflow-hidden">{name}</p>  
+                </div>
+    )
+}
+
+export default function Submit({coordinateFile, reflectionFile, submitPressed, setResetApp, allowSubmit}) {
+
+    const getFileList = () => { 
+        const array = []
+        if (coordinateFile) {
+            array.push(<FileLine icon={<Molecule/>} name={coordinateFile.name}/>)
+        }
+        if (reflectionFile) {
+            array.push(<FileLine icon={<Molecule/>} name={reflectionFile.name}/>)
+        }
+        return array
+    }
 
     return (
         <div
@@ -9,17 +31,9 @@ export default function Submit({file, submitPressed, setResetApp}) {
             transition-all border-gray-300 rounded-lg 
             bg-gray-50 flex-grow-0">
             
-
                 <p>File uploaded:</p>
-
-                <div className="flex flex-row w-64 justify-center px-12 py-2 rounded-lg min-w-0">
-                    <div className="pr-2">
-                        <Molecule></Molecule>
-                    </div>
-
-                        <p className="text-ellipsis overflow-hidden">{file.name}</p>
-                </div>
-
+                {getFileList()}
+                
             
             <div className="flex space-x-4 py-6">
             <button
@@ -27,15 +41,16 @@ export default function Submit({file, submitPressed, setResetApp}) {
                     onClick={() => setResetApp(true)}>Cancel
             </button>
 
-            <button
+            {allowSubmit ? <button
                     className="bg-gray hover:bg-hover border-gray-300 border-2 text-primary font-bold py-2 px-4 rounded"
                     onClick={submitPressed}>Submit
+            </button> : <button
+                    className="bg-gray border-gray-800 border-2 text-primary opacity-40 font-bold py-2 px-4 rounded"
+                    onClick={submitPressed} disabled>Submit
             </button>
+            }
+            
             </div>
-            {/* {file.name} uploaded successfully!
-            <div className="py-6">
-                
-            </div> */}
         </div>
     )
 }

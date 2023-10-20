@@ -15,8 +15,10 @@ const NoGlycans = lazy(() => import("../components/NoGlycans/NoGlycans"))
 
 export function Header({
     setResetApp,
-    file,
-    setFile,
+    coordinateFile,
+    setCoordinateFile,
+    reflectionFile,
+    setReflectionFile,
     submit,
     setSubmit,
     tableData,
@@ -30,13 +32,13 @@ export function Header({
             <div className="flex justify-center mb-6">
                 {fallback != true ?
                     <Suspense fallback={<Loading loadingText={"Loading"} />}>
-                        {file == null ?
-                            <Upload setFile={setFile} />
-                            : submit == null ?
-                                <Submit file={file} submitPressed={setSubmit} setResetApp={setResetApp} />
+                        {submit == null ?
+                            <Upload coordinateFile={coordinateFile} setCoordinateFile={setCoordinateFile} reflectionFile={reflectionFile} setReflectionFile={setReflectionFile} submitPressed={setSubmit} setResetApp={setResetApp} />
+                            // : submit == null ?
+                            //     <Submit coordinateFile={coordinateFile} submitPressed={setSubmit} setResetApp={setResetApp} />
                                 : tableData == null ?
                                     <Loading loadingText={loadingText} /> :
-                                    <SNFG tableData={tableData} fileName={file.name} pdbString={fileContent}></SNFG>}
+                                    <SNFG tableData={tableData} fileName={coordinateFile.name} pdbString={fileContent}></SNFG>}
                     </Suspense>
                     : <NoGlycans setResetApp={setResetApp} />
                 } </div>
