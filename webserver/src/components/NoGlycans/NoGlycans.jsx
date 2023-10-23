@@ -16,7 +16,7 @@ export default function NoGlycans({
                 <button
                     className="bg-gray hover:bg-hover border-gray-800 border-2 text-primary opacity-60 font-bold py-2 px-4 rounded"
                     onClick={() => { 
-                        console.log("Retry clicked")
+
                         setResetApp(true)
                          }}>Retry</button>
             </div>
