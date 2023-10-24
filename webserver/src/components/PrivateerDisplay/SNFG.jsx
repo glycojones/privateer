@@ -16,7 +16,7 @@ export default function SNFG({tableData, fileName, pdbString}) {
 
     const [cootInitialized, setCootInitialized] = useState(false)
     const controls = useRef()
-
+    const [molecule, setMolecule] = useState()
     const forwardControls = (forwardedControls) => {
         setCootInitialized(true)
         controls.current = forwardedControls
@@ -49,8 +49,9 @@ export default function SNFG({tableData, fileName, pdbString}) {
                         let sugar_chain = id.split("/")[1].split("_")[0]
 
                         let center_string = sugar_chain + "/" + sugar_id + "(" + sugar_name + ")"
-                        console.log("PRIVATEER", center_string)
+
                         newMolecule.centreOn(center_string)
+                        setMolecule(newMolecule)
                     }
                 )
             })
@@ -76,6 +77,8 @@ export default function SNFG({tableData, fileName, pdbString}) {
                           rowID={rowID}
                           forwardControls={forwardControls}
                           scrollPosition={yScrollPosition}
+                          controls={controls}
+                          molecule={molecule}
             />
 
         </div>
