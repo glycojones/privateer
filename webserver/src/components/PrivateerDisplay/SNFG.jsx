@@ -14,6 +14,8 @@ export default function SNFG({tableData, fileName, pdbString, mtzData}) {
     const [hideMoorhen, setHideMoorhen] = useState(true)
     const [allowRowClick, setAllowRowClick] = useState(false)
 
+    const [dataLoaded, setDataLoaded] = useState(false)
+
     const [cootInitialized, setCootInitialized] = useState(false)
     const controls = useRef()
     const [molecule, setMolecule] = useState()
@@ -26,17 +28,9 @@ export default function SNFG({tableData, fileName, pdbString, mtzData}) {
 
     // DEBUG ONLY 
     useEffect(() => {
-        if (cootInitialized && controls.current) {
+        if (cootInitialized && controls.current && !dataLoaded) {
             // whatever you want to do with moorhen has to wait for cootInitialized to be true
             setAllowRowClick(true)
-        }
-    }, [cootInitialized, controls.current])
-
-
-    useEffect(() => {
-        setYScrollPosition(window.scrollY)
-
-        if (cootInitialized) {
             let newMolecule = new MoorhenMolecule(controls.current.commandCentre, controls.current.glRef, controls.current.monomerLibrary)
             newMolecule.loadToCootFromString(pdbString, 'mol-1').then(() => {
                 controls.current.changeMolecules({action: 'Add', item: newMolecule});
@@ -54,8 +48,7 @@ export default function SNFG({tableData, fileName, pdbString, mtzData}) {
                     }
                 )
             })
-            window.scrollTo(0, 0)
-            setHideMoorhen(false)
+            
 
             const map = new MoorhenMap(controls.current.commandCentre, controls.current.glRef);
             const mapMetadata = {
@@ -72,10 +65,29 @@ export default function SNFG({tableData, fileName, pdbString, mtzData}) {
                     controls.current.changeMaps({ action: "Add", item: map })
                     controls.current.setActiveMap(map)
             });
-            
-            
-            
+            setDataLoaded(true)
         }
+    }, [cootInitialized])
+
+
+    useEffect(() => {
+        async function move_view() { 
+            if (!cootInitialized) {return}
+
+        
+            setYScrollPosition(window.scrollY)
+            let id = tableData[rowID].id
+            let sugar_name = id.split("-")[0]
+            let sugar_id = id.split("-")[1].split("/")[0].split(":")[0]
+            let sugar_chain = id.split("/")[1].split("_")[0]
+    
+            let center_string = sugar_chain + "/" + sugar_id + "(" + sugar_name + ")"
+            const selectedMolecule = controls.current.molecules.find((molecule) => molecule.name === "mol-1")
+            await selectedMolecule.centreOn(center_string)
+            window.scrollTo(0, 0)
+            setHideMoorhen(false)
+        }
+        move_view()
     }, [rowClicked])
 
     return (

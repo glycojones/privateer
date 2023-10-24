@@ -35,6 +35,27 @@ async function fetch_pdb(PDBCode) {
     return file
 }
 
+async function fetch_mtz(PDBCode) { 
+    if (PDBCode == null) {return}
+    console.log("Fetching MTZ ", PDBCode)
+    let mtz_url = `https://edmaps.rcsb.org/coefficients/${PDBCode.toLowerCase()}.mtz`
+
+    let file = fetch(mtz_url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network error');
+          }
+        return response.arrayBuffer()
+    })
+    .then(file => {
+        return Promise.resolve(file)
+    })
+    .catch((e) => {
+        throw new Error("PDB Not Found")
+    })
+    return file
+}
+
 export default function HomeSection() {
     const [coordinateFile, setCoordinateFile] = useState(null);
     const [reflectionFile, setReflectionFile] = useState(null);
@@ -56,15 +77,20 @@ export default function HomeSection() {
         return new_id
     }
 
-
     useEffect(() => {            
         if (PDBCode != "") {
             setLoadingText(`Fetching ${PDBCode.toUpperCase()} from the PDB`)
+        
+            fetch_mtz(PDBCode).then((response) => { 
+                let array = new Uint8Array(response)
+                setMtzData(array)
+            })
 
             fetch_pdb(PDBCode).then((response) => { 
                 setFileContent(response)
+                setLoadingText("Validating Glycans...")
+
                 privateer_module().then(async (Module) => {
-                    setLoadingText("Validating Glycans...")
 
                     let x = Module.read_structure_to_table(response, PDBCode)
     
