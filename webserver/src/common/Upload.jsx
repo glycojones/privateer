@@ -53,7 +53,7 @@ export default function Upload({coordinateFile, setCoordinateFile,
              <Submit coordinateFile={coordinateFile} reflectionFile={reflectionFile} submitPressed={submitPressed} setResetApp={setResetApp} allowSubmit={allowSubmit}/> : <></>}
             
             {showPDBFetch == true ? 
-             <div className="mx-6">OR</div>
+             <div className="mx-6 w-full lg:w-6 sm:w-full text-center">OR</div>
              :
               <></>} 
             {showPDBFetch == true ? 
