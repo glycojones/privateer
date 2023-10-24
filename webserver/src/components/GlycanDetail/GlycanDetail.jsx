@@ -41,8 +41,8 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
     //     }
     // })
 
-    const [width, setWidth] = useState(1200);
-    const [height, setHeight] = useState(1000);
+    const [width, setWidth] = useState(800);
+    const [height, setHeight] = useState(600);
     const [torsionTab, setTorsionTab] = useState(0)
 
     return (
@@ -81,7 +81,7 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
             <MoorhenContextProvider defaultBackgroundColor={[51, 65, 85, 1]}>
                 <MoorhenContainer forwardControls={forwardControls} setMoorhenDimensions={() => {
                     return [width, height];
-                }} viewOnly={false}/>
+                }} viewOnly={true}/>
 
             </MoorhenContextProvider>
             

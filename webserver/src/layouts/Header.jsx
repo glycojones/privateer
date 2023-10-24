@@ -14,7 +14,10 @@ const NavBar = lazy(() => import('../layouts/NavBar'));
 const NoGlycans = lazy(() => import("../components/NoGlycans/NoGlycans"))
 
 export function Header({
+    resetApp,
     setResetApp,
+    PDBCode, 
+    setPDBCode,
     coordinateFile,
     setCoordinateFile,
     reflectionFile,
@@ -25,7 +28,8 @@ export function Header({
     loadingText,
     fileContent,
     fallback, 
-    mtzData
+    mtzData,
+    failureText
 }) {
     return (
         <div className="bg-gray text-primary">
@@ -34,12 +38,12 @@ export function Header({
                 {fallback != true ?
                     <Suspense fallback={<Loading loadingText={"Loading"} />}>
                         {submit == null ?
-                            <Upload coordinateFile={coordinateFile} setCoordinateFile={setCoordinateFile} reflectionFile={reflectionFile} setReflectionFile={setReflectionFile} submitPressed={setSubmit} setResetApp={setResetApp} />
+                            <Upload PDBCode={PDBCode} setPDBCode={setPDBCode} coordinateFile={coordinateFile} setCoordinateFile={setCoordinateFile} reflectionFile={reflectionFile} setReflectionFile={setReflectionFile} submitPressed={setSubmit} resetApp={resetApp} setResetApp={setResetApp} />
                                 : tableData == null ?
                                     <Loading loadingText={loadingText} /> :
-                                    <SNFG tableData={tableData} fileName={coordinateFile.name} pdbString={fileContent} mtzData={mtzData}></SNFG>}
+                                    <SNFG tableData={tableData} fileName={PDBCode != "" ? PDBCode : coordinateFile.name} pdbString={fileContent} mtzData={mtzData}></SNFG>}
                     </Suspense>
-                    : <NoGlycans setResetApp={setResetApp} />
+                    : <NoGlycans setResetApp={setResetApp} text={failureText} />
                 } </div>
         </div>);
 }
