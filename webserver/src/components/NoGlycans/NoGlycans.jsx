@@ -1,7 +1,7 @@
 
 
 export default function NoGlycans({
-    setResetApp
+    setResetApp, text
 }) {
     return (
         <div
@@ -10,7 +10,7 @@ export default function NoGlycans({
             transition-all border-gray-300 rounded-lg 
             bg-gray-50 flex-grow-0">
 
-            <p>Privateer could not detect any carbohydrates in this model.</p>
+            <p>{text}</p>
 
             <div className="flex space-x-4 py-6">
                 <button
