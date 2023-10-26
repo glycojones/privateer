@@ -41,7 +41,7 @@ export function Header({
                             <Upload PDBCode={PDBCode} setPDBCode={setPDBCode} coordinateFile={coordinateFile} setCoordinateFile={setCoordinateFile} reflectionFile={reflectionFile} setReflectionFile={setReflectionFile} submitPressed={setSubmit} resetApp={resetApp} setResetApp={setResetApp} />
                                 : tableData == null ?
                                     <Loading loadingText={loadingText} /> :
-                                    <SNFG tableData={tableData} fileName={PDBCode != "" ? PDBCode : coordinateFile.name} pdbString={fileContent} mtzData={mtzData}></SNFG>}
+                                    <SNFG tableData={tableData} fileName={PDBCode != "" ? PDBCode : coordinateFile.name} PDBCode={PDBCode} pdbString={fileContent} mtzData={mtzData}></SNFG>}
                     </Suspense>
                     : <NoGlycans setResetApp={setResetApp} text={failureText} />
                 } </div>

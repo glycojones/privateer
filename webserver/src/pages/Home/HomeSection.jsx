@@ -35,10 +35,10 @@ async function fetch_pdb(PDBCode) {
     return file
 }
 
-async function fetch_mtz(PDBCode) { 
+async function fetch_map(PDBCode) { 
     if (PDBCode == null) {return}
     console.log("Fetching MTZ ", PDBCode)
-    let mtz_url = `https://edmaps.rcsb.org/coefficients/${PDBCode.toLowerCase()}.mtz`
+    let mtz_url = `https://www.ebi.ac.uk/pdbe/entry-files/${PDBCode.toLowerCase()}.ccp4`
 
     let file = fetch(mtz_url)
     .then(response => {
@@ -81,10 +81,12 @@ export default function HomeSection() {
         if (PDBCode != "") {
             setLoadingText(`Fetching ${PDBCode.toUpperCase()} from the PDB`)
         
-            fetch_mtz(PDBCode).then((response) => { 
+            fetch_map(PDBCode).then((response) => { 
                 let array = new Uint8Array(response)
                 setMtzData(array)
-            })
+            }).catch((e) => {
+                setLoadingText("MTZ not found, continuing...")
+            }) 
 
             fetch_pdb(PDBCode).then((response) => { 
                 setFileContent(response)

@@ -7,7 +7,7 @@ import TorsionMultiPlot from "../TorsionPlot/TorsionMultiPlot";
 
 const GlycanDetailTable = lazy(() => import('./GlycanDetailTable'));
 
-export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition, controls, molecule}) {
+export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition, controls, molecule, map}) {
 
     async function handle_click(e) { 
 
@@ -33,6 +33,15 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
         
     })
 
+    async function handleContourChange(e) { 
+        map.contourLevel = Number(e.target.value)
+        await map.doCootContour(
+            ...map.glRef.current.origin.map(coord => -coord),
+            map.mapRadius,
+            map.contourLevel
+            )
+    }
+
     // useEffect( () => {
     //     function handleMoorhenResize() { 
 
@@ -52,7 +61,7 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
     //     }
     // })
 
-    const [width, setWidth] = useState(800);
+    const [width, setWidth] = useState(900);
     const [height, setHeight] = useState(600);
     const [torsionTab, setTorsionTab] = useState(0)
 
@@ -89,7 +98,11 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
 
             <h3 className="text-left text-xl w-full">Visualise</h3>
 
+            <label for="contour-range-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white translate-y-10">Map Contour</label>
+            <input id="contour-range" type="range" min="0" max="1" step="0.05" className="w-36 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 translate-y-10" onChange={handleContourChange}/>
+
             <MoorhenContextProvider defaultBackgroundColor={[51, 65, 85, 1]}>
+
                 <MoorhenContainer forwardControls={forwardControls} setMoorhenDimensions={() => {
                     return [width, height];
                 }} viewOnly={true}/>

@@ -7,7 +7,7 @@ const SVGTable = lazy(() => import('../SVGTable/SVGTable'));
 
 const initialMoleculesState = []
 
-export default function SNFG({tableData, fileName, pdbString, mtzData}) {
+export default function SNFG({tableData, fileName, PDBCode, pdbString, mtzData}) {
 
     const [rowClicked, setRowClicked] = useState(false)
     const [rowID, setRowID] = useState(0)
@@ -19,6 +19,7 @@ export default function SNFG({tableData, fileName, pdbString, mtzData}) {
     const [cootInitialized, setCootInitialized] = useState(false)
     const controls = useRef()
     const [molecule, setMolecule] = useState()
+    const [map, setMap] = useState()
     const forwardControls = (forwardedControls) => {
         setCootInitialized(true)
         controls.current = forwardedControls
@@ -26,10 +27,9 @@ export default function SNFG({tableData, fileName, pdbString, mtzData}) {
 
     const [yScrollPosition, setYScrollPosition] = useState(0)
 
-    // DEBUG ONLY 
     useEffect(() => {
+        async function load_map_and_model() {
         if (cootInitialized && controls.current && !dataLoaded) {
-            // whatever you want to do with moorhen has to wait for cootInitialized to be true
             setAllowRowClick(true)
             let newMolecule = new MoorhenMolecule(controls.current.commandCentre, controls.current.glRef, controls.current.monomerLibrary)
             newMolecule.loadToCootFromString(pdbString, 'mol-1').then(() => {
@@ -49,7 +49,6 @@ export default function SNFG({tableData, fileName, pdbString, mtzData}) {
                 )
             })
             
-
             const map = new MoorhenMap(controls.current.commandCentre, controls.current.glRef);
             const mapMetadata = {
                 F: "FWT",
@@ -61,12 +60,22 @@ export default function SNFG({tableData, fileName, pdbString, mtzData}) {
                 useWeight: false,
                 calcStructFact: true,
             }
-            map.loadToCootFromMtzData(mtzData, "map-1", mapMetadata).then(() => { 
-                    controls.current.changeMaps({ action: "Add", item: map })
-                    controls.current.setActiveMap(map)
-            });
+            if (PDBCode == "") { 
+                await map.loadToCootFromMtzData(mtzData, "map-1", mapMetadata)
+            }
+            else { 
+                await map.loadToCootFromMapData(mtzData, "map-1", false)
+
+            }
+            map.suggestedContourLevel = 0.3
+            console.log("Suggested level", map.suggestedContourLevel, map)
+            controls.current.changeMaps({ action: "Add", item: map })
+            controls.current.setActiveMap(map)
+            setMap(map)
             setDataLoaded(true)
         }
+    }
+        load_map_and_model()
     }, [cootInitialized])
 
 
@@ -109,6 +118,7 @@ export default function SNFG({tableData, fileName, pdbString, mtzData}) {
                           scrollPosition={yScrollPosition}
                           controls={controls}
                           molecule={molecule}
+                          map={map}
             />
 
         </div>
