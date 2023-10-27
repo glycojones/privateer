@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Upload({setCoordinateFile, setReflectionFile}) {
+export default function UploadButton({setCoordinateFile, setReflectionFile}) {
 
     const fileUpload = (e) => {
         if (e.target.files) {

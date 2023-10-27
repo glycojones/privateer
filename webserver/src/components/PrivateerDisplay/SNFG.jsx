@@ -1,14 +1,10 @@
 import {lazy, useEffect, useRef, useState} from "react";
-// import SVGTable from "../SVGTable/SVGTable";
 import {MoorhenMap, MoorhenMolecule} from 'moorhen'
 import GlycanDetail from "../GlycanDetail/GlycanDetail"
 
 const SVGTable = lazy(() => import('../SVGTable/SVGTable'));
 
-const initialMoleculesState = []
-
-export default function SNFG({tableData, fileName, PDBCode, pdbString, mtzData}) {
-
+export default function SNFG(props) {
     const [rowClicked, setRowClicked] = useState(false)
     const [rowID, setRowID] = useState(0)
     const [hideMoorhen, setHideMoorhen] = useState(true)
@@ -32,10 +28,10 @@ export default function SNFG({tableData, fileName, PDBCode, pdbString, mtzData})
         if (cootInitialized && controls.current && !dataLoaded) {
             setAllowRowClick(true)
             let newMolecule = new MoorhenMolecule(controls.current.commandCentre, controls.current.glRef, controls.current.monomerLibrary)
-            newMolecule.loadToCootFromString(pdbString, 'mol-1').then(() => {
+            newMolecule.loadToCootFromString(props.fileContent, 'mol-1').then(() => {
                 controls.current.changeMolecules({action: 'Add', item: newMolecule});
                 newMolecule.fetchIfDirtyAndDraw('CBs').then(() => {
-                        let id = tableData[rowID].id
+                        let id = props.tableData[rowID].id
 
                         let sugar_name = id.split("-")[0]
                         let sugar_id = id.split("-")[1].split("/")[0].split(":")[0]
@@ -60,11 +56,11 @@ export default function SNFG({tableData, fileName, PDBCode, pdbString, mtzData})
                 useWeight: false,
                 calcStructFact: true,
             }
-            if (PDBCode == "") { 
-                await map.loadToCootFromMtzData(mtzData, "map-1", mapMetadata)
+            if (props.PDBCode == "") { 
+                await map.loadToCootFromMtzData(props.mtzData, "map-1", mapMetadata)
             }
             else { 
-                await map.loadToCootFromMapData(mtzData, "map-1", false)
+                await map.loadToCootFromMapData(props.mtzData, "map-1", false)
 
             }
             map.suggestedContourLevel = 0.3
@@ -82,10 +78,9 @@ export default function SNFG({tableData, fileName, PDBCode, pdbString, mtzData})
     useEffect(() => {
         async function move_view() { 
             if (!cootInitialized) {return}
-
-        
+       
             setYScrollPosition(window.scrollY)
-            let id = tableData[rowID].id
+            let id = props.tableData[rowID].id
             let sugar_name = id.split("-")[0]
             let sugar_id = id.split("-")[1].split("/")[0].split(":")[0]
             let sugar_chain = id.split("/")[1].split("_")[0]
@@ -99,27 +94,37 @@ export default function SNFG({tableData, fileName, PDBCode, pdbString, mtzData})
         move_view()
     }, [rowClicked])
 
+    let glycanDetailProps = {
+        tableData:props.tableData,
+        hideMoorhen:hideMoorhen,
+        setHideMoorhen:setHideMoorhen,
+        rowID:rowID,
+        forwardControls:forwardControls,
+        scrollPosition:yScrollPosition,
+        controls:controls,
+        molecule:molecule,
+        map:map
+    }
+
+    let svgTableProps = {
+        tableData:props.tableData,
+        allowRowClick:allowRowClick,
+        rowClick:rowClicked,
+        setRowClicked:setRowClicked,
+        setRowID:setRowID
+    }
+
     return (
         <div className="flex flex-col">
             <div style={{display: (hideMoorhen ? 'block' : 'none')}} id="tableContainer">
                 <div className="flex flex-col ">
-                    <h2 className="my-4 text-lg sm:text-2xl text-center sm:text-left">Detected {tableData.length} Glycans
-                        in {fileName}</h2>
-                    <SVGTable tableData={tableData} allowRowClick={allowRowClick} rowClick={rowClicked} setRowClicked={setRowClicked}
-                              setRowID={setRowID}/>
+                    <h2 className="my-4 text-lg sm:text-2xl text-center sm:text-left">Detected {props.tableData.length} Glycans
+                        in {props.fileName}</h2>
+                    <SVGTable {...svgTableProps}/>
                 </div>
 
             </div>
-            <GlycanDetail tableData={tableData}
-                          hideMoorhen={hideMoorhen}
-                          setHideMoorhen={setHideMoorhen}
-                          rowID={rowID}
-                          forwardControls={forwardControls}
-                          scrollPosition={yScrollPosition}
-                          controls={controls}
-                          molecule={molecule}
-                          map={map}
-            />
+            <GlycanDetail {...glycanDetailProps}/>
 
         </div>
     )

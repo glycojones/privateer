@@ -1,4 +1,4 @@
-import Molecule from "../assets/Molecule"
+import Molecule from "../../assets/Molecule"
 
 function FileLine({icon, name}) { 
     return (
