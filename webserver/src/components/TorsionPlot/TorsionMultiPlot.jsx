@@ -62,7 +62,6 @@ export default function TorsionMultiPlot({torsions, tab, setTab}) {
     const [linkage_array, sorted_linkage_array] = sortTorsions(torsions)
 
     useEffect(() => {
-        console.log(tab)
         setTab(0)
     }, [])
     

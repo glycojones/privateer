@@ -1,18 +1,15 @@
 import {lazy, useCallback, useEffect, useState} from "react";
 import {MoorhenContainer, MoorhenContextProvider} from 'moorhen'
 import GlycanDetailInfoBox from "./GlycanDetailInfoBox";
-// import GlycanDetailTable from "./GlycanDetailTable";
-// import TorsionPlot from "../TorsionPlot/TorsionPlot";
 import TorsionMultiPlot from "../TorsionPlot/TorsionMultiPlot";
 
-const GlycanDetailTable = lazy(() => import('./GlycanDetailTable'));
 
-export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, rowID, forwardControls, scrollPosition, controls, molecule}) {
+export default function GlycanDetail(props) {
 
     async function handle_click(e) { 
 
         let new_center_string = e.target.dataset.chainid + "/" + e.target.dataset.seqnum + "(" + e.target.dataset.resname + ")"
-        const selectedMolecule = controls.current.molecules.find((molecule) => molecule.name === "mol-1")
+        const selectedMolecule = props.controls.current.molecules.find((molecule) => molecule.name === "mol-1")
         await selectedMolecule.centreOn(new_center_string)
        
     }
@@ -27,43 +24,32 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
             }
         }
 
-
         document.querySelectorAll("svg")[0].setAttribute("width", "50vw")
         document.querySelectorAll("svg")[0].setAttribute("height", "100%")
         
     })
 
-    // useEffect( () => {
-    //     function handleMoorhenResize() { 
+    async function handleContourChange(e) { 
+        props.map.contourLevel = Number(e.target.value)
+        await props.map.doCootContour(
+            ...props.map.glRef.current.origin.map(coord => -coord),
+            props.map.mapRadius,
+            props.map.contourLevel
+            )
+    }
 
-    //         let wWidth = window.innerWidth;
-
-    //         if (wWidth < 800) { 
-    //             setWidth(wWidth - 200)
-    //             setHeight((wWidth - 200)*0.75)
-    //             console.log("Resizing window to ", wWidth - 100,  (wWidth - 100)*0.75)
-    //         }
-
-    //     }
-    //     window.addEventListener('resize', handleMoorhenResize)
-
-    //     return _ => {
-    //         window.removeEventListener('resize', handleMoorhenResize)
-    //     }
-    // })
-
-    const [width, setWidth] = useState(800);
+    const [width, setWidth] = useState(900);
     const [height, setHeight] = useState(600);
     const [torsionTab, setTorsionTab] = useState(0)
 
     return (
-        <div className="flex-col justify-center items-center" style={{display: !hideMoorhen ? 'flex' : 'none'}}>
+        <div className="flex-col justify-center items-center" style={{display: !props.hideMoorhen ? 'flex' : 'none'}}>
 
             <div className="flex items-center justify-center w-full">
                 <div className="flex-1">
                     <button onClick={() => {
-                        setHideMoorhen(true);
-                        window.scrollTo(0, scrollPosition);
+                        props.setHideMoorhen(true);
+                        window.scrollTo(0, props.scrollPosition);
                         setTorsionTab(0)
                     }}>
                         <span className="">&#8592; Back To Table</span>
@@ -73,24 +59,27 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
                 <div class="flex-1"></div>
             </div>
 
-            {/* <h4 className="my-4">Glycan ID: {tableData[rowID].id}</h4> */}
             <div className="my-5 w-full">
-                <GlycanDetailInfoBox row={tableData[rowID]}/>
+                <GlycanDetailInfoBox row={props.tableData[props.rowID]}/>
             </div>
             
             <h3 className="text-left text-xl w-full">SNFG</h3>
 
             <div className="text-sm text-center text-primary" >
                 <div className="mt-4 py-4" id='svgContainer' dangerouslySetInnerHTML={{
-                    __html: tableData[rowID].svg
+                    __html: props.tableData[props.rowID].svg
                 }} ref={ref}/>
                 Hover over a linkage to see a summary
             </div>
 
             <h3 className="text-left text-xl w-full">Visualise</h3>
 
+            <label for="contour-range-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white translate-y-10">Map Contour</label>
+            <input id="contour-range" type="range" min="0" max="1" step="0.05" value="0.2" className="w-36 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 translate-y-10" onChange={handleContourChange}/>
+
             <MoorhenContextProvider defaultBackgroundColor={[51, 65, 85, 1]}>
-                <MoorhenContainer forwardControls={forwardControls} setMoorhenDimensions={() => {
+
+                <MoorhenContainer forwardControls={props.forwardControls} setMoorhenDimensions={() => {
                     return [width, height];
                 }} viewOnly={true}/>
 
@@ -98,7 +87,7 @@ export default function GlycanDetail({tableData, hideMoorhen, setHideMoorhen, ro
             
             <h3 className="text-left text-xl w-full">Torsion Plots</h3>
 
-            <TorsionMultiPlot torsions={tableData[rowID].torsions} tab={torsionTab} setTab={setTorsionTab}/>
+            <TorsionMultiPlot torsions={props.tableData[props.rowID].torsions} tab={torsionTab} setTab={setTorsionTab}/>
 
         </div>);
 }
