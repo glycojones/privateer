@@ -23,7 +23,7 @@ export function Header(props) {
                                     <SNFG {...props} filename={props.PDBCode != "" ? props.PDBCode : props.coordinateFile.name}
                                     ></SNFG>}
                     </Suspense>
-                    : <NoGlycans setResetApp={setResetApp} text={failureText} />
+                    : <NoGlycans setResetApp={props.setResetApp} text={props.failureText} />
                 } </div>
         </div>);
 }
