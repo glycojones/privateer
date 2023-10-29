@@ -75,7 +75,7 @@ export default function GlycanDetail(props) {
             <h3 className="text-left text-xl w-full">Visualise</h3>
 
             <label for="contour-range-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white translate-y-10">Map Contour</label>
-            <input id="contour-range" type="range" min="0" max="1" step="0.05" value="0.2" className="w-36 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 translate-y-10" onChange={handleContourChange}/>
+            <input id="contour-range" type="range" min="0" max="1" step="0.05" defaultValue="0.2" className="w-36 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 translate-y-10" onChange={handleContourChange}/>
 
             <MoorhenContextProvider defaultBackgroundColor={[51, 65, 85, 1]}>
 
