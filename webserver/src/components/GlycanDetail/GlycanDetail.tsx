@@ -1,8 +1,9 @@
 import {lazy, useCallback, useEffect, useState} from "react";
 import {MoorhenContainer, MoorhenContextProvider} from 'moorhen'
-import GlycanDetailInfoBox from "./GlycanDetailInfoBox";
-import TorsionMultiPlot from "../TorsionPlot/TorsionMultiPlot.tsx";
+
 import {GlycanDetailProps} from "../../interfaces/types"
+const GlycanDetailInfoBox = lazy(() => import('./GlycanDetailInfoBox'));
+const TorsionMultiPlot = lazy(() => import('../TorsionPlot/TorsionMultiPlot.tsx'));
 
 
 export default function GlycanDetail(props: GlycanDetailProps) {

@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import TorsionPlot from "./TorsionPlot";
+import { useEffect, lazy} from "react";
+
+const TorsionPlot = lazy(() => import('./TorsionPlot'));
 
 
 function sortTorsions(torsions) { 
