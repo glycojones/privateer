@@ -46,6 +46,8 @@ export default function HomeSection() {
                 collected_torsions.push(table_entry.torsions.get(j)); 
             }
             table_entry.torsions = collected_torsions
+            const regex = /: *32/g;
+            table_entry.svg = table_entry.svg.replace(regex, "")
             table_data.push(table_entry)
 
         }
