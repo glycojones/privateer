@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import UploadButton from "./UploadButton"
 import Submit from "../Submit/Submit";
 import PDBFetch from "../PDBFetch/PDBFetch";
+import {HeaderProps, UploadButtonProps} from "../../interfaces/types"
 
-export default function Upload(props) {
+export default function Upload(props: HeaderProps) {
     const [showUploadAgain, setShowUploadAgain] = useState(true)
     const [showSubmit, setShowSubmit] = useState(false)
     const [allowSubmit, setAllowSubmit] = useState(false)
@@ -43,9 +44,14 @@ export default function Upload(props) {
         }
     }, [props.coordinateFile, props.reflectionFile])
 
+    const uploadButtonProps: UploadButtonProps = {
+        setCoordinateFile: props.setCoordinateFile,
+        setReflectionFile: props.setReflectionFile
+    }
+
     return (
         <div className="flex flex-wrap align-middle items-center justify-center">
-            { showUploadAgain == true ? <UploadButton setCoordinateFile={props.setCoordinateFile} setReflectionFile={props.setReflectionFile}/>: <></>}
+            { showUploadAgain == true ? <UploadButton {...uploadButtonProps}/>: <></>}
             {showSubmit == true ? 
              <Submit 
                 coordinateFile={props.coordinateFile} 

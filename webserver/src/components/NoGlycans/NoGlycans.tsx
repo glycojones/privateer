@@ -1,8 +1,7 @@
 
+import {NoGlycansProps} from "../../interfaces/types.tsx"
 
-export default function NoGlycans({
-    setResetApp, text
-}) {
+export default function NoGlycans(props: NoGlycansProps) {
     return (
         <div
             className="flex flex-col m-12 px-12 pt-8 w-64 
@@ -10,14 +9,14 @@ export default function NoGlycans({
             transition-all border-gray-300 rounded-lg 
             bg-gray-50 flex-grow-0">
 
-            <p>{text}</p>
+            <p>{props.text}</p>
 
             <div className="flex space-x-4 py-6">
                 <button
                     className="bg-gray hover:bg-hover border-gray-800 border-2 text-primary opacity-60 font-bold py-2 px-4 rounded"
                     onClick={() => { 
 
-                        setResetApp(true)
+                        props.setResetApp(true)
                          }}>Retry</button>
             </div>
 

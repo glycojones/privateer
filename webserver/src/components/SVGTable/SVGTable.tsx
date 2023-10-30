@@ -2,6 +2,7 @@ import {useMemo, useRef, useState} from 'react';
 import {useTable} from 'react-table';
 import {COLUMNS} from "../../data/Constants"
 import styled from 'styled-components'
+import {SVGTableProps} from "../../interfaces/types"
 
 
 let Styles = styled.div`
@@ -68,24 +69,25 @@ table tr:last-of-type td:last-of-type {
 }
 `
 
-  export default function SVGTable({tableData, allowRowClick, rowClick, setRowClicked, setRowID}) {   
-    const [data, setData] = useState(tableData);
+  export default function SVGTable(props: SVGTableProps) { 
+    const [data, setData] = useState(props.tableData);
     const controls = useRef()
 
     const columns = useMemo(() => COLUMNS, []);
     const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = useTable({columns, data});
 
 
-    const handleRowClick = ((rowId) => {
-      if (allowRowClick) { 
-        setRowClicked(!rowClick)
-        setRowID(rowId)
+    const handleRowClick = ((rowId: number) => {
+      if (props.allowRowClick) { 
+        props.setRowClicked(!props.rowClick)
+        props.setRowID(rowId)
       }
     })
 
 
     return (
-        <Styles $allowRowClick={allowRowClick}>
+      // @ts-ignore
+        <Styles $allowRowClick={props.allowRowClick}>
             <div className="container" id='table'>
                 <table {...getTableProps()}>
                     <thead>
@@ -103,7 +105,7 @@ table tr:last-of-type td:last-of-type {
                     {rows.map((row) => {
                         prepareRow(row);
                         return (
-                            <tr {...row.getRowProps()} onClick={() => {if(allowRowClick) {handleRowClick(row.id)}}}
+                            <tr {...row.getRowProps()} onClick={() => {if(props.allowRowClick) {handleRowClick(row.id)}}}
                                 title="Click to visualise." id='row'>
                                 {row.cells.map((cell) => {
                                     return (

@@ -1,10 +1,11 @@
 import {lazy, useEffect, useRef, useState} from "react";
 import {MoorhenMap, MoorhenMolecule} from 'moorhen'
-import GlycanDetail from "../GlycanDetail/GlycanDetail"
+import GlycanDetail from "../GlycanDetail/GlycanDetail.tsx"
+import {SNFGProps} from "../../interfaces/types"
 
-const SVGTable = lazy(() => import('../SVGTable/SVGTable'));
+const SVGTable = lazy(() => import('../SVGTable/SVGTable.tsx'));
 
-export default function SNFG(props) {
+export default function SNFG (props: SNFGProps) {
     const [rowClicked, setRowClicked] = useState(false)
     const [rowID, setRowID] = useState(0)
     const [hideMoorhen, setHideMoorhen] = useState(true)
