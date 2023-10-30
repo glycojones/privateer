@@ -3,8 +3,8 @@
 cmake_minimum_required(VERSION 3.12)
 project(privateer VERSION 0.5 LANGUAGES C CXX)
 
-SET(PRIVATEER_CC_FLAGS "-g -O0 -w")
-SET(PRIVATEER_CXX_FLAGS "-g -O0 -w -fwasm-exceptions -I${CMAKE_INSTALL_PREFIX}/include")
+SET(PRIVATEER_CC_FLAGS "-O2 -w")
+SET(PRIVATEER_CXX_FLAGS "-O2 -w -fwasm-exceptions -I${CMAKE_INSTALL_PREFIX}/include")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PRIVATEER_CC_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS} ")
 

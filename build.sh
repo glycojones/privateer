@@ -6,9 +6,9 @@ source ~/dev/privateer_wasm/emsdk/emsdk_env.sh
 emcmake cmake .
 emmake make -j 
 
-cp privateer.js webserver/api/privateer.js
-cp privateer.wasm webserver/api/privateer.wasm
-cp privateer.data webserver/api/privateer.data
+# cp privateer.js webserver/api/privateer.js
+# cp privateer.wasm webserver/api/privateer.wasm
+# cp privateer.data webserver/api/privateer.data
 
 mv privateer.js webserver/src/wasm/privateer.js
 mv privateer.wasm webserver/src/wasm/privateer.wasm
