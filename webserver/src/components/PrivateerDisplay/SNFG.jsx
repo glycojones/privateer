@@ -119,7 +119,7 @@ export default function SNFG(props) {
             <div style={{display: (hideMoorhen ? 'block' : 'none')}} id="tableContainer">
                 <div className="flex flex-col ">
                     <h2 className="my-4 text-lg sm:text-2xl text-center sm:text-left">Detected {props.tableData.length} Glycans
-                        in {props.fileName}</h2>
+                        in {props.filename}</h2>
                     <SVGTable {...svgTableProps}/>
                 </div>
 

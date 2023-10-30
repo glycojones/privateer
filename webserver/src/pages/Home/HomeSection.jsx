@@ -146,8 +146,7 @@ export default function HomeSection() {
 
     return (
         <>
-            <Header {...main_props}
-            />
+            <Header {...main_props}/>
             <BorderElement topColor={"#D6D9E5"} bottomColor={"#F4F9FF"}></BorderElement>
             <Information/>
             <BorderElement topColor={"#F4F9FF"} bottomColor={"#D6D9E5"} reverse={true}></BorderElement>
