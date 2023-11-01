@@ -3,13 +3,13 @@ export function Information({}) {
         <div className="flex flex-col">
             <div className="text-center sm:text-left sm:text-center mb-4 px-12 pt-12 sm:p-12 flex flex-col">
                 <span className="font-body text-xl sm:text-3xl"><b>How does it work?</b></span>
-                <span className="font-primary text-l mt-6 sm:text-xl mx-12">Carbohydrates, including O- and N-glycans attached to protein and lipid structures, are increasingly important in cellular biology. Crystallographic refinement of sugars is, however, very poorly performed, with thousands of incorrect structures polluting the Protein Data Bank. </span>
-                <span className="font-primary text-l mt-6 sm:text-xl mx-12">Privateer is a software that aims to detect and prevent conformational, regiochemical and stereochemical anomalies in cyclic carbohydrate structures. Multiple features can be used to assess the validity of a glycan chain:</span>
+                <span className="font-body text-m mt-4">
+                Carbohydrates, including O- and N-glycans attached to protein and lipid structures, are increasingly important in cellular biology. Crystallographic refinement of sugars is, however, very poorly performed, with thousands of incorrect structures polluting the Protein Data Bank. <i>Privateer</i> is a software that aims to detect and prevent conformational, regiochemical and stereochemical anomalies in cyclic carbohydrate structures. Multiple features can be used to assess the validity of a glycan chain. </span>
             </div>
 
             <div className="flex flex-col mx-24 gap-6">
                 <div className="flex mr-auto gap-6">
-                    <img className="w-74 h-44 hidden sm:block" src="/cremer-pople.png"></img>
+                    <img className="w-74 h-44 hidden sm:block" src="/Cremer-Pople.png"></img>
                     <div className="flex flex-col gap-6 justify-center">
                         <span className="text-xl font-body"><b>Stereochemical Validation</b></span>
                         <span className="text-m font-body">
@@ -28,7 +28,7 @@ export function Information({}) {
                 </div>
 
                 <div className="flex mr-auto gap-6">
-                    <img className="w-48 h-48 hidden sm:block" src="/cremer-pople.png"></img>
+                    <img className="w-48 h-48 hidden sm:block" src="/Cremer-Pople.png"></img>
                     <div className="flex flex-col gap-6 justify-center">
                         <span className="text-xl font-body"><b>Anomer Validation</b></span>
                         <span className="text-m font-body">Occasionally, the glycans modelled in a structure can exhibit anomeric configurations which have not been seen before, and are most likely the result of slightly incorrect glycan positioning. Privateer can highlight this to allow a user to correct the mistakes.</span>
