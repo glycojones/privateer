@@ -32,7 +32,10 @@ export default function TorsionPlot({linkage_type, sorted_torsion_list}) {
                 showscale: true,
                 type: 'histogram2d',
                 dragmode: false, 
-                
+                colorbar: { 
+                  title: "Frequency", 
+                  side: "bottom"
+                },
                 xbins: {
                     start: -180,
                     end: 180,
@@ -81,12 +84,19 @@ export default function TorsionPlot({linkage_type, sorted_torsion_list}) {
             trace, overlay 
         ]}
         layout={ {width: 500, height: 500, title: linkage_type, 
+          
         yaxis: {
+          title: { 
+            text: "ψ / °"
+          },
           fixedrange: true, 
           range: (linkage_type in bin_db)? [bin_db[linkage_type].start, bin_db[linkage_type].end] : [-180,180],
           showgrid:false
         },
         xaxis : {
+          title: { 
+            text: "φ / °"
+          },
           fixedrange: true, 
           range:[-180,180], 
           showgrid:false
