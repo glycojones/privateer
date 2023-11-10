@@ -23,11 +23,11 @@ export function Header(props: HeaderProps) {
         <div className="bg-gray text-primary">
             <NavBar setResetApp={props.setResetApp}/>
             <div className="flex justify-center mb-6">
-                {props.fallback != true ?
+                {props.fallback !== true ?
                     <Suspense fallback={<Loading loadingText={"Loading"} />}>
-                        {props.submit == false ?
+                        {props.submit === false ?
                             <Upload {...props} />
-                                : props.tableData == null ?
+                                : props.tableData === null ?
                                     <Loading loadingText={props.loadingText} /> :
                                     <SNFG {...props} filename={filename}
                                     ></SNFG>}

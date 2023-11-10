@@ -51,8 +51,8 @@ export default function Upload(props: HeaderProps) {
 
     return (
         <div className="flex flex-wrap align-middle items-center justify-center">
-            { showUploadAgain == true ? <UploadButton {...uploadButtonProps}/>: <></>}
-            {showSubmit == true ? 
+            { showUploadAgain === true ? <UploadButton {...uploadButtonProps}/>: <></>}
+            {showSubmit === true ? 
              <Submit 
                 coordinateFile={props.coordinateFile} 
                 reflectionFile={props.reflectionFile} 
@@ -61,11 +61,11 @@ export default function Upload(props: HeaderProps) {
                 allowSubmit={allowSubmit}
             /> : <></>}
             
-            {showPDBFetch == true ? 
+            {showPDBFetch === true ? 
              <div className="mx-6 w-full lg:w-6 sm:w-full text-center">OR</div>
              :
               <></>} 
-            {showPDBFetch == true ? 
+            {showPDBFetch === true ? 
              <PDBFetch PDBCode={props.PDBCode} setPDBCode={props.setPDBCode} submitPressed={props.setSubmit}/> 
              :
               <></>} 

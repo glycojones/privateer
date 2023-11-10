@@ -5,12 +5,12 @@ import { Information } from '../../components/Information/Information.tsx';
 
 // @ts-ignore
 import privateer_module from "../../wasm/privateer.js"
-import loadGlytoucan from "../../utils/loadGlytoucan.js"
+import loadGlytoucan from "../../utils/loadGlytoucan.ts"
 
-const Footer = lazy(() => import('../../layouts/Footer.js'));
-const BorderElement = lazy(() => import('../../layouts/BorderElement.js'));
+const Footer = lazy(() => import('../../layouts/Footer.tsx'));
+const BorderElement = lazy(() => import('../../layouts/BorderElement.tsx'));
 
-import { fetch_map, fetch_pdb } from "../../utils/fetch_from_pdb.js"
+import { fetch_map, fetch_pdb } from "../../utils/fetch_from_pdb.ts"
  
 import {TableDataEntry, HeaderProps} from "../../interfaces/types"
 

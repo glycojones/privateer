@@ -2,6 +2,7 @@ import {lazy, useCallback, useEffect, useState} from "react";
 import {MoorhenContainer, MoorhenContextProvider} from 'moorhen'
 
 import {GlycanDetailProps} from "../../interfaces/types"
+import { type } from "os";
 const GlycanDetailInfoBox = lazy(() => import('./GlycanDetailInfoBox'));
 const TorsionMultiPlot = lazy(() => import('../TorsionPlot/TorsionMultiPlot.tsx'));
 
@@ -16,7 +17,8 @@ export default function GlycanDetail(props: GlycanDetailProps) {
        
     }
 
-    const ref = useCallback((node: any) => {
+    const ref = useCallback((node: HTMLElement | null) => {
+        console.log("NODE", node, typeof(node))
         if (node !== null) {
 
             let useList = node.querySelectorAll('use')
