@@ -30,15 +30,15 @@ export function Information({}) {
                 <div className="flex mr-auto gap-6">
                     <img className="w-48 h-48 hidden sm:block" src="/Cremer-Pople.png"></img>
                     <div className="flex flex-col gap-6 justify-center">
-                        <span className="text-xl font-body"><b>Anomer Validation</b></span>
-                        <span className="text-m font-body">Occasionally, the glycans modelled in a structure can exhibit anomeric configurations which have not been seen before, and are most likely the result of slightly incorrect glycan positioning. Privateer can highlight this to allow a user to correct the mistakes.</span>
+                        <span className="text-xl font-body"><b>Glycomics-Powered Validation</b></span>
+                        <span className="text-m font-body">When modelling glycans,  it is possible to produce incorrect glycan compositions that do nor conform with general glycan biosynthesis knowledge. In Privateer, users can check their glycan structure and composition against glycomics databases. This allows the identification of inconsistent linkages, and following this, alternative compositions will be suggested to provide a more accurate, complete structure.</span>
                     </div>
                 </div>
 
                 <div className="flex ml-auto gap-6">
                     <div className="flex flex-col gap-6 justify-center">
                         <span className="text-xl font-body"><b>Torsion Angles</b></span>
-                        <span className="text-m font-body">This allows for analysis and validation of the overall conformation of N-glycans, using a newly compiled set of glycosidic linkage torsional preferences harvested from a curated set of glycoprotein models.</span>
+                        <span className="text-m font-body">Torsion angle analysis allows the validation of the overall conformation of N-glycans, using a newly compiled set of glycosidic linkage torsional preferences harvested from a curated set of glycoprotein models.</span>
                     </div>
                     <img className="w-78 h-48 hidden sm:block" src="/torsion_figure.png"></img>
                 </div>
