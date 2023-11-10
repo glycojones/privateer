@@ -1,4 +1,4 @@
-import {TORSIONS_CITATION} from "../../data/Constants"
+import {TORSIONS_CITATION, GLYCOMICS_CITATION} from "../../data/Constants"
 
 export function Information({}) {
     return <div className="text-secondary bg-tertiary pb-12">
@@ -32,7 +32,11 @@ export function Information({}) {
                 <div className="flex mr-auto gap-6">
                     <img className="w-74 h-64 hidden sm:block" src="/glycomics-nobg2.png"></img>
                     <div className="flex flex-col gap-6 justify-center">
-                        <span className="text-xl font-body"><b>Glycomics-Powered Validation</b></span>
+                        <span className="text-xl font-body"><b>Glycomics-Powered Validation</b>
+                        <a href={GLYCOMICS_CITATION}>
+                                <svg className="inline pl-2 h-4 transition-all hover:h-5 fill-secondary" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+                            </a>
+                        </span>
                         <span className="text-m font-body">When modelling glycans,  it is possible to produce incorrect glycan compositions that do nor conform with general glycan biosynthesis knowledge. In Privateer, users can check their glycan structure and composition against glycomics databases. This allows the identification of inconsistent linkages, and following this, alternative compositions will be suggested to provide a more accurate, complete structure.</span>
                     </div>
                 </div>
