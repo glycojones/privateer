@@ -1,10 +1,13 @@
 import {lazy, useCallback, useEffect, useState} from "react";
 import {MoorhenContainer, MoorhenContextProvider} from 'moorhen'
-import GlycanDetailInfoBox from "./GlycanDetailInfoBox";
-import TorsionMultiPlot from "../TorsionPlot/TorsionMultiPlot";
+
+import {GlycanDetailProps} from "../../interfaces/types"
+import { type } from "os";
+const GlycanDetailInfoBox = lazy(() => import('./GlycanDetailInfoBox'));
+const TorsionMultiPlot = lazy(() => import('../TorsionPlot/TorsionMultiPlot.tsx'));
 
 
-export default function GlycanDetail(props) {
+export default function GlycanDetail(props: GlycanDetailProps) {
 
     async function handle_click(e) { 
 
@@ -14,7 +17,8 @@ export default function GlycanDetail(props) {
        
     }
 
-    const ref = useCallback((node) => {
+    const ref = useCallback((node: HTMLElement | null) => {
+        console.log("NODE", node, typeof(node))
         if (node !== null) {
 
             let useList = node.querySelectorAll('use')
@@ -27,7 +31,7 @@ export default function GlycanDetail(props) {
         document.querySelectorAll("svg")[0].setAttribute("width", "50vw")
         document.querySelectorAll("svg")[0].setAttribute("height", "100%")
         
-    })
+    }, [])
 
     async function handleContourChange(e) { 
         props.map.contourLevel = Number(e.target.value)
@@ -56,7 +60,7 @@ export default function GlycanDetail(props) {
                     </button>
                 </div>
                 <h2 className="">Glycan Details</h2>
-                <div class="flex-1"></div>
+                <div className="flex-1"></div>
             </div>
 
             <div className="my-5 w-full">
@@ -74,7 +78,7 @@ export default function GlycanDetail(props) {
 
             <h3 className="text-left text-xl w-full">Visualise</h3>
 
-            <label for="contour-range-text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white translate-y-10">Map Contour</label>
+            <label htmlFor="contour-range-text" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white translate-y-10">Map Contour</label>
             <input id="contour-range" type="range" min="0" max="1" step="0.05" defaultValue="0.2" className="w-36 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 translate-y-10" onChange={handleContourChange}/>
 
             <MoorhenContextProvider defaultBackgroundColor={[51, 65, 85, 1]}>

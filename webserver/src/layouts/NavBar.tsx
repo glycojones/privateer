@@ -1,6 +1,7 @@
-import {GENERAL_CITATION, GITHUB_REPO} from "../data/Constants"
+import { Dispatch, SetStateAction } from "react"
+import {GENERAL_CITATION, GITHUB_REPO} from "../data/Constants.tsx"
 
-export default function NavBar({setResetApp}) {
+export default function NavBar({setResetApp}: {setResetApp: Dispatch<SetStateAction<boolean>>}) {
 
     return (
         <div className="flex flex-col sm:flex-row sm:justify-between">

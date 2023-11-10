@@ -1,4 +1,4 @@
-export function Information({}) {
+export function Information() {
     return <div className="text-secondary bg-tertiary pb-12">
         <div className="flex flex-col">
             <div className="text-center sm:text-left sm:text-center mb-4 px-12 pt-12 sm:p-12 flex flex-col">

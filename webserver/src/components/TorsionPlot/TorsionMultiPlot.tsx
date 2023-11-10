@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import TorsionPlot from "./TorsionPlot";
+import { useEffect, lazy} from "react";
+
+const TorsionPlot = lazy(() => import('./TorsionPlot'));
 
 
 function sortTorsions(torsions) { 
@@ -46,9 +47,8 @@ function TorsionMultiPlotTabs({torsions, setTab}) {
     return (
        linkage_array.map((item, index) => { 
         return (
-
-            <li class="mr-2">
-                    <button class="inline-block p-4 border-b-2 border-transparent border-secondary rounded-t-lg hover:scale-105" onClick={() => {setTab(index)}}>{item}</button>
+            <li className="mr-2" key={item}>
+                    <button className="inline-block p-4 border-b-2 border-transparent border-secondary rounded-t-lg hover:scale-105" onClick={() => {setTab(index)}}>{item}</button>
             </li>
 
         )
@@ -67,8 +67,8 @@ export default function TorsionMultiPlot({torsions, tab, setTab}) {
     
     return (
         <div className="flex flex-col align-middle justify-center items-center space-y-6 ">  
-            <div class="text-sm font-medium text-center text-gray-500 border-gray-200 text-gray-400 border-gray-700">
-                <ul class="flex flex-wrap -mb-px mt-2">                
+            <div className="text-sm font-medium text-center text-gray-500 border-gray-200 text-gray-400 border-gray-700">
+                <ul className="flex flex-wrap -mb-px mt-2">                
                     <TorsionMultiPlotTabs torsions={torsions} setTab={setTab}/>   
                 </ul>
             </div>

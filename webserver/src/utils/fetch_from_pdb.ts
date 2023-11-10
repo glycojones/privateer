@@ -1,5 +1,5 @@
 
-export async function fetch_pdb(PDBCode) { 
+export async function fetch_pdb(PDBCode: string) { 
     if (PDBCode == null) {return}
     console.log("Fetching PDB ", PDBCode)
     let pdb_url = `https://files.rcsb.org/download/${PDBCode.toUpperCase()}.pdb`
@@ -20,7 +20,7 @@ export async function fetch_pdb(PDBCode) {
     return file
 }
 
-export async function fetch_map(PDBCode) { 
+export async function fetch_map(PDBCode: string) { 
     if (PDBCode == null) {return}
     console.log("Fetching MTZ ", PDBCode)
     let mtz_url = `https://www.ebi.ac.uk/pdbe/entry-files/${PDBCode.toLowerCase()}.ccp4`
