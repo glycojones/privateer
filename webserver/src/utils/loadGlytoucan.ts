@@ -1,4 +1,7 @@
-async function get_glytoucan_id(wurcs) {
+import {TableDataEntry} from "../interfaces/types"
+
+
+async function get_glytoucan_id(wurcs: string) {
     let url = "https://api.glycosmos.org/sparqlist/wurcs2gtcids?wurcs=" + encodeURIComponent(wurcs)
 
     return fetch(url, {
@@ -8,7 +11,7 @@ async function get_glytoucan_id(wurcs) {
         .catch((error) => console.log(error))
 }
 
-export default async function load_glytoucan(table_data) {
+export default async function load_glytoucan(table_data: Array<TableDataEntry>) {
 
     let promises = [];
 
