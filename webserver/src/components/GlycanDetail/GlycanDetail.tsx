@@ -18,7 +18,6 @@ export default function GlycanDetail(props: GlycanDetailProps) {
     }
 
     const ref = useCallback((node: HTMLElement | null) => {
-        console.log("NODE", node, typeof(node))
         if (node !== null) {
 
             let useList = node.querySelectorAll('use')
