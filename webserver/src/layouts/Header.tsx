@@ -24,7 +24,7 @@ export function Header(props: HeaderProps) {
             <NavBar setResetApp={props.setResetApp}/>
             <div className="flex justify-center mb-6">
                 {props.fallback !== true ?
-                    <Suspense fallback={<Loading loadingText={"Loading"} />}>
+                    <Suspense fallback={<Loading loadingText={"Loading Content..."} />}>
                         {props.submit === false ?
                             <Upload {...props} />
                                 : props.tableData === null ?
