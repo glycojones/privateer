@@ -30,7 +30,7 @@ export function Information({}) {
                 </div>
 
                 <div className="flex mr-auto gap-6">
-                    <img className="w-74 h-64 hidden sm:block" src="/glycomics-nobg2.png"></img>
+                    <img className="w-74 h-64 hidden sm:block" src="/glycomics.png"></img>
                     <div className="flex flex-col gap-6 justify-center">
                         <span className="text-xl font-body"><b>Glycomics-Powered Validation</b>
                         <a href={GLYCOMICS_CITATION}>
