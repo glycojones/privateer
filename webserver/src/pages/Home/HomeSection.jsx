@@ -53,7 +53,7 @@ export default function HomeSection() {
         }
         
         if (x.size() == 0 ) { 
-            setLoadingText("There were no detected glycans in this file.")
+            setFailureText("There were no detected glycans in this model.")
             setFallBack(true)
         }
 
