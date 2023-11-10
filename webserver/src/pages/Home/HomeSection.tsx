@@ -56,9 +56,9 @@ export default function HomeSection() {
             table_data.push(table_entry)
 
         }
-
-        if (x.size() == 0) {
-            setLoadingText("There were no detected glycans in this file.")
+        
+        if (x.size() == 0 ) { 
+            setFailureText("There were no detected glycans in this model.")
             setFallBack(true)
         }
 
