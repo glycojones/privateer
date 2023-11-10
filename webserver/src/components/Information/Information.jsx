@@ -28,7 +28,7 @@ export function Information({}) {
                 </div>
 
                 <div className="flex mr-auto gap-6">
-                    <img className="w-54 h-48 hidden sm:block" src="/glycomics.png"></img>
+                    <img className="w-54 h-48 hidden sm:block" src="/glycomics-nobg.png"></img>
                     <div className="flex flex-col gap-6 justify-center">
                         <span className="text-xl font-body"><b>Glycomics-Powered Validation</b></span>
                         <span className="text-m font-body">When modelling glycans,  it is possible to produce incorrect glycan compositions that do nor conform with general glycan biosynthesis knowledge. In Privateer, users can check their glycan structure and composition against glycomics databases. This allows the identification of inconsistent linkages, and following this, alternative compositions will be suggested to provide a more accurate, complete structure.</span>
