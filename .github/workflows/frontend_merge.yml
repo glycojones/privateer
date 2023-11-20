@@ -29,7 +29,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.ftp_server_ip}}
-          username: ${{ secrets.ftp_username }}@privateer.hosted.york.ac.uk
+          username: ${{ secrets.ftp_username }}@privateer.york.ac.uk
           password: ${{ secrets.ftp_password }}
           protocol: ftps
           port: 21
