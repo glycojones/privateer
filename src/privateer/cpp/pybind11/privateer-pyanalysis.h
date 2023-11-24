@@ -424,6 +424,10 @@ namespace privateer {
         float sugar_accum = -1; // need to develop setter method as in privateer.cpp
         bool sugar_occupancy_check = false; // need to develop setter method as in privateer.cpp
         std::string sugar_context;
+        double sugar_ring_cremer_pople_q;
+        double sugar_ring_cremer_pople_phi;
+        double sugar_ring_cremer_pople_theta;
+
 
         pybind11::list sugar_ring_atoms;
 
