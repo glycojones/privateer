@@ -41,7 +41,7 @@ export default function UploadButton(props: UploadButtonProps) {
 
 
     return (
-        <div className="flex items-center justify-center m-12 w-64 hover:border-slate-500 hover:bg-white">
+        <div className="flex items-center justify-center m-12 w-64 hover:border-slate-500">
             {!dragActivate ? <label className="flex flex-col items-center justify-center w-full p-12 h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-hover border-gray-600">
                 <div className="flex flex-col items-center justify-center pt-5 pb-6 text-center" onDragOver={handleDragOver} onDrop={handleDrop} onDragEnter={() => { console.log("DRAG ENTER") }} onDragExit={(e) => { console.log("LEAVE", e) }} >
                     <svg className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
