@@ -43,6 +43,25 @@ export interface HeaderProps {
     failureText: string
 }
 
+export interface DatabaseHeaderProps { 
+    resetApp: boolean,
+    setResetApp: Dispatch<SetStateAction<boolean>>,
+    PDBCode: string,
+    setPDBCode: Dispatch<SetStateAction<string>>,
+    submit: boolean,
+    setSubmit: Dispatch<SetStateAction<boolean>>,
+    loadingText: string,
+    fallback: boolean,
+    failureText: string,
+    results: any, 
+}
+
+export interface DatabaseResultProps { 
+    results: any
+    PDBCode: string
+}
+
+
 export interface SNFGProps extends HeaderProps { 
     filename: string
 }

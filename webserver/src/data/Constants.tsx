@@ -41,6 +41,67 @@ export const COLUMNS = [
 
 ];
 
+export const DatabaseColumns = [
+    {
+        Header: 'Chain',
+        accessor: 'chain',
+    },
+    {
+        Header: 'SNFG',
+        accessor: 'SNFG',
+        Cell: tableProps => {
+            return (
+                <div className="mt-4 py-4 " id='svgContainer' dangerouslySetInnerHTML={{
+                    __html: tableProps.row.original.SNFG
+                }} />
+                    )
+        }
+    },
+    {
+        Header: "WURCS", 
+        accessor: 'WURCS'
+    }
+]
+
+export const SugarListColumns = [
+    {
+        Header: "Sugar ID", 
+        accessor: "Sugar ID"
+    }, 
+    {
+        Header: "Q", 
+        accessor: "Q"
+    }, 
+    {
+        Header: "Phi", 
+        accessor: "Phi",
+    }, 
+    {
+        Header: "Theta", 
+        accessor: "Theta"
+    }, 
+    {
+        Header: "RSCC", 
+        accessor: "RSCC"
+    }, 
+    {
+        Header: "B Factor", 
+        accessor: "BFactor"
+    }, 
+    {
+        Header: "Detected Type", 
+        accessor: "Detected Type"
+    }, 
+    {
+        Header: "mFo", 
+        accessor: "mFo"
+    }, 
+    {
+        Header: "Type", 
+        accessor: "type"
+    }
+]
+
 export const linkage_db = { 
     "GAL-1,4-NAG" : 'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/GAL-1,4-NAG.json',
     "NAG-1,2-MAN" : 'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/NAG-1,2-MAN.json',
