@@ -14,11 +14,11 @@ function custom_sort(a, b) {
     return 1;
   }
 
-  if (split_a[2] < split_b[2]) {
+  if (Number(split_a[2]) < Number(split_b[2])) {
     return -1;
   }
 
-  if (split_b[2] < split_a[2]) {
+  if (Number(split_b[2]) < Number(split_a[2])) {
     return 1;
   }
 
