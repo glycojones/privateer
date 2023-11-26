@@ -51,7 +51,8 @@ export const DatabaseColumns = [
         accessor: 'SNFG',
         Cell: tableProps => {
             return (
-                <div className="mt-4 py-4 " id='svgContainer' dangerouslySetInnerHTML={{
+                
+                <div className="mt-4 py-4 flex justify-end" id='svgContainer' dangerouslySetInnerHTML={{
                     __html: tableProps.row.original.SNFG
                 }} />
                     )

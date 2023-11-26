@@ -106,12 +106,11 @@ export default function SNFGList(props) {
 
   useEffect(() => {
     let results = parse_results(props)
-    console.log(results)
     setData(results)
   }, [])
 
   return (
-    <div className='flex flex-col mx-auto'>
+    <div className='flex flex-col mx-auto px-16'>
       <span className='text-xl mb-2'>N- and O-glycan structure 2D descriptions</span>
 
       <Styles>

@@ -127,12 +127,11 @@ export default function SugarList(props) {
 
   useEffect(() => {
     let results = parse_results(props)
-    console.log(results)
     setData(results)
   }, [])
 
   return (
-    <div className='flex flex-col mx-auto'>
+    <div className='flex flex-col mx-auto p-16'>
       <span className='text-xl mb-2'>Detailed monosaccharide validation data</span>
 
       <Styles>
