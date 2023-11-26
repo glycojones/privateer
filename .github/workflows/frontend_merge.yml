@@ -28,7 +28,7 @@ jobs:
       - name: Push to server!
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp.privateer.york.ac.uk
+          server: privateer.york.ac.uk
           username: ${{ secrets.ftp_username }}@privateer.york.ac.uk
           password: ${{ secrets.ftp_password }}
           protocol: ftps
