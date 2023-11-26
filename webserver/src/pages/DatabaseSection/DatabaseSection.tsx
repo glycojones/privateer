@@ -9,7 +9,7 @@ import { DatabaseHeader } from "../../layouts/DatabaseHeader.tsx";
 
 import pako from "pako"
 
-export default function DatabaseSection() {
+export default function DatabaseSection(props) {
 
     const [PDBCode, setPDBCode] = useState<string>("")
     const [submit, setSubmit] = useState<boolean>(false);
@@ -20,37 +20,48 @@ export default function DatabaseSection() {
     const [results, setResults] = useState<string>("")
     const [failure, setFailure] = useState<boolean>(false)
 
+    function handle_database_lookup(PDBCode) {
+        let pdb_code = PDBCode.toLowerCase()
+        let middlefix = pdb_code.substring(1, 3)
+
+        let url = `https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/${middlefix}/${pdb_code}.json.gz`
+
+        try {
+            fetch(url, {
+                method: "GET"
+            }).then(response => {
+                let buffer = response.arrayBuffer()
+                buffer.then((bytes) => {
+                    var decompressedData = pako.inflate(bytes, { to: 'string' });
+                    var jsonString = decompressedData.toString('utf-8');
+                    var jsonObject = JSON.parse(jsonString);
+                    setResults(jsonObject)
+                }).catch(e => {
+                    setFallBack(true)
+                    setFailureText("Cannot be found in database")
+                })
+            }).catch(e => {
+                console.log(e)
+            })
+        } catch {
+            console.log("not in db")
+        }
+    }
+
     useEffect(() => {
         if (PDBCode != "") {
             setLoadingText(`Fetching ${PDBCode.toUpperCase()} from the database`)
-            let pdb_code = PDBCode.toLowerCase()
-            let middlefix = pdb_code.substring(1, 3)
-
-            let url = `https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/${middlefix}/${pdb_code}.json.gz`
-
-            try {
-                fetch(url, {
-                    method: "GET"
-                }).then(response => {
-                    let buffer = response.arrayBuffer()
-                    buffer.then((bytes) => {
-                        var decompressedData = pako.inflate(bytes, { to: 'string' });
-                        var jsonString = decompressedData.toString('utf-8');
-                        var jsonObject = JSON.parse(jsonString);
-                        setResults(jsonObject)
-                    }).catch( e => {
-                        setFallBack(true)
-                        setFailureText("Cannot be found in database")
-                    })
-                }).catch(e => {
-                    console.log(e)
-                })
-            } catch { 
-                console.log("not in db")
-            }
+            handle_database_lookup(PDBCode)
         }
-
     }, [submit])
+
+    useEffect(() => {
+        console.log(props, props.query.get("pdb"))
+        if (props.query.get("pdb") != null) {
+            handle_database_lookup(props.query.get("pdb"))
+        }
+    }, [])
+
 
     useEffect(() => {
         setSubmit(false)
@@ -70,7 +81,7 @@ export default function DatabaseSection() {
         loadingText: loadingText,
         fallback: fallback,
         failureText: failureText,
-        results: results, 
+        results: results,
     }
 
     return (
