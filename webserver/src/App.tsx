@@ -10,7 +10,7 @@ import {
   Link,
   useLocation
 } from "react-router-dom";
-import APIHandler from './api_components/APIHandler'
+import APIHandler from './components/APIComponents/APIHandler'
 
 function useQuery() {
   const { search } = useLocation();
@@ -28,6 +28,8 @@ function App() {
         <Routes>
           <Route index path="/" element={<HomeSection />} />
           <Route path="/database" element={<DatabaseSection query={query}/>} />
+          <Route path="/api" element={<APIHandler query={query}/>} />
+
         </Routes>
       </div>
     </Suspense>
