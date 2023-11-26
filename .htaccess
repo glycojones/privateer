@@ -7,3 +7,22 @@
 Header set Cross-Origin-Embedder-Policy "require-corp"
 Header set Cross-Origin-Opener-Policy "same-origin"
 </IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/wasm .wasm
+</IfModule>
+
+
+<IfModule mod_headers.c>
+Header set Cross-Origin-Embedder-Policy "require-corp"
+Header set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]
+</IfModule>
