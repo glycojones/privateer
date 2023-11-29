@@ -30,7 +30,7 @@ void init_ccp4mg(py::module& m)
   m.def("svg_graphics_demo",
         &privateer::scripting::svg_graphics_demo,
         "Creates an SVG file with a SNFG demo",
-        "original_colour_scheme"_a = false,
+        "original_colour_scheme"_a = true,
         "inverted_background"_a = false );
 
   m.def("get_annotated_glycans",
