@@ -1,8 +1,8 @@
 ---
-name: Web App  - Feature request
+name: Binary - Feature request
 about: Suggest an idea for this project
 title: ''
-labels: enhancement, webserver
+labels: enhancement
 assignees: ''
 
 ---
