@@ -801,8 +801,8 @@ namespace privateer
     {
         inline std::string carbname_of ( std::string name ) { return clipper::data::carbname_of ( name ); }
         inline bool found_in_database ( std::string name ) { return clipper::data::found_in_database ( name ); }
-        std::string get_annotated_glycans ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined" );
-        std::string get_annotated_glycans_hierarchical ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined"  );
+        std::string get_annotated_glycans ( std::string pdb_filename, bool original_colour_scheme = true, std::string expression_system = "undefined" );
+        std::string get_annotated_glycans_hierarchical ( std::string pdb_filename, bool original_colour_scheme = true, std::string expression_system = "undefined"  );
         std::string print_wurcs ( std::string pdb_filename, std::string expression_system = "undefined");
         std::string print_node ( const clipper::MiniMol& mmol, const clipper::MGlycan& mg, const clipper::MGlycan::Node& node, const std::string chain, const clipper::MGlycan::Linkage& connection );
         void svg_graphics_demo ( bool original_colour_scheme, bool inverted_background = false );

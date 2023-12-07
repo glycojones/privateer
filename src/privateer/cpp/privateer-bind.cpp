@@ -63,7 +63,7 @@ extern "C" std::vector<std::string> read_file(const std::string &file, const std
       wurcs_string = list_of_glycans[i].generate_wurcs();
       // std::cout << wurcs_string << std::endl;
 
-      privateer::glycanbuilderplot::Plot plot(true, false, list_of_glycans[i].get_root_by_name());
+      privateer::glycanbuilderplot::Plot plot(true, true, list_of_glycans[i].get_root_by_name());
       // std::vector<int> viewbox = {0,0,300,300};
       // plot.set_viewbox(viewbox);
       plot.plot_glycan(list_of_glycans[i]);
@@ -168,7 +168,7 @@ extern "C" std::vector<TableEntry> read_file_to_table(const std::string &file, c
 
       privateer::glycanbuilderplot::GlycanErrorCount* err = new privateer::glycanbuilderplot::GlycanErrorCount; 
 
-      privateer::glycanbuilderplot::Plot plot(true, false, list_of_glycans[i].get_root_by_name());
+      privateer::glycanbuilderplot::Plot plot(true, true, list_of_glycans[i].get_root_by_name());
       plot.plot_glycan(list_of_glycans[i], err);
 
       std::ostringstream os;
