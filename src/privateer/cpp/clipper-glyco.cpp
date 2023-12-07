@@ -332,7 +332,7 @@ MSugar::MSugar(const clipper::MiniMol& ml, const clipper::String chainID, const 
             else if ( ( conformation_name() == "1c4" ) && ( sugar_handedness != "D" ))
                 sugar_diag_conformation = true;
             else if ( ring_cardinality() < 6)
-               sugar_diag_conformation = true;
+               sugar_diag_conformation = true;          
             else  sugar_diag_conformation = false;
         }
 
