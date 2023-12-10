@@ -76,11 +76,11 @@ export interface GlycanDetailProps {
     hideMoorhen: boolean,
     setHideMoorhen: Dispatch<SetStateAction<boolean>>,
     rowID: number,
-    forwardControls: any,
     scrollPosition: number,
     controls: any,
     molecule: any,
     map: any
+    moorhenProps: any
 }
 
 export interface NoGlycansProps {

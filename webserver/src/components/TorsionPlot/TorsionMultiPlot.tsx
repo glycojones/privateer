@@ -48,7 +48,8 @@ function TorsionMultiPlotTabs({torsions, setTab}) {
        linkage_array.map((item, index) => { 
         return (
             <li className="mr-2" key={item}>
-                    <button className="inline-block p-4 border-b-2 border-transparent border-secondary rounded-t-lg hover:scale-105" onClick={() => {setTab(index)}}>{item}</button>
+                    <button className="inline-block p-4 border-b-2 border-transparent border-secondary rounded-t-lg hover:scale-105" onClick={() => {setTab(index)}}  onMouseDown={(e) => {e.stopPropagation()}}
+            onTouchStart={(e) => {e.stopPropagation()}}>{item}</button>
             </li>
 
         )

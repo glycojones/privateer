@@ -1,9 +1,9 @@
 
 
-export default function GlycanDetailInfoBox({ row }) {
+export default function GlycanDetailInfoBox({key, row }) {
 
     return (
-        <div className="flex flex-col flex-wrap" >
+        <div key={key} className="flex flex-col flex-wrap px-8" >
             <h3 className="text-left text-xl">Validation Report</h3>
             <div className="flex  justify-between mt-3">
                 <h4>Glycan ID: <b>{row.id}</b></h4>

@@ -1,68 +1,62 @@
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
   
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .App {
-    text-align: center;
+  text-align: center;
 }
   
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
   
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
   
 .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
   
 .App-link {
-    color: #61dafb;
+  color: #61dafb;
 }
   
 @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
   
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
-  
-img.baby-gru-button-icon {
-    height: 3rem;
-    width: 3rem;
-}
-  
+ 
 .baby-gru.flatly h3 {
-    color: black !important;
+  color: black !important;
 }
   
 .baby-gru.darkly h3 {
-    color: white !important;
+  color: white !important;
 }
   
 div.darkly text {fill:#888 !important;}
@@ -71,15 +65,25 @@ div.darkly text.start-label {fill:#FFF !important;}
 div.darkly text.end-label {fill:#FFF !important;}
 
 .tab-content{
-    height: calc(100% - 3rem);
+  height: calc(100% - 3rem);
 }
 
 .nav-tabs{
-    height: 3rem;
+  height: 3rem;
 }
 
-.tool-container-row{
-    height: calc(100% - 10rem);
+.big-validation-tool-container-row {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 10rem);
+}
+
+.small-validation-tool-container-row {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 19rem);
 }
 
 .carousel-control-next {
@@ -109,17 +113,17 @@ div.darkly text.end-label {fill:#FFF !important;}
 } 
 
 .validation-plot-container::-webkit-scrollbar {
-    width: 1rem;
-  }
+  width: 1rem;
+}
    
 .validation-plot-container::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
    
 .validation-plot-container::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
-  }
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 
 .nav-link {
     padding-right: 0.3rem !important;
@@ -138,4 +142,139 @@ div.darkly text.end-label {fill:#FFF !important;}
 
 .map-colour-dropdown::after  {
     display:none !important;
+}
+
+.context-button-popover .popover-arrow {
+  display: none !important;
+}
+
+.moorhen-notification-div {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+  width: 14rem;
+  min-height: 3rem;
+  height: fit-content;
+  max-height: 10rem;
+  padding: 0.5rem;
+  display: flex;
+  border-radius: 2rem;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.moorhen-tooltip {
+  display: flex;
+  z-index: 9999;
+  padding: 2px 10px;
+  border-radius: 3;
+}
+
+.moorhen-warning-toast {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.moorhen-draggable-card {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+
+.moorhen-context-button {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+  width: 4rem;
+  height: 4rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.moorhen-context-button:disabled > .moorhen-context-button__icon {
+  opacity: 0.15 !important;
+}
+
+.moorhen-context-button__icon {
+  padding: 0.1rem;
+  width: 100%;
+  height: 100%;
+}
+
+img.moorhen-context-button__icon {
+  height: 3rem;
+  width: 3rem;
+}
+
+.moorhen-input-group-check {
+  padding: 0.5rem;
+  width: 25rem;
+}
+
+.moorhen-form-group {
+  width: 20rem;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.moorhen-navbar-menu-item-icon {
+  height: 1.6rem;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+}
+
+.moorhen-navbar-menu-item {
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  justify-content: left;
+  display: flex;
+  border-radius: 2rem;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.moorhen-nav-popover {
+  border-width: 0;
+  margin-left: 1.5rem;
+  overflow-x: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.moorhen-spinner {
+  height: 2rem !important;
+  margin-right: 0.5rem !important;
+  margin-left: 0.5rem !important;
+}
+
+.moorhen-hovered-atom-form {
+  height: 2rem !important;
+  width: 20rem !important;
+  border-radius: 1.5rem !important;
+  border-color: black !important;
+}
+
+.moorhen-accordion {
+  border-color: #f0f0f0;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.moorhen-recording-icon {
+  box-shadow: 0 0px 6px;
+  color : red;
+  margin-right: 0.5rem;
+    animation: blink 3s steps(5, start) infinite;
+    -webkit-animation: blink 1s steps(5, start) infinite;
+  }
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink {
+    to {
+      visibility: hidden;
+    }
 }

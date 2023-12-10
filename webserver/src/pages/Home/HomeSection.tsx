@@ -11,13 +11,13 @@ const Footer = lazy(() => import('../../layouts/Footer.tsx'));
 const BorderElement = lazy(() => import('../../layouts/BorderElement.tsx'));
 
 import { fetch_map, fetch_pdb } from "../../utils/fetch_from_pdb.ts"
- 
-import {TableDataEntry, HeaderProps} from "../../interfaces/types"
+
+import { TableDataEntry, HeaderProps } from "../../interfaces/types"
 
 
 export default function HomeSection() {
     const [coordinateFile, setCoordinateFile] = useState<File | null>(null);
-    const [reflectionFile, setReflectionFile] = useState<File| null>(null);
+    const [reflectionFile, setReflectionFile] = useState<File | null>(null);
     const [PDBCode, setPDBCode] = useState<string>("")
     const [fileContent, setFileContent] = useState<string | ArrayBuffer>("")
     const [mtzData, setMtzData] = useState<Uint8Array | null>(null)
@@ -56,8 +56,8 @@ export default function HomeSection() {
             table_data.push(table_entry)
 
         }
-        
-        if (x.size() == 0 ) { 
+
+        if (x.size() == 0) {
             setFailureText("There were no detected glycans in this model.")
             setFallBack(true)
         }
@@ -71,55 +71,60 @@ export default function HomeSection() {
     }
 
     useEffect(() => {
-        if (PDBCode != "") {
-            setLoadingText(`Fetching ${PDBCode.toUpperCase()} from the PDB`)
+        async function handle_load() {
+            if (PDBCode != "") {
+                setLoadingText(`Fetching ${PDBCode.toUpperCase()} from the PDB`)
 
-            fetch_map(PDBCode).then((response: ArrayBuffer) => {
-                let array = new Uint8Array(response)
-                setMtzData(array)
-            }).catch((e: any) => {
-                setLoadingText("MTZ not found, continuing...")
-            })
-
-            fetch_pdb(PDBCode).then((response: ArrayBuffer) => {
-                setFileContent(response)
-                setLoadingText("Validating Glycans...")
-
-                privateer_module().then((Module: any) => run_privateer(Module, response, PDBCode))
-
-            }).catch((e: any) => {
-                setFailureText("This PDB code could not be found")
-                setLoadingText("There were no detected glycans in this file.")
-                setFallBack(true)
-            })
-
-        } else {
-            privateer_module().then((Module: { [x: string]: (arg0: string, arg1: string, arg2: Uint8Array, arg3: boolean, arg4: boolean, arg5: boolean) => void; }) => {
-
-
-                var coordinateReader = new FileReader();
-                var reflectionReader = new FileReader();
-
-                coordinateReader.onload = () => { run_privateer(Module, coordinateReader.result, coordinateFile!.name) }
-
-                if (coordinateFile) {
-                    coordinateReader.readAsText(coordinateFile);
+                try {
+                    const map_response = await fetch_map(PDBCode)
+                    let map_array = new Uint8Array(map_response)
+                    setMtzData(map_array)
                 }
-
-                reflectionReader.onload = async () => {
-                    let map_data = new Uint8Array(reflectionReader.result);
-                    setMtzData(map_data)
-
-                    Module['FS_createDataFile']('/', "input.mtz", map_data, true, true, true)
+                catch(err) { 
+                    console.log("No map found, continuing...")
                 }
+                           
+                fetch_pdb(PDBCode).then((response: ArrayBuffer) => {
+                    setFileContent(response)
+                    setLoadingText("Validating Glycans...")
 
-                if (reflectionFile) {
-                    reflectionReader.readAsArrayBuffer(reflectionFile)
-                }
+                    privateer_module().then((Module: any) => run_privateer(Module, response, PDBCode))
 
-            }).catch((e: any) => console.log(e));
+                }).catch((e: any) => {
+                    setFailureText("This PDB code could not be found")
+                    setLoadingText("There were no detected glycans in this file.")
+                    setFallBack(true)
+                })
+
+            } else {
+                privateer_module().then((Module: { [x: string]: (arg0: string, arg1: string, arg2: Uint8Array, arg3: boolean, arg4: boolean, arg5: boolean) => void; }) => {
+
+
+                    var coordinateReader = new FileReader();
+                    var reflectionReader = new FileReader();
+
+                    coordinateReader.onload = () => { run_privateer(Module, coordinateReader.result, coordinateFile!.name) }
+
+                    if (coordinateFile) {
+                        coordinateReader.readAsText(coordinateFile);
+                    }
+
+                    reflectionReader.onload = async () => {
+                        let map_data = new Uint8Array(reflectionReader.result);
+                        setMtzData(map_data)
+
+                        Module['FS_createDataFile']('/', "input.mtz", map_data, true, true, true)
+                    }
+
+                    if (reflectionFile) {
+                        reflectionReader.readAsArrayBuffer(reflectionFile)
+                    }
+
+                }).catch((e: any) => console.log(e));
+            }
+
         }
-
+        handle_load()
 
     }, [submit])
 
