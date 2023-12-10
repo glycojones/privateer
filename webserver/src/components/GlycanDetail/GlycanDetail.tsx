@@ -28,7 +28,7 @@ function GlycanDetailSNFGBox(props: {
     const ref = useCallback((node: HTMLElement | null) => {
 
         if (node !== null) {
-            console.log(node)
+            // console.log(node)
             node.querySelector("svg").style.display='block'
             node.querySelector("svg").style.margin='auto'
 
