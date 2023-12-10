@@ -86,7 +86,9 @@ table tr:last-of-type td:last-of-type {
     })
 
     return (
-      // @ts-ignore
+      <div className='flex flex-col mx-auto px-16'>
+
+        {/* @ts-ignore */}
         <Styles $allowRowClick={props.allowRowClick}>
             <div className="container mx-auto" id='table'>
                 <table {...getTableProps()}>
@@ -121,5 +123,6 @@ table tr:last-of-type td:last-of-type {
                 </table>
             </div>
         </Styles>
+        </div>
     );
 };
