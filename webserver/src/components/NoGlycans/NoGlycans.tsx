@@ -7,7 +7,7 @@ export default function NoGlycans(props: NoGlycansProps) {
             className="flex flex-col m-12 px-12 pt-8 w-64 
             items-center text-center justify-between h-64 border-2
             transition-all border-gray-300 rounded-lg 
-            bg-gray-50 flex-grow-0">
+            bg-gray-50 flex-grow-0 mx-auto">
 
             <p>{props.text}</p>
 

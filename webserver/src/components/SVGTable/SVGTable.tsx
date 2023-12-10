@@ -78,17 +78,17 @@ table tr:last-of-type td:last-of-type {
 
 
     const handleRowClick = ((rowId: number) => {
+      console.log(rowId, "clicked")
       if (props.allowRowClick) { 
         props.setRowClicked(!props.rowClick)
         props.setRowID(rowId)
       }
     })
 
-
     return (
       // @ts-ignore
         <Styles $allowRowClick={props.allowRowClick}>
-            <div className="container" id='table'>
+            <div className="container mx-auto" id='table'>
                 <table {...getTableProps()}>
                     <thead>
                     {headerGroups.map((headerGroup) => (
