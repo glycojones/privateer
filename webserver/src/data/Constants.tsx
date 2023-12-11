@@ -16,16 +16,13 @@ export const COLUMNS = [
         Header: 'SNFG',
         accessor: 'svg',
         Cell: tableProps => {
-            let svg = tableProps.row.original.svg
-            // console.log(svg)
-            return (
-            // <img src={`data:image/svg+xml;base64,${btoa(tableProps.row.original.svg)}`} alt="" width="300"
-            //             height="300"/>
 
-                        <div className="mt-4 py-4 w-[30rem] flex justify-end" id='svgContainer' dangerouslySetInnerHTML={{
-                            __html: tableProps.row.original.svg
-                        }} />
-            )
+            return (
+            <div className="mt-4 py-4 flex justify-end w-24 sm:w-64 md:w-96" id='svgContainer' dangerouslySetInnerHTML={{
+                __html: tableProps.row.original.svg
+            }} />)
+            // return <img src={`data:image/svg+xml;base64,${btoa(tableProps.row.original.svg)}`} alt="" width="300"
+            //             height="300"/>
         }
     },
     {

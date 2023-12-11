@@ -3,7 +3,7 @@ import { useEffect, useState, lazy } from 'react';
 import { linkage_db, bin_db} from '../../data/Constants';
 const Plot = lazy(() => import('react-plotly.js'));
 
-export default function TorsionPlot({linkage_type, sorted_torsion_list}) {
+export default function TorsionPlot({linkage_type, sorted_torsion_list, size}) {
 
  
     const [trace, setTrace] = useState({})
@@ -83,7 +83,7 @@ export default function TorsionPlot({linkage_type, sorted_torsion_list}) {
         data={[
             trace, overlay 
         ]}
-        layout={ {width: 500, height: 500, title: linkage_type, 
+        layout={ {width: size, height: size, title: linkage_type, 
           
         yaxis: {
           title: { 

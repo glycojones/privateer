@@ -1,5 +1,5 @@
 import { lazy, useEffect, useRef, useState } from "react";
-import { addMolecule, addMap, MoorhenMolecule, MoorhenMap} from 'moorhen'
+import { addMolecule, addMap, setEnableAtomHovering, MoorhenMolecule, MoorhenMap} from 'moorhen'
 import { SNFGProps } from "../../interfaces/types"
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -54,10 +54,9 @@ export default function SNFG(props: SNFGProps) {
 
                 let center_string = sugar_chain + "/" + sugar_id + "(" + sugar_name + ")"
                 await newMolecule.centreOn(center_string, true)
-                newMolecule.setSymmetryRadius(5)
-                await newMolecule.drawSymmetry()
                 
-                dispatch(addMolecule(newMolecule))
+                dispatch( addMolecule(newMolecule))
+                dispatch( setEnableAtomHovering(false) )
 
                 const newMap = new MoorhenMap(commandCentre, glRef)
                 const mapMetadata = {
