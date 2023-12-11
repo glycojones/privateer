@@ -20,31 +20,20 @@ export default function DatabaseSection(props) {
     const [results, setResults] = useState<string>("")
     const [failure, setFailure] = useState<boolean>(false)
 
-    function handle_database_lookup(PDBCode) {
+    async function handle_database_lookup(PDBCode) {
         let pdb_code = PDBCode.toLowerCase()
         let middlefix = pdb_code.substring(1, 3)
 
-        let url = `https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/${middlefix}/${pdb_code}.json.gz`
+        let url = `https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/${middlefix}/${pdb_code}.json`
 
         try {
-            fetch(url, {
-                method: "GET"
-            }).then(response => {
-                let buffer = response.arrayBuffer()
-                buffer.then((bytes) => {
-                    var decompressedData = pako.inflate(bytes, { to: 'string' });
-                    var jsonString = decompressedData.toString('utf-8');
-                    var jsonObject = JSON.parse(jsonString);
-                    setResults(jsonObject)
-                }).catch(e => {
-                    setFallBack(true)
-                    setFailureText("Cannot be found in database")
-                })
-            }).catch(e => {
-                console.log(e)
-            })
+            const response = await fetch(url)
+            const data = await response.json()
+            setResults(data)
         } catch {
             console.log("not in db")
+            setFallBack(true)
+            setFailureText("This PDB is not in the database")
         }
     }
 
@@ -52,6 +41,7 @@ export default function DatabaseSection(props) {
         if (PDBCode != "") {
             setLoadingText(`Fetching ${PDBCode.toUpperCase()} from the database`)
             handle_database_lookup(PDBCode)
+            props.query.set("pdb", PDBCode)
         }
     }, [submit])
 

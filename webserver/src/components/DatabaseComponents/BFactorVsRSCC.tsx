@@ -28,9 +28,25 @@ function calculate_points(data) {
 export default function BFactorVsRSCC(props) {
 
     const [trace, setTrace] = useState({})
+    const [corrTrace, setCorrTrace] = useState({})
 
     useEffect(() => {
         const [x_axis, y_axis, text] = calculate_points(props)
+
+        const max_x = Math.max(...x_axis)+5
+        console.log(max_x)
+        setCorrTrace( { 
+            x: [0, max_x], 
+            y: [0.7, 0.7],
+            fill: "tozeroy", 
+            fillcolor: "rgba(173,181,189,0.3)",
+            fillopacity: 0.1,
+            marker: {
+                size: 1,
+                color: 'rgba(173,181,189,0.5)',
+                symbol: ['o']
+            },
+        })
 
         setTrace({
             x: x_axis,
@@ -53,11 +69,12 @@ export default function BFactorVsRSCC(props) {
             <span className='text-xl'>BFactor vs RSCC</span>
             <Plot
                 data={[
-                    trace
+                    trace, corrTrace
                 ]}
                 layout={{
+                    showlegend:false,
                     width: 500, height: 400, title: "",
-                    plot_bgcolor: "#D6D9E5",
+                    plot_bgcolor: "#FFFFF",
                     paper_bgcolor: "#D6D9E5",
                     margin: {
                         l: 50,
@@ -72,15 +89,16 @@ export default function BFactorVsRSCC(props) {
                         },
                         fixedrange: true,
                         range: [0, 1],
-                        showgrid: true
+                        showgrid: true,
+
                     },
                     xaxis: {
                         title: {
                             text: "B Factor"
                         },
                         fixedrange: true,
-                        range: [0, 100],
-                        showgrid: true
+                        // range: [0, 100],
+                        showgrid: true,
                     },
                 }}
             />
