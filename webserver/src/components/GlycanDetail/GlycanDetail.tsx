@@ -95,7 +95,7 @@ function GlycanDetailMoorhenView(props: {
     }
 
     return <div key={props.key} className="px-8 flex flex-col items-center">
-        <h3 className="text-left text-xl w-full">Visualise</h3>
+        <h3 className="text-left text-xl w-full">Visualise with <i>Moorhen</i> <a href="https://moorhen.org" title="Go to Moorhen.org"><img className="inline h-8" src="./moorhen_logo.png"></img></a></h3>
 
         <label htmlFor="contour-range-text" className="block mb-2 text-sm font-medium text-gray-909">Map
             Contour</label>
