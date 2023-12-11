@@ -134,7 +134,7 @@ export default function SNFG(props: SNFGProps) {
         async function move_view() {
             if (!cootInitialized) { console.log("coot not loaded") 
             return }
-            console.log(molecules)
+            // console.log(molecules)
 
             // setYScrollPosition(window.scrollY)
             let id = props.tableData[rowID].id
