@@ -10,7 +10,6 @@ import {
   Link,
   useLocation
 } from "react-router-dom";
-import APIHandler from './api_components/APIHandler'
 
 function useQuery() {
   const { search } = useLocation();
