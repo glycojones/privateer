@@ -57,7 +57,7 @@ function TorsionMultiPlotTabs({torsions, setTab}) {
     )
 }
 
-export default function TorsionMultiPlot({torsions, tab, setTab}) { 
+export default function TorsionMultiPlot({torsions, tab, setTab, size}) { 
 
 
     const [linkage_array, sorted_linkage_array] = sortTorsions(torsions)
@@ -74,7 +74,7 @@ export default function TorsionMultiPlot({torsions, tab, setTab}) {
                 </ul>
             </div>
 
-            <TorsionPlot linkage_type={linkage_array[tab]} sorted_torsion_list={sorted_linkage_array}/>
+            <TorsionPlot linkage_type={linkage_array[tab]} sorted_torsion_list={sorted_linkage_array} size={size}/>
         </div>
     )
 }

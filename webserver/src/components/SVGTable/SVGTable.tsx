@@ -94,7 +94,7 @@ table tr:last-of-type td:last-of-type {
                 <table {...getTableProps()}>
                     <thead>
                     {headerGroups.map((headerGroup) => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
+                        <tr {...headerGroup.getHeaderGroupProps({style: {width: '200px'}})}>
                             {headerGroup.headers.map((column) => (
                                 <th {...column.getHeaderProps()}>
                                     {column.render('Header')}
