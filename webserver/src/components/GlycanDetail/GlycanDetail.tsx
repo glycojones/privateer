@@ -97,6 +97,9 @@ function GlycanDetailMoorhenView(props: {
     return <div key={props.key} className="px-8 flex flex-col items-center">
         <h3 className="text-left text-xl w-full">Visualise with <i>Moorhen</i> <a href="https://moorhen.org" title="Go to Moorhen.org"><img className="inline h-8" src="./moorhen_logo.png"></img></a></h3>
 
+        <div className="mx-auto">
+            <MoorhenContainer {...props.moorhenProps} setMoorhenDimensions={moorhenDimensionCallback} viewOnly={true} />
+        </div>
         <label htmlFor="contour-range-text" className="block mb-2 text-sm font-medium text-gray-909">Map
             Contour</label>
         <input id="contour-range" type="range" min="0" max="1" step="0.05" defaultValue="0.2"
@@ -117,9 +120,6 @@ function GlycanDetailMoorhenView(props: {
             </label>
         </div>
 
-        <div className="mx-auto">
-            <MoorhenContainer {...props.moorhenProps} setMoorhenDimensions={moorhenDimensionCallback} viewOnly={true} />
-        </div>
     </div>;
 }
 
@@ -174,28 +174,28 @@ export default function GlycanDetail(props: GlycanDetailProps) {
     const [height, setHeight] = useState(500);
     const [torsionTab, setTorsionTab] = useState(0)
     const layout = [
-        { i: "info", x: 0, y: 0, w: 1, h: 1, static: true, isResizable: false },
+        { i: "info", x: 0, y: 0, w: 1, h: 1, isResizable: false },
         { i: "snfg", x: 1, y: 2, w: 1, h: 1, isResizable: false },
         { i: "moorhen", x: 0, y: 2, w: 1, h: 2, isResizable: false },
         { i: "torsions", x: 1, y: 2, w: 1, h: 2, isResizable: false }
     ];
 
     const xl_layout = [
-        { i: "info", x: 0, y: 0, w: 1, h: 0.5, static: true, isResizable: false },
+        { i: "info", x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
         { i: "snfg", x: 1, y: 0, w: 1, h: 1, isResizable: false },
         { i: "moorhen", x: 2, y: 0, w: 1, h: 1.75, isResizable: false },
         { i: "torsions", x: 3, y: 0, w: 1, h: 1.75, isResizable: false }
     ]
 
     const md_layout = [
-        { i: "info", x: 0, y: 0, w: 1, h: 1, static: true, isResizable: false },
+        { i: "info", x: 0, y: 0, w: 1, h: 1, isResizable: false },
         { i: "snfg", x: 1, y: 0, w: 1, h: 1, isResizable: false },
         { i: "moorhen", x: 0, y: 2, w: 1, h: 2, isResizable: false },
         { i: "torsions", x: 1, y: 1, w: 1, h: 2, isResizable: false }
     ]
 
     const sm_layout = [
-        { i: "info", x: 0, y: 0, w: 1, h: 0.5, static: true, isResizable: false },
+        { i: "info", x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
         { i: "snfg", x: 0, y: 2, w: 1, h: 1, isResizable: false },
         { i: "moorhen", x: 0, y: 4, w: 1, h: 1.75, isResizable: false },
         { i: "torsions", x: 0, y: 6, w: 1, h: 1.75, isResizable: false }
