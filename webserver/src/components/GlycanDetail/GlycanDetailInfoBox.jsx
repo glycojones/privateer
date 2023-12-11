@@ -7,7 +7,7 @@ export default function GlycanDetailInfoBox({key, row }) {
             <h3 className="text-left text-xl">Validation Report</h3>
             <div className="flex  justify-between mt-3">
                 <h4>Glycan ID: <b>{row.id}</b></h4>
-                <h4>Glytoucan ID: <b>{row.glytoucan_id}</b></h4>
+                <h4>GlyTouCan ID: <a href={`https://glytoucan.org/Structures/Glycans/${row.glytoucan_id}`}><b>{row.glytoucan_id}</b></a></h4>
             </div>
             <div className="flex flex-col mt-3">
                 <h4>Number of conformation issues: <b>{row.conformation_err}</b></h4>
