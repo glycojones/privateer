@@ -180,6 +180,13 @@ export default function GlycanDetail(props: GlycanDetailProps) {
         { i: "torsions", x: 1, y: 2, w: 1, h: 2, isResizable: false }
     ];
 
+    const xl_layout = [
+        { i: "info", x: 0, y: 0, w: 1, h: 0.5, static: true, isResizable: false },
+        { i: "snfg", x: 1, y: 0, w: 1, h: 1, isResizable: false },
+        { i: "moorhen", x: 2, y: 0, w: 1, h: 1.75, isResizable: false },
+        { i: "torsions", x: 3, y: 0, w: 1, h: 1.75, isResizable: false }
+    ]
+
     const md_layout = [
         { i: "info", x: 0, y: 0, w: 1, h: 1, static: true, isResizable: false },
         { i: "snfg", x: 1, y: 0, w: 1, h: 1, isResizable: false },
@@ -196,8 +203,8 @@ export default function GlycanDetail(props: GlycanDetailProps) {
 
     const getLayouts = () => {
         const savedLayouts = localStorage.getItem("grid-layout");
-        return { lg: layout, md: md_layout, sm: sm_layout }
-        return savedLayouts ? JSON.parse(savedLayouts) : { lg: layout, md: md_layout };
+        // return { xl: xl_layout, lg: layout, md: md_layout, sm: sm_layout };
+        return savedLayouts ? JSON.parse(savedLayouts) : { xl: xl_layout, lg: layout, md: md_layout, sm: sm_layout };
     };
     const handleLayoutChange = (layout, layouts) => {
         localStorage.setItem("grid-layout", JSON.stringify(layouts));
@@ -224,8 +231,8 @@ export default function GlycanDetail(props: GlycanDetailProps) {
             <ResponsiveGridLayout
                 className="layout"
                 layouts={getLayouts()}
-                breakpoints={{ lg: 1700, sm: 0 }}
-                cols={{ lg: 2, md: 2, sm: 1 }}
+                breakpoints={{ xl: 3000, lg: 1700, sm: 0 }}
+                cols={{ xl: 4, lg: 2, md: 2, sm: 1 }}
                 rowHeight={400}
                 width={1000}
                 containerPadding={8}
