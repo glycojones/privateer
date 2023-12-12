@@ -25,7 +25,7 @@ export default function DatabaseSection(props) {
         let middlefix = pdb_code.substring(1, 3)
 
         let url = `https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/${middlefix}/${pdb_code}.json`
-
+        
         try {
             const response = await fetch(url)
             const data = await response.json()
@@ -47,20 +47,23 @@ export default function DatabaseSection(props) {
     }, [submit])
 
     useEffect(() => {
-        console.log(props, props.query.get("pdb"))
-        if (props.query.get("pdb") != null) {
-            handle_database_lookup(props.query.get("pdb"))
-        }
-    }, [])
-
-
-    useEffect(() => {
         setSubmit(false)
         setFallBack(false)
         setResetApp(false)
         setPDBCode("")
         setResults("")
     }, [resetApp])
+
+
+    useEffect(() => {
+        if (props.query.get("pdb") != null) {
+            handle_database_lookup(props.query.get("pdb"))
+            setPDBCode(props.query.get("pdb"))
+        }
+    }, [])
+
+
+    
 
     const main_props: DatabaseHeaderProps = {
         resetApp: resetApp,

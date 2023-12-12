@@ -28,7 +28,7 @@ function calculate_points(data) {
                     y_axis.push(sugars[j].Theta)
                     text.push(sugars[j]["Sugar ID"])
                 }
-                console.log(sugars[j])
+                // console.log(sugars[j])
                
             }
         }
