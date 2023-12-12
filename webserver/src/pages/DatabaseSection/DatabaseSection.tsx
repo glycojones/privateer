@@ -52,6 +52,7 @@ export default function DatabaseSection(props) {
         setResetApp(false)
         setPDBCode("")
         setResults("")
+        props.setSearchParams({})
     }, [resetApp])
 
 
