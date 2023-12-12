@@ -3,6 +3,35 @@ export const GENERAL_CITATION = "https://doi.org/10.1038/nsmb.3115"
 export const TORSIONS_CITATION = "http://dx.doi.org/10.1107/S2059798323003510"
 export const GLYCOMICS_CITATION = "https://doi.org/10.3762/bjoc.16.204"
 
+export const GlycanDetailLayout = {
+    xl: [
+        { i: "info", x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
+        { i: "snfg", x: 1, y: 0, w: 1, h: 1, isResizable: false },
+        { i: "moorhen", x: 2, y: 0, w: 1, h: 2, isResizable: false },
+        { i: "torsions", x: 3, y: 0, w: 1, h: 1.75, isResizable: false }
+    ], 
+    lg: [
+        { i: "info", x: 0, y: 0, w: 1, h: 1, isResizable: false },
+        { i: "snfg", x: 1, y: 2, w: 1, h: 1, isResizable: false },
+        { i: "moorhen", x: 0, y: 2, w: 1, h: 2, isResizable: false },
+        { i: "torsions", x: 1, y: 2, w: 1, h: 2, isResizable: false }
+    ], 
+    md: [
+        { i: "info", x: 0, y: 0, w: 1, h: 1, isResizable: false },
+        { i: "snfg", x: 1, y: 0, w: 1, h: 1, isResizable: false },
+        { i: "moorhen", x: 0, y: 2, w: 1, h: 2, isResizable: false },
+        { i: "torsions", x: 1, y: 1, w: 1, h: 2, isResizable: false }
+    ], 
+    sm: [
+        { i: "info", x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
+        { i: "snfg", x: 0, y: 2, w: 1, h: 1, isResizable: false },
+        { i: "moorhen", x: 0, y: 4, w: 1, h: 2, isResizable: false },
+        { i: "torsions", x: 0, y: 6, w: 1, h: 1.75, isResizable: false }
+    ]
+
+
+}
+
 export const COLUMNS = [
     {
         Header: 'Chain',
