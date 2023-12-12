@@ -65,7 +65,8 @@ function GlycanDetailMoorhenView(props: {
     onChange: (e) => Promise<void>,
     onSymmetryChange: (e) => any,
     moorhenProps: any,
-    moorhenDimensions: () => [number, number]
+    moorhenDimensions: () => [number, number],
+    mapContour: number
 }) {
 
     const [size, setSize] = useState(Math.min(800, 0.9 * window.screen.width))
@@ -100,10 +101,10 @@ function GlycanDetailMoorhenView(props: {
         <div className="mx-auto">
             <MoorhenContainer {...props.moorhenProps} setMoorhenDimensions={moorhenDimensionCallback} viewOnly={true} />
         </div>
-        <label htmlFor="contour-range-text" className="block mb-2 text-sm font-medium text-gray-909">Map
-            Contour</label>
-        <input id="contour-range" type="range" min="0" max="1" step="0.05" defaultValue="0.2"
-            className="w-36 mb-2 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+        <label htmlFor="contour-range-text" className="block mt-2 text-sm font-medium text-gray-909">Map
+            Contour - {props.mapContour} </label>
+        <input id="contour-range" type="range" min="0" max="2" step="0.05" defaultValue="0.2"
+            className="w-36 mt-2 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
             onChange={props.onChange} onMouseDown={(e) => { e.stopPropagation() }}
             onTouchStart={(e) => { e.stopPropagation() }}
         />
@@ -151,9 +152,11 @@ function GlycanDetailTorsionPlot(props: {
 
 export default function GlycanDetail(props: GlycanDetailProps) {
     const molecules = useSelector((state: any) => state.molecules)
+    const [mapContour, setMapContour] = useState(0.3)
 
     async function handleContourChange(e) {
         props.map.contourLevel = Number(e.target.value)
+        setMapContour(Number(e.target.value))
         await props.map.doCootContour(
             ...props.map.glRef.current.origin.map(coord => -coord),
             props.map.mapRadius,
@@ -162,7 +165,6 @@ export default function GlycanDetail(props: GlycanDetailProps) {
     }
 
     async function handleToggleSymmetry(e) {
-        console.log(e)
         const currentMolecule = molecules.find(molecule => molecule.name == "mol-1")
         if (currentMolecule) {
             console.log(currentMolecule)
@@ -197,18 +199,19 @@ export default function GlycanDetail(props: GlycanDetailProps) {
     const sm_layout = [
         { i: "info", x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
         { i: "snfg", x: 0, y: 2, w: 1, h: 1, isResizable: false },
-        { i: "moorhen", x: 0, y: 4, w: 1, h: 1.75, isResizable: false },
+        { i: "moorhen", x: 0, y: 4, w: 1, h: 2, isResizable: false },
         { i: "torsions", x: 0, y: 6, w: 1, h: 1.75, isResizable: false }
     ]
 
     const getLayouts = () => {
         const savedLayouts = localStorage.getItem("grid-layout");
-       // return { xl: xl_layout, lg: layout, md: md_layout, sm: sm_layout };
-        return savedLayouts ? JSON.parse(savedLayouts) : { xl: xl_layout, lg: layout, md: md_layout, sm: sm_layout };
+       return { xl: xl_layout, lg: layout, md: md_layout, sm: sm_layout };
+        // return savedLayouts ? JSON.parse(savedLayouts) : { xl: xl_layout, lg: layout, md: md_layout, sm: sm_layout };
     };
     const handleLayoutChange = (layout, layouts) => {
         localStorage.setItem("grid-layout", JSON.stringify(layouts));
     };
+
 
     return (
         // <div className="flex flex-wrap gap-2 justify-center items-center"
@@ -247,7 +250,7 @@ export default function GlycanDetail(props: GlycanDetailProps) {
                     <GlycanDetailSNFGBox key={"bb"} tableDataEntries={props.tableData} rowID={props.rowID} />
                 </div>
                 <div key="moorhen">
-                    <GlycanDetailMoorhenView key={"cc"} onChange={handleContourChange} onSymmetryChange={handleToggleSymmetry} moorhenProps={props.moorhenProps}
+                    <GlycanDetailMoorhenView key={"cc"} onChange={handleContourChange} onSymmetryChange={handleToggleSymmetry} moorhenProps={props.moorhenProps} mapContour={mapContour}
                         moorhenDimensions={() => {
                             return [width, height];
                         }} />
