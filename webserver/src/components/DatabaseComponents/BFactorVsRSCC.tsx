@@ -34,7 +34,7 @@ export default function BFactorVsRSCC(props) {
         const [x_axis, y_axis, text] = calculate_points(props)
 
         const max_x = Math.max(...x_axis)+5
-        console.log(max_x)
+
         setCorrTrace( { 
             x: [0, max_x], 
             y: [0.7, 0.7],
