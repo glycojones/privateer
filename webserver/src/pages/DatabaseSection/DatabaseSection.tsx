@@ -42,6 +42,7 @@ export default function DatabaseSection(props) {
             setLoadingText(`Fetching ${PDBCode.toUpperCase()} from the database`)
             handle_database_lookup(PDBCode)
             props.query.set("pdb", PDBCode)
+            props.setSearchParams({["pdb"]:PDBCode})
         }
     }, [submit])
 
