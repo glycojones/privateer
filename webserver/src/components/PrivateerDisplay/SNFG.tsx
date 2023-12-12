@@ -1,10 +1,11 @@
 import { lazy, useEffect, useRef, useState } from "react";
-import { addMolecule, addMap, setEnableAtomHovering, MoorhenMolecule, MoorhenMap} from 'moorhen'
+import { addMolecule, addMap, setEnableAtomHovering, MoorhenMolecule, MoorhenMap } from 'moorhen'
 import { SNFGProps } from "../../interfaces/types"
 import { useSelector, useDispatch } from 'react-redux'
+import Loading from "../Loading/Loading.tsx";
 
 const SVGTable = lazy(() => import('../SVGTable/SVGTable.tsx'));
-const GlycanDetail = lazy(() => import('../GlycanDetail/GlycanDetail.tsx'));
+import GlycanDetail from '../GlycanDetail/GlycanDetail.tsx';
 
 export default function SNFG(props: SNFGProps) {
     const [rowClicked, setRowClicked] = useState(false)
@@ -38,6 +39,7 @@ export default function SNFG(props: SNFGProps) {
 
     const [yScrollPosition, setYScrollPosition] = useState(0)
 
+
     useEffect(() => {
         async function load_map_and_model() {
             if (cootInitialized && !dataLoaded) {
@@ -54,33 +56,33 @@ export default function SNFG(props: SNFGProps) {
 
                 let center_string = sugar_chain + "/" + sugar_id + "(" + sugar_name + ")"
                 await newMolecule.centreOn(center_string, true)
-                
-                dispatch( addMolecule(newMolecule))
-                dispatch( setEnableAtomHovering(false) )
+
+                dispatch(addMolecule(newMolecule))
+                dispatch(setEnableAtomHovering(false))
 
                 const newMap = new MoorhenMap(commandCentre, glRef)
                 const mapMetadata = {
-                        F: "FWT",
-                        PHI: "PHWT",
-                        Fobs: "FP",
-                        SigFobs: "SIGFP",
-                        FreeR: "FREE",
-                        isDifference: false,
-                        useWeight: false,
-                        calcStructFact: true,
-                    }
-                    if (props.PDBCode == "") { 
-                        await newMap.loadToCootFromMtzData(props.mtzData, "map-1", mapMetadata)
-                    }
-                    else { 
-                        await newMap.loadToCootFromMapData(props.mtzData, "map-1", false)
-    
-                    }
-                    newMap.suggestedContourLevel = 0.3
-                    dispatch( addMap(newMap) )
+                    F: "FWT",
+                    PHI: "PHWT",
+                    Fobs: "FP",
+                    SigFobs: "SIGFP",
+                    FreeR: "FREE",
+                    isDifference: false,
+                    useWeight: false,
+                    calcStructFact: true,
+                }
+                if (props.PDBCode == "") {
+                    await newMap.loadToCootFromMtzData(props.mtzData, "map-1", mapMetadata)
+                }
+                else {
+                    await newMap.loadToCootFromMapData(props.mtzData, "map-1", false)
 
-                    setMap(newMap)
-                    setDataLoaded(true)
+                }
+                newMap.suggestedContourLevel = 0.3
+                dispatch(addMap(newMap))
+
+                setMap(newMap)
+                setDataLoaded(true)
 
                 // let newMolecule = new MoorhenMolecule(controls.current.commandCentre, controls.current.glRef, controls.current.monomerLibrary)
                 // newMolecule.loadToCootFromString(props.fileContent, 'mol-1').then(() => {
@@ -132,8 +134,10 @@ export default function SNFG(props: SNFGProps) {
 
     useEffect(() => {
         async function move_view() {
-            if (!cootInitialized) { console.log("coot not loaded") 
-            return }
+            if (!cootInitialized) {
+                console.log("coot not loaded")
+                return
+            }
             // console.log(molecules)
 
             // setYScrollPosition(window.scrollY)
@@ -172,21 +176,21 @@ export default function SNFG(props: SNFGProps) {
     }
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col" >
+            {dataLoaded ?
             <div style={{ display: (hideMoorhen ? 'block' : 'none') }} id="tableContainer">
                 <div className="flex flex-col ">
                     <h2 className="my-4 text-lg sm:text-2xl text-center sm:text-left mx-auto">Detected {props.tableData.length} Glycans
                         in {props.filename}</h2>
                     <SVGTable {...svgTableProps} />
                 </div>
-
             </div>
+            : <Loading loadingText="Setting up Moorhen..."></Loading>}
 
             <div style={{ display: (hideMoorhen ? 'none' : 'block') }} id="tableContainer">
-        <GlycanDetail {...glycanDetailProps} />
+                <GlycanDetail {...glycanDetailProps} />
             </div>
-
-        </div>
+        </div >
     )
 
 }
