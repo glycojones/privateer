@@ -183,7 +183,7 @@ export default function GlycanDetail(props: GlycanDetailProps) {
     const xl_layout = [
         { i: "info", x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
         { i: "snfg", x: 1, y: 0, w: 1, h: 1, isResizable: false },
-        { i: "moorhen", x: 2, y: 0, w: 1, h: 1.75, isResizable: false },
+        { i: "moorhen", x: 2, y: 0, w: 1, h: 2, isResizable: false },
         { i: "torsions", x: 3, y: 0, w: 1, h: 1.75, isResizable: false }
     ]
 
@@ -203,7 +203,7 @@ export default function GlycanDetail(props: GlycanDetailProps) {
 
     const getLayouts = () => {
         const savedLayouts = localStorage.getItem("grid-layout");
-        // return { xl: xl_layout, lg: layout, md: md_layout, sm: sm_layout };
+       // return { xl: xl_layout, lg: layout, md: md_layout, sm: sm_layout };
         return savedLayouts ? JSON.parse(savedLayouts) : { xl: xl_layout, lg: layout, md: md_layout, sm: sm_layout };
     };
     const handleLayoutChange = (layout, layouts) => {
