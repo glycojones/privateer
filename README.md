@@ -8,6 +8,16 @@ Privateer is a tool for carbohydrate structure validation, re-refinement and gra
 
 This web server allows for online validation of carbohydrate-containing macromolecular structures in PDB or mmCIF format. All processing happens clientside using C++ compiled to WebAssembly using emscripten. 
 
+## **Frontend Development Instructions** ##
+To just work on the front end of the Privateer web app do the following:
+- Clone this repository
+- `cd webapp`
+- `npm i`
+- `npm run dev`
+
+Before ANY commit to this repository the following code must be run:
+`npm run prettier`
+
 ## **Compilation instructions**
 
 **Requirements** 
@@ -64,6 +74,3 @@ To compile on Ubuntu with precompiled dependency libraries, use the following co
   emcmake cmake . -D MODE=TESTING
   emmake make -j 
 ```
-
-## Releases
-- V0.1 16.8.23 - Full UI Redesign with ID correction - Initial Release
