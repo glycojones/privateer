@@ -41,7 +41,7 @@ export default function GlycanDetail(props: GlycanDetailProps) {
 
     const getLayouts = () => {
         const savedLayouts = localStorage.getItem("grid-layout");
-    //    return GlycanDetailLayout
+       return GlycanDetailLayout
         return savedLayouts ? JSON.parse(savedLayouts) : GlycanDetailLayout;
     };
     const handleLayoutChange = (layout, layouts) => {

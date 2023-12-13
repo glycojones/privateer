@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "webapp" ]
     paths: 
-      - webserver/**
+      - webapp/**
 
 
 jobs:
@@ -33,6 +33,6 @@ jobs:
           password: ${{ secrets.ftp_password }}
           protocol: ftps
           port: 21
-          local-dir: webserver/public_html/
+          local-dir: webapp/public_html/
           server-dir: ${{ secrets.ftp_server_dir }}/
           
