@@ -17,6 +17,15 @@ To just work on the front end of the Privateer web app do the following:
 
 Before ANY commit to this repository the following code must be run:
 `npm run prettier`
+AND the following tests must be performed: 
+- Upload PDB file only
+- Upload PDB file and MTZ file
+- Fetch 1234 from the PDB
+- Fetch 5FJI from the PDB
+- Click on table
+- Drag GlycanDetailView around
+- Check Moorhen loads map and model
+
 
 ## **Compilation instructions**
 
