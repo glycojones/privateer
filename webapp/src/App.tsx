@@ -31,7 +31,7 @@ function App() {
               />
             }
           />
-          <Route path="/api" element={<APIForwarding query={query} />} />
+          {/*<Route path="/api" element={<APIForwarding query={query} />} />*/}
         </Routes>
       </div>
     </Suspense>
