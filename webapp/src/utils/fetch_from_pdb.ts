@@ -1,58 +1,56 @@
+export async function fetchPDB(PDBCode: string): Promise<string | void> {
+  if (PDBCode == null) {
+    return;
+  }
+  console.log("Fetching PDB ", PDBCode);
+  const pdbURL = `https://files.rcsb.org/download/${PDBCode.toUpperCase()}.pdb`;
 
-export async function fetch_pdb(PDBCode: string) {
-    if (PDBCode == null) { return }
-    console.log("Fetching PDB ", PDBCode)
-    let pdb_url = `https://files.rcsb.org/download/${PDBCode.toUpperCase()}.pdb`
-
-    let file = fetch(pdb_url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network error');
-            }
-            return response.text()
-        })
-        .then(file => {
-            return Promise.resolve(file)
-        })
-        .catch((e) => {
-            throw new Error("PDB Not Found")
-        })
-    return file
+  const file = fetch(pdbURL)
+    .then(async (response) => {
+      if (!response.ok) {
+        throw new Error("Network error");
+      }
+      return await response.text();
+    })
+    .then(async (file) => {
+      return file;
+    })
+    .catch((e) => {
+      throw new Error("PDB Not Found");
+    });
+  return await file;
 }
 
-export async function fetch_map(PDBCode: string) {
-    if (PDBCode == null) { return }
-    console.log("Fetching MTZ ", PDBCode)
-    let mtz_url = `https://www.ebi.ac.uk/pdbe/entry-files/${PDBCode.toLowerCase()}.ccp4`
+export async function fetchMap(PDBCode: string): Promise<ArrayBuffer | void> {
+  if (PDBCode == null) {
+    await Promise.resolve();
+    return;
+  }
+  console.log("Fetching MTZ ", PDBCode);
+  const mtzURL = `https://www.ebi.ac.uk/pdbe/entry-files/${PDBCode.toLowerCase()}.ccp4`;
 
-    try {
-        let controller = new AbortController();
-        let timeId = setTimeout(() => {
-            controller.abort()
-        }, 60000)
+  try {
+    const controller = new AbortController();
+    const timeId = setTimeout(() => {
+      controller.abort();
+    }, 60000);
 
-        let file = fetch(mtz_url, { signal: controller.signal })
-            .then(response => {
-                clearTimeout(timeId)
+    const file = fetch(mtzURL, { signal: controller.signal })
+      .then(async (response) => {
+        clearTimeout(timeId);
 
-                if (!response.ok) {
-                    throw new Error('Network error');
-                }
-                return response.arrayBuffer()
-            })
-            .then(file => {
-                return Promise.resolve(file)
-            })
-            .catch((e) => {
-                return Promise.reject("Map not found")
-                throw new Error("Map Not Found")
-                
-            })
-        return file
-
-    }
-    catch {
-        return
-    }
-
+        if (!response.ok) {
+          throw new Error("Network error");
+        }
+        return await response.arrayBuffer();
+      })
+      .then(async (file) => {
+        return file;
+      })
+      .catch(async (e) => {
+        // throw 'Map not found'
+        throw new Error("Map Not Found");
+      });
+    return await file;
+  } catch {}
 }

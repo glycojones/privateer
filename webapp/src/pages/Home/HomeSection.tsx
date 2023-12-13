@@ -1,169 +1,222 @@
-import { lazy, useEffect, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
+import { Header } from "../../layouts/Header";
+import { Information } from "../../components/Information/Information.tsx";
 
-import { Header } from '../../layouts/Header';
-import { Information } from '../../components/Information/Information.tsx';
+// @ts-expect-error: Emscripten Generated JS does not conform to typescript conventions
+import privateer_module from "../../wasm/privateer.js";
+import loadGlytoucan from "../../utils/loadGlytoucan.ts";
 
-// @ts-ignore
-import privateer_module from "../../wasm/privateer.js"
-import loadGlytoucan from "../../utils/loadGlytoucan.ts"
+import { fetchMap, fetchPDB } from "../../utils/fetch_from_pdb.ts";
 
-const Footer = lazy(() => import('../../layouts/Footer.tsx'));
-const BorderElement = lazy(() => import('../../layouts/BorderElement.tsx'));
+import { type HeaderProps, type TableDataEntry } from "../../interfaces/types";
 
-import { fetch_map, fetch_pdb } from "../../utils/fetch_from_pdb.ts"
+const Footer = lazy(async () => await import("../../layouts/Footer.tsx"));
+const BorderElement = lazy(
+  async () => await import("../../layouts/BorderElement.tsx"),
+);
 
-import { TableDataEntry, HeaderProps } from "../../interfaces/types"
+export default function HomeSection(): Element {
+  const [coordinateFile, setCoordinateFile] = useState<File | null>(null);
+  const [reflectionFile, setReflectionFile] = useState<File | null>(null);
+  const [PDBCode, setPDBCode] = useState<string>("");
+  const [fileContent, setFileContent] = useState<string | ArrayBuffer>("");
+  const [mtzData, setMtzData] = useState<Uint8Array | null>(null);
+  const [submit, setSubmit] = useState<boolean>(false);
+  const [tableData, setTableData] = useState<TableDataEntry[] | null>(null);
+  const [loadingText, setLoadingText] = useState<string>(
+    "Validating Glycans...",
+  );
+  const [resetApp, setResetApp] = useState<boolean>(false);
+  const [fallback, setFallBack] = useState<boolean>(false);
+  const [failureText, setFailureText] = useState<string>("");
 
+  function sanitizeID(id: string): string {
+    const regex = /: *32/g;
+    return id.replace(regex, "");
+  }
 
-export default function HomeSection() {
-    const [coordinateFile, setCoordinateFile] = useState<File | null>(null);
-    const [reflectionFile, setReflectionFile] = useState<File | null>(null);
-    const [PDBCode, setPDBCode] = useState<string>("")
-    const [fileContent, setFileContent] = useState<string | ArrayBuffer>("")
-    const [mtzData, setMtzData] = useState<Uint8Array | null>(null)
-    const [submit, setSubmit] = useState<boolean>(false);
-    const [tableData, setTableData] = useState<Array<TableDataEntry> | null>(null);
-    const [loadingText, setLoadingText] = useState<string>("Validating Glycans...");
-    const [resetApp, setResetApp] = useState<boolean>(false)
-    const [fallback, setFallBack] = useState<boolean>(false)
-    const [failureText, setFailureText] = useState<string>("")
+  async function runPrivateer(
+    Module: any,
+    fileContent: string | ArrayBuffer | null,
+    name: string | null,
+  ): Promise<void> {
+    if (fileContent === null || name === null) {
+      await Promise.resolve();
+      return;
+    }
+    setFileContent(fileContent);
 
-    let sanitize_id = (id: string) => {
-        const regex = /: *32/g;
-        const new_id = id.replace(regex, "")
-        return new_id
+    const x = Module.read_structure_to_table(fileContent, name);
+
+    const tableData: TableDataEntry[] = [];
+    for (let i = 0; i < x.size(); i++) {
+      const tableEntry = x.get(i);
+
+      tableEntry.id = sanitizeID(tableEntry.id);
+
+      const collectedTorsions: any[] = [];
+      for (let j = 0; j < tableEntry.torsions.size(); j++) {
+        collectedTorsions.push(tableEntry.torsions.get(j));
+      }
+      tableEntry.torsions = collectedTorsions;
+      const regex = /: *32/g;
+      tableEntry.svg = tableEntry.svg.replace(regex, "");
+      tableData.push(tableEntry as TableDataEntry);
     }
 
-    async function run_privateer(Module: any, fileContent: string | ArrayBuffer, name: string) {
-
-        setFileContent(fileContent)
-
-        let x = Module.read_structure_to_table(fileContent, name)
-
-        let table_data = [];
-        for (var i = 0; i < x.size(); i++) {
-            let table_entry = x.get(i)
-
-            table_entry.id = sanitize_id(table_entry.id)
-
-            let collected_torsions = []
-            for (var j = 0; j < table_entry.torsions.size(); j++) {
-                collected_torsions.push(table_entry.torsions.get(j));
-            }
-            table_entry.torsions = collected_torsions
-            const regex = /: *32/g;
-            table_entry.svg = table_entry.svg.replace(regex, "")
-            table_data.push(table_entry)
-
-        }
-
-        if (x.size() == 0) {
-            setFailureText("There were no detected glycans in this model.")
-            setFallBack(true)
-        }
-
-        // Get Glyconnect ID from WURCS
-        setLoadingText("Querying Glytoucan...")
-        await loadGlytoucan(table_data)
-
-
-        setTableData(table_data);
+    if (x.size() === 0) {
+      setFailureText("There were no detected glycans in this model.");
+      setFallBack(true);
     }
 
-    useEffect(() => {
-        async function handle_load() {
-            if (PDBCode != "") {
-                setLoadingText(`Fetching ${PDBCode.toUpperCase()} from the PDB`)
+    // Get Glyconnect ID from WURCS
+    setLoadingText("Querying Glytoucan...");
+    await loadGlytoucan(tableData);
 
-                try {
-                    const map_response = await fetch_map(PDBCode)
-                    let map_array = new Uint8Array(map_response)
-                    setMtzData(map_array)
-                }
-                catch(err) { 
-                    console.log("No map found, continuing...")
-                }
-                           
-                fetch_pdb(PDBCode).then((response: ArrayBuffer) => {
-                    setFileContent(response)
-                    setLoadingText("Validating Glycans...")
+    setTableData(tableData);
+  }
 
-                    privateer_module().then((Module: any) => run_privateer(Module, response, PDBCode))
+  useEffect(() => {
+    async function handleLoad(): Promise<void> {
+      if (PDBCode !== "") {
+        setLoadingText(`Fetching ${PDBCode.toUpperCase()} from the PDB`);
 
-                }).catch((e: any) => {
-                    setFailureText("This PDB code could not be found")
-                    setLoadingText("There were no detected glycans in this file.")
-                    setFallBack(true)
-                })
-
-            } else {
-                privateer_module().then((Module: { [x: string]: (arg0: string, arg1: string, arg2: Uint8Array, arg3: boolean, arg4: boolean, arg5: boolean) => void; }) => {
-
-
-                    var coordinateReader = new FileReader();
-                    var reflectionReader = new FileReader();
-
-                    coordinateReader.onload = () => { run_privateer(Module, coordinateReader.result, coordinateFile!.name) }
-
-                    if (coordinateFile) {
-                        coordinateReader.readAsText(coordinateFile);
-                    }
-
-                    reflectionReader.onload = async () => {
-                        let map_data = new Uint8Array(reflectionReader.result);
-                        setMtzData(map_data)
-
-                        Module['FS_createDataFile']('/', "input.mtz", map_data, true, true, true)
-                    }
-
-                    if (reflectionFile) {
-                        reflectionReader.readAsArrayBuffer(reflectionFile)
-                    }
-
-                }).catch((e: any) => console.log(e));
-            }
-
+        try {
+          const mapResponse = await fetchMap(PDBCode);
+          const mapArray = new Uint8Array(mapResponse);
+          setMtzData(mapArray);
+        } catch (err) {
+          console.log("No map found, continuing...");
         }
-        handle_load()
 
-    }, [submit])
+        fetchPDB(PDBCode)
+          .then((response: ArrayBuffer) => {
+            setFileContent(response);
+            setLoadingText("Validating Glycans...");
 
-    useEffect(() => {
-        setReflectionFile(null)
-        setCoordinateFile(null)
-        setSubmit(false)
-        setTableData(null)
-        setFallBack(false)
-        setResetApp(false)
-        setPDBCode("")
-    }, [resetApp])
+            privateer_module().then(
+              async (Module: any) => {
+                await runPrivateer(Module, response, PDBCode);
+              },
+              () => {},
+            );
+          })
+          .catch((e: any) => {
+            setFailureText("This PDB code could not be found");
+            setLoadingText("There were no detected glycans in this file.");
+            setFallBack(true);
+          });
+      } else {
+        privateer_module()
+          .then(
+            (
+              Module: Record<
+                string,
+                (
+                  arg0: string,
+                  arg1: string,
+                  arg2: Uint8Array,
+                  arg3: boolean,
+                  arg4: boolean,
+                  arg5: boolean,
+                ) => void
+              >,
+            ) => {
+              const coordinateReader = new FileReader();
+              const reflectionReader = new FileReader();
 
-    const main_props: HeaderProps = {
-        resetApp: resetApp,
-        setResetApp: setResetApp,
-        PDBCode: PDBCode,
-        setPDBCode: setPDBCode,
-        coordinateFile: coordinateFile,
-        setCoordinateFile: setCoordinateFile,
-        reflectionFile: reflectionFile,
-        setReflectionFile: setReflectionFile,
-        submit: submit,
-        setSubmit: setSubmit,
-        tableData: tableData,
-        loadingText: loadingText,
-        fileContent: fileContent,
-        fallback: fallback,
-        mtzData: mtzData,
-        failureText: failureText
+              coordinateReader.onload = () => {
+                runPrivateer(
+                  Module,
+                  coordinateReader.result,
+                  coordinateFile.name,
+                ).then(
+                  () => {},
+                  () => {},
+                );
+              };
+
+              if (coordinateFile !== null) {
+                coordinateReader.readAsText(coordinateFile);
+                console.log(coordinateFile);
+              }
+
+              reflectionReader.onload = async () => {
+                const mapData = new Uint8Array(reflectionReader.result);
+                setMtzData(mapData);
+
+                Module.FS_createDataFile(
+                  "/",
+                  "input.mtz",
+                  mapData,
+                  true,
+                  true,
+                  true,
+                );
+              };
+
+              if (reflectionFile !== null) {
+                reflectionReader.readAsArrayBuffer(reflectionFile);
+              }
+            },
+          )
+          .catch((e: any) => {
+            console.log(e);
+          });
+      }
     }
+    handleLoad()
+      .then(
+        (r) => {},
+        () => {},
+      )
+      .catch((e) => {});
+  }, [submit]);
 
-    return (
-        <>
-            <Header {...main_props} />
-            <BorderElement topColor={"#D6D9E5"} bottomColor={"#F4F9FF"} reverse={false}></BorderElement>
-            <Information />
-            <BorderElement topColor={"#F4F9FF"} bottomColor={"#D6D9E5"} reverse={true}></BorderElement>
-            <Footer></Footer>
-        </>
-    )
+  useEffect(() => {
+    setReflectionFile(null);
+    setCoordinateFile(null);
+    setSubmit(false);
+    setTableData(null);
+    setFallBack(false);
+    setResetApp(false);
+    setPDBCode("");
+  }, [resetApp]);
+
+  const mainProps: HeaderProps = {
+    resetApp,
+    setResetApp,
+    PDBCode,
+    setPDBCode,
+    coordinateFile,
+    setCoordinateFile,
+    reflectionFile,
+    setReflectionFile,
+    submit,
+    setSubmit,
+    tableData,
+    loadingText,
+    fileContent,
+    fallback,
+    mtzData,
+    failureText,
+  };
+
+  return (
+    <>
+      <Header {...mainProps} />
+      <BorderElement
+        topColor={"#D6D9E5"}
+        bottomColor={"#F4F9FF"}
+        reverse={false}
+      ></BorderElement>
+      <Information />
+      <BorderElement
+        topColor={"#F4F9FF"}
+        bottomColor={"#D6D9E5"}
+        reverse={true}
+      ></BorderElement>
+      <Footer></Footer>
+    </>
+  );
 }

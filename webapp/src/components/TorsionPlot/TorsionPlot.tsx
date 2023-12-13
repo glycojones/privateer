@@ -1,107 +1,116 @@
-import { useEffect, useState, lazy } from 'react';
+import React, { useEffect, useState, lazy, type ReactElement } from "react";
 
-import { linkage_db, bin_db} from '../../data/Constants';
-const Plot = lazy(() => import('react-plotly.js'));
+import { linkageDB, binDB } from "../../data/Constants";
+const Plot = lazy(async () => await import("react-plotly.js"));
 
-export default function TorsionPlot({linkage_type, sorted_torsion_list, size}) {
+export default function TorsionPlot({
+  linkageType,
+  sortedTorsionList,
+  size,
+}: {
+  linkageType: string;
+  sortedTorsionList: any;
+  size: any;
+}): ReactElement {
+  const [trace, setTrace] = useState({});
+  const [overlay, setOverlay] = useState({});
+  const [linkageFound, setLinkageFound] = useState({});
 
- 
-    const [trace, setTrace] = useState({})
-    const [overlay, setOverlay] = useState({})
-    const [linkageFound, setLinkageFound] = useState({})
+  useEffect(() => {
+    fetch(linkageDB[linkageType])
+      .then(async (response) => await response.json())
+      .then((responseJson) => {
+        const xData: number[] = [];
+        const yData: number[] = [];
 
-    useEffect(() => {
-        fetch(linkage_db[linkage_type])
-        .then((response) => response.json())
-        .then((responseJson) => {
-            let xData = []
-            let yData = []
-
-            for (let i = 0; i < responseJson.length; i++) { 
-                xData.push(parseFloat(responseJson[i].phi))
-                yData.push(parseFloat(responseJson[i].psi))
-            }
-
-            setTrace({
-                x: xData,
-                y: yData,
-                name: 'density',
-                ncontours: 100,
-                colorscale: 'Hot',
-                reversescale: true,
-                showscale: true,
-                type: 'histogram2d',
-                dragmode: false, 
-                colorbar: { 
-                  title: "Frequency", 
-                  side: "bottom"
-                },
-                xbins: {
-                    start: -180,
-                    end: 180,
-                    size: 4
-                  },
-                  autobiny: false,
-                  ybins: bin_db[linkage_type]
-              })
-              setLinkageFound(true)
-        })
-        .catch((error) => {
-            console.error(error);
-            console.log(linkage_type," is not in the DB most likely ")
-            setLinkageFound(false)
-        });
-        
-        let overlay_phi = []
-        let overlay_psi = []
-
-        for (let i = 0; i < sorted_torsion_list[linkage_type].length; i++) { 
-          overlay_phi.push(sorted_torsion_list[linkage_type][i].phi)
-          overlay_psi.push(sorted_torsion_list[linkage_type][i].psi)
-
+        for (let i = 0; i < responseJson.length; i++) {
+          xData.push(parseFloat(responseJson[i].phi));
+          yData.push(parseFloat(responseJson[i].psi));
         }
 
-        setOverlay({
-          x: overlay_phi, 
-          y: overlay_psi, 
-          mode: 'markers',
-          type: 'scatter',
-          marker: {
-            size: 8,
-            color: 'blue',
-            symbol: ['x']
-        },
-        })
+        setTrace({
+          x: xData,
+          y: yData,
+          name: "density",
+          ncontours: 100,
+          colorscale: "Hot",
+          reversescale: true,
+          showscale: true,
+          type: "histogram2d",
+          dragmode: false,
+          colorbar: {
+            title: "Frequency",
+            side: "bottom",
+          },
+          xbins: {
+            start: -180,
+            end: 180,
+            size: 4,
+          },
+          autobiny: false,
+          ybins: binDB[linkageType],
+        });
+        setLinkageFound(true);
+      })
+      .catch((error) => {
+        console.error(error);
+        console.log(linkageType, " is not in the DB most likely ");
+        setLinkageFound(false);
+      });
 
-    }, [linkage_type])
+    const overlayPhi: number[] = [];
+    const overlayPsi: number[] = [];
 
-    return (
-      !linkageFound? (
-        <h3>{linkage_type} does not have enough datapoints to generate a torsion plot.</h3>
-      ): 
-      <Plot
-        data={[
-            trace, overlay 
-        ]}
-        layout={ {width: size, height: size, title: linkage_type, 
-          
+    for (let i = 0; i < sortedTorsionList[linkageType].length; i++) {
+      overlayPhi.push(sortedTorsionList[linkageType][i].phi as number);
+      overlayPsi.push(sortedTorsionList[linkageType][i].psi as number);
+    }
+
+    setOverlay({
+      x: overlayPhi,
+      y: overlayPsi,
+      mode: "markers",
+      type: "scatter",
+      marker: {
+        size: 8,
+        color: "blue",
+        symbol: ["x"],
+      },
+    });
+  }, [linkageType]);
+
+  return linkageFound !== null ? (
+    <h3>
+      {linkageType} does not have enough datapoints to generate a torsion plot.
+    </h3>
+  ) : (
+    <Plot
+      data={[trace, overlay]}
+      layout={{
+        width: size,
+        height: size,
+        title: linkageType,
+
         yaxis: {
-          title: { 
-            text: "ψ / °"
+          title: {
+            text: "ψ / °",
           },
-          fixedrange: true, 
-          range: (linkage_type in bin_db)? [bin_db[linkage_type].start, bin_db[linkage_type].end] : [-180,180],
-          showgrid:false
+          fixedrange: true,
+          range:
+            linkageType in binDB
+              ? [binDB[linkageType].start, binDB[linkageType].end]
+              : [-180, 180],
+          showgrid: false,
         },
-        xaxis : {
-          title: { 
-            text: "φ / °"
+        xaxis: {
+          title: {
+            text: "φ / °",
           },
-          fixedrange: true, 
-          range:[-180,180], 
-          showgrid:false
-        },} }
-      />
-    );
-  }
-
+          fixedrange: true,
+          range: [-180, 180],
+          showgrid: false,
+        },
+      }}
+    />
+  );
+}

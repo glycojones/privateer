@@ -1,80 +1,144 @@
-import { useEffect, lazy} from "react";
+import React, { useEffect, lazy, type ReactElement } from "react";
 
-const TorsionPlot = lazy(() => import('./TorsionPlot'));
+const TorsionPlot = lazy(async () => await import("./TorsionPlot"));
 
+function sortTorsions(torsions) {
+  const linkageSet = new Set<string>();
 
-function sortTorsions(torsions) { 
-    const linkage_set = new Set();
+  torsions.map(
+    (torsion: {
+      sugar_1: string;
+      atom_number_2: string;
+      atom_number_1: string;
+      sugar_2: string;
+    }): void => {
+      let linkage_string = "";
+      if (torsion.sugar_1 === "ASN") {
+        linkage_string =
+          torsion.sugar_1 +
+          "-" +
+          torsion.atom_number_2 +
+          "," +
+          torsion.atom_number_1 +
+          "-" +
+          torsion.sugar_2;
+      } else {
+        linkage_string =
+          torsion.sugar_2 +
+          "-" +
+          torsion.atom_number_2 +
+          "," +
+          torsion.atom_number_1 +
+          "-" +
+          torsion.sugar_1;
+      }
+      linkageSet.add(linkage_string);
+    },
+  );
 
-    torsions.map((torsion) => {
-        let linkage_string = ""
-        if (torsion.sugar_1 == "ASN") {
-            linkage_string = torsion.sugar_1 + "-" + torsion.atom_number_2 + "," + torsion.atom_number_1 + "-" + torsion.sugar_2
-        }
-        else { 
-            linkage_string = torsion.sugar_2 + "-" + torsion.atom_number_2 + "," + torsion.atom_number_1 + "-" + torsion.sugar_1
-        }
-        linkage_set.add(linkage_string)
-     })
+  const linkgeArray: string[] = Array.from(linkageSet);
 
-    const linkage_array = Array.from(linkage_set)
-    
-    const sorted_linkage_array = {}
+  const sortedLinkageMap = {};
 
-    linkage_array.map((item) => {
-        sorted_linkage_array[item] = []
-     })
+  linkgeArray.map((item): void => {
+    sortedLinkageMap[item] = [];
+  });
 
-    torsions.map((torsion) => {
-        let linkage_string = ""
-        if (torsion.sugar_1 == "ASN") {
-            linkage_string = torsion.sugar_1 + "-" + torsion.atom_number_2 + "," + torsion.atom_number_1 + "-" + torsion.sugar_2
-        }
-        else { 
-            linkage_string = torsion.sugar_2 + "-" + torsion.atom_number_2 + "," + torsion.atom_number_1 + "-" + torsion.sugar_1
-        }        
-        
-        sorted_linkage_array[linkage_string].push({"phi": torsion.phi, "psi": torsion.psi})
-    })
+  torsions.map(
+    (torsion: {
+      sugar_1: string;
+      atom_number_2: string;
+      atom_number_1: string;
+      sugar_2: string;
+      phi: any;
+      psi: any;
+    }): void => {
+      let linkageString = "";
+      if (torsion.sugar_1 === "ASN") {
+        linkageString =
+          torsion.sugar_1 +
+          "-" +
+          torsion.atom_number_2 +
+          "," +
+          torsion.atom_number_1 +
+          "-" +
+          torsion.sugar_2;
+      } else {
+        linkageString =
+          torsion.sugar_2 +
+          "-" +
+          torsion.atom_number_2 +
+          "," +
+          torsion.atom_number_1 +
+          "-" +
+          torsion.sugar_1;
+      }
 
-    return [linkage_array, sorted_linkage_array]
+      sortedLinkageMap[linkageString].push({
+        phi: torsion.phi,
+        psi: torsion.psi,
+      });
+    },
+  );
+
+  return [linkgeArray, sortedLinkageMap];
 }
 
-function TorsionMultiPlotTabs({torsions, setTab}) { 
+function TorsionMultiPlotTabs({ torsions, setTab }): ReactElement {
+  const [linkageArray, _] = sortTorsions(torsions);
 
-    const [linkage_array, sorted_linkage_array] = sortTorsions(torsions)
-
+  return linkageArray.map((item, index) => {
     return (
-       linkage_array.map((item, index) => { 
-        return (
-            <li className="mr-2" key={item}>
-                    <button className="inline-block p-4 border-b-2 border-transparent border-secondary rounded-t-lg hover:scale-105" onClick={() => {setTab(index)}}  onMouseDown={(e) => {e.stopPropagation()}}
-            onTouchStart={(e) => {e.stopPropagation()}}>{item}</button>
-            </li>
-
-        )
-       })
-    )
+      <li className="mr-2" key={item}>
+        <button
+          className="inline-block p-4 border-b-2 border-transparent border-secondary rounded-t-lg hover:scale-105"
+          onClick={() => {
+            setTab(index);
+          }}
+          onMouseDown={(e) => {
+            e.stopPropagation();
+          }}
+          onTouchStart={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          {item}
+        </button>
+      </li>
+    );
+  });
 }
 
-export default function TorsionMultiPlot({torsions, tab, setTab, size}) { 
+export default function TorsionMultiPlot({
+  torsions,
+  tab,
+  setTab,
+  size,
+}: {
+  torsions: any;
+  tab: string;
+  setTab: any;
+  size: any;
+}): ReactElement {
+  const [linkageArray, sortedLinkageArray] = sortTorsions(torsions);
 
+  useEffect(() => {
+    setTab(0);
+  }, []);
 
-    const [linkage_array, sorted_linkage_array] = sortTorsions(torsions)
+  return (
+    <div className="flex flex-col align-middle justify-center items-center space-y-6 ">
+      <div className="text-sm font-medium text-center text-gray-500 border-gray-200 text-gray-400 border-gray-700">
+        <ul className="flex flex-wrap -mb-px mt-2">
+          <TorsionMultiPlotTabs torsions={torsions} setTab={setTab} />
+        </ul>
+      </div>
 
-    useEffect(() => {
-        setTab(0)
-    }, [])
-    
-    return (
-        <div className="flex flex-col align-middle justify-center items-center space-y-6 ">  
-            <div className="text-sm font-medium text-center text-gray-500 border-gray-200 text-gray-400 border-gray-700">
-                <ul className="flex flex-wrap -mb-px mt-2">                
-                    <TorsionMultiPlotTabs torsions={torsions} setTab={setTab}/>   
-                </ul>
-            </div>
-
-            <TorsionPlot linkage_type={linkage_array[tab]} sorted_torsion_list={sorted_linkage_array} size={size}/>
-        </div>
-    )
+      <TorsionPlot
+        linkageType={linkageArray[tab]}
+        sortedTorsionList={sortedLinkageArray}
+        size={size}
+      />
+    </div>
+  );
 }

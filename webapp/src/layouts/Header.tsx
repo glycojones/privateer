@@ -1,42 +1,47 @@
-import { lazy, Suspense } from 'react'
+import React, { lazy, type ReactElement, Suspense } from "react";
+import SNFG from "../components/PrivateerDisplay/SNFG.tsx";
 
-import SNFG from '../components/PrivateerDisplay/SNFG.tsx'
+import { type HeaderProps } from "../interfaces/types";
+import { MoorhenReduxProvider } from "moorhen";
 
-const Upload = lazy(() => import('../components/Upload/Upload.tsx'));
-const Loading = lazy(() => import('../components/Loading/Loading.tsx'));
-const NavBar = lazy(() => import('./NavBar.tsx'));
-const NoGlycans = lazy(() => import("../components/NoGlycans/NoGlycans.tsx"))
+const Upload = lazy(
+  async () => await import("../components/Upload/Upload.tsx"),
+);
+const Loading = lazy(
+  async () => await import("../components/Loading/Loading.tsx"),
+);
+const NavBar = lazy(async () => await import("./NavBar.tsx"));
+const NoGlycans = lazy(
+  async () => await import("../components/NoGlycans/NoGlycans.tsx"),
+);
 
-import { HeaderProps } from "../interfaces/types"
-import { MoorhenReduxProvider } from 'moorhen'
+export function Header(props: HeaderProps): ReactElement {
+  let filename = "";
+  if (props.PDBCode !== "") {
+    filename = props.PDBCode;
+  } else if (props.coordinateFile !== null) {
+    filename = props.coordinateFile.name;
+  }
 
-export function Header(props: HeaderProps) {
+  return (
+    <div className="bg-gray text-primary text-center">
+      <NavBar setResetApp={props.setResetApp} />
 
-    let filename = ""
-    if (props.PDBCode != "") {
-        filename = props.PDBCode
-    }
-    else if (props.coordinateFile) {
-        filename = props.coordinateFile.name
-    }
-
-    return (
-        <div className="bg-gray text-primary text-center">
-            <NavBar setResetApp={props.setResetApp} />
-
-            {props.fallback !== true ?
-                <Suspense fallback={<Loading loadingText={"Loading Content..."} />}>
-                    {props.submit === false ?
-                            <Upload {...props} />
-                        : props.tableData === null ?
-                            <Loading loadingText={props.loadingText} /> :
-                            <MoorhenReduxProvider>
-                                <SNFG {...props} filename={filename}
-                                ></SNFG>
-                            </MoorhenReduxProvider>}
-
-                </Suspense>
-                : <NoGlycans setResetApp={props.setResetApp} text={props.failureText} />
-            }
-        </div>);
+      {!props.fallback ? (
+        <Suspense fallback={<Loading loadingText={"Loading Content..."} />}>
+          {!props.submit ? (
+            <Upload {...props} />
+          ) : props.tableData === null ? (
+            <Loading loadingText={props.loadingText} />
+          ) : (
+            <MoorhenReduxProvider>
+              <SNFG {...props} filename={filename}></SNFG>
+            </MoorhenReduxProvider>
+          )}
+        </Suspense>
+      ) : (
+        <NoGlycans setResetApp={props.setResetApp} text={props.failureText} />
+      )}
+    </div>
+  );
 }
