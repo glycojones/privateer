@@ -5,7 +5,7 @@ import DatabaseSection from "./pages/DatabaseSection/DatabaseSection";
 
 import PageLoad from "./components/Loading/PageLoad";
 import { Routes, Route, useSearchParams, useLocation } from "react-router-dom";
-import APIForwarding from "./components/APIComponent/APIForwarding";
+// import APIForwarding from "./components/APIComponent/APIForwarding";
 
 function useQuery() {
   const { search } = useLocation();
