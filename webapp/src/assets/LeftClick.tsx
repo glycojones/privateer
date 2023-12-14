@@ -1,5 +1,6 @@
-import React from "react";
-export default function LeftMouseClick() {
+import React from 'react';
+
+export default function LeftMouseClick () {
   return (
     <div className="flex w-8 h-8 my-1 mx-1">
       <svg

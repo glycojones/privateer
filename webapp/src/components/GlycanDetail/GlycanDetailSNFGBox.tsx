@@ -1,54 +1,52 @@
-import { type TableDataEntry } from "../../interfaces/types.ts";
-import { useSelector } from "react-redux";
-import React, { useCallback } from "react";
+import { type TableDataEntry } from '../../interfaces/types.ts';
+import { useSelector } from 'react-redux';
+import React, { useCallback } from 'react';
 
-export function GlycanDetailSNFGBox(props: {
-  key: string;
-  tableDataEntries: TableDataEntry[];
-  rowID: number;
+export function GlycanDetailSNFGBox (props: {
+  key: string
+  tableDataEntries: TableDataEntry[]
+  rowID: number
 }) {
   const molecules = useSelector((state: any) => state.molecules);
 
-  async function handle_click(e) {
-    console.log(molecules);
-    const new_center_string =
+  async function handleClick (e) {
+    const newCenterString =
       e.target.dataset.chainid +
-      "/" +
+      '/' +
       e.target.dataset.seqnum +
-      "(" +
+      '(' +
       e.target.dataset.resname +
-      ")";
+      ')';
     const selectedMolecule = molecules.find(
-      (molecule) => molecule.name === "mol-1",
+      (molecule) => molecule.name === 'mol-1'
     );
-    console.log(selectedMolecule);
-    await selectedMolecule.centreOn(new_center_string);
+    const _center = await selectedMolecule.centreOn(newCenterString);
   }
 
   const ref = useCallback(
     (node: HTMLElement | null) => {
       if (node !== null) {
         // console.log(node)
-        node.querySelector("svg").style.display = "block";
-        node.querySelector("svg").style.margin = "auto";
+        node.querySelector('svg').style.display = 'block';
+        node.querySelector('svg').style.margin = 'auto';
 
-        const useList = node.querySelectorAll("use");
+        const useList = node.querySelectorAll('use');
 
         for (let i = 0; i < useList.length; i++) {
-          useList[i].addEventListener("click", handle_click);
-          useList[i].addEventListener("mousedown", (e) => {
+          useList[i].addEventListener('click', handleClick);
+          useList[i].addEventListener('mousedown', (e) => {
             e.stopPropagation();
           });
-          useList[i].addEventListener("touchstart", (e) => {
+          useList[i].addEventListener('touchstart', (e) => {
             e.stopPropagation();
           });
         }
       }
 
-      document.querySelectorAll("svg")[0].setAttribute("width", "50vw");
-      document.querySelectorAll("svg")[0].setAttribute("height", "100%");
+      document.querySelectorAll('svg')[0].setAttribute('width', '50vw');
+      document.querySelectorAll('svg')[0].setAttribute('height', '100%');
     },
-    [props.rowID],
+    [props.rowID]
   );
 
   // const [svg, setSVG] = useState(props.tableDataEntries[props.rowID].svg)
@@ -62,7 +60,7 @@ export function GlycanDetailSNFGBox(props: {
           className="mt-4 py-4 mx-auto"
           id="svgContainer"
           dangerouslySetInnerHTML={{
-            __html: props.tableDataEntries[props.rowID].svg,
+            __html: props.tableDataEntries[props.rowID].svg
           }}
           ref={ref}
         />

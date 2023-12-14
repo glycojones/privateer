@@ -1,60 +1,63 @@
-import React, { useMemo, useRef, useEffect, useState } from "react";
-import { useTable } from "react-table";
-import { DatabaseColumns, SugarListColumns } from "../../data/Constants";
-import styled from "styled-components";
+import React, { useMemo, useEffect, useState } from 'react';
+import { useTable } from 'react-table';
+import { SugarListColumns } from '../../data/Constants';
+import styled from 'styled-components';
 
-function custom_sort(a, b) {
-  const split_a = a["Sugar ID"].split("-");
-  const split_b = b["Sugar ID"].split("-");
+function customSort (
+  a: Record<string, string>,
+  b: Record<string, string>
+): number {
+  const splitA = a['Sugar ID'].split('-');
+  const splitB = b['Sugar ID'].split('-');
 
-  if (split_a[1] < split_b[1]) {
+  if (splitA[1] < splitB[1]) {
     return -1;
   }
-  if (split_b[1] < split_a[1]) {
+  if (splitB[1] < splitA[1]) {
     return 1;
   }
 
-  if (Number(split_a[2]) < Number(split_b[2])) {
+  if (Number(splitA[2]) < Number(splitB[2])) {
     return -1;
   }
 
-  if (Number(split_b[2]) < Number(split_a[2])) {
+  if (Number(splitB[2]) < Number(splitA[2])) {
     return 1;
   }
 
   return 0;
 }
 
-function parse_results(data) {
+function parseResults (data) {
   const glycans = data.data.glycans;
 
-  const table_data = [];
+  const tableData = [];
 
   for (const key in glycans) {
-    const glycan_type = glycans[key];
-    for (let i = 0; i < glycan_type.length; i++) {
-      const sugars = glycan_type[i].Sugars;
+    const glycanType = glycans[key];
+    for (let i = 0; i < glycanType.length; i++) {
+      const sugars: Array<Record<string, any>> = glycanType[i].Sugars;
       for (let j = 0; j < sugars.length; j++) {
         const keys = Object.keys(sugars[j]);
         const entry = {};
 
         for (let k = 0; k < keys.length; k++) {
-          const type_key = typeof sugars[j][keys[k]];
+          const typeKey = typeof sugars[j][keys[k]];
 
-          if (type_key === "number") {
+          if (typeKey === 'number') {
             entry[keys[k]] = sugars[j][keys[k]].toFixed(2);
           } else {
             entry[keys[k]] = sugars[j][keys[k]];
           }
         }
         entry.type = key;
-        table_data.push(entry);
+        tableData.push(entry);
       }
     }
   }
 
-  table_data.sort(custom_sort);
-  return table_data;
+  tableData.sort(customSort);
+  return tableData;
 }
 
 const Styles = styled.div`
@@ -116,14 +119,14 @@ const Styles = styled.div`
   }
 `;
 
-export default function SugarList(props) {
+export default function SugarList (props) {
   const [data, setData] = useState([]);
   const columns = useMemo(() => SugarListColumns, []);
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+  const { _getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
 
   useEffect(() => {
-    const results = parse_results(props);
+    const results = parseResults(props);
     setData(results);
   }, []);
 
@@ -137,10 +140,10 @@ export default function SugarList(props) {
         <table {...getTableBodyProps()}>
           <thead>
             {headerGroups.map((headerGroup) => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
+              <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.name}>
                 {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
-                    {column.render("Header")}
+                  <th {...column.getHeaderProps()} key={column.name}>
+                    {column.render('Header')}
                   </th>
                 ))}
               </tr>
@@ -150,10 +153,17 @@ export default function SugarList(props) {
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <tr {...row.getRowProps()} title="Click to visualise." id="row">
+                <tr
+                  {...row.getRowProps()}
+                  title="Click to visualise."
+                  id="row"
+                  key={row.name}
+                >
                   {row.cells.map((cell) => {
                     return (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      <td {...cell.getCellProps()} key={cell.name}>
+                        {cell.render('Cell')}
+                      </td>
                     );
                   })}
                 </tr>

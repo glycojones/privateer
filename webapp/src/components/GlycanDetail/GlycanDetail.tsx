@@ -1,53 +1,54 @@
-import React, { lazy, useState } from "react";
-import { type GlycanDetailProps } from "../../interfaces/types";
-import { useSelector } from "react-redux";
-import { Responsive, WidthProvider } from "react-grid-layout";
-import { GlycanDetailSNFGBox } from "./GlycanDetailSNFGBox.tsx";
-import { GlycanDetailMoorhenView } from "./GlycanDetailMoorhenView.tsx";
-import { GlycanDetailTorsionPlot } from "./GlycanDetailTorsionPlot.tsx";
-import { GlycanDetailLayout } from "../../data/Constants.tsx";
+import React, { lazy, useState } from 'react';
+import { type GlycanDetailProps } from '../../interfaces/types';
+import { useSelector } from 'react-redux';
+import { Responsive, WidthProvider } from 'react-grid-layout';
+import { GlycanDetailSNFGBox } from './GlycanDetailSNFGBox.tsx';
+import { GlycanDetailMoorhenView } from './GlycanDetailMoorhenView.tsx';
+import { GlycanDetailTorsionPlot } from './GlycanDetailTorsionPlot.tsx';
+import { GlycanDetailLayout } from '../../data/Constants.tsx';
 
 const GlycanDetailInfoBox = lazy(
-  async () => await import("./GlycanDetailInfoBox"),
+  async () => await import('./GlycanDetailInfoBox')
 );
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
-export default function GlycanDetail(props: GlycanDetailProps) {
+export default function GlycanDetail (props: GlycanDetailProps) {
   const molecules = useSelector((state: any) => state.molecules);
   const [mapContour, setMapContour] = useState(0.3);
 
-  async function handleContourChange(e) {
+  async function handleContourChange (e) {
     props.map.contourLevel = Number(e.target.value);
     setMapContour(Number(e.target.value));
     await props.map.doCootContour(
       ...props.map.glRef.current.origin.map((coord) => -coord),
       props.map.mapRadius,
-      props.map.contourLevel,
+      props.map.contourLevel
     );
   }
 
-  async function handleToggleSymmetry(e) {
+  async function handleToggleSymmetry () {
     const currentMolecule = molecules.find(
-      (molecule) => molecule.name == "mol-1",
+      (molecule) => molecule.name === 'mol-1'
     );
-    if (currentMolecule) {
-      console.log(currentMolecule);
+    if (currentMolecule !== null) {
       await currentMolecule.toggleSymmetry();
     }
   }
 
-  const [width, setWidth] = useState(800);
-  const [height, setHeight] = useState(500);
+  const width = 800;
+  const height = 500;
   const [torsionTab, setTorsionTab] = useState(0);
 
   const getLayouts = () => {
-    const savedLayouts = localStorage.getItem("grid-layout");
-    return GlycanDetailLayout;
-    return savedLayouts ? JSON.parse(savedLayouts) : GlycanDetailLayout;
+    const savedLayouts = localStorage.getItem('grid-layout');
+    // return GlycanDetailLayout;
+    return savedLayouts !== null
+      ? JSON.parse(savedLayouts)
+      : GlycanDetailLayout;
   };
   const handleLayoutChange = (layout, layouts) => {
-    localStorage.setItem("grid-layout", JSON.stringify(layouts));
+    localStorage.setItem('grid-layout', JSON.stringify(layouts));
   };
 
   return (
@@ -57,7 +58,7 @@ export default function GlycanDetail(props: GlycanDetailProps) {
           <button
             onClick={() => {
               props.setHideMoorhen(true);
-              window.scrollTo(0, props.scrollPosition);
+              // window.scrollTo(0, props.scrollPosition);
               setTorsionTab(0);
             }}
           >
@@ -79,18 +80,18 @@ export default function GlycanDetail(props: GlycanDetailProps) {
         onLayoutChange={handleLayoutChange}
       >
         <div key="info">
-          <GlycanDetailInfoBox key={"aa"} row={props.tableData[props.rowID]} />
+          <GlycanDetailInfoBox key={'aa'} row={props.tableData[props.rowID]} />
         </div>
         <div key="snfg">
           <GlycanDetailSNFGBox
-            key={"bb"}
+            key={'bb'}
             tableDataEntries={props.tableData}
             rowID={props.rowID}
           />
         </div>
         <div key="moorhen">
           <GlycanDetailMoorhenView
-            key={"cc"}
+            key={'cc'}
             onChange={handleContourChange}
             onSymmetryChange={handleToggleSymmetry}
             moorhenProps={props.moorhenProps}
@@ -102,7 +103,7 @@ export default function GlycanDetail(props: GlycanDetailProps) {
         </div>
         <div key="torsions">
           <GlycanDetailTorsionPlot
-            key={"dd"}
+            key={'dd'}
             tableDataEntries={props.tableData}
             rowID={props.rowID}
             tab={torsionTab}

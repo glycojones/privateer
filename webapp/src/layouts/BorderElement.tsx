@@ -1,17 +1,17 @@
-import { type ReactElement } from "react";
-import React from "react";
-export default function BorderElement({
+import { type ReactElement } from 'react';
+import React from 'react';
+export default function BorderElement ({
   topColor,
   bottomColor,
-  reverse,
+  reverse
 }: {
-  topColor: string;
-  bottomColor: string;
-  reverse: boolean;
+  topColor: string
+  bottomColor: string
+  reverse: boolean
 }): ReactElement {
   const divStyle = {
-    height: "90px",
-    backgroundImage: `linear-gradient(to bottom right, ${topColor}, ${topColor} 50%, ${bottomColor} 50%, ${bottomColor})`,
+    height: '90px',
+    backgroundImage: `linear-gradient(to bottom right, ${topColor}, ${topColor} 50%, ${bottomColor} 50%, ${bottomColor})`
   };
 
   if (reverse) {

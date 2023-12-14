@@ -1,18 +1,18 @@
-import React, { type ReactElement, useState } from "react";
-import { type UploadButtonProps } from "../../interfaces/types";
-export default function UploadButton(props: UploadButtonProps): ReactElement {
+import React, { type ReactElement, useState } from 'react';
+import { type UploadButtonProps } from '../../interfaces/types';
+export default function UploadButton (props: UploadButtonProps): ReactElement {
   const fileUpload: (e: any) => void = (e: any) => {
     if (e.target.files !== null) {
       for (let i = 0; i < e.target.files.length; i++) {
-        const splitname = e.target.files[i].name.split(".");
+        const splitname = e.target.files[i].name.split('.');
         const ext = splitname[splitname.length - 1];
 
-        if (ext === "pdb" || ext === "cif" || ext === "mmcif") {
+        if (ext === 'pdb' || ext === 'cif' || ext === 'mmcif') {
           props.setCoordinateFile(e.target.files[i] as File);
-        } else if (ext === "mtz") {
+        } else if (ext === 'mtz') {
           props.setReflectionFile(e.target.files[i] as File);
         } else {
-          console.error("Unknown File Type.");
+          console.error('Unknown File Type.');
         }
       }
     }
@@ -37,17 +37,18 @@ export default function UploadButton(props: UploadButtonProps): ReactElement {
 
   return (
     <div className="flex items-center justify-center m-12 w-64 hover:border-slate-500">
-      {!dragActivate ? (
+      {!dragActivate
+        ? (
         <label className="flex flex-col items-center justify-center w-full p-12 h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-hover border-gray-600">
           <div
             className="flex flex-col items-center justify-center pt-5 pb-6 text-center"
             onDragOver={handleDragOver}
             onDrop={handleDrop}
             onDragEnter={() => {
-              console.log("DRAG ENTER");
+              console.log('DRAG ENTER');
             }}
             onDragExit={(e) => {
-              console.log("LEAVE", e);
+              console.log('LEAVE', e);
             }}
           >
             <svg
@@ -82,17 +83,18 @@ export default function UploadButton(props: UploadButtonProps): ReactElement {
             onChange={fileUpload}
           />
         </label>
-      ) : (
+          )
+        : (
         <label className="flex flex-col items-center justify-center w-full p-12 h-64 border-2 border-gray-300  rounded-lg cursor-pointer hover:bg-hover border-gray-600">
           <div
             className="flex flex-col items-center justify-center pt-5 pb-6 text-center"
             onDragOver={handleDragOver}
             onDrop={handleDrop}
             onDragEnter={() => {
-              console.log("DRAG ENTER");
+              console.log('DRAG ENTER');
             }}
             onDragExit={(e) => {
-              console.log("LEAVE", e);
+              console.log('LEAVE', e);
             }}
           >
             <svg
@@ -115,7 +117,7 @@ export default function UploadButton(props: UploadButtonProps): ReactElement {
             </p>
           </div>
         </label>
-      )}
+          )}
     </div>
   );
 }

@@ -1,13 +1,13 @@
-import React, { type ReactElement, useEffect, useState } from "react";
-import UploadButton from "./UploadButton";
-import Submit from "../Submit/Submit";
-import PDBFetch from "../PDBFetch/PDBFetch";
+import React, { type ReactElement, useEffect, useState } from 'react';
+import UploadButton from './UploadButton';
+import Submit from '../Submit/Submit';
+import PDBFetch from '../PDBFetch/PDBFetch';
 import {
   type HeaderProps,
-  type UploadButtonProps,
-} from "../../interfaces/types";
+  type UploadButtonProps
+} from '../../interfaces/types';
 
-export default function Upload(props: HeaderProps): ReactElement {
+export default function Upload (props: HeaderProps): ReactElement {
   const [showUploadAgain, setShowUploadAgain] = useState(true);
   const [showSubmit, setShowSubmit] = useState(false);
   const [allowSubmit, setAllowSubmit] = useState(false);
@@ -49,13 +49,14 @@ export default function Upload(props: HeaderProps): ReactElement {
 
   const uploadButtonProps: UploadButtonProps = {
     setCoordinateFile: props.setCoordinateFile,
-    setReflectionFile: props.setReflectionFile,
+    setReflectionFile: props.setReflectionFile
   };
 
   return (
     <div className="flex flex-wrap align-middle items-center justify-center">
       {showUploadAgain ? <UploadButton {...uploadButtonProps} /> : <></>}
-      {showSubmit ? (
+      {showSubmit
+        ? (
         <Submit
           coordinateFile={props.coordinateFile}
           reflectionFile={props.reflectionFile}
@@ -63,24 +64,29 @@ export default function Upload(props: HeaderProps): ReactElement {
           setResetApp={props.setResetApp}
           allowSubmit={allowSubmit}
         />
-      ) : (
+          )
+        : (
         <></>
-      )}
+          )}
 
-      {showPDBFetch ? (
+      {showPDBFetch
+        ? (
         <div className="mx-6 w-full lg:w-6 sm:w-full text-center">OR</div>
-      ) : (
+          )
+        : (
         <></>
-      )}
-      {showPDBFetch ? (
+          )}
+      {showPDBFetch
+        ? (
         <PDBFetch
           PDBCode={props.PDBCode}
           setPDBCode={props.setPDBCode}
           submitPressed={props.setSubmit}
         />
-      ) : (
+          )
+        : (
         <></>
-      )}
+          )}
     </div>
   );
 }

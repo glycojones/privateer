@@ -1,10 +1,14 @@
-import Molecule from "../../assets/Molecule";
-import React, { type ReactElement } from "react";
+import Molecule from '../../assets/Molecule';
+import React, {
+  type Dispatch,
+  type ReactElement,
+  type SetStateAction
+} from 'react';
 interface FileLineProps {
-  icon: any;
-  name: string;
+  icon: any
+  name: string
 }
-function FileLine(props: FileLineProps): ReactElement {
+function FileLine (props: FileLineProps): ReactElement {
   return (
     <div className="flex flex-row w-64 justify-center px-12 py-2 rounded-lg min-w-0">
       <div className="pr-2">{props.icon}</div>
@@ -13,27 +17,34 @@ function FileLine(props: FileLineProps): ReactElement {
   );
 }
 
-export default function Submit({
+interface SubmitProps {
+  coordinateFile: File
+  reflectionFile: File
+  submitPressed: boolean
+  setResetApp: Dispatch<SetStateAction<boolean>>
+  allowSubmit: boolean
+}
+export default function Submit ({
   coordinateFile,
   reflectionFile,
   submitPressed,
   setResetApp,
-  allowSubmit,
-}): ReactElement {
-  const getFileList = () => {
+  allowSubmit
+}: SubmitProps): ReactElement {
+  function getFileList (): ReactElement[] {
     const array: ReactElement[] = [];
     if (coordinateFile !== null) {
       array.push(
-        <FileLine icon={<Molecule />} name={coordinateFile.name} key={"c"} />,
+        <FileLine icon={<Molecule />} name={coordinateFile.name} key={'c'} />
       );
     }
     if (reflectionFile !== null) {
       array.push(
-        <FileLine icon={<Molecule />} name={reflectionFile.name} key={"r"} />,
+        <FileLine icon={<Molecule />} name={reflectionFile.name} key={'r'} />
       );
     }
     return array;
-  };
+  }
 
   return (
     <div
@@ -48,19 +59,23 @@ export default function Submit({
       <div className="flex space-x-4 py-6">
         <button
           className="bg-gray hover:bg-hover border-gray-800 border-2 text-primary opacity-60 font-bold py-2 px-4 rounded"
-          onClick={() => setResetApp(true)}
+          onClick={() => {
+            setResetApp(true);
+          }}
         >
           Cancel
         </button>
 
-        {allowSubmit === true ? (
+        {allowSubmit
+          ? (
           <button
             className="bg-gray hover:bg-hover border-gray-300 border-2 text-primary font-bold py-2 px-4 rounded"
             onClick={submitPressed}
           >
             Submit
           </button>
-        ) : (
+            )
+          : (
           <button
             className="bg-gray border-gray-800 border-2 text-primary opacity-40 font-bold py-2 px-4 rounded"
             onClick={submitPressed}
@@ -68,7 +83,7 @@ export default function Submit({
           >
             Submit
           </button>
-        )}
+            )}
       </div>
     </div>
   );

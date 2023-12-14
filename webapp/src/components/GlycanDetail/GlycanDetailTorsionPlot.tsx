@@ -1,25 +1,25 @@
-import { type TableDataEntry } from "../../interfaces/types.ts";
-import React, { lazy, useEffect, useState } from "react";
+import { type TableDataEntry } from '../../interfaces/types.ts';
+import React, { lazy, useEffect, useState } from 'react';
 const TorsionMultiPlot = lazy(
-  async () => await import("../TorsionPlot/TorsionMultiPlot.tsx"),
+  async () => await import('./TorsionPlot/TorsionMultiPlot.tsx')
 );
 
-export function GlycanDetailTorsionPlot(props: {
-  key: string;
-  tableDataEntries: TableDataEntry[];
-  rowID: number;
-  tab: number;
-  tab1: (value: ((prevState: number) => number) | number) => void;
+export function GlycanDetailTorsionPlot (props: {
+  key: string
+  tableDataEntries: TableDataEntry[]
+  rowID: number
+  tab: number
+  tab1: (value: ((prevState: number) => number) | number) => void
 }) {
   const [dimension, setDimension] = useState<number>(500);
 
   useEffect(() => {
-    function handleResize() {
+    function handleResize () {
       const size = Math.min(500, window.innerWidth);
       setDimension(size);
     }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
   });
 
   return (

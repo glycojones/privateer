@@ -1,10 +1,10 @@
-import { type Dispatch, type ReactElement, type SetStateAction } from "react";
-import { GENERAL_CITATION, GITHUB_REPO } from "../data/Constants.tsx";
-import React from "react";
-export default function NavBar({
-  setResetApp,
+import { type Dispatch, type ReactElement, type SetStateAction } from 'react';
+import { GENERAL_CITATION, GITHUB_REPO } from '../data/Constants.tsx';
+import React from 'react';
+export default function NavBar ({
+  setResetApp
 }: {
-  setResetApp: Dispatch<SetStateAction<boolean>>;
+  setResetApp: Dispatch<SetStateAction<boolean>>
 }): ReactElement {
   return (
     <div className="flex flex-col w-full sm:flex-row sm:justify-between">

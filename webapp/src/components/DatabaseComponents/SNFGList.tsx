@@ -1,9 +1,9 @@
-import React, { useMemo, useRef, useEffect, useState } from "react";
-import { useTable } from "react-table";
-import { DatabaseColumns } from "../../data/Constants";
-import styled from "styled-components";
+import React, { useMemo, useEffect, useState } from 'react';
+import { useTable } from 'react-table';
+import { DatabaseColumns } from '../../data/Constants';
+import styled from 'styled-components';
 
-function custom_sort(a, b) {
+function customSort (a, b): number {
   a = a.chain;
   b = b.chain;
   if (a < b) return -1;
@@ -11,29 +11,29 @@ function custom_sort(a, b) {
   return 0;
 }
 
-function parse_results(data) {
+function parseResults (data) {
   const glycans = data.data.glycans;
 
-  const table_data = [];
+  const tableData: any[] = [];
 
   for (const key in glycans) {
-    const glycan_type = glycans[key];
-    for (let i = 0; i < glycan_type.length; i++) {
-      const chain = glycan_type[i].RootSugarChainID;
+    const glycanType = glycans[key];
+    for (let i = 0; i < glycanType.length; i++) {
+      const chain = glycanType[i].RootSugarChainID;
 
-      const SNFG = glycan_type[i].SNFG;
-      const WURCS = glycan_type[i].WURCS;
+      const SNFG = glycanType[i].SNFG;
+      const WURCS = glycanType[i].WURCS;
 
-      table_data.push({
+      tableData.push({
         chain,
         SNFG,
-        WURCS,
+        WURCS
       });
     }
   }
 
-  table_data.sort(custom_sort);
-  return table_data;
+  tableData.sort(customSort);
+  return tableData;
 }
 
 const Styles = styled.div`
@@ -95,14 +95,14 @@ const Styles = styled.div`
   }
 `;
 
-export default function SNFGList(props) {
-  const [data, setData] = useState([]);
+export default function SNFGList (props) {
+  const [data, setData] = useState<any[]>([]);
   const columns = useMemo(() => DatabaseColumns, []);
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+  const { _getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
 
   useEffect(() => {
-    const results = parse_results(props);
+    const results = parseResults(props);
     setData(results);
   }, []);
 
@@ -116,10 +116,10 @@ export default function SNFGList(props) {
         <table {...getTableBodyProps()}>
           <thead>
             {headerGroups.map((headerGroup) => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
+              <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.name}>
                 {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
-                    {column.render("Header")}
+                  <th {...column.getHeaderProps()} key={column.name}>
+                    {column.render('Header')}
                   </th>
                 ))}
               </tr>
@@ -129,10 +129,17 @@ export default function SNFGList(props) {
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <tr {...row.getRowProps()} title="Click to visualise." id="row">
+                <tr
+                  {...row.getRowProps()}
+                  title="Click to visualise."
+                  id="row"
+                  key={row.name}
+                >
                   {row.cells.map((cell) => {
                     return (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      <td {...cell.getCellProps()} key={cell.name}>
+                        {cell.render('Cell')}
+                      </td>
                     );
                   })}
                 </tr>

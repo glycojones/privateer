@@ -1,97 +1,97 @@
-import React, { useEffect, lazy, type ReactElement } from "react";
+import React, { useEffect, lazy, type ReactElement } from 'react';
 
-const TorsionPlot = lazy(async () => await import("./TorsionPlot"));
+const TorsionPlot = lazy(async () => await import('./TorsionPlot.tsx'));
 
-function sortTorsions(torsions) {
+function sortTorsions (torsions) {
   const linkageSet = new Set<string>();
 
-  torsions.map(
+  torsions.forEach(
     (torsion: {
-      sugar_1: string;
-      atom_number_2: string;
-      atom_number_1: string;
-      sugar_2: string;
+      sugar_1: string
+      atom_number_2: string
+      atom_number_1: string
+      sugar_2: string
     }): void => {
-      let linkage_string = "";
-      if (torsion.sugar_1 === "ASN") {
-        linkage_string =
+      let linkageString = '';
+      if (torsion.sugar_1 === 'ASN') {
+        linkageString =
           torsion.sugar_1 +
-          "-" +
+          '-' +
           torsion.atom_number_2 +
-          "," +
+          ',' +
           torsion.atom_number_1 +
-          "-" +
+          '-' +
           torsion.sugar_2;
       } else {
-        linkage_string =
+        linkageString =
           torsion.sugar_2 +
-          "-" +
+          '-' +
           torsion.atom_number_2 +
-          "," +
+          ',' +
           torsion.atom_number_1 +
-          "-" +
+          '-' +
           torsion.sugar_1;
       }
-      linkageSet.add(linkage_string);
-    },
+      linkageSet.add(linkageString);
+    }
   );
 
   const linkgeArray: string[] = Array.from(linkageSet);
 
   const sortedLinkageMap = {};
 
-  linkgeArray.map((item): void => {
+  linkgeArray.forEach((item): void => {
     sortedLinkageMap[item] = [];
   });
 
-  torsions.map(
+  torsions.forEach(
     (torsion: {
-      sugar_1: string;
-      atom_number_2: string;
-      atom_number_1: string;
-      sugar_2: string;
-      phi: any;
-      psi: any;
+      sugar_1: string
+      atom_number_2: string
+      atom_number_1: string
+      sugar_2: string
+      phi: any
+      psi: any
     }): void => {
-      let linkageString = "";
-      if (torsion.sugar_1 === "ASN") {
+      let linkageString = '';
+      if (torsion.sugar_1 === 'ASN') {
         linkageString =
           torsion.sugar_1 +
-          "-" +
+          '-' +
           torsion.atom_number_2 +
-          "," +
+          ',' +
           torsion.atom_number_1 +
-          "-" +
+          '-' +
           torsion.sugar_2;
       } else {
         linkageString =
           torsion.sugar_2 +
-          "-" +
+          '-' +
           torsion.atom_number_2 +
-          "," +
+          ',' +
           torsion.atom_number_1 +
-          "-" +
+          '-' +
           torsion.sugar_1;
       }
 
       sortedLinkageMap[linkageString].push({
         phi: torsion.phi,
-        psi: torsion.psi,
+        psi: torsion.psi
       });
-    },
+    }
   );
 
   return [linkgeArray, sortedLinkageMap];
 }
 
-function TorsionMultiPlotTabs({ torsions, setTab }): ReactElement {
+function TorsionMultiPlotTabs ({ torsions, setTab }): ReactElement {
   const [linkageArray, _] = sortTorsions(torsions);
 
   return linkageArray.map((item, index) => {
     return (
       <li className="mr-2" key={item}>
         <button
-          className="inline-block p-4 border-b-2 border-transparent border-secondary rounded-t-lg hover:scale-105"
+          className="inline-block p-4 border-b-2 border-primary rounded-t-lg hover:scale-105"
           onClick={() => {
             setTab(index);
           }}
@@ -109,16 +109,16 @@ function TorsionMultiPlotTabs({ torsions, setTab }): ReactElement {
   });
 }
 
-export default function TorsionMultiPlot({
+export default function TorsionMultiPlot ({
   torsions,
   tab,
   setTab,
-  size,
+  size
 }: {
-  torsions: any;
-  tab: string;
-  setTab: any;
-  size: any;
+  torsions: any
+  tab: string
+  setTab: any
+  size: any
 }): ReactElement {
   const [linkageArray, sortedLinkageArray] = sortTorsions(torsions);
 

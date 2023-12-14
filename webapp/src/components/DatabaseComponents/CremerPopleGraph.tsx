@@ -1,75 +1,75 @@
-import React, { useEffect, useState, lazy } from "react";
+import React, { useEffect, useState, lazy } from 'react';
 
-const Plot = lazy(async () => await import("react-plotly.js"));
+const Plot = lazy(async () => await import('react-plotly.js'));
 
-function calculate_points(data) {
+function calculatePoints (data) {
   const glycans = data.data.glycans;
 
-  const x_axis = [];
-  const y_axis = [];
-  const text = [];
+  const xAxis: number[] = [];
+  const yAxis: number[] = [];
+  const text: string[] = [];
 
-  const error_x_axis = [];
-  const error_y_axis = [];
-  const error_text = [];
+  const errorXAxis: number[] = [];
+  const errorYAxis: number[] = [];
+  const errorText: string[] = [];
 
   for (const key in glycans) {
-    const glycan_type = glycans[key];
-    for (let i = 0; i < glycan_type.length; i++) {
-      const sugars = glycan_type[i].Sugars;
+    const glycanType = glycans[key];
+    for (let i = 0; i < glycanType.length; i++) {
+      const sugars = glycanType[i].Sugars;
       for (let j = 0; j < sugars.length; j++) {
-        if (sugars[j].Diagnostic != "yes") {
-          error_x_axis.push(sugars[j].Phi);
-          error_y_axis.push(sugars[j].Theta);
-          error_text.push(sugars[j]["Sugar ID"]);
+        if (sugars[j].Diagnostic !== 'yes') {
+          errorXAxis.push(sugars[j].Phi as number);
+          errorYAxis.push(sugars[j].Theta as number);
+          errorText.push(sugars[j]['Sugar ID'] as string);
         } else {
-          x_axis.push(sugars[j].Phi);
-          y_axis.push(sugars[j].Theta);
-          text.push(sugars[j]["Sugar ID"]);
+          xAxis.push(sugars[j].Phi as number);
+          yAxis.push(sugars[j].Theta as number);
+          text.push(sugars[j]['Sugar ID'] as string);
         }
         // console.log(sugars[j])
       }
     }
   }
 
-  return [x_axis, y_axis, text, error_x_axis, error_y_axis, error_text];
+  return [xAxis, yAxis, text, errorXAxis, errorYAxis, errorText];
 }
 
-export default function CremerPopleGraph(props) {
+export default function CremerPopleGraph (props) {
   const [trace, setTrace] = useState({});
   const [badTrace, setBadTrace] = useState({});
 
   useEffect(() => {
-    const [x_axis, y_axis, text, error_x_axis, error_y_axis, error_text] =
-      calculate_points(props);
+    const [xAxis, yAxis, text, errorXAxis, errorYAxis, errorText] =
+      calculatePoints(props);
 
     setTrace({
-      x: x_axis,
-      y: y_axis,
+      x: xAxis,
+      y: yAxis,
       text,
-      hoverinfo: "text",
-      mode: "markers",
-      type: "scatter",
+      hoverinfo: 'text',
+      mode: 'markers',
+      type: 'scatter',
       marker: {
         size: 8,
-        color: "green",
-        symbol: ["o"],
+        color: 'green',
+        symbol: ['o']
       },
-      name: "No Issues",
+      name: 'No Issues'
     });
     setBadTrace({
-      x: error_x_axis,
-      y: error_y_axis,
-      text: error_text,
-      hoverinfo: "text",
-      mode: "markers",
-      type: "scatter",
+      x: errorXAxis,
+      y: errorYAxis,
+      text: errorText,
+      hoverinfo: 'text',
+      mode: 'markers',
+      type: 'scatter',
       marker: {
         size: 8,
-        color: "red",
-        symbol: ["o"],
+        color: 'red',
+        symbol: ['o']
       },
-      name: "Issues",
+      name: 'Issues'
     });
   }, []);
 
@@ -83,33 +83,33 @@ export default function CremerPopleGraph(props) {
           showlegend: false,
           width: 500,
           height: 400,
-          title: "",
-          plot_bgcolor: "#FFFFFF",
-          paper_bgcolor: "#D6D9E5",
+          title: '',
+          plot_bgcolor: '#FFFFFF',
+          paper_bgcolor: '#D6D9E5',
           margin: {
             l: 50,
             r: 50,
             b: 50,
             t: 10,
-            pad: 4,
+            pad: 4
           },
 
           yaxis: {
             title: {
-              text: "Theta / °",
+              text: 'Theta / °'
             },
             fixedrange: true,
             range: [180, 0],
-            showgrid: true,
+            showgrid: true
           },
           xaxis: {
             title: {
-              text: "Phi / °",
+              text: 'Phi / °'
             },
             fixedrange: true,
             range: [360, 0],
-            showgrid: true,
-          },
+            showgrid: true
+          }
         }}
       />
     </div>

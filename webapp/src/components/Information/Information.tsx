@@ -1,6 +1,6 @@
-import { TORSIONS_CITATION, GLYCOMICS_CITATION } from "../../data/Constants";
-import React from "react";
-export function Information({}) {
+import { TORSIONS_CITATION, GLYCOMICS_CITATION } from '../../data/Constants';
+import React from 'react';
+export function Information () {
   return (
     <div className="text-secondary bg-tertiary pb-12">
       <div className="flex flex-col">
@@ -16,7 +16,7 @@ export function Information({}) {
             Protein Data Bank. <i>Privateer</i> is a software that aims to
             detect and prevent conformational, regiochemical and stereochemical
             anomalies in cyclic carbohydrate structures. Multiple features can
-            be used to assess the validity of a glycan chain.{" "}
+            be used to assess the validity of a glycan chain.{' '}
           </span>
         </div>
 

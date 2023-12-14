@@ -1,19 +1,25 @@
-import React, { lazy, useEffect, useRef, useState } from "react";
+import React, {
+  lazy,
+  type ReactElement,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
 import {
   addMolecule,
   addMap,
   setEnableAtomHovering,
   MoorhenMolecule,
-  MoorhenMap,
-} from "moorhen";
-import { type SNFGProps } from "../../interfaces/types";
-import { useSelector, useDispatch } from "react-redux";
-import Loading from "../Loading/Loading.tsx";
-import GlycanDetail from "../GlycanDetail/GlycanDetail.tsx";
+  MoorhenMap
+} from 'moorhen';
+import { type SNFGProps } from '../../interfaces/types';
+import { useSelector, useDispatch } from 'react-redux';
+import Loading from '../Loading/Loading.tsx';
+import GlycanDetail from '../GlycanDetail/GlycanDetail.tsx';
 
-const SVGTable = lazy(async () => await import("../SVGTable/SVGTable.tsx"));
+const SVGTable = lazy(async () => await import('../SVGTable/SVGTable.tsx'));
 
-export default function SNFG(props: SNFGProps) {
+export default function SNFG (props: SNFGProps): ReactElement {
   const [rowClicked, setRowClicked] = useState(false);
   const [rowID, setRowID] = useState(0);
   const [hideMoorhen, setHideMoorhen] = useState(true);
@@ -22,14 +28,12 @@ export default function SNFG(props: SNFGProps) {
   const [dataLoaded, setDataLoaded] = useState(false);
 
   const cootInitialized = useSelector(
-    (state: any) => state.generalStates.cootInitialized,
+    (state: any) => state.generalStates.cootInitialized
   );
   const controls = useRef();
 
-  const [molecule, setMolecule] = useState();
-  const [map, setMap] = useState();
+  const [map, setMap] = useState<MoorhenMap>();
   const molecules = useSelector((state: any) => state.molecules);
-
   const glRef = useRef(null);
   const timeCapsuleRef = useRef(null);
   const commandCentre = useRef(null);
@@ -42,34 +46,33 @@ export default function SNFG(props: SNFGProps) {
     timeCapsuleRef,
     commandCentre,
     moleculesRef,
-    mapsRef,
+    mapsRef
   };
 
   // const defaultBondSmoothness = useSelector((state: any) => state.sceneSettings.defaultBondSmoothness)
   // const backgroundColor = useSelector((state: any) => state.canvasStates.backgroundColor)
 
-  const [yScrollPosition, setYScrollPosition] = useState(0);
+  // const [yScrollPosition, setYScrollPosition] = useState(0);
 
   useEffect(() => {
-    async function load_map_and_model() {
-      if (cootInitialized && !dataLoaded) {
+    async function loadMapAndModel () {
+      if (cootInitialized === true && !dataLoaded) {
         setAllowRowClick(true);
 
         const newMolecule = new MoorhenMolecule(
           commandCentre,
           glRef,
-          "./baby-gru/monomers",
+          './baby-gru/monomers'
         );
-        await newMolecule.loadToCootFromString(props.fileContent, "mol-1");
-        await newMolecule.fetchIfDirtyAndDraw("CBs");
+        await newMolecule.loadToCootFromString(props.fileContent, 'mol-1');
+        await newMolecule.fetchIfDirtyAndDraw('CBs');
         const id = props.tableData[rowID].id;
-        const sugar_name = id.split("-")[0];
-        const sugar_id = id.split("-")[1].split("/")[0].split(":")[0];
-        const sugar_chain = id.split("/")[1].split("_")[0];
+        const sugarName = id.split('-')[0];
+        const sugarId = id.split('-')[1].split('/')[0].split(':')[0];
+        const sugarChain = id.split('/')[1].split('_')[0];
 
-        const center_string =
-          sugar_chain + "/" + sugar_id + "(" + sugar_name + ")";
-        await newMolecule.centreOn(center_string, true);
+        const centerString = sugarChain + '/' + sugarId + '(' + sugarName + ')';
+        await newMolecule.centreOn(centerString, true);
 
         dispatch(addMolecule(newMolecule));
         dispatch(setEnableAtomHovering(false));
@@ -77,23 +80,23 @@ export default function SNFG(props: SNFGProps) {
         if (props.mtzData !== null) {
           const newMap = new MoorhenMap(commandCentre, glRef);
           const mapMetadata = {
-            F: "FWT",
-            PHI: "PHWT",
-            Fobs: "FP",
-            SigFobs: "SIGFP",
-            FreeR: "FREE",
+            F: 'FWT',
+            PHI: 'PHWT',
+            Fobs: 'FP',
+            SigFobs: 'SIGFP',
+            FreeR: 'FREE',
             isDifference: false,
             useWeight: false,
-            calcStructFact: true,
+            calcStructFact: true
           };
-          if (props.PDBCode == "") {
+          if (props.PDBCode === '') {
             await newMap.loadToCootFromMtzData(
               props.mtzData,
-              "map-1",
-              mapMetadata,
+              'map-1',
+              mapMetadata
             );
           } else {
-            await newMap.loadToCootFromMapData(props.mtzData, "map-1", false);
+            await newMap.loadToCootFromMapData(props.mtzData, 'map-1', false);
           }
           newMap.suggestedContourLevel = 0.3;
           dispatch(addMap(newMap));
@@ -147,33 +150,38 @@ export default function SNFG(props: SNFGProps) {
         // setDataLoaded(true)
       }
     }
-    load_map_and_model();
+    loadMapAndModel().then(
+      () => {},
+      () => {}
+    );
   }, [cootInitialized]);
 
   useEffect(() => {
-    async function move_view() {
-      if (!cootInitialized) {
-        console.log("coot not loaded");
+    async function moveView () {
+      if (cootInitialized === false) {
+        console.log('coot not loaded');
         return;
       }
       // console.log(molecules)
 
       // setYScrollPosition(window.scrollY)
       const id = props.tableData[rowID].id;
-      const sugar_name = id.split("-")[0];
-      const sugar_id = id.split("-")[1].split("/")[0].split(":")[0];
-      const sugar_chain = id.split("/")[1].split("_")[0];
+      const sugarName = id.split('-')[0];
+      const sugarId = id.split('-')[1].split('/')[0].split(':')[0];
+      const sugarChain = id.split('/')[1].split('_')[0];
 
-      const center_string =
-        sugar_chain + "/" + sugar_id + "(" + sugar_name + ")";
+      const centerString = sugarChain + '/' + sugarId + '(' + sugarName + ')';
       const selectedMolecule = molecules.find(
-        (molecule) => molecule.name === "mol-1",
+        (molecule) => molecule.name === 'mol-1'
       );
-      await selectedMolecule.centreOn(center_string);
+      await selectedMolecule.centreOn(centerString);
       // window.scrollTo(0, 0)
       setHideMoorhen(false);
     }
-    move_view();
+    moveView().then(
+      () => {},
+      () => {}
+    );
   }, [rowClicked]);
 
   const glycanDetailProps = {
@@ -181,11 +189,9 @@ export default function SNFG(props: SNFGProps) {
     hideMoorhen,
     setHideMoorhen,
     rowID,
-    scrollPosition: yScrollPosition,
     controls,
-    molecule,
     map,
-    moorhenProps: collectedProps,
+    moorhenProps: collectedProps
   };
 
   const svgTableProps = {
@@ -193,14 +199,15 @@ export default function SNFG(props: SNFGProps) {
     allowRowClick,
     rowClick: rowClicked,
     setRowClicked,
-    setRowID,
+    setRowID
   };
 
   return (
     <div className="flex flex-col">
-      {dataLoaded ? (
+      {dataLoaded
+        ? (
         <div
-          style={{ display: hideMoorhen ? "block" : "none" }}
+          style={{ display: hideMoorhen ? 'block' : 'none' }}
           id="tableContainer"
         >
           <div className="flex flex-col ">
@@ -210,12 +217,13 @@ export default function SNFG(props: SNFGProps) {
             <SVGTable {...svgTableProps} />
           </div>
         </div>
-      ) : (
+          )
+        : (
         <Loading loadingText="Setting up Moorhen..."></Loading>
-      )}
+          )}
 
       <div
-        style={{ display: hideMoorhen ? "none" : "block" }}
+        style={{ display: hideMoorhen ? 'none' : 'block' }}
         id="tableContainer"
       >
         <GlycanDetail {...glycanDetailProps} />

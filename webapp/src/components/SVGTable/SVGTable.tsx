@@ -1,8 +1,8 @@
-import React, { useMemo, useRef, useState } from "react";
-import { useTable } from "react-table";
-import { COLUMNS } from "../../data/Constants";
-import styled from "styled-components";
-import { type SVGTableProps } from "../../interfaces/types";
+import React, { type ReactElement, useMemo } from 'react';
+import { useTable } from 'react-table';
+import { COLUMNS } from '../../data/Constants';
+import styled from 'styled-components';
+import { type SVGTableProps } from '../../interfaces/types';
 
 const Styles = styled.div`
   table {
@@ -68,21 +68,21 @@ const Styles = styled.div`
   }
 `;
 
-export default function SVGTable(props: SVGTableProps) {
-  const [data, setData] = useState(props.tableData);
-  const controls = useRef();
+export default function SVGTable (props: SVGTableProps): ReactElement {
+  // const [data, _setData] = useState(props.tableData);
+  // const controls = useRef();
+  const data = props.tableData;
 
   const columns = useMemo(() => COLUMNS, []);
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
 
-  const handleRowClick = (rowId: number) => {
-    console.log(rowId, "clicked");
+  function handleRowClick (rowId: number): void {
     if (props.allowRowClick) {
       props.setRowClicked(!props.rowClick);
       props.setRowID(rowId);
     }
-  };
+  }
 
   return (
     <div className="flex flex-col mx-auto px-16">
@@ -94,13 +94,13 @@ export default function SVGTable(props: SVGTableProps) {
               {headerGroups.map((headerGroup) => (
                 <tr
                   {...headerGroup.getHeaderGroupProps({
-                    style: { width: "200px" },
+                    style: { width: '200px' }
                   })}
                   key={headerGroup.name}
                 >
                   {headerGroup.headers.map((column) => (
                     <th {...column.getHeaderProps()} key={column.name}>
-                      {column.render("Header")}
+                      {column.render('Header')}
                     </th>
                   ))}
                 </tr>
@@ -114,7 +114,7 @@ export default function SVGTable(props: SVGTableProps) {
                     {...row.getRowProps()}
                     onClick={() => {
                       if (props.allowRowClick) {
-                        handleRowClick(row.id);
+                        handleRowClick(row.id as number);
                       }
                     }}
                     title="Click to visualise."
@@ -124,7 +124,7 @@ export default function SVGTable(props: SVGTableProps) {
                     {row.cells.map((cell) => {
                       return (
                         <td {...cell.getCellProps()} key={cell.name}>
-                          {cell.render("Cell")}{" "}
+                          {cell.render('Cell')}{' '}
                         </td>
                       );
                     })}

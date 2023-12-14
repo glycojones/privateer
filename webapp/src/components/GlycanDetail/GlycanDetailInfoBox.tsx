@@ -1,6 +1,13 @@
-import React from "react";
+import React from 'react';
 
-export default function GlycanDetailInfoBox({ key, row }) {
+interface GlycanDetailInfoBoxProps {
+  key: string
+  row: any
+}
+export default function GlycanDetailInfoBox ({
+  key,
+  row
+}: GlycanDetailInfoBoxProps) {
   return (
     <div key={key} className="flex flex-col flex-wrap px-8">
       <h3 className="text-left text-xl">Validation Report</h3>
@@ -9,7 +16,7 @@ export default function GlycanDetailInfoBox({ key, row }) {
           Glycan ID: <b>{row.id}</b>
         </h4>
         <h4>
-          GlyTouCan ID:{" "}
+          GlyTouCan ID:{' '}
           <a
             href={`https://glytoucan.org/Structures/Glycans/${row.glytoucan_id}`}
           >

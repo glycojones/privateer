@@ -1,67 +1,67 @@
-import React from "react";
+import React from 'react';
 
-export const GITHUB_REPO = "https://github.com/glycojones/privateer";
-export const GENERAL_CITATION = "https://doi.org/10.1038/nsmb.3115";
-export const TORSIONS_CITATION = "http://dx.doi.org/10.1107/S2059798323003510";
-export const GLYCOMICS_CITATION = "https://doi.org/10.3762/bjoc.16.204";
+export const GITHUB_REPO = 'https://github.com/glycojones/privateer';
+export const GENERAL_CITATION = 'https://doi.org/10.1038/nsmb.3115';
+export const TORSIONS_CITATION = 'http://dx.doi.org/10.1107/S2059798323003510';
+export const GLYCOMICS_CITATION = 'https://doi.org/10.3762/bjoc.16.204';
 
 export const GlycanDetailLayout = {
   xl: [
-    { i: "info", x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
-    { i: "snfg", x: 1, y: 0, w: 1, h: 1, isResizable: false },
-    { i: "moorhen", x: 2, y: 0, w: 1, h: 2, isResizable: false },
-    { i: "torsions", x: 3, y: 0, w: 1, h: 1.75, isResizable: false },
+    { i: 'info', x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
+    { i: 'snfg', x: 1, y: 0, w: 1, h: 1, isResizable: false },
+    { i: 'moorhen', x: 2, y: 0, w: 1, h: 2, isResizable: false },
+    { i: 'torsions', x: 3, y: 0, w: 1, h: 1.75, isResizable: false }
   ],
   lg: [
-    { i: "info", x: 0, y: 0, w: 1, h: 1, isResizable: false },
-    { i: "snfg", x: 1, y: 2, w: 1, h: 1, isResizable: false },
-    { i: "moorhen", x: 0, y: 2, w: 1, h: 2, isResizable: false },
-    { i: "torsions", x: 1, y: 2, w: 1, h: 2, isResizable: false },
+    { i: 'info', x: 0, y: 0, w: 1, h: 1, isResizable: false },
+    { i: 'snfg', x: 1, y: 2, w: 1, h: 1, isResizable: false },
+    { i: 'moorhen', x: 0, y: 2, w: 1, h: 2, isResizable: false },
+    { i: 'torsions', x: 1, y: 2, w: 1, h: 2, isResizable: false }
   ],
   md: [
-    { i: "info", x: 0, y: 0, w: 1, h: 1, isResizable: false },
-    { i: "snfg", x: 1, y: 0, w: 1, h: 1, isResizable: false },
-    { i: "moorhen", x: 0, y: 2, w: 1, h: 2, isResizable: false },
-    { i: "torsions", x: 1, y: 1, w: 1, h: 2, isResizable: false },
+    { i: 'info', x: 0, y: 0, w: 1, h: 1, isResizable: false },
+    { i: 'snfg', x: 1, y: 0, w: 1, h: 1, isResizable: false },
+    { i: 'moorhen', x: 0, y: 2, w: 1, h: 2, isResizable: false },
+    { i: 'torsions', x: 1, y: 1, w: 1, h: 2, isResizable: false }
   ],
   sm: [
-    { i: "info", x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
-    { i: "snfg", x: 0, y: 2, w: 1, h: 1, isResizable: false },
-    { i: "moorhen", x: 0, y: 4, w: 1, h: 2, isResizable: false },
-    { i: "torsions", x: 0, y: 6, w: 1, h: 1.75, isResizable: false },
-  ],
+    { i: 'info', x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
+    { i: 'snfg', x: 0, y: 2, w: 1, h: 1, isResizable: false },
+    { i: 'moorhen', x: 0, y: 4, w: 1, h: 2, isResizable: false },
+    { i: 'torsions', x: 0, y: 6, w: 1, h: 1.75, isResizable: false }
+  ]
 };
 
 export const COLUMNS = [
   {
-    Header: "Chain",
-    accessor: "chain",
+    Header: 'Chain',
+    accessor: 'chain'
   },
   {
-    Header: "ID",
-    accessor: "id",
+    Header: 'ID',
+    accessor: 'id'
   },
   {
-    Header: "SNFG",
-    accessor: "svg",
+    Header: 'SNFG',
+    accessor: 'svg',
     Cell: (tableProps) => {
       return (
         <div
           className="mt-4 py-4 flex justify-end w-24 sm:w-64 md:w-96"
           id="svgContainer"
           dangerouslySetInnerHTML={{
-            __html: tableProps.row.original.svg,
+            __html: tableProps.row.original.svg
           }}
         />
       );
       // return <img src={`data:image/svg+xml;base64,${btoa(tableProps.row.original.svg)}`} alt="" width="300"
       //             height="300"/>
-    },
+    }
   },
   {
-    Header: "GlytoucanID",
-    accessor: "glytoucan_id",
-  },
+    Header: 'GlytoucanID',
+    accessor: 'glytoucan_id'
+  }
   // {
   //     Header: "Explore",
   //     Cell: tableProps => {
@@ -80,12 +80,12 @@ export const COLUMNS = [
 
 export const DatabaseColumns = [
   {
-    Header: "Chain",
-    accessor: "chain",
+    Header: 'Chain',
+    accessor: 'chain'
   },
   {
-    Header: "SNFG",
-    accessor: "SNFG",
+    Header: 'SNFG',
+    accessor: 'SNFG',
     Cell: (tableProps) => {
       // console.log("SNFG", tableProps.row.original.SNFG)
 
@@ -94,26 +94,26 @@ export const DatabaseColumns = [
           className="mt-4 py-4 flex justify-end"
           id="svgContainer"
           dangerouslySetInnerHTML={{
-            __html: tableProps.row.original.SNFG,
+            __html: tableProps.row.original.SNFG
           }}
         />
       );
-    },
+    }
   },
   {
-    Header: "WURCS",
-    accessor: "WURCS",
+    Header: 'WURCS',
+    accessor: 'WURCS',
     Cell: (tableProps) => {
       return (
         <button
           className="justify-center"
           title="Copy WURCS to clipboard"
-          onClick={(e) => {
+          onClick={() => {
             navigator.clipboard
               .writeText(tableProps.row.original.WURCS as string)
               .then(
                 () => {},
-                () => {},
+                () => {}
               );
           }}
         >
@@ -131,91 +131,91 @@ export const DatabaseColumns = [
           </svg>
         </button>
       );
-    },
-  },
+    }
+  }
 ];
 
 export const SugarListColumns = [
   {
-    Header: "Sugar ID",
-    accessor: "Sugar ID",
+    Header: 'Sugar ID',
+    accessor: 'Sugar ID'
   },
   {
-    Header: "Q",
-    accessor: "Q",
+    Header: 'Q',
+    accessor: 'Q'
   },
   {
-    Header: "Phi",
-    accessor: "Phi",
+    Header: 'Phi',
+    accessor: 'Phi'
   },
   {
-    Header: "Theta",
-    accessor: "Theta",
+    Header: 'Theta',
+    accessor: 'Theta'
   },
   {
-    Header: "RSCC",
-    accessor: "RSCC",
+    Header: 'RSCC',
+    accessor: 'RSCC'
   },
   {
-    Header: "B Factor",
-    accessor: "BFactor",
+    Header: 'B Factor',
+    accessor: 'BFactor'
   },
   {
-    Header: "Detected Type",
-    accessor: "Detected Type",
+    Header: 'Detected Type',
+    accessor: 'Detected Type'
   },
   {
-    Header: "mFo",
-    accessor: "mFo",
+    Header: 'mFo',
+    accessor: 'mFo'
   },
   {
-    Header: "Type",
-    accessor: "type",
+    Header: 'Type',
+    accessor: 'type'
   },
   {
-    Header: "Diagnostic",
-    accessor: "Diagnostic",
-  },
+    Header: 'Diagnostic',
+    accessor: 'Diagnostic'
+  }
 ];
 
-export const linkageDB = {
-  "GAL-1,4-NAG":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/GAL-1,4-NAG.json",
-  "NAG-1,2-MAN":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/NAG-1,2-MAN.json",
-  "MAN-1,6-MAN":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,6-MAN.json",
-  "FUC-1,3-NAG":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/FUC-1,3-NAG.json",
-  "MAN-1,3-BMA":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,3-BMA.json",
-  "NAG-1,4-NAG":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/NAG-1,4-NAG.json",
-  "ASN-1,2-NAG":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/ASN-1,2-NAG.json",
-  "MAN-1,6-BMA":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,6-BMA.json",
-  "BMA-1,4-NAG":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/BMA-1,4-NAG.json",
-  "FUC-1,6-NAG":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/FUC-1,6-NAG.json",
-  "MAN-1,3-MAN":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,3-MAN.json",
-  "MAN-1,2-MAN":
-    "https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,2-MAN.json",
+export const linkageDB: Record<string, string> = {
+  'GAL-1,4-NAG':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/GAL-1,4-NAG.json',
+  'NAG-1,2-MAN':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/NAG-1,2-MAN.json',
+  'MAN-1,6-MAN':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,6-MAN.json',
+  'FUC-1,3-NAG':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/FUC-1,3-NAG.json',
+  'MAN-1,3-BMA':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,3-BMA.json',
+  'NAG-1,4-NAG':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/NAG-1,4-NAG.json',
+  'ASN-1,2-NAG':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/ASN-1,2-NAG.json',
+  'MAN-1,6-BMA':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,6-BMA.json',
+  'BMA-1,4-NAG':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/BMA-1,4-NAG.json',
+  'FUC-1,6-NAG':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/FUC-1,6-NAG.json',
+  'MAN-1,3-MAN':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,3-MAN.json',
+  'MAN-1,2-MAN':
+    'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,2-MAN.json'
 };
 
 export const binDB = {
-  "ASN-1,2-NAG": { start: 0, end: 360, size: 4 },
-  "NAG-1,2-MAN": { start: -180, end: 180, size: 4 },
-  "MAN-1,6-MAN": { start: -180, end: 180, size: 4 },
-  "FUC-1,3-NAG": { start: -180, end: 180, size: 4 },
-  "MAN-1,3-BMA": { start: -180, end: 180, size: 4 },
-  "NAG-1,4-NAG": { start: -180, end: 180, size: 4 },
-  "GAL-1,4-NAG": { start: -180, end: 180, size: 4 },
-  "MAN-1,6-BMA": { start: -180, end: 180, size: 4 },
-  "BMA-1,4-NAG": { start: -180, end: 180, size: 4 },
-  "FUC-1,6-NAG": { start: -180, end: 180, size: 4 },
-  "MAN-1,3-MAN": { start: -180, end: 180, size: 4 },
-  "MAN-1,2-MAN": { start: -180, end: 180, size: 4 },
+  'ASN-1,2-NAG': { start: 0, end: 360, size: 4 },
+  'NAG-1,2-MAN': { start: -180, end: 180, size: 4 },
+  'MAN-1,6-MAN': { start: -180, end: 180, size: 4 },
+  'FUC-1,3-NAG': { start: -180, end: 180, size: 4 },
+  'MAN-1,3-BMA': { start: -180, end: 180, size: 4 },
+  'NAG-1,4-NAG': { start: -180, end: 180, size: 4 },
+  'GAL-1,4-NAG': { start: -180, end: 180, size: 4 },
+  'MAN-1,6-BMA': { start: -180, end: 180, size: 4 },
+  'BMA-1,4-NAG': { start: -180, end: 180, size: 4 },
+  'FUC-1,6-NAG': { start: -180, end: 180, size: 4 },
+  'MAN-1,3-MAN': { start: -180, end: 180, size: 4 },
+  'MAN-1,2-MAN': { start: -180, end: 180, size: 4 }
 };

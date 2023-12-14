@@ -1,5 +1,5 @@
-import React, { type ReactElement } from "react";
-export default function Footer(): ReactElement {
+import React, { type ReactElement } from 'react';
+export default function Footer (): ReactElement {
   return (
     <footer className="bg-gray w-full mt-auto">
       <div className="w-full mx-auto max-w-screen-xl p-4 flex items-center justify-center">

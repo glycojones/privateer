@@ -1,20 +1,20 @@
-import React, { useEffect, useState, lazy, type ReactElement } from "react";
+import React, { useEffect, useState, lazy, type ReactElement } from 'react';
 
-import { linkageDB, binDB } from "../../data/Constants";
-const Plot = lazy(async () => await import("react-plotly.js"));
+import { linkageDB, binDB } from '../../../data/Constants.tsx';
+const Plot = lazy(async () => await import('react-plotly.js'));
 
-export default function TorsionPlot({
+export default function TorsionPlot ({
   linkageType,
   sortedTorsionList,
-  size,
+  size
 }: {
-  linkageType: string;
-  sortedTorsionList: any;
-  size: any;
+  linkageType: string
+  sortedTorsionList: any
+  size: any
 }): ReactElement {
   const [trace, setTrace] = useState({});
   const [overlay, setOverlay] = useState({});
-  const [linkageFound, setLinkageFound] = useState({});
+  const [linkageFound, setLinkageFound] = useState(false);
 
   useEffect(() => {
     fetch(linkageDB[linkageType])
@@ -24,37 +24,37 @@ export default function TorsionPlot({
         const yData: number[] = [];
 
         for (let i = 0; i < responseJson.length; i++) {
-          xData.push(parseFloat(responseJson[i].phi));
-          yData.push(parseFloat(responseJson[i].psi));
+          xData.push(parseFloat(responseJson[i].phi as string));
+          yData.push(parseFloat(responseJson[i].psi as string));
         }
 
         setTrace({
           x: xData,
           y: yData,
-          name: "density",
+          name: 'density',
           ncontours: 100,
-          colorscale: "Hot",
+          colorscale: 'Hot',
           reversescale: true,
           showscale: true,
-          type: "histogram2d",
+          type: 'histogram2d',
           dragmode: false,
           colorbar: {
-            title: "Frequency",
-            side: "bottom",
+            title: 'Frequency',
+            side: 'bottom'
           },
           xbins: {
             start: -180,
             end: 180,
-            size: 4,
+            size: 4
           },
           autobiny: false,
-          ybins: binDB[linkageType],
+          ybins: binDB[linkageType]
         });
         setLinkageFound(true);
       })
       .catch((error) => {
         console.error(error);
-        console.log(linkageType, " is not in the DB most likely ");
+        console.log(linkageType, ' is not in the DB most likely ');
         setLinkageFound(false);
       });
 
@@ -69,21 +69,23 @@ export default function TorsionPlot({
     setOverlay({
       x: overlayPhi,
       y: overlayPsi,
-      mode: "markers",
-      type: "scatter",
+      mode: 'markers',
+      type: 'scatter',
       marker: {
         size: 8,
-        color: "blue",
-        symbol: ["x"],
-      },
+        color: 'blue',
+        symbol: ['x']
+      }
     });
   }, [linkageType]);
 
-  return linkageFound === {} ? (
+  return linkageFound === false
+    ? (
     <h3>
       {linkageType} does not have enough datapoints to generate a torsion plot.
     </h3>
-  ) : (
+      )
+    : (
     <Plot
       data={[trace, overlay]}
       layout={{
@@ -93,24 +95,24 @@ export default function TorsionPlot({
 
         yaxis: {
           title: {
-            text: "ψ / °",
+            text: 'ψ / °'
           },
           fixedrange: true,
           range:
             linkageType in binDB
               ? [binDB[linkageType].start, binDB[linkageType].end]
               : [-180, 180],
-          showgrid: false,
+          showgrid: false
         },
         xaxis: {
           title: {
-            text: "φ / °",
+            text: 'φ / °'
           },
           fixedrange: true,
           range: [-180, 180],
-          showgrid: false,
-        },
+          showgrid: false
+        }
       }}
     />
-  );
+      );
 }

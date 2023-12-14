@@ -1,32 +1,32 @@
-export async function fetchPDB(PDBCode: string): Promise<string | void> {
+export async function fetchPDB (PDBCode: string): Promise<string | void> {
   if (PDBCode == null) {
     return;
   }
-  console.log("Fetching PDB ", PDBCode);
+  console.log('Fetching PDB ', PDBCode);
   const pdbURL = `https://files.rcsb.org/download/${PDBCode.toUpperCase()}.pdb`;
 
   const file = fetch(pdbURL)
     .then(async (response) => {
       if (!response.ok) {
-        throw new Error("Network error");
+        throw new Error('Network error');
       }
       return await response.text();
     })
     .then(async (file) => {
       return file;
     })
-    .catch((e) => {
-      throw new Error("PDB Not Found");
+    .catch(() => {
+      throw new Error('PDB Not Found');
     });
   return await file;
 }
 
-export async function fetchMap(PDBCode: string): Promise<ArrayBuffer | void> {
+export async function fetchMap (PDBCode: string): Promise<ArrayBuffer | void> {
   if (PDBCode == null) {
     await Promise.resolve();
     return;
   }
-  console.log("Fetching MTZ ", PDBCode);
+  console.log('Fetching MTZ ', PDBCode);
   const mtzURL = `https://www.ebi.ac.uk/pdbe/entry-files/${PDBCode.toLowerCase()}.ccp4`;
 
   try {
@@ -40,16 +40,16 @@ export async function fetchMap(PDBCode: string): Promise<ArrayBuffer | void> {
         clearTimeout(timeId);
 
         if (!response.ok) {
-          throw new Error("Network error");
+          throw new Error('Network error');
         }
         return await response.arrayBuffer();
       })
       .then(async (file) => {
         return file;
       })
-      .catch(async (e) => {
+      .catch(async () => {
         // throw 'Map not found'
-        throw new Error("Map Not Found");
+        throw new Error('Map Not Found');
       });
     return await file;
   } catch {}

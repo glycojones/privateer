@@ -1,20 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
-import { MoorhenContainer } from "moorhen";
-import LeftMouseClick from "../../assets/LeftClick";
+import React, { useEffect, useRef, useState } from 'react';
+import { MoorhenContainer } from 'moorhen';
+// import LeftMouseClick from '../../assets/LeftClick';
 
-export function GlycanDetailMoorhenView(props: {
-  key: string;
-  onChange: (e) => Promise<void>;
-  onSymmetryChange: (e) => any;
-  moorhenProps: any;
-  moorhenDimensions: () => [number, number];
-  mapContour: number;
+export function GlycanDetailMoorhenView (props: {
+  key: string
+  onChange: (e) => Promise<void>
+  onSymmetryChange: (e) => any
+  moorhenProps: any
+  moorhenDimensions: () => [number, number]
+  mapContour: number
 }) {
-  const [size, setSize] = useState(Math.min(800, 0.9 * window.screen.width));
+  const size = Math.min(800, 0.9 * window.innerWidth);
   const [dimensions, setDimensions] = useState<Record<string, number>>(
     size >= 800
       ? { width: size, height: size * (3 / 4) }
-      : { width: size, height: size },
+      : { width: size, height: size }
   );
 
   const dimensionRef = useRef();
@@ -22,20 +22,19 @@ export function GlycanDetailMoorhenView(props: {
   // @ts-expect-error
   dimensionRef.current = dimensions;
   useEffect(() => {
-    function handleResize() {
-      const size = Math.min(800, 0.9 * window.screen.width);
+    function handleResize () {
+      const size = Math.min(800, 0.9 * window.innerWidth);
       if (size >= 800) {
         setDimensions({ width: size, height: size * (3 / 4) });
       } else {
         setDimensions({ width: size, height: size });
       }
-      console.log("resizing", size, window.screen.width);
     }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
   }, []);
 
-  const moorhenDimensionCallback = () => {
+  const moorhenDimensionCallback = (): [number, number] => {
     // @ts-expect-error
     return [dimensionRef.current.width, dimensionRef.current.height];
   };
@@ -43,7 +42,7 @@ export function GlycanDetailMoorhenView(props: {
   return (
     <div key={props.key} className="px-8 flex flex-col items-center">
       <h3 className="text-left text-xl w-full">
-        Visualise with <i>Moorhen</i>{" "}
+        Visualise with <i>Moorhen</i>{' '}
         <a href="https://moorhen.org" title="Go to Moorhen.org">
           <img className="inline h-8" src="./moorhen_logo.png"></img>
         </a>
@@ -63,7 +62,7 @@ export function GlycanDetailMoorhenView(props: {
             htmlFor="contour-range-text"
             className="block mt-2 text-sm font-medium text-gray-909"
           >
-            Map Contour - {props.mapContour}{" "}
+            Map Contour - {props.mapContour}{' '}
           </label>
           <input
             id="contour-range"

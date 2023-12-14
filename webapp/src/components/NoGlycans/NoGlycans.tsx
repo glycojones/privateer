@@ -1,6 +1,6 @@
-import { type NoGlycansProps } from "../../interfaces/types.tsx";
-import React from "react";
-export default function NoGlycans(props: NoGlycansProps) {
+import { type NoGlycansProps } from '../../interfaces/types.tsx';
+import React from 'react';
+export default function NoGlycans (props: NoGlycansProps) {
   return (
     <div
       className="flex flex-col m-12 px-12 pt-8 w-64

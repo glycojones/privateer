@@ -1,63 +1,63 @@
-import React, { useEffect, useState, lazy } from "react";
+import React, { useEffect, useState, lazy } from 'react';
 
-const Plot = lazy(async () => await import("react-plotly.js"));
+const Plot = lazy(async () => await import('react-plotly.js'));
 
-function calculate_points(data) {
+function calculatePoints (data): [number[], number[], string[]] {
   const glycans = data.data.glycans;
 
-  const x_axis = [];
-  const y_axis = [];
-  const text = [];
+  const xAxis: number[] = [];
+  const yAxis: number[] = [];
+  const text: string[] = [];
 
   for (const key in glycans) {
-    const glycan_type = glycans[key];
-    for (let i = 0; i < glycan_type.length; i++) {
-      const sugars = glycan_type[i].Sugars;
+    const glycanType = glycans[key];
+    for (let i = 0; i < glycanType.length; i++) {
+      const sugars = glycanType[i].Sugars;
       for (let j = 0; j < sugars.length; j++) {
-        x_axis.push(sugars[j].BFactor);
-        y_axis.push(sugars[j].RSCC);
-        text.push(sugars[j]["Sugar ID"]);
+        xAxis.push(sugars[j].BFactor as number);
+        yAxis.push(sugars[j].RSCC as number);
+        text.push(sugars[j]['Sugar ID'] as string);
       }
     }
   }
 
-  return [x_axis, y_axis, text];
+  return [xAxis, yAxis, text];
 }
 
-export default function BFactorVsRSCC(props) {
+export default function BFactorVsRSCC (props) {
   const [trace, setTrace] = useState({});
   const [corrTrace, setCorrTrace] = useState({});
 
   useEffect(() => {
-    const [x_axis, y_axis, text] = calculate_points(props);
+    const [xAxis, yAxis, text] = calculatePoints(props);
 
-    const max_x = Math.max(...x_axis) + 5;
+    const maxX = Math.max(...xAxis) + 5;
 
     setCorrTrace({
-      x: [0, max_x],
+      x: [0, maxX],
       y: [0.7, 0.7],
-      fill: "tozeroy",
-      fillcolor: "rgba(173,181,189,0.3)",
+      fill: 'tozeroy',
+      fillcolor: 'rgba(173,181,189,0.3)',
       fillopacity: 0.1,
       marker: {
         size: 1,
-        color: "rgba(173,181,189,0.5)",
-        symbol: ["o"],
-      },
+        color: 'rgba(173,181,189,0.5)',
+        symbol: ['o']
+      }
     });
 
     setTrace({
-      x: x_axis,
-      y: y_axis,
+      x: xAxis,
+      y: yAxis,
       text,
-      hoverinfo: "text",
-      mode: "markers",
-      type: "scatter",
+      hoverinfo: 'text',
+      mode: 'markers',
+      type: 'scatter',
       marker: {
         size: 8,
-        color: "green",
-        symbol: ["o"],
-      },
+        color: 'green',
+        symbol: ['o']
+      }
     });
   }, []);
 
@@ -70,32 +70,32 @@ export default function BFactorVsRSCC(props) {
           showlegend: false,
           width: 500,
           height: 400,
-          title: "",
-          plot_bgcolor: "#FFFFF",
-          paper_bgcolor: "#D6D9E5",
+          title: '',
+          plot_bgcolor: '#FFFFF',
+          paper_bgcolor: '#D6D9E5',
           margin: {
             l: 50,
             r: 50,
             b: 50,
             t: 10,
-            pad: 4,
+            pad: 4
           },
           yaxis: {
             title: {
-              text: "RSCC",
+              text: 'RSCC'
             },
             fixedrange: true,
             range: [0, 1],
-            showgrid: true,
+            showgrid: true
           },
           xaxis: {
             title: {
-              text: "B Factor",
+              text: 'B Factor'
             },
             fixedrange: true,
             // range: [0, 100],
-            showgrid: true,
-          },
+            showgrid: true
+          }
         }}
       />
     </div>
