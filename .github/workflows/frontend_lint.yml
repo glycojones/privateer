@@ -20,8 +20,6 @@ jobs:
           export NODE_OPTIONS=--max-old-space-size=8192
           cd webapp
           npm ci
-          npm run build 
-          cp ../.htaccess dist
-          mv dist public_html
-          cd ..
+          npm run lint
+          npm run prettier
       
