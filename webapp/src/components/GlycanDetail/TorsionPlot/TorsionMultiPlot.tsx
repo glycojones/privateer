@@ -129,7 +129,7 @@ export default function TorsionMultiPlot ({
   return (
     <div className="flex flex-col align-middle justify-center items-center space-y-6 ">
       <div className="text-sm font-medium text-center text-gray-500 border-gray-200 text-gray-400 border-gray-700">
-        <ul className="flex flex-wrap -mb-px mt-2">
+        <ul className="flex flex-wrap -mb-px mt-2 justify-center">
           <TorsionMultiPlotTabs torsions={torsions} setTab={setTab} />
         </ul>
       </div>

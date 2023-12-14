@@ -41,14 +41,14 @@ export function GlycanDetailMoorhenView (props: {
 
   return (
     <div key={props.key} className="px-8 flex flex-col items-center">
-      <h3 className="text-left text-xl w-full">
+      <h3 className="text-left text-xl w-full font-bold mt-2">
         Visualise with <i>Moorhen</i>{' '}
         <a href="https://moorhen.org" title="Go to Moorhen.org">
           <img className="inline h-8" src="./moorhen_logo.png"></img>
         </a>
       </h3>
 
-      <div className="mx-auto">
+      <div className="mx-auto mt-4 items-center" style={{ transform: 'translateY(-60px)' }}>
         <MoorhenContainer
           {...props.moorhenProps}
           setMoorhenDimensions={moorhenDimensionCallback}
@@ -56,7 +56,7 @@ export function GlycanDetailMoorhenView (props: {
         />
       </div>
 
-      <div className="flex gap-8">
+      <div className="flex gap-8" style={{ transform: 'translateY(-40px)' }}>
         <div className="block">
           <label
             htmlFor="contour-range-text"

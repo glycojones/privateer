@@ -24,7 +24,7 @@ export function GlycanDetailTorsionPlot (props: {
 
   return (
     <div key={props.key} className="px-8">
-      <h3 className="text-left text-xl w-full mb-6 mt-6">Torsion Plots</h3>
+      <h3 className="text-left text-xl w-full mb-6 font-bold mt-2">Torsion Plots</h3>
 
       <TorsionMultiPlot
         torsions={props.tableDataEntries[props.rowID].torsions}

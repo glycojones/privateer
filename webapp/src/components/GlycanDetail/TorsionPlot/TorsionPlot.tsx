@@ -79,7 +79,7 @@ export default function TorsionPlot ({
     });
   }, [linkageType]);
 
-  return linkageFound === false
+  return !linkageFound
     ? (
     <h3>
       {linkageType} does not have enough datapoints to generate a torsion plot.
