@@ -7,35 +7,35 @@ import PageLoad from './components/Loading/PageLoad';
 import { Routes, Route, useSearchParams, useLocation } from 'react-router-dom';
 // import APIForwarding from "./components/APIComponent/APIForwarding";
 
-function useQuery () {
-  const { search } = useLocation();
-  return useMemo(() => new URLSearchParams(search), [search]);
+function useQuery() {
+    const { search } = useLocation();
+    return useMemo(() => new URLSearchParams(search), [search]);
 }
 
-function App () {
-  const query = useQuery();
-  const [_, setSearchParams] = useSearchParams();
+function App() {
+    const query = useQuery();
+    const [_, setSearchParams] = useSearchParams();
 
-  return (
-    <Suspense fallback={<PageLoad />}>
-      <div className="flex flex-col">
-        <Routes>
-          {/* @ts-expect-error */}
-          <Route index path="/" element={<HomeSection />} />
-          <Route
-            path="/database"
-            element={
-              <DatabaseSection
-                query={query}
-                setSearchParams={setSearchParams}
-              />
-            }
-          />
-          {/* <Route path="/api" element={<APIForwarding query={query} />} /> */}
-        </Routes>
-      </div>
-    </Suspense>
-  );
+    return (
+        <Suspense fallback={<PageLoad />}>
+            <div className="flex flex-col">
+                <Routes>
+                    {/* @ts-expect-error */}
+                    <Route index path="/" element={<HomeSection />} />
+                    <Route
+                        path="/database"
+                        element={
+                            <DatabaseSection
+                                query={query}
+                                setSearchParams={setSearchParams}
+                            />
+                        }
+                    />
+                    {/* <Route path="/api" element={<APIForwarding query={query} />} /> */}
+                </Routes>
+            </div>
+        </Suspense>
+    );
 }
 
 export default App;

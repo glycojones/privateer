@@ -1,25 +1,25 @@
 import { type NoGlycansProps } from '../../interfaces/types.tsx';
 import React from 'react';
-export default function NoGlycans (props: NoGlycansProps) {
-  return (
-    <div
-      className="flex flex-col m-12 px-12 pt-8 w-64
+export default function NoGlycans(props: NoGlycansProps) {
+    return (
+        <div
+            className="flex flex-col m-12 px-12 pt-8 w-64
             items-center text-center justify-between h-64 border-2
             transition-all border-gray-300 rounded-lg
             bg-gray-50 flex-grow-0 mx-auto"
-    >
-      <p>{props.text}</p>
-
-      <div className="flex space-x-4 py-6">
-        <button
-          className="bg-gray hover:bg-hover border-gray-800 border-2 text-primary opacity-60 font-bold py-2 px-4 rounded"
-          onClick={() => {
-            props.setResetApp(true);
-          }}
         >
-          Retry
-        </button>
-      </div>
-    </div>
-  );
+            <p>{props.text}</p>
+
+            <div className="flex space-x-4 py-6">
+                <button
+                    className="bg-gray hover:bg-hover border-gray-800 border-2 text-primary opacity-60 font-bold py-2 px-4 rounded"
+                    onClick={() => {
+                        props.setResetApp(true);
+                    }}
+                >
+                    Retry
+                </button>
+            </div>
+        </div>
+    );
 }
