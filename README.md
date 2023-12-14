@@ -15,9 +15,13 @@ To just work on the front end of the Privateer web app do the following:
 - `npm i`
 - `npm run dev`
 
-Before ANY commit to this repository the following code must be run:
-`npm run prettier`
-AND the following tests must be performed: 
+Before committing to this branch the following code must be run and pass with no errors:
+
+  `npm run lint`
+  
+  `npm run prettier`
+
+The following tests must also be performed: 
 - Upload PDB file only
 - Upload PDB file and MTZ file
 - Fetch 1234 from the PDB
