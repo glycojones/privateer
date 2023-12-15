@@ -2,8 +2,8 @@ import React from 'react';
 export default function Reflections() {
     return (
         <svg
-            width="25"
-            height="25"
+            width="20"
+            height="20"
             viewBox="0 0 6.615 6.615"
             xmlns="http://www.w3.org/2000/svg"
         >

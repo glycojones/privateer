@@ -12,9 +12,9 @@ import {
     MoorhenMolecule,
     MoorhenMap,
 } from 'moorhen';
-import { type SNFGProps } from '../../interfaces/types';
+import { type SNFGProps } from '../../interfaces/types.ts';
 import { useSelector, useDispatch } from 'react-redux';
-import Loading from '../Loading/Loading.tsx';
+import Loading from '../../shared/Loading/Loading.tsx';
 import GlycanDetail from '../GlycanDetail/GlycanDetail.tsx';
 
 const SVGTable = lazy(async () => await import('../SVGTable/SVGTable.tsx'));

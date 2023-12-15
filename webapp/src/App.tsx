@@ -3,7 +3,7 @@ import './App.css';
 import HomeSection from './pages/Home/HomeSection';
 import DatabaseSection from './pages/DatabaseSection/DatabaseSection';
 
-import PageLoad from './components/Loading/PageLoad';
+import PageLoad from './shared/Loading/PageLoad';
 import { Routes, Route, useSearchParams, useLocation } from 'react-router-dom';
 // import APIForwarding from "./components/APIComponent/APIForwarding";
 

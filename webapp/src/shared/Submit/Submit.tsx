@@ -1,5 +1,5 @@
 import Molecule from '../../assets/Molecule';
-import Reflections from '../../assets/Reflections';
+import Reflections from '../../assets/Reflections.tsx';
 import React, {
     type Dispatch,
     type ReactElement,

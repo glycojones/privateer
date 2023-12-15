@@ -1,5 +1,5 @@
-import React, { lazy, useEffect, useRef, useState } from 'react';
-import { type GlycanDetailProps } from '../../interfaces/types';
+import React, { lazy, useRef, useState } from 'react';
+import { type GlycanDetailProps } from '../../interfaces/types.ts';
 import { useSelector } from 'react-redux';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import { GlycanDetailSNFGBox } from './GlycanDetailSNFGBox.tsx';
@@ -9,7 +9,7 @@ import { GlycanDetailLayout } from '../../data/Constants.tsx';
 import { Tooltip, type TooltipRefProps } from 'react-tooltip';
 
 const GlycanDetailInfoBox = lazy(
-    async () => await import('./GlycanDetailInfoBox')
+    async () => await import('./GlycanDetailInfoBox.tsx')
 );
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -34,6 +34,28 @@ export default function GlycanDetail(props: GlycanDetailProps) {
         );
         if (currentMolecule !== null) {
             await currentMolecule.toggleSymmetry();
+        }
+    }
+
+    const [glycoblocksOn, setGlycoblocksOn] = useState(false);
+    const [drawnGlycoblocksBefore, setDrawnGlycoblocksBefore] = useState(false);
+    async function toggleGlycoBlocks() {
+        const currentMolecule = molecules.find(
+            (molecule) => molecule.name === 'mol-1'
+        );
+        if (glycoblocksOn) {
+            currentMolecule.hide('glycoBlocks');
+            setGlycoblocksOn((glycoblocksOn) => !glycoblocksOn);
+        } else {
+            if (drawnGlycoblocksBefore) {
+                currentMolecule.show('glycoBlocks');
+            } else {
+                setDrawnGlycoblocksBefore(true);
+            }
+            if (currentMolecule !== null) {
+                await currentMolecule.fetchIfDirtyAndDraw('glycoBlocks');
+            }
+            setGlycoblocksOn((glycoblocksOn) => !glycoblocksOn);
         }
     }
 
@@ -144,6 +166,7 @@ export default function GlycanDetail(props: GlycanDetailProps) {
                         moorhenDimensions={() => {
                             return [width, height];
                         }}
+                        toggleGlycoblocks={toggleGlycoBlocks}
                     />
                 </div>
                 <div

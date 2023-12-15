@@ -1,4 +1,7 @@
-import { TORSIONS_CITATION, GLYCOMICS_CITATION } from '../../data/Constants';
+import {
+    TORSIONS_CITATION,
+    GLYCOMICS_CITATION,
+} from '../../data/Constants.tsx';
 import React from 'react';
 export function Information() {
     return (

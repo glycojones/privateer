@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { type DatabaseResultProps } from '../../interfaces/types';
-import CremerPopleGraph from '../DatabaseComponents/CremerPopleGraph';
-import BFactorVsRSCC from '../DatabaseComponents/BFactorVsRSCC';
-import SNFGList from '../DatabaseComponents/SNFGList';
-import SugarList from '../DatabaseComponents/SugarList';
+import { type DatabaseResultProps } from '../../interfaces/types.ts';
+import CremerPopleGraph from '../DatabaseComponents/CremerPopleGraph.tsx';
+import BFactorVsRSCC from '../DatabaseComponents/BFactorVsRSCC.tsx';
+import SNFGList from '../DatabaseComponents/SNFGList.tsx';
+import SugarList from '../DatabaseComponents/SugarList.tsx';
 
 export default function DatabaseResult(props: DatabaseResultProps) {
     const [data, setData] = useState();

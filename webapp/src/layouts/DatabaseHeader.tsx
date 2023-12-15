@@ -1,18 +1,16 @@
 import React, { lazy, type ReactElement, Suspense } from 'react';
 import { type DatabaseHeaderProps } from '../interfaces/types';
 
-const Loading = lazy(
-    async () => await import('../components/Loading/Loading.tsx')
-);
+const Loading = lazy(async () => await import('../shared/Loading/Loading.tsx'));
 const NavBar = lazy(async () => await import('./NavBar.tsx'));
 const NoGlycans = lazy(
-    async () => await import('../components/NoGlycans/NoGlycans.tsx')
+    async () => await import('../shared/NoGlycans/NoGlycans.tsx')
 );
 const DatabaseFetch = lazy(
-    async () => await import('../components/DatabaseFetch/DatabaseFetch.jsx')
+    async () => await import('../database/DatabaseFetch/DatabaseFetch.jsx')
 );
 const DatabaseResult = lazy(
-    async () => await import('../components/DatabaseResult/DatabaseResult.jsx')
+    async () => await import('../database/DatabaseResult/DatabaseResult.jsx')
 );
 
 export function DatabaseHeader(props: DatabaseHeaderProps): ReactElement {

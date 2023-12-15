@@ -1,5 +1,5 @@
 import React, { lazy, type ReactElement, useEffect, useState } from 'react';
-import { Information } from '../../components/Information/Information.tsx';
+import { Information } from '../../shared/Information/Information.tsx';
 import { type DatabaseHeaderProps } from '../../interfaces/types';
 import { DatabaseHeader } from '../../layouts/DatabaseHeader.tsx';
 

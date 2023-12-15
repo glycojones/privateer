@@ -1,18 +1,14 @@
 import React, { lazy, type ReactElement, Suspense } from 'react';
-import SNFG from '../components/PrivateerDisplay/SNFG.tsx';
+import SNFG from '../main/PrivateerDisplay/SNFG.tsx';
 
 import { type HeaderProps } from '../interfaces/types';
 import { MoorhenReduxProvider } from 'moorhen';
 
-const Upload = lazy(
-    async () => await import('../components/Upload/Upload.tsx')
-);
-const Loading = lazy(
-    async () => await import('../components/Loading/Loading.tsx')
-);
+const Upload = lazy(async () => await import('../shared/Upload/Upload.tsx'));
+const Loading = lazy(async () => await import('../shared/Loading/Loading.tsx'));
 const NavBar = lazy(async () => await import('./NavBar.tsx'));
 const NoGlycans = lazy(
-    async () => await import('../components/NoGlycans/NoGlycans.tsx')
+    async () => await import('../shared/NoGlycans/NoGlycans.tsx')
 );
 
 export function Header(props: HeaderProps): ReactElement {

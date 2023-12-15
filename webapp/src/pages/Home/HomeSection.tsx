@@ -1,6 +1,6 @@
 import React, { lazy, useEffect, useState } from 'react';
 import { Header } from '../../layouts/Header';
-import { Information } from '../../components/Information/Information.tsx';
+import { Information } from '../../shared/Information/Information.tsx';
 
 // @ts-expect-error: Emscripten Generated JS does not conform to typescript conventions
 import privateer_module from '../../wasm/privateer.js';

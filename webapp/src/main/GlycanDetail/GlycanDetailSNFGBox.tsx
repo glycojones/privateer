@@ -59,7 +59,7 @@ export function GlycanDetailSNFGBox(props: {
 
     return (
         <div key={props.key} className="px-8 text-left font-bold mt-2">
-            <Tooltip id="snfgtooltip" ref={tooltipRef} />
+            <Tooltip id="snfgtooltip" ref={tooltipRef} place={'right'} />
 
             <h3 className="text-left text-xl w-full">
                 SNFG

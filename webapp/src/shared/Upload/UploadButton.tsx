@@ -1,5 +1,5 @@
 import React, { type ReactElement, useState } from 'react';
-import { type UploadButtonProps } from '../../interfaces/types';
+import { type UploadButtonProps } from '../../interfaces/types.ts';
 export default function UploadButton(props: UploadButtonProps): ReactElement {
     const fileUpload: (e: any) => void = (e: any) => {
         if (e.target.files !== null) {

@@ -1,11 +1,11 @@
 import React, { type ReactElement, useEffect, useState } from 'react';
-import UploadButton from './UploadButton';
-import Submit from '../Submit/Submit';
+import UploadButton from './UploadButton.tsx';
+import Submit from '../Submit/Submit.tsx';
 import PDBFetch from '../PDBFetch/PDBFetch';
 import {
     type HeaderProps,
     type UploadButtonProps,
-} from '../../interfaces/types';
+} from '../../interfaces/types.ts';
 
 export default function Upload(props: HeaderProps): ReactElement {
     const [showUploadAgain, setShowUploadAgain] = useState(true);

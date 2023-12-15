@@ -1,58 +1,34 @@
 import React, { useMemo, useEffect, useState } from 'react';
 import { useTable } from 'react-table';
-import { SugarListColumns } from '../../data/Constants';
+import { DatabaseColumns } from '../../data/Constants.tsx';
 import styled from 'styled-components';
 
-function customSort(
-    a: Record<string, string>,
-    b: Record<string, string>
-): number {
-    const splitA = a['Sugar ID'].split('-');
-    const splitB = b['Sugar ID'].split('-');
-
-    if (splitA[1] < splitB[1]) {
-        return -1;
-    }
-    if (splitB[1] < splitA[1]) {
-        return 1;
-    }
-
-    if (Number(splitA[2]) < Number(splitB[2])) {
-        return -1;
-    }
-
-    if (Number(splitB[2]) < Number(splitA[2])) {
-        return 1;
-    }
-
+function customSort(a, b): number {
+    a = a.chain;
+    b = b.chain;
+    if (a < b) return -1;
+    if (a > b) return 1;
     return 0;
 }
 
 function parseResults(data) {
     const glycans = data.data.glycans;
 
-    const tableData = [];
+    const tableData: any[] = [];
 
     for (const key in glycans) {
         const glycanType = glycans[key];
         for (let i = 0; i < glycanType.length; i++) {
-            const sugars: Array<Record<string, any>> = glycanType[i].Sugars;
-            for (let j = 0; j < sugars.length; j++) {
-                const keys = Object.keys(sugars[j]);
-                const entry = {};
+            const chain = glycanType[i].RootSugarChainID;
 
-                for (let k = 0; k < keys.length; k++) {
-                    const typeKey = typeof sugars[j][keys[k]];
+            const SNFG = glycanType[i].SNFG;
+            const WURCS = glycanType[i].WURCS;
 
-                    if (typeKey === 'number') {
-                        entry[keys[k]] = sugars[j][keys[k]].toFixed(2);
-                    } else {
-                        entry[keys[k]] = sugars[j][keys[k]];
-                    }
-                }
-                entry.type = key;
-                tableData.push(entry);
-            }
+            tableData.push({
+                chain,
+                SNFG,
+                WURCS,
+            });
         }
     }
 
@@ -119,9 +95,9 @@ const Styles = styled.div`
     }
 `;
 
-export default function SugarList(props) {
-    const [data, setData] = useState([]);
-    const columns = useMemo(() => SugarListColumns, []);
+export default function SNFGList(props) {
+    const [data, setData] = useState<any[]>([]);
+    const columns = useMemo(() => DatabaseColumns, []);
     const {
         _getTableProps,
         getTableBodyProps,
@@ -136,9 +112,9 @@ export default function SugarList(props) {
     }, []);
 
     return (
-        <div className="flex flex-col mx-auto p-16">
+        <div className="flex flex-col mx-auto px-16">
             <span className="text-xl mb-2">
-                Detailed monosaccharide validation data
+                N- and O-glycan structure 2D descriptions
             </span>
 
             <Styles>

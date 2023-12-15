@@ -1,8 +1,8 @@
 import React, { type ReactElement, useMemo } from 'react';
 import { useTable } from 'react-table';
-import { COLUMNS } from '../../data/Constants';
+import { COLUMNS } from '../../data/Constants.tsx';
 import styled from 'styled-components';
-import { type SVGTableProps } from '../../interfaces/types';
+import { type SVGTableProps } from '../../interfaces/types.ts';
 
 const Styles = styled.div`
     table {
