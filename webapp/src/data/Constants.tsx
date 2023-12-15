@@ -25,7 +25,7 @@ export const GlycanDetailLayout = {
         { i: 'torsions', x: 1, y: 1, w: 1, h: 2, isResizable: false },
     ],
     sm: [
-        { i: 'info', x: 0, y: 0, w: 1, h: 0.5, isResizable: false },
+        { i: 'info', x: 0, y: 0, w: 1, h: 0.75, isResizable: false },
         { i: 'snfg', x: 0, y: 2, w: 1, h: 1, isResizable: false },
         { i: 'moorhen', x: 0, y: 4, w: 1, h: 2, isResizable: false },
         { i: 'torsions', x: 0, y: 6, w: 1, h: 1.75, isResizable: false },
