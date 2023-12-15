@@ -37,6 +37,21 @@ export default function GlycanDetail(props: GlycanDetailProps) {
         }
     }
 
+    function saveSNFG() {
+        if (props.tableData[props.rowID] === null) return;
+
+        const svgBlob = new Blob([props.tableData[props.rowID].svg], {
+            type: 'image/svg+xml;charset=utf-8',
+        });
+        const svgUrl = URL.createObjectURL(svgBlob);
+        const downloadLink = document.createElement('a');
+        downloadLink.href = svgUrl;
+        downloadLink.download = `${props.tableData[props.rowID].id}.svg`;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    }
+
     const [glycoblocksOn, setGlycoblocksOn] = useState(false);
     const [drawnGlycoblocksBefore, setDrawnGlycoblocksBefore] = useState(false);
     async function toggleGlycoBlocks() {
@@ -151,6 +166,7 @@ export default function GlycanDetail(props: GlycanDetailProps) {
                         key={'bb'}
                         tableDataEntries={props.tableData}
                         rowID={props.rowID}
+                        saveSNFG={saveSNFG}
                     />
                 </div>
                 <div
