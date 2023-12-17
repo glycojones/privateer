@@ -1,9 +1,9 @@
-name: Privateer Web App Frontend Lint
+name: Privateer Web App Frontend Test
 
 on:
   pull_request:
     branches: [ "webapp" ]
-    paths: 
+    paths:
       - webapp/**
 
 
@@ -20,6 +20,4 @@ jobs:
           export NODE_OPTIONS=--max-old-space-size=8192
           cd webapp
           npm ci
-          npm run lint
-          npm run prettier
-      
+          npm run test
