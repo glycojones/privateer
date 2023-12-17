@@ -7,7 +7,10 @@ export default function NavBar({
     setResetApp: Dispatch<SetStateAction<boolean>>;
 }): ReactElement {
     return (
-        <div className="flex flex-col w-full sm:flex-row sm:justify-between">
+        <div
+            id="navbar"
+            className="flex flex-col w-full sm:flex-row sm:justify-between"
+        >
             <div className="text-center sm:text-left px-12 pt-12 sm:p-12 flex flex-col">
                 <span className="font-primary text-xl text-secondary sm:text-3xl">
                     Validate your carbohydrates online with
@@ -32,7 +35,7 @@ export default function NavBar({
 
             <div className="flex">
                 <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-6 flex items-center ">
-                    <a href="/database">
+                    <a id="database" href="/database">
                         <svg
                             className="w-6 h-6 text-gray-500 hover:scale-125 transition-all"
                             xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +47,7 @@ export default function NavBar({
                     </a>
                 </div>
                 <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-6 flex items-center ">
-                    <a href="/">
+                    <a id="mainpage" href="/">
                         <svg
                             className="w-8 h-8 text-gray-500 hover:scale-125 transition-all"
                             aria-hidden="true"
@@ -63,7 +66,7 @@ export default function NavBar({
                     </a>
                 </div>
                 <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-6 flex items-center ">
-                    <a href={GENERAL_CITATION}>
+                    <a id="citation" href={GENERAL_CITATION}>
                         <svg
                             className="w-6 h-6 text-gray-500 hover:scale-125 transition-all"
                             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +78,7 @@ export default function NavBar({
                     </a>
                 </div>
                 <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-12 flex items-center ">
-                    <a href={GITHUB_REPO}>
+                    <a id="github" href={GITHUB_REPO}>
                         <img
                             className="w-full hover:scale-125 transition-all hidden dark:block"
                             src="/github-mark.png"

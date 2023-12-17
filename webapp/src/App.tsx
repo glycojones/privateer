@@ -18,7 +18,7 @@ function App() {
 
     return (
         <Suspense fallback={<PageLoad />}>
-            <div className="flex flex-col">
+            <div id="main" className="flex flex-col">
                 <Routes>
                     {/* @ts-expect-error */}
                     <Route index path="/" element={<HomeSection />} />

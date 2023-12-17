@@ -57,6 +57,7 @@ export default function Submit({
 
     return (
         <div
+            id="submit"
             className="flex flex-col m-12 px-12 pt-8 w-64
             items-center text-center justify-between h-64 border-2
             transition-all border-gray-300 rounded-lg

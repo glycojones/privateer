@@ -36,7 +36,10 @@ export default function UploadButton(props: UploadButtonProps): ReactElement {
     };
 
     return (
-        <div className="flex items-center justify-center m-12 w-64 hover:border-slate-500">
+        <div
+            id="uploadButton"
+            className="flex items-center justify-center m-12 w-64 hover:border-slate-500"
+        >
             {!dragActivate ? (
                 <label className="flex flex-col items-center justify-center w-full p-12 h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-hover border-gray-600">
                     <div

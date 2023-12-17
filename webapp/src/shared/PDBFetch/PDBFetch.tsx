@@ -1,13 +1,26 @@
-import { useEffect, useState } from 'react';
+import React, {
+    type Dispatch,
+    type SetStateAction,
+    useEffect,
+    useState,
+} from 'react';
 
-export default function PDBFetch({ PDBCode, setPDBCode, submitPressed }) {
+export default function PDBFetch({
+    PDBCode,
+    setPDBCode,
+    submitPressed,
+}: {
+    PDBCode: string;
+    setPDBCode: Dispatch<SetStateAction<string>>;
+    submitPressed: Dispatch<SetStateAction<boolean>>;
+}) {
     const [pdb, setPDB] = useState('');
 
     useEffect(() => {
-        if (pdb.length != 4) {
+        if (pdb.length !== 4) {
             return;
         }
-        if (!pdb.match(/^[a-z0-9]+$/i)) {
+        if (pdb.match(/^[a-z0-9]+$/i) === null) {
             return;
         }
 
@@ -17,8 +30,11 @@ export default function PDBFetch({ PDBCode, setPDBCode, submitPressed }) {
 
     return (
         <>
-            {PDBCode != true ? (
-                <div className="flex items-center justify-center m-12 w-64 ">
+            {PDBCode === '' ? (
+                <div
+                    id="PDBFetch"
+                    className="flex items-center justify-center m-12 w-64 "
+                >
                     <label className="flex flex-col items-center justify-center w-full p-12 h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer border-gray-600">
                         <div className="flex flex-col items-center justify-center pt-5 pb-6 text-center">
                             <svg
@@ -47,10 +63,10 @@ export default function PDBFetch({ PDBCode, setPDBCode, submitPressed }) {
                                 className="bg-gray-50 border border-gray-300 text-center text-gray-900 text-sm rounded-lg focus:border-3 block w-full p-2.5 my-2 "
                                 placeholder="5FJI"
                                 onKeyDown={(e) => {
-                                    if (e.key == 'Enter') {
-                                        let element =
+                                    if (e.key === 'Enter') {
+                                        const element =
                                             document.getElementById('code');
-                                        setPDB(element.value);
+                                        setPDB(element?.value as string);
                                     }
                                 }}
                                 required
@@ -60,9 +76,9 @@ export default function PDBFetch({ PDBCode, setPDBCode, submitPressed }) {
                                 id="fetch"
                                 className="bg-gray-50 border font-bold  border-gray-300 text-gray-900 text-sm rounded-lg  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 onClick={() => {
-                                    let element =
+                                    const element =
                                         document.getElementById('code');
-                                    setPDB(element.value);
+                                    setPDB(element?.value as string);
                                 }}
                             >
                                 Fetch

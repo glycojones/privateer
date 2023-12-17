@@ -53,7 +53,10 @@ export default function Upload(props: HeaderProps): ReactElement {
     };
 
     return (
-        <div className="flex flex-wrap align-middle items-center justify-center">
+        <div
+            id="upload"
+            className="flex flex-wrap align-middle items-center justify-center"
+        >
             {showUploadAgain ? <UploadButton {...uploadButtonProps} /> : <></>}
             {showSubmit ? (
                 <Submit
