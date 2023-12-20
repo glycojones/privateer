@@ -21,9 +21,33 @@ export default function GlycanDetailInfoBox({
                     GlyTouCan ID:{' '}
                     <a
                         href={`https://glytoucan.org/Structures/Glycans/${row.glytoucan_id}`}
+                        onMouseDown={(e) => {
+                            e.stopPropagation();
+                        }}
+                        onTouchStart={(e) => {
+                            e.stopPropagation();
+                        }}
                     >
                         <b>{row.glytoucan_id}</b>
                     </a>
+                </h4>
+                <h4>
+                    GlyTouCan ID:{' '}
+                    {row.glyconnect_id !== 'Not Found' ? (
+                        <a
+                            href={`https://glyconnect.expasy.org/all/structures/${row.glyconnect_id}`}
+                            onMouseDown={(e) => {
+                                e.stopPropagation();
+                            }}
+                            onTouchStart={(e) => {
+                                e.stopPropagation();
+                            }}
+                        >
+                            <b>{row.glyconnect_id}</b>
+                        </a>
+                    ) : (
+                        <b>{row.glyconnect_id}</b>
+                    )}
                 </h4>
             </div>
             <div className="flex flex-col mt-3">
