@@ -21,7 +21,8 @@ export default function NavBar({
                         title="Home"
                         className="bg-gray hover:scale-105 transition-all"
                         onClick={() => {
-                            setResetApp(true);
+                            location.reload();  
+                            // setResetApp(true);
                         }}
                     >
                         Privateer
