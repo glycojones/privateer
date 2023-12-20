@@ -4,9 +4,7 @@ import { Information } from '../../shared/Information/Information.tsx';
 
 // @ts-expect-error: Emscripten Generated JS does not conform to typescript conventions
 import privateer_module from '../../wasm/privateer.js';
-import loadGlytoucan, {
-    loadGlytoucanFromFile,
-} from '../../utils/loadGlytoucan.ts';
+import { loadGlytoucanFromFile } from '../../utils/loadGlytoucan.ts';
 
 import { fetchMap, fetchPDB } from '../../utils/fetch_from_pdb.ts';
 

@@ -36,36 +36,31 @@ export default async function loadGlytoucan(
 export async function loadGlytoucanFromFile(
     tableData: TableDataEntry[]
 ): Promise<TableDataEntry[]> {
-
     const response = await fetch(
         'privateer_glycomics_database_slim.json.gzip',
         {
             headers: new Headers({ 'content-type': 'application/gzip' }),
             mode: 'no-cors',
         }
-    )
-    
+    );
+
     if (!response.ok) {
-        throw new Error(
-            `Failed to fetch the file. Status: ${response.status}`
-        );
+        throw new Error(`Failed to fetch the file. Status: ${response.status}`);
     }
     const gzippedData = await response.arrayBuffer();
-    let output = pako.inflate(gzippedData, { to: 'string' });
-    const glycomics_data = JSON.parse(output);
-    
-    tableData.forEach((data, index) => {
+    const output = pako.inflate(gzippedData, { to: 'string' });
+    const glycomicsData = JSON.parse(output);
 
-        const glycomics_result = glycomics_data[data.wurcs];
+    tableData.forEach((data, index) => {
+        const glycomicsResult = glycomicsData[data.wurcs];
 
         // Neaten up NotFound -> Not Found
-        if (glycomics_result["GlyConnect"] === "NotFound") { 
-            glycomics_result["GlyConnect"] = "Not Found"
+        if (glycomicsResult.GlyConnect === 'NotFound') {
+            glycomicsResult.GlyConnect = 'Not Found';
         }
 
-        tableData[index].glytoucan_id = glycomics_result["GlyToucan"];
-        tableData[index].glyconnect_id = glycomics_result["GlyConnect"];
-
+        tableData[index].glytoucan_id = glycomicsResult.GlyToucan;
+        tableData[index].glyconnect_id = glycomicsResult.GlyConnect;
     });
     return tableData;
 }

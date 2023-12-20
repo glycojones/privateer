@@ -63,9 +63,9 @@ export const COLUMNS = [
         accessor: 'glytoucan_id',
     },
     {
-        Header: "GlyConnect ID", 
-        accessor: 'glyconnect_id'
-    }
+        Header: 'GlyConnect ID',
+        accessor: 'glyconnect_id',
+    },
     // {
     //     Header: "Explore",
     //     Cell: tableProps => {
