@@ -4,6 +4,14 @@ module.exports = {
         slowMo: 50,
         devtools: true,
         product: 'chrome',
-        args: ['--window-size=1920,1080'],
+        args: [
+            `--no-sandbox`,
+            `--disable-setuid-sandbox`,
+            '--window-size=1920,1080',
+        ],
+    },
+    server: {
+        command: 'npx vite --port 5173 --mode development',
+        launchTimeout: 10000,
     },
 };

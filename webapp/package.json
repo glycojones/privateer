@@ -9,7 +9,8 @@
         "lint": "eslint --fix --ext .ts,.tsx ./src",
         "preview": "vite preview --port 4000",
         "prettier": "prettier --write .",
-        "test": "jest --verbose"
+        "test": "jest --verbose",
+        "testserver": "vite --port 5173"
     },
     "dependencies": {
         "@types/jest": "^29.5.6",
@@ -34,9 +35,11 @@
         "react-tooltip": "^5.25.0",
         "serve": "^14.2.1",
         "styled-components": "^6.0.6",
-        "vite-plugin-top-level-await": "^1.3.1"
+        "vite-plugin-top-level-await": "^1.3.1",
+        "zlib": "^1.0.5"
     },
     "devDependencies": {
+        "@types/pako": "^2.0.3",
         "@types/react": "^18.2.33",
         "@types/react-dom": "^18.2.14",
         "@typescript-eslint/eslint-plugin": "^6.14.0",
