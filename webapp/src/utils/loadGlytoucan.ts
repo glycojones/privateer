@@ -52,6 +52,9 @@ export async function loadGlytoucanFromFile(
     const glycomicsData = JSON.parse(output);
 
     tableData.forEach((data, index) => {
+        if (!glycomicsData.hasOwnProperty(data.wurcs)) { 
+            return
+        }
         const glycomicsResult = glycomicsData[data.wurcs];
 
         // Neaten up NotFound -> Not Found
