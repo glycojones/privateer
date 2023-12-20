@@ -204,6 +204,14 @@ if __name__ == "__main__":
     with open(fullPath, "w", encoding="utf-8") as file:
         json.dump(jsonOutput, file, ensure_ascii=False, indent=4)
 
+    output = {}
+    for x in array_of_entries:
+        output[x["Sequence"]] = {"GlyToucan": x["AccessionNumber"], "GlyConnect": x["glyconnect"]}
+
+    output_path = os.path.join(outputFolder,"privateer_glycomics_database_slim.json")
+    with open(output_path, "w") as output_file: 
+        json.dump(output, output_file)
+
     print(
         f"Finished downloading and appending GlyConnect data. \nAbsolute path of the output: {fullPath}"
     )
