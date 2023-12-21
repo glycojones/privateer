@@ -21,7 +21,7 @@ export default function NavBar({
                         title="Home"
                         className="bg-gray hover:scale-105 transition-all"
                         onClick={() => {
-                            location.reload();  
+                            location.reload();
                             // setResetApp(true);
                         }}
                     >

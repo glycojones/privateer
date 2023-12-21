@@ -107,7 +107,6 @@ export default function TorsionPlot({
                     zeroline: true,
                     zerolinewidth: 4,
                     zerolinecolor: '#969696',
-
                 },
                 xaxis: {
                     showline: true,
@@ -121,7 +120,6 @@ export default function TorsionPlot({
                     showgrid: true,
                     zerolinewidth: 4,
                     zerolinecolor: '#969696',
-
                 },
             }}
         />
