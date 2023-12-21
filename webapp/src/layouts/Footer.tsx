@@ -8,6 +8,8 @@ export default function Footer(): ReactElement {
                     <br />
                     © 2023 University of York. All Rights Reserved.
                     <br />
+                    Email: support@privateer.york.ac.uk
+                    <br />
                     <a href="https://www.york.ac.uk/about/legal-statements/">
                         Disclaimer
                     </a>
