@@ -91,7 +91,8 @@ export default function TorsionPlot({
                 width: size,
                 height: size,
                 title: linkageType,
-
+                plot_bgcolor: '#FFFFFF',
+                paper_bgcolor: '#D6D9E5',
                 yaxis: {
                     title: {
                         text: 'ψ / °',
@@ -101,15 +102,26 @@ export default function TorsionPlot({
                         linkageType in binDB
                             ? [binDB[linkageType].start, binDB[linkageType].end]
                             : [-180, 180],
-                    showgrid: false,
+                    showgrid: true,
+                    showline: true,
+                    zeroline: true,
+                    zerolinewidth: 4,
+                    zerolinecolor: '#969696',
+
                 },
                 xaxis: {
+                    showline: true,
+                    zeroline: true,
+
                     title: {
                         text: 'φ / °',
                     },
                     fixedrange: true,
                     range: [-180, 180],
-                    showgrid: false,
+                    showgrid: true,
+                    zerolinewidth: 4,
+                    zerolinecolor: '#969696',
+
                 },
             }}
         />
