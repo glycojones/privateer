@@ -114,7 +114,7 @@ export default function SNFGList(props) {
     return (
         <div className="flex flex-col mx-auto px-16">
             <span className="text-xl mb-2">
-                N- and O-glycan structure 2D descriptions
+                2D Glycan Descriptions
             </span>
 
             <Styles>
