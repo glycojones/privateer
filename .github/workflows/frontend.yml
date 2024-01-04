@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ "webapp" ]
     paths: 
-      - webserver/**
+      - webapp/**
 
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
           node-version: 20.x
       - run: |
           export NODE_OPTIONS=--max-old-space-size=8192
-          cd webserver
+          cd webapp
           npm ci
           npm run build 
           cp ../.htaccess dist
