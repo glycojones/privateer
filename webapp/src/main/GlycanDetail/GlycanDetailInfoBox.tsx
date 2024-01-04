@@ -32,7 +32,7 @@ export default function GlycanDetailInfoBox({
                     </a>
                 </h4>
                 <h4>
-                    GlyTouCan ID:{' '}
+                    GlyConnect ID:{' '}
                     {row.glyconnect_id !== 'Not Found' ? (
                         <a
                             href={`https://glyconnect.expasy.org/all/structures/${row.glyconnect_id}`}
