@@ -113,9 +113,7 @@ export default function SNFGList(props) {
 
     return (
         <div className="flex flex-col mx-auto px-16">
-            <span className="text-xl mb-2">
-                2D Glycan Descriptions
-            </span>
+            <span className="text-xl mb-2">2D Glycan Descriptions</span>
 
             <Styles>
                 <table {...getTableBodyProps()}>
