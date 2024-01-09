@@ -931,11 +931,11 @@ int main(int argc, char** argv)
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
-                              if ( ligandList[index].second.type().trim() == "MAN" ) {
-                                if ( ligandList[index].second.conformation_name() == "1c4" ) {
-                                  ligandList[index].second.override_conformation_diag ( true );
-                                }
-                              }
+                              //if ( ligandList[index].second.type().trim() == "MAN" ) {
+                              //  if ( ligandList[index].second.conformation_name() == "1c4" ) {
+                              //    ligandList[index].second.override_conformation_diag ( true );
+                              //  }
+                              //}
 
                               ligandList[index].second.set_context ( "c-glycan" );
                               fprintf ( output, "\t(c) " );
@@ -1075,11 +1075,11 @@ int main(int argc, char** argv)
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
-                                if ( ligandList[index].second.type().trim() == "MAN" ) {
-                                  if ( ligandList[index].second.conformation_name() == "1c4" ) {
-                                    ligandList[index].second.override_conformation_diag ( true );
-                                  }
-                                }
+                                //if ( ligandList[index].second.type().trim() == "MAN" ) {
+                                //  if ( ligandList[index].second.conformation_name() == "1c4" ) {
+                                //    ligandList[index].second.override_conformation_diag ( true );
+                                //  }
+                                //}
                                 ligandList[index].second.set_context ( "c-glycan" );
 
                                 std::cout << "\t(c) ";
@@ -2192,11 +2192,11 @@ int main(int argc, char** argv)
 									}
 									else if ( list_of_glycans[i].get_type() == "c-glycan" )
 									{
-										if ( ligandList[index].second.type().trim() == "MAN" ) {
-										if ( ligandList[index].second.conformation_name() == "1c4" ) {
-											ligandList[index].second.override_conformation_diag ( true );
-										}
-										}
+										//if ( ligandList[index].second.type().trim() == "MAN" ) {
+										//if ( ligandList[index].second.conformation_name() == "1c4" ) {
+										//	ligandList[index].second.override_conformation_diag ( true );
+										//}
+										//}
 										ligandList[index].second.set_context ( "c-glycan" );
 									}
 									else if ( list_of_glycans[i].get_type() == "o-glycan" )
@@ -2328,11 +2328,11 @@ int main(int argc, char** argv)
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
-                                if ( ligandList[index].second.type().trim() == "MAN" ) {
-                                  if ( ligandList[index].second.conformation_name() == "1c4" ) {
-                                    ligandList[index].second.override_conformation_diag ( true );
-                                  }
-                                }
+                                //if ( ligandList[index].second.type().trim() == "MAN" ) {
+                                //  if ( ligandList[index].second.conformation_name() == "1c4" ) {
+                                //    ligandList[index].second.override_conformation_diag ( true );
+                                //  }
+                                //}
                                 ligandList[index].second.set_context ( "c-glycan" );
                             }
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
@@ -2907,11 +2907,11 @@ int main(int argc, char** argv)
 									}
 									else if ( list_of_glycans[i].get_type() == "c-glycan" )
 									{
-										if ( ligandList[index].second.type().trim() == "MAN" ) {
-										if ( ligandList[index].second.conformation_name() == "1c4" ) {
-											ligandList[index].second.override_conformation_diag ( true );
-										}
-										}
+										//if ( ligandList[index].second.type().trim() == "MAN" ) {
+										//if ( ligandList[index].second.conformation_name() == "1c4" ) {
+										//	ligandList[index].second.override_conformation_diag ( true );
+										//}
+										//}
 										ligandList[index].second.set_context ( "c-glycan" );
 									}
 									else if ( list_of_glycans[i].get_type() == "o-glycan" )
@@ -3047,11 +3047,11 @@ int main(int argc, char** argv)
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
-                                if ( ligandList[index].second.type().trim() == "MAN" ) {
-                                  if ( ligandList[index].second.conformation_name() == "1c4" ) {
-                                    ligandList[index].second.override_conformation_diag ( true );
-                                  }
-                                }
+                                //if ( ligandList[index].second.type().trim() == "MAN" ) {
+                                //  if ( ligandList[index].second.conformation_name() == "1c4" ) {
+                                //    ligandList[index].second.override_conformation_diag ( true );
+                                //  }
+                                //}
                                 ligandList[index].second.set_context ( "c-glycan" );
                             }
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
