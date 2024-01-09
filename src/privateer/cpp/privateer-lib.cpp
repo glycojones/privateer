@@ -2473,192 +2473,192 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
     if ( sugname == "Glc" )
     {
-        Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+        Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation, mg), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( glc );
         if (node_contains_issue_with_sugar && this->potential_issue_shading)
         {
-            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shCrcl);
         }
     }
     else if ( sugname == "Gal" )
     {
-        Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( gal );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shCrcl);
         }
     }
     else if ( sugname == "Man" )
     {
-        Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( man );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shCrcl);
         }
 
     }
     else if ( sugname == "Fuc" )
     {
-        Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( fuc );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedTriangle * shTrngl = new shadedTriangle (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedTriangle * shTrngl = new shadedTriangle (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shTrngl);
         }
     }
     else if ( sugname == "Xyl" )
     {
-        Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( xyl );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedStar * shStar = new shadedStar (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedStar * shStar = new shadedStar (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shStar);
         }
     }
     else if ( sugname == "GlcN" )
     {
-        GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( glcn );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GalN" )
     {
-        GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( galn );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "ManN" )
     {
-        ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+        ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( mann );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GlcNAc" )
     {
-        GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( glcnac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GalNAc" )
     {
-        GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+        GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( galnac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "ManNAc" )
     {
-        ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+        ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( mannac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GlcA" )
     {
-        GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( glca );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GalA" )
     {
-        GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( gala );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname ==  "ManA" )
     {
-        ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( mana );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname ==  "Neu5Gc" )
     {
-        Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( neu5gc );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else if ( sugname ==  "Neu5Ac" )
     {
-        Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( neu5ac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else if ( sugname ==  "IdoA" )
     {
-        IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( idoa );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else if ( sugname ==  "KDN" )
     {
-        KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( kdn );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else
     {
-        Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
+        Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( unk );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedHexagon * shHex = new shadedHexagon (x, y, get_svg_tooltip ( sugar, validation ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
+            shadedHexagon * shHex = new shadedHexagon (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shHex);
         }
     }
