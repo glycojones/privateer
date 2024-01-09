@@ -174,9 +174,12 @@ namespace privateer
             return err;
         };
 
-        inline const bool sugar_contains_issues ( clipper::MSugar sugar )
+        inline const bool sugar_contains_issues ( clipper::MSugar sugar, clipper::MGlycan glycan )
         {
-
+            if ( ( glycan.get_type() == "c-glycan" ) && (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+                {
+                    sugar.override_conformation_diag ( true );
+                }
             if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
                     sugar.ok_with_chirality() && sugar.ok_with_puckering() )
                 return false;

@@ -2468,7 +2468,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
     bool node_contains_issue_with_sugar = false;
     int branches = node.number_of_connections();
 
-    node_contains_issue_with_sugar = sugar_contains_issues(sugar);
+    node_contains_issue_with_sugar = sugar_contains_issues(sugar,mg);
 
 
     if ( sugname == "Glc" )
