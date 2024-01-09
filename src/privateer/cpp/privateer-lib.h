@@ -147,11 +147,14 @@ namespace privateer
             } 
         };
 
-        static inline const GlycanErrorCount get_error_counts ( clipper::MSugar sugar )
+        static inline const GlycanErrorCount get_error_counts ( clipper::MSugar sugar , clipper::MGlycan glycan)
         {
             
             GlycanErrorCount err; 
-
+                if ( ( glycan.get_type() == "c-glycan" ) && (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+                {
+                    sugar.override_conformation_diag ( true );
+                }
                 if ( ! sugar.ok_with_anomer() ) {
                     err.anomer_err++; 
                 }

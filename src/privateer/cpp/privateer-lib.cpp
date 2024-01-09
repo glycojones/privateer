@@ -2453,7 +2453,7 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan, 
 void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles, GlycanErrorCount* errors)
 {
     const clipper::MSugar& sugar = node.get_sugar();
-    GlycanErrorCount node_errors = privateer::glycanbuilderplot::get_error_counts(sugar);
+    GlycanErrorCount node_errors = privateer::glycanbuilderplot::get_error_counts(sugar, mg);
 
     errors->torsion_err += node_errors.torsion_err; 
     errors->conformation_err += node_errors.conformation_err; 
