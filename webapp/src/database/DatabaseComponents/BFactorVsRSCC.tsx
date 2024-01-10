@@ -12,10 +12,10 @@ function calculatePoints(data): [number[], number[], string[]] {
     for (const key in glycans) {
         const glycanType = glycans[key];
         for (let i = 0; i < glycanType.length; i++) {
-            const sugars = glycanType[i].Sugars;
+            const sugars = glycanType[i].sugars;
             for (let j = 0; j < sugars.length; j++) {
-                xAxis.push(sugars[j].BFactor as number);
-                yAxis.push(sugars[j].RSCC as number);
+                xAxis.push(sugars[j].bFactor as number);
+                yAxis.push(sugars[j].rscc as number);
                 text.push(sugars[j]['Sugar ID'] as string);
             }
         }
@@ -59,7 +59,7 @@ export default function BFactorVsRSCC(props) {
                 symbol: ['o'],
             },
         });
-    }, []);
+    }, [props]);
 
     return (
         <div className="flex flex-col mx-auto">

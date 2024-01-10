@@ -7,8 +7,8 @@ function customSort(
     a: Record<string, string>,
     b: Record<string, string>
 ): number {
-    const splitA = a['Sugar ID'].split('-');
-    const splitB = b['Sugar ID'].split('-');
+    const splitA = a.sugarId.split('-');
+    const splitB = b.sugarId.split('-');
 
     if (splitA[1] < splitB[1]) {
         return -1;
@@ -36,7 +36,7 @@ function parseResults(data) {
     for (const key in glycans) {
         const glycanType = glycans[key];
         for (let i = 0; i < glycanType.length; i++) {
-            const sugars: Array<Record<string, any>> = glycanType[i].Sugars;
+            const sugars: Array<Record<string, any>> = glycanType[i].sugars;
             for (let j = 0; j < sugars.length; j++) {
                 const keys = Object.keys(sugars[j]);
                 const entry = {};
@@ -133,7 +133,7 @@ export default function SugarList(props) {
     useEffect(() => {
         const results = parseResults(props);
         setData(results);
-    }, []);
+    }, [props]);
 
     return (
         <div className="flex flex-col mx-auto p-16">

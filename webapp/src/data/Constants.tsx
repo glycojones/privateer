@@ -89,7 +89,7 @@ export const DatabaseColumns = [
     },
     {
         Header: 'SNFG',
-        accessor: 'SNFG',
+        accessor: 'snfg',
         Cell: (tableProps) => {
             // console.log("SNFG", tableProps.row.original.SNFG)
 
@@ -106,7 +106,7 @@ export const DatabaseColumns = [
     },
     {
         Header: 'WURCS',
-        accessor: 'WURCS',
+        accessor: 'wurcs',
         Cell: (tableProps) => {
             return (
                 <button
@@ -142,31 +142,31 @@ export const DatabaseColumns = [
 export const SugarListColumns = [
     {
         Header: 'Sugar ID',
-        accessor: 'Sugar ID',
+        accessor: 'sugarId',
     },
     {
         Header: 'Q',
-        accessor: 'Q',
+        accessor: 'q',
     },
     {
         Header: 'Phi',
-        accessor: 'Phi',
+        accessor: 'phi',
     },
     {
         Header: 'Theta',
-        accessor: 'Theta',
+        accessor: 'theta',
     },
     {
         Header: 'RSCC',
-        accessor: 'RSCC',
+        accessor: 'rscc',
     },
     {
         Header: 'B Factor',
-        accessor: 'BFactor',
+        accessor: 'bFactor',
     },
     {
         Header: 'Detected Type',
-        accessor: 'Detected Type',
+        accessor: 'detectedType',
     },
     {
         Header: 'mFo',
@@ -178,7 +178,7 @@ export const SugarListColumns = [
     },
     {
         Header: 'Diagnostic',
-        accessor: 'Diagnostic',
+        accessor: 'diagnostic',
     },
 ];
 

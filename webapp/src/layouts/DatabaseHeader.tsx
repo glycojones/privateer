@@ -24,7 +24,7 @@ export function DatabaseHeader(props: DatabaseHeaderProps): ReactElement {
                             <Loading loadingText={'Loading Content...'} />
                         }
                     >
-                        {props.results === '' ? (
+                        {props.pdbResults === '' ? (
                             <DatabaseFetch
                                 PDBCode={props.PDBCode}
                                 setPDBCode={props.setPDBCode}
@@ -32,7 +32,8 @@ export function DatabaseHeader(props: DatabaseHeaderProps): ReactElement {
                             />
                         ) : (
                             <DatabaseResult
-                                results={props.results}
+                                pdbResults={props.pdbResults}
+                                pdbRedoResults={props.pdbRedoResults}
                                 PDBCode={props.PDBCode}
                             />
                         )}
