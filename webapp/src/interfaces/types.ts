@@ -53,11 +53,13 @@ export interface DatabaseHeaderProps {
     loadingText: string;
     fallback: boolean;
     failureText: string;
-    results: any;
+    pdbResults: any;
+    pdbRedoResults: any;
 }
 
 export interface DatabaseResultProps {
-    results: any;
+    pdbResults: any;
+    pdbRedoResults: any;
     PDBCode: string;
 }
 

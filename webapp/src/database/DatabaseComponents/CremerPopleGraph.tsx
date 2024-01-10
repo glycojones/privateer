@@ -16,16 +16,16 @@ function calculatePoints(data) {
     for (const key in glycans) {
         const glycanType = glycans[key];
         for (let i = 0; i < glycanType.length; i++) {
-            const sugars = glycanType[i].Sugars;
+            const sugars = glycanType[i].sugars;
             for (let j = 0; j < sugars.length; j++) {
-                if (sugars[j].Diagnostic !== 'yes') {
-                    errorXAxis.push(sugars[j].Phi as number);
-                    errorYAxis.push(sugars[j].Theta as number);
-                    errorText.push(sugars[j]['Sugar ID'] as string);
+                if (sugars[j].diagnostic !== 'yes') {
+                    errorXAxis.push(sugars[j].phi as number);
+                    errorYAxis.push(sugars[j].theta as number);
+                    errorText.push(sugars[j].sugarId as string);
                 } else {
-                    xAxis.push(sugars[j].Phi as number);
-                    yAxis.push(sugars[j].Theta as number);
-                    text.push(sugars[j]['Sugar ID'] as string);
+                    xAxis.push(sugars[j].phi as number);
+                    yAxis.push(sugars[j].theta as number);
+                    text.push(sugars[j].sugarId as string);
                 }
                 // console.log(sugars[j])
             }
@@ -35,7 +35,7 @@ function calculatePoints(data) {
     return [xAxis, yAxis, text, errorXAxis, errorYAxis, errorText];
 }
 
-export default function CremerPopleGraph(props) {
+export default function CremerPopleGraph(props: any) {
     const [trace, setTrace] = useState({});
     const [badTrace, setBadTrace] = useState({});
 
@@ -71,7 +71,7 @@ export default function CremerPopleGraph(props) {
             },
             name: 'Issues',
         });
-    }, []);
+    }, [props]);
 
     return (
         <div className="flex flex-col mx-auto">

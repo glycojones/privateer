@@ -20,23 +20,35 @@ export default function DatabaseSection(props: {
     const [resetApp, setResetApp] = useState<boolean>(false);
     const [fallback, setFallBack] = useState<boolean>(false);
     const [failureText, setFailureText] = useState<string>('');
-    const [results, setResults] = useState<string>('');
+    const [pdbResults, setPDBResults] = useState<string>('');
+    const [pdbRedoResults, setPDBRedoResults] = useState<string>('');
+
     // const [failure, setFailure] = useState<boolean>(false);
 
     async function handleDatabaseLookup(PDBCode: string): Promise<void> {
         const pdbCode = PDBCode.toLowerCase();
         const middlefix = pdbCode.substring(1, 3);
 
-        const url = `https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/${middlefix}/${pdbCode}.json`;
+        const pdbUrl = `https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/pdb/${middlefix}/${pdbCode}.json`;
 
         try {
-            const response = await fetch(url);
+            const response = await fetch(pdbUrl);
             const data: string = await response.json();
-            setResults(data);
+            setPDBResults(data);
         } catch {
-            console.log('not in db');
             setFallBack(true);
             setFailureText('This PDB is not in the database');
+        }
+
+        const pdbRedoUrl = `https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/pdbredo/${middlefix}/${pdbCode}.json`;
+
+        try {
+            const response = await fetch(pdbRedoUrl);
+            const redoData: string = await response.json();
+            setPDBRedoResults(redoData);
+        } catch {
+            // setFallBack(true);
+            // setFailureText('This PDB is not in the database');
         }
     }
 
@@ -59,7 +71,8 @@ export default function DatabaseSection(props: {
         setFallBack(false);
         setResetApp(false);
         setPDBCode('');
-        setResults('');
+        setPDBResults('');
+        setPDBRedoResults('');
         props.setSearchParams({});
     }, [resetApp]);
 
@@ -84,7 +97,8 @@ export default function DatabaseSection(props: {
         loadingText,
         fallback,
         failureText,
-        results,
+        pdbResults,
+        pdbRedoResults,
     };
 
     return (

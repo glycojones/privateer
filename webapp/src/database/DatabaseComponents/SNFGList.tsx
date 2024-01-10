@@ -19,10 +19,10 @@ function parseResults(data) {
     for (const key in glycans) {
         const glycanType = glycans[key];
         for (let i = 0; i < glycanType.length; i++) {
-            const chain = glycanType[i].RootSugarChainID;
+            const chain = glycanType[i].rootSugarChainId;
 
-            const SNFG = glycanType[i].SNFG;
-            const WURCS = glycanType[i].WURCS;
+            const SNFG = glycanType[i].snfg;
+            const WURCS = glycanType[i].wurcs;
 
             tableData.push({
                 chain,
@@ -109,7 +109,7 @@ export default function SNFGList(props) {
     useEffect(() => {
         const results = parseResults(props);
         setData(results);
-    }, []);
+    }, [props]);
 
     return (
         <div className="flex flex-col mx-auto px-16">
