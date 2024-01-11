@@ -46,7 +46,7 @@ export default function HomeSection(): Element {
         }
         setFileContent(fileContent);
 
-        const x = Module.read_structure_to_table(fileContent, name);
+        const x = Module.validate(fileContent, name);
 
         const tableData: TableDataEntry[] = [];
         for (let i = 0; i < x.size(); i++) {
@@ -80,7 +80,7 @@ export default function HomeSection(): Element {
         async function handleLoad(): Promise<void> {
             if (PDBCode !== '') {
                 setLoadingText(
-                    `Fetching ${PDBCode.toUpperCase()} from the PDB`
+                    `Fetching density for ${PDBCode.toUpperCase()} from the PDB`
                 );
 
                 try {
@@ -91,6 +91,9 @@ export default function HomeSection(): Element {
                     console.log('No map found, continuing...');
                 }
 
+                setLoadingText(
+                    `Fetching coordinates for ${PDBCode.toUpperCase()} from the PDB`
+                );
                 fetchPDB(PDBCode)
                     .then((response: ArrayBuffer) => {
                         setFileContent(response);
