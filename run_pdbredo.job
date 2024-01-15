@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --job-name=db_run        # Job name
+#SBATCH --ntasks=100                       # Run on a single CPU
+#SBATCH --cpus-per-task=1 			  	 # ...with four cores`
+#SBATCH --mem=24gb                        # Job memory request
+#SBATCH --time=24:00:00                  # Time limit hrs:min:sec
+#SBATCH --output=privateer_redo_db_%j.log        # Standard output and error log
+ 
+echo My working directory is `pwd`
+echo Running job on host:
+echo -e '\t'`hostname` at `date`
+echo
+ 
+source pyenv/bin/activate
+source ccp4.envsetup-sh 
+python database/generate_pdbredo_db.py     
+echo
+echo Job completed at `date`
