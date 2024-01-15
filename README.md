@@ -10,7 +10,7 @@ Privateer is implemented in C++11 and Python3 (via pybind11), and produces Schem
 Skip to sections: [Build it yourself!](#build-it-yourself) – [Step by step build](#step-by-step-build) - [Validating a model programmatically](#validating-a-model-programmatically) 
 
 ## Authors
-Jon Agirre (@glycojones), with contributions from Haroldas Bagdonas (@GABRAH), Jordan Dialpuri (@Dialpuri) and Lucy Schofield (@lcs551), York Structural Biology Laboratory (YSBL), Department of Chemistry, The University of York, UK. We have implemented great suggestions and feedback from Gideon Davies FRS, Wendy Offen, Christian Roth, Marcin Wojdyr, Robbie Joosten, Paul Emsley, Garib Murshudov, Eleanor Dodson FRS, Saioa Urresti, Jacob Sorensen and Stuart McNicholas. 
+Jon Agirre (@glycojones), with contributions from Haroldas Bagdonas (@GABRAH), Jordan Dialpuri (@Dialpuri), Lucy Schofield (@lcs551) and Lou Holland (@louholland), York Structural Biology Laboratory (YSBL), Department of Chemistry, The University of York, UK. We have implemented great suggestions and feedback from Gideon Davies FRS, Wendy Offen, Christian Roth, Marcin Wojdyr, Robbie Joosten, Paul Emsley, Garib Murshudov, Eleanor Dodson FRS, Saioa Urresti, Jacob Sorensen and Stuart McNicholas. 
 
 ## Funding 
 * 2013-2015 BBSRC grant awarded to Keith Wilson (York)
