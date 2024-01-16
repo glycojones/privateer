@@ -32,13 +32,7 @@ function App() {
                             />
                         }
                     />
-                    <Route
-                        path="/statistics"
-                        element={
-                            <Statistics
-                            />
-                        }
-                    />
+                    <Route path="/statistics" element={<Statistics />} />
                     {/* <Route path="/api" element={<APIForwarding query={query} />} /> */}
                 </Routes>
             </div>
