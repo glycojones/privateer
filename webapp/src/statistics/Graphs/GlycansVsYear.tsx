@@ -153,19 +153,36 @@ export default function GlycansVsYear() {
                         text: 'Number of Depositions',
                     },
                     tickformat: ',.0f',
+                    linewidth: 2,
+                    mirror: true,
+                    automargin: true,
+                    ticksuffix: " ",
+                    tickprefix: "    "
+
                 },
                 yaxis2: {
-                    side: 'right',
                     overlaying: 'y',
                     tickformat: ',.0f',
+                    tickmode: 'auto',
+                    // anchor: 'free',
+                    side: 'right',
+                    automargin: true,
+                    tickprefix: "  ",
+                    range: [0, 16000]
                 },
                 xaxis: {
                     title: {
                         text: 'Year',
                     },
+                    linecolor: 'black',
+                    linewidth: 2,
+                    mirror: true,
+                    tickmode: 'auto',
+
                 },
+
                 legend: {
-                    x: 1.1,
+                    x: 1.15,
                     y: 0.5,
                     // bgcolor: '#FFFFFF',
                 },
