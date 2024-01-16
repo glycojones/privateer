@@ -137,7 +137,15 @@ export default function GlycansVsYear() {
                 ligandTrace,
             ]}
             layout={{
-                title: 'Glycosylation in the PDB over time',
+                title: {
+                    text: 'Glycosylation in the PDB over time',
+                    x: 0.5,
+                    y: 1.1,
+                    xanchor: 'auto', // or 'auto', which matches 'left' in this case
+                    yanchor: 'bottom',
+                    xref: 'paper',
+                    yref: 'paper',
+                },
                 plot_bgcolor: '#FFFFFF',
                 paper_bgcolor: '#D6D9E5',
                 yaxis: {
