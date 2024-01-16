@@ -157,7 +157,8 @@ export default function GlycansVsYear() {
                     mirror: true,
                     automargin: true,
                     ticksuffix: " ",
-                    tickprefix: "    "
+                    tickprefix: "    ",
+                    range: [-50, 1600]
 
                 },
                 yaxis2: {
@@ -168,7 +169,7 @@ export default function GlycansVsYear() {
                     side: 'right',
                     automargin: true,
                     tickprefix: "  ",
-                    range: [0, 16000]
+                    range: [-500, 16000]
                 },
                 xaxis: {
                     title: {
