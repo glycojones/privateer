@@ -33,7 +33,7 @@ export default function GlycansVsYear() {
         const newTotalTrace = {
             x: Object.keys(data),
             y: Object.values(data).map((e) => {
-                return e.totalglyco;
+                return e.totalGlycans;
             }),
             type: 'scatter',
             mode: 'lines',
@@ -46,7 +46,7 @@ export default function GlycansVsYear() {
         const newNGlycanTrace = {
             x: Object.keys(data),
             y: Object.values(data).map((e) => {
-                return e['n-glycosylation'];
+                return e.nGlycans;
             }),
             type: 'scatter',
             mode: 'lines',
@@ -59,7 +59,7 @@ export default function GlycansVsYear() {
         const newOGlycanTrace = {
             x: Object.keys(data),
             y: Object.values(data).map((e) => {
-                return e['o-glycosylation'];
+                return e.oGlycans;
             }),
             type: 'scatter',
             mode: 'lines',
@@ -72,7 +72,7 @@ export default function GlycansVsYear() {
         const newSGlycanTrace = {
             x: Object.keys(data),
             y: Object.values(data).map((e) => {
-                return e['s-glycosylation'];
+                return e.sGlycans;
             }),
             type: 'scatter',
             mode: 'lines',
@@ -85,7 +85,7 @@ export default function GlycansVsYear() {
         const newCGlycanTrace = {
             x: Object.keys(data),
             y: Object.values(data).map((e) => {
-                return e['c-glycosylation'];
+                return e.cGlycans;
             }),
             type: 'scatter',
             mode: 'lines',
@@ -111,7 +111,7 @@ export default function GlycansVsYear() {
         const newDepositedTrace = {
             x: Object.keys(data),
             y: Object.values(data).map((e) => {
-                return e.depositions;
+                return e.totalDepositions;
             }),
             type: 'bar',
             name: 'Deposited',
