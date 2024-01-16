@@ -137,6 +137,10 @@ export default function GlycansVsYear() {
                 ligandTrace,
             ]}
             layout={{
+                autosize: true,
+                // width: 1000,
+                width: '100%',
+                height: '100%',
                 title: {
                     text: 'Glycosylation in the PDB over time',
                     x: 0.5,
@@ -156,10 +160,9 @@ export default function GlycansVsYear() {
                     linewidth: 2,
                     mirror: true,
                     automargin: true,
-                    ticksuffix: " ",
-                    tickprefix: "    ",
-                    range: [-50, 1600]
-
+                    ticksuffix: ' ',
+                    tickprefix: '    ',
+                    range: [-50, 1600],
                 },
                 yaxis2: {
                     overlaying: 'y',
@@ -168,8 +171,8 @@ export default function GlycansVsYear() {
                     // anchor: 'free',
                     side: 'right',
                     automargin: true,
-                    tickprefix: "  ",
-                    range: [-500, 16000]
+                    tickprefix: '  ',
+                    range: [-500, 16000],
                 },
                 xaxis: {
                     title: {
@@ -179,7 +182,6 @@ export default function GlycansVsYear() {
                     linewidth: 2,
                     mirror: true,
                     tickmode: 'auto',
-
                 },
 
                 legend: {

@@ -20,10 +20,10 @@ export default function Graphs() {
     return (
         <>
             <div className="flex flex-col items-center justify-center">
-                <h2 className="w-full text-left pl-12">
+                <h2 className="w-full text-center sm:text-left pl-2 sm:pl-12">
                     Protein Data Bank Statistics
                 </h2>
-                <h4 className="w-full text-left pl-12">
+                <h4 className="w-full text-center sm:text-left pl-2 sm:pl-12">
                     Last Updated - {lastUpdated}
                 </h4>
 
