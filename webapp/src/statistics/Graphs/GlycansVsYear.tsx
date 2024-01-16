@@ -114,7 +114,7 @@ export default function GlycansVsYear() {
                 return e.totalDepositions;
             }),
             type: 'bar',
-            name: 'Deposited',
+            name: 'Total Deposited',
             yaxis: 'y2',
             marker: {
                 color: 'rgb(158,202,225)',
