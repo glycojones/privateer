@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { lazy, useEffect, useState } from 'react';
 import Loading from '../../shared/Loading/Loading.tsx';
 import Plot from 'react-plotly.js';
 
-export default function GlycansVsYear() {
+export default function ErrorsVsResolution(props: { database: string }) {
     const [totalTrace, setTotalTrace] = useState();
-    const [nglycanTrace, setNGlycanTrace] = useState();
-    const [oglycanTrace, setOGlycanTrace] = useState();
-    const [cglycanTrace, setCGlycanTrace] = useState();
-    const [sglycanTrace, setSGlycanTrace] = useState();
-    const [ligandTrace, setLigandTrace] = useState();
-    const [depositedTrace, setDepositedTrace] = useState();
+    const [errorTrace, setErrorTrace] = useState();
+    const [relativeTrace, setRelativeTrace] = useState();
+
+    // const [depositedTrace, setDepositedTrace] = useState();
 
     const [data, setData] = useState<Record<
         string,
-        Record<string, number>
+        Record<string, Record<string, number>>
     > | null>(null);
 
     const [width, setWidth] = useState(1000);
@@ -22,12 +20,17 @@ export default function GlycansVsYear() {
 
     useEffect(() => {
         const url =
-            'https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/stats/glycosylation_per_year.json';
+            'https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/stats/validation_errors_per_resolution.json';
 
         fetch(url)
             .then(async (response) => await response.json())
             .then((data) => {
-                setData(data as Record<string, Record<string, number>>);
+                setData(
+                    data as Record<
+                        string,
+                        Record<string, Record<string, number>>
+                    >
+                );
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -55,99 +58,45 @@ export default function GlycansVsYear() {
     useEffect(() => {
         if (data === null) return;
         const newTotalTrace = {
-            x: Object.keys(data),
-            y: Object.values(data).map((e) => {
+            x: Object.keys(data[props.database]),
+            y: Object.values(data[props.database]).map((e) => {
                 return e.totalGlycans;
             }),
             type: 'scatter',
             mode: 'lines',
             // marker: {color: 'red'},
-            name: 'Total Carbohydrates',
+            name: 'Total Glycosylated Models',
         };
 
         setTotalTrace(newTotalTrace);
 
-        const newNGlycanTrace = {
-            x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.nGlycans;
+        const newErrorTrace = {
+            x: Object.keys(data[props.database]),
+            y: Object.values(data[props.database]).map((e) => {
+                return e.totalErrors;
             }),
             type: 'scatter',
             mode: 'lines',
             // marker: {color: 'green'},
-            name: 'N-Glycans',
+            name: 'Validation Errors',
         };
 
-        setNGlycanTrace(newNGlycanTrace);
+        setErrorTrace(newErrorTrace);
 
-        const newOGlycanTrace = {
-            x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.oGlycans;
+        const newRelativeTrace = {
+            x: Object.keys(data[props.database]),
+            y: Object.values(data[props.database]).map((e) => {
+                return (100 * e.totalErrors) / e.totalGlyco;
             }),
             type: 'scatter',
             mode: 'lines',
-            // marker: {color: 'blue'},
-            name: 'O-Glycans',
-        };
-
-        setOGlycanTrace(newOGlycanTrace);
-
-        const newSGlycanTrace = {
-            x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.sGlycans;
-            }),
-            type: 'scatter',
-            mode: 'lines',
-            // marker: {color: 'blue'},
-            name: 'S-Glycans',
-        };
-
-        setSGlycanTrace(newSGlycanTrace);
-
-        const newCGlycanTrace = {
-            x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.cGlycans;
-            }),
-            type: 'scatter',
-            mode: 'lines',
-            // marker: {color: 'blue'},
-            name: 'C-Glycans',
-        };
-
-        setCGlycanTrace(newCGlycanTrace);
-
-        const newLigandTrace = {
-            x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.ligands;
-            }),
-            type: 'scatter',
-            mode: 'lines',
-            // marker: {color: 'blue'},
-            name: 'Ligands',
-        };
-
-        setLigandTrace(newLigandTrace);
-
-        const newDepositedTrace = {
-            x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.totalDepositions;
-            }),
-            type: 'bar',
-            name: 'Total Deposited',
+            // marker: {color: 'green'},
             yaxis: 'y2',
-            marker: {
-                color: 'rgb(158,202,225)',
-                opacity: 0.4,
-            },
+            name: 'Validation Errors',
         };
 
-        setDepositedTrace(newDepositedTrace);
-    }, [data]);
+        setRelativeTrace(newRelativeTrace);
+    }, [data, props.database]);
 
     return (
         <>
@@ -156,20 +105,20 @@ export default function GlycansVsYear() {
             ) : (
                 <Plot
                     data={[
-                        depositedTrace,
                         totalTrace,
-                        nglycanTrace,
-                        oglycanTrace,
-                        sglycanTrace,
-                        cglycanTrace,
-                        // ligandTrace,
+                        errorTrace,
+                        // relativeTrace
                     ]}
                     layout={{
                         autosize: true,
                         width,
                         height,
                         title: {
-                            text: 'Glycosylation in the PDB over time',
+                            text: `Validation Errors in ${
+                                props.database === 'pdbredo'
+                                    ? 'PDB-REDO'
+                                    : 'the PDB'
+                            } with resolution`,
                             x: 0.5,
                             // y: 1.1,
                             xanchor: 'auto', // or 'auto', which matches 'left' in this case
@@ -181,7 +130,7 @@ export default function GlycansVsYear() {
                         paper_bgcolor: '#D6D9E5',
                         yaxis: {
                             title: {
-                                text: 'Number of Depositions',
+                                text: 'Number',
                             },
                             tickformat: ',.0f',
                             linewidth: 2,
@@ -190,6 +139,7 @@ export default function GlycansVsYear() {
                             ticksuffix: ' ',
                             tickprefix: '    ',
                             range: [-50, 1600],
+                            // type: 'log'
                         },
                         yaxis2: {
                             overlaying: 'y',
@@ -199,16 +149,17 @@ export default function GlycansVsYear() {
                             side: 'right',
                             automargin: true,
                             tickprefix: '  ',
-                            range: [-500, 16000],
+                            range: [0, 100],
                         },
                         xaxis: {
                             title: {
-                                text: 'Year',
+                                text: 'Resolution / Å',
                             },
                             linecolor: 'black',
                             linewidth: 2,
                             mirror: true,
                             tickmode: 'auto',
+                            range: [0, 5],
                         },
 
                         legend: {
