@@ -18,5 +18,5 @@ export default function BorderElement({
         divStyle.backgroundImage = `linear-gradient(to top right, ${bottomColor}, ${bottomColor} 50%, ${topColor} 50%, ${topColor})`;
     }
 
-    return <div style={divStyle}></div>;
+    return <div style={divStyle} className="w-full"></div>;
 }

@@ -5,6 +5,7 @@ import Plot from 'react-plotly.js';
 export default function ErrorsVsYear(props: { database: string }) {
     const [totalTrace, setTotalTrace] = useState();
     const [errorTrace, setErrorTrace] = useState();
+    const [relativeTrace, setRelativeTrace] = useState();
 
     // const [depositedTrace, setDepositedTrace] = useState();
 
@@ -81,6 +82,20 @@ export default function ErrorsVsYear(props: { database: string }) {
         };
 
         setErrorTrace(newErrorTrace);
+
+        const newRelativeTrace = {
+            x: Object.keys(data[props.database]),
+            y: Object.values(data[props.database]).map((e) => {
+                return (100 * e.totalErrors) / e.totalGlycans;
+            }),
+            type: 'scatter',
+            mode: 'lines',
+            yaxis: 'y2',
+            // marker: {color: 'green'},
+            name: 'Relative Validation Errors ',
+        };
+
+        setRelativeTrace(newRelativeTrace);
     }, [data, props.database]);
 
     return (
@@ -89,7 +104,11 @@ export default function ErrorsVsYear(props: { database: string }) {
                 <Loading loadingText={'Crunching latest data...'} />
             ) : (
                 <Plot
-                    data={[totalTrace, errorTrace]}
+                    data={[
+                        totalTrace,
+                        errorTrace,
+                        // relativeTrace
+                    ]}
                     layout={{
                         autosize: true,
                         width,
@@ -108,7 +127,7 @@ export default function ErrorsVsYear(props: { database: string }) {
                             yref: 'paper',
                         },
                         plot_bgcolor: '#FFFFFF',
-                        paper_bgcolor: '#D6D9E5',
+                        paper_bgcolor: '#F4F9FF',
                         yaxis: {
                             title: {
                                 text: 'Number',
@@ -120,6 +139,16 @@ export default function ErrorsVsYear(props: { database: string }) {
                             ticksuffix: ' ',
                             tickprefix: '    ',
                             range: [-50, 1600],
+                        },
+                        yaxis2: {
+                            overlaying: 'y',
+                            tickformat: ',.0f',
+                            tickmode: 'auto',
+                            // anchor: 'free',
+                            side: 'right',
+                            automargin: true,
+                            tickprefix: '  ',
+                            range: [0, 100],
                         },
                         xaxis: {
                             title: {

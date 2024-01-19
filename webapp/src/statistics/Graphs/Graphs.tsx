@@ -1,8 +1,17 @@
 import GlycansVsYear from './GlycansVsYear.tsx';
-import React, { Suspense, useEffect, useState } from 'react';
+import React, {
+    Dispatch,
+    SetStateAction,
+    Suspense,
+    useEffect,
+    useState,
+} from 'react';
 import Loading from '../../shared/Loading/Loading.tsx';
 import ErrorsVsYear from './ErrorsVsYear.tsx';
 import ErrorsVsResolution from './ErrorsVsResolution.tsx';
+import PDBToggle from '../../shared/PDBToggle/PDBToggle.tsx';
+import BorderElement from '../../layouts/BorderElement.tsx';
+
 export default function Graphs() {
     const [lastUpdated, setLastUpdated] = useState<string>();
 
@@ -20,45 +29,8 @@ export default function Graphs() {
             });
     }, []);
 
-    const [isChecked, setIsChecked] = useState(false);
-
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
-    };
-
-    function toggleSwitch(): React.ReactNode {
-        return (
-            <div className="mt-4">
-                <label className="themeSwitcherTwo shadow-card relative inline-flex cursor-pointer select-none items-center justify-center rounded-md bg-white p-1">
-                    <input
-                        type="checkbox"
-                        className="sr-only"
-                        checked={isChecked}
-                        onChange={handleCheckboxChange}
-                    />
-                    <span
-                        className={`flex items-center space-x-[6px] rounded py-2 px-[18px] text-sm font-medium ${
-                            !isChecked
-                                ? 'text-primary bg-[#f4f7ff]'
-                                : 'text-body-color'
-                        }`}
-                    >
-                        PDB
-                    </span>
-                    <span
-                        className={`flex items-center space-x-[6px] rounded py-2 px-[18px] text-sm font-medium ${
-                            isChecked
-                                ? 'text-primary bg-[#f4f7ff]'
-                                : 'text-body-color'
-                        }`}
-                    >
-                        {/* {pdbRedoSVG()} */}
-                        PDB-REDO
-                    </span>
-                </label>
-            </div>
-        );
-    }
+    const [errorVsYearDBSwitch, setErrorVsYearDBSwitch] = useState(false);
+    const [errorVsResDBSwitch, setErrorVsResDBSwitch] = useState(false);
 
     return (
         <>
@@ -74,20 +46,50 @@ export default function Graphs() {
                     </h4>
 
                     <GlycansVsYear />
-                    <div className="flex flex-col sm:flex-row flex-wrap sm:justify-between w-full items-center align-center">
+
+                    <BorderElement
+                        bottomColor={'#F4F9FF'}
+                        topColor={'#D6D9E5'}
+                        reverse={false}
+                    ></BorderElement>
+
+                    <div className="flex flex-col sm:flex-row flex-wrap sm:justify-between w-full items-center align-center bg-tertiary">
                         <div>
-                            <h2 className="w-full text-center sm:text-left pl-2 sm:pl-12">
+                            <h2 className="w-full text-center sm:text-left pl-2 mt-8 sm:pl-12">
                                 Validation Statistics
                             </h2>
                             <h4 className="w-full text-center sm:text-left pl-2 sm:pl-12">
                                 Last Updated - {lastUpdated}
                             </h4>
                         </div>
-                        <div className="sm:px-12">{toggleSwitch()}</div>
                     </div>
-                    <ErrorsVsYear database={isChecked ? 'pdbredo' : 'pdb'} />
+
+                    <div className="w-full bg-tertiary text-center">
+                        <div className="w-full sm:px-12 text-center sm:text-left bg-tertiary">
+                            <PDBToggle
+                                checkState={errorVsYearDBSwitch}
+                                setCheckState={setErrorVsYearDBSwitch}
+                            />
+                        </div>
+                        <ErrorsVsYear
+                            database={errorVsYearDBSwitch ? 'pdbredo' : 'pdb'}
+                        />
+                    </div>
+
+                    <BorderElement
+                        topColor={'#F4F9FF'}
+                        bottomColor={'#D6D9E5'}
+                        reverse={true}
+                    ></BorderElement>
+
+                    <div className="w-full sm:px-12 text-center sm:text-left">
+                        <PDBToggle
+                            checkState={errorVsResDBSwitch}
+                            setCheckState={setErrorVsResDBSwitch}
+                        />
+                    </div>
                     <ErrorsVsResolution
-                        database={isChecked ? 'pdbredo' : 'pdb'}
+                        database={errorVsResDBSwitch ? 'pdbredo' : 'pdb'}
                     />
                 </div>
             </Suspense>
