@@ -8,6 +8,7 @@ export default function ErrorsVsYear(props: { database: string }) {
     const [relativeTrace, setRelativeTrace] = useState();
 
     // const [depositedTrace, setDepositedTrace] = useState();
+    const d = new Date();
 
     const [data, setData] = useState<Record<
         string,
@@ -158,6 +159,7 @@ export default function ErrorsVsYear(props: { database: string }) {
                             linewidth: 2,
                             mirror: true,
                             tickmode: 'auto',
+                            range: [1980,d.getFullYear()]
                         },
 
                         legend: {
@@ -166,6 +168,15 @@ export default function ErrorsVsYear(props: { database: string }) {
                             // bgcolor: '#FFFFFF',
                         },
                     }}
+                    config = {{
+                        toImageButtonOptions: {
+                            format: 'svg',
+                            filename: 'validationErrorsOverTime',
+                            height: 1000,
+                            width: 1500,
+                            scale: 1,
+
+                        }}}
                 />
             )}
         </>

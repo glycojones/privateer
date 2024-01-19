@@ -215,8 +215,17 @@ export default function GlycansVsYear() {
                             x: legendDown ? 0 : 1.15,
                             y: legendDown ? -0.6 : 0.5,
                             // bgcolor: '#FFFFFF',
-                        },
+                        }
                     }}
+                    config = {{
+                        toImageButtonOptions: {
+                            format: 'svg',
+                            filename: 'glycosylationOverTime',
+                            height: 1000,
+                            width: 1500,
+                            scale: 1,
+
+                        }}}
                 />
             )}
         </>

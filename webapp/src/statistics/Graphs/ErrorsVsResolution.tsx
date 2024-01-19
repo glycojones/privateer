@@ -168,6 +168,15 @@ export default function ErrorsVsResolution(props: { database: string }) {
                             // bgcolor: '#FFFFFF',
                         },
                     }}
+                    config = {{
+                        toImageButtonOptions: {
+                            format: 'svg',
+                            filename: 'validationErrorsWithResolution',
+                            height: 1000,
+                            width: 1500,
+                            scale: 1,
+
+                        }}}
                 />
             )}
         </>
