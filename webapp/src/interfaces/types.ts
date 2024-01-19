@@ -57,6 +57,11 @@ export interface DatabaseHeaderProps {
     pdbRedoResults: any;
 }
 
+export interface StatisticsHeaderProps {
+    resetApp: boolean;
+    setResetApp: Dispatch<SetStateAction<boolean>>;
+}
+
 export interface DatabaseResultProps {
     pdbResults: any;
     pdbRedoResults: any;

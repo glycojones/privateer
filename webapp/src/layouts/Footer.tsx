@@ -6,7 +6,7 @@ export default function Footer(): ReactElement {
                 <span className="text-sm text-primary text-center justify-center dark:text-gray-400">
                     Jordan Dialpuri, Haroldas Bagdonas and Jon Agirre
                     <br />
-                    © 2023 University of York. All Rights Reserved.
+                    © 2023-2024 University of York. All Rights Reserved.
                     <br />
                     Email: support@privateer.york.ac.uk
                     <br />
