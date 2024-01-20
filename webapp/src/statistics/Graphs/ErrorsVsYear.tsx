@@ -132,7 +132,7 @@ export default function ErrorsVsYear(props: { database: string }) {
                         modebar: {
                             bgcolor: 'rgba(0,0,0,0)',
                             color: 'gray',
-                            activecolor: 'black'
+                            activecolor: 'black',
                         },
                         yaxis: {
                             title: {

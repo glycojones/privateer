@@ -1,16 +1,13 @@
 import GlycansVsYear from './GlycansVsYear.tsx';
-import React, {
-    Dispatch,
-    SetStateAction,
-    Suspense,
-    useEffect,
-    useState,
-} from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Loading from '../../shared/Loading/Loading.tsx';
 import ErrorsVsYear from './ErrorsVsYear.tsx';
+import ConformationErrorsVsYear from './ConformationErrorsVsYear.tsx';
+
 import ErrorsVsResolution from './ErrorsVsResolution.tsx';
 import PDBToggle from '../../shared/PDBToggle/PDBToggle.tsx';
 import BorderElement from '../../layouts/BorderElement.tsx';
+import ConformationalErrorsVsResolution from './ConformationalErrorsVsResolution.tsx';
 
 export default function Graphs() {
     const [lastUpdated, setLastUpdated] = useState<string>();
@@ -29,6 +26,8 @@ export default function Graphs() {
             });
     }, []);
 
+    const [confVsResDBSwitch, setConfVsResDBSwitch] = useState(false);
+    const [confVsYearDBSwitch, setConfVsYearDBSwitch] = useState(false);
     const [errorVsYearDBSwitch, setErrorVsYearDBSwitch] = useState(false);
     const [errorVsResDBSwitch, setErrorVsResDBSwitch] = useState(false);
 
@@ -81,16 +80,54 @@ export default function Graphs() {
                         bottomColor={'#D6D9E5'}
                         reverse={true}
                     ></BorderElement>
+                    <div className="w-full text-center">
+                        <div className="w-full sm:px-12 text-center sm:text-left">
+                            <PDBToggle
+                                checkState={confVsYearDBSwitch}
+                                setCheckState={setConfVsYearDBSwitch}
+                            />
+                        </div>
 
-                    <div className="w-full sm:px-12 text-center sm:text-left">
-                        <PDBToggle
-                            checkState={errorVsResDBSwitch}
-                            setCheckState={setErrorVsResDBSwitch}
+                        <ConformationErrorsVsYear
+                            database={confVsYearDBSwitch ? 'pdbredo' : 'pdb'}
                         />
                     </div>
-                    <ErrorsVsResolution
-                        database={errorVsResDBSwitch ? 'pdbredo' : 'pdb'}
-                    />
+
+                    <BorderElement
+                        bottomColor={'#F4F9FF'}
+                        topColor={'#D6D9E5'}
+                        reverse={false}
+                    ></BorderElement>
+
+                    <div className="w-full bg-tertiary text-center">
+                        <div className="w-full sm:px-12 text-center sm:text-left">
+                            <PDBToggle
+                                checkState={errorVsResDBSwitch}
+                                setCheckState={setErrorVsResDBSwitch}
+                            />
+                        </div>
+                        <ErrorsVsResolution
+                            database={errorVsResDBSwitch ? 'pdbredo' : 'pdb'}
+                        />
+                    </div>
+
+                    <BorderElement
+                        topColor={'#F4F9FF'}
+                        bottomColor={'#D6D9E5'}
+                        reverse={true}
+                    ></BorderElement>
+
+                    <div className="w-full  text-center">
+                        <div className="w-full sm:px-12 text-center sm:text-left">
+                            <PDBToggle
+                                checkState={confVsResDBSwitch}
+                                setCheckState={setConfVsResDBSwitch}
+                            />
+                        </div>
+                        <ConformationalErrorsVsResolution
+                            database={confVsResDBSwitch ? 'pdbredo' : 'pdb'}
+                        />
+                    </div>
                 </div>
             </Suspense>
         </>
