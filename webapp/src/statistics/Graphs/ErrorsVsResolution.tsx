@@ -127,7 +127,12 @@ export default function ErrorsVsResolution(props: { database: string }) {
                             yref: 'paper',
                         },
                         plot_bgcolor: '#FFFFFF',
-                        paper_bgcolor: '#D6D9E5',
+                        paper_bgcolor: 'rgba(0,0,0,0)',
+                        modebar: {
+                            bgcolor: 'rgba(0,0,0,0)',
+                            color: 'gray',
+                            activecolor: 'black',
+                        },
                         yaxis: {
                             title: {
                                 text: 'Number',
@@ -168,15 +173,15 @@ export default function ErrorsVsResolution(props: { database: string }) {
                             // bgcolor: '#FFFFFF',
                         },
                     }}
-                    config = {{
+                    config={{
                         toImageButtonOptions: {
                             format: 'svg',
                             filename: 'validationErrorsWithResolution',
                             height: 1000,
                             width: 1500,
                             scale: 1,
-
-                        }}}
+                        },
+                    }}
                 />
             )}
         </>

@@ -128,7 +128,12 @@ export default function ErrorsVsYear(props: { database: string }) {
                             yref: 'paper',
                         },
                         plot_bgcolor: '#FFFFFF',
-                        paper_bgcolor: '#F4F9FF',
+                        paper_bgcolor: 'rgba(0,0,0,0)',
+                        modebar: {
+                            bgcolor: 'rgba(0,0,0,0)',
+                            color: 'gray',
+                            activecolor: 'black',
+                        },
                         yaxis: {
                             title: {
                                 text: 'Number',
@@ -159,7 +164,7 @@ export default function ErrorsVsYear(props: { database: string }) {
                             linewidth: 2,
                             mirror: true,
                             tickmode: 'auto',
-                            range: [1980,d.getFullYear()]
+                            range: [1980, d.getFullYear()],
                         },
 
                         legend: {
@@ -168,15 +173,15 @@ export default function ErrorsVsYear(props: { database: string }) {
                             // bgcolor: '#FFFFFF',
                         },
                     }}
-                    config = {{
+                    config={{
                         toImageButtonOptions: {
                             format: 'svg',
                             filename: 'validationErrorsOverTime',
                             height: 1000,
                             width: 1500,
                             scale: 1,
-
-                        }}}
+                        },
+                    }}
                 />
             )}
         </>
