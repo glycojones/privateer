@@ -178,7 +178,12 @@ export default function GlycansVsYear() {
                             yref: 'paper',
                         },
                         plot_bgcolor: '#FFFFFF',
-                        paper_bgcolor: '#D6D9E5',
+                        paper_bgcolor: 'rgba(0,0,0,0)',
+                        modebar: {
+                            bgcolor: 'rgba(0,0,0,0)',
+                            color: 'gray',
+                            activecolor: 'black'
+                        },
                         yaxis: {
                             title: {
                                 text: 'Number of Depositions',
@@ -192,6 +197,9 @@ export default function GlycansVsYear() {
                             range: [-50, 1600],
                         },
                         yaxis2: {
+                            title: {
+                                text: 'Total Number of Depositions',
+                            },
                             overlaying: 'y',
                             tickformat: ',.0f',
                             tickmode: 'auto',
@@ -199,6 +207,7 @@ export default function GlycansVsYear() {
                             side: 'right',
                             automargin: true,
                             tickprefix: '  ',
+                            ticksuffix: '   ',
                             range: [-500, 16000],
                         },
                         xaxis: {
@@ -215,17 +224,17 @@ export default function GlycansVsYear() {
                             x: legendDown ? 0 : 1.15,
                             y: legendDown ? -0.6 : 0.5,
                             // bgcolor: '#FFFFFF',
-                        }
+                        },
                     }}
-                    config = {{
+                    config={{
                         toImageButtonOptions: {
                             format: 'svg',
                             filename: 'glycosylationOverTime',
                             height: 1000,
                             width: 1500,
                             scale: 1,
-
-                        }}}
+                        },
+                    }}
                 />
             )}
         </>
