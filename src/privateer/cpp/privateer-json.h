@@ -89,7 +89,7 @@ namespace privateer
 
         inline void generate_glycomics_database(std::vector<GlycomicsDatabase>& glycomics_database, const sajson::document& jsonObject) 
         {
-            sajson::value root = jsonObject.get_root();
+            auto root = jsonObject.get_root();
             if (root.get_type() != sajson::TYPE_OBJECT)
                 fail("not Privateer Glycomics Database JSON file");
             std::string database_name_key = root.get_object_key(1).as_string();
@@ -100,14 +100,14 @@ namespace privateer
             
             std::string database_last_update = root.get_object_value(2).as_string();
             
-            sajson::value entries_array = root.get_object_value(0);
+            auto entries_array = root.get_object_value(0);
             std::string entries_name = root.get_object_key(0).as_string();
             if (entries_array.get_type() != sajson::TYPE_ARRAY || entries_name != "data")
                 fail("Expected TYPE_ARRAY, got " + json_type_as_string(entries_array.get_type()) + " with key value equal to \"data\", instead got: \"" + entries_name + "\"");
             
             for (size_t i = 0; i != entries_array.get_length(); ++i) 
             {
-                sajson::value entry = entries_array.get_array_element(i);
+                auto entry = entries_array.get_array_element(i);
                 if (entry.get_type() != sajson::TYPE_OBJECT)
                 fail("Expected TYPE_OBJECT, got " + json_type_as_string(entry.get_type()));
                 
@@ -134,7 +134,7 @@ namespace privateer
                                 temp.GlyConnectID = entry.get_object_value(k).as_string();
                             else
                             {
-                                sajson::value glyconnect_id_array = entry.get_object_value(k);
+                                auto glyconnect_id_array = entry.get_object_value(k);
                                 if(glyconnect_id_array.get_type() != sajson::TYPE_ARRAY)
                                     fail("Expected TYPE_ARRAY, got " + json_type_as_string(entry.get_object_value(k).get_type()));
                                 else
@@ -142,7 +142,7 @@ namespace privateer
                                     std::string GlyConnectID_list = "";
                                     for (size_t j = 0; j != glyconnect_id_array.get_length(); ++j) 
                                     {
-                                        sajson::value glyconnect_id_entry = glyconnect_id_array.get_array_element(j);
+                                        auto glyconnect_id_entry = glyconnect_id_array.get_array_element(j);
                                         if (glyconnect_id_entry.get_type() != sajson::TYPE_STRING)
                                             fail("Expected TYPE_STRING, got " + json_type_as_string(glyconnect_id_entry.get_type()));
                                         GlyConnectID_list.append(glyconnect_id_entry.as_string());
@@ -221,7 +221,7 @@ namespace privateer
 
         inline void generate_torsions_database(std::vector<TorsionsDatabase>& torsions_database, const sajson::document& jsonObject) 
         {
-            sajson::value root = jsonObject.get_root();
+            auto root = jsonObject.get_root();
             if (root.get_type() != sajson::TYPE_OBJECT)
                 fail("not Privateer Torsions Database JSON file");
             std::string database_name_key = root.get_object_key(1).as_string();
@@ -232,14 +232,14 @@ namespace privateer
             
             std::string database_last_update = root.get_object_value(2).as_string();
             
-            sajson::value entries_array = root.get_object_value(0);
+            auto entries_array = root.get_object_value(0);
             std::string entries_name = root.get_object_key(0).as_string();
             if (entries_array.get_type() != sajson::TYPE_ARRAY || entries_name != "data")
                 fail("Expected TYPE_ARRAY, got " + json_type_as_string(entries_array.get_type()) + " with key value equal to \"data\", instead got: \"" + entries_name + "\"");
             
             for (size_t i = 0; i != entries_array.get_length(); ++i) 
             {
-                sajson::value entry = entries_array.get_array_element(i);
+                auto entry = entries_array.get_array_element(i);
                 if (entry.get_type() != sajson::TYPE_OBJECT)
                 fail("Expected TYPE_OBJECT, got " + json_type_as_string(entry.get_type()));
                 
@@ -260,13 +260,13 @@ namespace privateer
                     }
                     else if(entry.get_object_key(j).as_string() == "second") 
                     {
-                        sajson::value second_array = entry.get_object_value(j);
+                        auto second_array = entry.get_object_value(j);
                         if (second_array.get_type() != sajson::TYPE_ARRAY)
                             fail("Expected TYPE_ARRAY, got " + json_type_as_string(second_array.get_type()));
                         
                         for(size_t k = 0; k != second_array.get_length(); k++)
                         {
-                            sajson::value second_object = second_array.get_array_element(k);
+                            auto second_object = second_array.get_array_element(k);
 
                             if (second_object.get_type() != sajson::TYPE_OBJECT)
                                 fail("Expected TYPE_OBJECT, got " + json_type_as_string(second_object.get_type()));
@@ -304,14 +304,14 @@ namespace privateer
 
                                     std::vector<std::pair<float, float>> torsion_container;
 
-                                    sajson::value torsion_array = second_object.get_object_value(l);
+                                    auto torsion_array = second_object.get_object_value(l);
 
                                     // if (second_object.get_object_value(l).get_type() != sajson::TYPE_ARRAY)
                                         // fail("Expected TYPE_ARRAY, got " + json_type_as_string(second_object.get_object_value(l).get_type()));
 
                                     for(size_t m = 0; m != torsion_array.get_length(); m++)
                                     {
-                                        sajson::value individual_torsions = torsion_array.get_array_element(m);
+                                        auto individual_torsions = torsion_array.get_array_element(m);
 
                                         if(individual_torsions.get_type() != sajson::TYPE_OBJECT)
                                             fail("Expected TYPE_OBJECT, got " + json_type_as_string(individual_torsions.get_type()));
@@ -324,14 +324,18 @@ namespace privateer
                                                 if (individual_torsions.get_object_value(n).get_type() != sajson::TYPE_DOUBLE)
                                                     fail("Expected TYPE_STRING, got " + json_type_as_string(individual_torsions.get_object_value(n).get_type()));
                                                 
-                                                Phi = individual_torsions.get_object_value(n).get_number_value();
+                                                 
+                                                sajson::value phi_value = individual_torsions.get_object_value(n);
+                                                Phi = sajson::double_storage::load(phi_value._internal_get_payload());
                                             }
                                             else if(individual_torsions.get_object_key(n).as_string() == "Psi") 
                                             {
                                                 if (individual_torsions.get_object_value(n).get_type() != sajson::TYPE_DOUBLE)
                                                     fail("Expected TYPE_STRING, got " + json_type_as_string(individual_torsions.get_object_value(j).get_type()));
                                                 
-                                                Psi = individual_torsions.get_object_value(n).get_number_value();
+
+                                                 sajson::value psi_value = individual_torsions.get_object_value(n);
+                                                Psi = sajson::double_storage::load(psi_value._internal_get_payload());
                                             }
                                         }
 
@@ -422,7 +426,7 @@ namespace privateer
             std::vector<TorsionsZScoreDatabase> torsions_zscore_database;
             TorsionsZScoreStatistics temp_statistics;
 
-            sajson::value root = jsonObject.get_root();
+            auto root = jsonObject.get_root();
             if (root.get_type() != sajson::TYPE_OBJECT)
                 fail("not Privateer Torsions Z-Score Database JSON file");
             std::string database_name_key = root.get_object_key(1).as_string();
@@ -432,21 +436,21 @@ namespace privateer
             
             std::string database_last_update = root.get_object_value(2).as_string();
 
-            sajson::value entries_array = root.get_object_value(0);
+            auto entries_array = root.get_object_value(0);
             std::string entries_name = root.get_object_key(0).as_string();
             if (entries_array.get_type() != sajson::TYPE_OBJECT || entries_name != "data")
                 fail("Expected TYPE_OBJECT, got " + json_type_as_string(entries_array.get_type()) + " with key value equal to \"data\", instead !!!got: \"" + entries_name + "\"");
             
             for (size_t data_index = 0; data_index != entries_array.get_length(); data_index++) { 
                 
-                sajson::value data_array = entries_array.get_object_value(data_index);
+                auto data_array = entries_array.get_object_value(data_index);
                 std::string data_key = entries_array.get_object_key(data_index).as_string();
              
                 if (data_key == "linkage_data") {
 
                     for (size_t linkage_data_index = 0; linkage_data_index != data_array.get_length(); ++linkage_data_index) 
                     {
-                        sajson::value entry = data_array.get_array_element(linkage_data_index);
+                        auto entry = data_array.get_array_element(linkage_data_index);
                         if (entry.get_type() != sajson::TYPE_OBJECT)
                         fail("Expected TYPE_OBJECT, got " + json_type_as_string(entry.get_type()));
                         
@@ -461,13 +465,13 @@ namespace privateer
                             }
                             else if(entry.get_object_key(donor_index).as_string() == "acceptor") 
                             {
-                                sajson::value acceptor_array = entry.get_object_value(donor_index);
+                                auto acceptor_array = entry.get_object_value(donor_index);
                                 if (acceptor_array.get_type() != sajson::TYPE_ARRAY)
                                     fail("Expected TYPE_ARRAY, got " + json_type_as_string(acceptor_array.get_type()));
                                 
                                 for(size_t acceptor_index = 0; acceptor_index != acceptor_array.get_length(); acceptor_index++)
                                 {
-                                    sajson::value acceptor_object = acceptor_array.get_array_element(acceptor_index);
+                                    auto acceptor_object = acceptor_array.get_array_element(acceptor_index);
 
                                     if (acceptor_object.get_type() != sajson::TYPE_OBJECT)
                                         fail("Expected TYPE_OBJECT, got " + json_type_as_string(acceptor_object.get_type()));
@@ -486,11 +490,11 @@ namespace privateer
                                             if (acceptor_object.get_object_value(acceptor_object_index).get_type() != sajson::TYPE_ARRAY)
                                                 fail("Expected TYPE_ARRAY, got " + json_type_as_string(acceptor_object.get_object_value(acceptor_object_index).get_type()));
 
-                                            sajson::value Linkage_array = acceptor_object.get_object_value(acceptor_object_index);
+                                            auto Linkage_array = acceptor_object.get_object_value(acceptor_object_index);
 
                                             for(size_t Linkage_index = 0; Linkage_index != Linkage_array.get_length(); Linkage_index++)
                                             {
-                                                sajson::value Linkage_object = Linkage_array.get_array_element(Linkage_index);
+                                                auto Linkage_object = Linkage_array.get_array_element(Linkage_index);
 
                                                 if(Linkage_object.get_type() != sajson::TYPE_OBJECT)
                                                     fail("Expected TYPE_OBJECT, got " + json_type_as_string(Linkage_object.get_type()));
@@ -515,7 +519,7 @@ namespace privateer
 
                                                     else if(Linkage_object.get_object_key(Linkage_object_index).as_string() == "Linkage_data")
                                                     {
-                                                        sajson::value Linkage_data_object = Linkage_object.get_object_value(Linkage_object_index);
+                                                        auto Linkage_data_object = Linkage_object.get_object_value(Linkage_object_index);
                                                         if(Linkage_data_object.get_type() != sajson::TYPE_OBJECT)
                                                             fail("Expected TYPE_OBJECT, got " + json_type_as_string(Linkage_data_object.get_type()));
 
@@ -526,7 +530,7 @@ namespace privateer
                                                         // std::cout << "KEY : " << Linkage_data_object.get_object_key(Linkage_data_object_index).as_string() << std::endl;
                                                             if (Linkage_data_object.get_object_key(Linkage_data_object_index).as_string() == "summary")
                                                             {
-                                                                sajson::value Linkage_data_summary_object = Linkage_data_object.get_object_value(Linkage_data_object_index);
+                                                                auto Linkage_data_summary_object = Linkage_data_object.get_object_value(Linkage_data_object_index);
                                                                 if(Linkage_data_summary_object.get_type() != sajson::TYPE_OBJECT)
                                                                     fail("Expected TYPE_OBJECT, got " + json_type_as_string(Linkage_data_summary_object.get_type()));
 
@@ -535,22 +539,26 @@ namespace privateer
                                                                     if(Linkage_data_summary_object.get_object_key(Linkage_data_object_summary_index).as_string() == "count_mean")
                                                                     {
                                                                         if (Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type() != sajson::TYPE_DOUBLE)
-                                                                            fail("Expected TYPE_DOUBLE, got " + json_type_as_string(Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type()));
+                                                                            fail("Expected TYPE_DOUBLE, didn't recieve");
+                                                                            //  + json_type_as_string(Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type()));
                                                                         
-                                                                        temp.summary.first = Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_double_value();
+                                                                        sajson::value linkage_data_object = Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index);
+                                                                        temp.summary.first = sajson::double_storage::load(linkage_data_object._internal_get_payload());
                                                                     }
                                                                     else if(Linkage_data_summary_object.get_object_key(Linkage_data_object_summary_index).as_string() == "count_stdev")
                                                                     {
                                                                         if (Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type() != sajson::TYPE_DOUBLE)
-                                                                            fail("Expected TYPE_DOUBLE, got " + json_type_as_string(Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type()));
+                                                                            fail("Expected TYPE_DOUBLE, didn't recieve ");
+                                                                            //  + json_type_as_string(Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_type()));
                                                                         
-                                                                        temp.summary.second = Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index).get_double_value();
+                                                                        sajson::value linkage_data_object = Linkage_data_summary_object.get_object_value(Linkage_data_object_summary_index);
+                                                                        temp.summary.second = sajson::double_storage::load(linkage_data_object._internal_get_payload());
                                                                     }
                                                                 }
                                                             }
                                                             else if(Linkage_data_object.get_object_key(Linkage_data_object_index).as_string() == "bin_data")
                                                             {
-                                                                sajson::value bin_data_array = Linkage_data_object.get_object_value(Linkage_data_object_index);
+                                                                auto bin_data_array = Linkage_data_object.get_object_value(Linkage_data_object_index);
                                                                 if(bin_data_array.get_type() != sajson::TYPE_ARRAY)
                                                                     fail("Expected TYPE_ARRAY, got " + json_type_as_string(bin_data_array.get_type()));
                                                                 
@@ -558,7 +566,7 @@ namespace privateer
                                                                 {
                                                                     std::unordered_map<std::string, int> current_bin;
 
-                                                                    sajson::value current_bin_data_entry = bin_data_array.get_array_element(bin_data_index);
+                                                                    auto current_bin_data_entry = bin_data_array.get_array_element(bin_data_index);
                                                                     if(current_bin_data_entry.get_type() != sajson::TYPE_OBJECT)
                                                                         fail("Expected TYPE_OBJECT, got " + json_type_as_string(current_bin_data_entry.get_type()));
                                                                     for(size_t current_bin_data_entry_index = 0; current_bin_data_entry_index != current_bin_data_entry.get_length(); current_bin_data_entry_index++)
@@ -568,35 +576,41 @@ namespace privateer
                                                                             if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
                                                                                 fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
                                                                             
-                                                                            current_bin["lower_phi"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
+                                                                            sajson::value lower_phi_value = current_bin_data_entry.get_object_value(current_bin_data_entry_index);
+                                                                            current_bin["lower_phi"] = int(sajson::double_storage::load(lower_phi_value._internal_get_payload()));
+                                                                            
                                                                         }
                                                                         else if(current_bin_data_entry.get_object_key(current_bin_data_entry_index).as_string() == "higher_phi")
                                                                         {
                                                                             if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
                                                                                 fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
                                                                             
-                                                                            current_bin["higher_phi"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
+                                                                            sajson::value higher_phi_value = current_bin_data_entry.get_object_value(current_bin_data_entry_index);
+                                                                            current_bin["higher_phi"] = int(sajson::double_storage::load(higher_phi_value._internal_get_payload()));
                                                                         }
                                                                         else if(current_bin_data_entry.get_object_key(current_bin_data_entry_index).as_string() == "lower_psi")
                                                                         {
                                                                             if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
                                                                                 fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
                                                                             
-                                                                            current_bin["lower_psi"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
-                                                                        }
+                                                                            sajson::value lower_psi_value = current_bin_data_entry.get_object_value(current_bin_data_entry_index);
+                                                                            current_bin["lower_psi"] = int(sajson::double_storage::load(lower_psi_value._internal_get_payload()));           
+                                                                                                                                         }
                                                                         else if(current_bin_data_entry.get_object_key(current_bin_data_entry_index).as_string() == "higher_psi")
                                                                         {
                                                                             if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
                                                                                 fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
                                                                             
-                                                                            current_bin["higher_psi"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
+                                                                            sajson::value higher_psi_value = current_bin_data_entry.get_object_value(current_bin_data_entry_index);
+                                                                            current_bin["higher_psi"] = int(sajson::double_storage::load(higher_psi_value._internal_get_payload()));
                                                                         }
                                                                         else if(current_bin_data_entry.get_object_key(current_bin_data_entry_index).as_string() == "count")
                                                                         {
                                                                             if (current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type() != sajson::TYPE_DOUBLE)
                                                                                 fail("Expected TYPE_DOUBLE, got " + json_type_as_string(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_type()));
                                                                             
-                                                                            current_bin["count"] = int(current_bin_data_entry.get_object_value(current_bin_data_entry_index).get_double_value());
+                                                                             sajson::value count_value = current_bin_data_entry.get_object_value(current_bin_data_entry_index);
+                                                                            current_bin["count"] = int(sajson::double_storage::load(count_value._internal_get_payload()));
                                                                         }
                                                                     }
                                                                     tmp_bins_for_linkage.push_back(current_bin);
@@ -604,7 +618,7 @@ namespace privateer
                                                             }
                                                             else if(Linkage_data_object.get_object_key(Linkage_data_object_index).as_string() == "pdb_list") { 
 
-                                                                sajson::value pdb_list_array = Linkage_data_object.get_object_value(Linkage_data_object_index);
+                                                                auto pdb_list_array = Linkage_data_object.get_object_value(Linkage_data_object_index);
 
                                                                 if(pdb_list_array.get_type() != sajson::TYPE_ARRAY)
                                                                     fail("Expected TYPE_ARRAY, got " + json_type_as_string(pdb_list_array.get_type()));
@@ -637,7 +651,8 @@ namespace privateer
                     for (size_t statistics_data_index = 0; statistics_data_index != data_array.get_length(); statistics_data_index++) { 
 
                         std::string statistics_key = data_array.get_object_key(statistics_data_index).as_string();
-                        float statistics_value = static_cast<float>(data_array.get_object_value(statistics_data_index).get_double_value());
+                        sajson::value stats_value = data_array.get_object_value(statistics_data_index);
+                        float statistics_value = static_cast<float>(sajson::double_storage::load(stats_value._internal_get_payload()));
 
 
                         if (statistics_key != "Database Z Score Average" && statistics_key != "Database Z Score StdDev") {
