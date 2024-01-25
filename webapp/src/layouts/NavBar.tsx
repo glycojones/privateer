@@ -1,17 +1,21 @@
-import {type Dispatch, type ReactElement, type SetStateAction, useState} from 'react';
-import { GENERAL_CITATION, GITHUB_REPO } from '../data/Constants.tsx';
+import {
+    type Dispatch,
+    type ReactElement,
+    type SetStateAction,
+    useState,
+} from 'react';
+import { GITHUB_REPO } from '../data/Constants.tsx';
 import React from 'react';
-import CitationModal from "../modals/Citations/Citations.tsx";
+import CitationModal from '../modals/Citations/Citations.tsx';
 export default function NavBar({
     setResetApp,
 }: {
     setResetApp: Dispatch<SetStateAction<boolean>>;
 }): ReactElement {
-
-    const [modalOpen, setModalOpen] = useState(false)
+    const [modalOpen, setModalOpen] = useState(false);
     const handleModalOpen = () => {
         setModalOpen(true);
-    }
+    };
     return (
         <div
             id="navbar"
@@ -39,8 +43,7 @@ export default function NavBar({
                     refinement and analysis
                 </span>
             </div>
-            <CitationModal modalOpen={modalOpen} setModalOpen={setModalOpen}/>
-
+            <CitationModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
 
             <div className="flex">
                 <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-6 flex items-center ">
@@ -51,8 +54,7 @@ export default function NavBar({
                             height="1em"
                             viewBox="0 0 512 512"
                         >
-                            <path
-                                d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/>
+                            <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z" />
                         </svg>
                     </a>
                 </div>
@@ -64,8 +66,7 @@ export default function NavBar({
                             height="1em"
                             viewBox="0 0 448 512"
                         >
-                            <path
-                                d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/>
+                            <path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z" />
                         </svg>
                     </a>
                 </div>
@@ -96,8 +97,7 @@ export default function NavBar({
                             height="1em"
                             viewBox="0 0 384 512"
                         >
-                            <path
-                                d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"/>
+                            <path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z" />
                         </svg>
                     </a>
                 </div>
