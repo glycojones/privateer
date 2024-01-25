@@ -48,6 +48,7 @@ MacOS (tested up to Ventura) and GNU/Linux (tested on Ubuntu 22.04). We do not t
 
 `gcc g++ gfortran m4` 
 > These are the compilers, for C/C++/Fortran. On Debian/Ubuntu: `apt-get install build-essential m4 gfortran`. On MacOS (via Homebrew): `brew install gcc gfortran m4`
+> For Apple Silicon Macs: use GCC-12 and G++-12 
 
 
 #### Step by step build 
