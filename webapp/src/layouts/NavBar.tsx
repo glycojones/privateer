@@ -1,11 +1,21 @@
-import { type Dispatch, type ReactElement, type SetStateAction } from 'react';
-import { GENERAL_CITATION, GITHUB_REPO } from '../data/Constants.tsx';
+import {
+    type Dispatch,
+    type ReactElement,
+    type SetStateAction,
+    useState,
+} from 'react';
+import { GITHUB_REPO } from '../data/Constants.tsx';
 import React from 'react';
+import CitationModal from '../modals/Citations/Citations.tsx';
 export default function NavBar({
     setResetApp,
 }: {
     setResetApp: Dispatch<SetStateAction<boolean>>;
 }): ReactElement {
+    const [modalOpen, setModalOpen] = useState(false);
+    const handleModalOpen = () => {
+        setModalOpen(true);
+    };
     return (
         <div
             id="navbar"
@@ -33,6 +43,7 @@ export default function NavBar({
                     refinement and analysis
                 </span>
             </div>
+            <CitationModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
 
             <div className="flex">
                 <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-6 flex items-center ">
@@ -79,7 +90,7 @@ export default function NavBar({
                     </a>
                 </div>
                 <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-6 flex items-center ">
-                    <a id="citation" href={GENERAL_CITATION}>
+                    <a onClick={handleModalOpen} id="citation">
                         <svg
                             className="w-6 h-6 text-gray-500 hover:scale-125 transition-all"
                             xmlns="http://www.w3.org/2000/svg"
@@ -95,10 +106,6 @@ export default function NavBar({
                         <img
                             className="w-full hover:scale-125 transition-all hidden dark:block"
                             src="/github-mark.png"
-                        />
-                        <img
-                            className="w-full hover:scale-125 transition-all block dark:hidden"
-                            src="/github-mark-white.png"
                         />
                     </a>
                 </div>
