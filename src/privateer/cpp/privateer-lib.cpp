@@ -2083,16 +2083,16 @@ void privateer::glycanbuilderplot::Plot::write_svg_header_ostringstream   ( std:
        << "     xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n"
        << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
        << "     version=\"1.1\"\n"
-       << "     width=\"" << get_width() << "\" \n"
-       << "     height=\"" << get_height() << "\" \n"
-       << "     viewBox=\"" << get_viewbox() << " \"\n"
-       << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
+//        << "     width=\"" << get_width() << "\" \n"
+//        << "     height=\"" << get_height() << "\" \n"
+       << "     width=100%\n"
+       << "     viewBox=\"" << get_viewbox() << " \"\n>"
+//        << "     preserveAspectRatio=\"xMinYMinXMaxYMax\">\n\n"
        << "  <style>\n"
        << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
        << "    .my_red    { fill:" << get_colour ( rootred, original_colour_scheme  ) << " }\n"
        << "    .my_yellow { fill:" << get_colour ( rootyellow, original_colour_scheme  ) << " }\n"
        << "  </style>\n";
-
 }
 
 
