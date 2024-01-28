@@ -39,7 +39,7 @@ inline bool altconf_compatible ( char m1, char m2 )
         // else
         //     return true;
     // would cause an endless while loop in is_stereocentre() when there would be altconfs like 'C'
-    if(( m1 == m2))
+    if( m1 == m2)
         return true;
     else if((m1 == ' ' && m2 != ' ') || (m1 != ' ' && m2 == ' '))
         return true;
