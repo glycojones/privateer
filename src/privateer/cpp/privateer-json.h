@@ -769,7 +769,7 @@ namespace privateer
                     path_copy = env + "/privateer_data/linkage_torsions/privateer_torsions_z_score_database.json";
                 }
             }
-                std::cout << path_copy << std::endl;
+
             return read_json_zscore_db(path_copy);
 
             // fileptr_t f = file_open(path_copy.c_str(), "rb");
