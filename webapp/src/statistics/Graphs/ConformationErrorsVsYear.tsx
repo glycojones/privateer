@@ -67,6 +67,9 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
             mode: 'lines',
             // marker: {color: 'red'},
             name: 'Total Sugars',
+            line: {
+                width: 3
+            }
         };
 
         setTotalTrace(newTotalTrace);
@@ -80,6 +83,9 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
             mode: 'lines',
             // marker: {color: 'green'},
             name: 'Non Chair Sugars',
+            line: {
+                width: 3
+            }
         };
 
         setErrorTrace(newErrorTrace);
@@ -94,6 +100,9 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
             yaxis: 'y2',
             // marker: {color: 'green'},
             name: 'Relative Validation Errors ',
+            line: {
+                width: 3
+            }
         };
 
         setRelativeTrace(newRelativeTrace);
@@ -115,13 +124,17 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                         width,
                         height,
                         title: {
-                            text: `Conformational Anomalies in ${
+                            text: `<b>Conformational Anomalies in ${
                                 props.database === 'pdbredo'
                                     ? 'PDB-REDO'
                                     : 'the PDB'
-                            } over time`,
+                            } over time</b>`,
                             x: 0.5,
                             // y: 1.1,
+                            font: {
+                                size: 24,
+                                family: 'sans-serif',
+                            },
                             xanchor: 'auto', // or 'auto', which matches 'left' in this case
                             yanchor: 'bottom',
                             xref: 'paper',
@@ -137,6 +150,10 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                         yaxis: {
                             title: {
                                 text: 'Number',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
                             },
                             tickformat: ',.0f',
                             linewidth: 2,
@@ -159,6 +176,10 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                         xaxis: {
                             title: {
                                 text: 'Year',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
                             },
                             linecolor: 'black',
                             linewidth: 2,
@@ -171,6 +192,9 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                             x: legendDown ? 0 : 1.15,
                             y: legendDown ? -0.6 : 0.5,
                             // bgcolor: '#FFFFFF',
+                            font: {
+                                size: 14,
+                            },
                         },
                     }}
                     config={{

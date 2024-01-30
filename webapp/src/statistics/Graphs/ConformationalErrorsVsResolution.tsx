@@ -68,6 +68,9 @@ export default function ConformationalErrorsVsResolution(props: {
             mode: 'lines',
             // marker: {color: 'red'},
             name: 'Total Sugars',
+            line: {
+                width: 3
+            }
         };
 
         setTotalTrace(newTotalTrace);
@@ -81,6 +84,9 @@ export default function ConformationalErrorsVsResolution(props: {
             mode: 'lines',
             // marker: {color: 'green'},
             name: 'Total Non-chair Sugars',
+            line: {
+                width: 3
+            }
         };
 
         setErrorTrace(newErrorTrace);
@@ -95,6 +101,9 @@ export default function ConformationalErrorsVsResolution(props: {
             // marker: {color: 'green'},
             yaxis: 'y2',
             name: 'Validation Errors',
+            line: {
+                width: 3
+            }
         };
 
         setRelativeTrace(newRelativeTrace);
@@ -116,12 +125,16 @@ export default function ConformationalErrorsVsResolution(props: {
                         width,
                         height,
                         title: {
-                            text: `Conformational Anomalies in ${
+                            text: `<b>Conformational Anomalies in ${
                                 props.database === 'pdbredo'
                                     ? 'PDB-REDO'
                                     : 'the PDB'
-                            } with resolution`,
+                            } with resolution</b>`,
                             x: 0.5,
+                            font: {
+                                size: 24,
+                                family: 'sans-serif',
+                            },
                             // y: 1.1,
                             xanchor: 'auto', // or 'auto', which matches 'left' in this case
                             yanchor: 'bottom',
@@ -138,6 +151,10 @@ export default function ConformationalErrorsVsResolution(props: {
                         yaxis: {
                             title: {
                                 text: 'Number',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
                             },
                             tickformat: ',.0f',
                             linewidth: 2,
@@ -161,6 +178,10 @@ export default function ConformationalErrorsVsResolution(props: {
                         xaxis: {
                             title: {
                                 text: 'Resolution / Å',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
                             },
                             linecolor: 'black',
                             linewidth: 2,
@@ -173,6 +194,9 @@ export default function ConformationalErrorsVsResolution(props: {
                             x: legendDown ? 0 : 1.15,
                             y: legendDown ? -0.6 : 0.5,
                             // bgcolor: '#FFFFFF',
+                            font: {
+                                size: 14,
+                            },
                         },
                     }}
                     config={{

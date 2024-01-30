@@ -63,6 +63,9 @@ export default function GlycansVsYear() {
             mode: 'lines',
             // marker: {color: 'red'},
             name: 'Total Carbohydrates',
+            line: {
+                width: 3
+            }
         };
 
         setTotalTrace(newTotalTrace);
@@ -76,6 +79,9 @@ export default function GlycansVsYear() {
             mode: 'lines',
             // marker: {color: 'green'},
             name: 'N-Glycans',
+            line: {
+                width: 3
+            }
         };
 
         setNGlycanTrace(newNGlycanTrace);
@@ -89,6 +95,9 @@ export default function GlycansVsYear() {
             mode: 'lines',
             // marker: {color: 'blue'},
             name: 'O-Glycans',
+            line: {
+                width: 3
+            }
         };
 
         setOGlycanTrace(newOGlycanTrace);
@@ -102,6 +111,9 @@ export default function GlycansVsYear() {
             mode: 'lines',
             // marker: {color: 'blue'},
             name: 'S-Glycans',
+            line: {
+                width: 3
+            }
         };
 
         setSGlycanTrace(newSGlycanTrace);
@@ -115,6 +127,9 @@ export default function GlycansVsYear() {
             mode: 'lines',
             // marker: {color: 'blue'},
             name: 'C-Glycans',
+            line: {
+                width: 3
+            }
         };
 
         setCGlycanTrace(newCGlycanTrace);
@@ -128,6 +143,7 @@ export default function GlycansVsYear() {
             mode: 'lines',
             // marker: {color: 'blue'},
             name: 'Ligands',
+
         };
 
         setLigandTrace(newLigandTrace);
@@ -169,12 +185,16 @@ export default function GlycansVsYear() {
                         width,
                         height,
                         title: {
-                            text: 'Glycosylation in the PDB over time',
+                            text: '<b>Glycosylation in the PDB over time</b>',
                             x: 0.5,
                             // y: 1.1,
                             xanchor: 'auto', // or 'auto', which matches 'left' in this case
                             yanchor: 'bottom',
                             xref: 'paper',
+                            font: {
+                                size: 24,
+                                family: 'sans-serif',
+                            },
                             yref: 'paper',
                         },
                         plot_bgcolor: '#FFFFFF',
@@ -187,8 +207,13 @@ export default function GlycansVsYear() {
                         yaxis: {
                             title: {
                                 text: 'Number of Depositions',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
                             },
                             tickformat: ',.0f',
+
                             linewidth: 2,
                             mirror: true,
                             automargin: true,
@@ -199,6 +224,10 @@ export default function GlycansVsYear() {
                         yaxis2: {
                             title: {
                                 text: 'Total Number of Depositions',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
                             },
                             overlaying: 'y',
                             tickformat: ',.0f',
@@ -213,6 +242,10 @@ export default function GlycansVsYear() {
                         xaxis: {
                             title: {
                                 text: 'Year',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
                             },
                             linecolor: 'black',
                             linewidth: 2,
@@ -225,7 +258,7 @@ export default function GlycansVsYear() {
                             y: legendDown ? -0.6 : 0.5,
                             // bgcolor: '#FFFFFF',
                             font: {
-                                // size: 14,
+                                size: 14,
                             },
                         },
                     }}

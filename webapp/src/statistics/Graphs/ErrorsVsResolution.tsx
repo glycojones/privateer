@@ -66,6 +66,9 @@ export default function ErrorsVsResolution(props: { database: string }) {
             mode: 'lines',
             // marker: {color: 'red'},
             name: 'Total Glycosylated Models',
+            line: {
+                width: 3
+            }
         };
 
         setTotalTrace(newTotalTrace);
@@ -79,6 +82,9 @@ export default function ErrorsVsResolution(props: { database: string }) {
             mode: 'lines',
             // marker: {color: 'green'},
             name: 'Validation Errors',
+            line: {
+                width: 3
+            }
         };
 
         setErrorTrace(newErrorTrace);
@@ -114,11 +120,15 @@ export default function ErrorsVsResolution(props: { database: string }) {
                         width,
                         height,
                         title: {
-                            text: `Validation Errors in ${
+                            text: `<b>Validation Errors in ${
                                 props.database === 'pdbredo'
                                     ? 'PDB-REDO'
                                     : 'the PDB'
-                            } with resolution`,
+                            } with resolution</b>`,
+                            font: {
+                                size: 24,
+                                family: 'sans-serif',
+                            },
                             x: 0.5,
                             // y: 1.1,
                             xanchor: 'auto', // or 'auto', which matches 'left' in this case
@@ -136,6 +146,10 @@ export default function ErrorsVsResolution(props: { database: string }) {
                         yaxis: {
                             title: {
                                 text: 'Number',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
                             },
                             tickformat: ',.0f',
                             linewidth: 2,
@@ -159,6 +173,10 @@ export default function ErrorsVsResolution(props: { database: string }) {
                         xaxis: {
                             title: {
                                 text: 'Resolution / Å',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
                             },
                             linecolor: 'black',
                             linewidth: 2,
@@ -171,6 +189,9 @@ export default function ErrorsVsResolution(props: { database: string }) {
                             x: legendDown ? 0 : 1.15,
                             y: legendDown ? -0.6 : 0.5,
                             // bgcolor: '#FFFFFF',
+                            font: {
+                                size: 14,
+                            },
                         },
                     }}
                     config={{
