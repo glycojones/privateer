@@ -1,10 +1,10 @@
 import GlycansVsYear from './GlycansVsYear.tsx';
 import React, { Suspense, useEffect, useState } from 'react';
 import Loading from '../../shared/Loading/Loading.tsx';
-import ErrorsVsYear from './ErrorsVsYear.tsx';
+import ErrorsVsYear from './old/ErrorsVsYear.tsx';
 import ConformationErrorsVsYear from './ConformationErrorsVsYear.tsx';
 
-import ErrorsVsResolution from './ErrorsVsResolution.tsx';
+import ErrorsVsResolution from './old/ErrorsVsResolution.tsx';
 import PDBToggle from '../../shared/PDBToggle/PDBToggle.tsx';
 import BorderElement from '../../layouts/BorderElement.tsx';
 import ConformationalErrorsVsResolution from './ConformationalErrorsVsResolution.tsx';
@@ -63,25 +63,25 @@ export default function Graphs() {
                         </div>
                     </div>
 
-                    <div className="w-full bg-tertiary text-center">
-                        <div className="w-full sm:px-12 text-center sm:text-left bg-tertiary">
-                            <PDBToggle
-                                checkState={errorVsYearDBSwitch}
-                                setCheckState={setErrorVsYearDBSwitch}
-                            />
-                        </div>
-                        <ErrorsVsYear
-                            database={errorVsYearDBSwitch ? 'pdbredo' : 'pdb'}
-                        />
-                    </div>
+                    {/*<div className="w-full bg-tertiary text-center">*/}
+                    {/*    <div className="w-full sm:px-12 text-center sm:text-left bg-tertiary">*/}
+                    {/*        <PDBToggle*/}
+                    {/*            checkState={errorVsYearDBSwitch}*/}
+                    {/*            setCheckState={setErrorVsYearDBSwitch}*/}
+                    {/*        />*/}
+                    {/*    </div>*/}
+                    {/*    <ErrorsVsYear*/}
+                    {/*        database={errorVsYearDBSwitch ? 'pdbredo' : 'pdb'}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
 
-                    <BorderElement
-                        topColor={'#F4F9FF'}
-                        bottomColor={'#D6D9E5'}
-                        reverse={true}
-                    ></BorderElement>
-                    <div className="w-full text-center">
-                        <div className="w-full sm:px-12 text-center sm:text-left">
+                    {/*<BorderElement*/}
+                    {/*    topColor={'#F4F9FF'}*/}
+                    {/*    bottomColor={'#D6D9E5'}*/}
+                    {/*    reverse={true}*/}
+                    {/*></BorderElement>*/}
+                    <div className="w-full text-center bg-tertiary">
+                        <div className="w-full sm:px-12 text-center sm:text-left ">
                             <PDBToggle
                                 checkState={confVsYearDBSwitch}
                                 setCheckState={setConfVsYearDBSwitch}
@@ -93,23 +93,23 @@ export default function Graphs() {
                         />
                     </div>
 
-                    <BorderElement
-                        bottomColor={'#F4F9FF'}
-                        topColor={'#D6D9E5'}
-                        reverse={false}
-                    ></BorderElement>
+                    {/*<BorderElement*/}
+                    {/*    bottomColor={'#F4F9FF'}*/}
+                    {/*    topColor={'#D6D9E5'}*/}
+                    {/*    reverse={false}*/}
+                    {/*></BorderElement>*/}
 
-                    <div className="w-full bg-tertiary text-center">
-                        <div className="w-full sm:px-12 text-center sm:text-left">
-                            <PDBToggle
-                                checkState={errorVsResDBSwitch}
-                                setCheckState={setErrorVsResDBSwitch}
-                            />
-                        </div>
-                        <ErrorsVsResolution
-                            database={errorVsResDBSwitch ? 'pdbredo' : 'pdb'}
-                        />
-                    </div>
+                    {/*<div className="w-full bg-tertiary text-center">*/}
+                    {/*    <div className="w-full sm:px-12 text-center sm:text-left">*/}
+                    {/*        <PDBToggle*/}
+                    {/*            checkState={errorVsResDBSwitch}*/}
+                    {/*            setCheckState={setErrorVsResDBSwitch}*/}
+                    {/*        />*/}
+                    {/*    </div>*/}
+                    {/*    <ErrorsVsResolution*/}
+                    {/*        database={errorVsResDBSwitch ? 'pdbredo' : 'pdb'}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
 
                     <BorderElement
                         topColor={'#F4F9FF'}

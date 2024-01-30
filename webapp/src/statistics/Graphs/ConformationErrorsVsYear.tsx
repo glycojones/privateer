@@ -4,7 +4,8 @@ import Plot from 'react-plotly.js';
 
 export default function ConformationErrorsVsYear(props: { database: string }) {
     const [totalTrace, setTotalTrace] = useState();
-    const [errorTrace, setErrorTrace] = useState();
+    const [checkTrace, setCheckTrace] = useState();
+    const [noTrace, setNoTrace] = useState();
     const [relativeTrace, setRelativeTrace] = useState();
 
     // const [depositedTrace, setDepositedTrace] = useState();
@@ -21,7 +22,7 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
 
     useEffect(() => {
         const url =
-            'https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/stats/conformational_errors_per_year.json';
+            'https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/stats/validation_errors_per_year.json';
 
         fetch(url)
             .then(async (response) => await response.json())
@@ -61,34 +62,54 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
         const newTotalTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return e.totalChair + e.totalNonChair;
+                return e.totalSugars
             }),
-            type: 'scatter',
-            mode: 'lines',
-            // marker: {color: 'red'},
+            type: 'bar',
+            name: 'Total Deposited',
+            yaxis: 'y2',
             name: 'Total Sugars',
             line: {
                 width: 3
-            }
+            },
+            marker: {
+                color: 'rgb(100,100,100)',
+                opacity: 0.2,
+            },
         };
 
         setTotalTrace(newTotalTrace);
 
-        const newErrorTrace = {
+        const newCheckTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return e.totalNonChair;
+                return 100 * e.totalCheck / e.totalSugars;
             }),
             type: 'scatter',
             mode: 'lines',
-            // marker: {color: 'green'},
-            name: 'Non Chair Sugars',
+            marker: {color: 'blue'},
+            name: 'High Energy Conformation',
             line: {
                 width: 3
             }
         };
 
-        setErrorTrace(newErrorTrace);
+        setCheckTrace(newCheckTrace);
+
+        const newNoTrace = {
+            x: Object.keys(data[props.database]),
+            y: Object.values(data[props.database]).map((e) => {
+                return 100 * e.totalNo / e.totalSugars;
+            }),
+            type: 'scatter',
+            mode: 'lines',
+            marker: {color: 'red'},
+            name: 'Errors',
+            line: {
+                width: 3
+            }
+        };
+
+        setNoTrace(newNoTrace);
 
         const newRelativeTrace = {
             x: Object.keys(data[props.database]),
@@ -116,7 +137,8 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                 <Plot
                     data={[
                         totalTrace,
-                        errorTrace,
+                        checkTrace,
+                        noTrace,
                         // relativeTrace
                     ]}
                     layout={{
@@ -124,7 +146,7 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                         width,
                         height,
                         title: {
-                            text: `<b>Conformational Anomalies in ${
+                            text: `<b>Carbohydrate Anomalies in ${
                                 props.database === 'pdbredo'
                                     ? 'PDB-REDO'
                                     : 'the PDB'
@@ -149,7 +171,7 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                         },
                         yaxis: {
                             title: {
-                                text: 'Number',
+                                text: 'Relative anomalies / %',
                                 font: {
                                     size: 18,
                                     family: 'sans-serif',
@@ -161,7 +183,7 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                             automargin: true,
                             ticksuffix: ' ',
                             tickprefix: '    ',
-                            range: [-50, 35000],
+                            range: [0, 100],
                         },
                         yaxis2: {
                             overlaying: 'y',
@@ -170,8 +192,16 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                             // anchor: 'free',
                             side: 'right',
                             automargin: true,
+                            range: [-50, 35000],
+                            title: {
+                                text: 'Total Number of Depositions',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
+                            },
                             tickprefix: '  ',
-                            range: [0, 100],
+                            ticksuffix: '   ',
                         },
                         xaxis: {
                             title: {

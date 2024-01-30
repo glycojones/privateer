@@ -61,7 +61,7 @@ export default function GlycansVsYear() {
             }),
             type: 'scatter',
             mode: 'lines',
-            // marker: {color: 'red'},
+            marker: {color: 'red'},
             name: 'Total Carbohydrates',
             line: {
                 width: 3
@@ -77,7 +77,7 @@ export default function GlycansVsYear() {
             }),
             type: 'scatter',
             mode: 'lines',
-            // marker: {color: 'green'},
+            marker: {color: 'blue'},
             name: 'N-Glycans',
             line: {
                 width: 3
@@ -93,7 +93,7 @@ export default function GlycansVsYear() {
             }),
             type: 'scatter',
             mode: 'lines',
-            // marker: {color: 'blue'},
+            marker: {color: 'gold'},
             name: 'O-Glycans',
             line: {
                 width: 3
@@ -109,7 +109,7 @@ export default function GlycansVsYear() {
             }),
             type: 'scatter',
             mode: 'lines',
-            // marker: {color: 'blue'},
+            // marker: {color: 'gold'},
             name: 'S-Glycans',
             line: {
                 width: 3
@@ -157,8 +157,8 @@ export default function GlycansVsYear() {
             name: 'Total Deposited',
             yaxis: 'y2',
             marker: {
-                color: 'rgb(158,202,225)',
-                opacity: 0.4,
+                color: 'rgb(100,100,100)',
+                opacity: 0.2,
             },
         };
 

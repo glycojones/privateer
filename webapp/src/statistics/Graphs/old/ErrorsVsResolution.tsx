@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Loading from '../../shared/Loading/Loading.tsx';
+import React, { lazy, useEffect, useState } from 'react';
+import Loading from '../../../shared/Loading/Loading.tsx';
 import Plot from 'react-plotly.js';
 
-export default function ErrorsVsYear(props: { database: string }) {
+export default function ErrorsVsResolution(props: { database: string }) {
     const [totalTrace, setTotalTrace] = useState();
     const [errorTrace, setErrorTrace] = useState();
     const [relativeTrace, setRelativeTrace] = useState();
 
     // const [depositedTrace, setDepositedTrace] = useState();
-    const d = new Date();
 
     const [data, setData] = useState<Record<
         string,
@@ -21,7 +20,7 @@ export default function ErrorsVsYear(props: { database: string }) {
 
     useEffect(() => {
         const url =
-            'https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/stats/validation_errors_per_year.json';
+            'https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/stats/validation_errors_per_resolution.json';
 
         fetch(url)
             .then(async (response) => await response.json())
@@ -93,13 +92,13 @@ export default function ErrorsVsYear(props: { database: string }) {
         const newRelativeTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return (100 * e.totalErrors) / e.totalGlycans;
+                return (100 * e.totalErrors) / e.totalGlyco;
             }),
             type: 'scatter',
             mode: 'lines',
-            yaxis: 'y2',
             // marker: {color: 'green'},
-            name: 'Relative Validation Errors ',
+            yaxis: 'y2',
+            name: 'Validation Errors',
         };
 
         setRelativeTrace(newRelativeTrace);
@@ -125,12 +124,12 @@ export default function ErrorsVsYear(props: { database: string }) {
                                 props.database === 'pdbredo'
                                     ? 'PDB-REDO'
                                     : 'the PDB'
-                            } over time</b>`,
-                            x: 0.5,
+                            } with resolution</b>`,
                             font: {
                                 size: 24,
                                 family: 'sans-serif',
                             },
+                            x: 0.5,
                             // y: 1.1,
                             xanchor: 'auto', // or 'auto', which matches 'left' in this case
                             yanchor: 'bottom',
@@ -159,6 +158,7 @@ export default function ErrorsVsYear(props: { database: string }) {
                             ticksuffix: ' ',
                             tickprefix: '    ',
                             range: [-50, 1600],
+                            // type: 'log'
                         },
                         yaxis2: {
                             overlaying: 'y',
@@ -172,7 +172,7 @@ export default function ErrorsVsYear(props: { database: string }) {
                         },
                         xaxis: {
                             title: {
-                                text: 'Year',
+                                text: 'Resolution / Å',
                                 font: {
                                     size: 18,
                                     family: 'sans-serif',
@@ -182,7 +182,7 @@ export default function ErrorsVsYear(props: { database: string }) {
                             linewidth: 2,
                             mirror: true,
                             tickmode: 'auto',
-                            range: [1980, d.getFullYear()],
+                            range: [0, 5],
                         },
 
                         legend: {
@@ -197,7 +197,7 @@ export default function ErrorsVsYear(props: { database: string }) {
                     config={{
                         toImageButtonOptions: {
                             format: 'svg',
-                            filename: 'validationErrorsOverTime',
+                            filename: 'validationErrorsWithResolution',
                             height: 1000,
                             width: 1500,
                             scale: 1,

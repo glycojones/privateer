@@ -6,8 +6,8 @@ export default function ConformationalErrorsVsResolution(props: {
     database: string;
 }) {
     const [totalTrace, setTotalTrace] = useState();
-    const [errorTrace, setErrorTrace] = useState();
-    const [relativeTrace, setRelativeTrace] = useState();
+    const [noTrace, setNoTrace] = useState();
+    const [checkTrace, setCheckTrace] = useState();
 
     // const [depositedTrace, setDepositedTrace] = useState();
 
@@ -22,7 +22,7 @@ export default function ConformationalErrorsVsResolution(props: {
 
     useEffect(() => {
         const url =
-            'https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/stats/conformational_errors_per_resolution.json';
+            'https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/stats/validation_errors_per_resolution.json';
 
         fetch(url)
             .then(async (response) => await response.json())
@@ -62,51 +62,54 @@ export default function ConformationalErrorsVsResolution(props: {
         const newTotalTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return e.totalChair + e.totalNonChair;
+                return e.totalSugars;
             }),
-            type: 'scatter',
-            mode: 'lines',
-            // marker: {color: 'red'},
+            type: 'bar',
+            name: 'Total Deposited',
+            yaxis: 'y2',
             name: 'Total Sugars',
             line: {
                 width: 3
-            }
+            },
+            marker: {
+                color: 'rgb(100,100,100)',
+                opacity: 0.2,
+            },
         };
 
         setTotalTrace(newTotalTrace);
 
-        const newErrorTrace = {
+        const newCheckTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return e.totalNonChair;
+                return 100*e.totalCheck/e.totalSugars;
             }),
             type: 'scatter',
             mode: 'lines',
-            // marker: {color: 'green'},
-            name: 'Total Non-chair Sugars',
+            marker: {color: 'blue'},
+            name: 'High Energy Conformation',
             line: {
                 width: 3
             }
         };
 
-        setErrorTrace(newErrorTrace);
+        setCheckTrace(newCheckTrace);
 
-        const newRelativeTrace = {
+        const newNoTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return (100 * e.totalErrors) / e.totalGlyco;
+                return 100 * e.totalNo/e.totalSugars;
             }),
             type: 'scatter',
             mode: 'lines',
-            // marker: {color: 'green'},
-            yaxis: 'y2',
-            name: 'Validation Errors',
+            marker: {color: 'red'},
+            name: 'Errors',
             line: {
                 width: 3
             }
         };
 
-        setRelativeTrace(newRelativeTrace);
+        setNoTrace(newNoTrace);
     }, [data, props.database]);
 
     return (
@@ -117,7 +120,8 @@ export default function ConformationalErrorsVsResolution(props: {
                 <Plot
                     data={[
                         totalTrace,
-                        errorTrace,
+                        checkTrace,
+                        noTrace,
                         // relativeTrace
                     ]}
                     layout={{
@@ -125,7 +129,7 @@ export default function ConformationalErrorsVsResolution(props: {
                         width,
                         height,
                         title: {
-                            text: `<b>Conformational Anomalies in ${
+                            text: `<b>Carbohydrate Anomalies in ${
                                 props.database === 'pdbredo'
                                     ? 'PDB-REDO'
                                     : 'the PDB'
@@ -150,7 +154,7 @@ export default function ConformationalErrorsVsResolution(props: {
                         },
                         yaxis: {
                             title: {
-                                text: 'Number',
+                                text: 'Relative anomalies / %',
                                 font: {
                                     size: 18,
                                     family: 'sans-serif',
@@ -162,7 +166,8 @@ export default function ConformationalErrorsVsResolution(props: {
                             automargin: true,
                             ticksuffix: ' ',
                             tickprefix: '    ',
-                            range: [-50, 14000],
+                            range: [0, 100],
+
                             // type: 'log'
                         },
                         yaxis2: {
@@ -173,7 +178,17 @@ export default function ConformationalErrorsVsResolution(props: {
                             side: 'right',
                             automargin: true,
                             tickprefix: '  ',
-                            range: [0, 100],
+                            range: [-50, 14000],
+                            title: {
+                                text: 'Total Number of Depositions',
+                                font: {
+                                    size: 18,
+                                    family: 'sans-serif',
+                                },
+                            },
+                            tickprefix: '  ',
+                            ticksuffix: '   ',
+
                         },
                         xaxis: {
                             title: {
@@ -187,7 +202,7 @@ export default function ConformationalErrorsVsResolution(props: {
                             linewidth: 2,
                             mirror: true,
                             tickmode: 'auto',
-                            range: [0, 5],
+                            range: [0.5 , 5 ],
                         },
 
                         legend: {
