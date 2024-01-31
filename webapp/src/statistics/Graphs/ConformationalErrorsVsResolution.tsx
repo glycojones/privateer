@@ -206,7 +206,7 @@ export default function ConformationalErrorsVsResolution(props: {
                     }}
                     config={{
                         toImageButtonOptions: {
-                            format: 'svg',
+                            format: 'png',
                             filename: 'validationErrorsWithResolution',
                             height: 1000,
                             width: 1500,

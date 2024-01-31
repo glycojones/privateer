@@ -227,7 +227,7 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                     }}
                     config={{
                         toImageButtonOptions: {
-                            format: 'svg',
+                            format: 'png',
                             filename: 'validationErrorsOverTime',
                             height: 1000,
                             width: 1500,
