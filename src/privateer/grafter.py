@@ -459,8 +459,7 @@ if __name__ == "__main__":
         defaultDonorPath = os.path.join(ROOTENV, "glycan_donor_repertoire",
                                         "High_Mannose", "man5", "cluster1.pdb")
         defaultInputModelPath = os.path.join(ROOTENV,
-                                             "glycan_donor_repertoire",
-                                             "P29016.pdb")
+                                             "glycan_donor_repertoire")
 
     if os.getenv("PRIVATEERRESULTS", None) is not None:
         RESULTSENV = os.getenv("PRIVATEERRESULTS", None)
