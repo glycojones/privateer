@@ -98,7 +98,7 @@ namespace privateer
 
         std::string get_colour ( Colour colour, bool original_style, bool inverted = false  );
 
-        inline const std::string get_svg_tooltip ( clipper::MSugar sugar, bool validation )
+        inline const std::string get_svg_tooltip ( clipper::MSugar sugar, bool validation, clipper::MGlycan glycan )
         {
             std::ostringstream str;
             str << std::setprecision(2) << std::fixed
@@ -108,6 +108,10 @@ namespace privateer
                 << "<tspan>Detected type: " << sugar.type_of_sugar() << ". </tspan>";
             if ( validation )
             {
+                if ( ( glycan.get_type() == "c-glycan" ) && (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+                {
+                    sugar.override_conformation_diag ( true );
+                }
                 if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
                      sugar.ok_with_chirality() && sugar.ok_with_puckering() )
                     str << "<tspan>No issues have been detected.</tspan>";
@@ -129,8 +133,12 @@ namespace privateer
             return str.str();
         }
 
-        inline const bool sugar_contains_issues ( clipper::MSugar sugar )
+        inline const bool sugar_contains_issues ( clipper::MSugar sugar, clipper::MGlycan glycan  )
         {
+            if ( ( glycan.get_type() == "c-glycan" ) && (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+            {
+                sugar.override_conformation_diag ( true );
+            }
 
             if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
                     sugar.ok_with_chirality() && sugar.ok_with_puckering() )
