@@ -31,11 +31,7 @@ export default function DatabaseFetch({ PDBCode, setPDBCode, submitPressed }) {
                             </svg>
                             <p className="mb-2 text-md text-gray-500 dark:text-gray-400">
                                 <span className="font-semibold">
-                                    Fetch from Database
-                                </span>
-                                <span className="font-bold text-red-500">
-                                    {' '}
-                                    - Beta
+                                    Fetch from the <i>Privateer</i> Database
                                 </span>
                             </p>
                             <input

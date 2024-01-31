@@ -16,7 +16,7 @@ const DatabaseResult = lazy(
 export function DatabaseHeader(props: DatabaseHeaderProps): ReactElement {
     return (
         <div className="bg-gray text-primary">
-            <NavBar setResetApp={props.setResetApp} />
+            <NavBar />
             <div className="flex justify-center mb-6">
                 {!props.fallback ? (
                     <Suspense
