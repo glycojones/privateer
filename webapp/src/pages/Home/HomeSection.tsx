@@ -8,7 +8,11 @@ import { loadGlytoucanFromFile } from '../../utils/loadGlytoucan.ts';
 
 import { fetchMap, fetchPDB } from '../../utils/fetch_from_pdb.ts';
 
-import { type HeaderProps, type TableDataEntry } from '../../interfaces/types';
+import {
+    type HeaderProps,
+    type ResultsEntry,
+    type TorsionEntry,
+} from '../../interfaces/types';
 
 const Footer = lazy(async () => await import('../../layouts/Footer.tsx'));
 const BorderElement = lazy(
@@ -46,34 +50,54 @@ export default function HomeSection(): Element {
         }
         setFileContent(fileContent);
 
-        const x = Module.read_structure_to_table(fileContent, name);
+        const results = Module.validate(fileContent, name);
+        const data: ResultsEntry[] = [];
+        const resultSize = results.size();
+        for (let i = 0; i < resultSize; i++) {
+            const entry = results.get(i);
 
-        const tableData: TableDataEntry[] = [];
-        for (let i = 0; i < x.size(); i++) {
-            const tableEntry = x.get(i);
-
-            tableEntry.id = sanitizeID(tableEntry.id as string);
-
-            const collectedTorsions: any[] = [];
-            for (let j = 0; j < tableEntry.torsions.size(); j++) {
-                collectedTorsions.push(tableEntry.torsions.get(j));
+            const collectedTorsions: TorsionEntry[] = [];
+            const torsionsVec = entry.torsions;
+            const torsionSize = torsionsVec.size();
+            for (let j = 0; j < torsionSize; j++) {
+                collectedTorsions.push(torsionsVec.get(j) as TorsionEntry);
             }
-            tableEntry.torsions = collectedTorsions;
-            const regex = /: *32/g;
-            tableEntry.svg = tableEntry.svg.replace(regex, '');
-            tableData.push(tableEntry as TableDataEntry);
+            torsionsVec.delete();
+
+            const regex: RegExp = /: *32/g;
+            const sanitisedSVG = entry.svg.replace(regex, '');
+            const sanitisedID = sanitizeID(entry.id as string);
+            // @ts-expect-error
+            const entryJS: ResultsEntry = {
+                torsions: collectedTorsions,
+                svg: sanitisedSVG,
+                id: sanitisedID,
+                chain: entry.chain,
+                wurcs: entry.wurcs,
+                glyconnect_id: entry.glyconnect_id,
+                glytoucan_id: entry.glytoucan_id,
+                torsion_err: entry.torsion_err,
+                anomer_err: entry.anomer_err,
+                conformation_err: entry.conformation_err,
+                puckering_err: entry.puckering_err,
+                chirality_err: entry.chirality_err,
+            };
+
+            data.push(entryJS);
         }
 
-        if (x.size() === 0) {
+        results.delete();
+
+        if (data.length === 0) {
             setFailureText('There were no detected glycans in this model.');
             setFallBack(true);
         }
 
         // Get Glyconnect ID from WURCS
         setLoadingText('Querying Glytoucan...');
-        await loadGlytoucanFromFile(tableData);
+        await loadGlytoucanFromFile(data);
 
-        setTableData(tableData);
+        setTableData(data);
     }
 
     useEffect(() => {

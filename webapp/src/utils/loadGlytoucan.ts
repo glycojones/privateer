@@ -1,4 +1,4 @@
-import { type TableDataEntry } from '../interfaces/types';
+import { type ResultsEntry } from '../interfaces/types';
 import pako from 'pako';
 
 async function getGlytoucanId(wurcs: string): Promise<any> {
@@ -16,8 +16,8 @@ async function getGlytoucanId(wurcs: string): Promise<any> {
 }
 
 export default async function loadGlytoucan(
-    tableData: TableDataEntry[]
-): Promise<TableDataEntry[]> {
+    tableData: ResultsEntry[]
+): Promise<ResultsEntry[]> {
     const promises: Array<Promise<any>> = [];
 
     for (let i = 0; i < tableData.length; i++) {
@@ -34,8 +34,8 @@ export default async function loadGlytoucan(
 }
 
 export async function loadGlytoucanFromFile(
-    tableData: TableDataEntry[]
-): Promise<TableDataEntry[]> {
+    tableData: ResultsEntry[]
+): Promise<ResultsEntry[]> {
     const response = await fetch(
         'privateer_glycomics_database_slim.json.gzip',
         {
@@ -62,5 +62,4 @@ export async function loadGlytoucanFromFile(
         tableData[index].glytoucan_id = glycomicsResult.GlyToucan;
         tableData[index].glyconnect_id = glycomicsResult.GlyConnect;
     });
-    return tableData;
 }
