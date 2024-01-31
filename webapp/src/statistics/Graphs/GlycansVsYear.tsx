@@ -8,7 +8,6 @@ export default function GlycansVsYear() {
     const [oglycanTrace, setOGlycanTrace] = useState();
     const [cglycanTrace, setCGlycanTrace] = useState();
     const [sglycanTrace, setSGlycanTrace] = useState();
-    const [ligandTrace, setLigandTrace] = useState();
     const [depositedTrace, setDepositedTrace] = useState();
 
     const [data, setData] = useState<Record<
@@ -61,11 +60,11 @@ export default function GlycansVsYear() {
             }),
             type: 'scatter',
             mode: 'lines',
-            marker: {color: 'red'},
+            marker: { color: 'red' },
             name: 'Total Carbohydrates',
             line: {
-                width: 3
-            }
+                width: 3,
+            },
         };
 
         setTotalTrace(newTotalTrace);
@@ -77,11 +76,11 @@ export default function GlycansVsYear() {
             }),
             type: 'scatter',
             mode: 'lines',
-            marker: {color: 'blue'},
+            marker: { color: 'blue' },
             name: 'N-Glycans',
             line: {
-                width: 3
-            }
+                width: 3,
+            },
         };
 
         setNGlycanTrace(newNGlycanTrace);
@@ -93,11 +92,11 @@ export default function GlycansVsYear() {
             }),
             type: 'scatter',
             mode: 'lines',
-            marker: {color: 'gold'},
+            marker: { color: 'gold' },
             name: 'O-Glycans',
             line: {
-                width: 3
-            }
+                width: 3,
+            },
         };
 
         setOGlycanTrace(newOGlycanTrace);
@@ -112,8 +111,8 @@ export default function GlycansVsYear() {
             // marker: {color: 'gold'},
             name: 'S-Glycans',
             line: {
-                width: 3
-            }
+                width: 3,
+            },
         };
 
         setSGlycanTrace(newSGlycanTrace);
@@ -128,25 +127,11 @@ export default function GlycansVsYear() {
             // marker: {color: 'blue'},
             name: 'C-Glycans',
             line: {
-                width: 3
-            }
+                width: 3,
+            },
         };
 
         setCGlycanTrace(newCGlycanTrace);
-
-        const newLigandTrace = {
-            x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.ligands;
-            }),
-            type: 'scatter',
-            mode: 'lines',
-            // marker: {color: 'blue'},
-            name: 'Ligands',
-
-        };
-
-        setLigandTrace(newLigandTrace);
 
         const newDepositedTrace = {
             x: Object.keys(data),
