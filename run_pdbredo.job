@@ -13,6 +13,27 @@ echo
  
 source pyenv/bin/activate
 source ccp4.envsetup-sh 
-python database/generate_pdbredo_db.py     
+# python database/generate_pdbredo_db.py     
+curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB-REDO Run Complete - `date`'}"
+
+echo "Beginning Git Commit"
+message="Commit for $date"
+cd /vault/privateer_database
+git add . 
+git commit -m"Database Updated - ${message}"
+git push
+git status 
+
+cd /vault/privateer_database_analysis
+python database_analysis.py
+python validation_errors.py 
+mv *.json /vault/privateer_database/stats
+cd /vault/privateer_database
+# git add . 
+# git commit -m"Statistics Updated - ${message}"
+# git push
+
+
+
 echo
 echo Job completed at `date`

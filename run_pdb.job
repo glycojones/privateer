@@ -13,7 +13,11 @@ echo
  
 source pyenv/bin/activate
 source ccp4.envsetup-sh 
-python database/generate_pdb_db.py 
-    
+# python database/generate_pdb_db.py 
+
+curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB Run Complete - `date`'}"
+
+
+
 echo
 echo Job completed at `date`

@@ -1,0 +1,47 @@
+#!/bin/bash
+#SBATCH --job-name=upd_db        # Job name
+#SBATCH --ntasks=1                       # Run on a single CPU
+#SBATCH --cpus-per-task=100 			  	 # ...with four cores`
+#SBATCH --mem=24gb                        # Job memory request
+#SBATCH --time=24:00:00                  # Time limit hrs:min:sec
+#SBATCH --output=update_privateer_db_%j.log        # Standard output and error log
+ 
+echo My working directory is `pwd`
+echo Running job on host:
+echo -e '\t'`hostname` at `date`
+echo
+ 
+source pyenv/bin/activate
+source ccp4.envsetup-sh 
+curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB Run Started - `date`'}"
+python database/generate_pdb_db.py 
+curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB Run Completed - `date`'}"
+
+curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB-REDO Run Started - `date`'}"
+python database/generate_pdbredo_db.py     
+curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB-REDO Run Completed - `date`'}"
+  
+curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'Updating Database Repository - `date`'}"
+cd /vault/privateer_database
+message="Database Updated - `date`"
+git add . 
+git commit -m"${message}"
+git push
+
+curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'Database Analysis Started - `date`'}"
+
+cd /vault/privateer_database_analysis
+python database_analysis.py
+python validation_errors.py 
+mv *.json /vault/privateer_database/stats
+cd /vault/privateer_database
+
+smessage="Statistics Updated - `date`"
+git add . 
+git commit -m"${smessage}"
+git push
+curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'All jobs complete - `date`'}"
+
+echo
+echo Job completed at `date`
+

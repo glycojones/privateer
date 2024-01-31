@@ -4,7 +4,6 @@ import os
 import json
 import argparse 
 
-
 def main(args): 
     
     if not os.path.exists(args.pdb): 
@@ -25,8 +24,8 @@ def main(args):
         raise RuntimeError(f"Error in Privater call {pe}")
 
     
-    if os.path.exists(args.output):
-        return 
+    # if os.path.exists(args.output):
+    #     return 
 
     data = {}
 
@@ -117,9 +116,7 @@ def main(args):
     if not os.path.isdir(args.basedir):
         os.makedirs(args.basedir, exist_ok=True)
         
-
     with open(args.output, 'w') as fout:
-        # print("writing ", output)
         fout.write(json.dumps(data))
 
 
@@ -147,7 +144,7 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    print(args)
+
     try:
         main(args)
     except Exception as e:

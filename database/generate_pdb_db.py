@@ -94,7 +94,7 @@ def limit_virtual_memory():
 
     resource.setrlimit(resource.RLIMIT_AS, (MAX_VIRTUAL_MEMORY, resource.RLIM_INFINITY))
 
-def worker(pdb_code):
+def new_worker(pdb_code):
     pdbpath = find_pdb_path(pdb_code)
     mtzpath = find_mtz_path(pdb_code)
     mappath = None
@@ -140,7 +140,8 @@ def worker(pdb_code):
 
     output = f"{base_dir}/{pdb_code.lower()}.json"
     try: 
-        subprocess.run(["python", "database/calculate.py", "-pdbpath", pdbpath, "-mtzpath", mtzpath, "-basedir", base_dir, "-output", output]
+        cmd = ["python", "database/calculate.py", "-pdbpath", pdbpath, "-mtzpath", mtzpath, "-basedir", base_dir, "-output", output]
+        subprocess.run(cmd
             ,timeout=180,
             stdout=subprocess.DEVNULL,
             preexec_fn=limit_virtual_memory
