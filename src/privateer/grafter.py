@@ -463,11 +463,12 @@ if __name__ == "__main__":
 
     if os.getenv("PRIVATEERRESULTS", None) is not None:
         RESULTSENV = os.getenv("PRIVATEERRESULTS", None)
-        defaultOutputModelDirectory = os.path.join("grafter_job" + "__" +
+        defaultOutputModelDirectory = os.path.join(RESULTSENV,"grafter_job" + "__" +
                                                    dt_string)
     else:
         defaultOutputModelDirectory = "grafter_job" + "__" + dt_string
 
+    os.mkdir(defaultOutputModelDirectory)
     defaultuniprotIDsListPath = os.path.join(ROOTENV, "uniprotIDinputs.txt")
     defaultJSONgrafting = os.path.join(ROOTENV, "manual_grafting.json")
     defaultUniprotID = "P29016"
