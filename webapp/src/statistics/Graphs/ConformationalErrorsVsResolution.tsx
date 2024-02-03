@@ -128,7 +128,7 @@ export default function ConformationalErrorsVsResolution(props: {
                             } with resolution</b>`,
                             x: 0.5,
                             font: {
-                                size: 24,
+                                size: width < 800 ? 12 : 24,
                                 family: 'sans-serif',
                             },
                             // y: 1.1,

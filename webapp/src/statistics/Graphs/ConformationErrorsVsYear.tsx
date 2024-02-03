@@ -152,7 +152,7 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                             x: 0.5,
                             // y: 1.1,
                             font: {
-                                size: 24,
+                                size: width < 800 ? 12 : 24,
                                 family: 'sans-serif',
                             },
                             xanchor: 'auto', // or 'auto', which matches 'left' in this case

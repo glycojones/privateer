@@ -177,7 +177,7 @@ export default function GlycansVsYear() {
                             yanchor: 'bottom',
                             xref: 'paper',
                             font: {
-                                size: 24,
+                                size: width < 800 ? 18 : 24,
                                 family: 'sans-serif',
                             },
                             yref: 'paper',
@@ -240,7 +240,7 @@ export default function GlycansVsYear() {
 
                         legend: {
                             x: legendDown ? 0 : 1.15,
-                            y: legendDown ? -0.6 : 0.5,
+                            y: legendDown ? -0.8 : 0.5,
                             // bgcolor: '#FFFFFF',
                             font: {
                                 size: 14,
