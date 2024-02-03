@@ -1,17 +1,8 @@
-import {
-    type Dispatch,
-    type ReactElement,
-    type SetStateAction,
-    useState,
-} from 'react';
+import { type ReactElement, useState } from 'react';
 import { GITHUB_REPO } from '../data/Constants.tsx';
 import React from 'react';
 import CitationModal from '../modals/Citations/Citations.tsx';
-export default function NavBar({
-    setResetApp,
-}: {
-    setResetApp: Dispatch<SetStateAction<boolean>>;
-}): ReactElement {
+export default function NavBar(): ReactElement {
     const [modalOpen, setModalOpen] = useState(false);
     const handleModalOpen = () => {
         setModalOpen(true);
@@ -32,7 +23,6 @@ export default function NavBar({
                         className="bg-gray hover:scale-105 transition-all"
                         onClick={() => {
                             location.reload();
-                            // setResetApp(true);
                         }}
                     >
                         Privateer

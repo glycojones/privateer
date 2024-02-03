@@ -1,6 +1,5 @@
-import React, { lazy, type ReactElement, useState } from 'react';
+import React, { lazy, type ReactElement } from 'react';
 import { Information } from '../../shared/Information/Information.tsx';
-import { type StatisticsHeaderProps } from '../../interfaces/types';
 import StatisticsHeader from '../../layouts/StatisticsHeader.tsx';
 const Footer = lazy(async () => await import('../../layouts/Footer.tsx'));
 const BorderElement = lazy(
@@ -8,15 +7,9 @@ const BorderElement = lazy(
 );
 
 export default function DatabaseSection(): ReactElement {
-    const [resetApp, setResetApp] = useState<boolean>(false);
-
-    const mainProps: StatisticsHeaderProps = {
-        resetApp,
-        setResetApp,
-    };
     return (
         <>
-            <StatisticsHeader {...mainProps} />
+            <StatisticsHeader />
             <BorderElement
                 topColor={'#D6D9E5'}
                 bottomColor={'#F4F9FF'}

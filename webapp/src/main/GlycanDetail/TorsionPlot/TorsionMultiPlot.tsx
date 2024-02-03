@@ -2,7 +2,7 @@ import React, { useEffect, lazy, type ReactElement } from 'react';
 
 const TorsionPlot = lazy(async () => await import('./TorsionPlot.tsx'));
 
-function sortTorsions(torsions) {
+function sortTorsions(torsions): [string[], any] {
     const linkageSet = new Set<string>();
 
     torsions.forEach(
@@ -36,11 +36,11 @@ function sortTorsions(torsions) {
         }
     );
 
-    const linkgeArray: string[] = Array.from(linkageSet);
+    const linkageArray: string[] = Array.from(linkageSet);
 
     const sortedLinkageMap = {};
 
-    linkgeArray.forEach((item): void => {
+    linkageArray.forEach((item): void => {
         sortedLinkageMap[item] = [];
     });
 
@@ -81,10 +81,10 @@ function sortTorsions(torsions) {
         }
     );
 
-    return [linkgeArray, sortedLinkageMap];
+    return [linkageArray, sortedLinkageMap];
 }
 
-function TorsionMultiPlotTabs({ torsions, setTab }): ReactElement {
+function TorsionMultiPlotTabs({ torsions, setTab }): React.JSX.Element[] {
     const [linkageArray, _] = sortTorsions(torsions);
 
     return linkageArray.map((item, index) => {
@@ -127,18 +127,27 @@ export default function TorsionMultiPlot({
     }, []);
 
     return (
-        <div className="flex flex-col align-middle justify-center items-center space-y-6 ">
-            <div className="text-sm font-medium text-center text-gray-500 border-gray-200 text-gray-400 border-gray-700">
-                <ul className="flex flex-wrap -mb-px mt-2 justify-center">
-                    <TorsionMultiPlotTabs torsions={torsions} setTab={setTab} />
-                </ul>
-            </div>
+        <>
+            {linkageArray.length === 0 ? (
+                <></>
+            ) : (
+                <div className="flex flex-col align-middle justify-center items-center space-y-6 ">
+                    <div className="text-sm font-medium text-center text-gray-500 border-gray-200 text-gray-400 border-gray-700">
+                        <ul className="flex flex-wrap -mb-px mt-2 justify-center">
+                            <TorsionMultiPlotTabs
+                                torsions={torsions}
+                                setTab={setTab}
+                            />
+                        </ul>
+                    </div>
 
-            <TorsionPlot
-                linkageType={linkageArray[tab]}
-                sortedTorsionList={sortedLinkageArray}
-                size={size}
-            />
-        </div>
+                    <TorsionPlot
+                        linkageType={linkageArray[tab]}
+                        sortedTorsionList={sortedLinkageArray}
+                        size={size}
+                    />
+                </div>
+            )}
+        </>
     );
 }

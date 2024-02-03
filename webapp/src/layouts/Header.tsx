@@ -21,7 +21,7 @@ export function Header(props: HeaderProps): ReactElement {
 
     return (
         <div className="bg-gray text-primary text-center">
-            <NavBar setResetApp={props.setResetApp} />
+            <NavBar />
 
             {!props.fallback ? (
                 <Suspense

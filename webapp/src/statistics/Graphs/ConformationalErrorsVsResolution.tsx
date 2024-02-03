@@ -1,4 +1,4 @@
-import React, { lazy, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Loading from '../../shared/Loading/Loading.tsx';
 import Plot from 'react-plotly.js';
 
@@ -8,8 +8,6 @@ export default function ConformationalErrorsVsResolution(props: {
     const [totalTrace, setTotalTrace] = useState();
     const [noTrace, setNoTrace] = useState();
     const [checkTrace, setCheckTrace] = useState();
-
-    // const [depositedTrace, setDepositedTrace] = useState();
 
     const [data, setData] = useState<Record<
         string,
@@ -65,11 +63,10 @@ export default function ConformationalErrorsVsResolution(props: {
                 return e.totalSugars;
             }),
             type: 'bar',
-            name: 'Total Deposited',
             yaxis: 'y2',
             name: 'Total Sugars',
             line: {
-                width: 3
+                width: 3,
             },
             marker: {
                 color: 'rgb(100,100,100)',
@@ -82,15 +79,15 @@ export default function ConformationalErrorsVsResolution(props: {
         const newCheckTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return 100*e.totalCheck/e.totalSugars;
+                return (100 * e.totalCheck) / e.totalSugars;
             }),
             type: 'scatter',
             mode: 'lines',
-            marker: {color: 'blue'},
+            marker: { color: 'blue' },
             name: 'High Energy Conformation',
             line: {
-                width: 3
-            }
+                width: 3,
+            },
         };
 
         setCheckTrace(newCheckTrace);
@@ -98,15 +95,15 @@ export default function ConformationalErrorsVsResolution(props: {
         const newNoTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return 100 * e.totalNo/e.totalSugars;
+                return (100 * e.totalNo) / e.totalSugars;
             }),
             type: 'scatter',
             mode: 'lines',
-            marker: {color: 'red'},
+            marker: { color: 'red' },
             name: 'Errors',
             line: {
-                width: 3
-            }
+                width: 3,
+            },
         };
 
         setNoTrace(newNoTrace);
@@ -118,12 +115,7 @@ export default function ConformationalErrorsVsResolution(props: {
                 <Loading loadingText={'Crunching latest data...'} />
             ) : (
                 <Plot
-                    data={[
-                        totalTrace,
-                        checkTrace,
-                        noTrace,
-                        // relativeTrace
-                    ]}
+                    data={[totalTrace, checkTrace, noTrace]}
                     layout={{
                         autosize: true,
                         width,
@@ -136,7 +128,7 @@ export default function ConformationalErrorsVsResolution(props: {
                             } with resolution</b>`,
                             x: 0.5,
                             font: {
-                                size: 24,
+                                size: width < 800 ? 12 : 24,
                                 family: 'sans-serif',
                             },
                             // y: 1.1,
@@ -177,7 +169,6 @@ export default function ConformationalErrorsVsResolution(props: {
                             // anchor: 'free',
                             side: 'right',
                             automargin: true,
-                            tickprefix: '  ',
                             range: [-50, 14000],
                             title: {
                                 text: 'Total Number of Depositions',
@@ -188,7 +179,6 @@ export default function ConformationalErrorsVsResolution(props: {
                             },
                             tickprefix: '  ',
                             ticksuffix: '   ',
-
                         },
                         xaxis: {
                             title: {
@@ -202,7 +192,7 @@ export default function ConformationalErrorsVsResolution(props: {
                             linewidth: 2,
                             mirror: true,
                             tickmode: 'auto',
-                            range: [0.5 , 5 ],
+                            range: [0.5, 5],
                         },
 
                         legend: {
@@ -216,7 +206,7 @@ export default function ConformationalErrorsVsResolution(props: {
                     }}
                     config={{
                         toImageButtonOptions: {
-                            format: 'svg',
+                            format: 'png',
                             filename: 'validationErrorsWithResolution',
                             height: 1000,
                             width: 1500,

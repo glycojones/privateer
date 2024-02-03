@@ -6,7 +6,6 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
     const [totalTrace, setTotalTrace] = useState();
     const [checkTrace, setCheckTrace] = useState();
     const [noTrace, setNoTrace] = useState();
-    const [relativeTrace, setRelativeTrace] = useState();
 
     // const [depositedTrace, setDepositedTrace] = useState();
     const d = new Date();
@@ -62,14 +61,13 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
         const newTotalTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return e.totalSugars
+                return e.totalSugars;
             }),
             type: 'bar',
-            name: 'Total Deposited',
             yaxis: 'y2',
             name: 'Total Sugars',
             line: {
-                width: 3
+                width: 3,
             },
             marker: {
                 color: 'rgb(100,100,100)',
@@ -82,15 +80,15 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
         const newCheckTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return 100 * e.totalCheck / e.totalSugars;
+                return (100 * e.totalCheck) / e.totalSugars;
             }),
             type: 'scatter',
             mode: 'lines',
-            marker: {color: 'blue'},
+            marker: { color: 'blue' },
             name: 'High Energy Conformation',
             line: {
-                width: 3
-            }
+                width: 3,
+            },
         };
 
         setCheckTrace(newCheckTrace);
@@ -98,35 +96,35 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
         const newNoTrace = {
             x: Object.keys(data[props.database]),
             y: Object.values(data[props.database]).map((e) => {
-                return 100 * e.totalNo / e.totalSugars;
+                return (100 * e.totalNo) / e.totalSugars;
             }),
             type: 'scatter',
             mode: 'lines',
-            marker: {color: 'red'},
+            marker: { color: 'red' },
             name: 'Errors',
             line: {
-                width: 3
-            }
+                width: 3,
+            },
         };
 
         setNoTrace(newNoTrace);
-
-        const newRelativeTrace = {
-            x: Object.keys(data[props.database]),
-            y: Object.values(data[props.database]).map((e) => {
-                return (100 * e.totalErrors) / e.totalGlycans;
-            }),
-            type: 'scatter',
-            mode: 'lines',
-            yaxis: 'y2',
-            // marker: {color: 'green'},
-            name: 'Relative Validation Errors ',
-            line: {
-                width: 3
-            }
-        };
-
-        setRelativeTrace(newRelativeTrace);
+        //
+        // const newRelativeTrace = {
+        //   x: Object.keys(data[props.database]),
+        //   y: Object.values(data[props.database]).map((e) => {
+        //     return (100 * e.totalErrors) / e.totalGlycans;
+        //   }),
+        //   type: 'scatter',
+        //   mode: 'lines',
+        //   yaxis: 'y2',
+        //   // marker: {color: 'green'},
+        //   name: 'Relative Validation Errors ',
+        //   line: {
+        //     width: 3
+        //   }
+        // };
+        //
+        // setRelativeTrace(newRelativeTrace);
     }, [data, props.database]);
 
     return (
@@ -154,7 +152,7 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                             x: 0.5,
                             // y: 1.1,
                             font: {
-                                size: 24,
+                                size: width < 800 ? 12 : 24,
                                 family: 'sans-serif',
                             },
                             xanchor: 'auto', // or 'auto', which matches 'left' in this case
@@ -229,7 +227,7 @@ export default function ConformationErrorsVsYear(props: { database: string }) {
                     }}
                     config={{
                         toImageButtonOptions: {
-                            format: 'svg',
+                            format: 'png',
                             filename: 'validationErrorsOverTime',
                             height: 1000,
                             width: 1500,

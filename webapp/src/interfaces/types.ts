@@ -1,5 +1,5 @@
 import { type Dispatch, type SetStateAction } from 'react';
-
+import { type emscripten } from './emscripten';
 export interface TorsionEntry {
     sugar_1: string;
     sugar_2: string;
@@ -9,7 +9,7 @@ export interface TorsionEntry {
     psi: number;
 }
 
-export interface TableDataEntry {
+export interface ResultsEntry {
     svg: string;
     wurcs: string;
     chain: string;
@@ -21,7 +21,7 @@ export interface TableDataEntry {
     anomer_err: number;
     puckering_err: number;
     chirality_err: number;
-    torsions: TorsionEntry[];
+    torsions: emscripten.vector<TorsionEntry>;
 }
 
 export interface HeaderProps {
@@ -35,7 +35,7 @@ export interface HeaderProps {
     setReflectionFile: Dispatch<SetStateAction<File | null>>;
     submit: boolean;
     setSubmit: Dispatch<SetStateAction<boolean>>;
-    tableData: TableDataEntry[] | null;
+    tableData: ResultsEntry[] | null;
     loadingText: string;
     fileContent: string | ArrayBuffer;
     fallback: boolean;
@@ -78,7 +78,7 @@ export interface UploadButtonProps {
 }
 
 export interface GlycanDetailProps {
-    tableData: TableDataEntry[];
+    tableData: ResultsEntry[];
     hideMoorhen: boolean;
     setHideMoorhen: Dispatch<SetStateAction<boolean>>;
     rowID: number;
@@ -93,7 +93,7 @@ export interface NoGlycansProps {
 }
 
 export interface SVGTableProps {
-    tableData: TableDataEntry[];
+    tableData: ResultsEntry[];
     allowRowClick: boolean;
     rowClick: boolean;
     setRowClicked: Dispatch<SetStateAction<boolean>>;
