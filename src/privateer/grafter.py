@@ -317,7 +317,13 @@ def _store_grafted_glycans_summary(graftedGlycans, index, totalCount):
 
 def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
                                 uniprotID):
+
     sequences = _get_sequences_in_receiving_model(receiverpath)
+    if uniprotID is not None:
+        outputFileName = uniprotID + ".pdb"
+    else:
+        outputFileName = os.path.basename(receiverpath).rpartition('.')[0] + '_grafted.pdb'
+    outputpath = os.path.join(outputpath, outputFileName)
     if uniprotID is not None:
         uniprotQuery = _query_uniprot_for_glycosylation_locations(uniprotID)
         uniprotSequence = uniprotQuery["sequence"]
