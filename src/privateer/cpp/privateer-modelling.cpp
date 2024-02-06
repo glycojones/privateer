@@ -30,7 +30,7 @@ namespace privateer
             { "HYP", "OD1", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "LYZ", "OH",  "CD", "CG", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "CYS", "SG",  "CB", "CA", -97.5, 178.0, 25.0, 25.0, "s-linked" }, //s-glycosylation
-            { "TRP", "CD1", "CG", "CB", 100.0,  15.0, 25.0, 25.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
+            { "TRP", "CD1", "CG", "CB", 190.0, 175.0, 25.0, 25.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
             { "SEP", "O2P", "P",  "OG", -97.5, 178.0, 25.0, 25.0, "p-linked" }  //p-glycosylation phosphpglycation on phosphoserine - no example on PDB nor on uniprot, yet.
         };
         const int backbone_instructions_size = sizeof( backbone_instructions ) / sizeof( backbone_instructions[0] );
@@ -669,16 +669,18 @@ namespace privateer
             if(useParallelism && nThreads >= 2)
             {
                 std::vector<std::pair<double, double>> iteration_data; // .first = Psi, .second = Phi;
-            
+                
+                // Create vector of all the torsion angle combinations to try
                 for(double currentPsiIterator = -psiError; currentPsiIterator <= +psiError; currentPsiIterator += iteration_step)
                 {
                     for(double currentPhiIterator = -phiError; currentPhiIterator <= +phiError; currentPhiIterator += iteration_step)
                     {
                         auto currentPair = std::make_pair(currentPsiIterator, currentPhiIterator);
-                        iteration_data.push_back(currentPair);
+                        iteration_data.push_back(currentPair); 
                     }
                 }
 
+                // Create structure to store all relevant information for the glycan with clashes minimized
                 struct ClashMinimizedGlycan 
                 {
                     clipper::MPolymer glycan;
@@ -686,20 +688,25 @@ namespace privateer
                     std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes;
                 };
 
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /// Rotate the glycan to every iteration step (every combination of the psi and phi range) and record results ///
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                // Set up parallelisation
                 std::vector<std::future<void>> thread_results;
                 std::vector<ClashMinimizedGlycan> results(iteration_data.size());
                 size_t iterations_per_thread = iteration_data.size() / nThreads + 1;
                 size_t start = 0, end;
                 for (size_t i = 0; i < nThreads; ++i)
-                {
+                {// Looping over the threads to divide up the iterations
                     end = std::min(start + iterations_per_thread, iteration_data.size());
                     thread_results.push_back(std::async(std::launch::async,
                         [&]( std::vector<std::pair<double, double>>& iteration_data, std::vector<ClashMinimizedGlycan>& results, clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, 
                             clipper::MiniMol& export_model, std::vector<std::pair<clipper::MAtom, std::string>>& phiTorsionAtoms, std::vector<std::pair<clipper::MAtom, std::string>>& psiTorsionAtoms, 
                             clipper::String root_chain_id, clipper::String root_sugar_chain_id, size_t start, size_t end, bool& debug_output )
-                        {
+                        {// This is the parallel bit, push_back enacted on thread_results (a future object for asynchronous operations)
                             for (size_t index = start; index < end; ++index)
-                            {    
+                            {// The loop each thread performs 
                                 clipper::MPolymer manipulated_glycan = converted_mglycan;
                                 clipper::MiniMol tmp_clash_model = export_model;
 
@@ -724,7 +731,7 @@ namespace privateer
                                         clipper::MAtom currentAtom = manipulated_glycan[residue][atom];
                                         clipper::Coord_orth old_pos = currentAtom.coord_orth();
                                         clipper::Coord_orth new_pos = generate_rotation_matrix_from_rodrigues_rotation_formula(psiDirection, old_pos, thirdSubsequentTorsionAtomPsi.coord_orth(), clipper::Util::d2rad(-iteration_data[index].first));
-                                        manipulated_glycan[residue][atom].set_coord_orth(new_pos);
+                                        manipulated_glycan[residue][atom].set_coord_orth(new_pos); // Rotate every atom in every residue according to this iteration's psi (all rotated same so relative positions don't change)
                                     }
                                 }
 
@@ -747,7 +754,7 @@ namespace privateer
                                         clipper::MAtom currentAtom = manipulated_glycan[residue][atom];
                                         clipper::Coord_orth old_pos = currentAtom.coord_orth();
                                         clipper::Coord_orth new_pos = generate_rotation_matrix_from_rodrigues_rotation_formula(phiDirection, old_pos, thirdSubsequentTorsionAtomPhi.coord_orth(), clipper::Util::d2rad(-iteration_data[index].second));
-                                        manipulated_glycan[residue][atom].set_coord_orth(new_pos);
+                                        manipulated_glycan[residue][atom].set_coord_orth(new_pos); // Rotate every atom in every residue according to this iteration's phi (all rotated same so relative positions don't change)
                                     }
                                 }
 
@@ -768,7 +775,7 @@ namespace privateer
                                 std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > current_clashes = check_for_clashes_outside_glycosidic_linkage(tmp_clash_model, manipulated_glycan, protein_residue, root_chain_id, root_sugar_chain_id);
 
                                 ClashMinimizedGlycan output {manipulated_glycan, iteration_data[index], current_clashes };
-                                results[index] = output; 
+                                results[index] = output; // Returns rotated glycan for every iteration
                             }
 
                         },
@@ -782,18 +789,21 @@ namespace privateer
 
                 thread_results.clear();
 
+                ///////////////////////////////////
+                /// Sorting through the results ///
+                ///////////////////////////////////
                 std::sort(results.begin(), results.end(), [](ClashMinimizedGlycan& a, ClashMinimizedGlycan& b) {
                     return a.clashes.size() < b.clashes.size();
-                });
+                }); // Order results from least to most clashes
 
                 if(!results.empty())
                 {
                     if(results[0].clashes.size() == 0)
-                    {
+                    {// For the case where at least one of the results has no clashes
                         std::vector<ClashMinimizedGlycan> clashes_eliminated;
                         int index = 0;
                         while(results[index].clashes.size() == 0)
-                        {
+                        {// Collect all the results with no clashes
                             clashes_eliminated.push_back(results[index]);
                             index++;
                         }
@@ -805,18 +815,18 @@ namespace privateer
                             double rhs_aggregatedAngle = abs(lhs_torsion_angles.first) + abs(lhs_torsion_angles.second);
 
                             return lhs_aggregatedAngle < rhs_aggregatedAngle;
-                        });
+                        }); // Order results from smallest to largest aggregated angle (sum of the absolute values of the two torsion angles)
                         
                         if(!clashes_eliminated.empty())
-                            return clashes_eliminated[0].glycan;
+                            return clashes_eliminated[0].glycan; // Returns glycan with zero clashes and smallest aggregated torsion angle
                     }
                     else
-                    {
+                    {// For the case where no results have no clashes
                         int currentNumClashes = results[0].clashes.size();
                         std::vector<ClashMinimizedGlycan> clashes_minimized;
                         int index = 0;
                         while(results[index].clashes.size() == currentNumClashes)
-                        {
+                        {// Collect all results with the same minimum number of clashes
                             clashes_minimized.push_back(results[index]);
                             index++;
                         }
@@ -828,16 +838,16 @@ namespace privateer
                             double rhs_averageResidueDistance = get_average_distance_between_clashing_residues(rhs_clashes);
 
                             return lhs_averageResidueDistance > rhs_averageResidueDistance;
-                        });
+                        });// Sort all results with same minimum number of clashes according to maximum distance between residues
                         
                         if(!clashes_minimized.empty())
-                            return clashes_minimized[0].glycan;
+                            return clashes_minimized[0].glycan; // Returns glycan with minimum clashes and largest average distance between residues
                     }
                 }
 
             }
 
-            return best_performing_glycan;
+            return best_performing_glycan; // If not parralellised then this function hasn't done anything and just returns the given glycan
         }        
         
    
@@ -1016,6 +1026,7 @@ namespace privateer
 
                     if(current_clashes.empty())
                         return best_performing_glycan;
+                        // FLAG: Want to edit here to only log cases where there are no clashes in case there are more than one so I can select the one closest to the ideal torsion angles similar to what happens in the parallel function
 
                     manipulated_glycan = converted_mglycan;
                     tmp_clash_model = export_model;
