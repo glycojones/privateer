@@ -897,6 +897,7 @@ namespace privateer
             bestPerformingPhi = currentPhiTorsionAngle;
             best_performing_glycan = converted_mglycan;
 
+            // Loop through the range of psi and phi
             for(double currentPsiIterator = -psiError; currentPsiIterator <= +psiError; currentPsiIterator += iteration_step)
             {
                 for(double currentPhiIterator = -phiError; currentPhiIterator <= +phiError; currentPhiIterator += iteration_step)
@@ -925,7 +926,7 @@ namespace privateer
                             clipper::MAtom currentAtom = manipulated_glycan[residue][atom];
                             clipper::Coord_orth old_pos = currentAtom.coord_orth();
                             clipper::Coord_orth new_pos = generate_rotation_matrix_from_rodrigues_rotation_formula(psiDirection, old_pos, thirdTorsionAtomPsi.coord_orth(), clipper::Util::d2rad(-currentPsiIterator));
-                            manipulated_glycan[residue][atom].set_coord_orth(new_pos);
+                            manipulated_glycan[residue][atom].set_coord_orth(new_pos); // Rotate every atom in every residue according to this iteration's psi (all rotated same so relative positions don't change)
                         }
                     }
 
@@ -948,7 +949,7 @@ namespace privateer
                             clipper::MAtom currentAtom = manipulated_glycan[residue][atom];
                             clipper::Coord_orth old_pos = currentAtom.coord_orth();
                             clipper::Coord_orth new_pos = generate_rotation_matrix_from_rodrigues_rotation_formula(phiDirection, old_pos, thirdTorsionAtomPhi.coord_orth(), clipper::Util::d2rad(-currentPhiIterator));
-                            manipulated_glycan[residue][atom].set_coord_orth(new_pos);
+                            manipulated_glycan[residue][atom].set_coord_orth(new_pos); // Rotate every atom in every residue according to this iteration's phi (all rotated same so relative positions don't change)
                         }
                     }
 
@@ -965,6 +966,7 @@ namespace privateer
                     currentPhiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(firstTorsionAtomPhi.coord_orth(), secondTorsionAtomPhi.coord_orth(), thirdTorsionAtomPhi.coord_orth(), fourthTorsionAtomPhi.coord_orth()));
                     currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(firstTorsionAtomPsi.coord_orth(), secondTorsionAtomPsi.coord_orth(), thirdTorsionAtomPsi.coord_orth(), fourthTorsionAtomPsi.coord_orth()));
                     
+                    // Find number of clashes for this iteration
                     tmp_clash_model.insert(manipulated_glycan);
                     std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > current_clashes = check_for_clashes_outside_glycosidic_linkage(tmp_clash_model, manipulated_glycan, protein_residue, root_chain_id, root_sugar_chain_id);
                     n_most_recent_clashes = current_clashes.size();
@@ -974,10 +976,11 @@ namespace privateer
                     
                     n_most_recent_clashes = current_clashes.size();
 
+                    // Compare clashes for this iteration to clashes for previous best iteration
                     if(n_most_recent_clashes < n_reference_clashes || n_most_recent_clashes == n_reference_clashes)
                     {
                         if(n_most_recent_clashes < n_reference_clashes)
-                        {
+                        {// If this iteration has the fewest clahses so far, it becomes the best iteration
                             bestPerformingPsi = currentPsiTorsionAngle;
                             bestPerformingPhi = currentPhiTorsionAngle;
                             best_performing_glycan = manipulated_glycan;
@@ -985,7 +988,7 @@ namespace privateer
                             previousAverageDistanceBetweenResidues = 0.0;
                         }
                         else
-                        {
+                        {// If this iteration has equal clashes to the previous best, check average distance between residues
                             double currentAverageDistanceBetweenResidues = 0.0;
                             double totalAveragesOfPerResidueDistances = 0.0;
 
@@ -1014,7 +1017,7 @@ namespace privateer
                             currentAverageDistanceBetweenResidues = totalAveragesOfPerResidueDistances / n_most_recent_clashes;
 
                             if(currentAverageDistanceBetweenResidues > previousAverageDistanceBetweenResidues)
-                            {
+                            {// If equal number of clashes but greater average distance between residues, this iteration becomes the best iteration
                                 bestPerformingPsi = currentPsiTorsionAngle;
                                 bestPerformingPhi = currentPhiTorsionAngle;
                                 best_performing_glycan = manipulated_glycan;
