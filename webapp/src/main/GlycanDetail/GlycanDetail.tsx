@@ -183,6 +183,7 @@ export default function GlycanDetail(props: GlycanDetailProps) {
                             return [width, height];
                         }}
                         toggleGlycoblocks={toggleGlycoBlocks}
+                        pdbCode={props.pdbCode}
                     />
                 </div>
                 <div
