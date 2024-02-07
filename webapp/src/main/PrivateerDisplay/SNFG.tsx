@@ -220,6 +220,7 @@ export default function SNFG(props: SNFGProps): ReactElement {
         controls,
         map,
         moorhenProps: collectedProps,
+        pdbCode: props.PDBCode
     };
 
     const svgTableProps = {

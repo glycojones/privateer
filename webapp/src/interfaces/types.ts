@@ -85,6 +85,7 @@ export interface GlycanDetailProps {
     controls: any;
     map: any;
     moorhenProps: any;
+    pdbCode: string;
 }
 
 export interface NoGlycansProps {
