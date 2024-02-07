@@ -3828,7 +3828,7 @@ std::string privateer::scripting::print_node ( const clipper::MiniMol& mmol, con
            << "      <anomer>"           << sugar.anomer()                      << "</anomer>\n"
            << "      <hand>"             << sugar.handedness()                  << "</hand>\n"
 
-           << "      <stacked_against>\n";
+           << "      <stacked_against></stacked_against>\n";
 
            // std::vector < std::pair < clipper::MAtomIndexSymmetry, float > > contacts = sugar.get_stacked_residues();
            //
