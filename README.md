@@ -20,12 +20,13 @@ Jon Agirre (@glycojones), with contributions from Haroldas Bagdonas (@GABRAH), J
 * 2019-2023 Royal Society Research Grant awarded to Jon Agirre (York), covering 4-year studentship awarded to Haroldas Bagdonas
 
 ## Citations
-If you find Privateer useful, please cite:
+If you find Privateer useful, please cite the relevant publications:
 
-- Agirre, J., Iglesias-Fernández, J., Rovira, C., Davies, G.J., Wilson, K.S. and Cowtan, K.D., 2015. Privateer: software for the conformational validation of carbohydrate structures. Nature Structural and Molecular Biology, 22(11), p.833.
-- Bagdonas, H., Ungar, D. and Agirre, J., 2020. Leveraging glycomics data in glycoprotein 3D structure validation with Privateer. Beilstein Journal of Organic Chemistry, 16(1), 2523-2533.
-- Agirre, J., 2017. Strategies for carbohydrate model building, refinement and validation. Acta Crystallographica Section D, 73(2), pp.171-186.
-- Dialpuri, J. S., Bagdonas, H., Atanasova, M., Schofield, L. C., Hekkelman, M. L., Joosten, R. P. & Agirre, J., 2023. Analysis and validation of overall N-glycan conformation in Privateer. Acta Crystallographica Section D, 79, 462-472.
+- The Web app: Dialpuri, J. S., Bagdonas, H., Schofield, L. C., Pham, P. T., Holland, L., Bond, P. S., Sánchez Rodríguez, F., McNicholas, S. J. & Agirre, J. (2024). Online carbohydrate 3D structure validation with the Privateer web app. Acta Cryst. F80, 30-35.
+- General Privateer citation (old): Agirre, J., Iglesias-Fernández, J., Rovira, C., Davies, G.J., Wilson, K.S. and Cowtan, K.D., 2015. Privateer: software for the conformational validation of carbohydrate structures. Nature Structural and Molecular Biology, 22(11), p.833.
+- Glycomics powered validation: Bagdonas, H., Ungar, D. and Agirre, J., 2020. Leveraging glycomics data in glycoprotein 3D structure validation with Privateer. Beilstein Journal of Organic Chemistry, 16(1), 2523-2533.
+- Theory behind Privateer: Agirre, J., 2017. Strategies for carbohydrate model building, refinement and validation. Acta Crystallographica Section D, 73(2), pp.171-186.
+- Torsional analyses: Dialpuri, J. S., Bagdonas, H., Atanasova, M., Schofield, L. C., Hekkelman, M. L., Joosten, R. P. & Agirre, J., 2023. Analysis and validation of overall N-glycan conformation in Privateer. Acta Crystallographica Section D, 79, 462-472.
 
 
 
@@ -45,6 +46,12 @@ MacOS (tested up to Ventura) and GNU/Linux (tested on Ubuntu 22.04). We do not t
 
 `python3 virtualenv coreutils wget` 
 > Python3 and virtualenv will allow you to have you own little Python with access to the Privateer module (import privateer). We need coreutils and wget so the build scripts can function.
+
+`setuptools`
+> This Python module is required to run the installer. You may use pip to install it:
+```
+python -m pip install setuptools
+```
 
 `gcc g++ gfortran m4` 
 > These are the compilers, for C/C++/Fortran. On Debian/Ubuntu: `apt-get install build-essential m4 gfortran`. On MacOS (via Homebrew): `brew install gcc gfortran m4`
