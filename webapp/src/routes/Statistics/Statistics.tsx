@@ -1,6 +1,6 @@
 import React, { lazy, type ReactElement } from 'react';
 import { Information } from '../../shared/Information/Information.tsx';
-import StatisticsHeader from '../../layouts/StatisticsHeader.tsx';
+import StatisticsHeader from '../../statistics/Header/StatisticsHeader.tsx';
 const Footer = lazy(async () => await import('../../layouts/Footer.tsx'));
 const BorderElement = lazy(
     async () => await import('../../layouts/BorderElement.tsx')

@@ -1,11 +1,11 @@
-import { type TableDataEntry } from '../../interfaces/types.ts';
+import { type ResultsEntry } from '../../interfaces/types.ts';
 import { useSelector } from 'react-redux';
 import React, { useCallback, useRef } from 'react';
 import { Tooltip, type TooltipRefProps } from 'react-tooltip';
 
 export function GlycanDetailSNFGBox(props: {
     key: string;
-    tableDataEntries: TableDataEntry[];
+    tableDataEntries: ResultsEntry[];
     rowID: number;
     saveSNFG: () => void;
 }) {
@@ -84,7 +84,7 @@ export function GlycanDetailSNFGBox(props: {
                     onClick={() => {
                         props.saveSNFG();
                     }}
-                    title="Download SNFG"
+                    title="Download PrivateerResults"
                     onTouchStart={(e) => {
                         e.stopPropagation();
                     }}

@@ -19,7 +19,7 @@ import GlycanDetail from '../GlycanDetail/GlycanDetail.tsx';
 
 const SVGTable = lazy(async () => await import('../SVGTable/SVGTable.tsx'));
 
-export default function SNFG(props: SNFGProps): ReactElement {
+export default function PrivateerResults(props: SNFGProps): ReactElement {
     const [rowClicked, setRowClicked] = useState(false);
     const [rowID, setRowID] = useState(0);
     const [hideMoorhen, setHideMoorhen] = useState(true);
@@ -220,7 +220,7 @@ export default function SNFG(props: SNFGProps): ReactElement {
         controls,
         map,
         moorhenProps: collectedProps,
-        pdbCode: props.PDBCode
+        pdbCode: props.PDBCode,
     };
 
     const svgTableProps = {

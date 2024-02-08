@@ -45,18 +45,24 @@ export function GlycanDetailMoorhenView(props: {
         <div key={props.key} className="px-8 flex flex-col items-center">
             <h3 className="text-left text-xl w-full font-bold mt-2">
                 Visualise with <i>Moorhen</i>{' '}
-
-                <a href={props.pdbCode !== "" ? `https://moorhen.org/pdb/${props.pdbCode}` : "https://moorhen.org"}
-                   title="Go to Moorhen.org"
-                    onClick={(e) => {e.stopPropagation()}}
-                   onTouchStart={(e) => {
-                       e.stopPropagation();
-                   }}
-                   onMouseDown={(e) => {
-                       e.stopPropagation();
-                   }}
-                   target="_blank"
-                   rel="noopener noreferrer"
+                <a
+                    href={
+                        props.pdbCode !== ''
+                            ? `https://moorhen.org/pdb/${props.pdbCode}`
+                            : 'https://moorhen.org'
+                    }
+                    title="Go to Moorhen.org"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                    }}
+                    onTouchStart={(e) => {
+                        e.stopPropagation();
+                    }}
+                    onMouseDown={(e) => {
+                        e.stopPropagation();
+                    }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <img className="inline h-8" src="./moorhen_logo.png"></img>
                 </a>

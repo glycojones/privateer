@@ -1,17 +1,19 @@
 import React, { lazy, type ReactElement, Suspense } from 'react';
-import SNFG from '../main/PrivateerDisplay/SNFG.tsx';
+import PrivateerResults from '../PrivateerResults/PrivateerResults.tsx';
 
-import { type HeaderProps } from '../interfaces/types';
+import { type HeaderProps } from '../../interfaces/types.ts';
 import { MoorhenReduxProvider } from 'moorhen';
 
-const Upload = lazy(async () => await import('../shared/Upload/Upload.tsx'));
-const Loading = lazy(async () => await import('../shared/Loading/Loading.tsx'));
-const NavBar = lazy(async () => await import('./NavBar.tsx'));
+const Upload = lazy(async () => await import('../../shared/Upload/Upload.tsx'));
+const Loading = lazy(
+    async () => await import('../../shared/Loading/Loading.tsx')
+);
+const NavBar = lazy(async () => await import('../../layouts/NavBar.tsx'));
 const NoGlycans = lazy(
-    async () => await import('../shared/NoGlycans/NoGlycans.tsx')
+    async () => await import('../../shared/NoGlycans/NoGlycans.tsx')
 );
 
-export function Header(props: HeaderProps): ReactElement {
+export function MainHeader(props: HeaderProps): ReactElement {
     let filename = '';
     if (props.PDBCode !== '') {
         filename = props.PDBCode;
@@ -33,7 +35,10 @@ export function Header(props: HeaderProps): ReactElement {
                         <Loading loadingText={props.loadingText} />
                     ) : (
                         <MoorhenReduxProvider>
-                            <SNFG {...props} filename={filename}></SNFG>
+                            <PrivateerResults
+                                {...props}
+                                filename={filename}
+                            ></PrivateerResults>
                         </MoorhenReduxProvider>
                     )}
                 </Suspense>
