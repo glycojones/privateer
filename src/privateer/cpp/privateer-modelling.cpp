@@ -30,7 +30,8 @@ namespace privateer
             { "HYP", "OD1", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "LYZ", "OH",  "CD", "CG", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "CYS", "SG",  "CB", "CA", -97.5, 178.0, 25.0, 25.0, "s-linked" }, //s-glycosylation
-            { "TRP", "CD1", "CG", "CB", 190.0, 175.0, 25.0, 25.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
+            { "TRP", "CD1", "CG", "CB", 122.0, 0.0,  1.0,  1.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
+            //{ "TRP", "CD1", "CG", "CB", 130.3,  -0.5,  5.0,  5.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
             { "SEP", "O2P", "P",  "OG", -97.5, 178.0, 25.0, 25.0, "p-linked" }  //p-glycosylation phosphpglycation on phosphoserine - no example on PDB nor on uniprot, yet.
         };
         const int backbone_instructions_size = sizeof( backbone_instructions ) / sizeof( backbone_instructions[0] );
@@ -580,6 +581,53 @@ namespace privateer
             }
         }
 
+        void Grafter::rotate_mglycan_until_bond_angle_fulfilled(clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, clipper::Coord_orth direction1, clipper::Coord_orth direction2, clipper::Coord_orth origin_shift, std::vector<std::pair<clipper::MAtom, std::string>>& bondAtoms, double targetAngle1, double targetAngle2, bool debug_output)
+        {
+            clipper::MAtom firstBondAtom; // always sugar
+            clipper::MAtom secondBondAtom; //always protein
+            clipper::MAtom thirdBondAtom; // always protein
+
+            firstBondAtom = converted_mglycan[0].find(bondAtoms[0].first.id().trim(), clipper::MM::UNIQUE);
+            secondBondAtom = protein_residue.find(BondAtoms[1], clipper::MM::UNIQUE);
+            thirdBondAtom = protein_residue.find(BondAtoms[2].first.id().trim(), clipper::MM::UNIQUE);
+
+            // Calculate the vector corresponding to the link between the sugar and the protein
+            clipper::Vec3<clipper::ftype> link (secondBondAtom.coord_orth().x() - firstBondAtom.coord_orth().x(), 
+                                                secondBondAtom.coord_orth().y() - firstBondAtom.coord_orth().y()
+                                                secondBondAtom.coord_orth().z() - firstBondAtom.coord_orth().z()); 
+            // Calculate the vector corresponding to the adjacent bond in the protein
+            clipper::Vec3<clipper::ftype> protbond (secondBondAtom.coord_orth().x() - thirdBondAtom.coord_orth().x(), 
+                                                secondBondAtom.coord_orth().y() - thirdBondAtom.coord_orth().y()
+                                                secondBondAtom.coord_orth().z() - thirdBondAtom.coord_orth().z()); 
+            // Calculate vector corresponding to plane of the protein
+            clipper::Vec3<clipper::ftype> protplane = clipper::Vec3<clipper::ftype>find_aromatic_plane(protein_residue); 
+            
+            // Calculate rotation angle from current and target bond angles                                
+            double currentBondAngle1 = clipper::Util::rad2d(clipper::ftype::get_angle(link, protbond)); 
+            double rotangle_radian1 = clipper::Util::d2rad(currentBondAngle1 - targetAngle1)
+            double currentBondAngle2 = clipper::Util::rad2d(clipper::ftype::get_angle(link, protplane)); 
+            double rotangle_radian2 = clipper::Util::d2rad(currentBondAngle2 - targetAngle2);;
+
+            if(debug_output)
+                DBG << "\ntargetBondAngle1: " << targetAngle1 << "\t\tCurrent value of bond angle 1: " << currentBondAngle1 << "\trotangle1 " << clipper::Util::rad2d(rotangle_radian1) << std::endl;
+                DBG << "\ntargetBondAngle1: " << targetAngle1 << "\t\tCurrent value of bond angle 1: " << currentBondAngle1 << "\trotangle1 " << clipper::Util::rad2d(rotangle_radian1) << std::endl;
+                DBG << "\n" << firstBondAtom.id().trim() << "-" << secondBondAtom.id().trim() << "-" << thirdBondAtom.id().trim() << std::endl;          
+            
+            for(int residue = 0; residue < converted_mglycan.size(); residue++)
+            {
+                clipper::MMonomer currentResidue = converted_mglycan[residue];
+                for(int atom = 0; atom < converted_mglycan[residue].size(); atom++)
+                {
+                    clipper::MAtom currentAtom = converted_mglycan[residue][atom];
+                    clipper::Coord_orth old_pos = currentAtom.coord_orth();
+                    // Rotate glycan around axis defined by "direction1" and "direction2" vectors according to the calculated rotation angles. 
+                    // Origin shift accounts for the fact that we aren't rotating around the origin so shifts the position to the origin, rotates it, then shifts it back.
+                    clipper::Coord_orth new_pos1 = generate_rotation_matrix_from_rodrigues_rotation_formula(direction1, old_pos, origin_shift, rotangle_radian1);
+                    clipper::Coord_orth new_pos2 = generate_rotation_matrix_from_rodrigues_rotation_formula(direction2, new_pos1, origin_shift, rotangle_radian2);
+                    converted_mglycan[residue][atom].set_coord_orth(new_pos2);
+                }
+            }
+        } // FLAG: Not tested this function yet. Next step is to write the code that calls it taking special care to get the direction vectors right.
 
         void Grafter::rotate_mglycan_until_torsion_angle_fulfilled(clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, clipper::Coord_orth direction, clipper::Coord_orth origin_shift, std::vector<std::pair<clipper::MAtom, std::string>>& torsionAtoms, double targetAngle, bool debug_output)
         {
@@ -847,7 +895,7 @@ namespace privateer
 
             }
 
-            return best_performing_glycan; // If not parralellised then this function hasn't done anything and just returns the given glycan
+            return best_performing_glycan; // If not parralellised then this function hasn't done anything and just returns the given glycan FLAG: Edit to return error message if not multithreaded and to instead return value of singlethreaded function
         }        
         
    
