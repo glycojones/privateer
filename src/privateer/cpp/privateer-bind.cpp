@@ -49,19 +49,27 @@ clipper::MiniMol read_molecule(const std::string &file, const std::string &name)
     return {};
   }
   ::gemmi::Structure structure = ::gemmi::read_structure_from_char_array(c_data, size, name);
-  std::cout << "structure read" << std::endl;
+  std::cout << "[Privateer] Successfully read structure" << std::endl;
   clipper::GEMMIFile gemmi_file;
   clipper::GemmiStructure *gemmi_structure = &gemmi_file;
   gemmi_structure->structure_ = structure;
   clipper::MiniMol mol;
   gemmi_file.import_minimol(mol);
+
+   clipper::Cell cell = mol.cell();
+   std::cout << cell.format() << std::endl;
+  if (cell.a() == 1.0 && cell.b() == 1.0 && cell.c() == 1.0 ) {
+      std::cout << "[Privateer] This cell is 1A, inflating the cell but this will lose crystal contact information" << std::endl;
+      mol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
+  }
+  std::cout << "[Privateer] Created gemmi molecule" << std::endl;
   return mol;
 }
 
 std::vector<clipper::MGlycan> calculate_validation(clipper::MiniMol &mol)
 {
   privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("privateer_torsions_z_score_database.json");
-  const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mol, 1.0);
+  clipper::MAtomNonBond manb = clipper::MAtomNonBond(mol, 1.0);
   clipper::MGlycology mgl = clipper::MGlycology(mol, manb, torsions_zscore_database, false);
   return mgl.get_list_of_glycans();
 }
@@ -134,6 +142,7 @@ std::vector<ResultsEntry> validate(const std::string &file, const std::string &n
 
   clipper::MiniMol mol = read_molecule(file, name);
   std::vector<clipper::MGlycan> glycans = calculate_validation(mol);
+  std::cout << "Glycans found - " << glycans.size() << std::endl;
   std::vector<ResultsEntry> results = format_validation(glycans);
   return results;
 }
