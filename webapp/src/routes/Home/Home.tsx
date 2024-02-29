@@ -26,7 +26,7 @@ export default function Home(): Element {
     const [fileContent, setFileContent] = useState<string | ArrayBuffer>('');
     const [mtzData, setMtzData] = useState<Uint8Array | null>(null);
     const [submit, setSubmit] = useState<boolean>(false);
-    const [tableData, setTableData] = useState<TableDataEntry[] | null>(null);
+    const [tableData, setTableData] = useState<ResultsEntry[] | null>(null);
     const [loadingText, setLoadingText] = useState<string>(
         'Validating Glycans...'
     );
@@ -113,6 +113,7 @@ export default function Home(): Element {
                     setMtzData(mapArray);
                 } catch (err) {
                     console.log('No map found, continuing...');
+
                 }
 
                 fetchPDB(PDBCode)
