@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../../shared/Loading/Loading.tsx';
 import Plot from 'react-plotly.js';
 
-export default function GlycansVsYear() {
+export default function GlycansVsYear(props: { type: string }) {
     const [totalTrace, setTotalTrace] = useState();
     const [nglycanTrace, setNGlycanTrace] = useState();
     const [oglycanTrace, setOGlycanTrace] = useState();
@@ -51,13 +51,27 @@ export default function GlycansVsYear() {
         handleResize();
     }, []);
 
+
+    function getData(data, attribute) {
+        if (props.type === "annual") {
+            return Object.values(data).map((e) => {
+                return e[attribute];
+            })
+        }
+        if (props.type === "cumulative") {
+            const cumulativeSum = (sum => value => sum += value)(0);
+            return Object.values(data).map((e) => {
+                return e[attribute];
+            }).map(cumulativeSum)
+        }
+    }
+
+
     useEffect(() => {
         if (data === null) return;
         const newTotalTrace = {
             x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.totalGlycans;
-            }),
+            y: getData(data, "totalGlycans"),
             type: 'scatter',
             mode: 'lines',
             marker: { color: 'red' },
@@ -71,9 +85,7 @@ export default function GlycansVsYear() {
 
         const newNGlycanTrace = {
             x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.nGlycans;
-            }),
+            y: getData(data, "nGlycans"),
             type: 'scatter',
             mode: 'lines',
             marker: { color: 'blue' },
@@ -87,9 +99,7 @@ export default function GlycansVsYear() {
 
         const newOGlycanTrace = {
             x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.oGlycans;
-            }),
+            y: getData(data, "oGlycans"),
             type: 'scatter',
             mode: 'lines',
             marker: { color: 'gold' },
@@ -103,9 +113,7 @@ export default function GlycansVsYear() {
 
         const newSGlycanTrace = {
             x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.sGlycans;
-            }),
+            y: getData(data, "sGlycans"),
             type: 'scatter',
             mode: 'lines',
             // marker: {color: 'gold'},
@@ -119,9 +127,7 @@ export default function GlycansVsYear() {
 
         const newCGlycanTrace = {
             x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.cGlycans;
-            }),
+            y: getData(data, "cGlycans"),
             type: 'scatter',
             mode: 'lines',
             // marker: {color: 'blue'},
@@ -135,9 +141,7 @@ export default function GlycansVsYear() {
 
         const newDepositedTrace = {
             x: Object.keys(data),
-            y: Object.values(data).map((e) => {
-                return e.totalDepositions;
-            }),
+            y: getData(data, "totalDepositions"),
             type: 'bar',
             name: 'Total Deposited',
             yaxis: 'y2',
@@ -148,7 +152,8 @@ export default function GlycansVsYear() {
         };
 
         setDepositedTrace(newDepositedTrace);
-    }, [data]);
+
+    }, [data, props.type]);
 
     return (
         <>
@@ -204,7 +209,7 @@ export default function GlycansVsYear() {
                             automargin: true,
                             ticksuffix: ' ',
                             tickprefix: '    ',
-                            range: [-50, 1600],
+                            range: props.type === "annual" ? [-50, 1600]: [-50,25000],
                         },
                         yaxis2: {
                             title: {
@@ -222,7 +227,7 @@ export default function GlycansVsYear() {
                             automargin: true,
                             tickprefix: '  ',
                             ticksuffix: '   ',
-                            range: [-500, 16000],
+                            range: props.type === "annual" ? [-500, 16000]: [-50,230000],
                         },
                         xaxis: {
                             title: {

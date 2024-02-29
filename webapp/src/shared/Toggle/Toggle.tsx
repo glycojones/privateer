@@ -3,6 +3,8 @@ import React, { type Dispatch, type SetStateAction } from 'react';
 export default function toggleSwitch(props: {
     checkState: boolean;
     setCheckState: Dispatch<SetStateAction<boolean>>;
+    name1: string | undefined,
+    name2: string | undefined
 }) {
     const handleCheckboxChange = () => {
         props.setCheckState(!props.checkState);
@@ -24,7 +26,8 @@ export default function toggleSwitch(props: {
                             : 'text-body-color'
                     }`}
                 >
-                    PDB
+                    {props.name1 ? props.name1 : "PDB"}
+
                 </span>
                 <span
                     className={`flex items-center space-x-[6px] rounded py-2 px-[18px] text-sm font-medium ${
@@ -34,7 +37,7 @@ export default function toggleSwitch(props: {
                     }`}
                 >
                     {/* {pdbRedoSVG()} */}
-                    PDB-REDO
+                    {props.name2 ? props.name2 : "PDB-REDO"}
                 </span>
             </label>
         </div>

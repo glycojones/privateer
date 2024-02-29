@@ -2,7 +2,7 @@ import GlycansVsYear from './GlycansVsYear.tsx';
 import React, { Suspense, useEffect, useState } from 'react';
 import Loading from '../../shared/Loading/Loading.tsx';
 import ConformationErrorsVsYear from './ConformationErrorsVsYear.tsx';
-import PDBToggle from '../../shared/PDBToggle/PDBToggle.tsx';
+import Toggle from '../../shared/Toggle/Toggle.tsx';
 import BorderElement from '../../layouts/BorderElement.tsx';
 import ConformationalErrorsVsResolution from './ConformationalErrorsVsResolution.tsx';
 
@@ -25,6 +25,7 @@ export default function Graphs() {
 
     const [confVsResDBSwitch, setConfVsResDBSwitch] = useState(false);
     const [confVsYearDBSwitch, setConfVsYearDBSwitch] = useState(false);
+    const [annualVsCumulativeDBSwitch, setAnnualVsCumulativeDBSwitch] = useState(false);
 
     return (
         <>
@@ -39,7 +40,20 @@ export default function Graphs() {
                         Last Updated - {lastUpdated}
                     </h4>
 
-                    <GlycansVsYear />
+                    <div className="w-full text-center">
+                        <div className="w-full sm:px-12 text-center sm:text-left ">
+                            <Toggle
+                                checkState={annualVsCumulativeDBSwitch}
+                                setCheckState={setAnnualVsCumulativeDBSwitch}
+                                name1={"Annual"}
+                                name2={"Cumulative"}
+                            />
+                        </div>
+
+                        <GlycansVsYear type={annualVsCumulativeDBSwitch ? 'cumulative' : 'annual'}/>
+                        {/*    database={confVsYearDBSwitch ? 'pdbredo' : 'pdb'}*/}
+                        {/*/>*/}
+                    </div>
 
                     <BorderElement
                         bottomColor={'#F4F9FF'}
@@ -47,7 +61,8 @@ export default function Graphs() {
                         reverse={false}
                     ></BorderElement>
 
-                    <div className="flex flex-col sm:flex-row flex-wrap sm:justify-between w-full items-center align-center bg-tertiary">
+                    <div
+                        className="flex flex-col sm:flex-row flex-wrap sm:justify-between w-full items-center align-center bg-tertiary">
                         <div>
                             <h2 className="w-full text-center sm:text-left pl-2 mt-8 sm:pl-12">
                                 Validation Statistics
@@ -60,9 +75,11 @@ export default function Graphs() {
 
                     <div className="w-full text-center bg-tertiary">
                         <div className="w-full sm:px-12 text-center sm:text-left ">
-                            <PDBToggle
+                            <Toggle
                                 checkState={confVsYearDBSwitch}
                                 setCheckState={setConfVsYearDBSwitch}
+                                name1={"PDB"}
+                                name2={"PDB-REDO"}
                             />
                         </div>
 
@@ -79,9 +96,11 @@ export default function Graphs() {
 
                     <div className="w-full  text-center">
                         <div className="w-full sm:px-12 text-center sm:text-left">
-                            <PDBToggle
+                            <Toggle
                                 checkState={confVsResDBSwitch}
                                 setCheckState={setConfVsResDBSwitch}
+                                name1={"PDB"}
+                                name2={"PDB-REDO"}
                             />
                         </div>
                         <ConformationalErrorsVsResolution
