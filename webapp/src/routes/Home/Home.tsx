@@ -1,5 +1,5 @@
 import React, { lazy, useEffect, useState } from 'react';
-import { Header } from '../../layouts/Header';
+import { MainHeader } from '../../main/Header/MainHeader.tsx';
 import { Information } from '../../shared/Information/Information.tsx';
 
 // @ts-expect-error: Emscripten Generated JS does not conform to typescript conventions
@@ -19,14 +19,14 @@ const BorderElement = lazy(
     async () => await import('../../layouts/BorderElement.tsx')
 );
 
-export default function HomeSection(): Element {
+export default function Home(): Element {
     const [coordinateFile, setCoordinateFile] = useState<File | null>(null);
     const [reflectionFile, setReflectionFile] = useState<File | null>(null);
     const [PDBCode, setPDBCode] = useState<string>('');
     const [fileContent, setFileContent] = useState<string | ArrayBuffer>('');
     const [mtzData, setMtzData] = useState<Uint8Array | null>(null);
     const [submit, setSubmit] = useState<boolean>(false);
-    const [tableData, setTableData] = useState<TableDataEntry[] | null>(null);
+    const [tableData, setTableData] = useState<ResultsEntry[] | null>(null);
     const [loadingText, setLoadingText] = useState<string>(
         'Validating Glycans...'
     );
@@ -236,7 +236,7 @@ export default function HomeSection(): Element {
 
     return (
         <>
-            <Header {...mainProps} />
+            <MainHeader {...mainProps} />
             <BorderElement
                 topColor={'#D6D9E5'}
                 bottomColor={'#F4F9FF'}

@@ -1,14 +1,14 @@
 import React, { lazy, type ReactElement, useEffect, useState } from 'react';
 import { Information } from '../../shared/Information/Information.tsx';
 import { type DatabaseHeaderProps } from '../../interfaces/types';
-import { DatabaseHeader } from '../../layouts/DatabaseHeader.tsx';
+import { DatabaseHeader } from '../../database/Header/DatabaseHeader.tsx';
 
 const Footer = lazy(async () => await import('../../layouts/Footer.tsx'));
 const BorderElement = lazy(
     async () => await import('../../layouts/BorderElement.tsx')
 );
 
-export default function DatabaseSection(props: {
+export default function Database(props: {
     query: any;
     setSearchParams: any;
 }): ReactElement {
