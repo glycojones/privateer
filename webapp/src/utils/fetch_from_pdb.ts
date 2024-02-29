@@ -52,7 +52,7 @@ export async function fetchMap(PDBCode: string): Promise<ArrayBuffer | void> {
                 throw new Error('Map Not Found');
             });
         return await file;
-    } catch {
-        return Promise.reject("Failed to get map")
+    } catch (e) {
+        return await Promise.reject(e);
     }
 }

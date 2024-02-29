@@ -113,7 +113,6 @@ export default function Home(): Element {
                     setMtzData(mapArray);
                 } catch (err) {
                     console.log('No map found, continuing...');
-
                 }
 
                 fetchPDB(PDBCode)
