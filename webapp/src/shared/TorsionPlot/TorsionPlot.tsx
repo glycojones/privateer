@@ -19,7 +19,6 @@ export default function TorsionPlot({
     const [linkageFound, setLinkageFound] = useState(false);
 
     useEffect(() => {
-        console.log(linkageDB[linkageType]);
         fetch(linkageDB[linkageType])
             .then(async (response) => await response.json())
             .then((responseJson) => {

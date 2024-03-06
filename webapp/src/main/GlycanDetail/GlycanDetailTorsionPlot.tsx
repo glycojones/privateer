@@ -6,7 +6,7 @@ const TorsionMultiPlot = lazy(
 
 export function GlycanDetailTorsionPlot(props: {
     key: string;
-    tableDataEntries: ResultsEntry  [];
+    tableDataEntries: ResultsEntry[];
     rowID: number;
     tab: number;
     tab1: (value: ((prevState: number) => number) | number) => void;
