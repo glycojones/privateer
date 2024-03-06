@@ -70,7 +70,7 @@ def _query_uniprot_for_glycosylation_locations(uniprotID):
     for item in uniprotFeatures:
         if item["type"] == "CARBOHYD":
             uniprotGlycosylations.append(item)
-
+    # FLAG: When running in CMannosylation mode might want to only keep some of these targets
     outputSequence = uniprotSequence["sequence"]
     outputSequenceLength = uniprotSequence["length"]
     output = {
@@ -219,6 +219,33 @@ def _get_NGlycosylation_targets_via_consensus_seq(sequences):
 
     return output
 
+def _get_CMannosylation_targets_via_consensus_seq(sequences):
+    CMannosylationConsensus = "[W][A-Z][A-Z][W]" #This needs to change as it is currently finding the wrong targets
+    CMannosylationConsensus = "[W]" #This needs to change as it is currently finding the wrong targets
+    output = []
+    for item in sequences:
+        currentChainIndex = item["index"]
+        currentChainID = item["ChainID"]
+        currentSequence = item["Sequence"]
+
+        glycosylationTargets = []
+
+        for match in re.finditer(CMannosylationConsensus, currentSequence):
+            if (currentSequence[match.start()] == item["Residues"][
+                    match.start()]["residueCode"]):
+                glycosylationTargets.append({
+                    "start": match.start(),
+                    "end": match.end(),
+                    "match": match.group()
+                })
+
+        output.append({
+            "Sequence": currentSequence,
+            "chainIndex": currentChainIndex,
+            "currentChainID": currentChainID,
+            "glycosylationTargets": glycosylationTargets,
+        })
+    return output
 
 def _glycosylate_receiving_model_using_consensus_seq(
     receiverpath,
@@ -231,11 +258,11 @@ def _glycosylate_receiving_model_using_consensus_seq(
     builder = pvtmodelling.Builder(
         receiverpath,
         donorpath,
-        -1,
+        -1, # nThreads
         trimGlycanIfClashesDetected,
-        True,
+        True, # ANY_search_policy
         enableUserMessages,
-        False,
+        True, # debug_output = True or False
     )
     for item in glycosylationTargets:
         chainIndex = item["chainIndex"]
@@ -261,11 +288,11 @@ def _glycosylate_receiving_model_using_uniprot_info(
     builder = pvtmodelling.Builder(
         receiverpath,
         donorpath,
-        -1,
+        -1, #nThreads
         trimGlycanIfClashesDetected,
-        True,
+        True, #ANY_search_policy
         enableUserMessages,
-        False,
+        True, #debug_output
     )
     for currentTarget in targets:
         chainIndex = 0
@@ -316,7 +343,7 @@ def _store_grafted_glycans_summary(graftedGlycans, index, totalCount):
 
 
 def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
-                                uniprotID):
+                                uniprotID,mode):
 
     sequences = _get_sequences_in_receiving_model(receiverpath)
     if uniprotID is not None:
@@ -347,7 +374,14 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             _print_grafted_glycans_summary(graftedGlycans)
 
     else:
-        targets = _get_NGlycosylation_targets_via_consensus_seq(sequences)
+        if mode == 'CMannosylation':
+            targets = _get_CMannosylation_targets_via_consensus_seq(sequences)
+        elif mode == 'NGlycosylation':
+            targets = _get_NGlycosylation_targets_via_consensus_seq(sequences)
+        else:
+            raise ValueError(
+                "Mode of operation not yet supported. Only CMannosylation and NGlycosylation are currently supported"
+            )
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
             receiverpath, donorpath, outputpath, targets, True, False)
         _print_grafted_glycans_summary(graftedGlycans)
@@ -388,11 +422,11 @@ def glycosylate_receiving_model_using_manual_instructions(
     builder = pvtmodelling.Builder(
         receiverpath,
         donorpath,
-        -1,
+        -1, #nThreads
         trimGlycanIfClashesDetected,
-        True,
+        True, #ANY_search_Policy
         enableUserMessages,
-        False,
+        True, #debug_output
     )
 
     builder.graft_glycan_to_receiver(glycanIndex, receiverChainIndex,
@@ -478,6 +512,7 @@ if __name__ == "__main__":
     defaultuniprotIDsListPath = os.path.join(ROOTENV, "uniprotIDinputs.txt")
     defaultJSONgrafting = os.path.join(ROOTENV, "manual_grafting.json")
     defaultUniprotID = "P29016"
+    defaultmode = "NGlycosylation"
 
     printInfo = False
 
@@ -556,6 +591,15 @@ if __name__ == "__main__":
         f"Import a JSON file to manually graft glycans with total control over glycosylation sites. Example file is located at '{defaultJSONgrafting}'",
     )
 
+    parser.add_argument(
+        "-operation_mode",
+        action="store",
+        default=None,
+        dest="user_mode",
+        help=
+        f"Specify the mode of operation for the grafter as either NGlycosylation or CMannosylation. If unspecified, the script will default to '{defaultmode}'",
+    )
+
     args = parser.parse_args()
 
     if args.user_uniprotID is not None:
@@ -588,16 +632,21 @@ if __name__ == "__main__":
 
     if args.user_infoFlag == True and not None:
         printInfo = True
+    
+    if args.user_mode is not None:
+        mode = args.user_mode
+    else:
+        mode = defaultmode
 
     if (args.user_localReceiverPath is not None and args.user_uniprotID is None
             and printInfo == False):
         uniprotID = None
         _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
-                                    outputPath, uniprotID)
+                                    outputPath, uniprotID, mode)
     elif (args.user_localReceiverPath is not None
           and args.user_uniprotID is not None and printInfo == False):
         _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
-                                    outputPath, uniprotID)
+                                    outputPath, uniprotID, mode)
     elif args.user_uniprotIDsList is not None and printInfo == False:
         uniprotIDList = _import_list_of_uniprotIDs_to_glycosylate(
             uniprotIDListPath)

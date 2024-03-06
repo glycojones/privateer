@@ -328,6 +328,8 @@ namespace privateer
             sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
             ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
             
+
+            // FLAG: The bond_angle funtion is written exclusively for C-mannosylation of TRP at the moment so probably want an if statement around it. Long term could try and write equivalent for N-glycans.
             double targetBondAngleInPlane = 126;    // Target angle from the adjacent bond in the protein ring  FLAG: This should be added to backbone instructions when done testing
             double targetAngleToPlane = 90;        // Target angle from the plane of the protein ring          FLAG: This should be added to backbone instructions when done testing
             clipper::MAtom protein_vector_point_charlie = input_protein_side_chain_residue.find("NE1", search_policy); //                                             //FLAG: This should be added to backbone instructions when done testing
@@ -587,64 +589,7 @@ namespace privateer
             }
         }
 
-        /* void Grafter::rotate_mglycan_until_bond_angle_fulfilled(clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, std::vector<std::pair<clipper::MAtom, std::string>>& bondAtoms, double targetAngle1, double targetAngle2, bool debug_output)
-        {
-            clipper::MAtom firstBondAtom; // always sugar
-            clipper::MAtom secondBondAtom; //always protein
-            clipper::MAtom thirdBondAtom; // always protein
-            clipper::MAtom fourthBondAtom; // always protein
-            clipper::Coord_orth origin_shift;
-
-            firstBondAtom = converted_mglycan[0].find(bondAtoms[0].first.id().trim(), clipper::MM::UNIQUE);
-            secondBondAtom = protein_residue.find(bondAtoms[1].first.id().trim(), clipper::MM::UNIQUE);
-            thirdBondAtom = protein_residue.find(bondAtoms[2].first.id().trim(), clipper::MM::UNIQUE);
-            fourthBondAtom = protein_residue.find(bondAtoms[3].first.id().trim(), clipper::MM::UNIQUE);
-
-
-            // Origin shift accounts for the fact that we aren't rotating around the origin so shifts the position to the origin, rotates it, then shifts it back.
-            origin_shift = secondBondAtom.coord_orth();
-            // Calculate the vector corresponding to the link between the sugar and the protein
-            clipper::Vec3<clipper::ftype> link (firstBondAtom.coord_orth().x() - secondBondAtom.coord_orth().x(), 
-                                                firstBondAtom.coord_orth().y() - secondBondAtom.coord_orth().y(),
-                                                firstBondAtom.coord_orth().z() - secondBondAtom.coord_orth().z()); 
-            // Calculate the vector corresponding to the adjacent bond in the protein
-            clipper::Vec3<clipper::ftype> protbond (thirdBondAtom.coord_orth().x() - secondBondAtom.coord_orth().x(), 
-                                                    thirdBondAtom.coord_orth().y() - secondBondAtom.coord_orth().y(),
-                                                    thirdBondAtom.coord_orth().z() - secondBondAtom.coord_orth().z());                                         
-            // Calculate vector corresponding to plane of the protein
-            clipper::Vec3<clipper::ftype> protplane = find_aromatic_plane(protein_residue); 
-
-            // Vectors around which the two rotations occur FLAG: Are these correct???
-            // Direction 1 is perpendicular to plane
-            // Direction 2 is parallel to plane and aligned from NE1 to CG in TRP
-            clipper::Coord_orth direction1 = clipper::Coord_orth(protplane);                                // Direction we rotate around to get correct angle in plane of protein ring
-            clipper::Coord_orth direction2 = thirdBondAtom.coord_orth() - fourthBondAtom.coord_orth();      // Direction we rotate around to get correct angle to plane of protein ring
-            
-            // Calculate rotation angle from current and target bond angles                                
-            double currentBondAngle1 = clipper::Util::rad2d(get_angle(link, protbond)); //FLAG: but this isn't just the angle in the plane I'm interested in
-            double rotangle_radian1 = clipper::Util::d2rad(currentBondAngle1 - targetAngle1);
-            double currentBondAngle2 = clipper::Util::rad2d(get_angle(link, protplane)); 
-            double rotangle_radian2 = clipper::Util::d2rad(currentBondAngle2 - targetAngle2);;
-
-            if(debug_output)
-                DBG << "\ntargetBondAngle1: " << targetAngle1 << "\t\tCurrent value of bond angle 1: " << currentBondAngle1 << "\trotangle1 " << clipper::Util::rad2d(rotangle_radian1) << std::endl;
-                DBG << "\ntargetBondAngle2: " << targetAngle2 << "\t\tCurrent value of bond angle 2: " << currentBondAngle2 << "\trotangle2 " << clipper::Util::rad2d(rotangle_radian2) << std::endl;
-                DBG << "\n" << firstBondAtom.id().trim() << "-" << secondBondAtom.id().trim() << "-" << thirdBondAtom.id().trim() << std::endl;          
-            
-            for(int residue = 0; residue < converted_mglycan.size(); residue++)
-            {
-                clipper::MMonomer currentResidue = converted_mglycan[residue];
-                for(int atom = 0; atom < converted_mglycan[residue].size(); atom++)
-                {
-                    clipper::MAtom currentAtom = converted_mglycan[residue][atom];
-                    clipper::Coord_orth old_pos = currentAtom.coord_orth();
-                    // Rotate glycan around axis defined by "direction1" and "direction2" vectors according to the calculated rotation angles. 
-                    clipper::Coord_orth new_pos1 = generate_rotation_matrix_from_rodrigues_rotation_formula(direction1, old_pos, origin_shift, rotangle_radian1);
-                    clipper::Coord_orth new_pos2 = generate_rotation_matrix_from_rodrigues_rotation_formula(direction2, new_pos1, origin_shift, rotangle_radian2);
-                    converted_mglycan[residue][atom].set_coord_orth(new_pos2);
-                }
-            }
-        } */
+    
         void Grafter::rotate_mglycan_until_bond_angle_fulfilled(clipper::MPolymer& converted_mglycan, clipper::MMonomer& protein_residue, std::vector<std::pair<clipper::MAtom, std::string>>& bondAtoms, double targetAngle1, double targetAngle2, bool debug_output)
         {
             clipper::MAtom firstBondAtom;   // always sugar connecting atom
@@ -742,19 +687,12 @@ namespace privateer
             
             // Check that angle is right in relation to other bond
             firstBondAtom = converted_mglycan[0].find(bondAtoms[0].first.id().trim(), clipper::MM::UNIQUE);
-            // Recalculate the vector corresponding to the link between the sugar and the protein now that the sugar has moved
-            clipper::Vec3<clipper::ftype> updated_link_2 (firstBondAtom.coord_orth().x() - secondBondAtom.coord_orth().x(), 
-                                                        firstBondAtom.coord_orth().y() - secondBondAtom.coord_orth().y(),
-                                                        firstBondAtom.coord_orth().z() - secondBondAtom.coord_orth().z()); 
 
-            currentBondAngle1 = clipper::Util::rad2d(get_angle(updated_link, protplane)); 
-            if(debug_output)
-                DBG << "\ntargetBondAngle1: " << targetAngle1 << "\t\tNew value of bond angle 1: " << currentBondAngle1 << std::endl;
             // Calculate the vector corresponding to the adjacent bond in the protein
             clipper::Vec3<clipper::ftype> protbond_2    (   fourthBondAtom.coord_orth().x() - secondBondAtom.coord_orth().x(), 
                                                             fourthBondAtom.coord_orth().y() - secondBondAtom.coord_orth().y(),
                                                             fourthBondAtom.coord_orth().z() - secondBondAtom.coord_orth().z());  
-            double currentBondAngle3 = clipper::Util::rad2d(get_angle(updated_link_2, protbond_2)); 
+            double currentBondAngle3 = clipper::Util::rad2d(get_angle(second_updated_link, protbond_2)); 
             if(std::abs(currentBondAngle3 - targetAngle2) > 10)
             {
                 double rotangle_radian3 = clipper::Util::d2rad(currentBondAngle3 - targetAngle2);
@@ -772,6 +710,12 @@ namespace privateer
                         converted_mglycan[residue][atom].set_coord_orth(new_pos);
                     }
                 }
+                clipper::Vec3<clipper::ftype> third_updated_link (  firstBondAtom.coord_orth().x() - secondBondAtom.coord_orth().x(), 
+                                                                    firstBondAtom.coord_orth().y() - secondBondAtom.coord_orth().y(),
+                                                                    firstBondAtom.coord_orth().z() - secondBondAtom.coord_orth().z()); 
+                currentBondAngle3 = clipper::Util::rad2d(get_angle(third_updated_link, protbond_2));
+                if(debug_output)
+                    DBG << "\ntargetBondAngle3: " << targetAngle2 << "\t\tNew value of bond angle 3: " << currentBondAngle3 << std::endl;
             }
 
         }
