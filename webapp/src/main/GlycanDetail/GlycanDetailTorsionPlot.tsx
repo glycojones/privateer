@@ -1,12 +1,12 @@
-import { type TableDataEntry } from '../../interfaces/types.ts';
+import { type ResultsEntry } from '../../interfaces/types.ts';
 import React, { lazy, useEffect, useState } from 'react';
 const TorsionMultiPlot = lazy(
-    async () => await import('./TorsionPlot/TorsionMultiPlot.tsx')
+    async () => await import('../../shared/TorsionPlot/TorsionMultiPlot.tsx')
 );
 
 export function GlycanDetailTorsionPlot(props: {
     key: string;
-    tableDataEntries: TableDataEntry[];
+    tableDataEntries: ResultsEntry  [];
     rowID: number;
     tab: number;
     tab1: (value: ((prevState: number) => number) | number) => void;
@@ -33,6 +33,7 @@ export function GlycanDetailTorsionPlot(props: {
                 tab={props.tab}
                 setTab={props.tab1}
                 size={dimension}
+                background={'#D6D9E5'}
             />
         </div>
     );

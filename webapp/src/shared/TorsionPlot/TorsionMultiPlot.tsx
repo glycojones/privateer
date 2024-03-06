@@ -1,10 +1,9 @@
-import React, { useEffect, lazy, type ReactElement } from 'react';
+import React, { useEffect, lazy, type ReactElement, useState } from "react"
 
 const TorsionPlot = lazy(async () => await import('./TorsionPlot.tsx'));
 
 function sortTorsions(torsions): [string[], any] {
     const linkageSet = new Set<string>();
-
     torsions.forEach(
         (torsion: {
             sugar_1: string;
@@ -84,14 +83,15 @@ function sortTorsions(torsions): [string[], any] {
     return [linkageArray, sortedLinkageMap];
 }
 
-function TorsionMultiPlotTabs({ torsions, setTab }): React.JSX.Element[] {
+function TorsionMultiPlotTabs({ torsions, currentTab, setTab }): React.JSX.Element[] {
     const [linkageArray, _] = sortTorsions(torsions);
 
     return linkageArray.map((item, index) => {
         return (
             <li className="mr-2" key={item}>
                 <button
-                    className="inline-block p-4 border-b-2 border-primary rounded-t-lg hover:scale-105"
+                    className= {index == currentTab ? "inline-block p-4 border-b-2 border-primary rounded-t-lg hover:scale-105  focus:outline-none" :
+                        "inline-block p-4  border-primary rounded-t-lg hover:scale-105  focus:outline-none"}
                     onClick={() => {
                         setTab(index);
                     }}
@@ -104,7 +104,9 @@ function TorsionMultiPlotTabs({ torsions, setTab }): React.JSX.Element[] {
                 >
                     {item}
                 </button>
+
             </li>
+
         );
     });
 }
@@ -114,17 +116,27 @@ export default function TorsionMultiPlot({
     tab,
     setTab,
     size,
+    background
 }: {
     torsions: any;
     tab: string;
     setTab: any;
     size: any;
+    background: string
 }): ReactElement {
-    const [linkageArray, sortedLinkageArray] = sortTorsions(torsions);
+
+    const [linkageArray, setLinkageArray] = useState<any[]>([])
+    const [sortedLinkageArray, setSortedLinkageArray] = useState()
 
     useEffect(() => {
         setTab(0);
     }, []);
+
+    useEffect(() => {
+        const [linkageArray_, sortedLinkageArray_] = sortTorsions(torsions)
+        setLinkageArray(linkageArray_)
+        setSortedLinkageArray(sortedLinkageArray_)
+    }, [torsions])
 
     return (
         <>
@@ -137,6 +149,7 @@ export default function TorsionMultiPlot({
                             <TorsionMultiPlotTabs
                                 torsions={torsions}
                                 setTab={setTab}
+                                currentTab={tab}
                             />
                         </ul>
                     </div>
@@ -145,6 +158,7 @@ export default function TorsionMultiPlot({
                         linkageType={linkageArray[tab]}
                         sortedTorsionList={sortedLinkageArray}
                         size={size}
+                        background={background}
                     />
                 </div>
             )}

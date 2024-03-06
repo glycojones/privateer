@@ -4,6 +4,8 @@ import CremerPopleGraph from '../DatabaseComponents/CremerPopleGraph.tsx';
 import BFactorVsRSCC from '../DatabaseComponents/BFactorVsRSCC.tsx';
 import SNFGList from '../DatabaseComponents/SNFGList.tsx';
 import SugarList from '../DatabaseComponents/SugarList.tsx';
+import TorsionGraph from "../DatabaseComponents/TorsionGraph.tsx"
+import BorderElement from "../../layouts/BorderElement.tsx"
 
 export default function DatabaseResult(props: DatabaseResultProps) {
     const [pdbShown, setPDBShown] = useState<boolean>(true);
@@ -18,7 +20,6 @@ export default function DatabaseResult(props: DatabaseResultProps) {
         if (props.pdbResults === null) return;
         if (props.pdbRedoResults === null) return;
 
-        console.log('running use effect');
         setSelectedData(props.pdbResults);
     }, []);
 
@@ -43,6 +44,21 @@ export default function DatabaseResult(props: DatabaseResultProps) {
                     <div className="flex flex-wrap text-center">
                         <CremerPopleGraph data={selectedData} />
                         <BFactorVsRSCC data={selectedData} />
+
+                        <BorderElement
+                            bottomColor={'#F4F9FF'}
+                            topColor={'#D6D9E5'}
+                            reverse={true}
+                        ></BorderElement>
+
+                        <div className="w-full bg-tertiary">
+                        <TorsionGraph data={selectedData}/>
+                        </div>
+                        <BorderElement
+                            topColor={'#F4F9FF'}
+                            bottomColor={'#D6D9E5'}
+                            reverse={false}
+                        ></BorderElement>
                     </div>
                     <SNFGList data={selectedData} />
                     <SugarList data={selectedData} />
