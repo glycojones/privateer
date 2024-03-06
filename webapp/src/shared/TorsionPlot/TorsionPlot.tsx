@@ -7,7 +7,7 @@ export default function TorsionPlot({
     linkageType,
     sortedTorsionList,
     size,
-    background
+    background,
 }: {
     linkageType: string;
     sortedTorsionList: any;
@@ -19,7 +19,7 @@ export default function TorsionPlot({
     const [linkageFound, setLinkageFound] = useState(false);
 
     useEffect(() => {
-        console.log(linkageDB[linkageType])
+        console.log(linkageDB[linkageType]);
         fetch(linkageDB[linkageType])
             .then(async (response) => await response.json())
             .then((responseJson) => {
@@ -94,7 +94,7 @@ export default function TorsionPlot({
                 title: linkageType,
                 plot_bgcolor: '#FFFFFF',
                 // paper_bgcolor: ,
-                paper_bgcolor: background ,
+                paper_bgcolor: background,
                 yaxis: {
                     title: {
                         text: 'ψ / °',

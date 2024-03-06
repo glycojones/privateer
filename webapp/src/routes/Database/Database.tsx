@@ -20,8 +20,8 @@ export default function Database(props: {
     const [resetApp, setResetApp] = useState<boolean>(false);
     const [fallback, setFallBack] = useState<boolean>(false);
     const [failureText, setFailureText] = useState<string>('');
-    const [pdbResults, setPDBResults] = useState<string>('');
-    const [pdbRedoResults, setPDBRedoResults] = useState<string>('');
+    const [pdbResults, setPDBResults] = useState<string | any>('');
+    const [pdbRedoResults, setPDBRedoResults] = useState<string | any>('');
 
     // const [failure, setFailure] = useState<boolean>(false);
 
@@ -33,9 +33,9 @@ export default function Database(props: {
 
         try {
             const response = await fetch(pdbUrl);
-            const text = await response.text()
-            const replacedText = text.replace(/\bNaN\b/g, "null")
-            const result = JSON.parse(replacedText)
+            const text = await response.text();
+            const replacedText = text.replace(/\bNaN\b/g, 'null');
+            const result = JSON.parse(replacedText);
             // const data: string = await response.json();
             setPDBResults(result);
         } catch (e) {
@@ -47,12 +47,12 @@ export default function Database(props: {
 
         try {
             const response = await fetch(pdbRedoUrl);
-            const text = await response.text()
-            const replacedText = text.replace(/\bNaN\b/g, "null")
-            const result = JSON.parse(replacedText)
+            const text = await response.text();
+            const replacedText = text.replace(/\bNaN\b/g, 'null');
+            const result = JSON.parse(replacedText);
             setPDBRedoResults(result);
         } catch {
-            console.log("PDB REDO Failed")
+            console.log('PDB REDO Failed');
             // setFallBack(true);
             // setFailureText('This PDB is not in the database');
         }

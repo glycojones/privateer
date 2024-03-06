@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, type ReactElement, useState } from "react"
+import React, { useEffect, lazy, type ReactElement, useState } from 'react';
 
 const TorsionPlot = lazy(async () => await import('./TorsionPlot.tsx'));
 
@@ -83,15 +83,22 @@ function sortTorsions(torsions): [string[], any] {
     return [linkageArray, sortedLinkageMap];
 }
 
-function TorsionMultiPlotTabs({ torsions, currentTab, setTab }): React.JSX.Element[] {
+function TorsionMultiPlotTabs({
+    torsions,
+    currentTab,
+    setTab,
+}): React.JSX.Element[] {
     const [linkageArray, _] = sortTorsions(torsions);
 
     return linkageArray.map((item, index) => {
         return (
             <li className="mr-2" key={item}>
                 <button
-                    className= {index == currentTab ? "inline-block p-4 border-b-2 border-primary rounded-t-lg hover:scale-105  focus:outline-none" :
-                        "inline-block p-4  border-primary rounded-t-lg hover:scale-105  focus:outline-none"}
+                    className={
+                        index === currentTab
+                            ? 'inline-block p-4 border-b-2 border-primary rounded-t-lg hover:scale-105  focus:outline-none'
+                            : 'inline-block p-4  border-primary rounded-t-lg hover:scale-105  focus:outline-none'
+                    }
                     onClick={() => {
                         setTab(index);
                     }}
@@ -104,9 +111,7 @@ function TorsionMultiPlotTabs({ torsions, currentTab, setTab }): React.JSX.Eleme
                 >
                     {item}
                 </button>
-
             </li>
-
         );
     });
 }
@@ -116,27 +121,26 @@ export default function TorsionMultiPlot({
     tab,
     setTab,
     size,
-    background
+    background,
 }: {
     torsions: any;
     tab: string;
     setTab: any;
     size: any;
-    background: string
+    background: string;
 }): ReactElement {
-
-    const [linkageArray, setLinkageArray] = useState<any[]>([])
-    const [sortedLinkageArray, setSortedLinkageArray] = useState()
+    const [linkageArray, setLinkageArray] = useState<any[]>([]);
+    const [sortedLinkageArray, setSortedLinkageArray] = useState<any>();
 
     useEffect(() => {
         setTab(0);
     }, []);
 
     useEffect(() => {
-        const [linkageArray_, sortedLinkageArray_] = sortTorsions(torsions)
-        setLinkageArray(linkageArray_)
-        setSortedLinkageArray(sortedLinkageArray_)
-    }, [torsions])
+        const [linkageArray_, sortedLinkageArray_] = sortTorsions(torsions);
+        setLinkageArray(linkageArray_);
+        setSortedLinkageArray(sortedLinkageArray_);
+    }, [torsions]);
 
     return (
         <>

@@ -4,8 +4,8 @@ import CremerPopleGraph from '../DatabaseComponents/CremerPopleGraph.tsx';
 import BFactorVsRSCC from '../DatabaseComponents/BFactorVsRSCC.tsx';
 import SNFGList from '../DatabaseComponents/SNFGList.tsx';
 import SugarList from '../DatabaseComponents/SugarList.tsx';
-import TorsionGraph from "../DatabaseComponents/TorsionGraph.tsx"
-import BorderElement from "../../layouts/BorderElement.tsx"
+import TorsionGraph from '../DatabaseComponents/TorsionGraph.tsx';
+import BorderElement from '../../layouts/BorderElement.tsx';
 
 export default function DatabaseResult(props: DatabaseResultProps) {
     const [pdbShown, setPDBShown] = useState<boolean>(true);
@@ -52,7 +52,7 @@ export default function DatabaseResult(props: DatabaseResultProps) {
                         ></BorderElement>
 
                         <div className="w-full bg-tertiary">
-                        <TorsionGraph data={selectedData}/>
+                            <TorsionGraph data={selectedData} />
                         </div>
                         <BorderElement
                             topColor={'#F4F9FF'}
