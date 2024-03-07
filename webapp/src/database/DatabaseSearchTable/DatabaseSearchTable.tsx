@@ -179,7 +179,10 @@ function Table({ data }: { data: any }) {
         getFilteredRowModel: getFilteredRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
         onPaginationChange: setPagination,
-        state: { pagination, sorting },
+        state: {
+            pagination,
+            // sorting
+        },
     });
 
     return (
