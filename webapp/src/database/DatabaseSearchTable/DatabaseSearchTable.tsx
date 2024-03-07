@@ -7,8 +7,8 @@ import {
     getPaginationRowModel,
     flexRender,
     getSortedRowModel,
-    type Column,
-} from '@tanstack/react-table';
+    type Column, SortingState,
+} from "@tanstack/react-table"
 import styled from 'styled-components';
 
 const Styles = styled.div`
@@ -168,16 +168,22 @@ function Table({ data }: { data: any }) {
         pageIndex: 0,
         pageSize: 10,
     });
+    const [sorting, setSorting] = useState<SortingState>([
+        {
+            id: "count", // Must be equal to the accessorKey of the coulmn you want sorted by default
+            desc: true,
+        },
+    ])
     const table = useReactTable({
         columns,
         data,
-        debugTable: true,
+        debugTable: false,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
         getFilteredRowModel: getFilteredRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
         onPaginationChange: setPagination,
-        state: { pagination },
+        state: { pagination, sorting },
     });
 
     return (
