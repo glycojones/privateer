@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #a6a99e #d6d9e5;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #0b5a4b;
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #0b5a4b;
+    border-radius: 14px;
+    border: 3px solid #a6a99e;
+}
+
 :root {
     /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
     /* font-family: "OpenSans";   */

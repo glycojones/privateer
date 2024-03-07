@@ -79,7 +79,7 @@ export default function Database(props: {
         setPDBCode('');
         setPDBResults('');
         setPDBRedoResults('');
-        props.setSearchParams({});
+        // props.setSearchParams({});
     }, [resetApp]);
 
     useEffect(() => {

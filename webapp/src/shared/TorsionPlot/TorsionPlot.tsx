@@ -20,7 +20,10 @@ export default function TorsionPlot({
 
     useEffect(() => {
         fetch(linkageDB[linkageType])
-            .then(async (response) => await response.json())
+            .then(async (response) => await response.text())
+            .then((text) => {
+                return JSON.parse(text.replace(/\bNaN\b/g, 'null'));
+            })
             .then((responseJson) => {
                 const xData: number[] = [];
                 const yData: number[] = [];
