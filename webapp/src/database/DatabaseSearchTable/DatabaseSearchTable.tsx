@@ -159,10 +159,6 @@ function Table({ data }: { data: any }) {
         },
     ];
 
-    useEffect(() => {
-        console.warn(data);
-    }, []);
-
     const columns = useMemo(() => COLUMNS, []);
     const [pagination, setPagination] = useState<PaginationState>({
         pageIndex: 0,
