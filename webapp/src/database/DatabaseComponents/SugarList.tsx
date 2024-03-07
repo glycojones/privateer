@@ -1,7 +1,8 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useMemo, useEffect, useState, useRef } from "react"
 import { useTable } from 'react-table';
 import { SugarListColumns } from '../../data/Constants.tsx';
 import styled from 'styled-components';
+import { Tooltip, TooltipRefProps } from "react-tooltip"
 
 function customSort(
     a: Record<string, string>,
@@ -135,54 +136,82 @@ export default function SugarList(props) {
         setData(results);
     }, [props]);
 
+    const tooltipRef = useRef<TooltipRefProps>(null);
+
+    const tooltipContent: string =
+        `A “spherical” coordinate system is used to describe six-membered rings, where the total puckering amplitude of the ring, Q, is defined, as well as <br> 
+    the distortion-type which is specified by two angles, phi and theta: <br><br>
+    Radius, Q: describes the overall distortion or shape of the puckered ring, <br>
+    measuring the deviation from a perfectly flat six-membered ring (Q = 0). This is calculated using out-of-plane deviations of puckered rings using the <br>
+     z-coordinates of the ring atoms relative to a mean plane cutting through the ring. <br><br>
+    Azimuthal angle, theta: describes the orientation of the puckering plane around the rings circumference. This parameter indicates the direction <br>
+    in which the puckering occurs along the ring, providing information about the spatial distribution of the distortion.<br><br>
+    Meridian angle, phi: describes the orientation of the out-of-plane puckering with respect to the rings mean plane. This provides information about <br>
+     the directionality of the puckering, indicating whether the distortion of the ring is primarily upward or downward with respect to the mean plane.`;
+
     return (
         <div className="flex flex-col mx-auto p-16">
-            <span className="text-xl mb-2">
+            <Tooltip id="sugarListToolTip" ref={tooltipRef} place={'right'} />
+
+            <div className="flex items-center align-content-center">
+            <span className="text-xl mb-2"
+                 >
                 Detailed monosaccharide validation data
             </span>
-
+            <svg
+                id="snfg_icon"
+                data-tooltip-id="sugarListToolTip"
+                data-tooltip-html={tooltipContent}
+                className="ml-2 mb-2 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+            >
+                <path
+                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+            </svg>
+            </div>
             <Styles>
                 <table {...getTableBodyProps()}>
                     <thead>
-                        {headerGroups.map((headerGroup) => (
-                            <tr
-                                {...headerGroup.getHeaderGroupProps()}
-                                key={headerGroup.name}
-                            >
-                                {headerGroup.headers.map((column) => (
-                                    <th
-                                        {...column.getHeaderProps()}
-                                        key={column.name}
-                                    >
-                                        {column.render('Header')}
-                                    </th>
-                                ))}
-                            </tr>
-                        ))}
+                    {headerGroups.map((headerGroup) => (
+                        <tr
+                            {...headerGroup.getHeaderGroupProps()}
+                            key={headerGroup.name}
+                        >
+                            {headerGroup.headers.map((column) => (
+                                <th
+                                    {...column.getHeaderProps()}
+                                    key={column.name}
+                                >
+                                    {column.render('Header')}
+                                </th>
+                            ))}
+                        </tr>
+                    ))}
                     </thead>
                     <tbody {...getTableBodyProps()}>
-                        {rows.map((row) => {
-                            prepareRow(row);
-                            return (
-                                <tr
-                                    {...row.getRowProps()}
-                                    title="Click to visualise."
-                                    id="row"
-                                    key={row.name}
-                                >
-                                    {row.cells.map((cell) => {
-                                        return (
-                                            <td
-                                                {...cell.getCellProps()}
-                                                key={cell.name}
-                                            >
-                                                {cell.render('Cell')}
-                                            </td>
-                                        );
-                                    })}
-                                </tr>
-                            );
-                        })}
+                    {rows.map((row) => {
+                        prepareRow(row);
+                        return (
+                            <tr
+                                {...row.getRowProps()}
+                                title="Click to visualise."
+                                id="row"
+                                key={row.name}
+                            >
+                                {row.cells.map((cell) => {
+                                    return (
+                                        <td
+                                            {...cell.getCellProps()}
+                                            key={cell.name}
+                                        >
+                                            {cell.render('Cell')}
+                                        </td>
+                                    );
+                                })}
+                            </tr>
+                        );
+                    })}
                     </tbody>
                 </table>
             </Styles>
