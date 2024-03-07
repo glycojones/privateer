@@ -13,7 +13,7 @@ import resource
 def find_pdb_path(pdb_code: str) -> str:
 
     # gzipped_pdb = f"/vault/pdb_mirror/data/structures/all/pdb/pdb{pdb_code}.ent.gz"
-    unzipped_pdb = f"/vault/pdb-redo/{pdb_code[1:3]}/{pdb_code}/{pdb_code}_final.pdb"
+    unzipped_pdb = f"/vault/pdb-redo/{pdb_code[1:3]}/{pdb_code}/{pdb_code}_final.cif"
 
     if os.path.exists(unzipped_pdb):
         return unzipped_pdb
@@ -62,13 +62,12 @@ def worker(pdb_code):
     pdbpath = find_pdb_path(pdb_code)
     mtzpath = find_mtz_path(pdb_code)
 
-
     middlefix = pdb_code.lower()[1:3]
     base_dir = f"/vault/privateer_database/pdbredo/{middlefix}"
 
     output = f"{base_dir}/{pdb_code.lower()}.json"
     try: 
-        subprocess.run(["python", "database/calculate.py", "-pdbpath", pdbpath, "-mtzpath", mtzpath, "-basedir", base_dir, "-output", output]
+        subprocess.run(["python", "/y/people/jsd523/dev/privateer/database/calculate.py", "-pdbpath", pdbpath, "-mtzpath", mtzpath, "-basedir", base_dir, "-output", output]
             ,timeout=180,
             stdout=subprocess.DEVNULL,
             preexec_fn=limit_virtual_memory
@@ -82,8 +81,7 @@ def main():
     pdb_vault_dir = "/vault/pdb-redo"
     pdb_list = get_pdb_list(pdb_vault_dir)
 
-
-    with Pool(100) as pool_:
+    with Pool(128) as pool_:
         x = list(tqdm(pool_.imap_unordered(worker, pdb_list), total=len(pdb_list)))
  
 

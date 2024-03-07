@@ -5,15 +5,16 @@ import json
 import argparse 
 
 def main(args): 
-    
+
     if not os.path.exists(args.pdb): 
-        raise FileNotFoundError(f"Can't find a PDB path")
-    
+        raise FileNotFoundError(f"Can't find PDB path",args.pdb)
+    # 
     try:
-        
+
         if args.mtz:
             if os.path.exists(args.mtz):
                 glycosylation = pvt.GlycosylationComposition(args.pdb, args.mtz, "FP,SIGFP")
+
         elif args.map and args.mapres:        
             if os.path.exists(args.map):
                 glycosylation = pvt.GlycosylationComposition(args.pdb, path_to_mrc_file=args.map, resolution=float(args.mapres), nThreads=4, debug_output=False)
@@ -21,7 +22,18 @@ def main(args):
             glycosylation = pvt.GlycosylationComposition(args.pdb)
 
     except Exception as pe:
-        raise RuntimeError(f"Error in Privater call {pe}")
+        # raise RuntimeError(f"Error in Privater call {pe}")
+        pdb_equivalent = f'/vault/tmp_extracted_pdbs/pdb{args.pdb.split("/")[-1].rstrip(".mmcif")}.ent'
+        if args.mtz:
+            if os.path.exists(args.mtz):
+                glycosylation = pvt.GlycosylationComposition(pdb_equivalent, args.mtz, "FP,SIGFP")
+
+        elif args.map and args.mapres:        
+            if os.path.exists(args.map):
+                glycosylation = pvt.GlycosylationComposition(pdb_equivalent, path_to_mrc_file=args.map, resolution=float(args.mapres), nThreads=4, debug_output=False)
+        else:
+            glycosylation = pvt.GlycosylationComposition(pdb_equivalent)
+        # return
 
     
     # if os.path.exists(args.output):
@@ -43,6 +55,7 @@ def main(args):
     }
 
     number_of_glycans = glycosylation.get_number_of_glycan_chains_detected()
+    ts = pvt.OfflineTorsionsDatabase()
 
     for glycanNo in range(number_of_glycans):
         glycan = glycosylation.get_glycan(glycanNo)
@@ -51,6 +64,13 @@ def main(args):
         glycosylation_type = glycan.get_glycosylation_type()
         wurcs = glycan.get_wurcs_notation()
         root_info = glycan.get_root_info()
+
+        chain_id = glycan.get_root_sugar_chain_id();
+        torsion_summary = glycan.get_torsions_collection()
+        linkages = {}
+        for torsion in torsion_summary:
+            linkage = torsion["second_residue"] + "-" + torsion["acceptor_atom"][-1] + "," + torsion["donor_atom"][-1] + "-" +  torsion["first_residue"]
+            linkages.setdefault(linkage, []).append(torsion)
 
         snfg_data = glycan.get_SNFG_strings()
         snfg = snfg_data["SNFG"]
@@ -100,6 +120,7 @@ def main(args):
             "wurcs": wurcs, 
             "snfg": snfg, 
             "sugars": sugars,
+            "linkages": linkages
         }
 
         if glycosylation_type in glycans:
@@ -108,6 +129,7 @@ def main(args):
     data["metadata"] = metadata
     data["glycans"] = glycans
 
+
     if not any(
         [glycans["n-glycan"], glycans["ligand"], glycans["o-glycan"], glycans["c-glycan"], glycans["s-glycan"]]
     ):
@@ -115,8 +137,9 @@ def main(args):
 
     if not os.path.isdir(args.basedir):
         os.makedirs(args.basedir, exist_ok=True)
-        
+    
     with open(args.output, 'w') as fout:
+
         fout.write(json.dumps(data))
 
 

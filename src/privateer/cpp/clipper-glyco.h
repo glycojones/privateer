@@ -582,6 +582,17 @@ namespace clipper
                 std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
             };
 
+            struct MGlycanTorsion { 
+                clipper::String first_residue_name; 
+                clipper::String second_residue_name;
+                float psi; 
+                float phi; 
+                std::string donor_atom; 
+                std::string acceptor_atom; 
+                int first_seqid; 
+                int second_seqid; 
+            };
+
             class Node;
 
             class Linkage
@@ -834,6 +845,8 @@ namespace clipper
             bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom, bool noncircular, privateer::json::GlobalTorsionZScore& torsions_zscore_database ); // true if there's been any problem
             void add_torsions_for_detected_linkages(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom, int first_residue_seqnum, int second_residue_seqnum);
             std::vector<MGlycanTorsionSummary> return_torsion_summary_within_glycan() { return all_torsions_within_mglycan; };
+            std::vector<MGlycanTorsion> return_torsion_collection() { return torsion_collection; };
+
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
             const clipper::String& get_type () const { return kind_of_glycan; } // n-glycan, o-glycan, s-glycan, c-glycan, p-glycan or ligand
             // std::string get_root_by_name () const { return get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
@@ -943,6 +956,8 @@ namespace clipper
             clipper::ftype torsion_psi, torsion_phi;        // Torsions of the protein-glycan link
             std::string root_annotation, link_annotation, expression_system;
             std::vector<MGlycanTorsionSummary> all_torsions_within_mglycan;
+            std::vector<MGlycanTorsion> torsion_collection;
+
             float protein_sugar_linkage_zscore = 42069;    // crappy hack implemented only for ASN-NAG linkage. For anyone who is going to be working on this
                                                             // in near future, consider modifying clipper::MGlycan::Linkage class to also be associated
                                                             // with amino acid - sugar linkages, rather than sugar - sugar linkages.

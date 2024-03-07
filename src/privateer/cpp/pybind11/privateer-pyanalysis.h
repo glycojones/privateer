@@ -251,6 +251,7 @@ namespace privateer {
 
         pybind11::dict query_glycomics_database( OfflineGlycomicsDatabase& importedDatabase, bool returnClosestMatches, bool returnAllPossiblePermutations, int nThreads );
         pybind11::list get_torsions_summary(OfflineTorsionsDatabase& importedDatabase);
+          pybind11::list get_torsions_collection();
         pybind11::list get_torsions_per_linkage_summary();
 
         pybind11::float_ calculate_total_zscore(OfflineTorsionsZScoreDatabase& importedDatabase);

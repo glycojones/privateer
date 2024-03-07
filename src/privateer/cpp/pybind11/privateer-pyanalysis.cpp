@@ -2196,11 +2196,35 @@ pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_summary(Offl
                 }
 
                 std::string root_string = glycan.get_root_for_filename();
-                auto current_pair_dict = pybind11::dict("first_residue"_a = std::string(current_torsion.first_residue_name), "second_residue"_a = std::string(current_torsion.second_residue_name), "first_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].first), "second_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].second), "root_descr"_a = root_string, "detected_torsions"_a = glycan_torsions, "database_phi"_a = database_phi, "database_psi"_a = database_psi);
+                auto current_pair_dict = pybind11::dict("first_residue"_a = std::string(current_torsion.first_residue_name), "second_residue"_a = std::string(current_torsion.second_residue_name), "first_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].first), "second_number"_a = std::string(current_torsion.linkage_descriptors[linkage_number].second), "root_descr"_a = root_string, "detected_torsions"_a = glycan_torsions);
                 output.append(current_pair_dict);
             }
         }
     }
+    return output;
+}
+
+pybind11::list privateer::pyanalysis::GlycanStructure::get_torsions_collection()
+{
+    std::vector<clipper::MGlycan::MGlycanTorsion> torsion_summary_of_glycan = glycan.return_torsion_collection();
+
+    auto output = pybind11::list();
+
+    for (int i = 0; i < torsion_summary_of_glycan.size(); i++)
+    {
+        clipper::MGlycan::MGlycanTorsion current_torsion = torsion_summary_of_glycan[i];
+        auto current_pair_dict = pybind11::dict("first_residue"_a = std::string(current_torsion.first_residue_name), 
+                                                "second_residue"_a = std::string(current_torsion.second_residue_name), 
+                                                "donor_atom"_a = std::string(current_torsion.donor_atom), 
+                                                "acceptor_atom"_a = std::string(current_torsion.acceptor_atom), 
+                                                "first_seqid"_a =  std::to_string(current_torsion.first_seqid),
+                                                "second_seqid"_a = std::to_string(current_torsion.second_seqid),
+                                                "phi"_a = current_torsion.phi,
+                                                "psi"_a = current_torsion.psi);
+        output.append(current_pair_dict);
+        }
+
+    
     return output;
 }
 
@@ -4832,6 +4856,8 @@ void init_pyanalysis(py::module &m)
              py::arg("importedDatabase"), py::arg("returnClosestMatches") = true, py::arg("returnAllPossiblePermutations") = false, py::arg("nThreads") = -1)
 
         .def("get_torsions_summary", &pa::GlycanStructure::get_torsions_summary)
+        .def("get_torsions_collection", &pa::GlycanStructure::get_torsions_collection)
+
         .def("get_torsions_per_linkage_summary", &pa::GlycanStructure::get_torsions_per_linkage_summary)
 
         .def("calculate_total_zscore", &pa::GlycanStructure::calculate_total_zscore)

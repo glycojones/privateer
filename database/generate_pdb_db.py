@@ -13,8 +13,8 @@ import resource
 
 def find_pdb_path(pdb_code: str) -> str:
 
-    gzipped_pdb = f"/vault/pdb_mirror/data/structures/all/pdb/pdb{pdb_code}.ent.gz"
-    unzipped_pdb = f"/vault/tmp_extracted_pdbs/pdb{pdb_code}.ent"
+    gzipped_pdb = f"/vault/pdb_mirror/data/structures/all/mmCIF/{pdb_code}.cif.gz"
+    unzipped_pdb = f"/vault/tmp_extracted_mmcif/{pdb_code}.mmcif"
 
     if os.path.exists(unzipped_pdb):
         return unzipped_pdb
@@ -82,7 +82,7 @@ def find_map_path(em_code: str) -> Optional[str]:
     return output_path_ungz
 
 def get_pdb_list(pdb_vault_dir: str): 
-    return [x[3:-7] for x in os.listdir(pdb_vault_dir)]
+    return [x[:4] for x in os.listdir(pdb_vault_dir)]
 
 
 def limit_virtual_memory():
@@ -140,7 +140,7 @@ def worker(pdb_code):
 
     output = f"{base_dir}/{pdb_code.lower()}.json"
     try: 
-        cmd = ["python", "database/calculate.py", "-pdbpath", pdbpath, "-mtzpath", mtzpath, "-basedir", base_dir, "-output", output]
+        cmd = ["python", "/y/people/jsd523/dev/privateer/database/calculate.py", "-pdbpath", pdbpath, "-mtzpath", mtzpath, "-basedir", base_dir, "-output", output]
         subprocess.run(cmd
             ,timeout=180,
             stdout=subprocess.DEVNULL,
@@ -152,11 +152,12 @@ def worker(pdb_code):
         return
 
 def main(): 
-    pdb_vault_dir = "/vault/pdb_mirror/data/structures/all/pdb/"
+    pdb_vault_dir = "/vault/pdb_mirror/data/structures/all/mmCIF/"
     pdb_list = get_pdb_list(pdb_vault_dir)
 
+    # worker("6plh")
 
-    with Pool(100) as pool_:
+    with Pool(128) as pool_:
         x = list(tqdm(pool_.imap_unordered(worker, pdb_list), total=len(pdb_list)))
  
 

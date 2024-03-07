@@ -11,14 +11,14 @@ echo Running job on host:
 echo -e '\t'`hostname` at `date`
 echo
  
-source pyenv/bin/activate
-source ccp4.envsetup-sh 
+source /y/people/jsd523/dev/privateer/pyenv/bin/activate
+source /y/people/jsd523/dev/privateer/ccp4.envsetup-sh 
 curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB Run Started - `date`'}"
-python database/generate_pdb_db.py 
+python /y/people/jsd523/dev/privateer/database/generate_pdb_db.py > /y/people/jsd523/dev/privateer/pdb_run.log &> /y/people/jsd523/dev/privateer/pdb_run_err.log
 curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB Run Completed - `date`'}"
 
 curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB-REDO Run Started - `date`'}"
-python database/generate_pdbredo_db.py     
+python /y/people/jsd523/dev/privateer/database/generate_pdbredo_db.py  > /y/people/jsd523/dev/privateer/pdb-redo_run.log     
 curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB-REDO Run Completed - `date`'}"
   
 curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'Updating Database Repository - `date`'}"
@@ -33,6 +33,7 @@ curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIz
 cd /vault/privateer_database_analysis
 python database_analysis.py
 python validation_errors.py 
+python find_types.py 
 mv *.json /vault/privateer_database/stats
 cd /vault/privateer_database
 
