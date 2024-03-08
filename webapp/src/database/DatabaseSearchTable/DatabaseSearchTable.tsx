@@ -132,6 +132,10 @@ function Table({ data }: { data: any }) {
             accessorKey: 'pdb',
         },
         {
+            header: 'Linkage',
+            accessorKey: 'linkage',
+        },
+        {
             header: 'Count',
             accessorKey: 'count',
         },

@@ -219,25 +219,51 @@ function FilterZone(props: { setSearchBegin: any }) {
             formattedType = "ligand"
 
         }
-        url += linkage.replace(',', '%2C');
+        if (linkage === "Any") {
+            url += "any";
+        } else {
+            url += linkage.replace(',', '%2C')
+        }
         url += '.json';
 
         void fetch(url)
             .then(async (response) => await response.json())
             .then((json) => {
-                const formattedData: Record<string, string | number> = json.map(
-                    (item) => {
-                        return {
-                            pdb: item.pdb,
-                            count: item.count,
-                            resolution: item.resolution,
-                            type: formattedType,
-                            link:
-                                'https://privateer.york.ac.uk/database?pdb=' +
-                                item.pdb,
-                        };
-                    }
-                );
+                let formattedData;
+                if (linkage === "Any") {
+                    formattedData = Object.keys(json).flatMap(
+                        (item) => {
+                            return json[item].map((element) => {
+                                return {
+                                    pdb: element.pdb,
+                                    count: element.count,
+                                    resolution: element.resolution,
+                                    linkage: item,
+                                    type: formattedType,
+                                    link:
+                                        'https://privateer.york.ac.uk/database?pdb=' +
+                                        element.pdb,
+                                };
+                            })
+                        }
+                    );
+                }
+                else {
+                    formattedData = json.map(
+                        (item) => {
+                            return {
+                                pdb: item.pdb,
+                                count: item.count,
+                                resolution: item.resolution,
+                                linkage: linkage,
+                                type: formattedType,
+                                link:
+                                    'https://privateer.york.ac.uk/database?pdb=' +
+                                    item.pdb,
+                            };
+                        }
+                    );
+                }
                 setData(formattedData);
             })
             .catch(() => {});
