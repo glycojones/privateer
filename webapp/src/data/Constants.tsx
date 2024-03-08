@@ -224,9 +224,9 @@ export const binDB = {
     'MAN-1,2-MAN': { start: -180, end: 180, size: 4 },
 };
 
-export const sugarLinkageMap = {
+export const sugarLinkageMap: Record<string, string[]> = {
     'N-glycans': [
-        "Any",
+        'Any',
         'NAG-1,2-ASN',
         'NAG-1,4-NAG',
         'BMA-1,4-NAG',
@@ -446,7 +446,7 @@ export const sugarLinkageMap = {
         'BMA-1,6-ARG',
     ],
     'C-glycans': [
-        "Any",
+        'Any',
         'MAN-1,1-TRP',
         'BMA-1,1-TRP',
         'GAL-1,1-TRP',
@@ -457,7 +457,7 @@ export const sugarLinkageMap = {
         'NAG-4,1-NAG',
     ],
     'O-glycans': [
-        "Any",
+        'Any',
         'MAN-1,G-SER',
         'MAN-1,1-THR',
         'A2G-1,1-THR',
@@ -641,7 +641,7 @@ export const sugarLinkageMap = {
         'MUB-1,2-GLU',
     ],
     'S-glycans': [
-        "Any",
+        'Any',
         'NAG-1,G-CYS',
         'KDO-2,G-CYS',
         'BGC-1,G-CYS',
@@ -649,8 +649,8 @@ export const sugarLinkageMap = {
         'A2G-1,G-CYS',
         'MAN-1,2-MAN',
     ],
-    'Ligands': [
-        "Any",
+    Ligands: [
+        'Any',
         'NAG-1,2-ASN',
         'NAG-1,4-NAG',
         'NAG-1,4-BMA',

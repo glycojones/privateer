@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import DatabaseSearchTable from '../DatabaseSearchTable/DatabaseSearchTable.tsx';
 import Loading from '../../shared/Loading/Loading.tsx';
-import {sugarLinkageMap} from "../../data/Constants.tsx"
+import { sugarLinkageMap } from '../../data/Constants.tsx';
 function ViewAllEntriesButton(props: {
     text: string;
     label: any;
@@ -161,14 +161,13 @@ function LinkageFilterBox(props: {
 
 function FilterZone(props: { setSearchBegin: any }) {
     const [search, setSearch] = useState<boolean>(false);
-    const [linkage, setLinkage] = useState<string>('NAG-1,2-ASN');
+    const [linkage, setLinkage] = useState<string>('Any');
     const [type, setType] = useState<string>('N-glycans');
     const [text, setText] = useState<string>('');
 
     useEffect(() => {
-        setLinkage(sugarLinkageMap[type][0])
-    }, [type])
-
+        setLinkage(sugarLinkageMap[type][0]);
+    }, [type]);
 
     useEffect(() => {
         let textString = 'Find';
@@ -192,77 +191,68 @@ function FilterZone(props: { setSearchBegin: any }) {
         if (!search) {
             return;
         }
-        let formattedType = ""
+        let formattedType = '';
         let url =
             'https://raw.githubusercontent.com/Dialpuri/PrivateerDatabase/master/linkages/';
         if (type === 'N-glycans') {
             url += 'n-glycan/';
-            formattedType = "n-glycan"
+            formattedType = 'n-glycan';
         }
         if (type === 'O-glycans') {
             url += 'o-glycan/';
-            formattedType = "o-glycan"
-
+            formattedType = 'o-glycan';
         }
         if (type === 'S-glycans') {
             url += 's-glycan/';
-            formattedType = "s-glycan"
-
+            formattedType = 's-glycan';
         }
         if (type === 'C-glycans') {
             url += 'c-glycan/';
-            formattedType = "c-glycan"
-
+            formattedType = 'c-glycan';
         }
         if (type === 'Ligands') {
             url += 'ligand/';
-            formattedType = "ligand"
-
+            formattedType = 'ligand';
         }
-        if (linkage === "Any") {
-            url += "any";
+        if (linkage === 'Any') {
+            url += 'any';
         } else {
-            url += linkage.replace(',', '%2C')
+            url += linkage.replace(',', '%2C');
         }
         url += '.json';
 
         void fetch(url)
             .then(async (response) => await response.json())
-            .then((json) => {
-                let formattedData;
-                if (linkage === "Any") {
-                    formattedData = Object.keys(json).flatMap(
-                        (item) => {
-                            return json[item].map((element) => {
-                                return {
-                                    pdb: element.pdb,
-                                    count: element.count,
-                                    resolution: element.resolution,
-                                    linkage: item,
-                                    type: formattedType,
-                                    link:
-                                        'https://privateer.york.ac.uk/database?pdb=' +
-                                        element.pdb,
-                                };
-                            })
-                        }
-                    );
-                }
-                else {
-                    formattedData = json.map(
-                        (item) => {
+            .then((json: Record<any, any>) => {
+                let formattedData: Record<string, any>;
+                if (linkage === 'Any') {
+                    formattedData = Object.keys(json).flatMap((item) => {
+                        return json[item].map((element) => {
                             return {
-                                pdb: item.pdb,
-                                count: item.count,
-                                resolution: item.resolution,
-                                linkage: linkage,
+                                pdb: element.pdb,
+                                count: element.count,
+                                resolution: element.resolution,
+                                linkage: item,
                                 type: formattedType,
                                 link:
                                     'https://privateer.york.ac.uk/database?pdb=' +
-                                    item.pdb,
+                                    element.pdb,
                             };
-                        }
-                    );
+                        });
+                    });
+                } else {
+                    formattedData = json.map((item) => {
+                        return {
+                            pdb: item.pdb,
+                            count: item.count,
+                            resolution: item.resolution,
+                            linkage,
+                            type: formattedType,
+                            link:
+                                'https://privateer.york.ac.uk/database?pdb=' +
+                                item.pdb,
+                        };
+                    });
                 }
                 setData(formattedData);
             })
