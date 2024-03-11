@@ -192,7 +192,6 @@ export default function SugarList(props) {
                             return (
                                 <tr
                                     {...row.getRowProps()}
-                                    title="Click to visualise."
                                     id="row"
                                     key={row.name}
                                 >

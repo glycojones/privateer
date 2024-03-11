@@ -53,7 +53,7 @@ export default function CremerPopleGraph(props: any) {
             marker: {
                 size: 8,
                 color: 'blue',
-                symbol: ['o'],
+                symbol: 'o',
             },
             name: 'No Issues',
         });
@@ -67,7 +67,7 @@ export default function CremerPopleGraph(props: any) {
             marker: {
                 size: 8,
                 color: 'red',
-                symbol: ['o'],
+                symbol: 'x',
             },
             name: 'Issues',
         });
@@ -89,9 +89,7 @@ export default function CremerPopleGraph(props: any) {
                         y: 0.5,
                         bgcolor: 'rgba(0,0,0,0)',
                         borderwidth: 0.2,
-                        bordercolor: "gray"
-
-
+                        bordercolor: 'gray',
                     },
                     width: 500,
                     height: 400,

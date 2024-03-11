@@ -36,7 +36,7 @@ export default function DatabaseResult(props: DatabaseResultProps) {
     return (
         <>
             {selectedData !== undefined ? (
-                <div className="flex flex-col space-y-6">
+                <div className="flex w-full flex-col space-y-6">
                     <h2 className="text-center">
                         Validation Report - {props.PDBCode}
                         {props.pdbRedoResults !== '' ? toggleSwitch() : <></>}

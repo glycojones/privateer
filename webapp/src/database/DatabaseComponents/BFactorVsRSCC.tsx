@@ -42,7 +42,7 @@ export default function BFactorVsRSCC(props) {
             marker: {
                 size: 1,
                 color: 'rgba(173,181,189,0.5)',
-                symbol: ['o'],
+                symbol: 'x',
             },
         });
 
@@ -55,8 +55,8 @@ export default function BFactorVsRSCC(props) {
             type: 'scatter',
             marker: {
                 size: 8,
-                color: 'green',
-                symbol: ['o'],
+                color: 'blue',
+                symbol: 'o',
             },
         });
     }, [props]);

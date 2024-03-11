@@ -139,46 +139,102 @@ export const DatabaseColumns = [
     },
 ];
 
+function extracted(props, accessor) {
+    const typeValue = props.row.original[accessor];
+    const diagnostic = props.row.original.diagnostic;
+
+    const colour = diagnostic === "yes" ? "text-red-600" : (diagnostic === "check" ? "text-yellow-600": "")
+    return (
+        <span
+            className={colour}>
+            {typeValue}
+        </span>
+    );
+}
+
 export const SugarListColumns = [
     {
         Header: 'Sugar ID',
         accessor: 'sugarId',
+        Cell: (props) => extracted(props, 'sugarId'),
+    },
+    {
+        Header: 'Conformation',
+        accessor: 'conformation',
+        Cell: (props: {
+            row: { original: { conformation: any; diagnostic: any } };
+        }) => {
+            const typeValue = props.row.original.conformation;
+            const diagnostic = props.row.original.diagnostic;
+            const colour = diagnostic === "yes" ? "text-red-400" : (diagnostic === "check" ? "text-yellow-600": "")
+
+            const regex = /([a-zA-Z]*?\d*)([a-zA-Z])(\d*)/;
+            const formattedString = typeValue.replace(
+                regex,
+                (_, before, letter, after) => {
+                    let string = '';
+                    if (before) {
+                        string += '<sup>' + before + '</sup>';
+                    }
+                    string += letter;
+                    if (after) {
+                        string += '<sub>' + after + '</sub>';
+                    }
+                    return string;
+                }
+            );
+            return (
+                <div
+                    className={colour}
+                    dangerouslySetInnerHTML={{ __html: formattedString }}
+                ></div>
+            );
+        },
     },
     {
         Header: 'Q',
         accessor: 'q',
+        Cell: (props) => extracted(props, 'q'),
     },
     {
         Header: 'Phi',
         accessor: 'phi',
+        Cell: (props) => extracted(props, 'phi'),
     },
     {
         Header: 'Theta',
         accessor: 'theta',
+        Cell: (props) => extracted(props, 'theta'),
     },
+
     {
         Header: 'RSCC',
         accessor: 'rscc',
+        Cell: (props) => extracted(props, 'rscc'),
     },
     {
         Header: 'B Factor',
         accessor: 'bFactor',
+        Cell: (props) => extracted(props, 'bFactor'),
     },
     {
         Header: 'Detected Type',
         accessor: 'detectedType',
+        Cell: (props) => extracted(props, 'detectedType'),
     },
-    {
-        Header: 'mFo',
-        accessor: 'mFo',
-    },
+    // {
+    //     Header: 'mFo',
+    //     accessor: 'mFo',
+    // },
     {
         Header: 'Type',
         accessor: 'type',
+        Cell: (props) => extracted(props, 'type'),
     },
     {
         Header: 'Diagnostic',
         accessor: 'diagnostic',
+        Cell: (props) => extracted(props, 'diagnostic'),
     },
 ];
 

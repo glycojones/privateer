@@ -18,7 +18,7 @@ export function DatabaseHeader(props: DatabaseHeaderProps): ReactElement {
     return (
         <div className="bg-gray text-primary">
             <NavBar />
-            <div className="flex justify-center mb-6">
+            <div className="flex w-full justify-center mb-6">
                 {!props.fallback ? (
                     <Suspense
                         fallback={
