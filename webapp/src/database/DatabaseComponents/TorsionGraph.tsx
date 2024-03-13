@@ -83,7 +83,7 @@ export default function TorsionGraph(data) {
 
     return (
         <div className="flex flex-col w-full align-content-center">
-            {torsions !== undefined ? (
+            {torsions[Object.keys(torsions)[glycanTab]] !== undefined ? (
                 <>
                     <span className="text-xl">Linkage Torsion Analysis</span>
                     <div className="flex justify-center items-center ">
@@ -108,7 +108,16 @@ export default function TorsionGraph(data) {
                     />
                 </>
             ) : (
-                <></>
+                <>
+
+                        <span className="text-xl">Linkage Torsion Analysis</span>
+                        <div className="flex justify-center items-center text-center ">
+                        <span className="text-lg mt-8 mb-6 text-center">
+                            <b>There are no linkages detected in this model.</b>
+                        </span>
+
+                        </div>
+                        </>
             )}
         </div>
     );
