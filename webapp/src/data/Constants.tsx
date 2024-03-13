@@ -141,7 +141,7 @@ export const DatabaseColumns = [
 
 
 function getColour(diagnostic) {
-    return diagnostic !== "yes" ? "text-red-400" : (diagnostic === "check" ? "text-yellow-600" : "")
+    return diagnostic !== "yes" ? "text-red-600" : (diagnostic === "check" ? "text-yellow-600" : "")
 }
 
 
