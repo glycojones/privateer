@@ -70,7 +70,7 @@ export default function TorsionGraph(data) {
 
         Object.keys(torsionList)
             .sort()
-            .forEach(function (k, v) {
+            .forEach(function (k, _) {
                 sortedTorsionList[k] = torsionList[k];
             });
 
