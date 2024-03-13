@@ -29,7 +29,7 @@ function TorsionGraphTabs(props): React.JSX.Element[] {
 }
 
 export default function TorsionGraph(data) {
-    const [torsions, setTorsions] = useState();
+    const [torsions, setTorsions] = useState<Record<any, any> | undefined>();
     const [torsionTab, setTorsionTab] = useState(0);
     const [glycanTab, setGlycanTab] = useState<number>(0);
 
@@ -74,7 +74,11 @@ export default function TorsionGraph(data) {
                 sortedTorsionList[k] = torsionList[k];
             });
 
-        setTorsions(sortedTorsionList);
+        if (Object.keys(sortedTorsionList).length === 0) {
+            setTorsions(undefined);
+        } else {
+            setTorsions(sortedTorsionList);
+        }
     }, [data]);
 
     useEffect(() => {
@@ -83,7 +87,7 @@ export default function TorsionGraph(data) {
 
     return (
         <div className="flex flex-col w-full align-content-center">
-            {torsions[Object.keys(torsions)[glycanTab]] !== undefined ? (
+            {torsions !== undefined ? (
                 <>
                     <span className="text-xl">Linkage Torsion Analysis</span>
                     <div className="flex justify-center items-center ">
@@ -109,15 +113,13 @@ export default function TorsionGraph(data) {
                 </>
             ) : (
                 <>
-
-                        <span className="text-xl">Linkage Torsion Analysis</span>
-                        <div className="flex justify-center items-center text-center ">
+                    <span className="text-xl">Linkage Torsion Analysis</span>
+                    <div className="flex justify-center items-center text-center ">
                         <span className="text-lg mt-8 mb-6 text-center">
                             <b>There are no linkages detected in this model.</b>
                         </span>
-
-                        </div>
-                        </>
+                    </div>
+                </>
             )}
         </div>
     );

@@ -134,11 +134,12 @@ export default function TorsionMultiPlot({
 
     useEffect(() => {
         setTab(0);
-        console.log(torsions)
     }, []);
 
     useEffect(() => {
-        if (torsions === undefined) {return}
+        if (torsions === undefined) {
+            return;
+        }
         const [linkageArray_, sortedLinkageArray_] = sortTorsions(torsions);
         setLinkageArray(linkageArray_);
         setSortedLinkageArray(sortedLinkageArray_);
