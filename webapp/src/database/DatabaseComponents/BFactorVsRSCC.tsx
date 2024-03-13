@@ -2,7 +2,9 @@ import React, { useEffect, useState, lazy } from 'react';
 
 const Plot = lazy(async () => await import('react-plotly.js'));
 
-function calculatePoints(data): [number[], number[], string[], number[], number[], string[]] {
+function calculatePoints(
+    data
+): [number[], number[], string[], number[], number[], string[]] {
     const glycans = data.data.glycans;
 
     const xAxis: number[] = [];
@@ -40,10 +42,10 @@ export default function BFactorVsRSCC(props) {
     const [badTrace, setBadTrace] = useState({});
 
     useEffect(() => {
-        const [xAxis, yAxis, text, errorXAxis, errorYAxis, errorText] = calculatePoints(props);
+        const [xAxis, yAxis, text, errorXAxis, errorYAxis, errorText] =
+            calculatePoints(props);
 
         const maxX = Math.max(Math.max(...xAxis), Math.max(...errorXAxis)) + 5;
-        console.log(errorXAxis, xAxis)
         setCorrTrace({
             x: [0, maxX],
             y: [0.7, 0.7],
@@ -73,7 +75,6 @@ export default function BFactorVsRSCC(props) {
                 symbol: 'o',
             },
             name: 'No Issues',
-
         });
 
         setBadTrace({
