@@ -19,6 +19,11 @@ export default function TorsionPlot({
     const [linkageFound, setLinkageFound] = useState(false);
 
     useEffect(() => {
+
+        if (sortedTorsionList === undefined) {
+            return;
+        }
+
         fetch(linkageDB[linkageType])
             .then(async (response) => await response.text())
             .then((text) => {
@@ -60,6 +65,7 @@ export default function TorsionPlot({
             .catch((error) => {
                 console.error(error);
                 setLinkageFound(false);
+                return
             });
 
         const overlayPhi: number[] = [];
