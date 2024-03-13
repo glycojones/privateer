@@ -139,11 +139,17 @@ export const DatabaseColumns = [
     },
 ];
 
+
+function getColour(diagnostic) {
+    return diagnostic !== "yes" ? "text-red-400" : (diagnostic === "check" ? "text-yellow-600" : "")
+}
+
+
 function extracted(props, accessor) {
     const typeValue = props.row.original[accessor];
     const diagnostic = props.row.original.diagnostic;
 
-    const colour = diagnostic === "yes" ? "text-red-600" : (diagnostic === "check" ? "text-yellow-600": "")
+    const colour = getColour(diagnostic)
     return (
         <span
             className={colour}>
@@ -166,7 +172,7 @@ export const SugarListColumns = [
         }) => {
             const typeValue = props.row.original.conformation;
             const diagnostic = props.row.original.diagnostic;
-            const colour = diagnostic === "yes" ? "text-red-400" : (diagnostic === "check" ? "text-yellow-600": "")
+            const colour = getColour(diagnostic)
 
             const regex = /([a-zA-Z]*?\d*)([a-zA-Z])(\d*)/;
             const formattedString = typeValue.replace(
