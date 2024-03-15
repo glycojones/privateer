@@ -20,8 +20,8 @@ export default function Database(props: {
     const [resetApp, setResetApp] = useState<boolean>(false);
     const [fallback, setFallBack] = useState<boolean>(false);
     const [failureText, setFailureText] = useState<string>('');
-    const [pdbResults, setPDBResults] = useState<string>('');
-    const [pdbRedoResults, setPDBRedoResults] = useState<string>('');
+    const [pdbResults, setPDBResults] = useState<string | any>('');
+    const [pdbRedoResults, setPDBRedoResults] = useState<string | any>('');
 
     // const [failure, setFailure] = useState<boolean>(false);
 
@@ -33,9 +33,12 @@ export default function Database(props: {
 
         try {
             const response = await fetch(pdbUrl);
-            const data: string = await response.json();
-            setPDBResults(data);
-        } catch {
+            const text = await response.text();
+            const replacedText = text.replace(/\bNaN\b/g, 'null');
+            const result = JSON.parse(replacedText);
+            // const data: string = await response.json();
+            setPDBResults(result);
+        } catch (e) {
             setFallBack(true);
             setFailureText('This PDB is not in the database');
         }
@@ -44,9 +47,12 @@ export default function Database(props: {
 
         try {
             const response = await fetch(pdbRedoUrl);
-            const redoData: string = await response.json();
-            setPDBRedoResults(redoData);
+            const text = await response.text();
+            const replacedText = text.replace(/\bNaN\b/g, 'null');
+            const result = JSON.parse(replacedText);
+            setPDBRedoResults(result);
         } catch {
+            console.log('PDB REDO Failed');
             // setFallBack(true);
             // setFailureText('This PDB is not in the database');
         }
@@ -73,7 +79,7 @@ export default function Database(props: {
         setPDBCode('');
         setPDBResults('');
         setPDBRedoResults('');
-        props.setSearchParams({});
+        // props.setSearchParams({});
     }, [resetApp]);
 
     useEffect(() => {

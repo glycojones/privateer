@@ -140,7 +140,6 @@ export default function SNFGList(props) {
                             return (
                                 <tr
                                     {...row.getRowProps()}
-                                    title="Click to visualise."
                                     id="row"
                                     key={row.name}
                                 >

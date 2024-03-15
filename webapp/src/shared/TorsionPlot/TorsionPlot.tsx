@@ -1,24 +1,33 @@
 import React, { useEffect, useState, lazy, type ReactElement } from 'react';
 
-import { linkageDB, binDB } from '../../../data/Constants.tsx';
+import { linkageDB, binDB } from '../../data/Constants.tsx';
 const Plot = lazy(async () => await import('react-plotly.js'));
 
 export default function TorsionPlot({
     linkageType,
     sortedTorsionList,
     size,
+    background,
 }: {
     linkageType: string;
     sortedTorsionList: any;
     size: any;
+    background: string;
 }): ReactElement {
     const [trace, setTrace] = useState({});
     const [overlay, setOverlay] = useState({});
     const [linkageFound, setLinkageFound] = useState(false);
 
     useEffect(() => {
+        if (sortedTorsionList === undefined) {
+            return;
+        }
+
         fetch(linkageDB[linkageType])
-            .then(async (response) => await response.json())
+            .then(async (response) => await response.text())
+            .then((text) => {
+                return JSON.parse(text.replace(/\bNaN\b/g, 'null'));
+            })
             .then((responseJson) => {
                 const xData: number[] = [];
                 const yData: number[] = [];
@@ -64,7 +73,6 @@ export default function TorsionPlot({
             overlayPhi.push(sortedTorsionList[linkageType][i].phi as number);
             overlayPsi.push(sortedTorsionList[linkageType][i].psi as number);
         }
-
         setOverlay({
             x: overlayPhi,
             y: overlayPsi,
@@ -76,7 +84,7 @@ export default function TorsionPlot({
                 symbol: ['x'],
             },
         });
-    }, [linkageType]);
+    }, [linkageType, sortedTorsionList]);
 
     return !linkageFound ? (
         <h3>
@@ -91,7 +99,8 @@ export default function TorsionPlot({
                 height: size,
                 title: linkageType,
                 plot_bgcolor: '#FFFFFF',
-                paper_bgcolor: '#D6D9E5',
+                // paper_bgcolor: ,
+                paper_bgcolor: background,
                 yaxis: {
                     title: {
                         text: 'ψ / °',

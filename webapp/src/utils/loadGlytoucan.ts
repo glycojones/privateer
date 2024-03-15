@@ -53,13 +53,18 @@ export async function loadGlytoucanFromFile(
 
     tableData.forEach((data, index) => {
         const glycomicsResult = glycomicsData[data.wurcs];
-
-        // Neaten up NotFound -> Not Found
-        if (glycomicsResult.GlyConnect === 'NotFound') {
-            glycomicsResult.GlyConnect = 'Not Found';
+        if (!glycomicsResult) {
+            return;
         }
 
-        tableData[index].glytoucan_id = glycomicsResult.GlyToucan;
-        tableData[index].glyconnect_id = glycomicsResult.GlyConnect;
+        // Neaten up NotFound -> Not Found
+        if (glycomicsResult.hasOwnProperty('GlyConnect')) {
+            if (glycomicsResult.GlyConnect === 'NotFound') {
+                glycomicsResult.GlyConnect = 'Not Found';
+            }
+
+            tableData[index].glytoucan_id = glycomicsResult.GlyToucan;
+            tableData[index].glyconnect_id = glycomicsResult.GlyConnect;
+        }
     });
 }

@@ -52,8 +52,8 @@ export default function CremerPopleGraph(props: any) {
             type: 'scatter',
             marker: {
                 size: 8,
-                color: 'green',
-                symbol: ['o'],
+                color: 'blue',
+                symbol: 'o',
             },
             name: 'No Issues',
         });
@@ -67,7 +67,7 @@ export default function CremerPopleGraph(props: any) {
             marker: {
                 size: 8,
                 color: 'red',
-                symbol: ['o'],
+                symbol: 'x',
             },
             name: 'Issues',
         });
@@ -82,7 +82,15 @@ export default function CremerPopleGraph(props: any) {
             <Plot
                 data={[trace, badTrace]}
                 layout={{
-                    showlegend: false,
+                    showlegend: true,
+                    legend: {
+                        x: 1,
+                        xanchor: 'right',
+                        y: 0.5,
+                        bgcolor: 'rgba(0,0,0,0)',
+                        borderwidth: 0.2,
+                        bordercolor: 'gray',
+                    },
                     width: 500,
                     height: 400,
                     title: '',
@@ -95,7 +103,6 @@ export default function CremerPopleGraph(props: any) {
                         t: 10,
                         pad: 4,
                     },
-
                     yaxis: {
                         title: {
                             text: 'Theta / °',
