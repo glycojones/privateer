@@ -1,17 +1,17 @@
 ---
 name: Database - Entry Issue
 about: Create a report to help us improve the Privateer Database
-title: "[DATABASE]"
+title: "[Database]"
 labels: database
 assignees: ''
 
 ---
 
-** PDB ID ** 
+**PDB ID** 
 1234
 
-** Database ** 
+**Database** 
 PDB or PDB-REDO
 
-** Describe the issue ** 
+**Describe the issue** 
 Please describe the issue with this entry in as much detail as possible.
