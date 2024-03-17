@@ -46,12 +46,12 @@ export default function TorsionGraph(data) {
                 for (const linkage in linkages) {
                     for (let j = 0; j < linkages[linkage].length; j++) {
                         const data = {
-                            sugar_1: linkages[linkage][j].first_residue,
-                            sugar_2: linkages[linkage][j].second_residue,
+                            sugar_1: linkages[linkage][j].firstResidue,
+                            sugar_2: linkages[linkage][j].secondResidue,
                             atom_number_1:
-                                linkages[linkage][j].donor_atom.slice(-1),
+                                linkages[linkage][j].donorAtom.slice(-1),
                             atom_number_2:
-                                linkages[linkage][j].acceptor_atom.slice(-1),
+                                linkages[linkage][j].acceptorAtom.slice(-1),
                             phi: linkages[linkage][j].phi,
                             psi: linkages[linkage][j].psi,
                         };
