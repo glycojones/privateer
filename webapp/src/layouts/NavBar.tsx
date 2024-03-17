@@ -92,7 +92,7 @@ export default function NavBar(): ReactElement {
                     </a>
                 </div>
                 <div className="h-12 w-12 mx-auto my-4 sm:w-12 sm:mt-12 sm:mr-12 flex items-center ">
-                    <a id="github" href={GITHUB_REPO}>
+                    <a id="github" href={GITHUB_REPO} target="_blank">
                         <img
                             className="w-full hover:scale-125 transition-all hidden dark:block"
                             src="/github-mark.png"

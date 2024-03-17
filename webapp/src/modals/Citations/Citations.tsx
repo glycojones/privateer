@@ -72,7 +72,7 @@ export default function CitationModal(props: {
                         McNicholas, S. J. & Agirre, J. (2024). Online
                         carbohydrate 3D structure validation with the Privateer
                         web app. Acta Cryst. F80.
-                        https://doi.org/10.1107/S2053230X24000359
+                        <p><a href="https://doi.org/10.1107/S2053230X24000359" target="_blank">https://doi.org/10.1107/S2053230X24000359</a></p>
                     </strong>
                 </div>
 
