@@ -4,6 +4,8 @@ export default function Footer(): ReactElement {
         <footer className="bg-gray w-full mt-auto">
             <div className="w-full mx-auto max-w-screen-xl p-4 flex items-center justify-center">
                 <span className="text-sm text-primary text-center justify-center dark:text-gray-400">
+                    <p>Spotted an issue? Please email us or <a href="https://github.com/glycojones/privateer/issues/new/choose" target='_blank' > submit a GitHub issue </a>
+                    </p>
                     York Structural Biology Laboratory
                     <br />
                     © 2023-2024 University of York. All Rights Reserved.
