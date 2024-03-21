@@ -308,6 +308,21 @@ namespace privateer
             sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
             ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
 
+            // FLAG: The bond_angle funtion is written exclusively for C-mannosylation of TRP at the moment. Long term it would be good to figure out equivalent for other glycans so these parameters can be added to the sugar back bone instructions
+            if(linked_type == "c-linked" && residue_name == "TRP")
+            {
+                double targetAngleInPlaneA = 131;    // Target angle from the adjacent bond in the protein ring (CG)  FLAG: This should be added to backbone instructions when done testing
+                double targetAngleInPlaneB = 118;    // Target angle from the adjacent bond in the protein ring  (NE1) FLAG: This should be added to backbone instructions when done testing
+                double targetAngleToPlane = 90;      // Target angle from the plane of the protein ring          FLAG: This should be added to backbone instructions when done testing
+                clipper::MAtom protein_vector_point_charlie = input_protein_side_chain_residue.find("NE1", search_policy); //                                             
+                std::vector<std::pair<clipper::MAtom, std::string>> bondAngleAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_charlie, "protein") };
+                rotate_mglycan_until_bond_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, bondAngleAtoms, targetAngleToPlane, targetAngleInPlaneA, targetAngleInPlaneB, debug_output);
+                // Update the coordinates of C1 and O1, get O5 coords from the glycan.
+                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
+                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
+                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+            }
+
             clipper::MiniMol tmp_clash_model = export_model;
             tmp_clash_model.insert(converted_mglycan);
             std::vector<std::pair<clipper::MAtom, clipper::MAtom>> unflipped_clashes_with_target_amino_acid = check_for_clashes_in_glycosidic_linkage(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
@@ -329,13 +344,6 @@ namespace privateer
             ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
             
 
-            // FLAG: The bond_angle funtion is written exclusively for C-mannosylation of TRP at the moment so probably want an if statement around it. Long term could try and write equivalent for N-glycans.
-            double targetAngleInPlaneA = 131;    // Target angle from the adjacent bond in the protein ring (CG)  FLAG: This should be added to backbone instructions when done testing
-            double targetAngleInPlaneB = 118;    // Target angle from the adjacent bond in the protein ring  (NE1) FLAG: This should be added to backbone instructions when done testing
-            double targetAngleToPlane = 90;      // Target angle from the plane of the protein ring          FLAG: This should be added to backbone instructions when done testing
-            clipper::MAtom protein_vector_point_charlie = input_protein_side_chain_residue.find("NE1", search_policy); //                                             //FLAG: This should be added to backbone instructions when done testing
-            std::vector<std::pair<clipper::MAtom, std::string>> bondAngleAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_charlie, "protein") };
-            rotate_mglycan_until_bond_angle_fulfilled(converted_mglycan, input_protein_side_chain_residue, bondAngleAtoms, targetAngleToPlane, targetAngleInPlaneA, targetAngleInPlaneB, debug_output);
             double currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
             std::vector<std::pair<clipper::MAtom, std::string>> psiTorsionAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_bravo, "protein") };
             
