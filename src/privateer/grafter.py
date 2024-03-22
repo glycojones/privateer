@@ -220,8 +220,8 @@ def _get_NGlycosylation_targets_via_consensus_seq(sequences):
     return output
 
 def _get_CMannosylation_targets_via_consensus_seq(sequences):
-    CMannosylationConsensus = "[W][A-Z][A-Z][W]" #This needs to change as it is currently finding the wrong targets
-    CMannosylationConsensus = "[W]" #This needs to change as it is currently finding the wrong targets
+    #CMannosylationConsensus = "[W][A-Z][A-Z][W]" #This needs to change as it is currently missing some targets
+    CMannosylationConsensus = "[W]" #This needs to change as it is currently finding too many targets
     output = []
     for item in sequences:
         currentChainIndex = item["index"]
@@ -254,12 +254,14 @@ def _glycosylate_receiving_model_using_consensus_seq(
     glycosylationTargets,
     enableUserMessages,
     trimGlycanIfClashesDetected,
+    removeGlycanIfClashesDetected,
 ):
     builder = pvtmodelling.Builder(
         receiverpath,
         donorpath,
         -1, # nThreads
         trimGlycanIfClashesDetected,
+        removeGlycanIfClashesDetected,
         True, # ANY_search_policy
         enableUserMessages,
         True, # debug_output = True or False
@@ -376,14 +378,16 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
     else:
         if mode == 'CMannosylation':
             targets = _get_CMannosylation_targets_via_consensus_seq(sequences)
+            removeclashes = True
         elif mode == 'NGlycosylation':
             targets = _get_NGlycosylation_targets_via_consensus_seq(sequences)
+            removeclashes = False
         else:
             raise ValueError(
                 "Mode of operation not yet supported. Only CMannosylation and NGlycosylation are currently supported"
             )
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
-            receiverpath, donorpath, outputpath, targets, True, False)
+            receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
         _print_grafted_glycans_summary(graftedGlycans)
 
 

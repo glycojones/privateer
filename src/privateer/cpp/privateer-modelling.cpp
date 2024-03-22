@@ -43,7 +43,7 @@ namespace privateer
         };
         const int sugar_instructions_size = sizeof( sugar_instructions ) / sizeof( sugar_instructions[0] );
     
-        Grafter::Grafter(clipper::MiniMol receiving_model, clipper::MiniMol donor_model, int nThreads, bool trim_donor_when_clashes_detected, bool enable_user_messages, bool debug_output)
+        Grafter::Grafter(clipper::MiniMol receiving_model, clipper::MiniMol donor_model, int nThreads, bool trim_donor_when_clashes_detected, bool remove_donor_when_clashes_detected, bool enable_user_messages, bool debug_output)
         {
             this->nThreads = nThreads;
             int detectedThreads = std::thread::hardware_concurrency();
@@ -70,6 +70,7 @@ namespace privateer
             this->receiving_model = receiving_model;
             this->export_model = receiving_model;
             this->trim_donor_when_clashes_detected = trim_donor_when_clashes_detected;
+            this->remove_donor_when_clashes_detected = remove_donor_when_clashes_detected;
             clipper::MGlycology donor_model_mgl = clipper::MGlycology(donor_model, false, "undefined");
             std::vector<clipper::MGlycan> list_of_glycans_from_donor = donor_model_mgl.get_list_of_glycans();
 
@@ -479,6 +480,18 @@ namespace privateer
                     clipper::MiniMol clash_free = trim_graft_until_no_clashes_left(export_model, converted_mglycan, std::make_pair(input_protein_side_chain_residue, root_chain_id), chainID, clashes_after_grafting);
                     export_model = clash_free;
                 }
+
+                if(remove_donor_when_clashes_detected)
+                {
+                    std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes_after_grafting = check_for_clashes_outside_glycosidic_linkage(export_model, converted_mglycan, input_protein_side_chain_residue, root_chain_id, chainID);
+                    if(clashes_after_grafting.size() > 0)
+                    {
+                        if(debug_output)
+                            DBG << "Deleting grafts which produce clashes!" << std::endl;
+                        clipper::MiniMol clash_free = remove_graft(export_model, converted_mglycan, std::make_pair(input_protein_side_chain_residue, root_chain_id), chainID);
+                        export_model = clash_free;
+                    }
+                }
                     
                 if(enable_user_messages && !debug_output)
                     std::cout << "Glycan has been grafted!" << std::endl;
@@ -505,6 +518,18 @@ namespace privateer
                     std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes_after_grafting = check_for_clashes_outside_glycosidic_linkage(export_model, converted_mglycan, input_protein_side_chain_residue, root_chain_id, chainID);
                     clipper::MiniMol clash_free = trim_graft_until_no_clashes_left(export_model, converted_mglycan, std::make_pair(input_protein_side_chain_residue, root_chain_id), chainID, clashes_after_grafting);
                     export_model = clash_free;
+                }
+
+                if(remove_donor_when_clashes_detected)
+                {
+                    std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes_after_grafting = check_for_clashes_outside_glycosidic_linkage(export_model, converted_mglycan, input_protein_side_chain_residue, root_chain_id, chainID);
+                    if(clashes_after_grafting.size() > 0)
+                    {
+                        if(debug_output)
+                            DBG << "Deleting grafts which produce clashes!" << std::endl;
+                        clipper::MiniMol clash_free = remove_graft(export_model, converted_mglycan, std::make_pair(input_protein_side_chain_residue, root_chain_id), chainID);
+                        export_model = clash_free;
+                    }
                 }
                 
                 if(enable_user_messages && !debug_output)
@@ -1464,6 +1489,54 @@ namespace privateer
                 }
             }
             
+            return output_model;
+        }
+
+        clipper::MiniMol Grafter::remove_graft(clipper::MiniMol& current_model, clipper::MPolymer& grafted_glycan, std::pair<clipper::MMonomer, clipper::String> root_residue, clipper::String graft_chain_id)
+        {
+
+            clipper::MGlycology mgl = clipper::MGlycology(current_model, false, "undefined");
+            std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
+            clipper::MiniMol tmp_model = current_model;
+            clipper::String current_chainID = graft_chain_id.trim();
+            clipper::MPolymer chain_to_be_modified = tmp_model.find(current_chainID, clipper::MM::UNIQUE);
+            
+            int deleted_sugars = 0;
+            for(int monomer = 0; monomer < chain_to_be_modified.size(); monomer++)
+            {
+                        chain_to_be_modified[monomer].set_type("~~~");
+                        deleted_sugars +=1;
+            }
+
+            clipper::MiniMol output_model(tmp_model.spacegroup(), tmp_model.cell());
+            for(int chain = 0; chain < tmp_model.size(); chain++)
+            {
+                clipper::MPolymer exportChain;
+                exportChain.set_id(tmp_model[chain].id().trim());
+                if(current_chainID == exportChain.id().trim())
+                {
+                    for(int residue = 0; residue < chain_to_be_modified.size(); residue++)
+                    {
+                        if(chain_to_be_modified[residue].type().trim() != "~~~")
+                        {
+                            exportChain.insert(chain_to_be_modified[residue]);
+                        }
+                    }
+                }
+                else
+                {
+                    for(int residue = 0; residue < tmp_model[chain].size(); residue++)
+                    {
+                        exportChain.insert(tmp_model[chain][residue]);
+                    }
+                }
+                output_model.insert(exportChain);
+            }
+            std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes_after_removal = check_for_clashes_outside_glycosidic_linkage(output_model, grafted_glycan, root_residue.first, root_residue.second, graft_chain_id);
+            if(debug_output)
+            {
+                DBG << "Deleted " << deleted_sugars << " sugars in order to remove graft that resulted in clash on glycosidic linkage. Number of total clashes remaining: " << clashes_after_removal.size() << std::endl;
+            }
             return output_model;
         }
 
