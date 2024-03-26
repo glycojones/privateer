@@ -489,14 +489,30 @@ namespace privateer
                             DBG << "Deleting grafts which produce clashes!" << std::endl;
                         clipper::MiniMol clash_free = remove_graft(export_model, converted_mglycan, std::make_pair(input_protein_side_chain_residue, root_chain_id), chainID);
                         export_model = clash_free;
+
+                        if(enable_user_messages && !debug_output)
+                        std::cout << "Glycan has not been grafted due to clashes!" << std::endl;
+
+                        if(debug_output)
+                        DBG << "Glycan has not been grafted due to clashes!" << std::endl;
+                    }
+                    else
+                    {
+                        if(enable_user_messages && !debug_output)
+                        std::cout << "Glycan has been grafted!" << std::endl;
+                    
+                        if(debug_output)
+                        DBG << "Glycan has been grafted!" << std::endl;
                     }
                 }
+                else
+                {
+                    if(enable_user_messages && !debug_output)
+                        std::cout << "Glycan has been grafted!" << std::endl;
                     
-                if(enable_user_messages && !debug_output)
-                    std::cout << "Glycan has been grafted!" << std::endl;
-                
-                if(debug_output)
-                    DBG << "Glycan has been grafted!" << std::endl;
+                    if(debug_output)
+                        DBG << "Glycan has been grafted!" << std::endl;
+                }
 
             }
             else
@@ -528,14 +544,30 @@ namespace privateer
                             DBG << "Deleting grafts which produce clashes!" << std::endl;
                         clipper::MiniMol clash_free = remove_graft(export_model, converted_mglycan, std::make_pair(input_protein_side_chain_residue, root_chain_id), chainID);
                         export_model = clash_free;
+
+                        if(enable_user_messages && !debug_output)
+                        std::cout << "Glycan has not been grafted due to clashes!" << std::endl;
+
+                        if(debug_output)
+                        DBG << "Glycan has not been grafted due to clashes!" << std::endl;
+                    }
+                    else
+                    {
+                        if(enable_user_messages && !debug_output)
+                        std::cout << "Glycan has been grafted!" << std::endl;
+                    
+                        if(debug_output)
+                        DBG << "Glycan has been grafted!" << std::endl;
                     }
                 }
-                
-                if(enable_user_messages && !debug_output)
-                    std::cout << "Glycan has been grafted!" << std::endl;
-                
-                if(debug_output)
-                    DBG << "Glycan has been grafted!" << std::endl;
+                else
+                {
+                    if(enable_user_messages && !debug_output)
+                        std::cout << "Glycan has been grafted!" << std::endl;
+                    
+                    if(debug_output)
+                        DBG << "Glycan has been grafted!" << std::endl;
+                }
             }
         }
 
