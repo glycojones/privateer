@@ -30,8 +30,7 @@ namespace privateer
             { "HYP", "OD1", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "LYZ", "OH",  "CD", "CG", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "CYS", "SG",  "CB", "CA", -97.5, 178.0, 25.0, 25.0, "s-linked" }, //s-glycosylation
-            { "TRP", "CD1", "CG", "CB", 122.0, 0.0,  1.0,  1.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
-            //{ "TRP", "CD1", "CG", "CB", 130.3,  -0.5,  5.0,  5.0, "c-linked" }, //c-glycosylation - needs change, TRP mannosylation is more unique. 
+            { "TRP", "CD1", "CG", "CB", 122.0, 0.0,   25.0,  1.0, "c-linked" }, //c-glycosylation - could add secondary option of around -45.0 and 0.0
             { "SEP", "O2P", "P",  "OG", -97.5, 178.0, 25.0, 25.0, "p-linked" }  //p-glycosylation phosphpglycation on phosphoserine - no example on PDB nor on uniprot, yet.
         };
         const int backbone_instructions_size = sizeof( backbone_instructions ) / sizeof( backbone_instructions[0] );
@@ -1344,7 +1343,7 @@ namespace privateer
                 for(int atom = 0; atom < currentSugar.size(); atom++)
                 {
                     clipper::Coord_orth currentSugarAtomCoord = currentSugar[atom].coord_orth();
-                    std::vector<clipper::MAtomIndexSymmetry> neighbourhood_atoms = clashmanb( currentSugarAtomCoord, 2.5 );
+                    std::vector<clipper::MAtomIndexSymmetry> neighbourhood_atoms = clashmanb( currentSugarAtomCoord, 2.5 ); //FLAG: Changed from 2.5
 
                     for(int i = 0; i < neighbourhood_atoms.size(); i++)
                     {
@@ -1353,7 +1352,7 @@ namespace privateer
                         int detected_atom       = neighbourhood_atoms[i].atom();
                         
                         // Assume donor glycan has got no clashes between itself, ensure clashes are not detected between the sugars in donor glycan.
-                        if(input_model[detected_chain].id().trim() != root_sugar_chain_id && clipper::Coord_orth::length(currentSugarAtomCoord, input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) < 2.5)
+                        if(input_model[detected_chain].id().trim() != root_sugar_chain_id && clipper::Coord_orth::length(currentSugarAtomCoord, input_model[detected_chain][detected_monomer][detected_atom].coord_orth()) < 2.5) //FLAG: Changed from 2.5
                         {
                             auto previously_identified = std::find_if(std::begin(clashing_residues), std::end(clashing_residues),
                             [&](std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> >& element) {

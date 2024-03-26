@@ -264,7 +264,7 @@ def _glycosylate_receiving_model_using_consensus_seq(
         removeGlycanIfClashesDetected,
         True, # ANY_search_policy
         enableUserMessages,
-        True, # debug_output = True or False
+        False, # debug_output = True or False
     )
     for item in glycosylationTargets:
         chainIndex = item["chainIndex"]
@@ -294,7 +294,7 @@ def _glycosylate_receiving_model_using_uniprot_info(
         trimGlycanIfClashesDetected,
         True, #ANY_search_policy
         enableUserMessages,
-        True, #debug_output
+        False, #debug_output
     )
     for currentTarget in targets:
         chainIndex = 0
@@ -430,7 +430,7 @@ def glycosylate_receiving_model_using_manual_instructions(
         trimGlycanIfClashesDetected,
         True, #ANY_search_Policy
         enableUserMessages,
-        True, #debug_output
+        False, #debug_output
     )
 
     builder.graft_glycan_to_receiver(glycanIndex, receiverChainIndex,
@@ -512,7 +512,6 @@ if __name__ == "__main__":
     else:
         defaultOutputModelDirectory = "grafter_job" + "__" + dt_string
 
-    os.mkdir(defaultOutputModelDirectory)
     defaultuniprotIDsListPath = os.path.join(ROOTENV, "uniprotIDinputs.txt")
     defaultJSONgrafting = os.path.join(ROOTENV, "manual_grafting.json")
     defaultUniprotID = "P29016"
@@ -623,6 +622,10 @@ if __name__ == "__main__":
             )
     else:
         outputPath = defaultOutputModelDirectory
+
+    if os.path.isdir(outputPath) == False:
+        os.mkdir(outputPath)
+
     if args.user_inputModelDirectory is not None:
         inputModelDirectory = args.user_inputModelDirectory
     else:
