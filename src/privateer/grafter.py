@@ -264,7 +264,7 @@ def _glycosylate_receiving_model_using_consensus_seq(
         removeGlycanIfClashesDetected,
         True, # ANY_search_policy
         enableUserMessages,
-        False, # debug_output = True or False
+        True, # debug_output = True or False
     )
     for item in glycosylationTargets:
         chainIndex = item["chainIndex"]
@@ -312,13 +312,19 @@ def _print_grafted_glycans_summary(graftedGlycans):
         proteinPDBID = graft["receiving_protein_residue_monomer_PDBID"]
         proteinResidueType = graft["receiving_protein_residue_monomer_type"]
         graftedGlycanChainID = graft["glycan_grafted_as_chainID"]
+        graftStatus = graft["GraftStatus"]
 
         if len(graft["ClashingResidues"]):
             averageTotalAtomicDistance = graft["AvgTotalAtomicDistance"]
             numberOfClashingResidues = len(graft["ClashingResidues"])
-            print(
-                f"{idx+1}/{len(graftedGlycans)}: Grafted donor glycan as chain {graftedGlycanChainID} to {proteinChainID}/{proteinResidueType}-{proteinPDBID}. The graft has resulted in {numberOfClashingResidues} clashes with an average atomic distance of from detected clashing residues: {averageTotalAtomicDistance}."
-            )
+            if graftStatus:
+                print(
+                    f"{idx+1}/{len(graftedGlycans)}: Grafted donor glycan as chain {graftedGlycanChainID} to {proteinChainID}/{proteinResidueType}-{proteinPDBID}. The graft has resulted in {numberOfClashingResidues} clashes with an average atomic distance of from detected clashing residues: {averageTotalAtomicDistance}."
+                )
+            else:
+                print(
+                    f"{idx+1}/{len(graftedGlycans)}: Did not graft donor glycan to {proteinChainID}/{proteinResidueType}-{proteinPDBID} as the graft resulted in {numberOfClashingResidues} clashes with an average atomic distance of from detected clashing residues: {averageTotalAtomicDistance}."
+                )
         else:
             print(
                 f"{idx+1}/{len(graftedGlycans)}: Grafted donor glycan as chain {graftedGlycanChainID} to {proteinChainID}/{proteinResidueType}-{proteinPDBID}. The graft did not produce any clashes."
@@ -331,13 +337,16 @@ def _store_grafted_glycans_summary(graftedGlycans, index, totalCount):
         proteinPDBID = graft["receiving_protein_residue_monomer_PDBID"]
         proteinResidueType = graft["receiving_protein_residue_monomer_type"]
         graftedGlycanChainID = graft["glycan_grafted_as_chainID"]
+        graftStatus = graft["GraftStatus"]
 
         output = ""
         if len(graft["ClashingResidues"]):
             averageTotalAtomicDistance = graft["AvgTotalAtomicDistance"]
             numberOfClashingResidues = len(graft["ClashingResidues"])
-            output = f"{index+1}/{totalCount}: Grafted donor glycan as chain {graftedGlycanChainID} to {proteinChainID}/{proteinResidueType}-{proteinPDBID}. The graft has resulted in {numberOfClashingResidues} clashes with an average atomic distance of from detected clashing residues: {averageTotalAtomicDistance}."
-
+            if graftStatus:
+                output = f"{index+1}/{totalCount}: Grafted donor glycan as chain {graftedGlycanChainID} to {proteinChainID}/{proteinResidueType}-{proteinPDBID}. The graft has resulted in {numberOfClashingResidues} clashes with an average atomic distance of from detected clashing residues: {averageTotalAtomicDistance}."
+            else:
+                output = f"{index+1}/{totalCount}: Did not graft donor glycan to {proteinChainID}/{proteinResidueType}-{proteinPDBID} as the graft resulted in {numberOfClashingResidues} clashes with an average atomic distance of from detected clashing residues: {averageTotalAtomicDistance}."
         else:
             output = f"{index+1}/{totalCount}: Grafted donor glycan as chain {graftedGlycanChainID} to {proteinChainID}/{proteinResidueType}-{proteinPDBID}. The graft did not produce any clashes."
 
@@ -389,6 +398,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
             receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
         _print_grafted_glycans_summary(graftedGlycans)
+    return graftedGlycans
 
 
 # P27918 is a good test for TRP, as TRP is a bit more unique and requires different approach. C-mannosylation currently no worky.
@@ -411,6 +421,7 @@ def _online_input_model_pipeline(uniprotID, donorpath, defaultInputModelPath,
     graftedGlycans = _glycosylate_receiving_model_using_uniprot_info(
         receiverpath, donorpath, outputpath, targets, True, False)
     _print_grafted_glycans_summary(graftedGlycans)
+    return graftedGlycans
 
 
 def glycosylate_receiving_model_using_manual_instructions(
@@ -648,17 +659,17 @@ if __name__ == "__main__":
     if (args.user_localReceiverPath is not None and args.user_uniprotID is None
             and printInfo == False):
         uniprotID = None
-        _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
+        graftedGlycans = _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
                                     outputPath, uniprotID, mode)
     elif (args.user_localReceiverPath is not None
           and args.user_uniprotID is not None and printInfo == False):
-        _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
+        graftedGlycans = _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
                                     outputPath, uniprotID, mode)
     elif args.user_uniprotIDsList is not None and printInfo == False:
         uniprotIDList = _import_list_of_uniprotIDs_to_glycosylate(
             uniprotIDListPath)
         for idx, uniprotID in enumerate(uniprotIDList):
-            _online_input_model_pipeline(uniprotID, donorPath,
+            graftedGlycans = _online_input_model_pipeline(uniprotID, donorPath,
                                          inputModelDirectory, outputPath)
             print(
                 f"\n{idx+1}/{len(uniprotIDList)}: Successfully finished processing AlphaFoldDB model with UniProt ID of {uniprotID}.\n"
@@ -671,6 +682,7 @@ if __name__ == "__main__":
             "output_path"]
         glycosylations = JSONGraftInstructions["glycosylations"]
         graftedGlycansSummary = []
+        graftedGlycans = []
         for count, item in enumerate(glycosylations):
             donorPath = item["donor_path"]
             glycanIndex = item["glycan_index"]
@@ -695,6 +707,7 @@ if __name__ == "__main__":
                         False, -1))
                 messageString = _store_grafted_glycans_summary(
                     currentGraftedGlycanSummary, count, len(glycosylations))
+                graftedGlycans.append(currentGraftedGlycanSummary)
                 graftedGlycansSummary.append(messageString)
         print("\n")
         for message in graftedGlycansSummary:
@@ -709,9 +722,10 @@ if __name__ == "__main__":
                                            args.user_uniprotID)
     else:
         if printInfo == False:
-            _online_input_model_pipeline(uniprotID, donorPath,
+            graftedGlycans = _online_input_model_pipeline(uniprotID, donorPath,
                                          inputModelDirectory, outputPath)
         else:
             warnings.warn(
                 "-info flag was provided, overriding all arguments regarding grafting and printing info only. Please remove -info flag if you actually want to graft glycans."
             )
+    

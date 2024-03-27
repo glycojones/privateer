@@ -294,8 +294,12 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
 
         auto glycosidic_linkage_torsions = pybind11::dict("Phi"_a = graftedPhi, "Psi"_a=graftedPsi);
 
-        auto glycan_clash_dict = pybind11::dict("index"_a=summary_of_grafted_glycans.size(), "graftedGlycanWURCS"_a=graftedGlycanWURCS, "receiver_chain_index"_a=receiver_chain_index, "receiving_protein_residue_chain_PDBID"_a=proteinChainID, "receiver_residue_index"_a=received_residue_index, "receiving_protein_residue_monomer_PDBID"_a=receivermonomerID, "receiving_protein_residue_monomer_type"_a=receivermonomertype, "glycan_grafted_as_chainID"_a=grafted_glycan_chainID, "donor_glycan_root_PDBID"_a=rootSugarPDBID, "donor_glycan_root_type"_a=rootSugarType, "glycosidic_linkage_torsions"_a=glycosidic_linkage_torsions, "AvgTotalAtomicDistance"_a=currentAverageDistanceBetweenResidues, "ClashingResidues"_a=glycanClashes);
+        bool graftStatus = grafter.get_graft_status();
+        
+        auto glycan_clash_dict = pybind11::dict("index"_a=summary_of_grafted_glycans.size(), "graftedGlycanWURCS"_a=graftedGlycanWURCS, "receiver_chain_index"_a=receiver_chain_index, "receiving_protein_residue_chain_PDBID"_a=proteinChainID, "receiver_residue_index"_a=received_residue_index, "receiving_protein_residue_monomer_PDBID"_a=receivermonomerID, "receiving_protein_residue_monomer_type"_a=receivermonomertype, "glycan_grafted_as_chainID"_a=grafted_glycan_chainID, "donor_glycan_root_PDBID"_a=rootSugarPDBID, "donor_glycan_root_type"_a=rootSugarType, "glycosidic_linkage_torsions"_a=glycosidic_linkage_torsions, "AvgTotalAtomicDistance"_a=currentAverageDistanceBetweenResidues, "ClashingResidues"_a=glycanClashes, "GraftStatus"_a=graftStatus);
         summary_of_grafted_glycans.append(glycan_clash_dict);
+        
+
     }
     else
     {
@@ -312,8 +316,10 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
         float graftedPsi = grafter.getGraftedPsi();
 
         auto glycosidic_linkage_torsions = pybind11::dict("Phi"_a = graftedPhi, "Psi"_a=graftedPsi);
+
+        bool graftStatus = grafter.get_graft_status();
         
-        auto glycan_clash_dict = pybind11::dict("index"_a=summary_of_grafted_glycans.size(), "graftedGlycanWURCS"_a=graftedGlycanWURCS, "receiver_chain_index"_a=receiver_chain_index, "receiving_protein_residue_chain_PDBID"_a=proteinChainID, "receiver_residue_index"_a=received_residue_index, "receiving_protein_residue_monomer_PDBID"_a=receivermonomerID, "receiving_protein_residue_monomer_type"_a=receivermonomertype, "glycan_grafted_as_chainID"_a=grafted_glycan_chainID, "donor_glycan_root_PDBID"_a=rootSugarPDBID, "donor_glycan_root_type"_a=rootSugarType, "glycosidic_linkage_torsions"_a=glycosidic_linkage_torsions, "AvgTotalAtomicDistance"_a=pybind11::cast<pybind11::none>(Py_None), "ClashingResidues"_a=glycanClashes);
+        auto glycan_clash_dict = pybind11::dict("index"_a=summary_of_grafted_glycans.size(), "graftedGlycanWURCS"_a=graftedGlycanWURCS, "receiver_chain_index"_a=receiver_chain_index, "receiving_protein_residue_chain_PDBID"_a=proteinChainID, "receiver_residue_index"_a=received_residue_index, "receiving_protein_residue_monomer_PDBID"_a=receivermonomerID, "receiving_protein_residue_monomer_type"_a=receivermonomertype, "glycan_grafted_as_chainID"_a=grafted_glycan_chainID, "donor_glycan_root_PDBID"_a=rootSugarPDBID, "donor_glycan_root_type"_a=rootSugarType, "glycosidic_linkage_torsions"_a=glycosidic_linkage_torsions, "AvgTotalAtomicDistance"_a=pybind11::cast<pybind11::none>(Py_None), "ClashingResidues"_a=glycanClashes, "GraftStatus"_a=graftStatus);
         summary_of_grafted_glycans.append(glycan_clash_dict);
     }
     
