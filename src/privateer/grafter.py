@@ -6,6 +6,9 @@ import requests
 from datetime import datetime
 import warnings
 import json
+import pandas as pd
+import gemmi
+import numpy as np
 from privateer import privateer_core as pvtcore
 from privateer import privateer_modelling as pvtmodelling
 
@@ -220,7 +223,6 @@ def _get_NGlycosylation_targets_via_consensus_seq(sequences):
     return output
 
 def _get_CMannosylation_targets_via_consensus_seq(sequences):
-    #CMannosylationConsensus = "[W][A-Z][A-Z][W]" #This needs to change as it is currently missing some targets
     CMannosylationConsensus = "[W]" #This needs to change as it is currently finding too many targets
     output = []
     for item in sequences:
@@ -247,6 +249,77 @@ def _get_CMannosylation_targets_via_consensus_seq(sequences):
         })
     return output
 
+def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
+    avglength = 6.4118
+    threshold = 0.051
+    st = gemmi.read_structure(pdbfile)
+    mtz = gemmi.read_mtz_file(mtzfile)
+    grid = mtz.transform_f_phi_to_map('DELFWT', 'PHDELWT', sample_rate=2.0)
+    start = 1000 # arbitrary number
+
+    pointlist = []; residuelist = []; chainlist = []
+    if not os.path.exists(mtzfile):
+        raise ValueError("Selected to find mannosylation sited via blob search but no mtz file")
+    for model in st:
+        for chain in model:
+            for residue in chain:
+                # GET ESTIMATED CENTROID WITH AVERAGE TRANSLATION LENGTH ~ 6.411 Å
+                if (residue.name == 'TRP'):
+                    ce3,cd1 = None,None
+                    for atom in residue:
+                        if atom.name == 'CE3': 
+                            ce3 = atom.pos
+                        elif atom.name == 'CD1': 
+                            cd1 = atom.pos
+                    if ce3 != None and cd1 != None:
+                        vCED = cd1-ce3; norm = vCED.length(); uvCED = vCED/norm
+                        translatedCED = uvCED*avglength
+                        newpoint = translatedCED + ce3
+                        gr = grid.clone()
+                        gr.set_points_around(newpoint, radius=3, value=start)
+                        pointgroup = np.argwhere(gr.array == start) # return positions in symmetry ???
+
+                        # TRACE BACK ONTO ORIGINAL GRID --> SUM DENSITY VALUES
+                        values = []; checkscore = []
+                        for point in pointgroup:
+                            value = grid.get_value(point[0],point[1],point[2])
+                            values.append(value)
+                            if value > 0: 
+                                checkscore.append(1)
+                            else: 
+                                checkscore.append(0)
+                        avgdense = np.mean(values).round(3)
+                        if avgdense > threshold: 
+                            residuelist.append(residue.seqid.num)
+                            chainlist.append(chain.name)
+    CMannosylationConsensus = "[W]"
+    output = []
+    for item in sequences:
+        currentChainIndex = item["index"]
+        currentChainID = item["ChainID"]
+        currentSequence = item["Sequence"]
+
+        glycosylationTargets = []
+
+        for match in re.finditer(CMannosylationConsensus, currentSequence):
+            if (currentSequence[match.start()] == item["Residues"][match.start()]["residueCode"]):
+                for i in range(len(residuelist)):
+                    blob_chainID = chainlist[i]
+                    blob_resID = residuelist[i]
+                    if (item["Residues"][match.start()]["Seqnum"] == blob_resID) and (currentChainID == blob_chainID):
+                        glycosylationTargets.append({
+                            "start": match.start(),
+                            "end": match.end(),
+                            "match": match.group()
+                        })
+        output.append({
+            "Sequence": currentSequence,
+            "chainIndex": currentChainIndex,
+            "currentChainID": currentChainID,
+            "glycosylationTargets": glycosylationTargets,
+        })
+    return output
+
 def _glycosylate_receiving_model_using_consensus_seq(
     receiverpath,
     donorpath,
@@ -264,14 +337,17 @@ def _glycosylate_receiving_model_using_consensus_seq(
         removeGlycanIfClashesDetected,
         True, # ANY_search_policy
         enableUserMessages,
-        True, # debug_output = True or False
+        False, # debug_output = True or False
     )
     for item in glycosylationTargets:
         chainIndex = item["chainIndex"]
         targets = item["glycosylationTargets"]
         for target in targets:
             currentTargetIndex = target["start"]
-            builder.graft_glycan_to_receiver(0, chainIndex, currentTargetIndex)
+            try:
+                builder.graft_glycan_to_receiver(0, chainIndex, currentTargetIndex)
+            except:
+                print(f"Unknown exception while grafting to chain {chainIndex} target {currentTargetIndex}. Skipping graft.")
 
     graftedGlycanSummary = builder.get_summary_of_grafted_glycans()
     builder.export_grafted_model(outputpath)
@@ -357,6 +433,8 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
                                 uniprotID,mode):
 
     sequences = _get_sequences_in_receiving_model(receiverpath)
+    print(f"Local Receiver Model Sequence corresponding to file {receiverpath}")
+    print(sequences)
     if uniprotID is not None:
         outputFileName = uniprotID + ".pdb"
     else:
@@ -527,6 +605,7 @@ if __name__ == "__main__":
     defaultJSONgrafting = os.path.join(ROOTENV, "manual_grafting.json")
     defaultUniprotID = "P29016"
     defaultmode = "NGlycosylation"
+    defaultSaveSummary = False
 
     printInfo = False
 
@@ -614,6 +693,15 @@ if __name__ == "__main__":
         f"Specify the mode of operation for the grafter as either NGlycosylation or CMannosylation. If unspecified, the script will default to '{defaultmode}'",
     )
 
+    parser.add_argument(
+        "-save_summary",
+        action="store",
+        default=None,
+        dest="save_summary",
+        help=
+        f"Save glycan summary to a csv. If unspecified, the script will default to '{defaultSaveSummary}'",
+    )
+
     args = parser.parse_args()
 
     if args.user_uniprotID is not None:
@@ -655,6 +743,11 @@ if __name__ == "__main__":
         mode = args.user_mode
     else:
         mode = defaultmode
+    
+    if args.save_summary is not None:
+        SaveSummary = args.save_summary
+    else:
+        SaveSummary = defaultSaveSummary
 
     if (args.user_localReceiverPath is not None and args.user_uniprotID is None
             and printInfo == False):
@@ -728,4 +821,16 @@ if __name__ == "__main__":
             warnings.warn(
                 "-info flag was provided, overriding all arguments regarding grafting and printing info only. Please remove -info flag if you actually want to graft glycans."
             )
+    
+    if SaveSummary:
+        df = pd.DataFrame.from_dict(graftedGlycans)
+        if uniprotID is not None:
+            outputFileName = uniprotID + "_graft_summary.csv"
+        elif args.user_localReceiverPath is not None:
+            outputFileName = os.path.basename(args.user_localReceiverPath).rpartition(".")[0] + "_graft_summary.csv"
+        else:
+            outputFileName = "graft_summary.csv"
+        saveCSVto = os.path.join(outputPath, outputFileName)
+        df.to_csv(saveCSVto)
+
     

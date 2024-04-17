@@ -55,6 +55,7 @@ namespace privateer {
         };
 
 		extern const protein_sidechain_glycosylation backbone_instructions[];
+		extern const protein_sidechain_glycosylation backbone_instructions_alt[];
         extern const sugar_attachment sugar_instructions[];
 		extern const int backbone_instructions_size;
         extern const int sugar_instructions_size;
@@ -90,7 +91,6 @@ namespace privateer {
 				clipper::MiniMol get_model_with_trimmed_glycan(clipper::MiniMol& current_model, std::vector<std::pair<clipper::MMonomer, clipper::String>>& residues_to_delete);
 				std::vector<std::pair<clipper::MMonomer, clipper::String>> get_designated_residues_for_deletion(clipper::MGlycan& original_graft, clipper::MGlycan& trimmed_graft, clipper::String graft_chain_id);
 				
-				clipper::MiniMol remove_graft(clipper::MiniMol& current_model, std::pair<clipper::MMonomer, clipper::String> root_residue, clipper::String graft_chain_id);
 				clipper::MiniMol get_model_with_removed_glycan(clipper::MiniMol& current_model, std::vector<std::pair<clipper::MMonomer, clipper::String>>& residues_to_delete);
 			
 				bool check_if_residue_has_hydrogens(clipper::MMonomer residue_to_check);

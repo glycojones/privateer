@@ -33,6 +33,7 @@ namespace privateer {
 					std::string get_path_of_receiving_model_file_used ( ) { return path_to_receiving_model; };
 					std::string get_path_of_donor_model_file_used ( ) { return path_to_donor_model; };
 					std::string convert_three_letter_code_to_single_letter (std::string three_letter_code);
+					std::string convert_three_letter_code_to_single_letter_for_grafter (std::string three_letter_code);
 
 					pybind11::list get_receiving_model_sequence_info () { return imported_receiving_model_seq_info; };
 					pybind11::list get_glycan_summary_from_donor () { return glycan_summary_donor; };

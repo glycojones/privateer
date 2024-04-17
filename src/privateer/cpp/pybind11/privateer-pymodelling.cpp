@@ -52,6 +52,26 @@ std::string privateer::pymodelling::Builder::convert_three_letter_code_to_single
         return result->second;
 }
 
+std::string privateer::pymodelling::Builder::convert_three_letter_code_to_single_letter_for_grafter(std::string three_letter_code)
+{
+    std::unordered_map<std::string, std::string> code_conversion = 
+    {
+        {"ALA", "A"}, {"ARG", "R"}, {"ASN", "N"}, {"ASP", "D"},
+        {"CYS", "C"}, {"GLN", "Q"}, {"GLU", "E"}, {"GLY", "G"},
+        {"HIS", "H"}, {"ILE", "I"}, {"LEU", "L"}, {"LYS", "K"},
+        {"MET", "M"}, {"PHE", "F"}, {"PRO", "P"}, {"SER", "S"},
+        {"THR", "T"}, {"TRP", "W"}, {"TYR", "Y"}, {"VAL", "V"},
+        {"HYP", "P"}, {"LYZ", "K"}, {"SEP", "S"}
+    };
+
+    std::unordered_map<std::string, std::string>::const_iterator result = code_conversion.find(three_letter_code);
+
+    if ( result == code_conversion.end() )
+        return "_";
+    else
+        return result->second;
+}
+
 void privateer::pymodelling::Builder::import_receiving_model_only( std::string& path_to_receiving_model_file) {
 
     if(path_to_receiving_model_file == "undefined")
@@ -182,7 +202,7 @@ pybind11::list privateer::pymodelling::Builder::get_protein_sequence_information
         for(int j = 0; j < input[i].size(); j++)
         {
             std::string residueType = input[i][j].type().trim();
-            std::string residueCode = convert_three_letter_code_to_single_letter(residueType);
+            std::string residueCode = convert_three_letter_code_to_single_letter_for_grafter(residueType);
             if (j + 1 == input[i].size() && residueCode.back() == '_')
                 residueCode.pop_back();
             int residueSeqnum = input[i][j].seqnum();
