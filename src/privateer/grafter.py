@@ -306,7 +306,7 @@ def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
                 for i in range(len(residuelist)):
                     blob_chainID = chainlist[i]
                     blob_resID = residuelist[i]
-                    if (item["Residues"][match.start()]["Seqnum"] == blob_resID) and (currentChainID == blob_chainID):
+                    if (item["Residues"][match.start()]["residueSeqnum"] == blob_resID) and (currentChainID == blob_chainID):
                         glycosylationTargets.append({
                             "start": match.start(),
                             "end": match.end(),
@@ -430,7 +430,7 @@ def _store_grafted_glycans_summary(graftedGlycans, index, totalCount):
 
 
 def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
-                                uniprotID,mode):
+                                uniprotID, mode, mtzfile):
 
     sequences = _get_sequences_in_receiving_model(receiverpath)
     print(f"Local Receiver Model Sequence corresponding to file {receiverpath}")
@@ -462,6 +462,15 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
                 receiverpath, donorpath, outputpath, targets, True, False)
             _print_grafted_glycans_summary(graftedGlycans)
 
+    elif mtzfile is not None:
+        if mode == 'CMannosylation':
+            targets = _get_CMannosylation_targets_via_blob_search(receiverpath, mtzfile, sequences)
+            removeclashes = True
+        else:
+            raise ValueError("Mode of operation not yet supported. Only CMannosylation and has blob search functionality.")
+        graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
+            receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
+        _print_grafted_glycans_summary(graftedGlycans)
     else:
         if mode == 'CMannosylation':
             targets = _get_CMannosylation_targets_via_consensus_seq(sequences)
@@ -635,6 +644,14 @@ if __name__ == "__main__":
         f"Path to locally saved AlpfaFoldDB model on the computer. If -uniprotID is not provided, will carry out N-glycosylation according to regex consensus sequence of '[N][^P][ST]|[N][A-Z][C]'. The argument overrides default behaviour of downloading AlpfaFoldDB model from the server. WARNING: Ensure that \"MODEL 0\" line is deleted in the local file, as otherwise Privateer's MMBD dependency will not be able to import the model!",
     )
     parser.add_argument(
+        "-local_receiver_path_mtz",
+        action="store",
+        default=None,
+        dest="user_localReceiverPath_mtz",
+        help=
+        f"Path to locally saved mtz file on the computer. If provided will carry out mannosylation according to blob search. Overridden by -uniprotID as alphafold models don't have mtz data.",
+    )
+    parser.add_argument(
         "-donor_path",
         action="store",
         default=None,
@@ -753,11 +770,11 @@ if __name__ == "__main__":
             and printInfo == False):
         uniprotID = None
         graftedGlycans = _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
-                                    outputPath, uniprotID, mode)
+                                    outputPath, uniprotID, mode, args.user_localReceiverPath_mtz)
     elif (args.user_localReceiverPath is not None
           and args.user_uniprotID is not None and printInfo == False):
         graftedGlycans = _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
-                                    outputPath, uniprotID, mode)
+                                    outputPath, uniprotID, mode, args.user_localReceiverPath_mtz)
     elif args.user_uniprotIDsList is not None and printInfo == False:
         uniprotIDList = _import_list_of_uniprotIDs_to_glycosylate(
             uniprotIDListPath)
