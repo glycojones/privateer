@@ -280,14 +280,10 @@ def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
                         pointgroup = np.argwhere(gr.array == start) # return positions in symmetry ???
 
                         # TRACE BACK ONTO ORIGINAL GRID --> SUM DENSITY VALUES
-                        values = []; checkscore = []
+                        values = []
                         for point in pointgroup:
                             value = grid.get_value(point[0],point[1],point[2])
                             values.append(value)
-                            if value > 0: 
-                                checkscore.append(1)
-                            else: 
-                                checkscore.append(0)
                         avgdense = np.mean(values).round(3)
                         if avgdense > threshold: 
                             residuelist.append(residue.seqid.num)
@@ -319,6 +315,33 @@ def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
             "glycosylationTargets": glycosylationTargets,
         })
     return output
+def _make_connection_between_protein_and_glycan(filepath):
+    # At the moment, this only works for C-Mannosylation, but it should be easy enough to do for others.
+    st = gemmi.read_structure(filepath)
+    ns = gemmi.NeighborSearch(st[0], st.cell, 5).populate(include_h=False) 
+    for model in st:
+        for chain in model:
+            for residue in chain:
+                if residue.name == 'MAN':
+                    print(chain,residue)
+                    c1 = residue['C1'][0].pos
+                    marks = ns.find_atoms(c1, '\0', radius=5)
+                    for mark in marks:
+                        cra = mark.to_cra(st[0])
+                        if cra.residue.name == 'TRP' and cra.atom.name == 'CD1':
+                            print(cra)
+                            dist = (c1).dist(cra.atom.pos)
+                            if dist >= 2.0: continue
+                            con = gemmi.Connection()
+                            con.name = f'new_covale'
+                            con.type = gemmi.ConnectionType.Covale
+                            con.asu = gemmi.Asu.Same
+                            con.partner1 = gemmi.make_address(cra.chain, cra.residue, cra.residue.sole_atom('CD1'))
+                            con.partner2 = gemmi.make_address(chain, residue, residue.sole_atom('C1'))
+                            con.reported_distance = (c1).dist(cra.atom.pos)
+                            st.connections.append(con)
+                            #print(con)
+    st.write_pdb(filepath)
 
 def _glycosylate_receiving_model_using_consensus_seq(
     receiverpath,
@@ -438,7 +461,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
     if uniprotID is not None:
         outputFileName = uniprotID + ".pdb"
     else:
-        outputFileName = os.path.basename(receiverpath).rpartition('.')[0] + '_grafted.pdb'
+        outputFileName = os.path.basename(receiverpath).partition('.')[0] + '_grafted.pdb'
     outputpath = os.path.join(outputpath, outputFileName)
     if uniprotID is not None:
         uniprotQuery = _query_uniprot_for_glycosylation_locations(uniprotID)
@@ -485,6 +508,12 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
             receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
         _print_grafted_glycans_summary(graftedGlycans)
+    if len(graftedGlycans) == 0:
+        print("Deleting output PDB file as no grafts occurred.")
+        os.remove(outputFileName)
+    else:
+        if mode == 'CMannosylation':
+            _make_connection_between_protein_and_glycan(outputFileName)
     return graftedGlycans
 
 
