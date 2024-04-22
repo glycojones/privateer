@@ -323,13 +323,13 @@ def _make_connection_between_protein_and_glycan(filepath):
         for chain in model:
             for residue in chain:
                 if residue.name == 'MAN':
-                    print(chain,residue)
+                    #print(chain,residue)
                     c1 = residue['C1'][0].pos
                     marks = ns.find_atoms(c1, '\0', radius=5)
                     for mark in marks:
                         cra = mark.to_cra(st[0])
                         if cra.residue.name == 'TRP' and cra.atom.name == 'CD1':
-                            print(cra)
+                            #print(cra)
                             dist = (c1).dist(cra.atom.pos)
                             if dist >= 2.0: continue
                             con = gemmi.Connection()
