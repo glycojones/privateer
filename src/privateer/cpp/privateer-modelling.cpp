@@ -207,16 +207,13 @@ namespace privateer
                 used_chain_ids.push_back(currentChainID);
             }
             std::string tempchainid;
-            if(used_chain_ids.size() > 103)
+            if(used_chain_ids.size() > 51)
             {
-                char new_chain_id = chainids[used_chain_ids.size() - chainids.size()];
-                std::string temp(3, new_chain_id);
-                tempchainid = temp;
-            }
-            else if(used_chain_ids.size() > 51)
-            {
-                char new_chain_id = chainids[used_chain_ids.size() - chainids.size()];
-                std::string temp(2, new_chain_id);
+                int quotient = used_chain_ids.size() / 52;
+                int remainder = used_chain_ids.size() % 52;
+                char new_chain_id_a = chainids[quotient];
+                char new_chain_id_b = chainids[remainder];
+                std::string temp = std::string() + new_chain_id_a + new_chain_id_b;
                 tempchainid = temp;
             }
             else

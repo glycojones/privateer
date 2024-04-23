@@ -315,6 +315,7 @@ def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
             "glycosylationTargets": glycosylationTargets,
         })
     return output
+
 def _make_connection_between_protein_and_glycan(filepath):
     # At the moment, this only works for C-Mannosylation, but it should be easy enough to do for others.
     st = gemmi.read_structure(filepath)
@@ -331,7 +332,8 @@ def _make_connection_between_protein_and_glycan(filepath):
                         if cra.residue.name == 'TRP' and cra.atom.name == 'CD1':
                             #print(cra)
                             dist = (c1).dist(cra.atom.pos)
-                            if dist >= 2.0: continue
+                            if dist >= 2.0: 
+                                continue
                             con = gemmi.Connection()
                             con.name = f'new_covale'
                             con.type = gemmi.ConnectionType.Covale
@@ -457,7 +459,6 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
 
     sequences = _get_sequences_in_receiving_model(receiverpath)
     print(f"Local Receiver Model Sequence corresponding to file {receiverpath}")
-    print(sequences)
     if uniprotID is not None:
         outputFileName = uniprotID + ".pdb"
     else:
@@ -513,7 +514,10 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         os.remove(outputFileName)
     else:
         if mode == 'CMannosylation':
-            _make_connection_between_protein_and_glycan(outputFileName)
+            try:
+                _make_connection_between_protein_and_glycan(outputFileName)
+            except:
+                print(f"Failed to generate link between TRP-MAN for file {outputFileName}")
     return graftedGlycans
 
 
