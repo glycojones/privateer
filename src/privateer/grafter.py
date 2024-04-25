@@ -251,7 +251,8 @@ def _get_CMannosylation_targets_via_consensus_seq(sequences):
 
 def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
     avglength = 6.4118
-    threshold = 0.051
+    #threshold = 0.051
+    threshold = 0.08
     st = gemmi.read_structure(pdbfile)
     mtz = gemmi.read_mtz_file(mtzfile)
     grid = mtz.transform_f_phi_to_map('DELFWT', 'PHDELWT', sample_rate=2.0)
@@ -288,7 +289,7 @@ def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
                         if avgdense > threshold: 
                             residuelist.append(residue.seqid.num)
                             chainlist.append(chain.name)
-    CMannosylationConsensus = "[W]"
+    CMannosylationConsensus = "[W][X][X][W]"
     output = []
     for item in sequences:
         currentChainIndex = item["index"]
@@ -344,6 +345,15 @@ def _make_connection_between_protein_and_glycan(filepath):
                             st.connections.append(con)
                             #print(con)
     st.write_pdb(filepath)
+
+def _refine_grafted_glycans():
+    return
+
+def _diagnostic_check_grafted_glycans():
+    return
+
+def _remove_grafted_glycans():
+    return
 
 def _glycosylate_receiving_model_using_consensus_seq(
     receiverpath,
@@ -509,7 +519,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
             receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
         _print_grafted_glycans_summary(graftedGlycans)
-    if len(graftedGlycans) == 0:
+    if len(graftedGlycans) == 0 and os.path.isfile(outputFileName):
         print("Deleting output PDB file as no grafts occurred.")
         os.remove(outputFileName)
     else:

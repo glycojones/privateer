@@ -36,7 +36,7 @@ namespace privateer
         };
         const protein_sidechain_glycosylation backbone_instructions_alt[] =
         {
-            { "TRP", "CD1", "CG", "CB", -50.0, 0.0,   10.0, 10.0, "c-linked" }, //c-glycosylation - could add secondary option of around -45.0 and 0.0
+            { "TRP", "CD1", "CG", "CB", -50.0, 0.0,   1.0, 1.0, "c-linked" }, //c-glycosylation - could add secondary option of around -45.0 and 0.0
         };
         const int backbone_instructions_size = sizeof( backbone_instructions ) / sizeof( backbone_instructions[0] );
         const int backbone_instructions_alt_size = sizeof( backbone_instructions_alt ) / sizeof( backbone_instructions_alt[0] );
@@ -341,7 +341,7 @@ namespace privateer
                 sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
                 ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
             }
-
+            clipper::MPolymer bond_angle_mglycan = converted_mglycan;
             clipper::MiniMol tmp_clash_model = export_model;
             tmp_clash_model.insert(converted_mglycan);
             std::vector<std::pair<clipper::MAtom, clipper::MAtom>> unflipped_clashes_with_target_amino_acid = check_for_clashes_in_glycosidic_linkage(tmp_clash_model, converted_mglycan[0], input_protein_side_chain_residue, root_chain_id, chainID);
@@ -462,11 +462,13 @@ namespace privateer
                 this->clashes = clashes_after_manipulation;
                 converted_mglycan = minimized_clashes_glycan; 
             }
-            if(this->clashes.size() > 0 && linked_type == "c-linked" && residue_name == "TRP")
+            /* if(this->clashes.size() > 0 && linked_type == "c-linked" && residue_name == "TRP")
             {
 
                 //Flag: Add section here where, if there are still clahsed, the cold tries the alternate sugar_backbone instructions.
                 std::cout << "Initial grafting and manipulation has failed to eliminate clashes. Trying secondary orientation." << std::endl;
+
+                clipper::MPolymer converted_mglycan_alt =  bond_angle_mglycan;
 
                 targetPhi = privateer::modelling::backbone_instructions_alt[receiver_atom_index].Phi;
                 targetPsi = privateer::modelling::backbone_instructions_alt[receiver_atom_index].Psi;
@@ -474,11 +476,10 @@ namespace privateer
                 Psi_error = privateer::modelling::backbone_instructions_alt[receiver_atom_index].Psi_error;
                 
                 tmp_clash_model = export_model;
-                sugar_connection_target = converted_mglycan[0].find(sugar_connection_atom, search_policy); // C1
-                sugar_vector_point_target = converted_mglycan[0].find(sugar_vector_point, search_policy); // O1
-                ring_oxygen = converted_mglycan[0].find(ring_oxygen_name, search_policy); // O5
+                sugar_connection_target = converted_mglycan_alt[0].find(sugar_connection_atom, search_policy); // C1
+                sugar_vector_point_target = converted_mglycan_alt[0].find(sugar_vector_point, search_policy); // O1
+                ring_oxygen = converted_mglycan_alt[0].find(ring_oxygen_name, search_policy); // O5
 
-                clipper::MPolymer converted_mglycan_alt = converted_mglycan;
                 
                 double currentPsiTorsionAngle = clipper::Util::rad2d(clipper::Coord_orth::torsion(sugar_connection_target.coord_orth(), protein_connecting_target.coord_orth(), protein_vector_point_alpha.coord_orth(), protein_vector_point_bravo.coord_orth()));
                 std::vector<std::pair<clipper::MAtom, std::string>> psiTorsionAtoms = { std::make_pair(sugar_connection_target, "sugar"), std::make_pair(protein_connecting_target, "protein"), std::make_pair(protein_vector_point_alpha, "protein"), std::make_pair(protein_vector_point_bravo, "protein") };
@@ -584,7 +585,7 @@ namespace privateer
                         this->graftedPsi = currentPsiTorsionAngle;
                     }
                 }  
-            }
+            } */
 
             bool first_sugar_has_hydrogens = check_if_residue_has_hydrogens(converted_mglycan[0]);
 
