@@ -2509,6 +2509,84 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::get_SNFG_strings(bool inc
     }
 }
 
+std::string privateer::pyanalysis::GlycanStructure::write_ring_ext_restraints ( float weight ) 
+{
+
+    std::string buffer = "";
+    clipper::MGlycan inputGlycan = glycan;
+    std::vector<clipper::MSugar> sugar_list = glycan.get_sugars();
+    for ( int i = 0; i < sugar_list.size(); i++ ) {
+        buffer += "# " + sugar_list[i].type() + " " + sugar_list[i].id() + "\n";
+        std::string residue = sugar_list[i].id();
+        std::string chain = glycan.get_chain();
+        if ( glycan.get_type() == "c-glycan" ) 
+        { // needs 1C4 restraints
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 value -55.71 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 value  51.72 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 value -47.55 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 value  45.67 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 value -51.06 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 value 56.33 sigma 0.1 period 1\n\n";
+        }
+        else 
+        {
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 value  55.71 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 value -51.72 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 value  47.55 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 value -45.67 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 value  51.06 sigma 0.1 period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 value -56.33 sigma 0.1 period 1\n\n";
+        }
+    }
+    return buffer;
+}
+
 void privateer::pyanalysis::GlycanStructure::update_with_experimental_data(privateer::pyanalysis::XRayData& xray_data)
 {
     this->updatedWithExperimentalData = true;
@@ -4843,6 +4921,7 @@ void init_pyanalysis(py::module& m)
 
         .def("get_SNFG_strings", &pa::GlycanStructure::get_SNFG_strings, "Returns Privateer generated SNFG representations in SVG string that later can be parsed through Python",
         py::arg("includeClosestMatches") = true, py::arg("enable_potential_issue_shading") = true)
+        .def("write_ring_ext_restraints", &pa::GlycanStructure::write_ring_ext_restraints, "Returns Privateer generated ring restraints that can later be writen to file")
         .def("update_with_experimental_data", static_cast<void (pa::GlycanStructure::*)(pa::XRayData&)>(&pa::GlycanStructure::update_with_experimental_data), "Update glycan with X-Ray Crystallography Data")
         .def("update_with_experimental_data", static_cast<void (pa::GlycanStructure::*)(pa::CryoEMData&)>(&pa::GlycanStructure::update_with_experimental_data), "Update glycan with CryoEM Data")
         .def("check_if_updated_with_experimental_data", &pa::GlycanStructure::check_if_updated_with_experimental_data);

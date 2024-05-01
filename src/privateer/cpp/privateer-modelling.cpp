@@ -31,7 +31,7 @@ namespace privateer
             { "LYZ", "OH",  "CD", "CG", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "CYS", "SG",  "CB", "CA", -97.5, 178.0, 25.0, 25.0, "s-linked" }, //s-glycosylation
             //{ "TRP", "CD1", "CG", "CB", 122.0, 0.0,   10.0, 10.0, "c-linked" }, //c-glycosylation
-            { "TRP", "CD1", "CG", "CB", 125.0, 0.0,   25.0, 10.0, "c-linked" }, //c-glycosylation
+            { "TRP", "CD1", "CG", "CB", 125.0, 0.0,   25.0, 25.0, "c-linked" }, //c-glycosylation
             { "SEP", "O2P", "P",  "OG", -97.5, 178.0, 25.0, 25.0, "p-linked" }  //p-glycosylation phosphpglycation on phosphoserine - no example on PDB nor on uniprot, yet.
         };
         const protein_sidechain_glycosylation backbone_instructions_alt[] =
@@ -695,6 +695,7 @@ namespace privateer
                     else
                     {
                         this->graft_status = true;
+                        converted_mglycan.set_id(root_chain_id);
                         export_model.insert(converted_mglycan);
                         if(enable_user_messages && !debug_output)
                             std::cout << "Glycan has been grafted!" << std::endl;
@@ -706,7 +707,7 @@ namespace privateer
                 else
                 {
                     this->graft_status = true;
-                    //converted_mglycan.set_id(root_chain_id);
+                    converted_mglycan.set_id(root_chain_id);
                     export_model.insert(converted_mglycan);
                     if(enable_user_messages && !debug_output)
                         std::cout << "Glycan has been grafted!" << std::endl;

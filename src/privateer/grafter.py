@@ -9,9 +9,46 @@ import json
 import pandas as pd
 import gemmi
 import numpy as np
+import subprocess
 from privateer import privateer_core as pvtcore
 from privateer import privateer_modelling as pvtmodelling
 
+def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out: str): 
+    # print("Running REFMAC with", mtz_in, pdb_in)
+    ### NEED TO ADD RESTRAINTS FOR C-MANNOSYLATION???
+    _args = []
+    _args += ["HKLIN", mtz_in]
+    _args += ["XYZIN", pdb_in]
+    
+    _args += ["HKLOUT", mtz_out]
+    _args += ["XYZOUT", pdb_out]
+    _args += ["XMLOUT", f"{other_out}.xml"]
+    labin = "FP=FP"
+    labin += " SIGFP=SIGFP"
+    labin += " FREE=FREE"
+    _stdin = []
+    _stdin.append("LABIN " + labin)
+    _stdin.append("NCYCLES 1")
+    _stdin.append("WEIGHT AUTO")
+    _stdin.append("MAKE HYDR NO")
+    _stdin.append("MAKE NEWLIGAND NOEXIT")
+    _stdin.append("PHOUT")
+    _stdin.append("PNAME grafter")
+    _stdin.append("DNAME grafter")
+    _stdin.append("END")
+
+    process = subprocess.Popen(
+    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
+    stdin=subprocess.PIPE if _stdin else None,
+    stdout=subprocess.DEVNULL,
+    stderr=subprocess.DEVNULL,
+    encoding="utf8",
+    env={**os.environ,},
+    cwd=os.getcwd(),
+    )
+    if _stdin:
+        stdin_str = '\n'.join(_stdin)
+        process.communicate(input=stdin_str)
 
 def _import_list_of_uniprotIDs_to_glycosylate(inputFilePath):
     output = []
@@ -251,8 +288,8 @@ def _get_CMannosylation_targets_via_consensus_seq(sequences):
 
 def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
     avglength = 6.4118
-    #threshold = 0.051
-    threshold = 0.08
+    threshold = 0.051
+    #threshold = 0.08
     st = gemmi.read_structure(pdbfile)
     mtz = gemmi.read_mtz_file(mtzfile)
     grid = mtz.transform_f_phi_to_map('DELFWT', 'PHDELWT', sample_rate=2.0)
@@ -289,7 +326,7 @@ def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
                         if avgdense > threshold: 
                             residuelist.append(residue.seqid.num)
                             chainlist.append(chain.name)
-    CMannosylationConsensus = "[W][X][X][W]"
+    CMannosylationConsensus = "[W]"
     output = []
     for item in sequences:
         currentChainIndex = item["index"]
@@ -318,41 +355,101 @@ def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
     return output
 
 def _make_connection_between_protein_and_glycan(filepath):
-    # At the moment, this only works for C-Mannosylation, but it should be easy enough to do for others.
     st = gemmi.read_structure(filepath)
     ns = gemmi.NeighborSearch(st[0], st.cell, 5).populate(include_h=False) 
     for model in st:
         for chain in model:
             for residue in chain:
-                if residue.name == 'MAN':
-                    #print(chain,residue)
+                hetatom = gemmi.find_tabulated_residue(residue.name)
+                if str(hetatom.kind) != 'ResidueKind.PYR': continue
+                    
+                print(chain,residue)
+                try:   
                     c1 = residue['C1'][0].pos
-                    marks = ns.find_atoms(c1, '\0', radius=5)
-                    for mark in marks:
-                        cra = mark.to_cra(st[0])
-                        if cra.residue.name == 'TRP' and cra.atom.name == 'CD1':
-                            #print(cra)
-                            dist = (c1).dist(cra.atom.pos)
-                            if dist >= 2.0: 
-                                continue
-                            con = gemmi.Connection()
-                            con.name = f'new_covale'
-                            con.type = gemmi.ConnectionType.Covale
-                            con.asu = gemmi.Asu.Same
-                            con.partner1 = gemmi.make_address(cra.chain, cra.residue, cra.residue.sole_atom('CD1'))
-                            con.partner2 = gemmi.make_address(chain, residue, residue.sole_atom('C1'))
-                            con.reported_distance = (c1).dist(cra.atom.pos)
-                            st.connections.append(con)
-                            #print(con)
+                except RuntimeError as e:
+                    print(f'{e} at {chain,residue}')
+                    continue
+                marks = ns.find_atoms(c1, '\0', radius=5)
+                for mark in marks:
+                    cra = mark.to_cra(st[0])
+                    if ((cra.residue.name == 'TRP' and cra.atom.name == 'CD1')
+                        or (cra.residue.name == 'ASN' and cra.atom.name == 'ND2')
+                        or (cra.residue.name in ['SER','THR'] and cra.atom.name in ['OG','OG1'])):
+                        dist = (c1).dist(cra.atom.pos)
+                        if dist >= 2.0: continue
+                        con = gemmi.Connection()
+                        con.name = f'new_covale'
+                        con.type = gemmi.ConnectionType.Covale
+                        con.asu = gemmi.Asu.Same
+                        con.partner1 = gemmi.make_address(cra.chain, cra.residue, cra.residue.sole_atom(cra.atom.name))
+                        con.partner2 = gemmi.make_address(chain, residue, residue.sole_atom('C1'))
+                        con.reported_distance = (c1).dist(cra.atom.pos)
+                        st.connections.append(con)
     st.write_pdb(filepath)
 
-def _refine_grafted_glycans():
-    return
+def _copy_metadata(inputpdb, outputpdb):
+    # Use input pdb to get meta data, remarks, links etc
+    struct_in = gemmi.read_structure(inputpdb)
+    struct_out = gemmi.read_structure(outputpdb)
+    num_chains_in = len(struct_in)
+    num_chains_out = len(struct_out)
+    # Copy the output model over into the input structure
+    for i in range(num_chains_out):
+        if i < num_chains_in:
+            struct_in[i] = struct_out[i]
+        else:
+            struct_in.add_chain(struct_out[i])
+    # Write structure and metadata back into output file location
+    struct_in.write_pdb(outputpdb)
 
-def _diagnostic_check_grafted_glycans():
-    return
+def _generate_restraints(grafted_pdb, outputpath):
+    glycosylation = pvtcore.GlycosylationComposition(grafted_pdb)
+    glycans = []
+    restraints = []
+    num_glycans = glycosylation.get_number_of_glycan_chains_detected() 
+    for glycan_num in range(num_glycans):
+        glycan = glycosylation.get_glycan(glycan_num)
+        buffer = glycan.write_ring_ext_restraints(0.1)
+        restraints.append(buffer)
+    pdbcode = os.path.basename(grafted_pdb).partition(".")[0]
+    output_restraints = outputpath.rpartition("/")[0]+f'/privateer-restraints_{pdbcode}.txt'
+    with open(output_restraints , 'w') as f:
+        for line in restraints:
+            f.write(f"{line}\n")
+    return output_restraints
 
-def _remove_grafted_glycans():
+
+def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath):
+    filename = os.path.basename(grafted_pdb).partition(".")[0] + "_refined"
+    pdbout = os.path.join(outputpath, filename + ".pdb")
+    mtzout = os.path.join(outputpath, filename + ".mtz")
+    other  = os.path.join(outputpath, filename)
+    _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other)
+    return mtzout, pdbout
+
+def _diagnostic_check_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
+    glycosylation = pvtcore.GlycosylationComposition(refined_pdb, refined_mtz, "FP,SIGFP")
+    glycans = []
+    num_glycans = glycosylation.get_number_of_glycan_chains_detected()  
+    for i in range(len(graftedGlycans)):
+        graftedglycan = graftedGlycans[i]
+        for glycan_num in range(num_glycans):
+            glycan = glycosylation.get_glycan(glycan_num)
+            numsugars = glycan.get_total_number_of_sugars()
+            for j in range(numsugars):
+                sugar = glycan.get_monosaccharide(j)
+                root_info = glycan.get_root_info()
+                summary = sugar.get_sugar_summary()
+                if summary["sugar_name_short"] == graftedGlycans["donor_glycan_root_type"] and root_info["ProteinResidueID"] == graftedglycan["receiving_protein_residue_monomer_PDBID"] and root_info["ProteinChainID"] == graftedglycan["receiving_protein_residue_chain_PDBID"]:
+                    graftedGlycans[i]["RSCC"] = summary["RSCC"]
+    return graftedGlycans
+
+def _remove_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
+    st = gemmi.read_structure(refined_pdb)
+    for glycan in graftedGlycans:
+        if glycan["RSCC"] < 0.8:
+            continue
+    # Will want to run refmac again at the end to recalculate map if only some have been removed but not all.
     return
 
 def _glycosylate_receiving_model_using_consensus_seq(
@@ -525,9 +622,14 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
     else:
         if mode == 'CMannosylation':
             try:
+                _copy_metadata(receiverpath, outputFileName)
+            except:
+                print(f"Failed to copy metadata for {outputFileName}")
+            try:
                 _make_connection_between_protein_and_glycan(outputFileName)
             except:
                 print(f"Failed to generate link between TRP-MAN for file {outputFileName}")
+        restraints_file = _generate_restraints(outputFileName, outputpath)
     return graftedGlycans
 
 

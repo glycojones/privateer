@@ -260,6 +260,7 @@ namespace privateer {
         pybind11::list get_torsions_zscore_summary_with_pdb(OfflineTorsionsZScoreDatabase& importedDatabase, std::string input_pdb_code);
 
         pybind11::dict get_SNFG_strings(bool includeClosestMatches, bool enable_potential_issue_shading);
+        std::string write_ring_ext_restraints(float weight);
         
 
         // pybind11::list return_permutations_of_glycan(bool returnAllPossiblePermutations, int nThreads) // Could be added under request. Right now don't see much use for it.
