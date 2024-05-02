@@ -16,7 +16,8 @@ from privateer import privateer_modelling as pvtmodelling
 
 def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out: str, restraint_file: str): 
     # Taken and edited from ModelCraft 
-    # print("Running REFMAC with", mtz_in, pdb_in)
+    # Note: Need to make sure path to ccp4 is set up via: source /Applications/ccp4-8.0/bin/ccp4.setup-sh
+    print("Running REFMAC with", mtz_in, pdb_in)
     _args = []
     _args += ["HKLIN", mtz_in]
     _args += ["XYZIN", pdb_in]
@@ -24,6 +25,9 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
     _args += ["HKLOUT", mtz_out]
     _args += ["XYZOUT", pdb_out]
     _args += ["XMLOUT", f"{other_out}.xml"]
+    #labin = "FP=F"
+    #labin += " SIGFP=SIGF"
+    #labin += " FREE=FREER"
     labin = "FP=FP"
     labin += " SIGFP=SIGFP"
     labin += " FREE=FREE"
@@ -34,12 +38,13 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
     _stdin.append("MAKE HYDR NO")
     _stdin.append("MAKE NEWLIGAND NOEXIT")
     _stdin.append("PHOUT")
-    _stdin.append("PNAME grafter")
-    _stdin.append("DNAME grafter")
+    _stdin.append("PNAME modelcraft")
+    _stdin.append("DNAME modelcraft")
     with open(restraint_file) as input_file: 
         for line in input_file:
             _stdin.append(line)
     _stdin.append("END")
+
     process = subprocess.Popen(
     args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
@@ -52,6 +57,7 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
     if _stdin:
         stdin_str = '\n'.join(_stdin)
         process.communicate(input=stdin_str)
+
 
 def _import_list_of_uniprotIDs_to_glycosylate(inputFilePath):
     output = []
@@ -364,20 +370,24 @@ def _make_connection_between_protein_and_glycan(filepath):
         for chain in model:
             for residue in chain:
                 hetatom = gemmi.find_tabulated_residue(residue.name)
+                # print(residue,hetatom)
+                if str(hetatom.kind) != 'ResidueKind.AA': residue.het_flag = 'H' # change flag ATOM or HETATM
                 if str(hetatom.kind) != 'ResidueKind.PYR': continue
-                    
                 print(chain,residue)
-                try:   
-                    c1 = residue['C1'][0].pos
+                try: c1 = residue['C1'][0].pos
                 except RuntimeError as e:
                     print(f'{e} at {chain,residue}')
                     continue
                 marks = ns.find_atoms(c1, '\0', radius=5)
+                # marks = ns.find_neighbors(C1, min_dist=0.1, max_dist=3)
+                # print(marks)
+                # exit()
                 for mark in marks:
                     cra = mark.to_cra(st[0])
                     if ((cra.residue.name == 'TRP' and cra.atom.name == 'CD1')
                         or (cra.residue.name == 'ASN' and cra.atom.name == 'ND2')
                         or (cra.residue.name in ['SER','THR'] and cra.atom.name in ['OG','OG1'])):
+                        # print(cra)
                         dist = (c1).dist(cra.atom.pos)
                         if dist >= 2.0: continue
                         con = gemmi.Connection()
@@ -385,7 +395,10 @@ def _make_connection_between_protein_and_glycan(filepath):
                         con.type = gemmi.ConnectionType.Covale
                         con.asu = gemmi.Asu.Same
                         con.partner1 = gemmi.make_address(cra.chain, cra.residue, cra.residue.sole_atom(cra.atom.name))
-                        con.partner2 = gemmi.make_address(chain, residue, residue.sole_atom('C1'))
+                        try:
+                            con.partner2 = gemmi.make_address(chain, residue, residue.sole_atom('C1'))
+                        except:
+                            con.partner2 = gemmi.make_address(chain, residue, residue['C1'][0])
                         con.reported_distance = (c1).dist(cra.atom.pos)
                         st.connections.append(con)
     st.write_pdb(filepath)
@@ -407,34 +420,25 @@ def _copy_metadata(inputpdb, outputpdb):
 
 def _generate_restraints(grafted_pdb, outputpath):
     glycosylation = pvtcore.GlycosylationComposition(grafted_pdb)
-    glycans = []
-    restraints = []
-    num_glycans = glycosylation.get_number_of_glycan_chains_detected() 
-    for glycan_num in range(num_glycans):
-        glycan = glycosylation.get_glycan(glycan_num)
-        buffer = glycan.return_external_restraints()
-        restraints.append(buffer)
+    restraints = glycosylation.return_external_restraints()
     pdbcode = os.path.basename(grafted_pdb).partition(".")[0]
-    output_restraints = outputpath.rpartition("/")[0]+f'/privateer-restraints_{pdbcode}.txt'
-    with open(output_restraints , 'w') as f:
-        for line in restraints:
-            f.write(f"{line}\n")
+    output_restraints = outputpath+f'/privateer-restraints_{pdbcode}.txt'
+    with open(output_restraints, "w") as restraint_file:
+        restraint_file.write(restraints)
     return output_restraints
 
 
-def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath):
+def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout):
     restraints_file = _generate_restraints(grafted_pdb, outputpath)
-    filename = os.path.basename(grafted_pdb).partition(".")[0] + "_refined"
-    pdbout = os.path.join(outputpath, filename + ".pdb")
-    mtzout = os.path.join(outputpath, filename + ".mtz")
+    filename = os.path.basename(grafted_pdb).partition(".")[0]
     other  = os.path.join(outputpath, filename)
     _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file)
     os.remove(grafted_pdb)
+    os.remove(restraints_file)
     return pdbout, mtzout
 
 def _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
     glycosylation = pvtcore.GlycosylationComposition(refined_pdb, refined_mtz, "FP,SIGFP")
-    glycans = []
     num_glycans = glycosylation.get_number_of_glycan_chains_detected()  
     for i in range(len(graftedGlycans)):
         graftedglycan = graftedGlycans[i]
@@ -445,23 +449,30 @@ def _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
                 sugar = glycan.get_monosaccharide(j)
                 root_info = glycan.get_root_info()
                 summary = sugar.get_sugar_summary()
-                if summary["sugar_name_short"] == graftedGlycans["donor_glycan_root_type"] and root_info["ProteinResidueID"] == graftedglycan["receiving_protein_residue_monomer_PDBID"] and root_info["ProteinChainID"] == graftedglycan["receiving_protein_residue_chain_PDBID"]:
+                if summary["sugar_name_short"] == graftedglycan["donor_glycan_root_type"] and root_info["ProteinResidueID"] == graftedglycan["receiving_protein_residue_monomer_PDBID"] and root_info["ProteinChainID"] == graftedglycan["receiving_protein_residue_chain_PDBID"]:
                     graftedGlycans[i]["RSCC"] = summary["RSCC"]
     return graftedGlycans
 
 def _remove_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans, outputpath):
     st = gemmi.read_structure(refined_pdb)
     for glycan in graftedGlycans:
-        if glycan["RSCC"] < 0.8:
+        if glycan["RSCC"] < 0.6:
             for model in st:
+                indexes = []
                 for chain in model:
-                    for residue in chain:
+                    for i in range(len(chain)):
+                        residue = chain[i]
                         if residue.name == glycan["donor_glycan_root_type"] and residue.seqid.num == glycan["receiving_protein_residue_monomer_PDBID"] and chain.name == glycan["receiving_protein_residue_chain_PDBID"]:
-                            del residue
-                            del glycan
+                            indexes.append(i)
+                            glycan["GraftStatus"] = False
+                    for i in indexes:
+                        del chain[i]
+
     st.write_pdb(refined_pdb)
-    final_pdb, final_mtz = _refine_grafted_glycans(final_pdb, final_mtz, outputpath)
-    os.remove(refined_pdb)
+    filename = os.path.basename(refined_pdb).partition("_")[0]
+    pdbout = os.path.join(outputpath, filename + "_grafted.pdb")
+    mtzout = os.path.join(outputpath, filename + "_grafted.mtz")
+    final_pdb, final_mtz = _refine_grafted_glycans(refined_pdb, refined_mtz, outputpath, pdbout, mtzout)
     os.remove(refined_mtz)
     return graftedGlycans
 
@@ -477,7 +488,7 @@ def _glycosylate_receiving_model_using_consensus_seq(
     builder = pvtmodelling.Builder(
         receiverpath,
         donorpath,
-        -1, # nThreads
+        4, # nThreads -- set to -1 to use all available cores
         trimGlycanIfClashesDetected,
         removeGlycanIfClashesDetected,
         True, # ANY_search_policy
@@ -638,23 +649,27 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
     if len(graftedGlycans) == 0 and os.path.isfile(outputFileName):
         print("Deleting output PDB file as no grafts occurred.")
         os.remove(outputFileName)
-    elif count > len(graftedGlycans) and os.path.isfile(outputFileName):
+    elif count >= len(graftedGlycans) and os.path.isfile(outputFileName):
         print("Deleting output PDB file as no grafts occurred.")
         os.remove(outputFileName)
     else:
         if mode == 'CMannosylation':
-            try:
-                _copy_metadata(receiverpath, outputFileName)
-            except:
-                print(f"Failed to copy metadata for {outputFileName}")
-            try:
-                _make_connection_between_protein_and_glycan(outputFileName)
-            except:
-                print(f"Failed to generate link between TRP-MAN for file {outputFileName}")
+            #try:
+            _copy_metadata(receiverpath, outputFileName)
+            #except:
+                #print(f"Failed to copy metadata for {outputFileName}")
+            ###try:
+            _make_connection_between_protein_and_glycan(outputFileName)
+            ##except:
+                #print(f"Failed to generate link between TRP-MAN for file {outputFileName}")
         if mtzfile is not None:
-            refined_pdb, refined_mtz = _refine_grafted_glycans(outputFileName, mtzfile, outputpath)
+            outputlocation = outputpath.rpartition("/")[0]
+            filename = os.path.basename(outputpath).partition("_")[0]
+            pdbout = os.path.join(outputlocation, filename + "_refined.pdb")
+            mtzout = os.path.join(outputlocation, filename + "_refined.mtz")
+            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout)
             graftedGlycans = _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans)
-            graftedGlycans = _remove_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans, outputpath)
+            graftedGlycans = _remove_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans, outputlocation)
     return graftedGlycans
 
 
