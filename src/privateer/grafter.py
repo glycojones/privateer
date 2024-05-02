@@ -13,9 +13,10 @@ import subprocess
 from privateer import privateer_core as pvtcore
 from privateer import privateer_modelling as pvtmodelling
 
-def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out: str): 
+
+def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out: str, restraint_file: str): 
+    # Taken and edited from ModelCraft 
     # print("Running REFMAC with", mtz_in, pdb_in)
-    ### NEED TO ADD RESTRAINTS FOR C-MANNOSYLATION???
     _args = []
     _args += ["HKLIN", mtz_in]
     _args += ["XYZIN", pdb_in]
@@ -35,13 +36,15 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
     _stdin.append("PHOUT")
     _stdin.append("PNAME grafter")
     _stdin.append("DNAME grafter")
+    with open(restraint_file) as input_file: 
+        for line in input_file:
+            _stdin.append(line)
     _stdin.append("END")
-
     process = subprocess.Popen(
-    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
+    args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
-    stdout=subprocess.DEVNULL,
-    stderr=subprocess.DEVNULL,
+    # stdout=subprocess.PIPE,
+    # stderr=subprocess.PIPE,
     encoding="utf8",
     env={**os.environ,},
     cwd=os.getcwd(),
@@ -409,7 +412,7 @@ def _generate_restraints(grafted_pdb, outputpath):
     num_glycans = glycosylation.get_number_of_glycan_chains_detected() 
     for glycan_num in range(num_glycans):
         glycan = glycosylation.get_glycan(glycan_num)
-        buffer = glycan.write_ring_ext_restraints(0.1)
+        buffer = glycan.return_external_restraints()
         restraints.append(buffer)
     pdbcode = os.path.basename(grafted_pdb).partition(".")[0]
     output_restraints = outputpath.rpartition("/")[0]+f'/privateer-restraints_{pdbcode}.txt'
@@ -420,14 +423,16 @@ def _generate_restraints(grafted_pdb, outputpath):
 
 
 def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath):
+    restraints_file = _generate_restraints(grafted_pdb, outputpath)
     filename = os.path.basename(grafted_pdb).partition(".")[0] + "_refined"
     pdbout = os.path.join(outputpath, filename + ".pdb")
     mtzout = os.path.join(outputpath, filename + ".mtz")
     other  = os.path.join(outputpath, filename)
-    _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other)
-    return mtzout, pdbout
+    _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file)
+    os.remove(grafted_pdb)
+    return pdbout, mtzout
 
-def _diagnostic_check_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
+def _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
     glycosylation = pvtcore.GlycosylationComposition(refined_pdb, refined_mtz, "FP,SIGFP")
     glycans = []
     num_glycans = glycosylation.get_number_of_glycan_chains_detected()  
@@ -444,13 +449,21 @@ def _diagnostic_check_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
                     graftedGlycans[i]["RSCC"] = summary["RSCC"]
     return graftedGlycans
 
-def _remove_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
+def _remove_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans, outputpath):
     st = gemmi.read_structure(refined_pdb)
     for glycan in graftedGlycans:
         if glycan["RSCC"] < 0.8:
-            continue
-    # Will want to run refmac again at the end to recalculate map if only some have been removed but not all.
-    return
+            for model in st:
+                for chain in model:
+                    for residue in chain:
+                        if residue.name == glycan["donor_glycan_root_type"] and residue.seqid.num == glycan["receiving_protein_residue_monomer_PDBID"] and chain.name == glycan["receiving_protein_residue_chain_PDBID"]:
+                            del residue
+                            del glycan
+    st.write_pdb(refined_pdb)
+    final_pdb, final_mtz = _refine_grafted_glycans(final_pdb, final_mtz, outputpath)
+    os.remove(refined_pdb)
+    os.remove(refined_mtz)
+    return graftedGlycans
 
 def _glycosylate_receiving_model_using_consensus_seq(
     receiverpath,
@@ -602,6 +615,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
             receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
         _print_grafted_glycans_summary(graftedGlycans)
+    
     else:
         if mode == 'CMannosylation':
             targets = _get_CMannosylation_targets_via_consensus_seq(sequences)
@@ -616,7 +630,15 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
             receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
         _print_grafted_glycans_summary(graftedGlycans)
+    if removeclashes:
+        count = 0
+        for glycan in graftedGlycans:
+            if not glycan["GraftStatus"]:
+                count +=1
     if len(graftedGlycans) == 0 and os.path.isfile(outputFileName):
+        print("Deleting output PDB file as no grafts occurred.")
+        os.remove(outputFileName)
+    elif count > len(graftedGlycans) and os.path.isfile(outputFileName):
         print("Deleting output PDB file as no grafts occurred.")
         os.remove(outputFileName)
     else:
@@ -629,7 +651,10 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
                 _make_connection_between_protein_and_glycan(outputFileName)
             except:
                 print(f"Failed to generate link between TRP-MAN for file {outputFileName}")
-        restraints_file = _generate_restraints(outputFileName, outputpath)
+        if mtzfile is not None:
+            refined_pdb, refined_mtz = _refine_grafted_glycans(outputFileName, mtzfile, outputpath)
+            graftedGlycans = _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans)
+            graftedGlycans = _remove_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans, outputpath)
     return graftedGlycans
 
 
