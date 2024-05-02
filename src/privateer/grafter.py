@@ -46,7 +46,8 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
     _stdin.append("END")
 
     process = subprocess.Popen(
-    args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
+    #args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
+    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
     # stdout=subprocess.PIPE,
     # stderr=subprocess.PIPE,
