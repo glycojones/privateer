@@ -434,7 +434,7 @@ def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout):
     filename = os.path.basename(grafted_pdb).partition(".")[0]
     otherdir =outputpath + "/temp"
     if not os.path.isdir(otherdir):
-        os.path.mkdir(otherdir)
+        os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
     _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file)
     os.remove(grafted_pdb)
