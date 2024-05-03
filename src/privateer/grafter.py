@@ -437,7 +437,10 @@ def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout):
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
     _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file)
-    os.remove(grafted_pdb)
+    if os.path.isfile(pdbout):
+        os.remove(grafted_pdb)
+    else:
+        print(f"Error refining structure {grafted_pdb}.")
     os.remove(restraints_file)
     return pdbout, mtzout
 
@@ -676,8 +679,9 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             pdbout = os.path.join(outputlocation, filename + "_refined.pdb")
             mtzout = os.path.join(outputlocation, filename + "_refined.mtz")
             refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout)
-            graftedGlycans = _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans)
-            graftedGlycans = _remove_grafted_glycans(refined_pdb, refined_mtz, mtzfile, graftedGlycans, outputlocation)
+            if os.path.isfile(refined_pdb):
+                graftedGlycans = _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans)
+                graftedGlycans = _remove_grafted_glycans(refined_pdb, refined_mtz, mtzfile, graftedGlycans, outputlocation)
     return graftedGlycans
 
 
