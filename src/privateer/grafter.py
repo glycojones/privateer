@@ -432,7 +432,10 @@ def _generate_restraints(grafted_pdb, outputpath):
 def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout):
     restraints_file = _generate_restraints(grafted_pdb, outputpath)
     filename = os.path.basename(grafted_pdb).partition(".")[0]
-    other  = os.path.join(outputpath, filename)
+    otherdir =outputpath + "/temp"
+    if not os.path.isdir(otherdir):
+        os.path.mkdir(otherdir)
+    other  = os.path.join(otherdir, filename)
     _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file)
     os.remove(grafted_pdb)
     os.remove(restraints_file)
