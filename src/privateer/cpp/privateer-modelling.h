@@ -70,6 +70,7 @@ namespace privateer {
 				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > get_grafted_clashes() { return clashes; };
 				clipper::MGlycan& get_grafted_glycan() { return grafted_glycan; };
 				std::string get_grafted_glycan_chainID() { return grafted_glycan_chainID; };
+				std::string get_grafted_glycan_root_PDBID() { return grafted_glycan_root_PDBID; };
 				bool get_graft_status() { return graft_status; };
 				clipper::MiniMol& get_donor_model() { return donor_model; };
 				std::vector<clipper::MGlycan>& get_donor_glycans() { return donor_glycans; };
@@ -129,6 +130,7 @@ namespace privateer {
 				clipper::MiniMol export_model;
 				clipper::MGlycan grafted_glycan;
 				std::string grafted_glycan_chainID;
+				std::string grafted_glycan_root_PDBID;
 				bool graft_status;
 
 				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes;

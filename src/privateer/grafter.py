@@ -403,6 +403,7 @@ def _make_connection_between_protein_and_glycan(filepath):
                         con.reported_distance = (c1).dist(cra.atom.pos)
                         st.connections.append(con)
     st.write_pdb(filepath)
+     
 
 def _copy_metadata(inputpdb, outputpdb):
     # Use input pdb to get meta data, remarks, links etc
@@ -465,7 +466,7 @@ def _remove_grafted_glycans(refined_pdb, refined_mtz, original_mtz, graftedGlyca
     st = gemmi.read_structure(refined_pdb)
     for i in range(len(graftedGlycans)):
         glycan = graftedGlycans[i]
-        if glycan["RSCC"] < 0.6:
+        if glycan["RSCC"] < 0.1:
             graftedGlycans[i]["GraftStatus"] = False
             for model in st:
                 indexes = []

@@ -307,7 +307,7 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
         
         std::string grafted_glycan_chainID = grafter.get_grafted_glycan_chainID();
         std::string rootSugarType = grafter.get_grafted_glycan().get_node(0).get_sugar().type().trim();
-        std::string rootSugarPDBID = grafter.get_grafted_glycan().get_node(0).get_sugar().id().trim();
+        std::string rootSugarPDBID = grafter.get_grafted_glycan_root_PDBID();
 
         float graftedPhi = grafter.getGraftedPhi();
         float graftedPsi = grafter.getGraftedPsi();
@@ -330,7 +330,7 @@ void privateer::pymodelling::Builder::graft_glycan_to_receiver(int mglycanindex,
         
         std::string grafted_glycan_chainID = grafter.get_grafted_glycan_chainID();
         std::string rootSugarType = grafter.get_grafted_glycan().get_node(0).get_sugar().type().trim();
-        std::string rootSugarPDBID = grafter.get_grafted_glycan().get_node(0).get_sugar().id().trim();
+        std::string rootSugarPDBID = grafter.get_grafted_glycan_root_PDBID();
 
         float graftedPhi = grafter.getGraftedPhi();
         float graftedPsi = grafter.getGraftedPsi();

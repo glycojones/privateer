@@ -223,10 +223,24 @@ namespace privateer
                 tempchainid = temp;
             }
             clipper::String chainID(tempchainid);
-            this->grafted_glycan_chainID = chainID;
 
             clipper::MPolymer converted_mglycan = convert_mglycan_to_mpolymer(glycan_to_graft);
 
+            int index = 0;
+            for(int i = 0; i < export_model.size(); i++)
+            {
+                if (export_model[i].id().trim() == root_chain_id)
+                {
+                    index = i;
+                }
+            }
+
+            for(int residue = 0; residue < converted_mglycan.size(); residue++)
+            {
+                std::string res_id = "1" + input_protein_side_chain_residue.id().trim();
+                converted_mglycan[residue].set_id(res_id);
+            }
+            this->grafted_glycan_root_PDBID = converted_mglycan[0].id().trim();
             if(debug_output)
                 DBG << "Converted MGlycan to MPolymer. MPolymer.size(): " << converted_mglycan.size() << std::endl;
  
@@ -696,6 +710,7 @@ namespace privateer
                     {
                         this->graft_status = true;
                         converted_mglycan.set_id(root_chain_id);
+                        this->grafted_glycan_chainID = root_chain_id;
                         export_model.insert(converted_mglycan);
                         if(enable_user_messages && !debug_output)
                             std::cout << "Glycan has been grafted!" << std::endl;
@@ -708,6 +723,7 @@ namespace privateer
                 {
                     this->graft_status = true;
                     converted_mglycan.set_id(root_chain_id);
+                    this->grafted_glycan_chainID = root_chain_id;
                     export_model.insert(converted_mglycan);
                     if(enable_user_messages && !debug_output)
                         std::cout << "Glycan has been grafted!" << std::endl;
