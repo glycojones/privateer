@@ -30,8 +30,8 @@ namespace privateer
             { "HYP", "OD1", "CG", "CB", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "LYZ", "OH",  "CD", "CG", -97.5, 178.0, 25.0, 25.0, "o-linked" }, //o-glycosylation
             { "CYS", "SG",  "CB", "CA", -97.5, 178.0, 25.0, 25.0, "s-linked" }, //s-glycosylation
-            //{ "TRP", "CD1", "CG", "CB", 122.0, 0.0,   10.0, 10.0, "c-linked" }, //c-glycosylation
-            { "TRP", "CD1", "CG", "CB", 125.0, 0.0,   25.0, 25.0, "c-linked" }, //c-glycosylation
+            //{ "TRP", "CD1", "CG", "CB", 122.0, 0.0,   25.0, 25.0, "c-linked" }, //c-glycosylation
+            { "TRP", "CD1", "CG", "CB", 125.0, 0.0,   10.0, 10.0, "c-linked" }, //c-glycosylation
             { "SEP", "O2P", "P",  "OG", -97.5, 178.0, 25.0, 25.0, "p-linked" }  //p-glycosylation phosphpglycation on phosphoserine - no example on PDB nor on uniprot, yet.
         };
         const protein_sidechain_glycosylation backbone_instructions_alt[] =
@@ -465,7 +465,7 @@ namespace privateer
             /* if(this->clashes.size() > 0 && linked_type == "c-linked" && residue_name == "TRP")
             {
 
-                //Flag: Add section here where, if there are still clahsed, the cold tries the alternate sugar_backbone instructions.
+                //Flag: Add section here where, if there are still clahsed, the code tries the alternate sugar_backbone instructions.
                 std::cout << "Initial grafting and manipulation has failed to eliminate clashes. Trying secondary orientation." << std::endl;
 
                 clipper::MPolymer converted_mglycan_alt =  bond_angle_mglycan;
