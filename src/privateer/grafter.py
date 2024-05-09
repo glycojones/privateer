@@ -48,8 +48,8 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
         _stdin.append("END")
 
     process = subprocess.Popen(
-    #args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
-    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
+    args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
+    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
     # stdout=subprocess.PIPE,
     # stderr=subprocess.PIPE,
@@ -366,6 +366,88 @@ def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
         })
     return output
 
+def _get_CMannosylation_targets_via_water_search(pdbfile, sequences):
+    st = gemmi.read_structure(pdbfile)
+    st.standardize_crystal_frame() # some structures don't have standard orientation of crystal frames
+    ns = gemmi.NeighborSearch(st[0], st.cell, 5).populate(include_h=False)
+    residuelist = []; chainlist = []
+    for chain in st[0]:
+        for residue in chain:
+            if residue.name == 'TRP':
+                # print(chain.name,residue)
+                try: 
+                    cd1 = residue['CD1'][0]
+                except RuntimeError as e:
+                    print(f'{e} at {chain,residue}')
+                    continue
+                marks = ns.find_neighbors(cd1, min_dist=0.1, max_dist=3.5) # search waters in distance of 4 Angstrom
+                for mark in marks:
+                    cra = mark.to_cra(st[0])
+                    # print(cra)
+                    if mark.image_idx != 0: 
+                        continue # image_idx == 0 ~ identical to model within symmetry operation    
+                    if ((cra.residue.het_flag == 'H') and (cra.residue.name == 'HOH')): # check waters
+                        residuelist.append(residue.seqid.num)
+                        chainlist.append(chain.name)
+    CMannosylationConsensus = "[W]"
+    output = []
+    for item in sequences:
+        currentChainIndex = item["index"]
+        currentChainID = item["ChainID"]
+        currentSequence = item["Sequence"]
+
+        glycosylationTargets = []
+
+        for match in re.finditer(CMannosylationConsensus, currentSequence):
+            if (currentSequence[match.start()] == item["Residues"][match.start()]["residueCode"]):
+                for i in range(len(residuelist)):
+                    blob_chainID = chainlist[i]
+                    blob_resID = residuelist[i]
+                    if (item["Residues"][match.start()]["residueSeqnum"] == blob_resID) and (currentChainID == blob_chainID):
+                        glycosylationTargets.append({
+                            "start": match.start(),
+                            "end": match.end(),
+                            "match": match.group()
+                        })
+        output.append({
+            "Sequence": currentSequence,
+            "chainIndex": currentChainIndex,
+            "currentChainID": currentChainID,
+            "glycosylationTargets": glycosylationTargets,
+        })
+    return output
+
+def _remove_waters_close_to_TRP(pdb_file_path:str): # return pdb. file
+    st = gemmi.read_structure(pdb_file_path)
+    st.standardize_crystal_frame() # some structures don't have standard orientation of crystal frames
+    ns = gemmi.NeighborSearch(st[0], st.cell, 5).populate(include_h=False)
+    print(f'Number of atoms in original model: {st[0].count_atom_sites()}')
+    for chain in st[0]:
+        for residue in chain:
+            if residue.name == 'TRP':
+                # print(chain.name,residue)
+                try: 
+                    cd1 = residue['CD1'][0]
+                except RuntimeError as e:
+                    print(f'{e} at {chain,residue}')
+                    continue
+                marks = ns.find_neighbors(cd1, min_dist=0.1, max_dist=3.5) # search waters in distance of 4 Angstrom
+                for mark in marks:
+                    cra = mark.to_cra(st[0])
+                    # print(cra)
+                    if mark.image_idx != 0: 
+                        continue # image_idx == 0 ~ identical to model within symmetry operation      
+                    if ((cra.residue.het_flag == 'H') and (cra.residue.name == 'HOH')): # check waters
+                        nearest = st.cell.find_nearest_pbc_image(cd1.pos, cra.atom.pos, mark.image_idx)
+                        # print(hetatom)
+                        deletedresidue = cra.residue
+                        del deletedresidue[0] # delete [O] from water residue --> waters have only [O]
+                        print(f'Deleted waters: {cra} within {nearest.dist()} Å to {chain.name}/{residue}')    
+    print(f'Number of atoms after deleting local waters: {st[0].count_atom_sites()}')
+    # write out file
+    st.write_pdb(pdb_file_path)
+
+
 def _make_connection_between_protein_and_glycan(filepath):
     st = gemmi.read_structure(filepath)
     ns = gemmi.NeighborSearch(st[0], st.cell, 5).populate(include_h=False) 
@@ -422,6 +504,7 @@ def _copy_metadata(inputpdb, outputpdb, graftedGlycans):
         gly_chain_id = str(glycan["receiving_protein_residue_chain_PDBID"])
         gly_seq_num = int(glycan["donor_glycan_root_PDBID"])
         graft_status = glycan["GraftStatus"]
+        num_sugars = glycan["donor_glycan_num_sugars"]
         for m in range(len(struct_in)):
                 model = struct_in[m]
                 model_out = struct_out[m]
@@ -430,10 +513,12 @@ def _copy_metadata(inputpdb, outputpdb, graftedGlycans):
                     chain_out = model_out[c]
                     st_chain_id = str(chain.name)
                     for r in range(len(chain_out)):
-                        residue_out = chain_out[r]
-                        st_seq_num = int(residue_out.seqid.num)
+                        residue = chain_out[r]
+                        st_seq_num = int(residue.seqid.num)
                         if st_chain_id == gly_chain_id and st_seq_num == gly_seq_num and graft_status:
-                            chain.add_residue(residue_out)
+                            for s in range(num_sugars):
+                                residue_out = chain_out[r+s]
+                                chain.add_residue(residue_out)
     struct_in.write_pdb(outputpdb)
 
 def _generate_restraints(grafted_pdb, outputpath):
@@ -480,9 +565,6 @@ def _remove_waters_and_refine(input_pdb, mtzfile, outputpath, pdbout, mtzout):
     return pdbout, mtzout
 
 def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
-    st = gemmi.read_structure(refined_pdb)
-    st.remove_waters()
-    st.write_pdb(refined_pdb)
     glycosylation = pvtcore.GlycosylationComposition(refined_pdb, original_mtz, "FP,SIGFP")
     num_glycans = glycosylation.get_number_of_glycan_chains_detected()  
     for i in range(len(graftedGlycans)):
@@ -681,7 +763,13 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             #targets = _get_CMannosylation_targets_via_blob_search(pdb_blob_search, mtz_blob_search, sequences)
             #os.remove(pdb_blob_search)
             #os.remove(mtz_blob_search)
-            targets = _get_CMannosylation_targets_via_blob_search(receiverpath, mtzfile, sequences)
+            targets_1 = _get_CMannosylation_targets_via_blob_search(receiverpath, mtzfile, sequences)
+            targets_2 = _get_CMannosylation_targets_via_water_search(receiverpath, sequences)
+            for target_1 in targets_1:
+                for target_2 in targets_2[:]:
+                    if target_1["Sequence"]==target_2["Sequence"] and target_1["chainIndex"]==target_2["chainIndex"] and target_1["currentChainID"]==target_2["currentChainID"] and target_1["glycosylationTargets"]==target_2["glycosylationTargets"]:
+                        targets_2.remove(target_2)
+            targets = targets_1 + targets_2
             removeclashes = True
         else:
             raise ValueError("Mode of operation not yet supported. Only CMannosylation and has blob search functionality.")
@@ -736,6 +824,8 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             if os.path.isfile(refined_pdb):
                 os.remove(refined_mtz)
                 os.remove(mmcifout)
+                if mode == 'CMannosylation':
+                    _remove_waters_close_to_TRP(refined_pdb)
                 graftedGlycans = _calc_rscc_grafted_glycans(refined_pdb, mtzfile, graftedGlycans)
                 graftedGlycans = _remove_grafted_glycans(refined_pdb, mtzfile, graftedGlycans, outputlocation)
     return graftedGlycans
