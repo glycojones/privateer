@@ -454,12 +454,12 @@ def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout):
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
     _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file)
+    os.remove(restraints_file)
+    shutil.rmtree(otherdir)
     if os.path.isfile(pdbout):
         os.remove(grafted_pdb)
     else:
         print(f"Error refining structure {grafted_pdb}.")
-    os.remove(restraints_file)
-    shutil.rmtree(otherdir)
     return pdbout, mtzout
 
 def _remove_waters_and_refine(input_pdb, mtzfile, outputpath, pdbout, mtzout):
@@ -708,12 +708,14 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         for glycan in graftedGlycans:
             if not glycan["GraftStatus"]:
                 count +=1
-    if len(graftedGlycans) == 0 and os.path.isfile(outputpath):
+    if len(graftedGlycans) == 0:
         print("Deleting output PDB file as no grafts occurred.")
-        os.remove(outputpath)
-    elif count >= len(graftedGlycans) and os.path.isfile(outputpath):
+        if os.path.isfile(outputpath):
+            os.remove(outputpath)
+    elif count >= len(graftedGlycans):
         print("Deleting output PDB file as no grafts occurred.")
-        os.remove(outputpath)
+        if os.path.isfile(outputpath):
+            os.remove(outputpath)
     else:
         if mode == 'CMannosylation':
             try:
