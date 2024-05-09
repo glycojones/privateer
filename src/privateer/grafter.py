@@ -414,8 +414,8 @@ def _get_CMannosylation_targets_via_water_search(pdbfile, sequences):
         })
     return output
 
-def _remove_waters_close_to_TRP(pdb_file_path:str): # return pdb. file
-    st = gemmi.read_structure(pdb_file_path)
+def _remove_waters_close_to_TRP(pdb_in, pdb_out): # return pdb. file
+    st = gemmi.read_structure(pdb_in)
     st.standardize_crystal_frame() # some structures don't have standard orientation of crystal frames
     ns = gemmi.NeighborSearch(st[0], st.cell, 5).populate(include_h=False)
     print(f'Number of atoms in original model: {st[0].count_atom_sites()}')
@@ -439,7 +439,7 @@ def _remove_waters_close_to_TRP(pdb_file_path:str): # return pdb. file
                                 print(f'Deleted waters: {cra} within {nearest.dist()} Å to {chain.name}/{residue}')    
     print(f'Number of atoms after deleting local waters: {st[0].count_atom_sites()}')
     # write out file
-    st.write_pdb(pdb_file_path)
+    st.write_pdb(pdb_out)
 
 
 def _make_connection_between_protein_and_glycan(filepath):
@@ -761,7 +761,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             targets_2 = _get_CMannosylation_targets_via_water_search(receiverpath, sequences)
             for target_1 in targets_1:
                 for target_2 in targets_2[:]:
-                    if target_1["Sequence"]==target_2["Sequence"] and target_1["chainIndex"]==target_2["chainIndex"] and target_1["currentChainID"]==target_2["currentChainID"] and target_1["glycosylationTargets"]==target_2["glycosylationTargets"]:
+                    if target_1["chainIndex"]==target_2["chainIndex"] and target_1["currentChainID"]==target_2["currentChainID"]:
                         targets_2.remove(target_2)
             targets = targets_1 + targets_2
             removeclashes = True
@@ -785,6 +785,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
             receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
         _print_grafted_glycans_summary(graftedGlycans)
+    
     if removeclashes:
         count = 0
         for glycan in graftedGlycans:
@@ -819,9 +820,11 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
                 os.remove(refined_mtz)
                 os.remove(mmcifout)
                 if mode == 'CMannosylation':
-                    _remove_waters_close_to_TRP(refined_pdb)
-                graftedGlycans = _calc_rscc_grafted_glycans(refined_pdb, mtzfile, graftedGlycans)
-                graftedGlycans = _remove_grafted_glycans(refined_pdb, mtzfile, graftedGlycans, outputlocation)
+                    pdbout = os.path.join(outputlocation, filename + "_removed_waters.pdb")
+                    _remove_waters_close_to_TRP(refined_pdb, pdbout)
+                    os.remove(refined_pdb)
+                graftedGlycans = _calc_rscc_grafted_glycans(pdbout, mtzfile, graftedGlycans)
+                graftedGlycans = _remove_grafted_glycans(pdbout, mtzfile, graftedGlycans, outputlocation)
     return graftedGlycans
 
 
