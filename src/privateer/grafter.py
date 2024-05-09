@@ -375,20 +375,17 @@ def _get_CMannosylation_targets_via_water_search(pdbfile, sequences):
         for residue in chain:
             if residue.name == 'TRP':
                 # print(chain.name,residue)
-                try: 
-                    cd1 = residue['CD1'][0]
-                except RuntimeError as e:
-                    print(f'{e} at {chain,residue}')
-                    continue
-                marks = ns.find_neighbors(cd1, min_dist=0.1, max_dist=3.5) # search waters in distance of 4 Angstrom
-                for mark in marks:
-                    cra = mark.to_cra(st[0])
-                    # print(cra)
-                    if mark.image_idx != 0: 
-                        continue # image_idx == 0 ~ identical to model within symmetry operation    
-                    if ((cra.residue.het_flag == 'H') and (cra.residue.name == 'HOH')): # check waters
-                        residuelist.append(residue.seqid.num)
-                        chainlist.append(chain.name)
+                for atom in residue:
+                    if atom.name=="CD1":
+                        marks = ns.find_neighbors(atom, min_dist=0.1, max_dist=3.5) # search waters in distance of 4 Angstrom
+                        for mark in marks:
+                            cra = mark.to_cra(st[0])
+                            # print(cra)
+                            if mark.image_idx != 0: 
+                                continue # image_idx == 0 ~ identical to model within symmetry operation    
+                            if ((cra.residue.het_flag == 'H') and (cra.residue.name == 'HOH')): # check waters
+                                residuelist.append(residue.seqid.num)
+                                chainlist.append(chain.name)
     CMannosylationConsensus = "[W]"
     output = []
     for item in sequences:
@@ -426,23 +423,20 @@ def _remove_waters_close_to_TRP(pdb_file_path:str): # return pdb. file
         for residue in chain:
             if residue.name == 'TRP':
                 # print(chain.name,residue)
-                try: 
-                    cd1 = residue['CD1'][0]
-                except RuntimeError as e:
-                    print(f'{e} at {chain,residue}')
-                    continue
-                marks = ns.find_neighbors(cd1, min_dist=0.1, max_dist=3.5) # search waters in distance of 4 Angstrom
-                for mark in marks:
-                    cra = mark.to_cra(st[0])
-                    # print(cra)
-                    if mark.image_idx != 0: 
-                        continue # image_idx == 0 ~ identical to model within symmetry operation      
-                    if ((cra.residue.het_flag == 'H') and (cra.residue.name == 'HOH')): # check waters
-                        nearest = st.cell.find_nearest_pbc_image(cd1.pos, cra.atom.pos, mark.image_idx)
-                        # print(hetatom)
-                        deletedresidue = cra.residue
-                        del deletedresidue[0] # delete [O] from water residue --> waters have only [O]
-                        print(f'Deleted waters: {cra} within {nearest.dist()} Å to {chain.name}/{residue}')    
+                for atom in residue:
+                    if atom.name=="CD1":
+                        marks = ns.find_neighbors(atom, min_dist=0.1, max_dist=3.5) # search waters in distance of 4 Angstrom
+                        for mark in marks:
+                            cra = mark.to_cra(st[0])
+                            # print(cra)
+                            if mark.image_idx != 0: 
+                                continue # image_idx == 0 ~ identical to model within symmetry operation      
+                            if ((cra.residue.het_flag == 'H') and (cra.residue.name == 'HOH')): # check waters
+                                nearest = st.cell.find_nearest_pbc_image(atom.pos, cra.atom.pos, mark.image_idx)
+                                # print(hetatom)
+                                deletedresidue = cra.residue
+                                del deletedresidue[0] # delete [O] from water residue --> waters have only [O]
+                                print(f'Deleted waters: {cra} within {nearest.dist()} Å to {chain.name}/{residue}')    
     print(f'Number of atoms after deleting local waters: {st[0].count_atom_sites()}')
     # write out file
     st.write_pdb(pdb_file_path)
