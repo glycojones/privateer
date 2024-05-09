@@ -71,6 +71,7 @@ namespace privateer {
 				clipper::MGlycan& get_grafted_glycan() { return grafted_glycan; };
 				std::string get_grafted_glycan_chainID() { return grafted_glycan_chainID; };
 				std::string get_grafted_glycan_root_PDBID() { return grafted_glycan_root_PDBID; };
+				int get_grafted_glycan_num_sugars() {  return grafted_glycan_num_sugars; }
 				bool get_graft_status() { return graft_status; };
 				clipper::MiniMol& get_donor_model() { return donor_model; };
 				std::vector<clipper::MGlycan>& get_donor_glycans() { return donor_glycans; };
@@ -131,6 +132,7 @@ namespace privateer {
 				clipper::MGlycan grafted_glycan;
 				std::string grafted_glycan_chainID;
 				std::string grafted_glycan_root_PDBID;
+				int grafted_glycan_num_sugars;
 				bool graft_status;
 
 				std::vector< std::pair< std::pair<clipper::MMonomer, clipper::String>, std::pair<clipper::MMonomer, clipper::String> > > clashes;
