@@ -4812,7 +4812,8 @@ std::string MGlycan::write_ring_ext_restraints ( float weight ) {
   for ( int i = 0; i < sugar_list.size(); i++ ) {
     buffer += "# " + sugar_list[i].type() + " " + sugar_list[i].id() + "\n";
     std::string residue = sugar_list[i].id();
-    std::string chain = this->get_chain();
+    //std::string chain = this->get_chain();
+    std::string chain = sugar_list[i].chain_id().trim();
     if ( this->kind_of_glycan == "c-glycan" ) { // needs 1C4 restraints
       buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
                                       " chain " + chain + " residue " + residue + " atom C1 next" +
