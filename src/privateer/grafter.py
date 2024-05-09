@@ -1,4 +1,5 @@
 import os
+import shutil
 import re
 import sys
 import argparse
@@ -458,6 +459,7 @@ def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout):
     else:
         print(f"Error refining structure {grafted_pdb}.")
     os.remove(restraints_file)
+    shutil.rmtree(otherdir)
     return pdbout, mtzout
 
 def _remove_waters_and_refine(input_pdb, mtzfile, outputpath, pdbout, mtzout):
@@ -726,12 +728,14 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             outputlocation = outputpath.rpartition("/")[0]
             filename = os.path.basename(outputpath).partition("_")[0]
             pdbout = os.path.join(outputlocation, filename + "_refined.pdb")
+            mmcifout = pdbout = os.path.join(outputlocation, filename + "_refined.mmcif")
             mtzout = os.path.join(outputlocation, filename + "_refined.mtz")
             refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout)
-            os.remove(refined_mtz)
             if os.path.isfile(refined_pdb):
                 graftedGlycans = _calc_rscc_grafted_glycans(refined_pdb, mtzfile, graftedGlycans)
                 graftedGlycans = _remove_grafted_glycans(refined_pdb, mtzfile, graftedGlycans, outputlocation)
+                os.remove(refined_mtz)
+                os.remove(mmcifout)
     return graftedGlycans
 
 
