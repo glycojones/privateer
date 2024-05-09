@@ -454,10 +454,10 @@ def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout):
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
     _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file)
-    os.remove(restraints_file)
     shutil.rmtree(otherdir)
     if os.path.isfile(pdbout):
         os.remove(grafted_pdb)
+        os.remove(restraints_file)
     else:
         print(f"Error refining structure {grafted_pdb}.")
     return pdbout, mtzout
