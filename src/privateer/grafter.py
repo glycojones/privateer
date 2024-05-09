@@ -728,14 +728,14 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             outputlocation = outputpath.rpartition("/")[0]
             filename = os.path.basename(outputpath).partition("_")[0]
             pdbout = os.path.join(outputlocation, filename + "_refined.pdb")
-            mmcifout = pdbout = os.path.join(outputlocation, filename + "_refined.mmcif")
+            mmcifout = os.path.join(outputlocation, filename + "_refined.mmcif")
             mtzout = os.path.join(outputlocation, filename + "_refined.mtz")
             refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout)
             if os.path.isfile(refined_pdb):
-                graftedGlycans = _calc_rscc_grafted_glycans(refined_pdb, mtzfile, graftedGlycans)
-                graftedGlycans = _remove_grafted_glycans(refined_pdb, mtzfile, graftedGlycans, outputlocation)
                 os.remove(refined_mtz)
                 os.remove(mmcifout)
+                graftedGlycans = _calc_rscc_grafted_glycans(refined_pdb, mtzfile, graftedGlycans)
+                graftedGlycans = _remove_grafted_glycans(refined_pdb, mtzfile, graftedGlycans, outputlocation)
     return graftedGlycans
 
 
