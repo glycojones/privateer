@@ -714,8 +714,6 @@ namespace privateer
                     {
                         this->graft_status = true;
                         converted_mglycan.set_id(root_chain_id);
-                        this->grafted_glycan_chainID = root_chain_id;
-                        this->grafted_glycan_num_sugars = converted_mglycan.size();
                         export_model.insert(converted_mglycan);
                         if(enable_user_messages && !debug_output)
                             std::cout << "Glycan has been grafted!" << std::endl;
@@ -728,8 +726,6 @@ namespace privateer
                 {
                     this->graft_status = true;
                     converted_mglycan.set_id(root_chain_id);
-                    this->grafted_glycan_chainID = root_chain_id;
-                    this->grafted_glycan_num_sugars = converted_mglycan.size();
                     export_model.insert(converted_mglycan);
                     if(enable_user_messages && !debug_output)
                         std::cout << "Glycan has been grafted!" << std::endl;
@@ -738,6 +734,8 @@ namespace privateer
                         DBG << "Glycan has been grafted!" << std::endl;
                 }
             }
+            this->grafted_glycan_chainID = root_chain_id;
+            this->grafted_glycan_num_sugars = converted_mglycan.size();
         }
 
 /*         // Function adopted from Paul Emsley's Coot software
