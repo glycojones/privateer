@@ -820,9 +820,13 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
                 os.remove(refined_mtz)
                 os.remove(mmcifout)
                 if mode == 'CMannosylation':
-                    pdbout = os.path.join(outputlocation, filename + "_removed_waters.pdb")
-                    _remove_waters_close_to_TRP(refined_pdb, pdbout)
-                    os.remove(refined_pdb)
+                    try:
+                        pdbout = os.path.join(outputlocation, filename + "_removed_waters.pdb")
+                        _remove_waters_close_to_TRP(refined_pdb, pdbout)
+                        os.remove(refined_pdb)
+                    except:
+                        pdbout = refined_pdb
+                        print(f"Failed to remove waters close to TRP in {pdbout}")
                 graftedGlycans = _calc_rscc_grafted_glycans(pdbout, mtzfile, graftedGlycans)
                 graftedGlycans = _remove_grafted_glycans(pdbout, mtzfile, graftedGlycans, outputlocation)
     return graftedGlycans
