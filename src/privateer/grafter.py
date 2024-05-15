@@ -653,7 +653,7 @@ def _glycosylate_receiving_model_using_uniprot_info(
     builder = pvtmodelling.Builder(
         receiverpath,
         donorpath,
-        -1, #nThreads
+        4, #nThreads
         trimGlycanIfClashesDetected,
         True, #ANY_search_policy
         enableUserMessages,
@@ -864,11 +864,11 @@ def glycosylate_receiving_model_using_manual_instructions(
         receiverResidueIndex,
         enableUserMessages=True,
         trimGlycanIfClashesDetected=False,
-        nThreads=-1):
+        nThreads=4):
     builder = pvtmodelling.Builder(
         receiverpath,
         donorpath,
-        -1, #nThreads
+        4, #nThreads
         trimGlycanIfClashesDetected,
         True, #ANY_search_Policy
         enableUserMessages,
