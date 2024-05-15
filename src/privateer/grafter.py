@@ -579,7 +579,7 @@ def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpat
     st = gemmi.read_structure(refined_pdb)
     for i in range(len(graftedGlycans)):
         glycan = graftedGlycans[i]
-        if glycan["RSCC"] < 0.25:
+        if glycan["RSCC"] < 0.5:
             graftedGlycans[i]["GraftStatus"] = False
             for model in st:
                 for chain in model:
