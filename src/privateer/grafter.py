@@ -15,7 +15,7 @@ from privateer import privateer_core as pvtcore
 from privateer import privateer_modelling as pvtmodelling
 
 
-def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out: str, restraint_file: str): 
+def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out: str, restraint_file: str, ncycles: int): 
     # Taken and edited from ModelCraft 
     # Note: Need to make sure path to ccp4 is set up via: source /Applications/ccp4-8.0/bin/ccp4.setup-sh
     print("Running REFMAC with", mtz_in, pdb_in)
@@ -34,7 +34,7 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
     labin += " FREE=FREE"
     _stdin = []
     _stdin.append("LABIN " + labin)
-    _stdin.append("NCYCLES 1")
+    _stdin.append(f"NCYCLES {ncycles}")
     _stdin.append("WEIGHT AUTO")
     _stdin.append("MAKE HYDR NO")
     _stdin.append("MAKE NEWLIGAND NOEXIT")
@@ -525,14 +525,14 @@ def _generate_restraints(grafted_pdb, outputpath):
     return output_restraints
 
 
-def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout):
+def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, ncycles):
     restraints_file = _generate_restraints(grafted_pdb, outputpath)
     filename = os.path.basename(grafted_pdb).partition(".")[0]
     otherdir =outputpath + "/temp"
     if not os.path.isdir(otherdir):
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
-    _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file)
+    _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file, ncycles)
     shutil.rmtree(otherdir)
     if os.path.isfile(pdbout):
         os.remove(grafted_pdb)
@@ -541,7 +541,7 @@ def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout):
         print(f"Error refining structure {grafted_pdb}.")
     return pdbout, mtzout
 
-def _remove_waters_and_refine(input_pdb, mtzfile, outputpath, pdbout, mtzout):
+def _remove_waters_and_recalc_map(input_pdb, mtzfile, outputpath, pdbout, mtzout):
     st = gemmi.read_structure(input_pdb)
     st.remove_waters()
     st.write_pdb(pdbout)
@@ -551,7 +551,7 @@ def _remove_waters_and_refine(input_pdb, mtzfile, outputpath, pdbout, mtzout):
     if not os.path.isdir(otherdir):
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
-    _run_refmac(mtzfile, pdbout, mtzout, pdb_out, other, "Not a file")
+    _run_refmac(mtzfile, pdbout, mtzout, pdb_out, other, "Not a file", 0)
     if os.path.isfile(pdb_out):
         os.remove(pdb_out)
     else:
@@ -604,7 +604,7 @@ def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpat
         filename = os.path.basename(refined_pdb).partition("_")[0]
         pdbout = os.path.join(outputpath, filename + "_grafted.pdb")
         mtzout = os.path.join(outputpath, filename + "_grafted.mtz")
-        final_pdb, final_mtz = _refine_grafted_glycans(refined_pdb, original_mtz, outputpath, pdbout, mtzout)
+        final_pdb, final_mtz = _refine_grafted_glycans(refined_pdb, original_mtz, outputpath, pdbout, mtzout, 0)
     return graftedGlycans
 
 def _glycosylate_receiving_model_using_consensus_seq(
@@ -815,7 +815,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             pdbout = os.path.join(outputlocation, filename + "_refined.pdb")
             mmcifout = os.path.join(outputlocation, filename + "_refined.mmcif")
             mtzout = os.path.join(outputlocation, filename + "_refined.mtz")
-            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout)
+            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 10)
             if os.path.isfile(refined_pdb):
                 os.remove(refined_mtz)
                 os.remove(mmcifout)
