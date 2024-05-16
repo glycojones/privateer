@@ -46,7 +46,48 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
             for line in input_file:
                 _stdin.append(line)
         _stdin.append("END")
+    process = subprocess.Popen(
+    #args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
+    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
+    stdin=subprocess.PIPE if _stdin else None,
+    # stdout=subprocess.PIPE,
+    # stderr=subprocess.PIPE,
+    encoding="utf8",
+    env={**os.environ,},
+    cwd=os.getcwd(),
+    )
+    if _stdin:
+        stdin_str = '\n'.join(_stdin)
+        process.communicate(input=stdin_str)
 
+def _run_refmac_2(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out: str, restraint_file: str, ncycles: int): 
+    # Taken and edited from ModelCraft 
+    # Note: Need to make sure path to ccp4 is set up via: source /Applications/ccp4-8.0/bin/ccp4.setup-sh
+    print("Running REFMAC with", mtz_in, pdb_in)
+    _args = []
+    _args += ["HKLIN", mtz_in]
+    _args += ["XYZIN", pdb_in]
+    
+    _args += ["HKLOUT", mtz_out]
+    _args += ["XYZOUT", pdb_out]
+    _args += ["XMLOUT", f"{other_out}.xml"]
+    labin = "FP=F"
+    labin += " SIGFP=SIGF"
+    labin += " FREE=FREER"
+    _stdin = []
+    _stdin.append("LABIN " + labin)
+    _stdin.append(f"NCYCLES {ncycles}")
+    _stdin.append("WEIGHT AUTO")
+    _stdin.append("MAKE HYDR NO")
+    _stdin.append("MAKE NEWLIGAND NOEXIT")
+    _stdin.append("PHOUT")
+    _stdin.append("PNAME modelcraft")
+    _stdin.append("DNAME modelcraft")
+    if os.path.isfile(restraint_file):
+        with open(restraint_file) as input_file: 
+            for line in input_file:
+                _stdin.append(line)
+        _stdin.append("END")
     process = subprocess.Popen(
     #args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
     args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
@@ -533,12 +574,14 @@ def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, nc
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
     _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file, ncycles)
+    if not os.path.isfile(pdbout):
+        _run_refmac_2(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file, ncycles)
     shutil.rmtree(otherdir)
     if os.path.isfile(pdbout):
         os.remove(grafted_pdb)
         os.remove(restraints_file)
     else:
-        print(f"Error refining structure {grafted_pdb}.")
+        print(f"Error refining structure {grafted_pdb}")
     return pdbout, mtzout
 
 def _remove_waters_and_recalc_map(input_pdb, mtzfile, outputpath, pdbout, mtzout):
@@ -555,7 +598,7 @@ def _remove_waters_and_recalc_map(input_pdb, mtzfile, outputpath, pdbout, mtzout
     if os.path.isfile(pdb_out):
         os.remove(pdb_out)
     else:
-        print(f"Error refining structure {input_pdb}.")
+        print(f"Error refining structure {input_pdb}")
     return pdbout, mtzout
 
 def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
@@ -870,13 +913,15 @@ def glycosylate_receiving_model_using_manual_instructions(
         donorpath,
         4, #nThreads
         trimGlycanIfClashesDetected,
+        False, #Don't remove glycans if clashes detected
         True, #ANY_search_Policy
         enableUserMessages,
         False, #debug_output
     )
-
-    builder.graft_glycan_to_receiver(glycanIndex, receiverChainIndex,
-                                     receiverResidueIndex)
+    try:
+        builder.graft_glycan_to_receiver(glycanIndex, receiverChainIndex, receiverResidueIndex)
+    except:
+        print(f"Unknown exception while grafting to chain {receiverChainIndex} target {receiverResidueIndex}. Skipping graft.")
 
     graftedGlycanSummary = builder.get_summary_of_grafted_glycans()
     builder.export_grafted_model(outputpath)
