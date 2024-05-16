@@ -47,50 +47,8 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
                 _stdin.append(line)
         _stdin.append("END")
     process = subprocess.Popen(
-    #args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
-    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
-    stdin=subprocess.PIPE if _stdin else None,
-    # stdout=subprocess.PIPE,
-    # stderr=subprocess.PIPE,
-    encoding="utf8",
-    env={**os.environ,},
-    cwd=os.getcwd(),
-    )
-    if _stdin:
-        stdin_str = '\n'.join(_stdin)
-        process.communicate(input=stdin_str)
-
-def _run_refmac_2(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out: str, restraint_file: str, ncycles: int): 
-    # Taken and edited from ModelCraft 
-    # Note: Need to make sure path to ccp4 is set up via: source /Applications/ccp4-8.0/bin/ccp4.setup-sh
-    print("Running REFMAC with", mtz_in, pdb_in)
-    _args = []
-    _args += ["HKLIN", mtz_in]
-    _args += ["XYZIN", pdb_in]
-    
-    _args += ["HKLOUT", mtz_out]
-    _args += ["XYZOUT", pdb_out]
-    _args += ["XMLOUT", f"{other_out}.xml"]
-    labin = "FP=F"
-    labin += " SIGFP=SIGF"
-    labin += " FREE=FREER"
-    _stdin = []
-    _stdin.append("LABIN " + labin)
-    _stdin.append(f"NCYCLES {ncycles}")
-    _stdin.append("WEIGHT AUTO")
-    _stdin.append("MAKE HYDR NO")
-    _stdin.append("MAKE NEWLIGAND NOEXIT")
-    _stdin.append("PHOUT")
-    _stdin.append("PNAME modelcraft")
-    _stdin.append("DNAME modelcraft")
-    if os.path.isfile(restraint_file):
-        with open(restraint_file) as input_file: 
-            for line in input_file:
-                _stdin.append(line)
-        _stdin.append("END")
-    process = subprocess.Popen(
-    #args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
-    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
+    args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
+    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
     # stdout=subprocess.PIPE,
     # stderr=subprocess.PIPE,
@@ -574,8 +532,6 @@ def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, nc
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
     _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file, ncycles)
-    if not os.path.isfile(pdbout):
-        _run_refmac_2(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file, ncycles)
     shutil.rmtree(otherdir)
     if os.path.isfile(pdbout):
         os.remove(grafted_pdb)
@@ -760,7 +716,7 @@ def _store_grafted_glycans_summary(graftedGlycans, index, totalCount):
 
 
 def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
-                                uniprotID, mode, mtzfile):
+                                uniprotID, mode, mtzfile, cryoEM):
 
     sequences = _get_sequences_in_receiving_model(receiverpath)
     print(f"Local Receiver Model Sequence corresponding to file {receiverpath}")
@@ -793,21 +749,18 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
 
     elif mtzfile is not None:
         if mode == 'CMannosylation':
-            #outputlocation = outputpath.rpartition("/")[0]
-            #pdbout = outputlocation + "/no_waters.pdb"
-            #mtzout = outputlocation + "/no_waters.mtz"
-            #pdb_blob_search, mtz_blob_search = _remove_waters_and_refine(receiverpath, mtzfile, outputlocation, pdbout, mtzout)
-            #targets = _get_CMannosylation_targets_via_blob_search(pdb_blob_search, mtz_blob_search, sequences)
-            #os.remove(pdb_blob_search)
-            #os.remove(mtz_blob_search)
-            targets_1 = _get_CMannosylation_targets_via_blob_search(receiverpath, mtzfile, sequences)
-            targets_2 = _get_CMannosylation_targets_via_water_search(receiverpath, sequences)
-            for target_1 in targets_1:
-                for target_2 in targets_2[:]:
-                    if target_1["chainIndex"]==target_2["chainIndex"] and target_1["currentChainID"]==target_2["currentChainID"]:
-                        targets_2.remove(target_2)
-            targets = targets_1 + targets_2
-            removeclashes = True
+            if cryoEM:
+                targets = _get_CMannosylation_targets_via_consensus_seq(sequences)
+                removeclashes = True
+            else:
+                targets_1 = _get_CMannosylation_targets_via_blob_search(receiverpath, mtzfile, sequences)
+                targets_2 = _get_CMannosylation_targets_via_water_search(receiverpath, sequences)
+                for target_1 in targets_1:
+                    for target_2 in targets_2[:]:
+                        if target_1["chainIndex"]==target_2["chainIndex"] and target_1["currentChainID"]==target_2["currentChainID"]:
+                            targets_2.remove(target_2)
+                targets = targets_1 + targets_2
+                removeclashes = True
         else:
             raise ValueError("Mode of operation not yet supported. Only CMannosylation and has blob search functionality.")
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
@@ -1108,6 +1061,15 @@ if __name__ == "__main__":
         f"Save glycan summary to a csv. If unspecified, the script will default to '{defaultSaveSummary}'",
     )
 
+    parser.add_argument(
+        "-cryoEM",
+        action="store",
+        default=False,
+        dest="cryoEM",
+        help=
+        f"If this is a strucutre from experiment, is this a cryoEM structure?",
+    )
+
     args = parser.parse_args()
 
     if args.user_uniprotID is not None:
@@ -1155,15 +1117,16 @@ if __name__ == "__main__":
     else:
         SaveSummary = defaultSaveSummary
 
+
     if (args.user_localReceiverPath is not None and args.user_uniprotID is None
             and printInfo == False):
         uniprotID = None
         graftedGlycans = _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
-                                    outputPath, uniprotID, mode, args.user_localReceiverPath_mtz)
+                                    outputPath, uniprotID, mode, args.user_localReceiverPath_mtz, args.cryoEM)
     elif (args.user_localReceiverPath is not None
           and args.user_uniprotID is not None and printInfo == False):
         graftedGlycans = _local_input_model_pipeline(args.user_localReceiverPath, donorPath,
-                                    outputPath, uniprotID, mode, args.user_localReceiverPath_mtz)
+                                    outputPath, uniprotID, mode, args.user_localReceiverPath_mtz, args.cryoEM)
     elif args.user_uniprotIDsList is not None and printInfo == False:
         uniprotIDList = _import_list_of_uniprotIDs_to_glycosylate(
             uniprotIDListPath)
