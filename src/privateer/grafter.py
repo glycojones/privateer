@@ -47,8 +47,8 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
                 _stdin.append(line)
         _stdin.append("END")
     process = subprocess.Popen(
-    args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
-    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
+    #args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
+    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
     # stdout=subprocess.PIPE,
     # stderr=subprocess.PIPE,
@@ -59,6 +59,48 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
     if _stdin:
         stdin_str = '\n'.join(_stdin)
         process.communicate(input=stdin_str)
+
+def _run_servalcat(pdbfile:str,halfmap1:str,halfmap2:str,maskmap:None,resolution:float,outdir:str,restraint_file:str, ncycles:int, normalised:bool=False):
+    
+    print('Start running Servalcat')
+    pdbid = os.path.basename(pdbfile).split('.')[0]
+
+    _args = []
+    _args += ['--model', pdbfile]
+    _args += ['--halfmaps', halfmap1,halfmap2]
+    
+    if maskmap != None: # cryo-EM structures might not have masked map
+        _args += ['--mask',maskmap]
+
+    _args += ['--resolution',f'{resolution}']
+    
+    if normalised == True: # make normalised map
+        print('Running normalised map')
+        _args += ['--normalized_map']
+    
+    _args += ['--output_prefix', outdir] # change name files
+
+    _args += ['--ncycle', ncycles] 
+    if os.path.isfile(restraint_file):
+        with open(restraint_file) as input_file: 
+            for line in input_file:
+                _args.append(line)
+        _args.append("END")
+
+    args = ['/Applications/ccp4-8.0/bin/servalcat', 'refine_spa'] + _args
+    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/servalcat"] + _args,
+    
+    # Don't want to print Servalcat run in Terminal? -> change capture_output = False
+    try: 
+        subprocess.run(args=args,check=True,capture_output=False)
+    except subprocess.CalledProcessError as e:
+        print(f'Error: Model is out of mask')
+        print(f'Running no check mask with model')
+        args += ['--no_check_mask_with_model']
+        subprocess.run(args=args,check=True,capture_output=False)
+    
+    print(f'Finish running Servalcat for PDB ID: {pdbid}')
+
 
 
 def _import_list_of_uniprotIDs_to_glycosylate(inputFilePath):
@@ -751,7 +793,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         if mode == 'CMannosylation':
             if cryoEM:
                 targets = _get_CMannosylation_targets_via_consensus_seq(sequences)
-                removeclashes = True
+                removeclashes = False
             else:
                 targets_1 = _get_CMannosylation_targets_via_blob_search(receiverpath, mtzfile, sequences)
                 targets_2 = _get_CMannosylation_targets_via_water_search(receiverpath, sequences)
@@ -781,9 +823,8 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
         graftedGlycans = _glycosylate_receiving_model_using_consensus_seq(
             receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
         _print_grafted_glycans_summary(graftedGlycans)
-    
+    count = 0
     if removeclashes:
-        count = 0
         for glycan in graftedGlycans:
             if not glycan["GraftStatus"]:
                 count +=1
@@ -811,7 +852,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             pdbout = os.path.join(outputlocation, filename + "_refined.pdb")
             mmcifout = os.path.join(outputlocation, filename + "_refined.mmcif")
             mtzout = os.path.join(outputlocation, filename + "_refined.mtz")
-            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 10)
+            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 1)
             if os.path.isfile(refined_pdb):
                 os.remove(refined_mtz)
                 os.remove(mmcifout)
