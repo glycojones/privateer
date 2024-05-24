@@ -60,46 +60,41 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
         stdin_str = '\n'.join(_stdin)
         process.communicate(input=stdin_str)
 
-def _run_servalcat(pdbfile:str,halfmap1:str,halfmap2:str,maskmap:None,resolution:float,outdir:str,restraint_file:str, ncycles:int, normalised:bool=False):
+def _run_servalcat_refine_spa(pdbfile:str,halfmap1:str,halfmap2:str,maskmap:None,resolution:float,outputdirectory:str,outfilename:str,extrestraint:str) -> str:
     
-    print('Start running Servalcat')
+    print('Start running Servalcat refine_spa')
     pdbid = os.path.basename(pdbfile).split('.')[0]
 
     _args = []
+    _args += ['--ncycle', '20']
+    
     _args += ['--model', pdbfile]
     _args += ['--halfmaps', halfmap1,halfmap2]
     
     if maskmap != None: # cryo-EM structures might not have masked map
-        _args += ['--mask',maskmap]
+        _args += ['--mask_for_fofc',maskmap]
 
     _args += ['--resolution',f'{resolution}']
+    _args += ['--output_prefix', outfilename]
+    _args += ['--keyword_file', extrestraint]
+    _args += ['--hydrogen', 'no']
     
-    if normalised == True: # make normalised map
-        print('Running normalised map')
-        _args += ['--normalized_map']
-    
-    _args += ['--output_prefix', outdir] # change name files
-
-    _args += ['--ncycle', ncycles] 
-    if os.path.isfile(restraint_file):
-        with open(restraint_file) as input_file: 
-            for line in input_file:
-                _args.append(line)
-        _args.append("END")
-
     args = ['/Applications/ccp4-8.0/bin/servalcat', 'refine_spa'] + _args
-    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/servalcat"] + _args,
     
     # Don't want to print Servalcat run in Terminal? -> change capture_output = False
-    try: 
-        subprocess.run(args=args,check=True,capture_output=False)
-    except subprocess.CalledProcessError as e:
-        print(f'Error: Model is out of mask')
-        print(f'Running no check mask with model')
-        args += ['--no_check_mask_with_model']
-        subprocess.run(args=args,check=True,capture_output=False)
+    # try: 
+    subprocess.run(args=args,check=True,capture_output=False)
+    # except subprocess.CalledProcessError as e:
+    #     print(f'Error: Model is out of mask')
+    #     print(f'Running no check mask with model')
+    #     args += ['--no_check_mask_with_model']
+    #     subprocess.run(args=args,check=True,capture_output=False)
+
+    output = os.path.join(outputdirectory,f'{outfilename}.pdb')
     
-    print(f'Finish running Servalcat for PDB ID: {pdbid}')
+    print(f'Finished running Servalcat refine_spa for PDB ID: {pdbid}')
+
+    return output
 
 
 
@@ -330,6 +325,32 @@ def _get_CMannosylation_targets_via_consensus_seq(sequences):
                     "end": match.end(),
                     "match": match.group()
                 })
+
+        output.append({
+            "Sequence": currentSequence,
+            "chainIndex": currentChainIndex,
+            "currentChainID": currentChainID,
+            "glycosylationTargets": glycosylationTargets,
+        })
+    return output
+
+def _get_CMannosylation_targets_manual(sequences):
+    CMannosylationConsensus = "[W]" #This needs to change as it is currently finding too many targets
+    output = []
+    for item in sequences:
+        currentChainIndex = item["index"]
+        currentChainID = item["ChainID"]
+        currentSequence = item["Sequence"]
+
+        glycosylationTargets = []
+
+        for match in re.finditer(CMannosylationConsensus, currentSequence):
+            if (int(item["Residues"][match.start()]["residueSeqnum"]) == int(36)) and (str(currentChainID) == "C"):
+                        glycosylationTargets.append({
+                            "start": match.start(),
+                            "end": match.end(),
+                            "match": match.group()
+                        })
 
         output.append({
             "Sequence": currentSequence,
@@ -618,20 +639,27 @@ def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
 
 def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpath):
     st = gemmi.read_structure(refined_pdb)
+    ms = []
+    cs = []
+    rs = []
     for i in range(len(graftedGlycans)):
         glycan = graftedGlycans[i]
         if glycan["RSCC"] < 0.5:
             graftedGlycans[i]["GraftStatus"] = False
-            for model in st:
-                for chain in model:
-                    for residue in chain:
+            for m, model in enumerate(st):
+                for c, chain in enumerate(model):
+                    for r, residue in enumerate(chain):
                         st_seq_num = int(residue.seqid.num)
                         gly_seq_num = int(glycan["receiving_protein_residue_monomer_PDBID"])
                         st_chain_id = str(chain.name)
                         gly_chain_id = str(glycan["receiving_protein_residue_chain_PDBID"])
                         if st_seq_num == gly_seq_num and st_chain_id == gly_chain_id:
                             print(f"Deleting glycan grafted at {chain.name}-{residue.seqid.num} from {refined_pdb} due to poor RSCC")
-                            del residue
+                            ms.append(m)
+                            cs.append(c)
+                            rs.append(r)
+    for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
+        del st[m][c][r]
     st.write_pdb(refined_pdb)
     count = 0
     for glycan in graftedGlycans:
@@ -792,7 +820,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
     elif mtzfile is not None:
         if mode == 'CMannosylation':
             if cryoEM:
-                targets = _get_CMannosylation_targets_via_consensus_seq(sequences)
+                targets = _get_CMannosylation_targets_via_consensus_seq_temp(sequences)
                 removeclashes = False
             else:
                 targets_1 = _get_CMannosylation_targets_via_blob_search(receiverpath, mtzfile, sequences)
