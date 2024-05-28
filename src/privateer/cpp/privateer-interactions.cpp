@@ -248,13 +248,13 @@ namespace privateer
 
     std::string find_sugar_face(clipper::MSugar &input_sugar, std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms)
     { // checks whether the h_atom is on the same side as the anomeric oxygen (beta) or the other side (alpha)
-        std::string sugar_face = "α";
+        std::string sugar_face = "alpha";
         const clipper::Vec3<clipper::ftype>& sugar_normal = input_sugar.ring_mean_plane(); // normal vector of the plane
         clipper::Coord_orth anomeric_O_coords = input_sugar.find("O5", clipper::MM::ANY).coord_orth(); // point on the plane: anomeric oxygen
         clipper::Coord_orth h_coords = xh_atoms.second.coord_orth(); // point (h_atom coords) to check
         
         if (is_same_side(h_coords, anomeric_O_coords, sugar_normal)) // if true, h_atom is on same side as anomeric oxygen so it is beta face
-            sugar_face = "β";
+            sugar_face = "beta";
         return sugar_face;
     }
     
