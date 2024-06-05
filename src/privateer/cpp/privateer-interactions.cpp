@@ -201,6 +201,7 @@ namespace privateer
                                            coords.y() * 0.2,
                                            coords.z() * 0.2);
             }
+            return clipper::Coord_orth(0,0,0);
         }
     }
 
