@@ -2,7 +2,7 @@
 name: Web App - Bug report
 about: Create a report to help us improve
 title: ''
-labels: bug, webserver
+labels: bug
 assignees: ''
 
 ---
