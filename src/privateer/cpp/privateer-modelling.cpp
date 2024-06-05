@@ -234,16 +234,24 @@ namespace privateer
                     index = i;
                 }
             }
-
+            int hold = 0;
+            for(int i = 0; i < export_model[index].size(); i++)
+            {
+                if (std::stoi(export_model[index][i].id().trim()) > hold)
+                {
+                    hold = std::stoi(export_model[index][i].id().trim());
+                }
+            }
             for(int residue = 0; residue < converted_mglycan.size(); residue++)
             {
-                std::string res_id = "1" + input_protein_side_chain_residue.id().trim();
+                /* std::string res_id = "1" + input_protein_side_chain_residue.id().trim();
                 if (res_id.size() < 4)
                 {
                     res_id = "2" + res_id;
-                }
+                } */
+                std::string res_id = std::to_string(hold + 1 + residue);
                 converted_mglycan[residue].set_id(res_id);
-            }
+            } //FLAG: Check this
             this->grafted_glycan_root_PDBID = converted_mglycan[0].id().trim();
             if(debug_output)
                 DBG << "Converted MGlycan to MPolymer. MPolymer.size(): " << converted_mglycan.size() << std::endl;
