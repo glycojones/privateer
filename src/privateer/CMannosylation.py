@@ -6,6 +6,7 @@ import gemmi
 import pandas as pd
 import urllib.request
 import re
+import argparse
 sys.path.append("/y/people/lah583/privateer/src/privateer")
 import grafter
 from privateer import privateer_core as pvtcore
@@ -32,9 +33,9 @@ def save_json(pdbcodes, receiver_paths, mtz_paths, output_paths, glycosylationss
     with open(output_file, "w") as output_file: 
         json.dump(data, output_file)
 
-def find_mtz_path(pdbcode):
-    output_path_1 = f"/vault/pdb_mtz_files/{pdbcode}.mtz"
-    output_path_2 = f"/y/people/lah583/privateer/results/Fixing_c-glycans/receivers/{pdbcode}.mtz"
+def find_mtz_path(mtzdir,receiverdir,pdbcode):
+    output_path_1 = os.path.join(mtzdir,f"{pdbcode}.mtz")
+    output_path_2 = os.path.join(receiverdir, f"{pdbcode}.mtz")
     url = f"https://edmaps.rcsb.org/coefficients/{pdbcode}.mtz"
     if os.path.exists(output_path_1):
         return output_path_1
@@ -64,7 +65,7 @@ def get_RSCC(databasedir, pdbcode, protein_chain_ID, protein_res_ID):
         print("Warning, original RSCC value for {pdbcode} protein chain ID {protein_chain_ID} and res ID {protein_res_ID} may be incorrect...")
     return RSCC
 
-def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,receiverdir,donordir,outputdir):
+def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir):
     filepathlist = file_paths(databasedir)
     data_out = {}
     pdbcodes = []
@@ -112,7 +113,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,receive
             for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
                 del st[m][c][r]
             receiver_path = receiverdir + f"/{pdbcode}.pdb"
-            mtz_path = find_mtz_path(pdbcode)
+            mtz_path = find_mtz_path(mtzdir,receiverdir,pdbcode)
             output_path = outputdir + f"/{pdbcode}.pdb"
             st.write_pdb(receiver_path)
             data_out[str(pdbcode)]={"receiver_path": receiver_path, "mtz_path": mtz_path, "output_path": output_path ,"glycosylations": glycosylations}
@@ -123,7 +124,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,receive
         json.dump(data_out, output_file)
     return pdbcodes
 
-def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,receiverdir,donordir,outputdir):
+def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir):
     pdbfiles = file_paths(pdbmirrordir + "pdb")
     mmcifiles = file_paths(pdbmirrordir + "mmcif")
     data_out = {}
@@ -132,7 +133,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,receiverdir,donord
         mmcifile = mmcifiles[i]
         filename = os.path.basename(mmcifile)
         pdbcode = filename.partition(".")[0]
-        mtzfile = find_mtz_path(pdbcode)
+        mtzfile = find_mtz_path(mtzdir,receiverdir,pdbcode)
         st = gemmi.read_structure(mmcifile)
         save_structure = False
         glycosylations = []
@@ -178,7 +179,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,receiverdir,donord
             for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
                 del st[m][c][r]
             receiver_path = receiverdir + f"/{pdbcode}.pdb"
-            mtz_path = find_mtz_path(pdbcode)
+            mtz_path = find_mtz_path(mtzdir,receiverdir,pdbcode)
             output_path = outputdir + f"/{pdbcode}.pdb"
             st.write_pdb(receiver_path)
             data_out[str(pdbcode)]={"receiver_path": receiver_path, "mtz_path": mtz_path, "output_path": output_path ,"glycosylations": glycosylations}
@@ -189,11 +190,11 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,receiverdir,donord
         json.dump(data_out, output_file)
     return pdbcodes
 
-def fix_Cglycans(databasedir,pdbmirrordir,receiverdir,donordir,outputdir):
+def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir):
     if databasedir is not None:
-        pdbcodes = find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,receiverdir,donordir,outputdir)
+        pdbcodes = find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir)
     else:
-        pdbcodes = find_and_delete_glycans_to_replace_privateer(pdbmirrordir,receiverdir,donordir,outputdir)
+        pdbcodes = find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir)
     df_in = pd.read_json("c-mannosylation_sites.json")
     AllGlycans = []
     for pdbcode in pdbcodes:
@@ -245,7 +246,7 @@ def fix_Cglycans(databasedir,pdbmirrordir,receiverdir,donordir,outputdir):
         pdbout = outputdir+f"/{pdbcode}_grafted.pdb"
         mtzout = outputdir+f"/{pdbcode}_grafted.mtz"
         print(f"Refining grafted strucutre...")
-        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 10)
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20)
         if os.path.isfile(refined_pdb):
             print(f"Calculating RSCC for the grafted glycans...")
             try:
@@ -263,24 +264,154 @@ def fix_Cglycans(databasedir,pdbmirrordir,receiverdir,donordir,outputdir):
     df_out = pd.DataFrame.from_dict(AllGlycans)
     output_csv = outputdir + "/full_graft_summary.csv"
     df_out.to_csv(output_csv)
+    return
 
-   
+def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir):
+    donorpath = os.path.join(donordir, "Alpha-D-Mannose.pdb")
+    receivers = file_paths(receiverdir)
+    AllGlycans = []
+    for receiverpath in receivers:
+        filename = os.path.basename(receiverpath)
+        pdbcode = filename.partition(".")[0]
+        if "pdb" in pdbcode:
+            pdbcode = filename.partition("pdb")[2]
+        mtzpath =find_mtz_path(mtzdir,receiverdir,pdbcode)
+        outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
+        sequences = grafter._get_sequences_in_receiving_model(receiverpath)
+        targets_1 = grafter._get_CMannosylation_targets_via_blob_search(receiverpath, mtzpath, sequences) #FLAG: threshold in this function needs to change.
+        targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
+        for target_1 in targets_1:
+            for target_2 in targets_2[:]:
+                if target_1["chainIndex"]==target_2["chainIndex"] and target_1["currentChainID"]==target_2["currentChainID"]:
+                    targets_2.remove(target_2)
+        targets = targets_1 + targets_2
+        removeclashes = False
+        try:
+            graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(
+                receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
+        except:
+            print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
+        #FLAG: Here want a step removing cases with too many clashes??? Or just stick to removing grafts with any clashes???
+        try:
+            grafter._copy_metadata(receiverpath, outputpath, graftedGlycans)
+        except:
+            print(f"Failed to copy metadata for {pdbcode}")
+        try:
+            grafter._make_connection_between_protein_and_glycan(outputpath)
+        except:
+            print(f"Failed to generate link between TRP-MAN for file {pdbcode}")
+        print(f"Refining grafted strucutre...")
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20)
+        if os.path.isfile(refined_pdb):
+            os.remove(refined_mtz)
+            os.remove(outputdir+f"{pdbcode}_refined.mmcif")
+            try:
+                pdbout = os.path.join(outputdir, f"{pdbcode}_removed_waters.pdb")
+                grafter._remove_waters_close_to_TRP(refined_pdb, pdbout)
+                os.remove(refined_pdb)
+            except:
+                pdbout = refined_pdb
+                print(f"Failed to remove waters close to TRP in {pdbout}")
+            graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
+            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir)
+        for graft in graftedGlycans:
+            graft["pdbcode"] = pdbcode
+            AllGlycans.append(graft)
+        df_temp = pd.DataFrame(graftedGlycans)
+        df_temp.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
+    df_out = pd.DataFrame.from_dict(AllGlycans)
+    output_csv = outputdir + "/full_graft_summary.csv"
+    df_out.to_csv(output_csv)
+    return 
 
 
 
 
 if __name__ == "__main__":
-    databasedir = "/vault/privateer_database/pdb" # Location the privateer database is (if using database). If not using database, set to None
-    pdbmirrordir = "/vault/pdb_mirror/data/structures/all" # Location the unedited pdb/mmcif files are stored (assumes pdb files are in subdir "pdb" and mmcif in subdir "mmcif")
+    defaultdatabasedir = "/vault/privateer_database/pdb" # Location the privateer database is (if using database). If not using database, set to None
+    defaultpdbmirrordir = "/vault/pdb_mirror/data/structures/all" # Location the unedited pdb/mmcif files are stored (assumes pdb files are in subdir "pdb" and mmcif in subdir "mmcif")
+    defaultmtzdir = "/vault/pdb_mtz_files"
     cwd = os.getcwd()
-    receiverdir = os.path.join(cwd,"receivers") # Location you want to save edited pdb files with incorrect c-glycans removed
+    defaultreceiverdir = os.path.join(cwd,"receivers") # Location you want to save edited pdb files with incorrect c-glycans removed
     if os.getenv("PRIVATEERDATA", None) is not None:
         rootdir = os.getenv("PRIVATEERDATA", None)
-        donordir = os.path.join(rootdir, "glycan_donor_repertoire")
+        defaultdonordir = os.path.join(rootdir, "glycan_donor_repertoire")
     else:
-        donordir = "/y/people/lah583/privateer/data/glycan_donor_repertoire"
-    outputdir = os.path.join(cwd,"output")
-    fix_Cglycans(databasedir,pdbmirrordir,receiverdir,donordir,outputdir)
+        defaultdonordir = "/y/people/lah583/privateer/data/glycan_donor_repertoire"
+    defaultoutputdir = os.path.join(cwd,"output")
+    parser = argparse.ArgumentParser(
+        prog="CMannosylation.py",
+        usage=
+        "%(prog)s [options]. Basic usage: 'python CMannosylation.py -mode fix' or 'python CMannnosylation.py -mode find'.",
+        description=
+        f"Either fix problematic cglycans in structures or find and graft potential cglycans in structures.",
+        epilog=
+        f"If mode of operation is not provided the script will not run. All other parameters are optional and if not specified will use default parameters.",
+    )
+    parser.add_argument(
+        "-mode",
+        action="store",
+        default=None,
+        dest="mode",
+        help=
+        f"Mode of operation: 'fix' to find and fix problematic cglycans in structures, 'find' to find potential c-mannosylation sited and graft mannose there.",
+    )
+    parser.add_argument(
+        "-databasedir",
+        action="store",
+        default=defaultdatabasedir,
+        dest="databasedir",
+        help=
+        f"Path to the locally stored privateer database. If not set, defaults to {defaultdatabasedir}. If -mode is set to 'find' this parameter is ignored.",
+    )
+    parser.add_argument(
+        "-inputstructuredir",
+        action="store",
+        default=defaultpdbmirrordir,
+        dest="pdbmirrordir",
+        help=
+        f"Path to the locally stored structures with cglycans to fix. If not set, defaults to {defaultpdbmirrordir}. If -mode is set to 'find' this parameter is ignored.",
+    )
+    parser.add_argument(
+        "-mtzdirdir",
+        action="store",
+        default=defaultmtzdir,
+        dest="mtzdir",
+        help=
+        f"Path to the locally stored mtz filed. If not set, defaults to {defaultmtzdir}.",
+    )
+    parser.add_argument(
+        "-receiverdir",
+        action="store",
+        default=defaultreceiverdir,
+        dest="receiverdir",
+        help=
+        f"If mode is set to 'fix' this is the location structures are saved once problematic cglycans are removed before grafting. If mode is set to 'find' this is the location of the original input structures to find potential c-mannosylation and graft. If not set, defaults to {defaultreceiverdir}.",
+    )
+    parser.add_argument(
+        "-donordir",
+        action="store",
+        default=defaultdonordir,
+        dest="donordir",
+        help=
+        f"Path to the locally stored alpha-D-mannose which will be grafted onto the structures. If not set, defaults to {defaultdonordir}.",
+    )
+    parser.add_argument(
+        "-outputdir",
+        action="store",
+        default=defaultoutputdir,
+        dest="outputdir",
+        help=
+        f"Path to save final fixed/grafted structures. If not set, defaults to {defaultoutputdir}.",
+    )
+    args = parser.parse_args()
+    if args.mode == 'fix':
+        fix_Cglycans(args.databasedir,args.pdbmirrordir,args.mtzdir,args.receiverdir,args.donordir,args.outputdir)
+    elif args.mode == 'find':
+        find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir)
+    else:
+        print("Mode of operation not specified. Exiting...")
+
 
 
     
