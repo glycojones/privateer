@@ -47,8 +47,8 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
                 _stdin.append(line)
         _stdin.append("END")
     process = subprocess.Popen(
-    #args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
-    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
+    args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
+    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
     # stdout=subprocess.PIPE,
     # stderr=subprocess.PIPE,
@@ -345,7 +345,7 @@ def _get_CMannosylation_targets_manual(sequences):
         glycosylationTargets = []
 
         for match in re.finditer(CMannosylationConsensus, currentSequence):
-            if (int(item["Residues"][match.start()]["residueSeqnum"]) == int(36)) and (str(currentChainID) == "C"):
+            if (int(item["Residues"][match.start()]["residueSeqnum"]) == int(195)) and (str(currentChainID) == "A"):
                         glycosylationTargets.append({
                             "start": match.start(),
                             "end": match.end(),
@@ -822,7 +822,7 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
     elif mtzfile is not None:
         if mode == 'CMannosylation':
             if cryoEM:
-                targets = _get_CMannosylation_targets_via_consensus_seq_temp(sequences)
+                targets = _get_CMannosylation_targets_via_consensus_seq(sequences)
                 removeclashes = False
             else:
                 targets_1 = _get_CMannosylation_targets_via_blob_search(receiverpath, mtzfile, sequences)
