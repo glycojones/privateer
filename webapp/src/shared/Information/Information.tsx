@@ -89,7 +89,11 @@ export function Information() {
                         <div className="flex flex-col gap-6 justify-center">
                             <span className="text-xl font-body">
                                 <b>Glycomics-Powered Validation</b>
-                                <a href={GLYCOMICS_CITATION} target="_blank">
+                                <a
+                                    href={GLYCOMICS_CITATION}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <svg
                                         className="inline pl-2 h-4 transition-all hover:h-5 fill-secondary"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +123,11 @@ export function Information() {
                         <div className="flex flex-col gap-6 justify-center">
                             <span className="text-xl font-body">
                                 <b>Linkage Torsion Validation</b>
-                                <a href={TORSIONS_CITATION} target="_blank">
+                                <a
+                                    href={TORSIONS_CITATION}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <svg
                                         className="inline pl-2 h-4 transition-all hover:h-5 fill-secondary"
                                         xmlns="http://www.w3.org/2000/svg"

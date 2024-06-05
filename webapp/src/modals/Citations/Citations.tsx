@@ -72,17 +72,42 @@ export default function CitationModal(props: {
                         McNicholas, S. J. & Agirre, J. (2024). Online
                         carbohydrate 3D structure validation with the Privateer
                         web app. Acta Cryst. F80.
-                        <p><a href="https://doi.org/10.1107/S2053230X24000359" target="_blank">https://doi.org/10.1107/S2053230X24000359</a></p>
+                        <p>
+                            <a
+                                href="https://doi.org/10.1107/S2053230X24000359"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                https://doi.org/10.1107/S2053230X24000359
+                            </a>
+                        </p>
                     </strong>
                 </div>
 
-                 <div className="mt-4 flex flex-col space-y-2">
-                    <h3>If you have used the <b><i>Privateer Database</i></b>, please cite: </h3>
+                <div className="mt-4 flex flex-col space-y-2">
+                    <h3>
+                        If you have used the{' '}
+                        <b>
+                            <i>Privateer Database</i>
+                        </b>
+                        , please cite:{' '}
+                    </h3>
 
-                    <strong>Dialpuri, J. S.; Bagdonas, H.; Schofield, L. C.; Pham, P. T.; Holland, L.; Agirre, J. Beilstein J. Org. Chem. 2024, 20, 931–939.
-                        <p><a href="https://doi.org/10.3762/bjoc.20.83" target="_blank">https://doi.org/10.3762/bjoc.20.83</a></p>
+                    <strong>
+                        Dialpuri, J. S.; Bagdonas, H.; Schofield, L. C.; Pham,
+                        P. T.; Holland, L.; Agirre, J. Beilstein J. Org. Chem.
+                        2024, 20, 931–939.
+                        <p>
+                            <a
+                                href="https://doi.org/10.3762/bjoc.20.83"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                https://doi.org/10.3762/bjoc.20.83
+                            </a>
+                        </p>
                     </strong>
-                 </div>
+                </div>
 
                 <div className="mt-4 flex flex-col space-y-2 font text-sm sm:text-base">
                     <h3>
