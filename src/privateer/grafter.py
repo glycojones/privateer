@@ -360,9 +360,9 @@ def _get_CMannosylation_targets_manual(sequences):
         })
     return output
 
-def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences):
+def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences, avg_dens_threshold = 0.051):
     avglength = 6.4118
-    threshold = 0.051
+    threshold = avg_dens_threshold
     #threshold = 0.08
     st = gemmi.read_structure(pdbfile)
     mtz = gemmi.read_mtz_file(mtzfile)
@@ -637,14 +637,15 @@ def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
                     graftedGlycans[i]["RSCC"] = summary["RSCC"]
     return graftedGlycans
 
-def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpath):
+def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpath, rscc_threshold = 0.5):
     st = gemmi.read_structure(refined_pdb)
     ms = []
     cs = []
     rs = []
     for i in range(len(graftedGlycans)):
         glycan = graftedGlycans[i]
-        if glycan["RSCC"] < 0.5:
+        # Add check of clashes here too if there is no RSCC yet
+        if glycan["RSCC"] < rscc_threshold:
             graftedGlycans[i]["GraftStatus"] = False
             for m, model in enumerate(st):
                 for c, chain in enumerate(model):

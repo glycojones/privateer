@@ -21,18 +21,6 @@ def file_paths(root_directory):
             filepathlist.append(os.path.join(root,f))
     return filepathlist
 
-def save_json(pdbcodes, receiver_paths, mtz_paths, output_paths, glycosylationss):
-    assert(len(pdbcodes) == len(receiver_paths))
-    assert(len(pdbcodes) == len(mtz_paths))
-    assert(len(pdbcodes) == len(output_paths))
-    #assert(len(pdbcodes) == len(glycosylationss[0]))
-    output_file = f"/y/people/lah583/privateer/results/Fixing_c-glycans/c-mannosylation_sites.json"
-    data = {}
-    for pdbcode, receiver_path, mtz_path, output_path, glycosylations in zip(pdbcodes, receiver_paths, mtz_paths, output_paths, glycosylationss):
-        data[str(pdbcode)]={"receiver_path": receiver_path, "mtz_path": mtz_path, "output_path": output_path ,"glycosylations": glycosylations}
-    with open(output_file, "w") as output_file: 
-        json.dump(data, output_file)
-
 def find_mtz_path(mtzdir,receiverdir,pdbcode):
     output_path_1 = os.path.join(mtzdir,f"{pdbcode}.mtz")
     output_path_2 = os.path.join(receiverdir, f"{pdbcode}.mtz")
@@ -48,7 +36,7 @@ def find_mtz_path(mtzdir,receiverdir,pdbcode):
         except Exception as e :
             return ""
 
-def get_RSCC(databasedir, pdbcode, protein_chain_ID, protein_res_ID):
+def get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID):
     subdir = pdbcode[1] + pdbcode[2]
     jsonfile = f"{databasedir}/{subdir}/{pdbcode}.json"
     count = 0
@@ -69,7 +57,6 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
     filepathlist = file_paths(databasedir)
     data_out = {}
     pdbcodes = []
-    #EM_structures = ["6dlw", "7nyc", "7nyd", "8de6", "8g04", "8u18"]
     for i in range(len(filepathlist)):
         jsonfile = filepathlist[i]
         jsonfilename = os.path.basename(jsonfile)
@@ -256,7 +243,7 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir)
         for graft in graftedGlycans:
             protein_chain_ID = graft["receiving_protein_residue_chain_PDBID"]
             protein_res_ID = graft["receiving_protein_residue_monomer_PDBID"]
-            graft["OriginalRSCC"] = get_RSCC(databasedir, pdbcode, protein_chain_ID, protein_res_ID)
+            graft["OriginalRSCC"] = get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID)
             graft["pdbcode"] = pdbcodes
             AllGlycans.append(graft)
         df_temp = pd.DataFrame(graftedGlycans)
@@ -278,7 +265,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir):
         mtzpath =find_mtz_path(mtzdir,receiverdir,pdbcode)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
-        targets_1 = grafter._get_CMannosylation_targets_via_blob_search(receiverpath, mtzpath, sequences) #FLAG: threshold in this function needs to change.
+        #FLAG: Other criteria here to lower number of false positives. Sequence? Things from metadata about the structure?
+        targets_1 = grafter._get_CMannosylation_targets_via_blob_search(receiverpath, mtzpath, sequences, avg_dens_threshold = 0.08) #FLAG: threshold in this function needs to change.
         targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
         for target_1 in targets_1:
             for target_2 in targets_2[:]:
@@ -313,7 +301,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir):
                 pdbout = refined_pdb
                 print(f"Failed to remove waters close to TRP in {pdbout}")
             graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
-            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir)
+            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.8)
         for graft in graftedGlycans:
             graft["pdbcode"] = pdbcode
             AllGlycans.append(graft)
