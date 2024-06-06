@@ -21,20 +21,27 @@ def file_paths(root_directory):
             filepathlist.append(os.path.join(root,f))
     return filepathlist
 
-def find_mtz_path(mtzdir,receiverdir,pdbcode):
-    output_path_1 = os.path.join(mtzdir,f"{pdbcode}.mtz")
-    output_path_2 = os.path.join(receiverdir, f"{pdbcode}.mtz")
-    url = f"https://edmaps.rcsb.org/coefficients/{pdbcode}.mtz"
-    if os.path.exists(output_path_1):
-        return output_path_1
-    elif os.path.exists(output_path_2):
-        return output_path_2
-    else:
-        try:
-            urllib.request.urlretrieve(url, output_path_2)
-            return output_path_2
-        except Exception as e :
+def find_mtz_path(mtzdir,receiverdir,pdbcode, redo = False):
+    if redo:
+        output_path_redo = os.path.join(receiverdir,pdbcode[1]+pdbcode[2],pdbcode, f"{pdbcode}_final.mtz")
+        if os.path.exists(output_path_redo):
+            return output_path_redo
+        else:
             return ""
+    else:
+        output_path_1 = os.path.join(mtzdir,f"{pdbcode}.mtz")
+        output_path_2 = os.path.join(receiverdir, f"{pdbcode}.mtz")
+        url = f"https://edmaps.rcsb.org/coefficients/{pdbcode}.mtz"
+        if os.path.exists(output_path_1):
+            return output_path_1
+        elif os.path.exists(output_path_2):
+            return output_path_2
+        else:
+            try:
+                urllib.request.urlretrieve(url, output_path_2)
+                return output_path_2
+            except Exception as e :
+                return ""
 
 def get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID):
     subdir = pdbcode[1] + pdbcode[2]
@@ -253,16 +260,21 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir)
     df_out.to_csv(output_csv)
     return
 
-def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir):
+def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False):
     donorpath = os.path.join(donordir, "Alpha-D-Mannose.pdb")
     receivers = file_paths(receiverdir)
     AllGlycans = []
     for receiverpath in receivers:
         filename = os.path.basename(receiverpath)
-        pdbcode = filename.partition(".")[0]
+        if redo:
+            pdbcode = filename.partition("_")[0]
+            if filename.partition("_")[2] != "final.pdb":
+                continue
+        else:
+            pdbcode = filename.partition(".")[0]
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
-        mtzpath =find_mtz_path(mtzdir,receiverdir,pdbcode)
+        mtzpath =find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
         #FLAG: Other criteria here to lower number of false positives. Sequence? Things from metadata about the structure?
