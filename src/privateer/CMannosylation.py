@@ -556,7 +556,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
         filename = os.path.basename(receiverpath)
         if redo:
             pdbcode = filename.partition("_")[0]
-            if filename.partition("_")[2] != "final.pdb":
+            if filename.partition("_")[2] != "final.cif":
                 continue
         else:
             pdbcode = filename.partition(".")[0]
