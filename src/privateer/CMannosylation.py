@@ -7,6 +7,7 @@ import pandas as pd
 import urllib.request
 import re
 import argparse
+import numpy as np
 sys.path.append("/y/people/lah583/privateer/src/privateer")
 import grafter
 from privateer import privateer_core as pvtcore
@@ -59,6 +60,286 @@ def get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID):
     if count > 1:
         print("Warning, original RSCC value for {pdbcode} protein chain ID {protein_chain_ID} and res ID {protein_res_ID} may be incorrect...")
     return RSCC
+
+def get_consensus(inputchain:gemmi.Chain, inputresidue:gemmi.Residue) -> str:
+    
+    concat = ''  
+    
+    firstnext = inputchain.next_residue(inputresidue)                    
+    if ((firstnext != None) 
+        and (gemmi.find_tabulated_residue(firstnext.name).is_amino_acid())
+        and (firstnext.label_seq != None)
+        and (firstnext.label_seq - inputresidue.label_seq == 1)): 
+        secondnext = inputchain.next_residue(firstnext)
+    else: 
+        secondnext = None
+
+    if ((secondnext != None) 
+        and (gemmi.find_tabulated_residue(secondnext.name).is_amino_acid())
+        and (secondnext.label_seq != None)
+        and (secondnext.label_seq - firstnext.label_seq == 1)): 
+        thirdnext = inputchain.next_residue(secondnext)
+    else:
+        thirdnext = None
+
+    if ((thirdnext != None) 
+        and (gemmi.find_tabulated_residue(thirdnext.name).is_amino_acid())
+        and (thirdnext.label_seq != None)
+        and (thirdnext.label_seq - secondnext.label_seq == 1)): 
+        fourthnext = inputchain.next_residue(thirdnext)
+    else: 
+        fourthnext = None
+
+    if ((fourthnext != None) 
+        and (gemmi.find_tabulated_residue(fourthnext.name).is_amino_acid())
+        and (fourthnext.label_seq != None)
+        and (fourthnext.label_seq - thirdnext.label_seq == 1)): 
+        fifthnext = inputchain.next_residue(fourthnext)
+    else: 
+        fifthnext = None
+
+    if ((fifthnext != None) 
+        and (gemmi.find_tabulated_residue(fifthnext.name).is_amino_acid())
+        and (fifthnext.label_seq != None)
+        and (fifthnext.label_seq - fourthnext.label_seq == 1)): 
+        sixthnext = inputchain.next_residue(fifthnext)
+    else: 
+        sixthnext = None
+    
+    if ((sixthnext == None) 
+        or (not gemmi.find_tabulated_residue(sixthnext.name).is_amino_acid())
+        or (sixthnext.label_seq == None)
+        or (sixthnext.label_seq - fifthnext.label_seq != 1)):
+        sixthnext = None
+
+    firstprev = inputchain.previous_residue(inputresidue)
+    # print(firstprev, firstprev.label_seq)
+    if ((firstprev != None) 
+        and (gemmi.find_tabulated_residue(firstprev.name).is_amino_acid())
+        and (firstprev.label_seq != None)
+        and (firstprev.label_seq - inputresidue.label_seq == -1)): 
+        secondprev = inputchain.previous_residue(firstprev)
+        # print(secondprev)
+    else: 
+        secondprev = None
+   
+    if ((secondprev != None) 
+        and (gemmi.find_tabulated_residue(secondprev.name).is_amino_acid())
+        and (secondprev.label_seq != None)
+        and (secondprev.label_seq - firstprev.label_seq == -1)): 
+        thirdprev = inputchain.previous_residue(secondprev)
+    else: 
+        thirdprev = None
+
+    if ((thirdprev != None) 
+        and (gemmi.find_tabulated_residue(thirdprev.name).is_amino_acid())
+        and (thirdprev.label_seq != None)
+        and (thirdprev.label_seq - secondprev.label_seq == -1)): 
+        fourthprev = inputchain.previous_residue(thirdprev)
+    else: 
+        fourthprev = None
+
+    if ((fourthprev != None) 
+        and (gemmi.find_tabulated_residue(fourthprev.name).is_amino_acid())
+        and (fourthprev.label_seq != None)
+        and (fourthprev.label_seq - thirdprev.label_seq == -1)): 
+        fifthprev = inputchain.previous_residue(fourthprev)
+    else: 
+        fifthprev = None
+
+    if ((fifthprev != None) 
+        and (gemmi.find_tabulated_residue(fifthprev.name).is_amino_acid())
+        and (fifthprev.label_seq != None)
+        and (fifthprev.label_seq - fourthprev.label_seq == -1)): 
+        sixthprev = inputchain.previous_residue(fifthprev)
+    else: 
+        sixthprev = None
+
+    if ((sixthprev == None) 
+        or (not gemmi.find_tabulated_residue(sixthprev.name).is_amino_acid())
+        or (sixthprev.label_seq == None)
+        or (sixthprev.label_seq - fifthprev.label_seq != -1)):
+        sixthprev = None
+                 
+    resilist = [sixthprev,fifthprev,fourthprev,thirdprev,secondprev,firstprev,inputresidue,firstnext,secondnext,thirdnext,fourthnext,fifthnext,sixthnext]
+    for foundresi in resilist:
+        if (foundresi != None) and (gemmi.find_tabulated_residue(foundresi.name).is_amino_acid()):
+            concat += gemmi.find_tabulated_residue(foundresi.name).one_letter_code
+        else: 
+            concat += '-'
+    return concat
+
+def check_consensus_sequence(sequence:str) -> bool:
+    output = False
+    for index in range(len(sequence)):
+        segment = sequence[index:index+4]
+        if re.match('W.{2}[W|C]',segment) != None:
+            output = True
+    return output
+
+def check_expression_system_with_cif(receiverpath:str, pdbcode:str) -> tuple[list,bool]:
+
+    sourcefile = 'taxon_summary.json' # include metazoan and toxoplasma taxonomy ids
+    with open(sourcefile,'r') as f: 
+        taxsrc = json.load(f)
+        taxonids = taxsrc['taxonids']
+        sciNames = taxsrc['sciNames']
+
+    chainlist = []
+    output = False
+
+    doc = gemmi.cif.read(receiverpath)
+    block = doc.sole_block()
+
+    hostentities = block.find_values('_entity_src_gen.entity_id') # check which proteins are expressed in expression_system
+    taxhosts = block.find_values('_entity_src_gen.pdbx_host_org_ncbi_taxonomy_id')
+    hostnames = block.find_values('_entity_src_gen.pdbx_host_org_scientific_name')
+
+    natentities = block.find_values('_entity_src_nat.entity_id') # check which proteins are extracted directly from original_source
+    taxnats = block.find_values('_entity_src_nat.pdbx_ncbi_taxonomy_id')
+    natnames = block.find_values('_entity_src_nat.pdbx_organism_scientific')
+
+    # totentities = block.find_values('_entity_poly.entity_id')
+    polymers = block.find_values('_entity_poly.pdbx_seq_one_letter_code_can')
+    chainforentity = block.find_values('_entity_poly.pdbx_strand_id')
+
+    for (hent,taxhost,hostname) in zip(hostentities,taxhosts,hostnames): # PDB 3ccz host E.coli without taxid!
+        try: 
+            taxhost = taxhost.replace(' ', ''); taxhost = int(taxhost)
+        except (ValueError,TypeError,SyntaxError,RuntimeError): 
+            pass
+        if (taxhost in taxonids) or (hostname.lower() in sciNames):
+            # print(hent)
+            try: 
+                proteinsequence = polymers[int(hent)-1]
+            except (IndexError,ValueError,TypeError,SyntaxError) as e: 
+                print(f'{pdbcode} with error = {e}')
+                continue
+            output = check_consensus_sequence(sequence=proteinsequence)
+            chainname = chainforentity[int(hent)-1]
+            if output == False: continue
+            if len(chainname) > 1: 
+                chainname = chainname.split(',')
+            if chainname not in chainlist: 
+                chainlist += chainname
+        # else: print(f'{pdb} with taxhost = {taxhost} and hostname = {hostname}')
+    for (natent,taxnat,natname) in zip(natentities,taxnats,natnames):
+        try: 
+            taxnat = taxnat.replace(' ', ''); taxnat = int(taxnat)
+        except (ValueError,TypeError,SyntaxError,RuntimeError): 
+            pass
+        if (taxnat in taxonids) or (natname.lower() in sciNames):
+            try: 
+                proteinsequence = polymers[int(natent)-1]
+            except (IndexError,ValueError,TypeError,SyntaxError) as e: 
+                print(f'{pdbcode} with error = {e}')
+                continue
+            output = check_consensus_sequence(sequence=proteinsequence)
+            chainname = chainforentity[int(natent)-1]
+            if output == False: 
+                continue
+            if len(chainname) > 1: 
+                chainname = chainname.split(',')
+            if chainname not in chainlist: 
+                chainlist += chainname
+    return chainlist
+
+
+def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,requestedchains:list,sequences:list,threshold:float) -> dict: # JUST DO BLOB_SEARCH AT PROTEINCHAINS HAVING WXXW|C
+    avglength = 6.4118
+    pdbid = os.path.basename(pdbfile).split('.')[0]
+    st = gemmi.read_structure(pdbfile)
+    pointlist = []
+    chainlist = []; residuelist = []
+    consensus = []
+    target_chainlist = []   ; target_residuelist = []
+    for model in st:
+        for chain in model:
+            if chain.name not in requestedchains: continue
+            for residue in chain:
+                # GET ESTIMATED CENTROID WITH AVERAGE TRANSLATION LENGTH ~ 6.411 Å
+                if (residue.name == 'TRP'):
+                    if residue.label_seq != None: 
+                        pentaseq = get_consensus(inputchain=chain,inputresidue=residue)
+                    else: 
+                        pentaseq = residue.name
+                    if re.search('W.{2}W',pentaseq) == None: 
+                        continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
+                    consensus.append(pentaseq)
+                    residuelist.append(residue.seqid.num)
+                    chainlist.append(chain.name)
+                    ce3,cd1 = None,None
+                    for atom in residue:
+                        if atom.name == 'CE3': 
+                            ce3 = atom.pos
+                        elif atom.name == 'CD1': 
+                            cd1 = atom.pos
+                    if ce3 != None and cd1 != None:
+                        vCED = cd1-ce3; norm = vCED.length(); uvCED = vCED/norm
+                        translatedCED = uvCED*avglength
+                        newpoint = translatedCED + ce3
+                        pointlist.append(newpoint)
+                    else: 
+                        pointlist.append(None)
+    # READ RECALCULATED MAP   
+    try:
+        mtz = gemmi.read_mtz_file(mtzfile)
+    except RuntimeError as e:
+        print(e)
+        print(f'RuntimeError in reading mtz at {pdbid}')
+        return
+    grid = mtz.transform_f_phi_to_map('DELFWT', 'PHDELWT', sample_rate=2.0)
+    # COPY THE GRID --> SAMPLE GRIDPOINTS IN RADIUS = 3 Å ( BY SETTING VALUES THOSE GRIDPOINTS ON CLONED GRID ~ 10)
+    # gr = grid.clone()
+    start = 1000 # arbitary number
+    for i, newpoint in enumerate(pointlist):
+        if newpoint == None: 
+            continue
+        gr = grid.clone()
+        gr.set_points_around(newpoint, radius=3, value=start)
+        pointgroup = np.argwhere(gr.array == start) # return positions in symmetry ???
+        # TRACE BACK ONTO ORIGINAL GRID --> SUM DENSITY VALUES
+        atomlist = []; values = []
+        for point in pointgroup:
+            atom = grid.get_point(point[0],point[1],point[2])
+            atom = grid.get_position(point[0],point[1],point[2])
+            atomlist.append(atom)
+            value = grid.get_value(point[0],point[1],point[2])
+            values.append(value)
+        if atomlist: 
+            avg_density = np.mean(values).round(3)
+        else: 
+            avg_density = 0
+
+        if avg_density > threshold: 
+            target_chainlist.append(chainlist[i])
+            target_residuelist.append(residuelist[i])
+    
+    CMannosylationConsensus = "[W]"
+    output = []
+    for item in sequences:
+        currentChainIndex = item["index"]
+        currentChainID = item["ChainID"]
+        currentSequence = item["Sequence"]
+        glycosylationTargets = []
+        for match in re.finditer(CMannosylationConsensus, currentSequence):
+            if (currentSequence[match.start()] == item["Residues"][match.start()]["residueCode"]):
+                for i in range(len(residuelist)):
+                    blob_chainID = target_chainlist[i]
+                    blob_resID = target_residuelist[i]
+                    if (item["Residues"][match.start()]["residueSeqnum"] == blob_resID) and (currentChainID == blob_chainID):
+                        glycosylationTargets.append({
+                            "start": match.start(),
+                            "end": match.end(),
+                            "match": match.group()
+                        })
+        output.append({
+            "Sequence": currentSequence,
+            "chainIndex": currentChainIndex,
+            "currentChainID": currentChainID,
+            "glycosylationTargets": glycosylationTargets,
+        })
+    return output
 
 def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir):
     filepathlist = file_paths(databasedir)
@@ -260,11 +541,15 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir)
     df_out.to_csv(output_csv)
     return
 
-def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False):
+def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,graftedlist=None,savesummary=False):
     donorpath = os.path.join(donordir, "Alpha-D-Mannose.pdb")
     receivers = file_paths(receiverdir)
     AllGlycans = []
     for receiverpath in receivers:
+        if graftedlist is not None:
+            with open(graftedlist) as myfile:
+                if receiverpath in myfile.read():
+                    continue # If the pdb has already been grafted, do not graft again
         filename = os.path.basename(receiverpath)
         if redo:
             pdbcode = filename.partition("_")[0]
@@ -277,8 +562,10 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False):
         mtzpath =find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
-        #FLAG: Other criteria here to lower number of false positives. Sequence? Things from metadata about the structure?
-        targets_1 = grafter._get_CMannosylation_targets_via_blob_search(receiverpath, mtzpath, sequences, avg_dens_threshold = 0.08) #FLAG: threshold in this function needs to change.
+        requestedchains = check_expression_system_with_cif(receiverpath)
+        if not requestedchains: 
+            continue
+        targets_1 = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.08)
         targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
         for target_1 in targets_1:
             for target_2 in targets_2[:]:
@@ -289,17 +576,20 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False):
         try:
             graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(
                 receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
+            grafter._copy_metadata(receiverpath, outputpath, graftedGlycans)
+            grafter._make_connection_between_protein_and_glycan(outputpath)
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write(receiverpath)
+                    myfile.write("\n")
         except:
             print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write(f"{receiverpath}\tFailed")
+                    myfile.write("\n")
+            continue
         #FLAG: Here want a step removing cases with too many clashes??? Or just stick to removing grafts with any clashes???
-        try:
-            grafter._copy_metadata(receiverpath, outputpath, graftedGlycans)
-        except:
-            print(f"Failed to copy metadata for {pdbcode}")
-        try:
-            grafter._make_connection_between_protein_and_glycan(outputpath)
-        except:
-            print(f"Failed to generate link between TRP-MAN for file {pdbcode}")
         print(f"Refining grafted strucutre...")
         refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20)
         if os.path.isfile(refined_pdb):
@@ -317,11 +607,17 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False):
         for graft in graftedGlycans:
             graft["pdbcode"] = pdbcode
             AllGlycans.append(graft)
-        df_temp = pd.DataFrame(graftedGlycans)
-        df_temp.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
-    df_out = pd.DataFrame.from_dict(AllGlycans)
-    output_csv = outputdir + "/full_graft_summary.csv"
-    df_out.to_csv(output_csv)
+        if savesummary:
+            df_single = pd.DataFrame(graftedGlycans)
+            df_single.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
+            df_temp = pd.DataFrame.from_dict(AllGlycans)
+            temp_csv = outputdir + "/full_graft_summary_temp.csv"
+            df_temp.to_csv(temp_csv)
+    if savesummary:
+        df_all = pd.DataFrame.from_dict(AllGlycans)
+        output_csv = outputdir + "/full_graft_summary.csv"
+        df_all.to_csv(output_csv)
+        os.remove(temp_csv)
     return 
 
 
@@ -408,7 +704,7 @@ if __name__ == "__main__":
     if args.mode == 'fix':
         fix_Cglycans(args.databasedir,args.pdbmirrordir,args.mtzdir,args.receiverdir,args.donordir,args.outputdir)
     elif args.mode == 'find':
-        find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir)
+        find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir,True,"grafted_pdbs.txt",True)
     else:
         print("Mode of operation not specified. Exiting...")
 
