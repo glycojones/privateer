@@ -574,13 +574,13 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
                     myfile.write("\tWrong expression system")
                     myfile.write("\n")
             continue
-        targets_1 = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.08)
-        targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
-        for target_1 in targets_1:
-            for target_2 in targets_2[:]:
-                if target_1["chainIndex"]==target_2["chainIndex"] and target_1["currentChainID"]==target_2["currentChainID"]:
-                    targets_2.remove(target_2)
-        targets = targets_1 + targets_2
+        targets = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.08)
+        #targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
+        #for target_1 in targets_1:
+        #    for target_2 in targets_2[:]:
+        #        if target_1["chainIndex"]==target_2["chainIndex"] and target_1["currentChainID"]==target_2["currentChainID"]:
+        #            targets_2.remove(target_2)
+        #targets = targets_1 + targets_2
         with open(f"{pdbcode}_targets.txt", "w") as myfile:
             for target in targets:
                 myfile.write(f"{target}\n")
