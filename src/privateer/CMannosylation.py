@@ -553,6 +553,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
             with open(graftedlist) as myfile:
                 if receiverpath in myfile.read():
                     continue # If the pdb has already been grafted, do not graft again
+            with open(graftedlist, "a") as myfile:
+                myfile.write(receiverpath)
         filename = os.path.basename(receiverpath)
         if redo:
             pdbcode = filename.partition("_")[0]
@@ -583,13 +585,13 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
             grafter._make_connection_between_protein_and_glycan(outputpath)
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
-                    myfile.write(receiverpath)
+                    myfile.write("\tCompleted")
                     myfile.write("\n")
         except:
             print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
-                    myfile.write(f"{receiverpath}\tFailed")
+                    myfile.write("\tFailed")
                     myfile.write("\n")
             continue
         #FLAG: Here want a step removing cases with too many clashes??? Or just stick to removing grafts with any clashes???
