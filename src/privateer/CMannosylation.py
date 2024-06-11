@@ -336,12 +336,13 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                             "end": match.end(),
                             "match": match.group()
                         })
-        output.append({
-            "Sequence": currentSequence,
-            "chainIndex": currentChainIndex,
-            "currentChainID": currentChainID,
-            "glycosylationTargets": glycosylationTargets,
-        })
+        if len(glycosylationTargets) > 1:
+            output.append({
+                "Sequence": currentSequence,
+                "chainIndex": currentChainIndex,
+                "currentChainID": currentChainID,
+                "glycosylationTargets": glycosylationTargets,
+            })
     return output
 
 def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir):
