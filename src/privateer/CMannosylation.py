@@ -584,7 +584,12 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
         #targets = targets_1 + targets_2
 
         removeclashes = False
-        if len(targets) < 1:
+        if targets is None:
+            with open(graftedlist, "a") as myfile:
+                    myfile.write("\tNo C-Mannosylation Targets found")
+                    myfile.write("\n")
+            continue
+        elif len(targets) < 1:
             with open(graftedlist, "a") as myfile:
                     myfile.write("\tNo C-Mannosylation Targets found")
                     myfile.write("\n")
