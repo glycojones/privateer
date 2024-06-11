@@ -553,8 +553,6 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
             with open(graftedlist) as myfile:
                 if receiverpath in myfile.read():
                     continue # If the pdb has already been grafted, do not graft again
-            with open(graftedlist, "a") as myfile:
-                myfile.write(receiverpath)
         filename = os.path.basename(receiverpath)
         if redo:
             pdbcode = filename.partition("_")[0]
@@ -564,6 +562,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
             pdbcode = filename.partition(".")[0]
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
+        with open(graftedlist, "a") as myfile:
+            myfile.write(receiverpath)
         mtzpath = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
