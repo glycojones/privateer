@@ -659,10 +659,11 @@ def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpat
                             ms.append(m)
                             cs.append(c)
                             rs.append(r)
-    l = sorted(zip(rs, cs, ms))
-    rs, cs, ms = zip(*l)
-    for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
-        del st[m][c][r]
+    if len(rs) > 0:
+        l = sorted(zip(rs, cs, ms))
+        rs, cs, ms = zip(*l)
+        for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
+            del st[m][c][r]
     st.write_pdb(refined_pdb)
     count = 0
     for glycan in graftedGlycans:
