@@ -581,7 +581,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
                     targets_2.remove(target_2)
         targets = targets_1 + targets_2
         with open(f"{pdbcode}_targets.txt", "w") as myfile:
-            myfile.write(targets)
+            for target in targets:
+                myfile.write(f"{target}\n")
     #     removeclashes = False
     #     if len(targets) < 1:
     #         with open(graftedlist, "a") as myfile:
