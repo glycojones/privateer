@@ -178,8 +178,11 @@ def check_consensus_sequence(sequence:str) -> bool:
     return output
 
 def check_expression_system_with_cif(receiverpath:str, pdbcode:str) -> tuple[list,bool]:
-
-    sourcefile = 'taxon_summary.json' # include metazoan and toxoplasma taxonomy ids
+    if os.getenv("PRIVATEERDATA", None) is not None:
+        datadir = os.getenv("PRIVATEERDATA", None)
+    else:
+        datadir = ''
+    sourcefile = os.path.join(datadir,'taxon_summary.json') # include metazoan and toxoplasma taxonomy ids
     with open(sourcefile,'r') as f: 
         taxsrc = json.load(f)
         taxonids = taxsrc['taxonids']
@@ -562,7 +565,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
         mtzpath =find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
-        requestedchains = check_expression_system_with_cif(receiverpath)
+        requestedchains = check_expression_system_with_cif(receiverpath,pdbcode)
         if not requestedchains: 
             continue
         targets_1 = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.08)
