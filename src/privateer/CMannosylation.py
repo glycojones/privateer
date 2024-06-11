@@ -580,8 +580,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
                 if target_1["chainIndex"]==target_2["chainIndex"] and target_1["currentChainID"]==target_2["currentChainID"]:
                     targets_2.remove(target_2)
         targets = targets_1 + targets_2
-        print(f"Hello from {pdbcode}")
-        print(targets)
+        with open(f"{pdbcode}_targets.txt", "w") as myfile:
+            myfile.write(targets)
     #     removeclashes = False
     #     if len(targets) < 1:
     #         with open(graftedlist, "a") as myfile:
