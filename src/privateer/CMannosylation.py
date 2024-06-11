@@ -564,11 +564,14 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
             pdbcode = filename.partition(".")[0]
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
-        mtzpath =find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
+        mtzpath = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
         requestedchains = check_expression_system_with_cif(receiverpath,pdbcode)
         if not requestedchains: 
+            with open(graftedlist, "a") as myfile:
+                    myfile.write("\tWrong expression system")
+                    myfile.write("\n")
             continue
         targets_1 = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.08)
         targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
@@ -578,6 +581,11 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
                     targets_2.remove(target_2)
         targets = targets_1 + targets_2
         removeclashes = False
+        if not targets:
+            with open(graftedlist, "a") as myfile:
+                    myfile.write("\tNo C-Mannosylation Targets found")
+                    myfile.write("\n")
+            continue
         try:
             graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(
                 receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
@@ -599,7 +607,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
         refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20)
         if os.path.isfile(refined_pdb):
             os.remove(refined_mtz)
-            os.remove(outputdir+f"{pdbcode}_refined.mmcif")
+            os.remove(outputdir+f"/{pdbcode}_refined.mmcif")
             try:
                 pdbout = os.path.join(outputdir, f"{pdbcode}_removed_waters.pdb")
                 grafter._remove_waters_close_to_TRP(refined_pdb, pdbout)
