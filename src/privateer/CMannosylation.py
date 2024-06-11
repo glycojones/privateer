@@ -327,7 +327,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
         glycosylationTargets = []
         for match in re.finditer(CMannosylationConsensus, currentSequence):
             if (currentSequence[match.start()] == item["Residues"][match.start()]["residueCode"]):
-                for i in range(len(residuelist)):
+                for i in range(len(target_residuelist)):
                     blob_chainID = target_chainlist[i]
                     blob_resID = target_residuelist[i]
                     if (item["Residues"][match.start()]["residueSeqnum"] == blob_resID) and (currentChainID == blob_chainID):
