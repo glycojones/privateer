@@ -581,7 +581,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
                     targets_2.remove(target_2)
         targets = targets_1 + targets_2
         removeclashes = False
-        if not targets:
+        if len(targets) < 1:
             with open(graftedlist, "a") as myfile:
                     myfile.write("\tNo C-Mannosylation Targets found")
                     myfile.write("\n")
@@ -600,6 +600,11 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
                     myfile.write("\tFailed")
+                    myfile.write("\n")
+            continue
+        if len(graftedGlycans) < 1:
+            with open(graftedlist, "a") as myfile:
+                    myfile.write("\tNo C-Mannosylation Targets found")
                     myfile.write("\n")
             continue
         #FLAG: Here want a step removing cases with too many clashes??? Or just stick to removing grafts with any clashes???
