@@ -556,9 +556,10 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
                     continue # If the pdb has already been grafted, do not graft again
         filename = os.path.basename(receiverpath)
         if redo:
-            pdbcode = filename.partition("_")[0]
-            if filename.partition("_")[2] != "final.cif":
+            if filename.partition("_")[2] != "final.pdb":
                 continue
+            pdbcode = filename.partition("_")[0]
+            ciffile = receiverpath.rpartition(".")[0] + ".cif"
         else:
             pdbcode = filename.partition(".")[0]
         if "pdb" in pdbcode:
@@ -568,7 +569,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
         mtzpath = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
-        requestedchains = check_expression_system_with_cif(receiverpath,pdbcode)
+        requestedchains = check_expression_system_with_cif(ciffile,pdbcode)
         if not requestedchains: 
             with open(graftedlist, "a") as myfile:
                     myfile.write("\tWrong expression system")
