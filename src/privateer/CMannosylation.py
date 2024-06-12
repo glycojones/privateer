@@ -68,109 +68,22 @@ def get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID):
     return RSCC
 
 def get_consensus(inputchain:gemmi.Chain, inputresidue:gemmi.Residue) -> str:
-    
-    concat = ''  
-    
-    firstnext = inputchain.next_residue(inputresidue)                    
-    if ((firstnext != None) 
-        and (gemmi.find_tabulated_residue(firstnext.name).is_amino_acid())
-        and (firstnext.label_seq != None)
-        and (firstnext.label_seq - inputresidue.label_seq == 1)): 
-        secondnext = inputchain.next_residue(firstnext)
-    else: 
-        secondnext = None
-
-    if ((secondnext != None) 
-        and (gemmi.find_tabulated_residue(secondnext.name).is_amino_acid())
-        and (secondnext.label_seq != None)
-        and (secondnext.label_seq - firstnext.label_seq == 1)): 
-        thirdnext = inputchain.next_residue(secondnext)
-    else:
-        thirdnext = None
-
-    if ((thirdnext != None) 
-        and (gemmi.find_tabulated_residue(thirdnext.name).is_amino_acid())
-        and (thirdnext.label_seq != None)
-        and (thirdnext.label_seq - secondnext.label_seq == 1)): 
-        fourthnext = inputchain.next_residue(thirdnext)
-    else: 
-        fourthnext = None
-
-    if ((fourthnext != None) 
-        and (gemmi.find_tabulated_residue(fourthnext.name).is_amino_acid())
-        and (fourthnext.label_seq != None)
-        and (fourthnext.label_seq - thirdnext.label_seq == 1)): 
-        fifthnext = inputchain.next_residue(fourthnext)
-    else: 
-        fifthnext = None
-
-    if ((fifthnext != None) 
-        and (gemmi.find_tabulated_residue(fifthnext.name).is_amino_acid())
-        and (fifthnext.label_seq != None)
-        and (fifthnext.label_seq - fourthnext.label_seq == 1)): 
-        sixthnext = inputchain.next_residue(fifthnext)
-    else: 
-        sixthnext = None
-    
-    if ((sixthnext == None) 
-        or (not gemmi.find_tabulated_residue(sixthnext.name).is_amino_acid())
-        or (sixthnext.label_seq == None)
-        or (sixthnext.label_seq - fifthnext.label_seq != 1)):
-        sixthnext = None
-
-    firstprev = inputchain.previous_residue(inputresidue)
-    # print(firstprev, firstprev.label_seq)
-    if ((firstprev != None) 
-        and (gemmi.find_tabulated_residue(firstprev.name).is_amino_acid())
-        and (firstprev.label_seq != None)
-        and (firstprev.label_seq - inputresidue.label_seq == -1)): 
-        secondprev = inputchain.previous_residue(firstprev)
-        # print(secondprev)
-    else: 
-        secondprev = None
-   
-    if ((secondprev != None) 
-        and (gemmi.find_tabulated_residue(secondprev.name).is_amino_acid())
-        and (secondprev.label_seq != None)
-        and (secondprev.label_seq - firstprev.label_seq == -1)): 
-        thirdprev = inputchain.previous_residue(secondprev)
-    else: 
-        thirdprev = None
-
-    if ((thirdprev != None) 
-        and (gemmi.find_tabulated_residue(thirdprev.name).is_amino_acid())
-        and (thirdprev.label_seq != None)
-        and (thirdprev.label_seq - secondprev.label_seq == -1)): 
-        fourthprev = inputchain.previous_residue(thirdprev)
-    else: 
-        fourthprev = None
-
-    if ((fourthprev != None) 
-        and (gemmi.find_tabulated_residue(fourthprev.name).is_amino_acid())
-        and (fourthprev.label_seq != None)
-        and (fourthprev.label_seq - thirdprev.label_seq == -1)): 
-        fifthprev = inputchain.previous_residue(fourthprev)
-    else: 
-        fifthprev = None
-
-    if ((fifthprev != None) 
-        and (gemmi.find_tabulated_residue(fifthprev.name).is_amino_acid())
-        and (fifthprev.label_seq != None)
-        and (fifthprev.label_seq - fourthprev.label_seq == -1)): 
-        sixthprev = inputchain.previous_residue(fifthprev)
-    else: 
-        sixthprev = None
-
-    if ((sixthprev == None) 
-        or (not gemmi.find_tabulated_residue(sixthprev.name).is_amino_acid())
-        or (sixthprev.label_seq == None)
-        or (sixthprev.label_seq - fifthprev.label_seq != -1)):
-        sixthprev = None
-                 
-    resilist = [sixthprev,fifthprev,fourthprev,thirdprev,secondprev,firstprev,inputresidue,firstnext,secondnext,thirdnext,fourthnext,fifthnext,sixthnext]
-    for foundresi in resilist:
-        if (foundresi != None) and (gemmi.find_tabulated_residue(foundresi.name).is_amino_acid()):
-            concat += gemmi.find_tabulated_residue(foundresi.name).one_letter_code
+    concat = ''
+    rng = np.array([-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6])
+    inputresidueNum = inputresidue.seqid.num
+    residuerng = rng + inputresidueNum
+    for seqid in residuerng:
+        try:
+            neighbour = inputchain[f'{seqid}'].__getitem__(0)
+        except IndexError: 
+            concat += '-'
+            continue
+        if ((neighbour != None)
+            and (neighbour.label_seq != None) 
+            and (gemmi.find_tabulated_residue(neighbour.name).is_amino_acid())
+            and ((neighbour.label_seq - inputresidue.label_seq) in rng)
+            and ((neighbour.seqid.num - inputresidue.seqid.num) in rng)):
+            concat += gemmi.find_tabulated_residue(neighbour.name).one_letter_code
         else: 
             concat += '-'
     return concat
@@ -274,11 +187,10 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                         pentaseq = get_consensus(inputchain=chain,inputresidue=residue)
                     else: 
                         pentaseq = residue.name
+                    
                     if re.search('W.{2}W',pentaseq) == None: 
                         continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
-                    consensus.append(pentaseq)
-                    residuelist.append(residue.seqid.num)
-                    chainlist.append(chain.name)
+                    
                     ce3,cd1 = None,None
                     for atom in residue:
                         if atom.name == 'CE3': 
@@ -290,6 +202,9 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                         translatedCED = uvCED*avglength
                         newpoint = translatedCED + ce3
                         pointlist.append(newpoint)
+                        consensus.append(pentaseq)
+                        residuelist.append(residue.seqid.num)
+                        chainlist.append(chain.name)
                     else: 
                         pointlist.append(None)
     # READ RECALCULATED MAP   
@@ -338,13 +253,13 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                 for i in range(len(target_residuelist)):
                     blob_chainID = target_chainlist[i]
                     blob_resID = target_residuelist[i]
-                    if (item["Residues"][match.start()]["residueSeqnum"] == blob_resID) and (currentChainID == blob_chainID):
+                    if (str(item["Residues"][match.start()]["residueSeqnum"]) == str(blob_resID)) and (str(currentChainID) == str(blob_chainID)):
                         glycosylationTargets.append({
                             "start": match.start(),
                             "end": match.end(),
                             "match": match.group()
                         })
-        if len(glycosylationTargets) > 1:
+        if len(glycosylationTargets) > 0:
             output.append({
                 "Sequence": currentSequence,
                 "chainIndex": currentChainIndex,
