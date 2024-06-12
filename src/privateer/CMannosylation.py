@@ -264,7 +264,9 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
     target_chainlist = []   ; target_residuelist = []
     for model in st:
         for chain in model:
-            if chain.name not in requestedchains: continue
+            if requestedchains is not None:
+                if chain.name not in requestedchains: 
+                    continue
             for residue in chain:
                 # GET ESTIMATED CENTROID WITH AVERAGE TRANSLATION LENGTH ~ 6.411 Å
                 if (residue.name == 'TRP'):
@@ -645,13 +647,14 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
         try:
             requestedchains = check_expression_system_with_cif(expsysfile,pdbcode)
+            if not requestedchains: 
+                with open(graftedlist, "a") as myfile:
+                        myfile.write("\tWrong expression system")
+                        myfile.write("\n")
+                continue
         except:
-            requestedchains = check_expression_system_with_cif(ciffile,pdbcode)
-        if not requestedchains: 
-            with open(graftedlist, "a") as myfile:
-                    myfile.write("\tWrong expression system")
-                    myfile.write("\n")
-            continue
+            print("Error checking expression system. Proceeding with grafting regardless of expression system...")
+            requestedchains = None
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
         targets = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.08)
         #targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
