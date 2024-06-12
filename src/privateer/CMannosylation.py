@@ -499,7 +499,10 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                 glycan = glycosylation.get_glycan(i)
                 num_sugars = glycan.get_total_number_of_sugars()
                 root_info = glycan.get_root_info()
-                if root_info["ProteinResidueType"] == "TRP":
+                protseqnum = glycan["proteinResidueSeqnum"]
+                protchainID = glycan["proteinChainId"]
+                residue = st[0][protchainID][protseqnum]
+                if residue.name == "TRP": # DOES THIS WORK OR DO LIGANDS NOT GET A PROTEINRESIDUETYPE?
                     for j in range(num_sugars):
                         sugar = glycan.get_monosaccharide(j)
                         summary = sugar.get_sugar_summary()
@@ -633,6 +636,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
         if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.pdb"):
+            print(receiverpath)
+            print(os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.pdb"))
             continue
         with open(graftedlist, "a") as myfile:
             myfile.write(receiverpath)
