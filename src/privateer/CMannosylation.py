@@ -643,7 +643,10 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             myfile.write(receiverpath)
         mtzpath = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
-        requestedchains = check_expression_system_with_cif(expsysfile,pdbcode)
+        try:
+            requestedchains = check_expression_system_with_cif(expsysfile,pdbcode)
+        except:
+            requestedchains = check_expression_system_with_cif(ciffile,pdbcode)
         if not requestedchains: 
             with open(graftedlist, "a") as myfile:
                     myfile.write("\tWrong expression system")
