@@ -12,15 +12,21 @@ sys.path.append("/y/people/lah583/privateer/src/privateer")
 import grafter
 from privateer import privateer_core as pvtcore
 
-def file_paths(root_directory):
+def file_paths(root_directory, filetype=None):
     """
     Function to find all the files in the database
     """
     filepathlist = []
     for root, dirs, files in os.walk(root_directory):
         for f in files:
-            filepathlist.append(os.path.join(root,f))
+            if filetype is not None:
+                if f.rpartition["."][2] == filetype:
+                    filepathlist.append(os.path.join(root,f))
+            else:
+                filepathlist.append(os.path.join(root,f))
     return filepathlist
+
+
 
 def find_mtz_path(mtzdir,receiverdir,pdbcode, redo = False):
     if redo:
@@ -345,7 +351,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
             })
     return output
 
-def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir):
+def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo):
     filepathlist = file_paths(databasedir)
     data_out = {}
     pdbcodes = []
@@ -353,8 +359,12 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
         jsonfile = filepathlist[i]
         jsonfilename = os.path.basename(jsonfile)
         pdbcode = jsonfilename.rpartition('.')[0]
-        pdbfile = pdbmirrordir + f"/pdb/pdb{pdbcode}.ent.gz"
-        mmciffile = pdbmirrordir+f"/mmCIF/{pdbcode}.cif.gz"
+        if redo:
+            pdbfile = pdbmirrordir + f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}_final.pdb"
+            mmciffile = pdbmirrordir+f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}_final.cif"
+        else:
+            pdbfile = pdbmirrordir + f"/pdb/pdb{pdbcode}.ent.gz"
+            mmciffile = pdbmirrordir+f"/mmCIF/{pdbcode}.cif.gz"
         try:
             st = gemmi.read_structure(pdbfile)
         except:
@@ -368,6 +378,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
             data_in = json.load(f)
             glycandata = data_in["glycans"]
             cglycans = glycandata["c-glycan"]
+            ligands = glycandata["ligands"]
             for cglycan in cglycans:
                 for sugar in cglycan["sugars"]:
                     if sugar["diagnostic"] != "yes" and  sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
@@ -386,13 +397,36 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                         glycosylation["receiving_chain_index"] = cglycan["proteinChainId"]
                         glycosylation["receiving_res_index"] = cglycan["proteinResidueSeqnum"]
                         glycosylations.append(glycosylation)
+            for ligand in ligands:
+                for sugar in ligands["sugars"]:
+                    if sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
+                        protseqnum = ligand["proteinResidueSeqnum"]
+                        protchainID = ligand["proteinChainId"]
+                        residue = st[0][protchainID][protseqnum]
+                        if residue.name == "TRP":
+                            save_structure = True
+                            sugarResId = sugar["sugarId"].rpartition("-")[2]
+                            for m, model in enumerate(st):
+                                for c, chain in enumerate(model):
+                                    for r, residue in enumerate(chain):
+                                        # If the corresponding protein residue is a TRP
+                                        if str(chain.name) == str(ligand["rootSugarChainId"]) and int(residue.seqid.num) == int(sugarResId):
+                                            ms.append(m)
+                                            cs.append(c)
+                                            rs.append(r) 
+                            glycosylation = {}
+                            glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
+                            glycosylation["glycan_index"] = 0
+                            glycosylation["receiving_chain_index"] = cglycan["proteinChainId"]
+                            glycosylation["receiving_res_index"] = cglycan["proteinResidueSeqnum"]
+                            glycosylations.append(glycosylation)
         if save_structure:
             l = sorted(zip(rs, cs, ms))
             rs, cs, ms = zip(*l)
             for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
                 del st[m][c][r]
             receiver_path = receiverdir + f"/{pdbcode}.pdb"
-            mtz_path = find_mtz_path(mtzdir,receiverdir,pdbcode)
+            mtz_path = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
             output_path = outputdir + f"/{pdbcode}.pdb"
             st.write_pdb(receiver_path)
             data_out[str(pdbcode)]={"receiver_path": receiver_path, "mtz_path": mtz_path, "output_path": output_path ,"glycosylations": glycosylations}
@@ -403,16 +437,25 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
         json.dump(data_out, output_file)
     return pdbcodes
 
-def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir):
-    pdbfiles = file_paths(pdbmirrordir + "pdb")
-    mmcifiles = file_paths(pdbmirrordir + "mmcif")
+def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo):
+    if redo:
+        pdbfiles = file_paths(pdbmirrordir, ".pdb")
+        mmcifiles = file_paths(pdbmirrordir, ".cif")
+    else:
+        pdbfiles = file_paths(pdbmirrordir + "pdb")
+        mmcifiles = file_paths(pdbmirrordir + "mmcif")
     data_out = {}
     pdbcodes = []
     for i in range(len(mmcifiles)):
         mmcifile = mmcifiles[i]
         filename = os.path.basename(mmcifile)
-        pdbcode = filename.partition(".")[0]
-        mtzfile = find_mtz_path(mtzdir,receiverdir,pdbcode)
+        if redo:
+            pdbcode = filename.partition("_")[0]
+            if mmcifile != os.path.join(pdbmirrordir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.cif"):
+                continue
+        else:
+            pdbcode = filename.partition(".")[0]
+        mtzfile = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         st = gemmi.read_structure(mmcifile)
         save_structure = False
         glycosylations = []
@@ -452,6 +495,31 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                         glycosylation["receiving_chain_index"] = root_info["ProteinChainID"]
                         glycosylation["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
                         glycosylations.append(glycosylation)
+            if glycan_type == "ligand":
+                glycan = glycosylation.get_glycan(i)
+                num_sugars = glycan.get_total_number_of_sugars()
+                root_info = glycan.get_root_info()
+                if root_info["ProteinResidueType"] == "TRP":
+                    for j in range(num_sugars):
+                        sugar = glycan.get_monosaccharide(j)
+                        summary = sugar.get_sugar_summary()
+                        name = summary["sugar_name_short"]
+                        diagnostic = sugar.get_privateer_diagnostic()
+                        if name == "MAN" or name == "BMA":
+                            save_structure = True
+                            for m, model in enumerate(st):
+                                for c, chain in enumerate(model):
+                                    for r, residue in enumerate(chain):
+                                        if str(chain.name) == str(summary["sugar_pdb_chain"]) and int(residue.seqid.num) == int(summary["sugar_seqnum"]):
+                                            ms.append(m)
+                                            cs.append(c)
+                                            rs.append(r) 
+                            glycosylation = {}
+                            glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
+                            glycosylation["glycan_index"] = 0
+                            glycosylation["receiving_chain_index"] = root_info["ProteinChainID"]
+                            glycosylation["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
+                            glycosylations.append(glycosylation)
         if save_structure:
             l = sorted(zip(rs, cs, ms))
             rs, cs, ms = zip(*l)
@@ -469,11 +537,11 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         json.dump(data_out, output_file)
     return pdbcodes
 
-def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir):
+def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo):
     if databasedir is not None:
-        pdbcodes = find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir)
+        pdbcodes = find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo)
     else:
-        pdbcodes = find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir)
+        pdbcodes = find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo)
     df_in = pd.read_json("c-mannosylation_sites.json")
     AllGlycans = []
     for pdbcode in pdbcodes:
@@ -545,7 +613,7 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir)
     df_out.to_csv(output_csv)
     return
 
-def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,graftedlist=None,savesummary=False):
+def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedlist,savesummary):
     donorpath = os.path.join(donordir, "Alpha-D-Mannose.pdb")
     receivers = file_paths(receiverdir)
     AllGlycans = []
@@ -564,17 +632,19 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo=False,gra
             pdbcode = filename.partition(".")[0]
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
+        if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.pdb"):
+            continue
         with open(graftedlist, "a") as myfile:
             myfile.write(receiverpath)
         mtzpath = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
-        sequences = grafter._get_sequences_in_receiving_model(receiverpath)
         requestedchains = check_expression_system_with_cif(ciffile,pdbcode)
         if not requestedchains: 
             with open(graftedlist, "a") as myfile:
                     myfile.write("\tWrong expression system")
                     myfile.write("\n")
             continue
+        sequences = grafter._get_sequences_in_receiving_model(receiverpath)
         targets = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.08)
         #targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
         #for target_1 in targets_1:
@@ -661,6 +731,7 @@ if __name__ == "__main__":
     else:
         defaultdonordir = "/y/people/lah583/privateer/data/glycan_donor_repertoire"
     defaultoutputdir = os.path.join(cwd,"output")
+    defaultredo = False
     parser = argparse.ArgumentParser(
         prog="CMannosylation.py",
         usage=
@@ -726,11 +797,19 @@ if __name__ == "__main__":
         help=
         f"Path to save final fixed/grafted structures. If not set, defaults to {defaultoutputdir}.",
     )
+    parser.add_argument(
+        "-redo",
+        action="store",
+        default=defaultredo,
+        dest="redo",
+        help=
+        f"Boolean to say whether running on pdbredo (True) or not (False). If not set, defaults to {defaultredo}.",
+    )
     args = parser.parse_args()
     if args.mode == 'fix':
-        fix_Cglycans(args.databasedir,args.pdbmirrordir,args.mtzdir,args.receiverdir,args.donordir,args.outputdir)
+        fix_Cglycans(args.databasedir,args.pdbmirrordir,args.mtzdir,args.receiverdir,args.donordir,args.outputdir,args.redo)
     elif args.mode == 'find':
-        find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir,True,"grafted_pdbs.txt",True)
+        find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
     else:
         print("Mode of operation not specified. Exiting...")
 
