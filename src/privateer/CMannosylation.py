@@ -403,7 +403,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                         protseqnum = ligand["proteinResidueSeqnum"]
                         protchainID = ligand["proteinChainId"]
                         residue = st[0][protchainID][protseqnum]
-                        if residue.name == "TRP":
+                        if residue.name == "TRP": #FLAG: This doesn't work. The seqnum of the protein isn't properly stored for ligand as too far away???
                             save_structure = True
                             sugarResId = sugar["sugarId"].rpartition("-")[2]
                             for m, model in enumerate(st):
@@ -631,19 +631,19 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
                 continue
             pdbcode = filename.partition("_")[0]
             ciffile = receiverpath.rpartition(".")[0] + ".cif"
+            expsysfile = f"/vault/pdb_mirror/data/structures/all/mmCIF/{pdbcode}.cif.gz"
         else:
             pdbcode = filename.partition(".")[0]
+            expsysfile = ciffile
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
-        if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.pdb"):
-            print(receiverpath)
-            print(os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.pdb"))
+        if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb"):
             continue
         with open(graftedlist, "a") as myfile:
             myfile.write(receiverpath)
         mtzpath = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
-        requestedchains = check_expression_system_with_cif(ciffile,pdbcode)
+        requestedchains = check_expression_system_with_cif(expsysfile,pdbcode)
         if not requestedchains: 
             with open(graftedlist, "a") as myfile:
                     myfile.write("\tWrong expression system")
