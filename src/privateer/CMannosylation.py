@@ -193,6 +193,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                         pentaseq = residue.name
                     
                     if re.search('W.{2}W',pentaseq) == None: 
+                        print("Consensus sequence not found")
                         continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
                     
                     ce3,cd1 = None,None
@@ -209,7 +210,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                         consensus.append(pentaseq)
                         residuelist.append(residue.seqid.num)
                         chainlist.append(chain.name)
-    with open(f"{pdbid}_consensus_sequence.txt", "a") as myfile:
+    with open(f"{pdbid}_consensus_sequence.txt", "w") as myfile:
         myfile.write(f"ChainID\t ResSeqnum\n")
         for i in range(len(chainlist)):
             myfile.write(f"{chainlist[i]}\t{residuelist[i]}\n")           
@@ -244,7 +245,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
         if avg_density > threshold: 
             target_chainlist.append(chainlist[i])
             target_residuelist.append(residuelist[i])
-    with open(f"{pdbid}_glycosylation_targets.txt", "a") as myfile:
+    with open(f"{pdbid}_glycosylation_targets.txt", "w") as myfile:
         myfile.write(f"ChainID\t ResSeqnum\n")
         for i in range(len(target_chainlist)):
             myfile.write(f"{target_chainlist[i]}\t{target_residuelist[i]}\n")
