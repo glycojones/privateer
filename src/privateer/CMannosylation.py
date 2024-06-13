@@ -575,14 +575,13 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
                 with open(graftedlist, "a") as myfile:
                         myfile.write("\tWrong expression system")
                         myfile.write("\n")
-                continue
-        with open(f"{pdbcode}_requestedchains.txt", "w") as myfile:
-            for requestedchain in requestedchains:
-                myfile.write(f"{requestedchain}\n")
-            
+                continue 
         except:
             print("Error checking expression system. Proceeding with grafting regardless of expression system...")
             requestedchains = None
+        with open(f"{pdbcode}_requestedchains.txt", "w") as myfile:
+            for requestedchain in requestedchains:
+                myfile.write(f"{requestedchain}\n")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
         targets = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.051)
         #targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
