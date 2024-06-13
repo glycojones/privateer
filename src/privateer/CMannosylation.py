@@ -191,7 +191,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                         pentaseq = get_consensus(inputchain=chain,inputresidue=residue)
                     else: 
                         pentaseq = residue.name
-                    
+                    print(pentaseq)
                     if re.search('W.{2}W',pentaseq) == None: 
                         print("Consensus sequence not found")
                         continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
