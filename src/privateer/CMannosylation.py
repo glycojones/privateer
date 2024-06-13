@@ -562,8 +562,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             expsysfile = ciffile
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
-        if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb"):
-            continue
+        #if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb"):
+        #    continue
         with open(graftedlist, "a") as myfile:
             myfile.write(receiverpath)
         mtzpath = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
@@ -647,7 +647,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
         df_all = pd.DataFrame.from_dict(AllGlycans)
         output_csv = outputdir + "/full_graft_summary.csv"
         df_all.to_csv(output_csv)
-        os.remove(temp_csv)
+        if os.path.isfile(temp_csv):
+            os.remove(temp_csv)
     return 
 
 
