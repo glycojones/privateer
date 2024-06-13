@@ -172,7 +172,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
     st = gemmi.read_structure(pdbfile)
     if not os.path.exists(mtzfile): 
         print(f"No mtzfile for {pdbid}")
-        return
+        return None
 
     pointlist = []
     chainlist = []; residuelist = []
@@ -246,7 +246,10 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
         if avg_density > threshold: 
             target_chainlist.append(chainlist[i])
             target_residuelist.append(residuelist[i])
-    
+    with open(f"{pdbid}_glycosylation_targets.txt", "a") as myfile:
+        myfile.write(f"ChainID\t ResSeqnum\n")
+        for i in range(len(target_chainlist)):
+            myfile.write(f"{target_chainlist[i]}\t{target_residuelist[i]}\n")
     CMannosylationConsensus = "[W]"
     output = []
     for item in sequences:
