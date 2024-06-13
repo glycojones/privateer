@@ -576,6 +576,10 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
                         myfile.write("\tWrong expression system")
                         myfile.write("\n")
                 continue
+        with open(f"{pdbcode}_requestedchains.txt", "w") as myfile:
+            for requestedchain in requestedchains:
+                myfile.write(f"{requestedchain}\n")
+            
         except:
             print("Error checking expression system. Proceeding with grafting regardless of expression system...")
             requestedchains = None
