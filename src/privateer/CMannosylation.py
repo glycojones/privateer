@@ -584,7 +584,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             for requestedchain in requestedchains:
                 myfile.write(f"{requestedchain}\n")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
-        targets = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.051)
+        targets = get_targets_via_blob_search_and_consensus_sequence(ciffile, mtzpath, requestedchains, sequences, 0.051)
         #targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
         #for target_1 in targets_1:
         #    for target_2 in targets_2[:]:
