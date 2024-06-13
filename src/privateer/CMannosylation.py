@@ -175,7 +175,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
         return None
 
     pointlist = []
-    chainlist = []; residuelist = []
+    chainlist = []; residuelist = []; sum_density = []; mean_density = []; gridpoints = []
     consensus = []
     target_chainlist = []   ; target_residuelist = []
     for model in st:
@@ -208,11 +208,10 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                         consensus.append(pentaseq)
                         residuelist.append(residue.seqid.num)
                         chainlist.append(chain.name)
-                    else: 
-                        pointlist.append(None)
-                        consensus.append(None)
-                        residuelist.append(None)
-                        chainlist.append(None)
+    with open(f"{pdbid}_consensus_sequence.txt", "a") as myfile:
+        myfile.write(f"ChainID\t ResSeqnum\n")
+        for i in range(len(chainlist)):
+            myfile.write(f"{chainlist[i]}\t{residuelist[i]}\n")           
     # READ RECALCULATED MAP   
     try:
         mtz = gemmi.read_mtz_file(mtzfile)
@@ -225,8 +224,6 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
     # gr = grid.clone()
     start = 1000 # arbitary number
     for i, newpoint in enumerate(pointlist):
-        if newpoint == None: 
-            continue
         gr = grid.clone()
         gr.set_points_around(newpoint, radius=3, value=start)
         pointgroup = np.argwhere(gr.array == start) # return positions in symmetry ???
@@ -234,15 +231,15 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
         atomlist = []; values = []
         for point in pointgroup:
             atom = grid.get_point(point[0],point[1],point[2])
-            atom = grid.get_position(point[0],point[1],point[2])
             atomlist.append(atom)
             value = grid.get_value(point[0],point[1],point[2])
             values.append(value)
         if atomlist: 
+            s_density = np.sum(values).round(3)
             avg_density = np.mean(values).round(3)
         else: 
+            s_density = 0
             avg_density = 0
-
         if avg_density > threshold: 
             target_chainlist.append(chainlist[i])
             target_residuelist.append(residuelist[i])
