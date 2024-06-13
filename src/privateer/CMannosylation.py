@@ -30,8 +30,8 @@ def file_paths(root_directory, filetype=None):
 
 def find_mtz_path(mtzdir,receiverdir,pdbcode, redo = False):
     if redo:
-        #output_path_redo = os.path.join(receiverdir,pdbcode[1]+pdbcode[2],pdbcode, f"{pdbcode}_final.mtz")
-        output_path_redo = os.path.join(receiverdir, f"{pdbcode}_final.mtz")
+        output_path_redo = os.path.join(receiverdir,pdbcode[1]+pdbcode[2],pdbcode, f"{pdbcode}_final.mtz")
+        #output_path_redo = os.path.join(receiverdir, f"{pdbcode}_final.mtz")
         if os.path.exists(output_path_redo):
             return output_path_redo
         else:
@@ -167,10 +167,10 @@ def check_expression_system_with_cif(receiverpath:str, pdbcode:str) -> tuple[lis
     return chainlist#,output
 
 
-def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,requestedchains:list,sequences:list,threshold:float) -> dict: # JUST DO BLOB_SEARCH AT PROTEINCHAINS HAVING WXXW|C
+def get_targets_via_blob_search_and_consensus_sequence(ciffile:str,mtzfile:str,requestedchains:list,sequences:list,threshold:float) -> dict: # JUST DO BLOB_SEARCH AT PROTEINCHAINS HAVING WXXW|C
     avglength = 6.4118
-    pdbid = os.path.basename(pdbfile).split('.')[0]
-    st = gemmi.read_structure(pdbfile)
+    pdbid = os.path.basename(ciffile).split('.')[0]
+    st = gemmi.read_structure(ciffile)
     if not os.path.exists(mtzfile): 
         print(f"No mtzfile for {pdbid}")
         return None
@@ -189,13 +189,8 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                 if (residue.name == 'TRP'):
                     if residue.label_seq != None: 
                         pentaseq = get_consensus(inputchain=chain,inputresidue=residue)
-                    else: 
-                        pentaseq = residue.name
-                    print(pentaseq)
-                    if re.search('W.{2}W',pentaseq) == None: 
-                        print("Consensus sequence not found")
-                        continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
-                    print("Consensus sequence found")
+                        if re.search('W.{2}W',pentaseq) == None: 
+                            continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
                     ce3,cd1 = None,None
                     for atom in residue:
                         if atom.name == 'CE3': 
@@ -209,11 +204,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                         pointlist.append(newpoint)
                         consensus.append(pentaseq)
                         residuelist.append(residue.seqid.num)
-                        chainlist.append(chain.name)
-    with open(f"{pdbid}_consensus_sequence.txt", "w") as myfile:
-        myfile.write(f"ChainID\t ResSeqnum\n")
-        for i in range(len(chainlist)):
-            myfile.write(f"{chainlist[i]}\t{residuelist[i]}\n")           
+                        chainlist.append(chain.name)         
     # READ RECALCULATED MAP   
     try:
         mtz = gemmi.read_mtz_file(mtzfile)
@@ -245,10 +236,6 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
         if avg_density > threshold: 
             target_chainlist.append(chainlist[i])
             target_residuelist.append(residuelist[i])
-    with open(f"{pdbid}_glycosylation_targets.txt", "w") as myfile:
-        myfile.write(f"ChainID\t ResSeqnum\n")
-        for i in range(len(target_chainlist)):
-            myfile.write(f"{target_chainlist[i]}\t{target_residuelist[i]}\n")
     CMannosylationConsensus = "[W]"
     output = []
     for item in sequences:
@@ -564,8 +551,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             expsysfile = ciffile
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
-        #if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb"):
-        #    continue
+        if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb"):
+            continue
         with open(graftedlist, "a") as myfile:
             myfile.write(receiverpath)
         mtzpath = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
