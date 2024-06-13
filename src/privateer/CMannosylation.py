@@ -30,8 +30,8 @@ def file_paths(root_directory, filetype=None):
 
 def find_mtz_path(mtzdir,receiverdir,pdbcode, redo = False):
     if redo:
-        output_path_redo = os.path.join(receiverdir,pdbcode[1]+pdbcode[2],pdbcode, f"{pdbcode}_final.mtz")
-        #output_path_redo = os.path.join(receiverdir, f"{pdbcode}_final.mtz")
+        #output_path_redo = os.path.join(receiverdir,pdbcode[1]+pdbcode[2],pdbcode, f"{pdbcode}_final.mtz")
+        output_path_redo = os.path.join(receiverdir, f"{pdbcode}_final.mtz")
         if os.path.exists(output_path_redo):
             return output_path_redo
         else:
@@ -176,7 +176,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
         return None
 
     pointlist = []
-    chainlist = []; residuelist = []
+    chainlist = []; residuelist = []; sum_density = []; mean_density = []; gridpoints = []
     consensus = []
     target_chainlist = []   ; target_residuelist = []
     for model in st:
@@ -187,13 +187,15 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
             for residue in chain:
                 # GET ESTIMATED CENTROID WITH AVERAGE TRANSLATION LENGTH ~ 6.411 Å
                 if (residue.name == 'TRP'):
-                    #if residue.label_seq != None: 
-                    #    pentaseq = get_consensus(inputchain=chain,inputresidue=residue)
-                    #else: 
-                    #    pentaseq = residue.name
-                    #
-                    #if re.search('W.{2}W',pentaseq) == None: 
-                    #    continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
+                    if residue.label_seq != None: 
+                        pentaseq = get_consensus(inputchain=chain,inputresidue=residue)
+                    else: 
+                        pentaseq = residue.name
+                    
+                    if re.search('W.{2}W',pentaseq) == None: 
+                        print("Consensus sequence not found")
+                        continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
+                    print("Consensus sequence found")
                     ce3,cd1 = None,None
                     for atom in residue:
                         if atom.name == 'CE3': 
@@ -208,7 +210,10 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                         consensus.append(pentaseq)
                         residuelist.append(residue.seqid.num)
                         chainlist.append(chain.name)
-           
+    with open(f"{pdbid}_consensus_sequence.txt", "w") as myfile:
+        myfile.write(f"ChainID\t ResSeqnum\n")
+        for i in range(len(chainlist)):
+            myfile.write(f"{chainlist[i]}\t{residuelist[i]}\n")           
     # READ RECALCULATED MAP   
     try:
         mtz = gemmi.read_mtz_file(mtzfile)
@@ -232,13 +237,18 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
             value = grid.get_value(point[0],point[1],point[2])
             values.append(value)
         if atomlist: 
+            s_density = np.sum(values).round(3)
             avg_density = np.mean(values).round(3)
         else: 
+            s_density = 0
             avg_density = 0
         if avg_density > threshold: 
             target_chainlist.append(chainlist[i])
             target_residuelist.append(residuelist[i])
-
+    with open(f"{pdbid}_glycosylation_targets.txt", "w") as myfile:
+        myfile.write(f"ChainID\t ResSeqnum\n")
+        for i in range(len(target_chainlist)):
+            myfile.write(f"{target_chainlist[i]}\t{target_residuelist[i]}\n")
     CMannosylationConsensus = "[W]"
     output = []
     for item in sequences:
@@ -554,8 +564,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             expsysfile = ciffile
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
-        if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb"):
-            continue
+        #if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb"):
+        #    continue
         with open(graftedlist, "a") as myfile:
             myfile.write(receiverpath)
         mtzpath = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
@@ -570,9 +580,11 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
         except:
             print("Error checking expression system. Proceeding with grafting regardless of expression system...")
             requestedchains = None
-
+        with open(f"{pdbcode}_requestedchains.txt", "w") as myfile:
+            for requestedchain in requestedchains:
+                myfile.write(f"{requestedchain}\n")
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
-        targets = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.08)
+        targets = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.051)
         #targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
         #for target_1 in targets_1:
         #    for target_2 in targets_2[:]:
