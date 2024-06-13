@@ -636,6 +636,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
         df_all = pd.DataFrame.from_dict(AllGlycans)
         output_csv = outputdir + "/full_graft_summary.csv"
         df_all.to_csv(output_csv)
+        temp_csv = outputdir + "/full_graft_summary_temp.csv"
         if os.path.isfile(temp_csv):
             os.remove(temp_csv)
     return 
