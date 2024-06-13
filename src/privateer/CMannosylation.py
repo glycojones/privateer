@@ -107,8 +107,9 @@ def check_expression_system_with_cif(receiverpath:str, pdbcode:str) -> tuple[lis
         taxonids = taxsrc['taxonids']
         sciNames = taxsrc['sciNames']
 
-    chainlist = []
-    output = False
+    # pdb = os.path.basename(path).split('.')[0]
+
+    chainlist,output = [], False
 
     doc = gemmi.cif.read(receiverpath)
     block = doc.sole_block()
@@ -126,51 +127,53 @@ def check_expression_system_with_cif(receiverpath:str, pdbcode:str) -> tuple[lis
     chainforentity = block.find_values('_entity_poly.pdbx_strand_id')
 
     for (hent,taxhost,hostname) in zip(hostentities,taxhosts,hostnames): # PDB 3ccz host E.coli without taxid!
-        try: 
-            taxhost = taxhost.replace(' ', ''); taxhost = int(taxhost)
-        except (ValueError,TypeError,SyntaxError,RuntimeError): 
-            pass
+
+        try: taxhost = taxhost.replace(' ', ''); taxhost = int(taxhost)
+        except (ValueError,TypeError,SyntaxError,RuntimeError): pass
+
         if (taxhost in taxonids) or (hostname.lower() in sciNames):
             # print(hent)
-            try: 
-                proteinsequence = polymers[int(hent)-1]
+            try: proteinsequence = polymers[int(hent)-1]
             except (IndexError,ValueError,TypeError,SyntaxError) as e: 
                 print(f'{pdbcode} with error = {e}')
                 continue
+            
             output = check_consensus_sequence(sequence=proteinsequence)
             chainname = chainforentity[int(hent)-1]
             if output == False: continue
-            if len(chainname) > 1: 
-                chainname = chainname.split(',')
-            if chainname not in chainlist: 
-                chainlist += chainname
+            if len(chainname) > 1: chainname = chainname.split(',')
+            if chainname not in chainlist: chainlist += chainname
         # else: print(f'{pdb} with taxhost = {taxhost} and hostname = {hostname}')
+
     for (natent,taxnat,natname) in zip(natentities,taxnats,natnames):
-        try: 
-            taxnat = taxnat.replace(' ', ''); taxnat = int(taxnat)
-        except (ValueError,TypeError,SyntaxError,RuntimeError): 
-            pass
+
+        try: taxnat = taxnat.replace(' ', ''); taxnat = int(taxnat)
+        except (ValueError,TypeError,SyntaxError,RuntimeError): pass
+
         if (taxnat in taxonids) or (natname.lower() in sciNames):
-            try: 
-                proteinsequence = polymers[int(natent)-1]
+
+            try: proteinsequence = polymers[int(natent)-1]
             except (IndexError,ValueError,TypeError,SyntaxError) as e: 
                 print(f'{pdbcode} with error = {e}')
                 continue
+
             output = check_consensus_sequence(sequence=proteinsequence)
             chainname = chainforentity[int(natent)-1]
-            if output == False: 
-                continue
-            if len(chainname) > 1: 
-                chainname = chainname.split(',')
-            if chainname not in chainlist: 
-                chainlist += chainname
-    return chainlist
+            if output == False: continue
+            if len(chainname) > 1: chainname = chainname.split(',')
+            if chainname not in chainlist: chainlist += chainname
+
+    return chainlist#,output
 
 
 def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,requestedchains:list,sequences:list,threshold:float) -> dict: # JUST DO BLOB_SEARCH AT PROTEINCHAINS HAVING WXXW|C
     avglength = 6.4118
     pdbid = os.path.basename(pdbfile).split('.')[0]
     st = gemmi.read_structure(pdbfile)
+    if not os.path.exists(mtzfile): 
+        print(f"No mtzfile for {pdbid}")
+        return
+
     pointlist = []
     chainlist = []; residuelist = []
     consensus = []
@@ -207,6 +210,9 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                         chainlist.append(chain.name)
                     else: 
                         pointlist.append(None)
+                        consensus.append(None)
+                        residuelist.append(None)
+                        chainlist.append(None)
     # READ RECALCULATED MAP   
     try:
         mtz = gemmi.read_mtz_file(mtzfile)
@@ -248,6 +254,7 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
         currentChainID = item["ChainID"]
         currentSequence = item["Sequence"]
         glycosylationTargets = []
+        append = False
         for match in re.finditer(CMannosylationConsensus, currentSequence):
             if (currentSequence[match.start()] == item["Residues"][match.start()]["residueCode"]):
                 for i in range(len(target_residuelist)):
@@ -259,7 +266,8 @@ def get_targets_via_blob_search_and_consensus_sequence(pdbfile:str,mtzfile:str,r
                             "end": match.end(),
                             "match": match.group()
                         })
-        if len(glycosylationTargets) > 0:
+                        append = True
+        if append:
             output.append({
                 "Sequence": currentSequence,
                 "chainIndex": currentChainIndex,
@@ -571,7 +579,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             print("Error checking expression system. Proceeding with grafting regardless of expression system...")
             requestedchains = None
         sequences = grafter._get_sequences_in_receiving_model(receiverpath)
-        targets = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.08)
+        targets = get_targets_via_blob_search_and_consensus_sequence(receiverpath, mtzpath, requestedchains, sequences, 0.051)
         #targets_2 = grafter._get_CMannosylation_targets_via_water_search(receiverpath, sequences) #FLAG: remove water search???
         #for target_1 in targets_1:
         #    for target_2 in targets_2[:]:
