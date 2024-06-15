@@ -16,7 +16,10 @@ if [ -d "clipper" ]; then
     echo "Found clipper"
 else
     echo "Checking out clipper"
-    bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/clipper/clipper_gemmi/ clipper
+  curl -L http://www.ysbl.york.ac.uk/jsd523/clipper-gemmi-wrapper-20240603.tar.gz -o clipper-gemmi-wrapper.tar.gz
+
+    tar xf clipper-gemmi-wrapper.tar.gz
+    mv clipper-gemmi-wrapper clipper
     echo
 fi 
 
@@ -40,9 +43,9 @@ if [ -d "gemmi" ]; then
     echo "Found gemmi"
 else
 echo "Checking out gemmi"
-wget https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.5.8.tar.gz 
-tar xf v0.5.8.tar.gz
-mv gemmi-0.5.8 gemmi
+wget https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.6.5.tar.gz
+tar xf v0.6.5.tar.gz
+mv gemmi-0.6.5 gemmi
 echo
 fi
 
