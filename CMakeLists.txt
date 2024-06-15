@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.12)
 project(privateer VERSION 0.5 LANGUAGES C CXX)
 
 SET(PRIVATEER_CC_FLAGS "-O2 -w")
-SET(PRIVATEER_CXX_FLAGS "-O2 -w -fwasm-exceptions  -I${CMAKE_INSTALL_PREFIX}/include")
+SET(PRIVATEER_CXX_FLAGS "-O2 -w -fwasm-exceptions -I${CMAKE_INSTALL_PREFIX}/include")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PRIVATEER_CC_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS} ")
 
@@ -21,11 +21,6 @@ add_compile_options(--preload-file data/linkage_torsions@/)
 
 set(CLIBDENV $ENV{CLIBD})
 
-# find_package(zlib)
-# add_subdirectory(checkout/zlib)
-
-if (MODE STREQUAL "TESTING") 
-else()
   add_subdirectory(gemmi)
   add_subdirectory(ccp4)
   add_subdirectory(rfftw)
@@ -40,13 +35,8 @@ else()
   add_subdirectory(clipper/cif)
   add_subdirectory(clipper/phs)
   add_subdirectory(clipper/gemmi)
-endif()
-
-# add_subdirectory(ccp4srs)
-
 
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
-
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}
  checkout/mmdb2 
@@ -115,9 +105,8 @@ add_library(privateer_lib
             # ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
             # ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco_data.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-bind.cpp
+           # ${PRIVATEER_SOURCE_DIR}/cpp/privateer-bind.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/third-party/simdjson/simdjson.cpp
-
             )
 
 
