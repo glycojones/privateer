@@ -1,3 +1,5 @@
+import { detect } from "detect-browser"
+
 async function fetchPDBFile(PDBCode: string): Promise<string | void> {
     console.warn(
         'The CIF file for this PDB could not be found, trying for the PDB'
@@ -27,6 +29,16 @@ export async function fetchPDB(PDBCode: string): Promise<string | void> {
     // first try fetching the cif
     console.log('Fetching PDB ', PDBCode);
     const pdbURL = `https://files.rcsb.org/download/${PDBCode.toUpperCase()}.cif`;
+
+    // FIXME
+    const browser = detect(); // FireFox doesn't work with CIF files, get the PDB.
+    if (browser.name === "firefox") {
+        try {
+            return await fetchPDBFile(PDBCode);
+        } catch (e) {
+            return await Promise.reject(e);
+        }
+    }
 
     const file = fetch(pdbURL)
         .then(async (response) => {
