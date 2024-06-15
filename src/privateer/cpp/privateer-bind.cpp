@@ -4,6 +4,7 @@
 #include <clipper/clipper-ccp4.h>
 #include <clipper/clipper-minimol.h>
 #include <clipper/clipper-contrib.h>
+#include <clipper/clipper-gemmi.h>
 
 #include <gemmi/mmread.hpp>
 #include "clipper-glyco.h"
@@ -56,9 +57,9 @@ clipper::MiniMol read_molecule(const std::string &file, const std::string &name)
     structure.spacegroup_hm = "P 1";
   }
 
-  clipper::GEMMIFile gemmi_file;
-  clipper::GemmiStructure *gemmi_structure = &gemmi_file;
-  gemmi_structure->structure_ = structure;
+  clipper::GEMMIfile gemmi_file;
+  clipper::GemmiStructure gemmi_structure(structure);
+  gemmi_file.set_gemmi_structure(gemmi_structure);
   clipper::MiniMol mol;
   gemmi_file.import_minimol(mol);
 
