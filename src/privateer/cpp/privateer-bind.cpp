@@ -7,6 +7,7 @@
 #include <clipper/clipper-gemmi.h>
 
 #include <gemmi/mmread.hpp>
+#include <gemmi/polyheur.hpp>
 #include "clipper-glyco.h"
 #include "clipper-glyco.cpp"
 
