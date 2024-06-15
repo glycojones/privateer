@@ -1,4 +1,4 @@
-import { detect } from "detect-browser"
+import { detect } from 'detect-browser';
 
 async function fetchPDBFile(PDBCode: string): Promise<string | void> {
     console.warn(
@@ -32,7 +32,7 @@ export async function fetchPDB(PDBCode: string): Promise<string | void> {
 
     // FIXME
     const browser = detect(); // FireFox doesn't work with CIF files, get the PDB.
-    if (browser.name === "firefox") {
+    if (browser.name === 'firefox') {
         try {
             return await fetchPDBFile(PDBCode);
         } catch (e) {
