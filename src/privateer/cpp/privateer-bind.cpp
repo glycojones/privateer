@@ -42,34 +42,23 @@ struct ResultsEntry
 
 clipper::MiniMol read_molecule(const std::string &file, const std::string &name)
 {
-  char *c_data = (char *)file.c_str();
-  size_t size = file.length();
 
-  if (size == 0)
-  {
-    std::cout << "[Privateer] The supplied file has no content, returning with nothing." << std::endl;
-    return {};
-  }
-  ::gemmi::Structure structure = ::gemmi::read_structure_from_char_array(c_data, size, name);
-  std::cout << "[Privateer] Successfully read structure" << std::endl;
-
-  if (structure.spacegroup_hm == "") {
-    std::cout << "[Privateer] This structure has no spacegroup specified, setting to P1." << std::endl;
-    structure.spacegroup_hm = "P 1";
-  }
-
-  clipper::GEMMIfile gemmi_file;
-  clipper::GemmiStructure gemmi_structure(structure);
-  gemmi_file.set_gemmi_structure(gemmi_structure);
   clipper::MiniMol mol;
+  clipper::GEMMIfile gemmi_file;
+  gemmi_file.read_file(file);
   gemmi_file.import_minimol(mol);
+
+   if (mol.spacegroup().is_null()) {
+      std::cout << "[Privateer] This structure has no spacegroup specified, setting to P1." << std::endl;
+      mol.init(clipper::Spacegroup::p1(), mol.cell());
+    }
 
   clipper::Cell cell = mol.cell();
   if (cell.a() == 1.0 && cell.b() == 1.0 && cell.c() == 1.0 ) {
       std::cout << "[Privateer] This cell is 1A, inflating the cell but this will lose crystal contact information" << std::endl;
       mol.init ( clipper::Spacegroup::p1(), clipper::Cell(clipper::Cell_descr ( 300, 300, 300, 90, 90, 90 )) );
   }
-  std::cout << "[Privateer] Created gemmi molecule" << std::endl;
+  std::cout << "[Privateer] Created molecule" << std::endl;
   return mol;
 }
 
