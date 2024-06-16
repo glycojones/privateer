@@ -1,6 +1,6 @@
 import { detect } from 'detect-browser';
 
-async function fetchPDBFile(PDBCode: string): Promise<string | void> {
+async function fetchPDBFile(PDBCode: string): Promise<[string] | void> {
     console.warn(
         'The CIF file for this PDB could not be found, trying for the PDB'
     );
@@ -14,7 +14,7 @@ async function fetchPDBFile(PDBCode: string): Promise<string | void> {
             return await response.text();
         })
         .then(async (file) => {
-            return file;
+            return [file, '.pdb'];
         })
         .catch(async (error) => {
             return await Promise.reject(error);
@@ -22,7 +22,7 @@ async function fetchPDBFile(PDBCode: string): Promise<string | void> {
     return await file;
 }
 
-export async function fetchPDB(PDBCode: string): Promise<string | void> {
+export async function fetchPDB(PDBCode: string): Promise<[string] | void> {
     if (PDBCode == null) {
         return;
     }
@@ -48,7 +48,7 @@ export async function fetchPDB(PDBCode: string): Promise<string | void> {
             return await response.text();
         })
         .then(async (file) => {
-            return file;
+            return [file, '.cif'];
         })
         .catch(async () => {
             // if we can't find the cif, try the PDB, if that fails, then report the failure.
