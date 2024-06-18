@@ -274,6 +274,10 @@ namespace privateer
         clipper::Coord_orth aromatic_centre = get_aromatic_centre(mmon, trp_ring);
         clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
 
+        if (std::isnan(aromatic_vector[0]) || std::isnan(aromatic_vector[1]) || std::isnan(aromatic_vector[2])){
+            return false;
+        }
+
         if (neighbourhood.symmetry() == 0)
         {
             distance_xo = clipper::Coord_orth::length(xh_atoms.first.coord_orth(), aromatic_centre);
