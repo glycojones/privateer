@@ -56,8 +56,9 @@ export default function Home(): Element {
         const newFileName = '/coordinates.' + fileExtension;
         Module.FS.writeFile(newFileName, fileContent);
 
+        const disallowedExtensions = ["cif", "mmcif"]
         const browser = detect(); // FireFox doesn't work with CIF files, get the PDB.
-        if (browser.name === 'firefox' && fileExtension === 'cif') {
+        if (browser.name === 'firefox' && disallowedExtensions.includes(fileExtension)) {
             setFailureText(
                 'CIF files are currently unsupported on FireFox. Please consider an alternate browser.'
             );
