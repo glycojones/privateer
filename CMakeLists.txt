@@ -21,6 +21,8 @@ add_compile_options(--preload-file data/linkage_torsions@/)
 
 set(CLIBDENV $ENV{CLIBD})
 
+if (MODE STREQUAL "TESTING") 
+else() 
   add_subdirectory(gemmi)
   add_subdirectory(ccp4)
   add_subdirectory(rfftw)
@@ -35,6 +37,7 @@ set(CLIBDENV $ENV{CLIBD})
   add_subdirectory(clipper/cif)
   add_subdirectory(clipper/phs)
   add_subdirectory(clipper/gemmi)
+endif()
 
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 
