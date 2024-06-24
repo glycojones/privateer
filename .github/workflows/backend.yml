@@ -43,7 +43,7 @@ jobs:
     - name: Build
       run : | 
         source ./emsdk/emsdk_env.sh
-        emcmake cmake . -D MODE=TESTING
+        emcmake cmake .
         emmake make -j 
 
     
