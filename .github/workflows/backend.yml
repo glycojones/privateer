@@ -31,13 +31,8 @@ jobs:
     
     - name: Check out libraries
       run : |
-        git clone https://github.com/Dialpuri/privateer_webserver_dependencies.git 
-        cd privateer_webserver_dependencies
-        cp -r * ../
-        cd .. 
-        ls 
         ./get_sources
-
+        
     - name: Setup cmake
       uses: jwlawson/actions-setup-cmake@v2   
     
