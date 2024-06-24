@@ -47,7 +47,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
  checkout/libccp4/ccp4 
  checkout/clipper 
  checkout/gemmi/include
- dependencies/gemmi
+#  dependencies/gemmi
  checkout/zlib
  ${PRIVATEER_SOURCE_DIR}/cpp
  ${PRIVATEER_SOURCE_DIR}/cpp/pybind11

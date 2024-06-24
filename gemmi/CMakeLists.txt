@@ -17,15 +17,13 @@ endif()
 include_directories("${gemmi_src}/include"
         "${gemmi_src}/third_party")
 
-add_library(gemmi_cpp
-            ${gemmi_src}/src/align.cpp ${gemmi_src}/src/assembly.cpp ${gemmi_src}/src/calculate.cpp ${gemmi_src}/src/crd.cpp
-            ${gemmi_src}/src/ddl.cpp ${gemmi_src}/src/eig3.cpp ${gemmi_src}/src/gz.cpp ${gemmi_src}/src/intensit.cpp ${gemmi_src}/src/json.cpp
-            ${gemmi_src}/src/mmcif.cpp ${gemmi_src}/src/mmread_gz.cpp ${gemmi_src}/src/mtz.cpp ${gemmi_src}/src/mtz2cif.cpp
-            ${gemmi_src}/src/polyheur.cpp ${gemmi_src}/src/read_cif.cpp ${gemmi_src}/src/resinfo.cpp
-            ${gemmi_src}/src/riding_h.cpp ${gemmi_src}/src/sprintf.cpp ${gemmi_src}/src/to_mmcif.cpp
-            ${gemmi_src}/src/to_pdb.cpp ${gemmi_src}/src/monlib.cpp ${gemmi_src}/src/topo.cpp ${gemmi_src}/src/xds_ascii.cpp)
 
-#set_target_properties(gemmi_cpp PROPERTIES COMPILE_FLAGS "-fexceptions -pthread -s USE_ZLIB=1 -s USE_PTHREADS=1" )
+file(GLOB CPP_FILES ${gemmi_src}/src/*.cpp)
+
+add_library(gemmi_cpp
+            ${CPP_FILES})
+
+#set_target_properties(gemmi_cpp PROPERTIES COMPILE_FLAGS "-fexceptions -pthread -s USE_ZLIB=1 -s USE_PTHREADS=1" ) ${gemmi_src}/src/gz.cpp
 
 file(GLOB HEADER_FILES ${gemmi_src}/include/gemmi/*.hpp)
 
