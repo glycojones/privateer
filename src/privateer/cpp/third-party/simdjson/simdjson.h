@@ -6172,6 +6172,12 @@ public:
    **/
   simdjson_inline std::string_view str() const;
 
+  simdjson_inline void print_newline() {return; };
+
+  simdjson_inline void print_indents(size_t depth) {return; };
+
+  simdjson_inline void print_space() {return; };
+
   /** Prints one character **/
   simdjson_inline void one_char(char c);
 
