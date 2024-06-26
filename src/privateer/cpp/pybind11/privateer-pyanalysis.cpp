@@ -1474,7 +1474,7 @@ pybind11::float_ privateer::pyanalysis::GlycosylationComposition::return_average
 }
 
 std::string privateer::pyanalysis::GlycosylationComposition::return_external_restraints() {
-    return mgl.write_external_restraints ( true, false, 0.1 );        
+    return mgl.write_external_restraints ( true, true, 0.1 );        
 };
 ///////////////////////////////////////////////// Class GlycosylationComposition END ////////////////////////////////////////////////////////////////////
 
@@ -1713,7 +1713,7 @@ pybind11::float_ privateer::pyanalysis::GlycosylationComposition_memsafe::return
 }
 
 std::string privateer::pyanalysis::GlycosylationComposition_memsafe::return_external_restraints() {
-    return mgl.write_external_restraints ( true, false, 0.1 );        
+    return mgl.write_external_restraints ( true, true, 0.1 );        
 };
 
 ///////////////////////////////////////////////// Class GlycosylationComposition_memsafe END ////////////////////////////////////////////////////////////////////
