@@ -4881,8 +4881,26 @@ std::string MGlycan::write_ring_ext_restraints ( float weight ) {
 }
 
 std::string MGlycan::write_link_ext_restraints ( float weight ) {
+    std::string buffer = "";
+    if ( this->kind_of_glycan == "c-glycan" ) { // currently only have link restraints for c-glycans, assumes ideal linkage
+        std::vector<clipper::MSugar> sugar_list = this->get_sugars();
+        for ( int i = 0; i < sugar_list.size(); i++ ) {
+            std::string sugarresidue = sugar_list[i].id();
+            std::string sugarchain = this->get_root_sugar_chainID();
+            std::string proteinchain = this->get_chain();
+            std::string proteinresidue = this->get_root().first.id().trim();
+            buffer += "# " + sugar_list[i].type() + " " + sugar_list[i].id() + "\n";
+            buffer += "external torsion first chain " + sugarchain      + " residue " + sugarresidue    + " atom O5 next" +
+                                            " chain " + sugarchain      + " residue " + sugarresidue    + " atom C1 next" +
+                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CD1 next" +
+                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CG value 125.0 sigma 0.1 period 1\n";
 
-  std::string buffer = "";
+            buffer += "external torsion first chain " + sugarchain      + " residue " + sugarresidue    + " atom C1 next" +
+                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CD1 next" +
+                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CG next" +
+                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CB value 0.0 sigma 0.1 period 1\n\n";
+        }
+    }
   return buffer;
 }
 
