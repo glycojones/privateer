@@ -167,10 +167,13 @@ def check_expression_system_with_cif(receiverpath:str, pdbcode:str) -> tuple[lis
     return chainlist#,output
 
 
-def get_targets_via_blob_search_and_consensus_sequence(ciffile:str,mtzfile:str,requestedchains:list,sequences:list,threshold:float) -> dict: # JUST DO BLOB_SEARCH AT PROTEINCHAINS HAVING WXXW|C
+def get_targets_via_blob_search_and_consensus_sequence(ciffile:str,mtzfile:str,requestedchains:list,sequences:list,threshold = None) -> dict: # JUST DO BLOB_SEARCH AT PROTEINCHAINS HAVING WXXW|C
     avglength = 6.4118
     pdbid = os.path.basename(ciffile).split('.')[0]
     st = gemmi.read_structure(ciffile)
+    if threshold == None:
+        resolution = st.resolution
+        threshold = 0.41868*resolution - 0.17116
     if not os.path.exists(mtzfile): 
         print(f"No mtzfile for {pdbid}")
         return None
@@ -213,6 +216,7 @@ def get_targets_via_blob_search_and_consensus_sequence(ciffile:str,mtzfile:str,r
         print(f'RuntimeError in reading mtz at {pdbid}')
         return
     grid = mtz.transform_f_phi_to_map('DELFWT', 'PHDELWT', sample_rate=2.0)
+    grid.normalize()
     # COPY THE GRID --> SAMPLE GRIDPOINTS IN RADIUS = 3 Å ( BY SETTING VALUES THOSE GRIDPOINTS ON CLONED GRID ~ 10)
     # gr = grid.clone()
     start = 1000 # arbitary number

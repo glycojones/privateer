@@ -360,14 +360,19 @@ def _get_CMannosylation_targets_manual(sequences):
         })
     return output
 
-def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences, avg_dens_threshold = 0.051):
+def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences, avg_dens_threshold = None):
     avglength = 6.4118
-    threshold = avg_dens_threshold
     #threshold = 0.08
     st = gemmi.read_structure(pdbfile)
     mtz = gemmi.read_mtz_file(mtzfile)
     grid = mtz.transform_f_phi_to_map('DELFWT', 'PHDELWT', sample_rate=2.0)
+    grid.normalize()
     start = 1000 # arbitrary number
+    if avg_dens_threshold == None:
+        resolution = st.resolution
+        threshold = 0.41868*resolution - 0.17116
+    else:
+        threshold = avg_dens_threshold
 
     pointlist = []; residuelist = []; chainlist = []
     if not os.path.exists(mtzfile):
