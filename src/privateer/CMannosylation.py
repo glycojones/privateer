@@ -285,8 +285,10 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
             mmciffile = pdbmirrordir+f"/mmCIF/{pdbcode}.cif.gz"
         try:
             st = gemmi.read_structure(pdbfile)
+            ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
         except:
             st = gemmi.read_structure(mmciffile)
+            ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
         save_structure = False
         glycosylations = []
         ms = []
@@ -317,27 +319,34 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                         glycosylations.append(glycosylation)
             for ligand in ligands:
                 for sugar in ligands["sugars"]:
-                    if sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
-                        protseqnum = ligand["proteinResidueSeqnum"]
-                        protchainID = ligand["proteinChainId"]
-                        residue = st[0][protchainID][protseqnum]
-                        if residue.name == "TRP": #FLAG: This doesn't work. The seqnum of the protein isn't properly stored for ligand as too far away???
-                            save_structure = True
-                            sugarResId = sugar["sugarId"].rpartition("-")[2]
-                            for m, model in enumerate(st):
-                                for c, chain in enumerate(model):
-                                    for r, residue in enumerate(chain):
-                                        # If the corresponding protein residue is a TRP
-                                        if str(chain.name) == str(ligand["rootSugarChainId"]) and int(residue.seqid.num) == int(sugarResId):
-                                            ms.append(m)
-                                            cs.append(c)
-                                            rs.append(r) 
-                            glycosylation = {}
-                            glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
-                            glycosylation["glycan_index"] = 0
-                            glycosylation["receiving_chain_index"] = cglycan["proteinChainId"]
-                            glycosylation["receiving_res_index"] = cglycan["proteinResidueSeqnum"]
-                            glycosylations.append(glycosylation)
+                    if sugar["diagnostic"] != "yes":
+                        if sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
+                            sugResId = sugar["sugarId"].rpartition("-")[2]
+                            sugChainID = sugar["sugarId"].partition("-")[2].rpartition("-")[0]
+                            sugarResidue = st[0][sugChainID][sugResId]
+                            for atom in sugarResidue:
+                                if atom.name == "C1":
+                                    marks = ns.find_neighbors(atom)
+                                    for mark in marks:
+                                        cra = mark.to_cra(st[0])
+                                        if cra.residue.name == "TRP" and cra.atom.name == "CD1":
+                                            protseqnum = cra.residue.seqid.num
+                                            protchainID = cra.chain.name
+                                            save_structure = True
+                                            for m, model in enumerate(st):
+                                                for c, chain in enumerate(model):
+                                                    for r, residue in enumerate(chain):
+                                                        # If the corresponding protein residue is a TRP
+                                                        if str(chain.name) == str(sugChainID) and int(residue.seqid.num) == int(sugResId):
+                                                            ms.append(m)
+                                                            cs.append(c)
+                                                            rs.append(r) 
+                                            glycosylation = {}
+                                            glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
+                                            glycosylation["glycan_index"] = 0
+                                            glycosylation["receiving_chain_index"] = protchainID
+                                            glycosylation["receiving_res_index"] = protseqnum
+                                            glycosylations.append(glycosylation)
         if save_structure:
             l = sorted(zip(rs, cs, ms))
             rs, cs, ms = zip(*l)
@@ -580,7 +589,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
         #            targets_2.remove(target_2)
         #targets = targets_1 + targets_2
 
-        removeclashes = False
+        removeclashes = True
         if targets is None:
             with open(graftedlist, "a") as myfile:
                     myfile.write("\tNo C-Mannosylation Targets found")
