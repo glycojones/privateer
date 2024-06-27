@@ -318,7 +318,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                         glycosylation["receiving_res_index"] = cglycan["proteinResidueSeqnum"]
                         glycosylations.append(glycosylation)
             for ligand in ligands:
-                for sugar in ligands["sugars"]:
+                for sugar in ligand["sugars"]:
                     if sugar["diagnostic"] != "yes":
                         if sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
                             sugResId = sugar["sugarId"].rpartition("-")[2]
