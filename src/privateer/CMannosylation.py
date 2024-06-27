@@ -278,8 +278,8 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
         jsonfilename = os.path.basename(jsonfile)
         pdbcode = jsonfilename.rpartition('.')[0]
         if redo:
-            pdbfile = pdbmirrordir + f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}_final.pdb"
-            mmciffile = pdbmirrordir+f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}_final.cif"
+            pdbfile = pdbmirrordir + f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}/{pdbcode}_final.pdb"
+            mmciffile = pdbmirrordir+f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}/{pdbcode}_final.cif"
         else:
             pdbfile = pdbmirrordir + f"/pdb/pdb{pdbcode}.ent.gz"
             mmciffile = pdbmirrordir+f"/mmCIF/{pdbcode}.cif.gz"
