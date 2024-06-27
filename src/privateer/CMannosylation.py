@@ -31,7 +31,7 @@ def file_paths(root_directory, filetype=None):
 def find_mtz_path(mtzdir,receiverdir,pdbcode, redo = False):
     if redo:
         #output_path_redo = os.path.join(receiverdir,pdbcode[1]+pdbcode[2],pdbcode, f"{pdbcode}_final.mtz")
-        output_path_redo = os.path.join(receiverdir, f"{pdbcode}_final.mtz")
+        output_path_redo = os.path.join(mtzdir,pdbcode[1]+pdbcode[2],pdbcode,f"{pdbcode}_final.mtz")
         if os.path.exists(output_path_redo):
             return output_path_redo
         else:
@@ -280,6 +280,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
         if redo:
             pdbfile = pdbmirrordir + f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}/{pdbcode}_final.pdb"
             mmciffile = pdbmirrordir+f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}/{pdbcode}_final.cif"
+            
         else:
             pdbfile = pdbmirrordir + f"/pdb/pdb{pdbcode}.ent.gz"
             mmciffile = pdbmirrordir+f"/mmCIF/{pdbcode}.cif.gz"
