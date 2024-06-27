@@ -298,7 +298,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
             data_in = json.load(f)
             glycandata = data_in["glycans"]
             cglycans = glycandata["c-glycan"]
-            ligands = glycandata["ligands"]
+            ligands = glycandata["ligand"]
             for cglycan in cglycans:
                 for sugar in cglycan["sugars"]:
                     if sugar["diagnostic"] != "yes" and  sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
