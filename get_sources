@@ -3,11 +3,17 @@
 mkdir -p checkout
 cd checkout
 
+libccp4_release="8.0.0"
+mmdb_release="2.0.22"
+
+
 if [ -d "libccp4" ]; then
     echo "Found libccp4"
 else
     echo "Checking out libccp4"
-    bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/libccp4/trunk/ libccp4
+        curl -L http://ftp.ccp4.ac.uk/opensource/libccp4-$libccp4_release.tar.gz -o libccp4-$libccp4_release.tar.gz
+        tar xf libccp4-$libccp4_release.tar.gz
+        ln -s libccp4-$libccp4_release libccp4
     echo
 fi 
 
@@ -16,7 +22,9 @@ if [ -d "clipper" ]; then
     echo "Found clipper"
 else
     echo "Checking out clipper"
-    bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/clipper/clipper_gemmi/ clipper
+    curl -L http://www.ysbl.york.ac.uk/jsd523/clipper-gemmi-wrapper-20240603.tar.gz -o clipper-gemmi-wrapper.tar.gz
+    tar xf clipper-gemmi-wrapper.tar.gz
+    mv clipper-gemmi-wrapper clipper
     echo
 fi 
 
@@ -24,25 +32,29 @@ if [ -d "mmdb2" ]; then
     echo "Found mmdb2"
 else
 echo "Checking out mmdb2"
-bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/mmdb2/trunk/ mmdb2
-echo
+      curl -L http://ftp.ccp4.ac.uk/opensource/mmdb2-$mmdb_release.tar.gz -o mmdb2-$mmdb_release.tar.gz
+      echo
+      echo "Unpacking mmdb2 source"
+      tar xf mmdb2-$mmdb_release.tar.gz
+      rm -f mmdb2
+      ln -s mmdb2-$mmdb_release mmdb2
 fi
 
-if [ -d "ccp4srs" ]; then 
-    echo "Found ccp4srs"
-else 
-    echo "Checking out ccp4srs"
-    bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/ccp4srs/trunk/ ccp4srs
-    echo
-fi
+#if [ -d "ccp4srs" ]; then
+#    echo "Found ccp4srs"
+#else
+#    echo "Checking out ccp4srs"
+#    bzr checkout --lightweight  http://fg.oisin.rc-harwell.ac.uk/anonscm/bzr/ccp4srs/trunk/ ccp4srs
+#    echo
+#fi
 
 if [ -d "gemmi" ]; then
     echo "Found gemmi"
 else
 echo "Checking out gemmi"
-wget https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.5.8.tar.gz 
-tar xf v0.5.8.tar.gz
-mv gemmi-0.5.8 gemmi
+wget https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.6.5.tar.gz
+tar xf v0.6.5.tar.gz
+mv gemmi-0.6.5 gemmi
 echo
 fi
 

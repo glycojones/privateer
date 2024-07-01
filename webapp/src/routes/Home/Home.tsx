@@ -13,6 +13,7 @@ import {
     type ResultsEntry,
     type TorsionEntry,
 } from '../../interfaces/types';
+import { detect } from 'detect-browser';
 
 const Footer = lazy(async () => await import('../../layouts/Footer.tsx'));
 const BorderElement = lazy(
@@ -50,7 +51,22 @@ export default function Home(): Element {
         }
         setFileContent(fileContent);
 
-        const results = Module.validate(fileContent, name);
+        const splitFileName = name.split('.');
+        const fileExtension = splitFileName[splitFileName.length - 1];
+        const newFileName = '/coordinates.' + fileExtension;
+        Module.FS.writeFile(newFileName, fileContent);
+
+        const disallowedExtensions = ["cif", "mmcif"]
+        const browser = detect(); // FireFox doesn't work with CIF files, get the PDB.
+        if (browser.name === 'firefox' && disallowedExtensions.includes(fileExtension)) {
+            setFailureText(
+                'CIF files are currently unsupported on FireFox. Please consider an alternate browser.'
+            );
+            setFallBack(true);
+            return;
+        }
+
+        const results = Module.validate(newFileName, name);
         const data: ResultsEntry[] = [];
         const resultSize = results.size();
         for (let i = 0; i < resultSize; i++) {
@@ -116,13 +132,21 @@ export default function Home(): Element {
                 }
 
                 fetchPDB(PDBCode)
-                    .then((response: ArrayBuffer) => {
-                        setFileContent(response);
+                    .then((response: [string] | void) => {
+                        // @ts-expect-error
+                        const [fileContent, fileExtension]: [string, string] =
+                            response;
+                        setFileContent(fileContent);
                         setLoadingText('Validating Glycans...');
 
+                        const fileName = PDBCode + fileExtension;
                         privateer_module().then(
                             async (Module: any) => {
-                                await runPrivateer(Module, response, PDBCode);
+                                await runPrivateer(
+                                    Module,
+                                    fileContent,
+                                    fileName
+                                );
                             },
                             () => {}
                         );

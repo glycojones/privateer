@@ -21,11 +21,9 @@ add_compile_options(--preload-file data/linkage_torsions@/)
 
 set(CLIBDENV $ENV{CLIBD})
 
-# find_package(zlib)
-# add_subdirectory(checkout/zlib)
-
 if (MODE STREQUAL "TESTING") 
 else() 
+  add_subdirectory(gemmi)
   add_subdirectory(ccp4)
   add_subdirectory(rfftw)
   add_subdirectory(fftw)
@@ -41,11 +39,7 @@ else()
   add_subdirectory(clipper/gemmi)
 endif()
 
-# add_subdirectory(ccp4srs)
-
-
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
-
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}
  checkout/mmdb2 
@@ -53,10 +47,13 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
  checkout/libccp4/ccp4 
  checkout/clipper 
  checkout/gemmi/include
+ checkout/gemmi
  dependencies/gemmi
  checkout/zlib
  ${PRIVATEER_SOURCE_DIR}/cpp
  ${PRIVATEER_SOURCE_DIR}/cpp/pybind11
+  ${PRIVATEER_SOURCE_DIR}/cpp/third-party/simdjson/
+
 #  checkout/ccp4srs   
  )
 
@@ -112,8 +109,8 @@ add_library(privateer_lib
             # ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
             # ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco_data.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-bind.cpp
-
+           # ${PRIVATEER_SOURCE_DIR}/cpp/privateer-bind.cpp
+            ${PRIVATEER_SOURCE_DIR}/cpp/third-party/simdjson/simdjson.cpp
             )
 
 
@@ -122,7 +119,7 @@ add_executable(privateer_exec ${PRIVATEER_SOURCE_DIR}/cpp/privateer-bind.cpp)
 
 set_target_properties (privateer_exec  PROPERTIES OUTPUT_NAME privateer )
 
-target_link_options(privateer_exec PRIVATE --preload-file data/linkage_torsions@/ -sDEMANGLE_SUPPORT=1 -sASSERTIONS=2 -fexceptions -sALLOW_MEMORY_GROWTH=1 --bind -sFORCE_FILESYSTEM=1 -sMODULARIZE=1 -sEXPORT_NAME=privateer_module -sEXPORTED_RUNTIME_METHODS=['FS'] -sMODULARIZE=1 -sEXPORT_ES6=1 )
+target_link_options(privateer_exec PRIVATE --preload-file data/linkage_torsions@/ -sDEMANGLE_SUPPORT=0 -sEXIT_RUNTIME=1 -sASSERTIONS=2 -fexceptions -sALLOW_MEMORY_GROWTH=1 --bind -sFORCE_FILESYSTEM=1 -sMODULARIZE=1 -sEXPORT_NAME=privateer_module -sEXPORTED_RUNTIME_METHODS=['FS'] -sMODULARIZE=1 -sEXPORT_ES6=1 )
 
 target_link_directories(privateer_exec
  PUBLIC 
@@ -176,6 +173,7 @@ ${PRIVATEER_SOURCE_DIR}/cpp/privateer-json.h
 ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.h
 ${PRIVATEER_SOURCE_DIR}/cpp/privateer-parallelism.h
 ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.h
+${PRIVATEER_SOURCE_DIR}/cpp/third-party/simdjson/simdjson.h
 )
 
 set_target_properties(privateer_exec PROPERTIES PUBLIC_HEADER "${privateer_HEADERS}")
