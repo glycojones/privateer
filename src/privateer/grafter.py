@@ -582,9 +582,9 @@ def _copy_metadata(inputpdb, outputpdb, graftedGlycans):
                                 chain.add_residue(residue_out)
     struct_in.write_pdb(outputpdb)
 
-def _generate_restraints(grafted_pdb, outputpath):
+def _generate_restraints(grafted_pdb, outputpath, sigma):
     glycosylation = pvtcore.GlycosylationComposition(grafted_pdb)
-    restraints = glycosylation.return_external_restraints()
+    restraints = glycosylation.return_external_restraints(sigma)
     pdbcode = os.path.basename(grafted_pdb).partition(".")[0]
     output_restraints = outputpath+f'/privateer-restraints_{pdbcode}.txt'
     with open(output_restraints, "w") as restraint_file:
@@ -592,8 +592,8 @@ def _generate_restraints(grafted_pdb, outputpath):
     return output_restraints
 
 
-def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, ncycles):
-    restraints_file = _generate_restraints(grafted_pdb, outputpath)
+def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, ncycles, restraint_sigma):
+    restraints_file = _generate_restraints(grafted_pdb, outputpath, restraint_sigma)
     filename = os.path.basename(grafted_pdb).partition(".")[0]
     otherdir =outputpath + "/temp"
     if not os.path.isdir(otherdir):
@@ -682,7 +682,7 @@ def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpat
         filename = os.path.basename(refined_pdb).partition("_")[0]
         pdbout = os.path.join(outputpath, filename + "_grafted.pdb")
         mtzout = os.path.join(outputpath, filename + "_grafted.mtz")
-        final_pdb, final_mtz = _refine_grafted_glycans(refined_pdb, original_mtz, outputpath, pdbout, mtzout, 0)
+        final_pdb, final_mtz = _refine_grafted_glycans(refined_pdb, original_mtz, outputpath, pdbout, mtzout, 0, 0.1)
     return graftedGlycans
 
 def _glycosylate_receiving_model_using_consensus_seq(
@@ -889,7 +889,8 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             pdbout = os.path.join(outputlocation, filename + "_refined.pdb")
             mmcifout = os.path.join(outputlocation, filename + "_refined.mmcif")
             mtzout = os.path.join(outputlocation, filename + "_refined.mtz")
-            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 1)
+            restraint_sigma = 1.0
+            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 20, restraint_sigma)
             if os.path.isfile(refined_pdb):
                 os.remove(refined_mtz)
                 os.remove(mmcifout)

@@ -192,7 +192,7 @@ def get_targets_via_blob_search_and_consensus_sequence(ciffile:str,mtzfile:str,r
                 if (residue.name == 'TRP'):
                     if residue.label_seq != None: 
                         pentaseq = get_consensus(inputchain=chain,inputresidue=residue)
-                        if re.search('W.{2}W',pentaseq) == None: 
+                        if re.search('W.{2}W',pentaseq[3:10]) == None: 
                             continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
                     ce3,cd1 = None,None
                     for atom in residue:
@@ -524,7 +524,8 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
         pdbout = outputdir+f"/{pdbcode}_grafted.pdb"
         mtzout = outputdir+f"/{pdbcode}_grafted.mtz"
         print(f"Refining grafted strucutre...")
-        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20)
+        restraint_sigma = 3.0 #FLAG: Add option for this to depend on resolution, tighter retraint for poorer resolution
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20, restraint_sigma)
         if os.path.isfile(refined_pdb):
             print(f"Calculating RSCC for the grafted glycans...")
             try:
@@ -624,7 +625,8 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             continue
         #FLAG: Here want a step removing cases with too many clashes??? Or just stick to removing grafts with any clashes???
         print(f"Refining grafted strucutre...")
-        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20)
+        restraint_sigma = 3.0 #FLAG: Add option for this to depend on resolution, tighter retraint for poorer resolution
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, restraint_sigma)
         if os.path.isfile(refined_pdb):
             os.remove(refined_mtz)
             os.remove(outputdir+f"/{pdbcode}_refined.mmcif")
