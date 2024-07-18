@@ -110,7 +110,7 @@ namespace privateer
             {
                 if  ( glycan.get_type() == "c-glycan" )
                 {
-                    if (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+                    if (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4")
                     {
                         sugar.override_conformation_diag ( true );
                     }
@@ -144,7 +144,7 @@ namespace privateer
         {
             if  ( glycan.get_type() == "c-glycan" )
             {
-                if (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+                if (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4")
                 {
                     sugar.override_conformation_diag ( true );
                 }
