@@ -1072,6 +1072,10 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                 {
                     ligandList[index].second.override_conformation_diag ( true );
                 }
+                if (ligandList[index].second.type().trim() != "MAN" )
+                {
+                    ligandList[index].second.override_conformation_diag ( false );
+                }
                 fprintf ( output, "\t(c) " );
             }
             else if ( ligandList[index].second.get_context() == "o-glycan" )
@@ -1170,6 +1174,10 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                 if ( (ligandList[index].second.type().trim() == "MAN" ) && (ligandList[index].second.conformation_name() == "1c4"))
                 {
                     ligandList[index].second.override_conformation_diag ( true );
+                }
+                if (ligandList[index].second.type().trim() != "MAN" )
+                {
+                    ligandList[index].second.override_conformation_diag ( false );
                 }
                 std::cout << "\t(c) ";
             }
@@ -1288,6 +1296,10 @@ void privateer::util::print_monosaccharide_summary_python (bool batch, bool show
             if ( (ligandList[index].second.type().trim() == "MAN" ) && (ligandList[index].second.conformation_name() == "1c4"))
             {
                 ligandList[index].second.override_conformation_diag ( true );
+            }
+            if (ligandList[index].second.type().trim() != "MAN" )
+            {
+                ligandList[index].second.override_conformation_diag ( false );
             }
             std::cout << "\t(c) ";
         }
