@@ -5483,6 +5483,10 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     {
                         sugar.override_conformation_diag ( true );
                     }
+                    if (sugar.type().trim() == "BMA")
+                    {
+                        sugar.override_anomer_diag( false );
+                    }
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
                     clipper::MAtom c1 = sugar.ring_members()[1];              // C1
