@@ -114,9 +114,9 @@ namespace privateer
                     {
                         sugar.override_conformation_diag ( true );
                     }
-                    if (sugar.type().trim() != "MAN" )
+                    if (sugar.type().trim() == "BMA" )
                     {
-                        sugar.override_conformation_diag ( false );
+                        sugar.override_anomer_diag ( false );
                     }
                 }
                 if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
@@ -148,9 +148,9 @@ namespace privateer
                 {
                     sugar.override_conformation_diag ( true );
                 }
-                if (sugar.type().trim() != "MAN" )
+                if (sugar.type().trim() == "BMA" )
                 {
-                    sugar.override_conformation_diag ( false );
+                    sugar.override_anomer_diag ( false );
                 }
             }
 
