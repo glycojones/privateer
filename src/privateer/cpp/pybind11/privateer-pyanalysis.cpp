@@ -1137,6 +1137,10 @@ void privateer::pyanalysis::GlycosylationComposition::read_from_file( std::strin
                             ligandList[index].second.override_conformation_diag ( true );
                             }
                         }
+                        if (ligandList[index].second.type().trim() != "MAN" )
+                        {
+                            ligandList[index].second.override_conformation_diag ( false );
+                        }
                         ligandList[index].second.set_context ( "c-glycan" );
                     }
                     else if ( list_of_glycans[i].get_type() == "o-glycan" )
@@ -2818,6 +2822,10 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
                 this->sugar_diag_conformation=inputSugar.ok_with_conformation();
             }
         }
+        else{
+            inputSugar.override_conformation_diag ( false );
+            this->sugar_diag_conformation=inputSugar.ok_with_conformation();
+        }
 
     this->sugarNode = parentGlycan.get_node(sugarID);
     this->sugar_connections=sugarNode.number_of_connections();
@@ -3089,6 +3097,10 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
                 inputSugar.second.override_conformation_diag ( true );
                 this->sugar_diag_conformation=inputSugar.second.ok_with_conformation();
             }
+        }
+        else{
+            inputSugar.override_conformation_diag ( false );
+            this->sugar_diag_conformation=inputSugar.ok_with_conformation();
         }
 
     this->sugar_rscc=inputSugar.second.get_rscc();
@@ -3936,6 +3948,10 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                                         ligandList[index].second.override_conformation_diag ( true );
                                     }
                                     }
+                                    if (ligandList[index].second.type().trim() != "MAN" )
+                                    {
+                                        ligandList[index].second.override_conformation_diag ( false );
+                                    }
                                     ligandList[index].second.set_context ( "c-glycan" );
                                 }
                                 else if ( list_of_glycans[i].get_type() == "o-glycan" )
@@ -4069,6 +4085,10 @@ void privateer::pyanalysis::XRayData::read_from_file( std::string& path_to_mtz_f
                                 if ( ligandList[index].second.conformation_name() == "1c4" ) {
                                 ligandList[index].second.override_conformation_diag ( true );
                                 }
+                            }
+                            if (ligandList[index].second.type().trim() != "MAN" )
+                            {
+                                ligandList[index].second.override_conformation_diag ( false );
                             }
                             ligandList[index].second.set_context ( "c-glycan" );
                         }
@@ -4503,6 +4523,10 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
                                         ligandList[index].second.override_conformation_diag ( true );
                                     }
                                     }
+                                    if (ligandList[index].second.type().trim() != "MAN" )
+                                    {
+                                        ligandList[index].second.override_conformation_diag ( false );
+                                    }
                                     ligandList[index].second.set_context ( "c-glycan" );
                                 }
                                 else if ( list_of_glycans[i].get_type() == "o-glycan" )
@@ -4631,6 +4655,10 @@ void privateer::pyanalysis::CryoEMData::read_from_file( std::string& path_to_mrc
                                 if ( ligandList[index].second.conformation_name() == "1c4" ) {
                                 ligandList[index].second.override_conformation_diag ( true );
                                 }
+                            }
+                            if (ligandList[index].second.type().trim() != "MAN" )
+                            {
+                                ligandList[index].second.override_conformation_diag ( false );
                             }
                             ligandList[index].second.set_context ( "c-glycan" );
                         }
