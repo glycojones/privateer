@@ -2828,9 +2828,9 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
         if ( inputSugar.type().trim() == "BMA" ) {
             inputSugar.override_anomer_diag ( false );
             this->sugar_diag_anomer=inputSugar.ok_with_anomer();
-            if ( inputSugar.second.conformation_name() == "4c1" ) {
-                inputSugar.second.override_conformation_diag ( false );
-                this->sugar_diag_conformation=inputSugar.second.ok_with_conformation();
+            if ( inputSugar.conformation_name() == "4c1" ) {
+                inputSugar.override_conformation_diag ( false );
+                this->sugar_diag_conformation=inputSugar.ok_with_conformation();
             }
         }
 
@@ -3105,9 +3105,9 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
                 this->sugar_diag_conformation=inputSugar.second.ok_with_conformation();
             }
         }
-        if ( inputSugar.type().trim() == "BMA" ) {
-            inputSugar.override_anomer_diag ( false );
-            this->sugar_diag_anomer=inputSugar.ok_with_anomer();
+        if ( inputSugar.second.type().trim() == "BMA" ) {
+            inputSugar.second.override_anomer_diag ( false );
+            this->sugar_diag_anomer=inputSugar.second.ok_with_anomer();
             if ( inputSugar.second.conformation_name() == "4c1" ) {
                 inputSugar.second.override_conformation_diag ( false );
                 this->sugar_diag_conformation=inputSugar.second.ok_with_conformation();
