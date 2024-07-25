@@ -3,13 +3,13 @@ import shutil
 import re
 import sys
 import argparse
-import requests
+#import requests
 from datetime import datetime
 import warnings
 import json
+import numpy as np
 import pandas as pd
 import gemmi
-import numpy as np
 import subprocess
 from privateer import privateer_core as pvtcore
 from privateer import privateer_modelling as pvtmodelling
@@ -47,8 +47,8 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
                 _stdin.append(line)
         _stdin.append("END")
     process = subprocess.Popen(
-    #args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
-    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
+    args=["/Applications/ccp4-8.0/bin/refmac5"] + _args,
+    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmac5"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
     # stdout=subprocess.PIPE,
     # stderr=subprocess.PIPE,
@@ -59,42 +59,65 @@ def _run_refmac(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out:
     if _stdin:
         stdin_str = '\n'.join(_stdin)
         process.communicate(input=stdin_str)
+    return
 
-def _run_servalcat_refine_spa(pdbfile:str,halfmap1:str,halfmap2:str,maskmap:None,resolution:float,outputdirectory:str,outfilename:str,extrestraint:str) -> str:
+def _run_refmacat(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_out: str, restraint_file: str, ncycles: int): 
     
-    print('Start running Servalcat refine_spa')
-    pdbid = os.path.basename(pdbfile).split('.')[0]
+    try:
+        mtz = gemmi.read_mtz_file(mtz_in)
+    except RuntimeError as e:
+        print (f'{e} at running REFMACAT for {mtz_in}')
+        return
 
+    # print("Running CCP4 REFMAC with", mtz_in, pdb_in)
     _args = []
-    _args += ['--ncycle', '20']
+    _args += ["HKLIN", mtz_in]
+    _args += ["XYZIN", pdb_in]
     
-    _args += ['--model', pdbfile]
-    _args += ['--halfmaps', halfmap1,halfmap2]
+    _args += ["HKLOUT", mtz_out]
+    _args += ["XYZOUT", pdb_out]
+    _args += ["XMLOUT", f"{other_out}.xml"]
     
-    if maskmap != None: # cryo-EM structures might not have masked map
-        _args += ['--mask_for_fofc',maskmap]
+    if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
+        labin = "FP=F"
+        labin += " SIGFP=SIGF"
+    elif ('FP' in mtz.column_labels()) and ('SIGFP' in mtz.column_labels()):
+        labin = "FP=FP"
+        labin += " SIGFP=SIGFP"
+    elif ('FMEAN' in mtz.column_labels()) and ('SIGFMEAN' in mtz.column_labels()):
+        labin = "FP=FMEAN"
+        labin += " SIGFP=SIGFMEAN"
+    else:
+        print(f'Refmac cannot find the amplitude at {mtz_in}')
+        print(mtz.column_labels())
+        return
+    
+    labin += " FREE=FreeR_flag"
+    _stdin = []
+    _stdin.append("LABIN " + labin)
+    _stdin.append(f"NCYCLES {ncycles}")
+    _stdin.append("WEIGHT AUTO")
+    _stdin.append("PHOUT")
+    if os.path.isfile(restraint_file):
+        with open(restraint_file) as input_file: 
+            for line in input_file:
+                _stdin.append(line)
+    _stdin.append("END")
 
-    _args += ['--resolution',f'{resolution}']
-    _args += ['--output_prefix', outfilename]
-    _args += ['--keyword_file', extrestraint]
-    _args += ['--hydrogen', 'no']
-    
-    args = ['/Applications/ccp4-8.0/bin/servalcat', 'refine_spa'] + _args
-    
-    # Don't want to print Servalcat run in Terminal? -> change capture_output = False
-    # try: 
-    subprocess.run(args=args,check=True,capture_output=False)
-    # except subprocess.CalledProcessError as e:
-    #     print(f'Error: Model is out of mask')
-    #     print(f'Running no check mask with model')
-    #     args += ['--no_check_mask_with_model']
-    #     subprocess.run(args=args,check=True,capture_output=False)
-
-    output = os.path.join(outputdirectory,f'{outfilename}.pdb')
-    
-    print(f'Finished running Servalcat refine_spa for PDB ID: {pdbid}')
-
-    return output
+    process = subprocess.Popen(
+    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmacat"] + _args,
+    args=["/Applications/ccp4-8.0/bin/refmacat"] + _args,
+    stdin=subprocess.PIPE if _stdin else None,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE,
+    encoding="utf8",
+    env={**os.environ,},
+    cwd=os.getcwd(),
+    )
+    if _stdin:
+        stdin_str = '\n'.join(_stdin)
+        process.communicate(input=stdin_str)
+    return
 
 
 

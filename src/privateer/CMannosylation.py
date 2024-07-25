@@ -20,7 +20,7 @@ def file_paths(root_directory, filetype=None):
     for root, dirs, files in os.walk(root_directory):
         for f in files:
             if filetype is not None:
-                if f.rpartition["."][2] == filetype:
+                if f.rpartition(".")[2] == filetype:
                     filepathlist.append(os.path.join(root,f))
             else:
                 filepathlist.append(os.path.join(root,f))
