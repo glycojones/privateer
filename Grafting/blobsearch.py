@@ -424,52 +424,53 @@ def check_expression_system_with_cif(path:str) -> tuple[list,bool]:
 
     return chainlist#,output
 
-start = time.time()
+if __name__ == "__main__":
+    start = time.time()
 
-folder = '/vault/pdb_mirror/data/structures/all/mmCIF'
+    folder = '/vault/pdb_mirror/data/structures/all/mmCIF'
 
-print('search_grid_pdb_new_ver.py')
-for path in glob.glob(folder + '/*'):
-    pdb = os.path.basename(path).split('.')[0]
-    
-    output_file = f"/y/people/tpp508/results/C_sites/pdb_json_files/{pdb}.json"
-    if os.path.exists(output_file): continue
-    
-    # print('Found file', pdb)
-    # if pdb != '6rv6': continue
-    resolution,method = get_method_and_resolution(path=path)
-    if method != 'X-RAY DIFFRACTION': continue 
+    print('search_grid_pdb_new_ver.py')
+    for path in glob.glob(folder + '/*'):
+        pdb = os.path.basename(path).split('.')[0]
+        
+        output_file = f"/y/people/tpp508/results/C_sites/pdb_json_files/{pdb}.json"
+        if os.path.exists(output_file): continue
+        
+        # print('Found file', pdb)
+        # if pdb != '6rv6': continue
+        resolution,method = get_method_and_resolution(path=path)
+        if method != 'X-RAY DIFFRACTION': continue 
 
-    requestedchains = check_expression_system_with_cif(path=path)
-    if not requestedchains: continue
+        requestedchains = check_expression_system_with_cif(path=path)
+        if not requestedchains: continue
 
-    # print(method,requestedchains)
-    authchains,authresidues,density_sum,sequons,status,density_mean,gridnumpoints = blob_search(cifpath=path,requestedchains=requestedchains)
-    if not all([authchains,authresidues,density_sum,sequons,status,density_mean,gridnumpoints]): 
-        folder = f'/y/people/tpp508/results/structures/from_sf/r{pdb}sf'
-        if os.path.exists(folder):
-            shutil.rmtree(f'/y/people/tpp508/results/structures/from_sf/r{pdb}sf')
-        continue
-    
-    resolutions = [resolution]*len(authresidues); techniques = [method]*len(authresidues)
+        # print(method,requestedchains)
+        authchains,authresidues,density_sum,sequons,status,density_mean,gridnumpoints = blob_search(cifpath=path,requestedchains=requestedchains)
+        if not all([authchains,authresidues,density_sum,sequons,status,density_mean,gridnumpoints]): 
+            folder = f'/y/people/tpp508/results/structures/from_sf/r{pdb}sf'
+            if os.path.exists(folder):
+                shutil.rmtree(f'/y/people/tpp508/results/structures/from_sf/r{pdb}sf')
+            continue
+        
+        resolutions = [resolution]*len(authresidues); techniques = [method]*len(authresidues)
 
-    newdict = {'pdbid':pdb,'authchains':authchains,'authresidues':authresidues,'sumdensities':density_sum,
-               'consensus':sequons,'resolution':resolutions,'methods':techniques, 'status':status,'mean_density':density_mean,'numpoint':gridnumpoints}
-    with open(output_file, "w") as json_file: 
-        json.dump(newdict, json_file)
+        newdict = {'pdbid':pdb,'authchains':authchains,'authresidues':authresidues,'sumdensities':density_sum,
+                'consensus':sequons,'resolution':resolutions,'methods':techniques, 'status':status,'mean_density':density_mean,'numpoint':gridnumpoints}
+        with open(output_file, "w") as json_file: 
+            json.dump(newdict, json_file)
 
-collated_data = {}
-for path in os.scandir("/y/people/tpp508/results/C_sites/pdb_json_files/"):
-    with open(path.path, "r") as json_file: 
-        data = json.load(json_file)
-    for k, v in data.items():
-        collated_data.setdefault(k, [])
-        collated_data[k].append(v)
+    collated_data = {}
+    for path in os.scandir("/y/people/tpp508/results/C_sites/pdb_json_files/"):
+        with open(path.path, "r") as json_file: 
+            data = json.load(json_file)
+        for k, v in data.items():
+            collated_data.setdefault(k, [])
+            collated_data[k].append(v)
 
-with open('/y/people/tpp508/results/C_sites/csvfile/blob_search_whole_pdb_new_ver.json','w') as f:
-    json.dump(collated_data,f) 
+    with open('/y/people/tpp508/results/C_sites/csvfile/blob_search_whole_pdb_new_ver.json','w') as f:
+        json.dump(collated_data,f) 
 
-end = time.time()
-elapsed = end-start
-print(str(timedelta(seconds=elapsed)))
-print('END')
+    end = time.time()
+    elapsed = end-start
+    print(str(timedelta(seconds=elapsed)))
+    print('END')
