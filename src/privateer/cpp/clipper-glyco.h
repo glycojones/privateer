@@ -973,7 +973,7 @@ namespace clipper
             std::vector < clipper::MSugar > get_sugar_list() { return list_of_sugars; }
             std::string write_external_restraints ( bool restrain_rings,
                                                     bool restrain_links,
-                                                    float sigma = 0.1 );
+                                                    float resolution );
 
         private:
 

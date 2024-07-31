@@ -5821,12 +5821,13 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
 
 std::string MGlycology::write_external_restraints ( bool restrain_rings,
                                                     bool restrain_links,
-                                                    float sigma ) {
+                                                    float resolution ) {
 
   std::string restraints = "# External restraints for glycan refinement with Refmac5\n";
   restraints += "# Produced by Privateer MKIV, Glycojones team, University of York, UK.\n";
   std::vector<clipper::MGlycan> glycan_list = this->get_list_of_glycans();
-
+  float sigma = (12.0/resolution)-1.0;
+  if (sigma < 0.1) {sigma = 0.1;}
   for ( int i = 0; i < glycan_list.size(); i++ ) {
     if ( restrain_rings ) {
       restraints += "\n# Ring conformation restraints for " + glycan_list[i].get_type()
