@@ -354,7 +354,11 @@ def check_consensus_sequence(sequence:str) -> bool:
 
 def check_expression_system_with_cif(path:str) -> tuple[list,bool]:
 
-    sourcefile = '/y/people/tpp508/results/C_sites/taxon_summary.json' # include metazoan and toxoplasma taxonomy ids
+    if os.getenv("PRIVATEERDATA", None) is not None:
+        datadir = os.getenv("PRIVATEERDATA", None)
+    else:
+        datadir = ''
+    sourcefile = os.path.join(datadir,'taxon_summary.json') # include metazoan and toxoplasma taxonomy ids
     with open(sourcefile,'r') as f: 
         taxsrc = json.load(f)
         taxonids = taxsrc['taxonids']
