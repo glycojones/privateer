@@ -417,6 +417,8 @@ namespace clipper
 
             void override_conformation_diag ( bool is_it_ok ) { sugar_diag_conformation = is_it_ok; }
 
+            void override_anomer_diag ( bool is_it_ok ) { sugar_diag_anomer = is_it_ok; }
+
             void set_occupancy_check ( bool occupancy_check_in ) { sugar_occupancy_check = occupancy_check_in; }
 
             clipper::String get_diagnostic() const { return sugar_diagnostic; }
