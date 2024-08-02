@@ -981,6 +981,10 @@ int main(int argc, char** argv)
                             {
                                 fprintf(output, "\tcheck");
                             }
+                            if ( ! ligandList[index].second.ok_with_anomer() )
+                            {
+                                fprintf(output, "\tcheck");
+                            }
                             else
                                 fprintf(output, "\tyes");
                         }
@@ -1122,6 +1126,10 @@ int main(int argc, char** argv)
                             {
                                 printf("\tcheck");
                             }
+                            if ( ! ligandList[index].second.ok_with_anomer () )
+                            {
+                                printf("\tcheck");
+                            }
                             else printf("\tyes");
                         }
                         else
@@ -1255,6 +1263,15 @@ int main(int argc, char** argv)
                 }
                 else // sugar is sane, but still need to check higher-energy conformations
                 {
+                    if (!ligandList[k].second.ok_with_anomer()) // FLAG: Here for c-glycan case where sanity check has happened before diagnostics overidden. 
+                    {
+                        if ( n_errors > 0 )
+                            diagnostic.append(", wrong anomer");
+                        else
+                            diagnostic.append("wrong anomer");
+
+                        n_errors++; n_anomer++;
+                    }
                     if ( !ligandList[k].second.ok_with_conformation() )
                     {
                         if ( n_errors > 0 )
@@ -3206,6 +3223,22 @@ int main(int argc, char** argv)
             }
             else // sugar is sane, but still need to check higher-energy conformations
             {
+                if (!ligandList[k].second.ok_with_anomer()) // FLAG: Here for c-glycan case where sanity check has happened before diagnostics overidden. 
+                {
+                    if ( n_errors > 0 )
+                    {
+                        diagnostic.append(", wrong anomer");
+                        report.append(", wrong anomer");
+                    }
+                    else
+                    {
+                        diagnostic.append("wrong anomer");
+                        report.append("Wrong anomer");
+                    }
+
+                    n_errors++;
+                    n_anomer++;
+                }
                 if ( !ligandList[k].second.ok_with_conformation() )
                 {
                     if ( n_errors > 0 )
