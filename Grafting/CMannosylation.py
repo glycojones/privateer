@@ -50,6 +50,21 @@ def find_mtz_path(mtzdir,receiverdir,pdbcode, redo = False):
                 return output_path_2
             except Exception as e :
                 return ""
+            
+def st_mtz_path(mtzdir, pdbcode):
+    dir = os.path.join(mtzdir,f"r{pdbcode}sf")
+    path1 = os.path.join(dir,f"r{pdbcode}sf_fs_free.mtz")
+    path2 = os.path.join(dir,f"r{pdbcode}sf_fs.mtz")
+    path3 = os.path.join(dir,f"r{pdbcode}sf.mtz")
+    if os.path.isfile(path1):
+        return path1
+    elif os.path.isfile(path2):
+        return path2
+    elif os.path.isfile(path3):
+        return path3
+    else:
+        print(f"Error finding mtz file for {pdbcode}")
+        return ""
 
 def get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID):
     subdir = pdbcode[1] + pdbcode[2]
@@ -658,6 +673,133 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             os.remove(temp_csv)
     return 
 
+def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,graftedlist,savesummary):
+    df_in = pd.read_csv(csvfile)
+    pdbcodes = df_in["pdbid"].unique()
+    donorpath = os.path.join(donordir, "Alpha-D-Mannose.pdb")
+    AllGlycans = []
+    for pdbcode in pdbcodes:
+        if graftedlist is not None:
+            with open(graftedlist) as myfile:
+                if pdbcode in myfile.read():
+                    continue
+            with open(graftedlist, "a") as myfile:
+                myfile.write(pdbcode)
+
+        if redo:
+            receiverpath = os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb")
+        else:
+            cifpath = os.path.join(receiverdir,f"{pdbcode}.cif.gz")
+            pdbpath = os.path.join(receiverdir,f"pdb{pdbcode}.ent.gz")
+            if os.path.isfile(cifpath):
+                receiverpath = cifpath
+            elif os.path.isfile(pdbpath):
+                receiverpath = pdbpath
+            else:
+                print(f"Error opening receiver structure {pdbcode}")
+                if graftedlist is not None:
+                    with open(graftedlist, "a") as myfile:
+                        myfile.write("\tError opening receiver structure")
+                        myfile.write("\n")
+                continue
+        mtzpath = st_mtz_path(mtzdir, pdbcode)
+        if len(mtzpath)<1:
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tError opening receiver mtzfile")
+                    myfile.write("\n")
+        outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
+        for index, row in df_in.iterrows():
+            if row["pdbid"] ==  pdbcode and row["status"] == "yes":
+                resolution = row["resolution"]
+                sequences = grafter._get_sequences_in_receiving_model(receiverpath)
+                CMannosylationConsensus = "[W]"
+                targets = []
+                for item in sequences:
+                    currentChainIndex = item["index"]
+                    currentChainID = item["ChainID"]
+                    currentSequence = item["Sequence"]
+                    glycosylationTargets = []
+                    for match in re.finditer(CMannosylationConsensus, currentSequence):
+                        if (currentSequence[match.start()] == item["Residues"][match.start()]["residueCode"]):
+                            target_chainID = row["authchain"]
+                            target_resID = row["authresidue"]
+                            if (item["Residues"][match.start()]["residueSeqnum"] == target_resID) and (currentChainID == target_chainID):
+                                glycosylationTargets.append({
+                                    "start": match.start(),
+                                    "end": match.end(),
+                                    "match": match.group()
+                                })
+                    targets.append({
+                        "Sequence": currentSequence,
+                        "chainIndex": currentChainIndex,
+                        "currentChainID": currentChainID,
+                        "glycosylationTargets": glycosylationTargets,
+                    })
+                removeclashes = True
+                if targets is None:
+                    with open(graftedlist, "a") as myfile:
+                            myfile.write("\tNo C-Mannosylation Targets found")
+                            myfile.write("\n")
+                    continue
+                elif len(targets) < 1:
+                    with open(graftedlist, "a") as myfile:
+                            myfile.write("\tNo C-Mannosylation Targets found")
+                            myfile.write("\n")
+                    continue
+                try:
+                    graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(
+                        receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
+                    grafter._copy_metadata(receiverpath, outputpath, graftedGlycans)
+                    grafter._make_connection_between_protein_and_glycan(outputpath)
+                    if graftedlist is not None:
+                        with open(graftedlist, "a") as myfile:
+                            myfile.write("\tCompleted")
+                            myfile.write("\n")
+                except:
+                    print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
+                    if graftedlist is not None:
+                        with open(graftedlist, "a") as myfile:
+                            myfile.write("\tFailed")
+                            myfile.write("\n")
+                    continue
+                if len(graftedGlycans) < 1:
+                    with open(graftedlist, "a") as myfile:
+                            myfile.write("\tNo C-Mannosylation Targets found")
+                            myfile.write("\n")
+                    continue
+                #FLAG: Here want a step removing cases with too many clashes??? Or just stick to removing grafts with any clashes???
+                print(f"Refining grafted strucutre...")
+                refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, resolution)
+                if os.path.isfile(refined_pdb):
+                    os.remove(refined_mtz)
+                    os.remove(outputdir+f"/{pdbcode}_refined.mmcif")
+                    try:
+                        pdbout = os.path.join(outputdir, f"{pdbcode}_removed_waters.pdb")
+                        grafter._remove_waters_close_to_TRP(refined_pdb, pdbout)
+                        os.remove(refined_pdb)
+                    except:
+                        pdbout = refined_pdb
+                        print(f"Failed to remove waters close to TRP in {pdbout}")
+                    graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
+                    graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
+                for graft in graftedGlycans:
+                    graft["pdbcode"] = pdbcode
+                    AllGlycans.append(graft)
+                if savesummary:
+                    df_single = pd.DataFrame(graftedGlycans)
+                    df_single.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
+                    df_temp = pd.DataFrame.from_dict(AllGlycans)
+                    temp_csv = outputdir + "/full_graft_summary_temp.csv"
+                    df_temp.to_csv(temp_csv)
+    if savesummary:
+        df_all = pd.DataFrame.from_dict(AllGlycans)
+        output_csv = outputdir + "/full_graft_summary.csv"
+        df_all.to_csv(output_csv)
+        temp_csv = outputdir + "/full_graft_summary_temp.csv"
+        if os.path.isfile(temp_csv):
+            os.remove(temp_csv)
+    return 
 
 
 

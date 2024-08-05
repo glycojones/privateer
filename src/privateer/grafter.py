@@ -105,8 +105,8 @@ def _run_refmacat(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_ou
     _stdin.append("END")
 
     process = subprocess.Popen(
-    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmacat"] + _args,
-    args=["/Applications/ccp4-8.0/bin/refmacat"] + _args,
+    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmacat"] + _args,
+    #args=["/Applications/ccp4-8.0/bin/refmacat"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
@@ -622,7 +622,7 @@ def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, nc
     if not os.path.isdir(otherdir):
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
-    _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file, ncycles)
+    _run_refmacat(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file, ncycles)
     shutil.rmtree(otherdir)
     if os.path.isfile(pdbout):
         os.remove(grafted_pdb)
@@ -641,7 +641,7 @@ def _remove_waters_and_recalc_map(input_pdb, mtzfile, outputpath, pdbout, mtzout
     if not os.path.isdir(otherdir):
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
-    _run_refmac(mtzfile, pdbout, mtzout, pdb_out, other, "Not a file", 0)
+    _run_refmacat(mtzfile, pdbout, mtzout, pdb_out, other, "Not a file", 0)
     if os.path.isfile(pdb_out):
         os.remove(pdb_out)
     else:
