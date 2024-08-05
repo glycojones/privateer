@@ -743,9 +743,10 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                             myfile.write("\n")
                     continue
                 elif len(targets) < 1:
-                    with open(graftedlist, "a") as myfile:
-                            myfile.write("\tNo C-Mannosylation Targets found")
-                            myfile.write("\n")
+                    if graftedlist is not None:
+                        with open(graftedlist, "a") as myfile:
+                                myfile.write("\tNo C-Mannosylation Targets found")
+                                myfile.write("\n")
                     continue
                 try:
                     graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(
@@ -768,7 +769,6 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                             myfile.write("\tNo C-Mannosylation Targets found")
                             myfile.write("\n")
                     continue
-                #FLAG: Here want a step removing cases with too many clashes??? Or just stick to removing grafts with any clashes???
                 print(f"Refining grafted strucutre...")
                 refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, resolution)
                 if os.path.isfile(refined_pdb):
@@ -807,6 +807,7 @@ if __name__ == "__main__":
     defaultdatabasedir = "/vault/privateer_database/pdb" # Location the privateer database is (if using database). If not using database, set to None
     defaultpdbmirrordir = "/vault/pdb_mirror/data/structures/all" # Location the unedited pdb/mmcif files are stored (assumes pdb files are in subdir "pdb" and mmcif in subdir "mmcif")
     defaultmtzdir = "/vault/pdb_mtz_files"
+    defaultcsvsites = None
     cwd = os.getcwd()
     defaultreceiverdir = os.path.join(cwd,"receivers") # Location you want to save edited pdb files with incorrect c-glycans removed
     if os.getenv("PRIVATEERDATA", None) is not None:
@@ -858,6 +859,14 @@ if __name__ == "__main__":
         f"Path to the locally stored mtz filed. If not set, defaults to {defaultmtzdir}.",
     )
     parser.add_argument(
+        "-graftsitescsv",
+        action="store",
+        default=defaultcsvsites,
+        dest="graftsitescsv",
+        help=
+        f"Path to csvfile which contains results from blob search to graft. If not set, defaults to {defaultcsvsites}.",
+    )
+    parser.add_argument(
         "-receiverdir",
         action="store",
         default=defaultreceiverdir,
@@ -893,7 +902,10 @@ if __name__ == "__main__":
     if args.mode == 'fix':
         fix_Cglycans(args.databasedir,args.pdbmirrordir,args.mtzdir,args.receiverdir,args.donordir,args.outputdir,args.redo)
     elif args.mode == 'find':
-        find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
+        if args.graftsitescsv is not None:
+            graft_Cglycans_from_csv(args.graftsitescsv,args.receiverdir,args.mtzdir,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
+        else:
+            find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
     else:
         print("Mode of operation not specified. Exiting...")
 
