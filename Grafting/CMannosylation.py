@@ -709,12 +709,12 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                     myfile.write("\tError opening receiver mtzfile")
                     myfile.write("\n")
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
+        sequences = grafter._get_sequences_in_receiving_model(receiverpath)
+        CMannosylationConsensus = "[W]"
+        targets = []
         for index, row in df_in.iterrows():
             if row["pdbid"] ==  pdbcode and row["status"] == "yes":
                 resolution = row["resolution"]
-                sequences = grafter._get_sequences_in_receiving_model(receiverpath)
-                CMannosylationConsensus = "[W]"
-                targets = []
                 for item in sequences:
                     currentChainIndex = item["index"]
                     currentChainID = item["ChainID"]
