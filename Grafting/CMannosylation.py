@@ -51,7 +51,7 @@ def find_mtz_path(mtzdir,receiverdir,pdbcode, redo = False):
             except Exception as e :
                 return ""
             
-def st_mtz_path(mtzdir, pdbcode):
+def sf_mtz_path(mtzdir, pdbcode):
     dir = os.path.join(mtzdir,f"r{pdbcode}sf")
     path1 = os.path.join(dir,f"r{pdbcode}sf_fs_free.mtz")
     path2 = os.path.join(dir,f"r{pdbcode}sf_fs.mtz")
@@ -702,7 +702,7 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                         myfile.write("\tError opening receiver structure")
                         myfile.write("\n")
                 continue
-        mtzpath = st_mtz_path(mtzdir, pdbcode)
+        mtzpath = sf_mtz_path(mtzdir, pdbcode)
         if len(mtzpath)<1:
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
@@ -891,9 +891,8 @@ if __name__ == "__main__":
         f"Path to save final fixed/grafted structures. If not set, defaults to {defaultoutputdir}.",
     )
     parser.add_argument(
-        "-redo",
-        action="store",
-        default=defaultredo,
+        "--redo",
+        action="store_true",
         dest="redo",
         help=
         f"Boolean to say whether running on pdbredo (True) or not (False). If not set, defaults to {defaultredo}.",
