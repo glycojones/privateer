@@ -649,7 +649,7 @@ def _remove_waters_and_recalc_map(input_pdb, mtzfile, outputpath, pdbout, mtzout
     return pdbout, mtzout
 
 def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
-    mtz = gemmi.read_mtz(original_mtz)
+    mtz = gemmi.read_mtz_file(original_mtz)
     if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
         glycosylation = pvtcore.GlycosylationComposition(refined_pdb, original_mtz, "F,SIGF")
     elif ('FP' in mtz.column_labels()) and ('SIGFP' in mtz.column_labels()):
