@@ -605,9 +605,9 @@ def _copy_metadata(inputpdb, outputpdb, graftedGlycans):
                                 chain.add_residue(residue_out)
     struct_in.write_pdb(outputpdb)
 
-def _generate_restraints(grafted_pdb, outputpath, sigma):
+def _generate_restraints(grafted_pdb, outputpath, resolution):
     glycosylation = pvtcore.GlycosylationComposition(grafted_pdb)
-    restraints = glycosylation.return_external_restraints(sigma)
+    restraints = glycosylation.return_external_restraints(resolution)
     pdbcode = os.path.basename(grafted_pdb).partition(".")[0]
     output_restraints = outputpath+f'/privateer-restraints_{pdbcode}.txt'
     with open(output_restraints, "w") as restraint_file:
@@ -615,8 +615,8 @@ def _generate_restraints(grafted_pdb, outputpath, sigma):
     return output_restraints
 
 
-def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, ncycles, restraint_sigma):
-    restraints_file = _generate_restraints(grafted_pdb, outputpath, restraint_sigma)
+def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, ncycles, resolution):
+    restraints_file = _generate_restraints(grafted_pdb, outputpath, resolution)
     filename = os.path.basename(grafted_pdb).partition(".")[0]
     otherdir =outputpath + "/temp"
     if not os.path.isdir(otherdir):
@@ -912,8 +912,9 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             pdbout = os.path.join(outputlocation, filename + "_refined.pdb")
             mmcifout = os.path.join(outputlocation, filename + "_refined.mmcif")
             mtzout = os.path.join(outputlocation, filename + "_refined.mtz")
-            restraint_sigma = 1.0
-            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 20, restraint_sigma)
+            st = gemmi.read_structure(outputpath)
+            resolution = st.resolution
+            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 20, resolution)
             if os.path.isfile(refined_pdb):
                 os.remove(refined_mtz)
                 os.remove(mmcifout)

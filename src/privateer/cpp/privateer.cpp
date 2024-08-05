@@ -1347,7 +1347,7 @@ int main(int argc, char** argv)
         }
 
         if ( produce_external_restraints ) {
-          std::string buffer = mgl.write_external_restraints ( true, false, 0.1 );
+          std::string buffer = mgl.write_external_restraints ( true, false, resolution );
           std::fstream of;
           of.open("privateer-restraints.txt", std::fstream::out);
           of << buffer;
@@ -1439,6 +1439,7 @@ int main(int argc, char** argv)
             std::cout << std::endl << " " << fobs.num_obs() << " reflections have been loaded";
             std::cout << std::endl << std::endl << " Resolution " << hklinfo.resolution().limit() << "Å" << std::endl << hklinfo.cell().format() << std::endl;
             fobs_scaled = fobs;
+            resolution = hklinfo.resolution().limit();
         }
         if (useMRC)
         {
@@ -3414,7 +3415,7 @@ int main(int argc, char** argv)
     }
 
     if ( produce_external_restraints ) {
-      std::string buffer = mgl.write_external_restraints ( true, false, 0.1 );
+      std::string buffer = mgl.write_external_restraints ( true, false, resolution );
       std::fstream of;
       of.open("privateer-restraints.txt", std::fstream::out);
       of << buffer;
