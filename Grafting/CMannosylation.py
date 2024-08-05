@@ -736,70 +736,70 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                         "currentChainID": currentChainID,
                         "glycosylationTargets": glycosylationTargets,
                     })
-                removeclashes = True
-                if targets is None:
-                    with open(graftedlist, "a") as myfile:
-                            myfile.write("\tNo C-Mannosylation Targets found")
-                            myfile.write("\n")
-                    continue
-                elif len(targets) < 1:
-                    if graftedlist is not None:
-                        with open(graftedlist, "a") as myfile:
-                                myfile.write("\tNo C-Mannosylation Targets found")
-                                myfile.write("\n")
-                    continue
-                try:
-                    graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(
-                        receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
-                    grafter._copy_metadata(receiverpath, outputpath, graftedGlycans)
-                    grafter._make_connection_between_protein_and_glycan(outputpath)
-                    if graftedlist is not None:
-                        with open(graftedlist, "a") as myfile:
-                            myfile.write("\tGrafted")
-                except:
-                    print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
-                    if graftedlist is not None:
-                        with open(graftedlist, "a") as myfile:
-                            myfile.write("\tFailed")
-                            myfile.write("\n")
-                    continue
-                if len(graftedGlycans) < 1:
-                    with open(graftedlist, "a") as myfile:
-                            myfile.write("\tNo C-Mannosylation Targets found")
-                            myfile.write("\n")
-                    continue
-                print(f"Refining grafted strucutre...")
-                refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, resolution)
-                if os.path.isfile(refined_pdb):
-                    if graftedlist is not None:
-                        with open(graftedlist, "a") as myfile:
-                            myfile.write("\tRefined")
-                            myfile.write("\n")
-                    os.remove(refined_mtz)
-                    os.remove(outputdir+f"/{pdbcode}_refined.mmcif")
-                    try:
-                        pdbout = os.path.join(outputdir, f"{pdbcode}_removed_waters.pdb")
-                        grafter._remove_waters_close_to_TRP(refined_pdb, pdbout)
-                        os.remove(refined_pdb)
-                    except:
-                        pdbout = refined_pdb
-                        print(f"Failed to remove waters close to TRP in {pdbout}")
-                    graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
-                    graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
-                else: 
-                    if graftedlist is not None:
-                        with open(graftedlist, "a") as myfile:
-                            myfile.write("\tFailed refinement")
-                            myfile.write("\n")
-                for graft in graftedGlycans:
-                    graft["pdbcode"] = pdbcode
-                    AllGlycans.append(graft)
-                if savesummary:
-                    df_single = pd.DataFrame(graftedGlycans)
-                    df_single.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
-                    df_temp = pd.DataFrame.from_dict(AllGlycans)
-                    temp_csv = outputdir + "/full_graft_summary_temp.csv"
-                    df_temp.to_csv(temp_csv)
+        removeclashes = True
+        if targets is None:
+            with open(graftedlist, "a") as myfile:
+                    myfile.write("\tNo C-Mannosylation Targets found")
+                    myfile.write("\n")
+            continue
+        elif len(targets) < 1:
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                        myfile.write("\tNo C-Mannosylation Targets found")
+                        myfile.write("\n")
+            continue
+        try:
+            graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(
+                receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
+            grafter._copy_metadata(receiverpath, outputpath, graftedGlycans)
+            grafter._make_connection_between_protein_and_glycan(outputpath)
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tGrafted")
+        except:
+            print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tFailed")
+                    myfile.write("\n")
+            continue
+        if len(graftedGlycans) < 1:
+            with open(graftedlist, "a") as myfile:
+                    myfile.write("\tNo C-Mannosylation Targets found")
+                    myfile.write("\n")
+            continue
+        print(f"Refining grafted strucutre...")
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, resolution)
+        if os.path.isfile(refined_pdb):
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tRefined")
+                    myfile.write("\n")
+            os.remove(refined_mtz)
+            os.remove(outputdir+f"/{pdbcode}_refined.mmcif")
+            try:
+                pdbout = os.path.join(outputdir, f"{pdbcode}_removed_waters.pdb")
+                grafter._remove_waters_close_to_TRP(refined_pdb, pdbout)
+                os.remove(refined_pdb)
+            except:
+                pdbout = refined_pdb
+                print(f"Failed to remove waters close to TRP in {pdbout}")
+            graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
+            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
+        else: 
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tFailed refinement")
+                    myfile.write("\n")
+        for graft in graftedGlycans:
+            graft["pdbcode"] = pdbcode
+            AllGlycans.append(graft)
+        if savesummary:
+            df_single = pd.DataFrame(graftedGlycans)
+            df_single.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
+            df_temp = pd.DataFrame.from_dict(AllGlycans)
+            temp_csv = outputdir + "/full_graft_summary_temp.csv"
+            df_temp.to_csv(temp_csv)
     if savesummary:
         df_all = pd.DataFrame.from_dict(AllGlycans)
         output_csv = outputdir + "/full_graft_summary.csv"
