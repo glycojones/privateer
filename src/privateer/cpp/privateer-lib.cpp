@@ -1046,7 +1046,6 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
             printf("%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
             std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
         }
-
         if (batch)
         {
             std::vector<clipper::ftype> cpParams(10, 0);
@@ -1072,12 +1071,13 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                 {
                     ligandList[index].second.override_conformation_diag ( true );
                 }
+                if (ligandList[index].second.conformation_name() == "4c1")
+                {
+                    ligandList[index].second.override_conformation_diag ( false );
+                }
                 if (ligandList[index].second.type().trim() == "BMA" )
                 {
                     ligandList[index].second.override_anomer_diag ( false );
-                    if (ligandList[index].second.conformation_name() == "4c1"){
-                        ligandList[index].second.override_conformation_diag ( false );
-                    }
                 }
                 fprintf ( output, "\t(c) " );
             }
@@ -1105,6 +1105,10 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                     if (ligandList[index].second.is_sane())
                     {
                         if ( ! ligandList[index].second.ok_with_conformation () )
+                        {
+                            fprintf(output, "\tcheck");
+                        }
+                        else if ( ! ligandList[index].second.ok_with_anomer () )
                         {
                             fprintf(output, "\tcheck");
                         }
@@ -1178,12 +1182,13 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                 {
                     ligandList[index].second.override_conformation_diag ( true );
                 }
+                if (ligandList[index].second.conformation_name() == "4c1")
+                {
+                    ligandList[index].second.override_conformation_diag ( false );
+                }
                 if (ligandList[index].second.type().trim() == "BMA" )
                 {
                     ligandList[index].second.override_anomer_diag ( false );
-                    if (ligandList[index].second.conformation_name() == "4c1"){
-                        ligandList[index].second.override_conformation_diag ( false );
-                    }
                 }
                 std::cout << "\t(c) ";
             }
@@ -1212,6 +1217,10 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                     {
                         if ( ! ligandList[index].second.ok_with_conformation () )
                             printf("\tcheck");
+                        else if ( ! ligandList[index].second.ok_with_anomer () )
+                        {
+                            printf("\tcheck");
+                        }
                         else
                             printf("\tyes");
                     }
@@ -1303,12 +1312,13 @@ void privateer::util::print_monosaccharide_summary_python (bool batch, bool show
             {
                 ligandList[index].second.override_conformation_diag ( true );
             }
+            if (ligandList[index].second.conformation_name() == "4c1")
+            {
+                ligandList[index].second.override_conformation_diag ( false );
+            }
             if (ligandList[index].second.type().trim() == "BMA" )
             {
                 ligandList[index].second.override_anomer_diag ( false );
-                if (ligandList[index].second.conformation_name() == "4c1"){
-                    ligandList[index].second.override_conformation_diag ( false );
-                }
             }
             std::cout << "\t(c) ";
         }
@@ -1337,6 +1347,10 @@ void privateer::util::print_monosaccharide_summary_python (bool batch, bool show
                 {
                     if ( ! ligandList[index].second.ok_with_conformation () )
                         printf("\tcheck");
+                    else if ( ! ligandList[index].second.ok_with_anomer () )
+                    {
+                        printf("\tcheck");
+                    }
                     else
                         printf("\tyes");
                 }
