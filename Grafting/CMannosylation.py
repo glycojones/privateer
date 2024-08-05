@@ -755,8 +755,7 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                     grafter._make_connection_between_protein_and_glycan(outputpath)
                     if graftedlist is not None:
                         with open(graftedlist, "a") as myfile:
-                            myfile.write("\tCompleted")
-                            myfile.write("\n")
+                            myfile.write("\tGrafted")
                 except:
                     print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
                     if graftedlist is not None:
@@ -772,6 +771,10 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                 print(f"Refining grafted strucutre...")
                 refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, resolution)
                 if os.path.isfile(refined_pdb):
+                    if graftedlist is not None:
+                        with open(graftedlist, "a") as myfile:
+                            myfile.write("\tRefined")
+                            myfile.write("\n")
                     os.remove(refined_mtz)
                     os.remove(outputdir+f"/{pdbcode}_refined.mmcif")
                     try:
@@ -783,6 +786,11 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                         print(f"Failed to remove waters close to TRP in {pdbout}")
                     graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
                     graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
+                else: 
+                    if graftedlist is not None:
+                        with open(graftedlist, "a") as myfile:
+                            myfile.write("\tFailed refinement")
+                            myfile.write("\n")
                 for graft in graftedGlycans:
                     graft["pdbcode"] = pdbcode
                     AllGlycans.append(graft)
