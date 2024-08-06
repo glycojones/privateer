@@ -707,7 +707,14 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                     myfile.write("\tError opening receiver mtzfile")
                     myfile.write("\n")
         outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
-        sequences = grafter._get_sequences_in_receiving_model(receiverpath)
+        try:
+            sequences = grafter._get_sequences_in_receiving_model(receiverpath)
+        except:
+            print(f"Failed to get sequences for {pdbcode}. Skipping...")
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tFailed pvtmodelling.Builder()")
+                    myfile.write("\n")
         CMannosylationConsensus = "[W]"
         targets = []
         for index, row in df_in.iterrows():
@@ -736,9 +743,10 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                     })
         removeclashes = True
         if targets is None:
-            with open(graftedlist, "a") as myfile:
-                    myfile.write("\tNo C-Mannosylation Targets found")
-                    myfile.write("\n")
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                        myfile.write("\tNo C-Mannosylation Targets found")
+                        myfile.write("\n")
             continue
         elif len(targets) < 1:
             if graftedlist is not None:
@@ -762,9 +770,10 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                     myfile.write("\n")
             continue
         if len(graftedGlycans) < 1:
-            with open(graftedlist, "a") as myfile:
-                    myfile.write("\tNo C-Mannosylation Targets found")
-                    myfile.write("\n")
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                        myfile.write("\tNo C-Mannosylation Targets found")
+                        myfile.write("\n")
             continue
         print(f"Refining grafted strucutre...")
         refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, resolution)
@@ -784,13 +793,15 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
             try:
                 graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
                 graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
-                with open(graftedlist, "a") as myfile:
-                    myfile.write("\n")
+                if graftedlist is not None:
+                    with open(graftedlist, "a") as myfile:
+                        myfile.write("\n")
             except:
                 print(f"Failed to calculate RSCC in {pdbout}")
-                with open(graftedlist, "a") as myfile:
-                    myfile.write("\tFailed RSCC calc")
-                    myfile.write("\n")
+                if graftedlist is not None:
+                    with open(graftedlist, "a") as myfile:
+                        myfile.write("\tFailed RSCC calc")
+                        myfile.write("\n")
         else: 
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
