@@ -677,7 +677,11 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
     df_in = pd.read_csv(csvfile)
     pdbcodes = df_in["pdbid"].unique()
     donorpath = os.path.join(donordir, "Alpha-D-Mannose.pdb")
-    AllGlycans = []
+    temp_csv = outputdir + "/full_graft_summary_temp.csv"
+    if os.path.isfile(temp_csv):
+        AllGlycans = pd.read_csv(temp_csv)
+    else:
+        AllGlycans = []
     for pdbcode in pdbcodes:
         if graftedlist is not None:
             with open(graftedlist) as myfile:
@@ -686,7 +690,6 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
             with open(graftedlist, "a") as myfile:
                 myfile.write(pdbcode)
         if redo:
-            print("HELLO")
             receiverpath = os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb")
         else:
             cifpath = os.path.join(receiverdir,f"{pdbcode}.cif.gz")
