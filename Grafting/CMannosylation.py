@@ -677,10 +677,6 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
     df_in = pd.read_csv(csvfile)
     pdbcodes = df_in["pdbid"].unique()
     donorpath = os.path.join(donordir, "Alpha-D-Mannose.pdb")
-    temp_csv = outputdir + "/full_graft_summary_temp.csv"
-    AllGlycans = []
-    if os.path.isfile(temp_csv):
-        AllGlycans.append(pd.read_csv(temp_csv).to_dict())
     for pdbcode in pdbcodes:
         if graftedlist is not None:
             with open(graftedlist) as myfile:
@@ -795,20 +791,14 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                     myfile.write("\n")
         for graft in graftedGlycans:
             graft["pdbcode"] = pdbcode
-            AllGlycans.append(graft)
         if savesummary:
             df_single = pd.DataFrame(graftedGlycans)
             df_single.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
-            df_temp = pd.DataFrame.from_dict(AllGlycans)
-            temp_csv = outputdir + "/full_graft_summary_temp.csv"
-            df_temp.to_csv(temp_csv)
-    if savesummary:
-        df_all = pd.DataFrame.from_dict(AllGlycans)
-        output_csv = outputdir + "/full_graft_summary.csv"
-        df_all.to_csv(output_csv)
-        temp_csv = outputdir + "/full_graft_summary_temp.csv"
-        if os.path.isfile(temp_csv):
-            os.remove(temp_csv)
+            full_csv = outputdir + "/full_graft_summary.csv"
+            if os.path.isfile(full_csv):
+                df_single.to_csv(full_csv, mode="a", index=False, header=False)
+            else:
+                df_single.to_csv(full_csv, index=False)
     return 
 
 
