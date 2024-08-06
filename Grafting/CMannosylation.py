@@ -715,6 +715,7 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                 with open(graftedlist, "a") as myfile:
                     myfile.write("\tFailed pvtmodelling.Builder()")
                     myfile.write("\n")
+            continue
         CMannosylationConsensus = "[W]"
         targets = []
         for index, row in df_in.iterrows():
