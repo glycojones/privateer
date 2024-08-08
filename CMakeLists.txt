@@ -77,11 +77,14 @@ else()
                     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
 endif()
 
-# file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json 
-#     DESTINATION ${CLIBDENV})
+file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json 
+    DESTINATION ${CLIBDENV})
 
-# file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json 
-#     DESTINATION ${CLIBDENV})
+file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json 
+    DESTINATION ${CLIBDENV})
+
+file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsions_z_score_database.json 
+    DESTINATION ${CLIBDENV})
 
 # Copy directories
 add_custom_target(copy_resources ALL
