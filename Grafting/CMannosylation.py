@@ -548,6 +548,7 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
             graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(receiverpath, donorpath, outputpath, targets, True, False, False)
         except:
             print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
+            continue
         try:
             grafter._copy_metadata(receiverpath, outputpath, graftedGlycans)
         except:
@@ -579,7 +580,7 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
             protein_chain_ID = graft["receiving_protein_residue_chain_PDBID"]
             protein_res_ID = graft["receiving_protein_residue_monomer_PDBID"]
             graft["OriginalRSCC"] = get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID)
-            graft["pdbcode"] = pdbcodes
+            graft["pdbcode"] = pdbcode
             AllGlycans.append(graft)
         df_temp = pd.DataFrame(graftedGlycans)
         df_temp.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
