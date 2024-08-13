@@ -334,7 +334,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                         for m, model in enumerate(st):
                             for c, chain in enumerate(model):
                                 for r, residue in enumerate(chain):
-                                    if str(chain.name) == str(sugarChainID) and (int(residue.seqid.num) == int(sugarResId) or int(residue.auth_seq_num == int(sugarResId))) and (str(residue.mon_id) == "MAN" or str(residue.mon_id) == "BMA"):
+                                    if str(chain.name) == str(sugarChainID) and (int(residue.seqid.num) == int(sugarResId) or int(residue.auth_seq_id == int(sugarResId))) and (str(residue.name) == "MAN" or str(residue.mon_id) == "BMA"):
                                         ms.append(m)
                                         cs.append(c)
                                         rs.append(r) 
