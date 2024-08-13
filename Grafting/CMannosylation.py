@@ -321,10 +321,11 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                     if (sugar["diagnostic"] != "yes" and  sugar["sugarId"].partition("-")[0] == "MAN") or sugar["sugarId"].partition("-")[0] == "BMA":
                         save_structure = True
                         sugarResId = sugar["sugarId"].rpartition("-")[2]
+                        sugarChainID = sugar["sugarId"].partition("-")[2].partition("-")[0]
                         for m, model in enumerate(st):
                             for c, chain in enumerate(model):
                                 for r, residue in enumerate(chain):
-                                    if str(chain.name) == str(cglycan["rootSugarChainId"]) and int(residue.seqid.num) == int(sugarResId):
+                                    if str(chain.name) == str(sugarChainID) and int(residue.seqid.num) == int(sugarResId):
                                         ms.append(m)
                                         cs.append(c)
                                         rs.append(r) 
@@ -366,6 +367,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                                                 glycosylation["receiving_res_index"] = protseqnum
                                                 glycosylations.append(glycosylation)
                             except:
+                                save_structure = False
                                 print(f"Error finding and deleting glycans in {pdbcode}")
                                 continue
                             
