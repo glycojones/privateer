@@ -322,6 +322,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                         save_structure = True
                         sugarResId = sugar["sugarId"].rpartition("-")[2]
                         sugarChainID = sugar["sugarId"].partition("-")[2].partition("-")[0]
+                        print(f"In {pdbcode} found sugar to fix chain {sugarChainID} res {sugarResId}")
                         for m, model in enumerate(st):
                             for c, chain in enumerate(model):
                                 for r, residue in enumerate(chain):
