@@ -307,8 +307,13 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
             st = gemmi.read_structure(pdbfile)
             ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
         except:
-            st = gemmi.read_structure(mmciffile)
-            ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+            try:
+                st = gemmi.read_structure(mmciffile)
+                ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+            except:
+                print(f"Error opening structure {pdbcode}")
+                with open(failedlist, "a") as myfile:
+                    myfile.write(f"{pdbcode}\n")
         save_structure = False
         glycosylations = []
         ms = []
@@ -329,7 +334,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                         for m, model in enumerate(st):
                             for c, chain in enumerate(model):
                                 for r, residue in enumerate(chain):
-                                    if str(chain.name) == str(sugarChainID) and int(residue.seqid.num) == int(sugarResId):
+                                    if str(chain.name) == str(sugarChainID) and (int(residue.seqid.num) == int(sugarResId) or int(residue.auth_seq_num == int(sugarResId))) and (str(residue.mon_id) == "MAN" or str(residue.mon_id) == "BMA"):
                                         ms.append(m)
                                         cs.append(c)
                                         rs.append(r) 
