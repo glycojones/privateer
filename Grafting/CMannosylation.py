@@ -292,6 +292,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
         jsonfile = filepathlist[i]
         jsonfilename = os.path.basename(jsonfile)
         pdbcode = jsonfilename.rpartition('.')[0]
+        print(f"Checking glycans in {pdbcode}")
         if redo:
             pdbfile = pdbmirrordir + f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}/{pdbcode}_final.pdb"
             mmciffile = pdbmirrordir+f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}/{pdbcode}_final.cif"
@@ -317,7 +318,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
             ligands = glycandata["ligand"]
             for cglycan in cglycans:
                 for sugar in cglycan["sugars"]:
-                    if sugar["diagnostic"] != "yes" and  sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
+                    if (sugar["diagnostic"] != "yes" and  sugar["sugarId"].partition("-")[0] == "MAN") or sugar["sugarId"].partition("-")[0] == "BMA":
                         save_structure = True
                         sugarResId = sugar["sugarId"].rpartition("-")[2]
                         for m, model in enumerate(st):
