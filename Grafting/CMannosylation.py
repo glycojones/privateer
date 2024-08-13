@@ -340,30 +340,35 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                         if sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
                             sugResId = sugar["sugarId"].rpartition("-")[2]
                             sugChainID = sugar["sugarId"].partition("-")[2].rpartition("-")[0]
-                            sugarResidue = st[0][sugChainID][sugResId]
-                            for atom in sugarResidue:
-                                if atom.name == "C1":
-                                    marks = ns.find_neighbors(atom)
-                                    for mark in marks:
-                                        cra = mark.to_cra(st[0])
-                                        if cra.residue.name == "TRP" and cra.atom.name == "CD1":
-                                            protseqnum = cra.residue.seqid.num
-                                            protchainID = cra.chain.name
-                                            save_structure = True
-                                            for m, model in enumerate(st):
-                                                for c, chain in enumerate(model):
-                                                    for r, residue in enumerate(chain):
-                                                        # If the corresponding protein residue is a TRP
-                                                        if str(chain.name) == str(sugChainID) and int(residue.seqid.num) == int(sugResId):
-                                                            ms.append(m)
-                                                            cs.append(c)
-                                                            rs.append(r) 
-                                            glycosylation = {}
-                                            glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
-                                            glycosylation["glycan_index"] = 0
-                                            glycosylation["receiving_chain_index"] = protchainID
-                                            glycosylation["receiving_res_index"] = protseqnum
-                                            glycosylations.append(glycosylation)
+                            try:
+                                sugarResidue = st[0][sugChainID][sugResId]
+                                for atom in sugarResidue:
+                                    if atom.name == "C1":
+                                        marks = ns.find_neighbors(atom)
+                                        for mark in marks:
+                                            cra = mark.to_cra(st[0])
+                                            if cra.residue.name == "TRP" and cra.atom.name == "CD1":
+                                                protseqnum = cra.residue.seqid.num
+                                                protchainID = cra.chain.name
+                                                save_structure = True
+                                                for m, model in enumerate(st):
+                                                    for c, chain in enumerate(model):
+                                                        for r, residue in enumerate(chain):
+                                                            # If the corresponding protein residue is a TRP
+                                                            if str(chain.name) == str(sugChainID) and int(residue.seqid.num) == int(sugResId):
+                                                                ms.append(m)
+                                                                cs.append(c)
+                                                                rs.append(r) 
+                                                glycosylation = {}
+                                                glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
+                                                glycosylation["glycan_index"] = 0
+                                                glycosylation["receiving_chain_index"] = protchainID
+                                                glycosylation["receiving_res_index"] = protseqnum
+                                                glycosylations.append(glycosylation)
+                            except:
+                                print(f"Error finding and deleting glycans in {pdbcode}")
+                                continue
+                            
         if save_structure:
             l = sorted(zip(rs, cs, ms))
             rs, cs, ms = zip(*l)
