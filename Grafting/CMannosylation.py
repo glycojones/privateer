@@ -288,6 +288,9 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
     filepathlist = file_paths(databasedir)
     data_out = {}
     pdbcodes = []
+    failedlist = "failed.txt"
+    with open(failedlist, "w") as myfile:
+        myfile.write(f"A list of pdb codes that failed to find and delete potentially problematic c-glycans")
     for i in range(len(filepathlist)):
         jsonfile = filepathlist[i]
         jsonfilename = os.path.basename(jsonfile)
@@ -370,9 +373,14 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                             except:
                                 save_structure = False
                                 print(f"Error finding and deleting glycans in {pdbcode}")
+                                with open(failedlist, "a") as myfile:
+                                    myfile.write(f"{pdbcode}")
                                 continue
-                            
-        if save_structure:
+        if save_structure and len(ms) == 0:
+            print(f"Error finding and deleting glycans in {pdbcode}")     
+            with open(failedlist, "a") as myfile:
+                                    myfile.write(f"{pdbcode}")               
+        if save_structure and len(ms) > 0:
             l = sorted(zip(rs, cs, ms))
             rs, cs, ms = zip(*l)
             for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
