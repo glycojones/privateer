@@ -562,14 +562,19 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
         pdbout = outputdir+f"/{pdbcode}_grafted.pdb"
         mtzout = outputdir+f"/{pdbcode}_grafted.mtz"
         print(f"Refining grafted strucutre...")
-        restraint_sigma = 3.0 #FLAG: Add option for this to depend on resolution, tighter retraint for poorer resolution
-        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20, restraint_sigma)
+        st = gemmi.read_structure(grafted_pdb)
+        resolution = st.resolution
+        try:
+            refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20, resolution)
+        except:
+            print(f"Error refining grafted structure {pdbcode}")
         if os.path.isfile(refined_pdb):
             print(f"Calculating RSCC for the grafted glycans...")
             try:
                 graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzfile, graftedGlycans)
             except:
                 print(f"Error calculating RSCC for grafted glycans in {pdbcode}")
+                continue
         for graft in graftedGlycans:
             protein_chain_ID = graft["receiving_protein_residue_chain_PDBID"]
             protein_res_ID = graft["receiving_protein_residue_monomer_PDBID"]
