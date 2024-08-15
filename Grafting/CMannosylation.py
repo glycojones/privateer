@@ -610,10 +610,10 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
         print(f"Refining grafted strucutre...")
         st = gemmi.read_structure(grafted_pdb)
         resolution = st.resolution
-        try:
-            refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20, resolution)
-        except:
-            print(f"Error refining grafted structure {pdbcode}")
+        #try:
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20, resolution)
+        # except:
+        #     print(f"Error refining grafted structure {pdbcode}")
         if os.path.isfile(refined_pdb):
             print(f"Calculating RSCC for the grafted glycans...")
             try:
