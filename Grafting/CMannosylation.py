@@ -442,8 +442,14 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         try:
             glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP")
         except:
-            glycosylation = pvtcore.GlycosylationComposition_memsafe(mmcifile)
-            mtzfile = None
+            try:
+                glycosylation = pvtcore.GlycosylationComposition_memsafe(mmcifile)
+            except:
+                print(f"Error running privateer on structure {pdbcode}")
+                with open(failedlist, "a") as myfile:
+                    myfile.write(f"{pdbcode}\n")
+                continue
+            
         glycans = glycosylation.get_summary_of_detected_glycans()
         num_glycans = glycosylation.get_number_of_glycan_chains_detected() 
         for i in range(num_glycans):
