@@ -545,7 +545,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
                 del st[m][c][r]
             receiver_path = receiverdir + f"/{pdbcode}.pdb"
-            mtz_path = find_mtz_path(mtzdir,receiverdir,pdbcode)
+            mtz_path = sf_mtz_path(mtzdir,pdbcode) #find_mtz_path(mtzdir,receiverdir,pdbcode)
             output_path = outputdir + f"/{pdbcode}.pdb"
             st.write_pdb(receiver_path)
             data_out[str(pdbcode)]={"receiver_path": receiver_path, "mtz_path": mtz_path, "output_path": output_path ,"glycosylations": glycosylations}
