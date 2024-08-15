@@ -442,10 +442,16 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         cs = []
         rs = []
         try:
-            glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP", nThreads=4)
+            mtz = gemmi.read_mtz_file(mtzfile)
+            if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
+                glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "F,SIGF")
+            elif ('FP' in mtz.column_labels()) and ('SIGFP' in mtz.column_labels()):
+                glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP")
+            elif ('FMEAN' in mtz.column_labels()) and ('SIGFMEAN' in mtz.column_labels()):
+                glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FMEAN,SIGFMEAN")
         except:
             try:
-                glycosylation = pvtcore.GlycosylationComposition_memsafe(mmcifile,nThreads=4)
+                glycosylation = pvtcore.GlycosylationComposition(mmcifile,nThreads=4)
             except:
                 print(f"Error running privateer on structure {pdbcode}")
                 with open(failedlist, "a") as myfile:
