@@ -393,6 +393,8 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
             receiver_path = receiverdir + f"/{pdbcode}.pdb"
             #mtz_path = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
             mtz_path = sf_mtz_path(mtzdir,pdbcode)
+            if len(mtz_path) < 1:
+                continue
             output_path = outputdir + f"/{pdbcode}.pdb"
             st.write_pdb(receiver_path)
             data_out[str(pdbcode)]={"receiver_path": receiver_path, "mtz_path": mtz_path, "output_path": output_path ,"glycosylations": glycosylations}
