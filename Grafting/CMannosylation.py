@@ -626,7 +626,7 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
             if databasedir is not None:
                 graft["OriginalRSCC"] = get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID)
             else:
-                graft["OriginalRSCC"] = schema[i]["RSCC"]
+                graft["OriginalRSCC"] = schema["glycosylations"][i]["RSCC"]
             graft["pdbcode"] = pdbcode
             AllGlycans.append(graft)
         df_temp = pd.DataFrame(graftedGlycans)
