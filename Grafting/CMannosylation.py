@@ -404,7 +404,6 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
     return pdbcodes
 
 def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo):
-    print("HELLO 0")
     failedlist = "failed.txt"
     with open(failedlist, "w") as myfile:
         myfile.write(f"A list of pdb codes that failed to find and delete potentially problematic c-glycans\n")
@@ -413,15 +412,13 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         mmcifiles = file_paths(pdbmirrordir, ".cif")
     else:
         pdbfiles = file_paths(os.path.join(pdbmirrordir , "pdb"))
-        mmcifiles = file_paths(os.path.join(pdbmirrordir , "mmcif"))
+        mmcifiles = file_paths(os.path.join(pdbmirrordir , "mmCIF"))
     data_out = {}
     pdbcodes = []
     for i in range(len(mmcifiles)):
-        print("HELLO 1")
         mmcifile = mmcifiles[i]
         filename = os.path.basename(mmcifile)
         if redo:
-            print("HELLO redo")
             pdbcode = filename.partition("_")[0]
             if mmcifile != os.path.join(pdbmirrordir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.cif"):
                 continue
