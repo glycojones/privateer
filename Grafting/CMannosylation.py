@@ -521,6 +521,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                                 glycosylation_graft["glycan_index"] = 0
                                 glycosylation_graft["receiving_chain_index"] = root_info["ProteinChainID"]
                                 glycosylation_graft["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
+                                glycosylation_graft["RSCC"] = summary["RSCC"]
                                 glycosylations.append(glycosylation_graft)
                             except:
                                 save_structure = False
@@ -619,10 +620,13 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
             except:
                 print(f"Error calculating RSCC for grafted glycans in {pdbcode}")
                 continue
-        for graft in graftedGlycans:
+        for i, graft in enumerate(graftedGlycans):
             protein_chain_ID = graft["receiving_protein_residue_chain_PDBID"]
             protein_res_ID = graft["receiving_protein_residue_monomer_PDBID"]
-            graft["OriginalRSCC"] = get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID)
+            if databasedir is not None:
+                graft["OriginalRSCC"] = get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID)
+            else:
+                graft["OriginalRSCC"] = schema[i]["RSCC"]
             graft["pdbcode"] = pdbcode
             AllGlycans.append(graft)
         df_temp = pd.DataFrame(graftedGlycans)
