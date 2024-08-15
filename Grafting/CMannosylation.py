@@ -484,6 +484,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                         glycosylation_graft["glycan_index"] = 0
                         glycosylation_graft["receiving_chain_index"] = root_info["ProteinChainID"]
                         glycosylation_graft["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
+                        glycosylation_graft["RSCC"] = summary["RSCC"]
                         glycosylations.append(glycosylation_graft)
             if glycan_type == "ligand":
                 num_sugars = glycan.get_total_number_of_sugars()
