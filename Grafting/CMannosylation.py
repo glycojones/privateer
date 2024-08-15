@@ -424,6 +424,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                 continue
         else:
             pdbcode = filename.partition(".")[0]
+        print(f"Looking for c-glycans to fix in {pdbcode}")
         mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         try:
             st = gemmi.read_structure(mmcifile)
@@ -432,6 +433,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             print(f"Error opening structure {pdbcode}")
             with open(failedlist, "a") as myfile:
                 myfile.write(f"{pdbcode}\n")
+            continue
         save_structure = False
         glycosylations = []
         ms = []
