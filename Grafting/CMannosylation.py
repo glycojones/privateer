@@ -454,8 +454,9 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             
         glycans = glycosylation.get_summary_of_detected_glycans()
         num_glycans = glycosylation.get_number_of_glycan_chains_detected() 
-        for glycan in glycans:
-            glycan_type = glycan["GlycosylationType"]
+        for glycan_num in range(num_glycans):
+            glycan = glycosylation.get_glycan(glycan_num)
+            glycan_type = glycan.get_glycosylation_type()
             if glycan_type == "c-glycan":
                 num_sugars = glycan.get_total_number_of_sugars()
                 root_info = glycan.get_root_info()
