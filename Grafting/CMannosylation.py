@@ -457,8 +457,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                 with open(failedlist, "a") as myfile:
                     myfile.write(f"{pdbcode}\n")
                 continue
-            
-        glycans = glycosylation.get_summary_of_detected_glycans()
+        #glycans = glycosylation.get_summary_of_detected_glycans()
         num_glycans = glycosylation.get_number_of_glycan_chains_detected() 
         for glycan_num in range(num_glycans):
             glycan = glycosylation.get_glycan(glycan_num)
@@ -480,12 +479,12 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                                         ms.append(m)
                                         cs.append(c)
                                         rs.append(r) 
-                        glycosylation = {}
-                        glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
-                        glycosylation["glycan_index"] = 0
-                        glycosylation["receiving_chain_index"] = root_info["ProteinChainID"]
-                        glycosylation["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
-                        glycosylations.append(glycosylation)
+                        glycosylation_graft = {}
+                        glycosylation_graft["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
+                        glycosylation_graft["glycan_index"] = 0
+                        glycosylation_graft["receiving_chain_index"] = root_info["ProteinChainID"]
+                        glycosylation_graft["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
+                        glycosylations.append(glycosylation_graft)
             if glycan_type == "ligand":
                 num_sugars = glycan.get_total_number_of_sugars()
                 root_info = glycan.get_root_info()
@@ -517,12 +516,12 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                                                                 ms.append(m)
                                                                 cs.append(c)
                                                                 rs.append(r) 
-                                glycosylation = {}
-                                glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
-                                glycosylation["glycan_index"] = 0
-                                glycosylation["receiving_chain_index"] = root_info["ProteinChainID"]
-                                glycosylation["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
-                                glycosylations.append(glycosylation)
+                                glycosylation_graft = {}
+                                glycosylation_graft["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
+                                glycosylation_graft["glycan_index"] = 0
+                                glycosylation_graft["receiving_chain_index"] = root_info["ProteinChainID"]
+                                glycosylation_graft["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
+                                glycosylations.append(glycosylation_graft)
                             except:
                                 save_structure = False
                                 print(f"Error finding and deleting glycans in {pdbcode}")
