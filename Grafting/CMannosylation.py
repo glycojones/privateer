@@ -63,7 +63,7 @@ def sf_mtz_path(mtzdir, pdbcode):
     elif os.path.isfile(path3):
         return path3
     else:
-        print(f"Error finding mtz file for {pdbcode}")
+        #print(f"Error finding mtz file for {pdbcode}")
         return ""
 
 def get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID):
@@ -424,10 +424,10 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                 continue
         else:
             pdbcode = filename.partition(".")[0]
-        print(f"Looking for c-glycans to fix in {pdbcode}")
         mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         if len(mtzfile) < 1:
             continue
+        print(f"Looking for c-glycans to fix in {pdbcode}")
         try:
             st = gemmi.read_structure(mmcifile)
             ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
@@ -441,16 +441,16 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         ms = []
         cs = []
         rs = []
-        try:
-            glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP", nthreads=4)
-        except:
-            try:
-                glycosylation = pvtcore.GlycosylationComposition_memsafe(mmcifile,nthreads=4)
-            except:
-                print(f"Error running privateer on structure {pdbcode}")
-                with open(failedlist, "a") as myfile:
-                    myfile.write(f"{pdbcode}\n")
-                continue
+        #try:
+        glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP", nthreads=4)
+        # except:
+        #     try:
+        #         glycosylation = pvtcore.GlycosylationComposition_memsafe(mmcifile,nthreads=4)
+        #     except:
+        #         print(f"Error running privateer on structure {pdbcode}")
+        #         with open(failedlist, "a") as myfile:
+        #             myfile.write(f"{pdbcode}\n")
+        #         continue
             
         glycans = glycosylation.get_summary_of_detected_glycans()
         num_glycans = glycosylation.get_number_of_glycan_chains_detected() 
