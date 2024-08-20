@@ -667,6 +667,7 @@ def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
                 sugar = glycan.get_monosaccharide(j)
                 root_info = glycan.get_root_info()
                 summary = sugar.get_sugar_summary()
+                # FLAG: Check that this if statment below is correct. Maybe rewrite to use the sugar chain ID and sugar res ID.
                 if summary["sugar_name_short"] == graftedglycan["donor_glycan_root_type"] and root_info["ProteinResidueID"] == graftedglycan["receiving_protein_residue_monomer_PDBID"] and root_info["ProteinChainID"] == graftedglycan["receiving_protein_residue_chain_PDBID"]:
                     graftedGlycans[i]["RSCC"] = summary["RSCC"]
     return graftedGlycans
