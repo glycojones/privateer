@@ -105,8 +105,8 @@ def _run_refmacat(mtz_in: str, pdb_in: str, mtz_out: str, pdb_out: str, other_ou
     _stdin.append("END")
 
     process = subprocess.Popen(
-    #args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmacat"] + _args,
-    args=["/Applications/ccp4-8.0/bin/refmacat"] + _args,
+    args=["/jarvis/programs/xtal/ccp4-8.0/bin/refmacat"] + _args,
+    #args=["/Applications/ccp4-8.0/bin/refmacat"] + _args,
     stdin=subprocess.PIPE if _stdin else None,
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
@@ -605,9 +605,9 @@ def _copy_metadata(inputpdb, outputpdb, graftedGlycans):
                                 chain.add_residue(residue_out)
     struct_in.write_pdb(outputpdb)
 
-def _generate_restraints(grafted_pdb, outputpath, sigma):
+def _generate_restraints(grafted_pdb, outputpath, resolution):
     glycosylation = pvtcore.GlycosylationComposition(grafted_pdb)
-    restraints = glycosylation.return_external_restraints(sigma)
+    restraints = glycosylation.return_external_restraints(resolution)
     pdbcode = os.path.basename(grafted_pdb).partition(".")[0]
     output_restraints = outputpath+f'/privateer-restraints_{pdbcode}.txt'
     with open(output_restraints, "w") as restraint_file:
@@ -615,14 +615,14 @@ def _generate_restraints(grafted_pdb, outputpath, sigma):
     return output_restraints
 
 
-def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, ncycles, restraint_sigma):
-    restraints_file = _generate_restraints(grafted_pdb, outputpath, restraint_sigma)
+def _refine_grafted_glycans(grafted_pdb, mtzfile, outputpath, pdbout, mtzout, ncycles, resolution):
+    restraints_file = _generate_restraints(grafted_pdb, outputpath, resolution)
     filename = os.path.basename(grafted_pdb).partition(".")[0]
     otherdir =outputpath + "/temp"
     if not os.path.isdir(otherdir):
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
-    _run_refmac(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file, ncycles)
+    _run_refmacat(mtzfile, grafted_pdb, mtzout, pdbout, other, restraints_file, ncycles)
     shutil.rmtree(otherdir)
     if os.path.isfile(pdbout):
         os.remove(grafted_pdb)
@@ -641,7 +641,7 @@ def _remove_waters_and_recalc_map(input_pdb, mtzfile, outputpath, pdbout, mtzout
     if not os.path.isdir(otherdir):
         os.mkdir(otherdir)
     other  = os.path.join(otherdir, filename)
-    _run_refmac(mtzfile, pdbout, mtzout, pdb_out, other, "Not a file", 0)
+    _run_refmacat(mtzfile, pdbout, mtzout, pdb_out, other, "Not a file", 0)
     if os.path.isfile(pdb_out):
         os.remove(pdb_out)
     else:
@@ -649,7 +649,13 @@ def _remove_waters_and_recalc_map(input_pdb, mtzfile, outputpath, pdbout, mtzout
     return pdbout, mtzout
 
 def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
-    glycosylation = pvtcore.GlycosylationComposition(refined_pdb, original_mtz, "FP,SIGFP")
+    mtz = gemmi.read_mtz_file(original_mtz)
+    if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
+        glycosylation = pvtcore.GlycosylationComposition(refined_pdb, original_mtz, "F,SIGF")
+    elif ('FP' in mtz.column_labels()) and ('SIGFP' in mtz.column_labels()):
+        glycosylation = pvtcore.GlycosylationComposition(refined_pdb, original_mtz, "FP,SIGFP")
+    elif ('FMEAN' in mtz.column_labels()) and ('SIGFMEAN' in mtz.column_labels()):
+        glycosylation = pvtcore.GlycosylationComposition(refined_pdb, original_mtz, "FMEAN,SIGFMEAN")
     num_glycans = glycosylation.get_number_of_glycan_chains_detected()  
     for i in range(len(graftedGlycans)):
         graftedglycan = graftedGlycans[i]
@@ -912,8 +918,9 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             pdbout = os.path.join(outputlocation, filename + "_refined.pdb")
             mmcifout = os.path.join(outputlocation, filename + "_refined.mmcif")
             mtzout = os.path.join(outputlocation, filename + "_refined.mtz")
-            restraint_sigma = 1.0
-            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 20, restraint_sigma)
+            st = gemmi.read_structure(outputpath)
+            resolution = st.resolution
+            refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 20, resolution)
             if os.path.isfile(refined_pdb):
                 os.remove(refined_mtz)
                 os.remove(mmcifout)

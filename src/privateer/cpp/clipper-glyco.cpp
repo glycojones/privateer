@@ -5503,13 +5503,13 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                     {
                         sugar.override_conformation_diag ( true );
                     }
+                    if ( sugar.conformation_name() == "4c1" )
+                    {
+                        sugar.override_conformation_diag ( false );
+                    }
                     if (sugar.type().trim() == "BMA")
                     {
                         sugar.override_anomer_diag( false );
-                        if ( sugar.conformation_name() == "4c1" )
-                        {
-                            sugar.override_conformation_diag ( false );
-                        }
                     }
 
                     clipper::MAtom o5 = sugar.ring_members()[0];              // O5
@@ -5822,25 +5822,33 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
 std::string MGlycology::write_external_restraints ( bool restrain_rings,
                                                     bool restrain_links,
                                                     float resolution ) {
+    float sigma;
+    if (resolution == -1){
+        sigma = 1.0;
+    }
+    else{
+        sigma =  12.0/resolution - 1.0;
+    }
+    if (sigma < 0.1){
+        sigma = 0.1;
+    }
+    std::string restraints = "# External restraints for glycan refinement with Refmac5\n";
+    restraints += "# Produced by Privateer MKIV, Glycojones team, University of York, UK.\n";
+    std::vector<clipper::MGlycan> glycan_list = this->get_list_of_glycans();
 
-  std::string restraints = "# External restraints for glycan refinement with Refmac5\n";
-  restraints += "# Produced by Privateer MKIV, Glycojones team, University of York, UK.\n";
-  std::vector<clipper::MGlycan> glycan_list = this->get_list_of_glycans();
-  float sigma = (12.0/resolution)-1.0;
-  if (sigma < 0.1) {sigma = 0.1;}
-  for ( int i = 0; i < glycan_list.size(); i++ ) {
-    if ( restrain_rings ) {
-      restraints += "\n# Ring conformation restraints for " + glycan_list[i].get_type()
-                 + " at " + glycan_list[i].get_root_description() + "\n";
-      restraints += glycan_list[i].write_ring_ext_restraints ( sigma );
+    for ( int i = 0; i < glycan_list.size(); i++ ) {
+        if ( restrain_rings ) {
+        restraints += "\n# Ring conformation restraints for " + glycan_list[i].get_type()
+                    + " at " + glycan_list[i].get_root_description() + "\n";
+        restraints += glycan_list[i].write_ring_ext_restraints ( sigma );
+        }
+        if ( restrain_links ) {
+        restraints += "\n# Glycosidic bond conformation restraints\n" ;
+        restraints += glycan_list[i].write_link_ext_restraints ( sigma );
+        }
     }
-    if ( restrain_links ) {
-      restraints += "\n# Glycosidic bond conformation restraints\n" ;
-      restraints += glycan_list[i].write_link_ext_restraints ( sigma );
-    }
-  }
-  restraints += "\n\n################ EOF ################\n" ;
-  return restraints;
+    restraints += "\n\n################ EOF ################\n" ;
+    return restraints;
 }
 
 

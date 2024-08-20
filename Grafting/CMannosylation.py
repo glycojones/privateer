@@ -50,6 +50,21 @@ def find_mtz_path(mtzdir,receiverdir,pdbcode, redo = False):
                 return output_path_2
             except Exception as e :
                 return ""
+            
+def sf_mtz_path(mtzdir, pdbcode):
+    dir = os.path.join(mtzdir,f"r{pdbcode}sf")
+    path1 = os.path.join(dir,f"r{pdbcode}sf_fs_free.mtz")
+    path2 = os.path.join(dir,f"r{pdbcode}sf_fs.mtz")
+    path3 = os.path.join(dir,f"r{pdbcode}sf.mtz")
+    if os.path.isfile(path1):
+        return path1
+    elif os.path.isfile(path2):
+        return path2
+    elif os.path.isfile(path3):
+        return path3
+    else:
+        #print(f"Error finding mtz file for {pdbcode}")
+        return ""
 
 def get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID):
     subdir = pdbcode[1] + pdbcode[2]
@@ -273,10 +288,14 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
     filepathlist = file_paths(databasedir)
     data_out = {}
     pdbcodes = []
+    failedlist = "failed.txt"
+    with open(failedlist, "w") as myfile:
+        myfile.write(f"A list of pdb codes that failed to find and delete potentially problematic c-glycans\n")
     for i in range(len(filepathlist)):
         jsonfile = filepathlist[i]
         jsonfilename = os.path.basename(jsonfile)
         pdbcode = jsonfilename.rpartition('.')[0]
+        print(f"Checking glycans in {pdbcode}")
         if redo:
             pdbfile = pdbmirrordir + f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}/{pdbcode}_final.pdb"
             mmciffile = pdbmirrordir+f"/{pdbcode[1]}{pdbcode[2]}/{pdbcode}/{pdbcode}_final.cif"
@@ -288,8 +307,13 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
             st = gemmi.read_structure(pdbfile)
             ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
         except:
-            st = gemmi.read_structure(mmciffile)
-            ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+            try:
+                st = gemmi.read_structure(mmciffile)
+                ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+            except:
+                print(f"Error opening structure {pdbcode}")
+                with open(failedlist, "a") as myfile:
+                    myfile.write(f"{pdbcode}\n")
         save_structure = False
         glycosylations = []
         ms = []
@@ -302,13 +326,15 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
             ligands = glycandata["ligand"]
             for cglycan in cglycans:
                 for sugar in cglycan["sugars"]:
-                    if sugar["diagnostic"] != "yes" and  sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
+                    if (sugar["diagnostic"] != "yes" and  sugar["sugarId"].partition("-")[0] == "MAN") or sugar["sugarId"].partition("-")[0] == "BMA":
                         save_structure = True
                         sugarResId = sugar["sugarId"].rpartition("-")[2]
+                        sugarChainID = sugar["sugarId"].partition("-")[2].partition("-")[0]
+                        print(f"In {pdbcode} found sugar to fix chain {sugarChainID} res {sugarResId}")
                         for m, model in enumerate(st):
                             for c, chain in enumerate(model):
                                 for r, residue in enumerate(chain):
-                                    if str(chain.name) == str(cglycan["rootSugarChainId"]) and int(residue.seqid.num) == int(sugarResId):
+                                    if str(chain.name) == str(sugarChainID) and int(residue.seqid.num) == int(sugarResId) and (str(residue.name) == "MAN" or str(residue.name) == "BMA"):
                                         ms.append(m)
                                         cs.append(c)
                                         rs.append(r) 
@@ -324,37 +350,49 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
                         if sugar["sugarId"].partition("-")[0] == "MAN" or sugar["sugarId"].partition("-")[0] == "BMA":
                             sugResId = sugar["sugarId"].rpartition("-")[2]
                             sugChainID = sugar["sugarId"].partition("-")[2].rpartition("-")[0]
-                            sugarResidue = st[0][sugChainID][sugResId]
-                            for atom in sugarResidue:
-                                if atom.name == "C1":
-                                    marks = ns.find_neighbors(atom)
-                                    for mark in marks:
-                                        cra = mark.to_cra(st[0])
-                                        if cra.residue.name == "TRP" and cra.atom.name == "CD1":
-                                            protseqnum = cra.residue.seqid.num
-                                            protchainID = cra.chain.name
-                                            save_structure = True
-                                            for m, model in enumerate(st):
-                                                for c, chain in enumerate(model):
-                                                    for r, residue in enumerate(chain):
-                                                        # If the corresponding protein residue is a TRP
-                                                        if str(chain.name) == str(sugChainID) and int(residue.seqid.num) == int(sugResId):
-                                                            ms.append(m)
-                                                            cs.append(c)
-                                                            rs.append(r) 
-                                            glycosylation = {}
-                                            glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
-                                            glycosylation["glycan_index"] = 0
-                                            glycosylation["receiving_chain_index"] = protchainID
-                                            glycosylation["receiving_res_index"] = protseqnum
-                                            glycosylations.append(glycosylation)
-        if save_structure:
+                            try:
+                                sugarResidue = st[0][sugChainID][sugResId]
+                                for atom in sugarResidue:
+                                    if atom.name == "C1":
+                                        marks = ns.find_neighbors(atom)
+                                        for mark in marks:
+                                            cra = mark.to_cra(st[0])
+                                            if cra.residue.name == "TRP" and cra.atom.name == "CD1":
+                                                protseqnum = cra.residue.seqid.num
+                                                protchainID = cra.chain.name
+                                                save_structure = True
+                                                for m, model in enumerate(st):
+                                                    for c, chain in enumerate(model):
+                                                        for r, residue in enumerate(chain):
+                                                            # If the corresponding protein residue is a TRP
+                                                            if str(chain.name) == str(sugChainID) and int(residue.seqid.num) == int(sugResId):
+                                                                ms.append(m)
+                                                                cs.append(c)
+                                                                rs.append(r) 
+                                                glycosylation = {}
+                                                glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
+                                                glycosylation["glycan_index"] = 0
+                                                glycosylation["receiving_chain_index"] = protchainID
+                                                glycosylation["receiving_res_index"] = protseqnum
+                                                glycosylations.append(glycosylation)
+                            except:
+                                save_structure = False
+                                print(f"Error finding and deleting glycans in {pdbcode}")
+                                with open(failedlist, "a") as myfile:
+                                    myfile.write(f"{pdbcode}\n")
+                                continue
+        if save_structure and len(ms) == 0:
+            print(f"Error finding and deleting glycans in {pdbcode}")     
+            with open(failedlist, "a") as myfile:
+                                    myfile.write(f"{pdbcode}\n")               
+        if save_structure and len(ms) > 0:
             l = sorted(zip(rs, cs, ms))
             rs, cs, ms = zip(*l)
             for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
                 del st[m][c][r]
             receiver_path = receiverdir + f"/{pdbcode}.pdb"
-            mtz_path = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
+            #mtz_path = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
+            mtz_path = sf_mtz_path(mtzdir,pdbcode)
             output_path = outputdir + f"/{pdbcode}.pdb"
             st.write_pdb(receiver_path)
             data_out[str(pdbcode)]={"receiver_path": receiver_path, "mtz_path": mtz_path, "output_path": output_path ,"glycosylations": glycosylations}
@@ -366,12 +404,15 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
     return pdbcodes
 
 def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo):
+    failedlist = "failed.txt"
+    with open(failedlist, "w") as myfile:
+        myfile.write(f"A list of pdb codes that failed to find and delete potentially problematic c-glycans\n")
     if redo:
         pdbfiles = file_paths(pdbmirrordir, ".pdb")
         mmcifiles = file_paths(pdbmirrordir, ".cif")
     else:
-        pdbfiles = file_paths(pdbmirrordir + "pdb")
-        mmcifiles = file_paths(pdbmirrordir + "mmcif")
+        pdbfiles = file_paths(os.path.join(pdbmirrordir , "pdb"))
+        mmcifiles = file_paths(os.path.join(pdbmirrordir , "mmCIF"))
     data_out = {}
     pdbcodes = []
     for i in range(len(mmcifiles)):
@@ -383,22 +424,48 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                 continue
         else:
             pdbcode = filename.partition(".")[0]
-        mtzfile = find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
-        st = gemmi.read_structure(mmcifile)
+        pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
+        mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
+        if len(mtzfile) < 1:
+            continue
+        print(f"Looking for c-glycans to fix in {pdbcode}")
+        try:
+            st = gemmi.read_structure(pdbfile)
+            ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+        except:
+            try: 
+                st = gemmi.read_structure(mmcifile)
+                ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+            except:
+                print(f"Error opening structure {pdbcode}")
+                with open(failedlist, "a") as myfile:
+                    myfile.write(f"{pdbcode}\n")
+                continue
         save_structure = False
         glycosylations = []
         ms = []
         cs = []
         rs = []
         try:
-            glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP")
+            mtz = gemmi.read_mtz_file(mtzfile)
+            if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
+                glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "F,SIGF")
+            elif ('FP' in mtz.column_labels()) and ('SIGFP' in mtz.column_labels()):
+                glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP")
+            elif ('FMEAN' in mtz.column_labels()) and ('SIGFMEAN' in mtz.column_labels()):
+                glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FMEAN,SIGFMEAN")
         except:
-            glycosylation = pvtcore.GlycosylationComposition_memsafe(mmcifile)
-            mtzfile = None
-        glycans = glycosylation.get_summary_of_detected_glycans()
+            try:
+                glycosylation = pvtcore.GlycosylationComposition(mmcifile,nThreads=4)
+            except:
+                print(f"Error running privateer on structure {pdbcode}")
+                with open(failedlist, "a") as myfile:
+                    myfile.write(f"{pdbcode}\n")
+                continue
+        #glycans = glycosylation.get_summary_of_detected_glycans()
         num_glycans = glycosylation.get_number_of_glycan_chains_detected() 
-        for i in range(num_glycans):
-            glycan = glycosylation.get_glycan(i)
+        for glycan_num in range(num_glycans):
+            glycan = glycosylation.get_glycan(glycan_num)
             glycan_type = glycan.get_glycosylation_type()
             if glycan_type == "c-glycan":
                 num_sugars = glycan.get_total_number_of_sugars()
@@ -417,47 +484,68 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                                         ms.append(m)
                                         cs.append(c)
                                         rs.append(r) 
-                        glycosylation = {}
-                        glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
-                        glycosylation["glycan_index"] = 0
-                        glycosylation["receiving_chain_index"] = root_info["ProteinChainID"]
-                        glycosylation["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
-                        glycosylations.append(glycosylation)
+                        glycosylation_graft = {}
+                        glycosylation_graft["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
+                        glycosylation_graft["glycan_index"] = 0
+                        glycosylation_graft["receiving_chain_index"] = root_info["ProteinChainID"]
+                        glycosylation_graft["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
+                        glycosylation_graft["RSCC"] = summary["RSCC"]
+                        glycosylations.append(glycosylation_graft)
             if glycan_type == "ligand":
-                glycan = glycosylation.get_glycan(i)
                 num_sugars = glycan.get_total_number_of_sugars()
                 root_info = glycan.get_root_info()
-                protseqnum = glycan["proteinResidueSeqnum"]
-                protchainID = glycan["proteinChainId"]
-                residue = st[0][protchainID][protseqnum]
-                if residue.name == "TRP": # DOES THIS WORK OR DO LIGANDS NOT GET A PROTEINRESIDUETYPE?
-                    for j in range(num_sugars):
-                        sugar = glycan.get_monosaccharide(j)
-                        summary = sugar.get_sugar_summary()
-                        name = summary["sugar_name_short"]
-                        diagnostic = sugar.get_privateer_diagnostic()
+                for j in range(num_sugars):
+                    sugar = glycan.get_monosaccharide(j)
+                    summary = sugar.get_sugar_summary()
+                    name = summary["sugar_name_short"]
+                    sugChainID = summary["sugar_pdb_chain"]
+                    sugResID = summary["sugar_seqnum"]
+                    diagnostic = sugar.get_privateer_diagnostic()
+                    if diagnostic != "yes":
                         if name == "MAN" or name == "BMA":
-                            save_structure = True
-                            for m, model in enumerate(st):
-                                for c, chain in enumerate(model):
-                                    for r, residue in enumerate(chain):
-                                        if str(chain.name) == str(summary["sugar_pdb_chain"]) and int(residue.seqid.num) == int(summary["sugar_seqnum"]):
-                                            ms.append(m)
-                                            cs.append(c)
-                                            rs.append(r) 
-                            glycosylation = {}
-                            glycosylation["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
-                            glycosylation["glycan_index"] = 0
-                            glycosylation["receiving_chain_index"] = root_info["ProteinChainID"]
-                            glycosylation["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
-                            glycosylations.append(glycosylation)
-        if save_structure:
+                            try:
+                                sugarResidue = st[0][sugChainID][sugResID]
+                                for atom in sugarResidue:
+                                    if atom.name == "C1":
+                                        marks = ns.find_neighbors(atom)
+                                        for mark in marks:
+                                            cra = mark.to_cra(st[0])
+                                            if cra.residue.name == "TRP" and cra.atom.name == "CD1":
+                                                protseqnum = cra.residue.seqid.num
+                                                protchainID = cra.chain.name
+                                                save_structure = True
+                                                for m, model in enumerate(st):
+                                                    for c, chain in enumerate(model):
+                                                        for r, residue in enumerate(chain):
+                                                            # If the corresponding protein residue is a TRP
+                                                            if str(chain.name) == str(sugChainID) and int(residue.seqid.num) == int(sugResID):
+                                                                ms.append(m)
+                                                                cs.append(c)
+                                                                rs.append(r) 
+                                glycosylation_graft = {}
+                                glycosylation_graft["donor_path"] = donordir + "/Alpha-D-Mannose.pdb"
+                                glycosylation_graft["glycan_index"] = 0
+                                glycosylation_graft["receiving_chain_index"] = root_info["ProteinChainID"]
+                                glycosylation_graft["receiving_res_index"] = root_info["ProteinResidueSeqnum"]
+                                glycosylation_graft["RSCC"] = summary["RSCC"]
+                                glycosylations.append(glycosylation_graft)
+                            except:
+                                save_structure = False
+                                print(f"Error finding and deleting glycans in {pdbcode}")
+                                with open(failedlist, "a") as myfile:
+                                    myfile.write(f"{pdbcode}\n")
+                                continue
+        if save_structure and len(ms) == 0:
+            print(f"Error finding and deleting glycans in {pdbcode}")     
+            with open(failedlist, "a") as myfile:
+                                    myfile.write(f"{pdbcode}\n")  
+        if save_structure and len(ms) > 0:
             l = sorted(zip(rs, cs, ms))
             rs, cs, ms = zip(*l)
             for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
                 del st[m][c][r]
             receiver_path = receiverdir + f"/{pdbcode}.pdb"
-            mtz_path = find_mtz_path(mtzdir,receiverdir,pdbcode)
+            mtz_path = sf_mtz_path(mtzdir,pdbcode) #find_mtz_path(mtzdir,receiverdir,pdbcode)
             output_path = outputdir + f"/{pdbcode}.pdb"
             st.write_pdb(receiver_path)
             data_out[str(pdbcode)]={"receiver_path": receiver_path, "mtz_path": mtz_path, "output_path": output_path ,"glycosylations": glycosylations}
@@ -510,6 +598,7 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
             graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(receiverpath, donorpath, outputpath, targets, True, False, False)
         except:
             print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
+            continue
         try:
             grafter._copy_metadata(receiverpath, outputpath, graftedGlycans)
         except:
@@ -524,19 +613,27 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
         pdbout = outputdir+f"/{pdbcode}_grafted.pdb"
         mtzout = outputdir+f"/{pdbcode}_grafted.mtz"
         print(f"Refining grafted strucutre...")
-        restraint_sigma = 3.0 #FLAG: Add option for this to depend on resolution, tighter retraint for poorer resolution
-        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20, restraint_sigma)
+        st = gemmi.read_structure(grafted_pdb)
+        resolution = st.resolution
+        #try:
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20, resolution)
+        # except:
+        #     print(f"Error refining grafted structure {pdbcode}")
         if os.path.isfile(refined_pdb):
             print(f"Calculating RSCC for the grafted glycans...")
             try:
                 graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzfile, graftedGlycans)
             except:
                 print(f"Error calculating RSCC for grafted glycans in {pdbcode}")
-        for graft in graftedGlycans:
+                continue
+        for i, graft in enumerate(graftedGlycans):
             protein_chain_ID = graft["receiving_protein_residue_chain_PDBID"]
             protein_res_ID = graft["receiving_protein_residue_monomer_PDBID"]
-            graft["OriginalRSCC"] = get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID)
-            graft["pdbcode"] = pdbcodes
+            if databasedir is not None:
+                graft["OriginalRSCC"] = get_RSCC_database(databasedir, pdbcode, protein_chain_ID, protein_res_ID)
+            else:
+                graft["OriginalRSCC"] = schema["glycosylations"][i]["RSCC"]
+            graft["pdbcode"] = pdbcode
             AllGlycans.append(graft)
         df_temp = pd.DataFrame(graftedGlycans)
         df_temp.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
@@ -563,10 +660,11 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             expsysfile = f"/vault/pdb_mirror/data/structures/all/mmCIF/{pdbcode}.cif.gz"
         else:
             pdbcode = filename.partition(".")[0]
+            ciffile = receiverpath.rpartition(".")[0] + ".cif"
             expsysfile = ciffile
         if "pdb" in pdbcode:
             pdbcode = filename.partition("pdb")[2]
-        if receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb"):
+        if redo and receiverpath != os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb"):
             continue
         with open(graftedlist, "a") as myfile:
             myfile.write(receiverpath)
@@ -625,8 +723,9 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             continue
         #FLAG: Here want a step removing cases with too many clashes??? Or just stick to removing grafts with any clashes???
         print(f"Refining grafted strucutre...")
-        restraint_sigma = 3.0 #FLAG: Add option for this to depend on resolution, tighter retraint for poorer resolution
-        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, restraint_sigma)
+        st = gemmi.read_structure(outputpath)
+        resolution = st.resolution
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, resolution)
         if os.path.isfile(refined_pdb):
             os.remove(refined_mtz)
             os.remove(outputdir+f"/{pdbcode}_refined.mmcif")
@@ -657,13 +756,160 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
             os.remove(temp_csv)
     return 
 
+def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,graftedlist,savesummary):
+    df_in = pd.read_csv(csvfile)
+    pdbcodes = df_in["pdbid"].unique()
+    donorpath = os.path.join(donordir, "Alpha-D-Mannose.pdb")
+    for pdbcode in pdbcodes:
+        if graftedlist is not None:
+            with open(graftedlist) as myfile:
+                if pdbcode in myfile.read():
+                    continue
+            with open(graftedlist, "a") as myfile:
+                myfile.write(pdbcode)
+        if redo:
+            receiverpath = os.path.join(receiverdir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}",f"{pdbcode}_final.pdb")
+        else:
+            cifpath = os.path.join(receiverdir,f"{pdbcode}.cif.gz")
+            pdbpath = os.path.join(receiverdir,f"pdb{pdbcode}.ent.gz")
+            if os.path.isfile(cifpath):
+                receiverpath = cifpath
+            elif os.path.isfile(pdbpath):
+                receiverpath = pdbpath
+            else:
+                print(f"Error opening receiver structure {pdbcode}")
+                if graftedlist is not None:
+                    with open(graftedlist, "a") as myfile:
+                        myfile.write("\tError opening receiver structure")
+                        myfile.write("\n")
+                continue
+        mtzpath = sf_mtz_path(mtzdir, pdbcode)
+        if len(mtzpath)<1:
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tError opening receiver mtzfile")
+                    myfile.write("\n")
+        outputpath = os.path.join(outputdir,f"{pdbcode}.pdb")
+        try:
+            sequences = grafter._get_sequences_in_receiving_model(receiverpath)
+        except:
+            print(f"Failed to get sequences for {pdbcode}. Skipping...")
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tFailed pvtmodelling.Builder()")
+                    myfile.write("\n")
+            continue
+        CMannosylationConsensus = "[W]"
+        targets = []
+        for index, row in df_in.iterrows():
+            if row["pdbid"] ==  pdbcode and row["status"] == "yes":
+                resolution = row["resolution"]
+                for item in sequences:
+                    currentChainIndex = item["index"]
+                    currentChainID = item["ChainID"]
+                    currentSequence = item["Sequence"]
+                    glycosylationTargets = []
+                    for match in re.finditer(CMannosylationConsensus, currentSequence):
+                        if (currentSequence[match.start()] == item["Residues"][match.start()]["residueCode"]):
+                            target_chainID = row["authchain"]
+                            target_resID = row["authresidue"]
+                            if (item["Residues"][match.start()]["residueSeqnum"] == target_resID) and (currentChainID == target_chainID):
+                                glycosylationTargets.append({
+                                    "start": match.start(),
+                                    "end": match.end(),
+                                    "match": match.group()
+                                })
+                    targets.append({
+                        "Sequence": currentSequence,
+                        "chainIndex": currentChainIndex,
+                        "currentChainID": currentChainID,
+                        "glycosylationTargets": glycosylationTargets,
+                    })
+        removeclashes = True
+        if targets is None:
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                        myfile.write("\tNo C-Mannosylation Targets found")
+                        myfile.write("\n")
+            continue
+        elif len(targets) < 1:
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                        myfile.write("\tNo C-Mannosylation Targets found")
+                        myfile.write("\n")
+            continue
+        try:
+            graftedGlycans = grafter._glycosylate_receiving_model_using_consensus_seq(
+                receiverpath, donorpath, outputpath, targets, True, False, removeclashes)
+            grafter._copy_metadata(receiverpath, outputpath, graftedGlycans)
+            grafter._make_connection_between_protein_and_glycan(outputpath)
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tGrafted")
+        except:
+            print(f"Error grafting glycans to pdb {pdbcode}. Skipping graft...")
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tFailed")
+                    myfile.write("\n")
+            continue
+        if len(graftedGlycans) < 1:
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                        myfile.write("\tNo C-Mannosylation Targets found")
+                        myfile.write("\n")
+            continue
+        print(f"Refining grafted strucutre...")
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, resolution)
+        if os.path.isfile(refined_pdb):
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tRefined")
+            os.remove(refined_mtz)
+            os.remove(outputdir+f"/{pdbcode}_refined.mmcif")
+            try:
+                pdbout = os.path.join(outputdir, f"{pdbcode}_removed_waters.pdb")
+                grafter._remove_waters_close_to_TRP(refined_pdb, pdbout)
+                os.remove(refined_pdb)
+            except:
+                pdbout = refined_pdb
+                print(f"Failed to remove waters close to TRP in {pdbout}")
+            try:
+                graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
+                graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
+                if graftedlist is not None:
+                    with open(graftedlist, "a") as myfile:
+                        myfile.write("\n")
+            except:
+                print(f"Failed to calculate RSCC in {pdbout}")
+                if graftedlist is not None:
+                    with open(graftedlist, "a") as myfile:
+                        myfile.write("\tFailed RSCC calc")
+                        myfile.write("\n")
+        else: 
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\tFailed refinement")
+                    myfile.write("\n")
+        for graft in graftedGlycans:
+            graft["pdbcode"] = pdbcode
+        if savesummary:
+            df_single = pd.DataFrame(graftedGlycans)
+            df_single.to_csv(outputdir+f"/{pdbcode}_graft_summary.csv")
+            full_csv = outputdir + "/full_graft_summary.csv"
+            if os.path.isfile(full_csv):
+                df_single.to_csv(full_csv, mode="a", index=False, header=False)
+            else:
+                df_single.to_csv(full_csv, index=False)
+    return 
 
 
 
 if __name__ == "__main__":
-    defaultdatabasedir = "/vault/privateer_database/pdb" # Location the privateer database is (if using database). If not using database, set to None
+    defaultdatabasedir = None #"/vault/privateer_database/pdb" # Location the privateer database is (if using database). If not using database, set to None
     defaultpdbmirrordir = "/vault/pdb_mirror/data/structures/all" # Location the unedited pdb/mmcif files are stored (assumes pdb files are in subdir "pdb" and mmcif in subdir "mmcif")
     defaultmtzdir = "/vault/pdb_mtz_files"
+    defaultcsvsites = None
     cwd = os.getcwd()
     defaultreceiverdir = os.path.join(cwd,"receivers") # Location you want to save edited pdb files with incorrect c-glycans removed
     if os.getenv("PRIVATEERDATA", None) is not None:
@@ -715,6 +961,14 @@ if __name__ == "__main__":
         f"Path to the locally stored mtz filed. If not set, defaults to {defaultmtzdir}.",
     )
     parser.add_argument(
+        "-graftsitescsv",
+        action="store",
+        default=defaultcsvsites,
+        dest="graftsitescsv",
+        help=
+        f"Path to csvfile which contains results from blob search to graft. If not set, defaults to {defaultcsvsites}.",
+    )
+    parser.add_argument(
         "-receiverdir",
         action="store",
         default=defaultreceiverdir,
@@ -739,9 +993,8 @@ if __name__ == "__main__":
         f"Path to save final fixed/grafted structures. If not set, defaults to {defaultoutputdir}.",
     )
     parser.add_argument(
-        "-redo",
-        action="store",
-        default=defaultredo,
+        "--redo",
+        action="store_true",
         dest="redo",
         help=
         f"Boolean to say whether running on pdbredo (True) or not (False). If not set, defaults to {defaultredo}.",
@@ -750,7 +1003,10 @@ if __name__ == "__main__":
     if args.mode == 'fix':
         fix_Cglycans(args.databasedir,args.pdbmirrordir,args.mtzdir,args.receiverdir,args.donordir,args.outputdir,args.redo)
     elif args.mode == 'find':
-        find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
+        if args.graftsitescsv is not None:
+            graft_Cglycans_from_csv(args.graftsitescsv,args.receiverdir,args.mtzdir,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
+        else:
+            find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
     else:
         print("Mode of operation not specified. Exiting...")
 

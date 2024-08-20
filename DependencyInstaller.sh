@@ -15,13 +15,13 @@ if [[ "${OS_NAME}" == 'Darwin' ]]; then
     echo "Homebrew found!"
   fi
 
-  HOMEBREW_PREFIX="$(brew info gcc | grep Cellar | awk '{print $1}')"
+  HOMEBREW_PREFIX="/opt/homebrew"
 
   if [[ "${CPU_NAME}" == 'arm64' ]]; then # identical to intel for now, but we might want to add other things here
     echo "Configuring compilers for Apple Silicon CPU"
     GCC_VERSION="$(brew info gcc | grep Cellar | awk -F"/gcc/" '{print $2}' | awk -F"." '{print $1}')"
-    GCC=$HOMEBREW_PREFIX/bin/gcc-$GCC_VERSION
-    GPLUSPLUS=$HOMEBREW_PREFIX/bin/g++-$GCC_VERSION
+    GCC=$HOMEBREW_PREFIX/bin/gcc-12
+    GPLUSPLUS=$HOMEBREW_PREFIX/bin/g++-12
     GFORTRAN=$HOMEBREW_PREFIX/bin/gfortran
     Threads="$(nproc --all)"
   else
