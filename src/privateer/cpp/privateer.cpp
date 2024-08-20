@@ -59,11 +59,15 @@ int main(int argc, char** argv)
 
     prog.set_termination_message( "Failed" );
 
-    std::cout << "\nPrivateer version " << program_version << ". Copyright 2013-2021 Jon Agirre (@glycojones) & University of York.";
-    std::cout << "\nContributors: Haroldas Bagdonas (@GABRAHREX) and the rest of Glycojones Team at York.";
-    std::cout << "\nPlease reference these articles: "<< std::endl ;
+    std::cout << "\nPrivateer Version " << program_version << ". Copyright 2013-2024 Jon Agirre (@glycojones) & University of York.";
+    std::cout << "\nContributors: Haroldas Bagdonas (@GABRAHREX), Jordan Dialpuri (@Dialpuri), Lucy Schofield (@lcs551) and Lou Holland (@louholland).";
+    std::cout << "\nIf you find Privateer useful, please reference these articles: "<< std::endl ;
+    std::cout << "\n   - 'Online carbohydrate 3D structure validation with the Privateer web app'";
+    std::cout << "\n   -  Dialpuri et al., 2024, Acta Crystallographica Section F, 80, 30-35." << std::endl;
+    std::cout << "\n   -  Analysis and validation of overall N-glycan conformation in Privateer.";
+    std::cout << "\n   -  Dialpuri et al., 2024, Acta Crystallographica Section D, 79, 462-472." << std::endl;    
     std::cout << "\n   - 'Privateer: software for the conformational validation of carbohydrate structures'";
-    std::cout << "\n      Agirre et al, 2015 Nat Struct & Mol Biol 22(11):833-834." << std::endl;
+    std::cout << "\n      Agirre et al., 2015 Nat Struct & Mol Biol 22(11):833-834." << std::endl;
     std::cout << "\n   - 'Leveraging glycomics data in glycoprotein 3D structure validation with Privateer'";
     std::cout << "\n      Bagdonas, Ungar & Agirre, 2020 Beilstein Journal of Organic Chemistry 16(1):2523-2533." << std::endl;
 
