@@ -1071,8 +1071,8 @@ def glycosylate_receiving_model_using_schema(schema, print_messages=True):
 
 if __name__ == "__main__":
     dt_string = datetime.now().strftime("%d_%m_%Y-%H_%M_%S")
-    if os.getenv("PRIVATEERDATA", None) is not None:
-        ROOTENV = os.getenv("PRIVATEERDATA", None)
+    if os.getenv("PRIVATEER_USEFUL_DATA", None) is not None:
+        ROOTENV = os.getenv("PRIVATEER_USEFUL_DATA", None)
         envbased = True
     elif os.getenv("CLIBD", None) is not None:
         ROOTENV = os.getenv("CLIBD", None)

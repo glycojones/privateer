@@ -113,8 +113,8 @@ def check_consensus_sequence(sequence:str) -> bool:
     return output
 
 def check_expression_system_with_cif(receiverpath:str, pdbcode:str) -> tuple[list,bool]:
-    if os.getenv("PRIVATEERDATA", None) is not None:
-        datadir = os.getenv("PRIVATEERDATA", None)
+    if os.getenv("PRIVATEER_USEFUL_DATA", None) is not None:
+        datadir = os.getenv("PRIVATEER_USEFUL_DATA", None)
     else:
         datadir = ''
     sourcefile = os.path.join(datadir,'taxon_summary.json') # include metazoan and toxoplasma taxonomy ids
@@ -912,8 +912,8 @@ if __name__ == "__main__":
     defaultcsvsites = None
     cwd = os.getcwd()
     defaultreceiverdir = os.path.join(cwd,"receivers") # Location you want to save edited pdb files with incorrect c-glycans removed
-    if os.getenv("PRIVATEERDATA", None) is not None:
-        rootdir = os.getenv("PRIVATEERDATA", None)
+    if os.getenv("PRIVATEER_USEFUL_DATA", None) is not None:
+        rootdir = os.getenv("PRIVATEER_USEFUL_DATA", None)
         defaultdonordir = os.path.join(rootdir, "glycan_donor_repertoire")
     else:
         defaultdonordir = "/y/people/lah583/privateer/data/glycan_donor_repertoire"
