@@ -2822,6 +2822,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
     this->sugar_diag_puckering=inputSugar.ok_with_puckering();
 
     if(sugar_context == "c-glycan")
+    {
         if ( inputSugar.type().trim() == "MAN" ) {
             if ( inputSugar.conformation_name() == "1c4" ) {
                 inputSugar.override_conformation_diag ( true );
@@ -2836,6 +2837,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
             inputSugar.override_anomer_diag ( false );
             this->sugar_diag_anomer=inputSugar.ok_with_anomer();
         }
+    }
 
     this->sugarNode = parentGlycan.get_node(sugarID);
     this->sugar_connections=sugarNode.number_of_connections();
