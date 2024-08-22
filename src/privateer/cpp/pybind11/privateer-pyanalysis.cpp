@@ -3104,6 +3104,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
     this->sugar_ring_atoms = ringatoms;
 
     if(sugar_context == "c-glycan")
+    {
         if ( inputSugar.second.type().trim() == "MAN" ) {
             if ( inputSugar.second.conformation_name() == "1c4" ) {
                 inputSugar.second.override_conformation_diag ( true );
@@ -3118,6 +3119,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
             inputSugar.second.override_anomer_diag ( false );
             this->sugar_diag_anomer=inputSugar.second.ok_with_anomer();
         }
+    }
 
     this->sugar_rscc=inputSugar.second.get_rscc();
     this->sugar_accum=inputSugar.second.get_accum();
