@@ -5,12 +5,12 @@ on:
   push:
     branches: [ "webapp" ]
     paths: 
-      - src/privateer/cpp/privateer-bind.cpp
+      - src/privateer/cpp/*
 
   pull_request:
     branches: [ "webapp" ]
     paths: 
-      - src/privateer/cpp/privateer-bind.cpp
+      - src/privateer/cpp/*
 
 jobs:
   build:
