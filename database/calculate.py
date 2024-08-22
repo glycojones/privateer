@@ -3,6 +3,7 @@ from datetime import datetime
 import os
 import json
 import argparse 
+import re
 
 def main(args): 
 
@@ -22,16 +23,18 @@ def main(args):
             glycosylation = pvt.GlycosylationComposition(args.pdb)
 
     except Exception as pe:
-        # raise RuntimeError(f"Error in Privater call {pe}")
-        pdb_equivalent = f'/vault/tmp_extracted_pdbs/pdb{args.pdb.split("/")[-1].rstrip(".mmcif")}.ent'
-        if args.mtz:
-            if os.path.exists(args.mtz):
-                glycosylation = pvt.GlycosylationComposition(pdb_equivalent, args.mtz, "FP,SIGFP")
+        try:        
+            pdb_equivalent = f'/vault/tmp_extracted_pdbs/pdb{args.pdb.split("/")[-1].rstrip(".mmcif")}.ent'
+            if args.mtz:
+                if os.path.exists(args.mtz):
+                    glycosylation = pvt.GlycosylationComposition(pdb_equivalent, args.mtz, "FP,SIGFP")
 
-        elif args.map and args.mapres:        
-            if os.path.exists(args.map):
-                glycosylation = pvt.GlycosylationComposition(pdb_equivalent, path_to_mrc_file=args.map, resolution=float(args.mapres), nThreads=4, debug_output=False)
-        else:
+            elif args.map and args.mapres:        
+                if os.path.exists(args.map):
+                    glycosylation = pvt.GlycosylationComposition(pdb_equivalent, path_to_mrc_file=args.map, resolution=float(args.mapres), nThreads=4, debug_output=False)
+            else:
+                glycosylation = pvt.GlycosylationComposition(pdb_equivalent)
+        except:
             glycosylation = pvt.GlycosylationComposition(pdb_equivalent)
         # return
 
@@ -69,8 +72,29 @@ def main(args):
         torsion_summary = glycan.get_torsions_collection()
         linkages = {}
         for torsion in torsion_summary:
-            linkage = torsion["second_residue"] + "-" + torsion["acceptor_atom"][-1] + "," + torsion["donor_atom"][-1] + "-" +  torsion["first_residue"]
-            linkages.setdefault(linkage, []).append(torsion)
+            acceptors = re.findall(r'\d+', torsion["acceptor_atom"])
+            donors = re.findall(r'\d+', torsion["donor_atom"])
+            
+            if acceptors and donors:
+                linkage = torsion["second_residue"] + "-" + acceptors[-1] + "," + donors[-1]  + "-" +  torsion["first_residue"]
+            else:
+                if not acceptors: 
+                    linkage = torsion["second_residue"] + "-" + torsion["acceptor_atom"] + "," + donors[-1]  + "-" +  torsion["first_residue"]
+                
+                if not donors:
+                    linkage = torsion["second_residue"] + "-" + acceptors[-1] + "," + torsion["donor_atom"]  + "-" +  torsion["first_residue"]
+
+            formatted_torsion = {
+                "firstResidue": torsion["first_residue"],
+                "secondResidue": torsion["second_residue"],
+                "donorAtom": torsion["donor_atom"],
+                "acceptorAtom": torsion["acceptor_atom"],
+                "firstSeqId": torsion["first_seqid"],
+                "secondSeqId": torsion["second_seqid"],
+                "phi": torsion["phi"],
+                "psi": torsion["psi"]
+            }
+            linkages.setdefault(linkage, []).append(formatted_torsion)
 
         snfg_data = glycan.get_SNFG_strings()
         snfg = snfg_data["SNFG"]

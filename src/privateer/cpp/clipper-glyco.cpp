@@ -2400,7 +2400,7 @@ bool MSugar::bonded(const clipper::MAtomIndexSymmetry& ma_one, const clipper::MA
     {
         if ( ma_two.element().trim() == "C" )
         {
-            if ((distance >  1.18 ) && ( distance < 1.62 ))
+            if ((distance >  1.18 ) && ( distance < 1.70 ))
                 return true; // C-C or C=C
             else
                 return false;

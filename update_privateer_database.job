@@ -11,29 +11,31 @@ echo Running job on host:
 echo -e '\t'`hostname` at `date`
 echo
  
+cd /y/people/jsd523/dev/privateer
 source /y/people/jsd523/dev/privateer/pyenv/bin/activate
 source /y/people/jsd523/dev/privateer/ccp4.envsetup-sh 
-curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB Run Started - `date`'}"
+# curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB Run Started - `date`'}"
 python /y/people/jsd523/dev/privateer/database/generate_pdb_db.py > /y/people/jsd523/dev/privateer/pdb_run.log &> /y/people/jsd523/dev/privateer/pdb_run_err.log
-curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB Run Completed - `date`'}"
+# curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB Run Completed - `date`'}"
 
-curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB-REDO Run Started - `date`'}"
+# curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB-REDO Run Started - `date`'}"
 python /y/people/jsd523/dev/privateer/database/generate_pdbredo_db.py  > /y/people/jsd523/dev/privateer/pdb-redo_run.log     
-curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB-REDO Run Completed - `date`'}"
+# curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'PDB-REDO Run Completed - `date`'}"
   
-curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'Updating Database Repository - `date`'}"
+# curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'Updating Database Repository - `date`'}"
 cd /vault/privateer_database
 message="Database Updated - `date`"
 git add . 
 git commit -m"${message}"
 git push
 
-curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'Database Analysis Started - `date`'}"
+# curl -X POST "https://chat.googleapis.com/v1/spaces/AAAANjHPkNs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=cPXLED9TFEasmCAmoSab9D0F1AqPc5rV37haAb1GLEY" -H "Content-Type: application/json" -d "{'text': 'Database Analysis Started - `date`'}"
 
 cd /vault/privateer_database_analysis
 python database_analysis.py
 python validation_errors.py 
 python find_types.py 
+cp -r linkages /vault/privateer_database
 mv *.json /vault/privateer_database/stats
 cd /vault/privateer_database
 
