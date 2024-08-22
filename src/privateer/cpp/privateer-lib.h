@@ -112,6 +112,14 @@ namespace privateer
                 {
                     sugar.override_conformation_diag ( true );
                 }
+                if ( sugar.conformation_name() == "4c1" )
+                {
+                    sugar.override_conformation_diag ( false );
+                }
+                if (sugar.type().trim() == "BMA")
+                {
+                    sugar.override_anomer_diag( false );
+                }
                 if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
                      sugar.ok_with_chirality() && sugar.ok_with_puckering() )
                     str << "<tspan>No issues have been detected.</tspan>";
@@ -155,9 +163,20 @@ namespace privateer
         {
             
             GlycanErrorCount err; 
-                if ( ( glycan.get_type() == "c-glycan" ) && (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+                if  ( glycan.get_type() == "c-glycan" )
                 {
-                    sugar.override_conformation_diag ( true );
+                    if ((sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+                    {
+                        sugar.override_conformation_diag ( true );
+                    }
+                    if ( sugar.conformation_name() == "4c1" )
+                    {
+                        sugar.override_conformation_diag ( false );
+                    }
+                    if (sugar.type().trim() == "BMA")
+                    {
+                        sugar.override_anomer_diag( false );
+                    }
                 }
                 if ( ! sugar.ok_with_anomer() ) {
                     err.anomer_err++; 
@@ -180,10 +199,22 @@ namespace privateer
 
         inline const bool sugar_contains_issues ( clipper::MSugar sugar, clipper::MGlycan glycan )
         {
-            if ( ( glycan.get_type() == "c-glycan" ) && (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+            if  ( glycan.get_type() == "c-glycan" )
+            {
+                if ((sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
                 {
                     sugar.override_conformation_diag ( true );
                 }
+                if ( sugar.conformation_name() == "4c1" )
+                {
+                    sugar.override_conformation_diag ( false );
+                }
+                if (sugar.type().trim() == "BMA")
+                {
+                    sugar.override_anomer_diag( false );
+
+                }
+            }
             if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
                     sugar.ok_with_chirality() && sugar.ok_with_puckering() )
                 return false;
