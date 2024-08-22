@@ -648,7 +648,7 @@ def _remove_waters_and_recalc_map(input_pdb, mtzfile, outputpath, pdbout, mtzout
         print(f"Error refining structure {input_pdb}")
     return pdbout, mtzout
 
-def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
+def _calc_rscc_grafted_glycans_privateer(refined_pdb, original_mtz, graftedGlycans):
     mtz = gemmi.read_mtz_file(original_mtz)
     if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
         glycosylation = pvtcore.GlycosylationComposition(refined_pdb, original_mtz, "F,SIGF")
@@ -669,6 +669,43 @@ def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
                 summary = sugar.get_sugar_summary()
                 if summary["sugar_name_short"] == graftedglycan["donor_glycan_root_type"] and summary["sugar_pdb_chain"] == graftedglycan["glycan_grafted_as_chainID"] and summary["sugar_seqnum"] == graftedglycan["donor_glycan_root_PDBID"]:
                     graftedGlycans[i]["RSCC"] = summary["RSCC"]
+    return graftedGlycans
+
+def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
+    # Taken and edited from ModelCraft
+    mtz = gemmi.read_mtz_file(original_mtz)
+    st  = gemmi.read_structure(refined_pdb)
+    calculator = gemmi.DensityCalculatorX()
+    calculator.d_min = mtz.resolution_high()
+    calculator.set_grid_cell_and_spacegroup(st)
+    calculator.put_model_density_on_grid(st[0])
+    
+    f = "FWT"
+    phi = "PHWT"
+    radius = 2
+    rmap = mtz.transform_f_phi_to_map(f, phi, exact_size=calculator.grid.shape)
+    search = gemmi.NeighborSearch(st, radius)
+    search.populate(include_h=False)
+
+    residue_pairs = {}
+
+    for point in map.masked_asu():
+        position = map.point_to_position(point)
+        mark = search.find_nearest_atom(position)
+        if mark is not None:
+            cra = mark.to_cra(st[0])
+            key = (cra.chain.name, str(cra.residue.seqid), cra.residue.name)
+            value1 = point.value
+            value2 = calculator.grid.get_value(point.u, point.v, point.w)
+            residue_pairs.setdefault(key, []).append((value1, value2))
+
+    for i in range(len(graftedGlycans)):
+        graftedglycan = graftedGlycans[i]
+        for key, pairs in residue_pairs.items():
+            if key[0] == graftedglycan["glycan_grafted_as_chainID"] and key[1] == str(graftedglycan["donor_glycan_root_PDBID"]):
+                if len(pairs) > 1:
+                    values1, values2 = zip(*pairs)
+                    graftedGlycans[i]["RSCC"] = round(np.corrcoef(values1, values2)[0, 1], 3)
     return graftedGlycans
 
 def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpath, rscc_threshold = 0.5):
