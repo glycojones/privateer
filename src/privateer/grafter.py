@@ -699,10 +699,8 @@ def _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
             residue_pairs.setdefault(key, []).append((value1, value2))
     for i in range(len(graftedGlycans)):
         graftedglycan = graftedGlycans[i]
-        print(str(graftedglycan["glycan_grafted_as_chainID"]))
-        print(str(graftedglycan["donor_glycan_root_PDBID"]))
+        graftedGlycans[i]["RSCC"] = 0
         for key, pairs in residue_pairs.items():
-            print(key)
             if str(key[0]) == str(graftedglycan["glycan_grafted_as_chainID"]) and str(key[1]) == str(graftedglycan["donor_glycan_root_PDBID"]):
                 if len(pairs) > 0:
                     values1, values2 = zip(*pairs)
