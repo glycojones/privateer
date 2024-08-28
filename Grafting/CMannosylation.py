@@ -916,7 +916,7 @@ if __name__ == "__main__":
         rootdir = os.getenv("PRIVATEER_USEFUL_DATA", None)
         defaultdonordir = os.path.join(rootdir, "glycan_donor_repertoire")
     else:
-        defaultdonordir = "/y/people/lah583/privateer/data/glycan_donor_repertoire"
+        defaultdonordir = "/y/people/lah583/privateer/useful_data/glycan_donor_repertoire"
     defaultoutputdir = os.path.join(cwd,"output")
     defaultredo = False
     parser = argparse.ArgumentParser(
