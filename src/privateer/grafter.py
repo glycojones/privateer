@@ -671,9 +671,9 @@ def _calc_rscc_grafted_glycans_privateer(refined_pdb, original_mtz, graftedGlyca
                     graftedGlycans[i]["RSCC"] = summary["RSCC"]
     return graftedGlycans
 
-def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
+def _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
     # Taken and edited from ModelCraft
-    mtz = gemmi.read_mtz_file(original_mtz)
+    mtz = gemmi.read_mtz_file(refined_mtz)
     st  = gemmi.read_structure(refined_pdb)
     calculator = gemmi.DensityCalculatorX()
     calculator.d_min = mtz.resolution_high()
@@ -697,11 +697,10 @@ def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
             value1 = point.value
             value2 = calculator.grid.get_value(point.u, point.v, point.w)
             residue_pairs.setdefault(key, []).append((value1, value2))
-
     for i in range(len(graftedGlycans)):
         graftedglycan = graftedGlycans[i]
         for key, pairs in residue_pairs.items():
-            if key[0] == graftedglycan["glycan_grafted_as_chainID"] and key[1] == str(graftedglycan["donor_glycan_root_PDBID"]):
+            if str(key[0]) == str(graftedglycan["glycan_grafted_as_chainID"]) and int(key[1]) == int(graftedglycan["donor_glycan_root_PDBID"]):
                 if len(pairs) > 1:
                     values1, values2 = zip(*pairs)
                     graftedGlycans[i]["RSCC"] = round(np.corrcoef(values1, values2)[0, 1], 3)
@@ -958,7 +957,6 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
             resolution = st.resolution
             refined_pdb, refined_mtz = _refine_grafted_glycans(outputpath, mtzfile, outputlocation, pdbout, mtzout, 20, resolution)
             if os.path.isfile(refined_pdb):
-                os.remove(refined_mtz)
                 os.remove(mmcifout)
                 if mode == 'CMannosylation':
                     try:
@@ -968,7 +966,8 @@ def _local_input_model_pipeline(receiverpath, donorpath, outputpath,
                     except:
                         pdbout = refined_pdb
                         print(f"Failed to remove waters close to TRP in {pdbout}")
-                graftedGlycans = _calc_rscc_grafted_glycans(pdbout, mtzfile, graftedGlycans)
+                graftedGlycans = _calc_rscc_grafted_glycans(pdbout, refined_mtz, graftedGlycans)
+                os.remove(refined_mtz)
                 graftedGlycans = _remove_grafted_glycans(pdbout, mtzfile, graftedGlycans, outputlocation)
     return graftedGlycans
 
