@@ -865,7 +865,7 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
                     myfile.write("\tRefined")
-            os.remove(refined_mtz)
+            #os.remove(refined_mtz)
             os.remove(outputdir+f"/{pdbcode}_refined.mmcif")
             try:
                 pdbout = os.path.join(outputdir, f"{pdbcode}_removed_waters.pdb")
@@ -875,7 +875,9 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                 pdbout = refined_pdb
                 print(f"Failed to remove waters close to TRP in {pdbout}")
             #try:
-            graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
+            #graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
+            graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, refined_mtz, graftedGlycans)
+            os.remove(refined_mtz)
             graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
