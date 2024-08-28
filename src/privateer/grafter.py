@@ -679,7 +679,6 @@ def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
     calculator.d_min = mtz.resolution_high()
     calculator.set_grid_cell_and_spacegroup(st)
     calculator.put_model_density_on_grid(st[0])
-    
     f = "FWT"
     phi = "PHWT"
     radius = 2
@@ -689,8 +688,8 @@ def _calc_rscc_grafted_glycans(refined_pdb, original_mtz, graftedGlycans):
 
     residue_pairs = {}
 
-    for point in map.masked_asu():
-        position = map.point_to_position(point)
+    for point in rmap.masked_asu():
+        position = rmap.point_to_position(point)
         mark = search.find_nearest_atom(position)
         if mark is not None:
             cra = mark.to_cra(st[0])
