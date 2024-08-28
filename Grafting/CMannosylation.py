@@ -874,18 +874,18 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
             except:
                 pdbout = refined_pdb
                 print(f"Failed to remove waters close to TRP in {pdbout}")
-            try:
-                graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
-                graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
-                if graftedlist is not None:
-                    with open(graftedlist, "a") as myfile:
-                        myfile.write("\n")
-            except:
-                print(f"Failed to calculate RSCC in {pdbout}")
-                if graftedlist is not None:
-                    with open(graftedlist, "a") as myfile:
-                        myfile.write("\tFailed RSCC calc")
-                        myfile.write("\n")
+            #try:
+            graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
+            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
+            if graftedlist is not None:
+                with open(graftedlist, "a") as myfile:
+                    myfile.write("\n")
+            #except:
+            #    print(f"Failed to calculate RSCC in {pdbout}")
+            #    if graftedlist is not None:
+            #        with open(graftedlist, "a") as myfile:
+            #            myfile.write("\tFailed RSCC calc")
+            #            myfile.write("\n")
         else: 
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
