@@ -1,5 +1,5 @@
-## Project settings
-#
+# New Build System CMake File - Jordan Dialpuri - 05/09/24
+
 cmake_minimum_required(VERSION 3.12)
 project(privateer VERSION 0.5 LANGUAGES C CXX)
 
