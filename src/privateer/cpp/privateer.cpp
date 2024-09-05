@@ -59,11 +59,15 @@ int main(int argc, char** argv)
 
     prog.set_termination_message( "Failed" );
 
-    std::cout << "\nPrivateer version " << program_version << ". Copyright 2013-2021 Jon Agirre (@glycojones) & University of York.";
-    std::cout << "\nContributors: Haroldas Bagdonas (@GABRAHREX) and the rest of Glycojones Team at York.";
-    std::cout << "\nPlease reference these articles: "<< std::endl ;
+    std::cout << "\nPrivateer Version " << program_version << ". Copyright 2013-2024 Jon Agirre (@glycojones) & University of York.";
+    std::cout << "\nContributors: Haroldas Bagdonas (@GABRAHREX), Jordan Dialpuri (@Dialpuri), Lucy Schofield (@lcs551) and Lou Holland (@louholland).";
+    std::cout << "\nIf you find Privateer useful, please reference these articles: "<< std::endl ;
+    std::cout << "\n   - 'Online carbohydrate 3D structure validation with the Privateer web app'";
+    std::cout << "\n   -  Dialpuri et al., 2024, Acta Crystallographica Section F, 80, 30-35." << std::endl;
+    std::cout << "\n   -  Analysis and validation of overall N-glycan conformation in Privateer.";
+    std::cout << "\n   -  Dialpuri et al., 2024, Acta Crystallographica Section D, 79, 462-472." << std::endl;    
     std::cout << "\n   - 'Privateer: software for the conformational validation of carbohydrate structures'";
-    std::cout << "\n      Agirre et al, 2015 Nat Struct & Mol Biol 22(11):833-834." << std::endl;
+    std::cout << "\n      Agirre et al., 2015 Nat Struct & Mol Biol 22(11):833-834." << std::endl;
     std::cout << "\n   - 'Leveraging glycomics data in glycoprotein 3D structure validation with Privateer'";
     std::cout << "\n      Bagdonas, Ungar & Agirre, 2020 Beilstein Journal of Organic Chemistry 16(1):2523-2533." << std::endl;
 
@@ -931,9 +935,20 @@ int main(int argc, char** argv)
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
-
-                              ligandList[index].second.set_context ( "c-glycan" );
-                              fprintf ( output, "\t(c) " );
+                                if ( (ligandList[index].second.type().trim() == "MAN" ) && (ligandList[index].second.conformation_name() == "1c4"))
+                                {
+                                    ligandList[index].second.override_conformation_diag ( true );
+                                }
+                                if (ligandList[index].second.conformation_name() == "4c1")
+                                {
+                                    ligandList[index].second.override_conformation_diag ( false );
+                                }
+                                if (ligandList[index].second.type().trim() == "BMA" )
+                                {
+                                    ligandList[index].second.override_anomer_diag ( false );
+                                }
+                                ligandList[index].second.set_context ( "c-glycan" );
+                                fprintf ( output, "\t(c) " );
                             }
                             else if ( list_of_glycans[i].get_type() == "o-glycan" )
                             {
@@ -978,6 +993,10 @@ int main(int argc, char** argv)
                         if (ligandList[index].second.is_sane())
                         {
                             if ( ! ligandList[index].second.ok_with_conformation() )
+                            {
+                                fprintf(output, "\tcheck");
+                            }
+                            else if ( ! ligandList[index].second.ok_with_anomer() )
                             {
                                 fprintf(output, "\tcheck");
                             }
@@ -1070,6 +1089,18 @@ int main(int argc, char** argv)
                             }
                             else if ( list_of_glycans[i].get_type() == "c-glycan" )
                             {
+                                if ( (ligandList[index].second.type().trim() == "MAN" ) && (ligandList[index].second.conformation_name() == "1c4"))
+                                {
+                                    ligandList[index].second.override_conformation_diag ( true );
+                                }
+                                if (ligandList[index].second.conformation_name() == "4c1")
+                                {
+                                    ligandList[index].second.override_conformation_diag ( false );
+                                }
+                                if (ligandList[index].second.type().trim() == "BMA" )
+                                {
+                                    ligandList[index].second.override_anomer_diag ( false );
+                                }
                                 ligandList[index].second.set_context ( "c-glycan" );
 
                                 std::cout << "\t(c) ";
@@ -1119,6 +1150,10 @@ int main(int argc, char** argv)
                         if (ligandList[index].second.is_sane())
                         {
                             if ( ! ligandList[index].second.ok_with_conformation () )
+                            {
+                                printf("\tcheck");
+                            }
+                            else if ( ! ligandList[index].second.ok_with_anomer () )
                             {
                                 printf("\tcheck");
                             }
@@ -1255,6 +1290,15 @@ int main(int argc, char** argv)
                 }
                 else // sugar is sane, but still need to check higher-energy conformations
                 {
+                    if (!ligandList[k].second.ok_with_anomer()) // FLAG: Here for c-glycan case where sanity check has happened before diagnostics overidden. 
+                    {
+                        if ( n_errors > 0 )
+                            diagnostic.append(", wrong anomer");
+                        else
+                            diagnostic.append("wrong anomer");
+
+                        n_errors++; n_anomer++;
+                    }
                     if ( !ligandList[k].second.ok_with_conformation() )
                     {
                         if ( n_errors > 0 )
@@ -3206,6 +3250,22 @@ int main(int argc, char** argv)
             }
             else // sugar is sane, but still need to check higher-energy conformations
             {
+                if (!ligandList[k].second.ok_with_anomer()) // FLAG: Here for c-glycan case where sanity check has happened before diagnostics overidden. 
+                {
+                    if ( n_errors > 0 )
+                    {
+                        diagnostic.append(", wrong anomer");
+                        report.append(", wrong anomer");
+                    }
+                    else
+                    {
+                        diagnostic.append("wrong anomer");
+                        report.append("Wrong anomer");
+                    }
+
+                    n_errors++;
+                    n_anomer++;
+                }
                 if ( !ligandList[k].second.ok_with_conformation() )
                 {
                     if ( n_errors > 0 )

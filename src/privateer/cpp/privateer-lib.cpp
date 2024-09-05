@@ -385,222 +385,222 @@ void privateer::util::print_supported_code_list ()
 bool privateer::util::write_libraries ( std::vector < std::string > code_list, float esd )
 {
 
-    // class PrTorsion : public ccp4srs::Torsion
-    // {
-    //   public:
-    //     void set_period ( int period  ) { this->torsion_period = period; }
-    //     void set_esd    ( float esd   ) { this->torsion_esd    = esd;    }
-    //     void set_value  ( float value ) { this->torsion        = value;  }
+    class PrTorsion : public ccp4srs::Torsion
+    {
+      public:
+        void set_period ( int period  ) { this->torsion_period = period; }
+        void set_esd    ( float esd   ) { this->torsion_esd    = esd;    }
+        void set_value  ( float value ) { this->torsion        = value;  }
 
-    //     bool is_ring_torsion ( std::vector < clipper::String > &ring_atoms, ccp4srs::PMonomer Monomer )
-    //     {
-    //         int n_atoms_checked = 0;
+        bool is_ring_torsion ( std::vector < clipper::String > &ring_atoms, ccp4srs::PMonomer Monomer )
+        {
+            int n_atoms_checked = 0;
 
-    //         for ( int i = 0 ; i < ring_atoms.size() ; i ++ )
-    //         {
-    //             if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom1() )->name() ).trim() )
-    //                 n_atoms_checked++;
-    //             else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom2() )->name() ).trim() )
-    //                 n_atoms_checked++;
-    //             else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom3() )->name() ).trim() )
-    //                 n_atoms_checked++;
-    //             else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom4() )->name() ).trim() )
-    //                 n_atoms_checked++;
-    //         }
+            for ( int i = 0 ; i < ring_atoms.size() ; i ++ )
+            {
+                if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom1() )->name() ).trim() )
+                    n_atoms_checked++;
+                else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom2() )->name() ).trim() )
+                    n_atoms_checked++;
+                else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom3() )->name() ).trim() )
+                    n_atoms_checked++;
+                else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom4() )->name() ).trim() )
+                    n_atoms_checked++;
+            }
 
-    //         if ( n_atoms_checked == 4 )
-    //             return true;
-    //         else
-    //             return false;
-    //     }
-    // };
+            if ( n_atoms_checked == 4 )
+                return true;
+            else
+                return false;
+        }
+    };
 
-    // std::cout << "Writing out tighter geometry restraints to 'privateer-lib.cif'... " << std::endl;
-    // mmdb::InitMatType();
+    std::cout << "Writing out tighter geometry restraints to 'privateer-lib.cif'... " << std::endl;
+    mmdb::InitMatType();
 
-    // ccp4srs::PManager srs;
-    // ccp4srs::PMonomer Monomer;
-    // mmdb::math::PGraph Graph;
+    ccp4srs::PManager srs;
+    ccp4srs::PMonomer Monomer;
+    mmdb::math::PGraph Graph;
 
-    // // remove replicas
+    // remove replicas
 
-    // std::sort ( code_list.begin(), code_list.end() );
-    // std::vector< std::string >::iterator last = std::unique(code_list.begin(), code_list.end());
-    // code_list.erase ( last, code_list.end() );
+    std::sort ( code_list.begin(), code_list.end() );
+    std::vector< std::string >::iterator last = std::unique(code_list.begin(), code_list.end());
+    code_list.erase ( last, code_list.end() );
 
-    // int rc;
-    // //char *S;
+    int rc;
+    //char *S;
 
-    // std::string S(std::getenv ( "CCP4" ));
+    std::string S(std::getenv ( "CCP4" ));
 
-    // if (S.length() < 200 )
-    //     S.append ( "/share/ccp4srs" );
-    // else
-    //     return true;
+    if (S.length() < 200 )
+        S.append ( "/share/ccp4srs" );
+    else
+        return true;
 
-    // srs = new ccp4srs::Manager();
-    // rc = srs->loadIndex ( S.c_str() );
+    srs = new ccp4srs::Manager();
+    rc = srs->loadIndex ( S.c_str() );
 
-    // if (rc!=ccp4srs::CCP4SRS_Ok)
-    // {
-    //     printf ( "\tError: unable to access CCP4 SRS library.\n" );
-    //     delete srs;
-    //     return true;
-    // }
+    if (rc!=ccp4srs::CCP4SRS_Ok)
+    {
+        printf ( "\tError: unable to access CCP4 SRS library.\n" );
+        delete srs;
+        return true;
+    }
 
-    // std::vector < ccp4srs::PMonomer > pmonomer_list;
+    std::vector < ccp4srs::PMonomer > pmonomer_list;
 
-    // // write out the library file
+    // write out the library file
 
-    // mmdb::io::File f;
-    // f.assign ( "privateer-lib.cif", true, false );
+    mmdb::io::File f;
+    f.assign ( "privateer-lib.cif", true, false );
 
-    // if (!f.rewrite())
-    // {
-    //     printf ( "\tError: cannot open file '%s' for writing.\n", f.FileName() );
-    //     return true;
-    // }
+    if (!f.rewrite())
+    {
+        printf ( "\tError: cannot open file '%s' for writing.\n", f.FileName() );
+        return true;
+    }
 
-    // mmdb::mmcif::Data data;
-    // data.PutDataName ( "comp_list" );
-    // data.WriteMMCIF ( f );
+    mmdb::mmcif::Data data;
+    data.PutDataName ( "comp_list" );
+    data.WriteMMCIF ( f );
 
-    // mmdb::mmcif::Loop loop_components;
+    mmdb::mmcif::Loop loop_components;
 
-    // loop_components.SetCategoryName ( "_chem_comp" );
-    // loop_components.AddLoopTag ( "id" );
-    // loop_components.AddLoopTag ( "three_letter_code" );
-    // loop_components.AddLoopTag ( "name" );
-    // loop_components.AddLoopTag ( "group" );
-    // loop_components.AddLoopTag ( "number_atoms_all" );
-    // loop_components.AddLoopTag ( "number_atoms_nh" );
-    // loop_components.AddLoopTag ( "desc_level" );
+    loop_components.SetCategoryName ( "_chem_comp" );
+    loop_components.AddLoopTag ( "id" );
+    loop_components.AddLoopTag ( "three_letter_code" );
+    loop_components.AddLoopTag ( "name" );
+    loop_components.AddLoopTag ( "group" );
+    loop_components.AddLoopTag ( "number_atoms_all" );
+    loop_components.AddLoopTag ( "number_atoms_nh" );
+    loop_components.AddLoopTag ( "desc_level" );
 
-    // for ( int base_index = 0 ; base_index < code_list.size(); base_index++ )
-    // {
+    for ( int base_index = 0 ; base_index < code_list.size(); base_index++ )
+    {
 
-    //     Monomer = srs->getMonomer ( code_list[base_index].c_str(), NULL );
+        Monomer = srs->getMonomer ( code_list[base_index].c_str(), NULL );
 
-    //     std::cout << "Searching for " << code_list[base_index].c_str() << std::endl;
+        std::cout << "Searching for " << code_list[base_index].c_str() << std::endl;
 
-    //     if ( !Monomer )
-    //     {
-    //         std::cout << "Monomer not found... " << std::endl;
-    //         return true;
-    //     }
-    //     else if ( Monomer->n_torsions() == 0 )
-    //     {
-    //         std::cout << std::endl << "\tWARNING: minimal description found for sugar " << code_list[base_index] << " in monomer library."
-    //                   << std::endl << "\tSkipping..." << std::endl;
-    //         continue;
-    //     }
+        if ( !Monomer )
+        {
+            std::cout << "Monomer not found... " << std::endl;
+            return true;
+        }
+        else if ( Monomer->n_torsions() == 0 )
+        {
+            std::cout << std::endl << "\tWARNING: minimal description found for sugar " << code_list[base_index] << " in monomer library."
+                      << std::endl << "\tSkipping..." << std::endl;
+            continue;
+        }
 
-    //     std::vector < clipper::String > ring_atoms;
+        std::vector < clipper::String > ring_atoms;
 
-    //     for ( int i = 0 ; i < clipper::data::sugar_database_size ; i++ )
-    //         if ( code_list[base_index] == clipper::data::sugar_database[i].name_short.trim() )
-    //         {
-    //             ring_atoms = clipper::data::sugar_database[i].ring_atoms.trim().split(" ");
-    //             break;
-    //         }
+        for ( int i = 0 ; i < clipper::data::sugar_database_size ; i++ )
+            if ( code_list[base_index] == clipper::data::sugar_database[i].name_short.trim() )
+            {
+                ring_atoms = clipper::data::sugar_database[i].ring_atoms.trim().split(" ");
+                break;
+            }
 
-    //     if ( ring_atoms.size() < 3 )
-    //         continue; // this means we haven't found our stuff
-    //                      // by design, the only reason would be that we're handling a novel
-    //                      // sugar we don't have a dictionary for yet
+        if ( ring_atoms.size() < 3 )
+            continue; // this means we haven't found our stuff
+                         // by design, the only reason would be that we're handling a novel
+                         // sugar we don't have a dictionary for yet
 
-    //     // now we set period to 1 on JUST ring torsions
+        // now we set period to 1 on JUST ring torsions
 
-    //     loop_components.AddString ( code_list[base_index].c_str() );
-    //     loop_components.AddString ( code_list[base_index].c_str() );
-    //     loop_components.AddString ( Monomer->chem_name() );
-    //     loop_components.AddString ( "pyranose" );
-    //     loop_components.AddInteger ( Monomer->n_atoms() );
-    //     loop_components.AddInteger ( Monomer->n_atoms() / 2 );
-    //     loop_components.AddString ( "." );
+        loop_components.AddString ( code_list[base_index].c_str() );
+        loop_components.AddString ( code_list[base_index].c_str() );
+        loop_components.AddString ( Monomer->chem_name() );
+        loop_components.AddString ( "pyranose" );
+        loop_components.AddInteger ( Monomer->n_atoms() );
+        loop_components.AddInteger ( Monomer->n_atoms() / 2 );
+        loop_components.AddString ( "." );
 
 
-    //     PrTorsion* torsion;
+        PrTorsion* torsion;
 
-    //     for ( int i = 0; i < Monomer->n_torsions(); i++ )
-    //     {
-    //         torsion = (PrTorsion*)Monomer->torsion(i);
+        for ( int i = 0; i < Monomer->n_torsions(); i++ )
+        {
+            torsion = (PrTorsion*)Monomer->torsion(i);
 
-    //         if ( torsion->is_ring_torsion( ring_atoms, Monomer ) )
-    //         {
-    //             clipper::Coord_orth atom1_coords ( Monomer->atom ( torsion->atom1() )->x(),
-    //                                                Monomer->atom ( torsion->atom1() )->y(),
-    //                                                Monomer->atom ( torsion->atom1() )->z() );
+            if ( torsion->is_ring_torsion( ring_atoms, Monomer ) )
+            {
+                clipper::Coord_orth atom1_coords ( Monomer->atom ( torsion->atom1() )->x(),
+                                                   Monomer->atom ( torsion->atom1() )->y(),
+                                                   Monomer->atom ( torsion->atom1() )->z() );
 
-    //             clipper::Coord_orth atom2_coords ( Monomer->atom ( torsion->atom2() )->x(),
-    //                                                Monomer->atom ( torsion->atom2() )->y(),
-    //                                                Monomer->atom ( torsion->atom2() )->z() );
+                clipper::Coord_orth atom2_coords ( Monomer->atom ( torsion->atom2() )->x(),
+                                                   Monomer->atom ( torsion->atom2() )->y(),
+                                                   Monomer->atom ( torsion->atom2() )->z() );
 
-    //             clipper::Coord_orth atom3_coords ( Monomer->atom ( torsion->atom3() )->x(),
-    //                                                Monomer->atom ( torsion->atom3() )->y(),
-    //                                                Monomer->atom ( torsion->atom3() )->z() );
+                clipper::Coord_orth atom3_coords ( Monomer->atom ( torsion->atom3() )->x(),
+                                                   Monomer->atom ( torsion->atom3() )->y(),
+                                                   Monomer->atom ( torsion->atom3() )->z() );
 
-    //             clipper::Coord_orth atom4_coords ( Monomer->atom ( torsion->atom4() )->x(),
-    //                                                Monomer->atom ( torsion->atom4() )->y(),
-    //                                                Monomer->atom ( torsion->atom4() )->z() );
+                clipper::Coord_orth atom4_coords ( Monomer->atom ( torsion->atom4() )->x(),
+                                                   Monomer->atom ( torsion->atom4() )->y(),
+                                                   Monomer->atom ( torsion->atom4() )->z() );
 
-    //             float torsion_value = clipper::Coord_orth::torsion ( atom1_coords,
-    //                                                                  atom2_coords,
-    //                                                                  atom3_coords,
-    //                                                                  atom4_coords );
+                float torsion_value = clipper::Coord_orth::torsion ( atom1_coords,
+                                                                     atom2_coords,
+                                                                     atom3_coords,
+                                                                     atom4_coords );
 
-    //             float measured_period = clipper::Util::rad2d ( torsion_value );
+                float measured_period = clipper::Util::rad2d ( torsion_value );
 
-    //             if ( std::abs( measured_period - torsion->value()) > 10 )
-    //                 std::cout << std::endl << "\tWARNING: torsion " << i << " ("
-    //                                           + code_list[base_index]
-    //                                           + ") from the monomer library doesn't match the measured torsion!!"
-    //                           << std::endl << "\tThe measured value will be used, but this means the CCP4 monomer library is probably wrong."
-    //                           << std::endl << "\tPlease report this to ccp4@ccp4.ac.uk"
-    //                           << std::endl ;
+                if ( std::abs( measured_period - torsion->value()) > 10 )
+                    std::cout << std::endl << "\tWARNING: torsion " << i << " ("
+                                              + code_list[base_index]
+                                              + ") from the monomer library doesn't match the measured torsion!!"
+                              << std::endl << "\tThe measured value will be used, but this means the CCP4 monomer library is probably wrong."
+                              << std::endl << "\tPlease report this to ccp4@ccp4.ac.uk"
+                              << std::endl ;
 
-    //             torsion->set_period(1);
-    //             torsion->set_esd ( esd );
-    //             torsion->set_value ( measured_period );
-    //         }
-    //     }
+                torsion->set_period(1);
+                torsion->set_esd ( esd );
+                torsion->set_value ( measured_period );
+            }
+        }
 
-    //     pmonomer_list.push_back ( Monomer );
-    // }
+        pmonomer_list.push_back ( Monomer );
+    }
 
-    // loop_components.WriteMMCIF ( f );
+    loop_components.WriteMMCIF ( f );
 
-    // for ( int individual_monomer = 0 ; individual_monomer < pmonomer_list.size() ; individual_monomer++ )
-    // {
-    //     mmdb::mmcif::PData data_out = pmonomer_list[individual_monomer]->makeCIF();
+    for ( int individual_monomer = 0 ; individual_monomer < pmonomer_list.size() ; individual_monomer++ )
+    {
+        mmdb::mmcif::PData data_out = pmonomer_list[individual_monomer]->makeCIF();
 
-    //     // Fix for an mmdb2 bug that produces empty blocks
+        // Fix for an mmdb2 bug that produces empty blocks
 
-    //     if ( data_out->GetLoopLength("_chem_comp_plane_atom") == 0 )
-    //     {
-    //        data_out->DeleteLoop("_chem_comp_plane_atom");
-    //     }
+        if ( data_out->GetLoopLength("_chem_comp_plane_atom") == 0 )
+        {
+           data_out->DeleteLoop("_chem_comp_plane_atom");
+        }
 
-    //     data_out->WriteMMCIF ( f );
-    //     data_out->FreeMemory ( 0 );
-    //     delete data_out;
-    // }
+        data_out->WriteMMCIF ( f );
+        data_out->FreeMemory ( 0 );
+        delete data_out;
+    }
 
-    // f.shut();
+    f.shut();
 
-    // std::filebuf myfile;
-    // myfile.open ("privateer-lib.cif", std::ios::in | std::ios::out);
+    std::filebuf myfile;
+    myfile.open ("privateer-lib.cif", std::ios::in | std::ios::out);
 
-    // if (!myfile.is_open())
-    //     std::cout << "Cannot open library file - this is a bug, please report (jon.agirre@york.ac.uk)" << std::endl;
+    if (!myfile.is_open())
+        std::cout << "Cannot open library file - this is a bug, please report (jon.agirre@york.ac.uk)" << std::endl;
 
-    // if ( Monomer )
-    //     delete Monomer;
+    if ( Monomer )
+        delete Monomer;
 
-    // if ( srs )
-    //     delete srs;
+    if ( srs )
+        delete srs;
 
-    // return false;
+    return false;
 }
 
 void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, std::vector<privateer::json::GlycomicsDatabase>& glycomics_database )
@@ -1046,7 +1046,6 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
             printf("%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
             std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
         }
-
         if (batch)
         {
             std::vector<clipper::ftype> cpParams(10, 0);
@@ -1071,6 +1070,14 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                 if ( (ligandList[index].second.type().trim() == "MAN" ) && (ligandList[index].second.conformation_name() == "1c4"))
                 {
                     ligandList[index].second.override_conformation_diag ( true );
+                }
+                if (ligandList[index].second.conformation_name() == "4c1")
+                {
+                    ligandList[index].second.override_conformation_diag ( false );
+                }
+                if (ligandList[index].second.type().trim() == "BMA" )
+                {
+                    ligandList[index].second.override_anomer_diag ( false );
                 }
                 fprintf ( output, "\t(c) " );
             }
@@ -1098,6 +1105,10 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                     if (ligandList[index].second.is_sane())
                     {
                         if ( ! ligandList[index].second.ok_with_conformation () )
+                        {
+                            fprintf(output, "\tcheck");
+                        }
+                        else if ( ! ligandList[index].second.ok_with_anomer () )
                         {
                             fprintf(output, "\tcheck");
                         }
@@ -1171,6 +1182,14 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                 {
                     ligandList[index].second.override_conformation_diag ( true );
                 }
+                if (ligandList[index].second.conformation_name() == "4c1")
+                {
+                    ligandList[index].second.override_conformation_diag ( false );
+                }
+                if (ligandList[index].second.type().trim() == "BMA" )
+                {
+                    ligandList[index].second.override_anomer_diag ( false );
+                }
                 std::cout << "\t(c) ";
             }
             else if ( ligandList[index].second.get_context() == "o-glycan" )
@@ -1198,6 +1217,10 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                     {
                         if ( ! ligandList[index].second.ok_with_conformation () )
                             printf("\tcheck");
+                        else if ( ! ligandList[index].second.ok_with_anomer () )
+                        {
+                            printf("\tcheck");
+                        }
                         else
                             printf("\tyes");
                     }
@@ -1289,6 +1312,14 @@ void privateer::util::print_monosaccharide_summary_python (bool batch, bool show
             {
                 ligandList[index].second.override_conformation_diag ( true );
             }
+            if (ligandList[index].second.conformation_name() == "4c1")
+            {
+                ligandList[index].second.override_conformation_diag ( false );
+            }
+            if (ligandList[index].second.type().trim() == "BMA" )
+            {
+                ligandList[index].second.override_anomer_diag ( false );
+            }
             std::cout << "\t(c) ";
         }
         else if ( ligandList[index].second.get_context() == "o-glycan" )
@@ -1316,6 +1347,10 @@ void privateer::util::print_monosaccharide_summary_python (bool batch, bool show
                 {
                     if ( ! ligandList[index].second.ok_with_conformation () )
                         printf("\tcheck");
+                    else if ( ! ligandList[index].second.ok_with_anomer () )
+                    {
+                        printf("\tcheck");
+                    }
                     else
                         printf("\tyes");
                 }

@@ -18,7 +18,7 @@
 
 #include "gemmi/mmread.hpp"
 #include "gemmi/monlib.hpp"
-// #include "gemmi/placeh.hpp"
+#include "gemmi/placeh.hpp"
 #include "gemmi/fstream.hpp"
 #include "gemmi/cif.hpp"
 #include "gemmi/to_pdb.hpp"

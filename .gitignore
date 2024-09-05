@@ -1,0 +1,71 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+### Above combination will ignore all files without extension ###
+
+# do not track compilation byproducts
+*.cxx
+*.so
+*.dylib
+*.vscode
+*.pyc
+.pytest_cache
+privateer.exe
+privateer.py
+__pycache__
+
+# do not track make and cmake stuff
+Makefile
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+
+# do not track test results
+unittests/test_output
+unittests/test_output/*
+unittests/test_data/test_truncatedglycans
+unittests/test_data/*.svg
+unittests/test_data/*.py
+unittests/test_data/*.scm
+unittests/annotated_glycans_hierarchical.xml
+
+# here you go, neat and tidy
+# until next time
+# cheerio
+.DS_Store
+CTestTestfile.cmake
+install_manifest.txt
+
+# project specific
+dependencies/ccp4srs/
+dependencies/clipper/
+dependencies/fftw/
+dependencies/include
+dependencies/info
+dependencies/lib/
+dependencies/libccp4/
+dependencies/mmdb2/
+dependencies/share/
+dependencies/bzr/
+privateerpython/
+src/privateer.egg-info/
+build/
+tests/test_data/6xr8.map
+tests/test_data/6x79.map
+tests/test_data/7bv2.map
+tests/test_data/6xr8_290.map
+tests/test_data/6x79_290.map
+tests/test_data/7bv2_250.map
+tests/test_data/6m15.map
+# aka https://github.com/GABRAH/project_alliance
+project_alliance
+# aka https://github.com/GABRAH/PrivateerDataAnalysis
+project_sigma
+# Do not ignore the folder itself, but ignore the contents inside of the folder instead.
+results/*
