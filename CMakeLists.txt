@@ -302,6 +302,6 @@ set_target_properties(privateer_modelling PROPERTIES LINK_FLAGS "-undefined dyna
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 
 install ( TARGETS privateer_lib LIBRARY DESTINATION privateer)
-install ( TARGETS privateer_exec LIBRARY DESTINATION privateer)
+install ( TARGETS privateer_exec DESTINATION ${CMAKE_SOURCE_DIR})
 install ( TARGETS privateer_core LIBRARY DESTINATION privateer )
 install ( TARGETS privateer_modelling LIBRARY DESTINATION privateer)
