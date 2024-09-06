@@ -278,7 +278,14 @@ set(privateer_HEADERS
 # "${privateer_HEADERS}")
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+execute_process(
+    COMMAND ${Python3_EXECUTABLE} -c "import sysconfig; print(sysconfig.get_path('scripts'))"
+    OUTPUT_VARIABLE PYTHON_BIN_DIR
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
 install(TARGETS privateer_lib LIBRARY DESTINATION privateer)
-install(TARGETS privateer_exec DESTINATION ${CMAKE_SOURCE_DIR})
+install(TARGETS privateer_exec DESTINATION ${PYTHON_BIN_DIR})
 install(TARGETS privateer_core LIBRARY DESTINATION privateer)
 install(TARGETS privateer_modelling LIBRARY DESTINATION privateer)
