@@ -295,8 +295,8 @@ set(privateer_HEADERS
   ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.h
 )
 
-set_target_properties(privateer_core PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
-set_target_properties(privateer_modelling PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
+# set_target_properties(privateer_core PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
+# set_target_properties(privateer_modelling PROPERTIES LINK_FLAGS "-undefined dynamic_lookup")
 
 # set_target_properties(privateer_exec PROPERTIES PUBLIC_HEADER "${privateer_HEADERS}")
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
