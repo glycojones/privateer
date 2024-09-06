@@ -9,7 +9,7 @@
 // privateer-interactions.h
 #include "gemmi/mmread.hpp"
 #include "gemmi/monlib.hpp"
-#include "gemmi/placeh.hpp"
+// #include "gemmi/placeh.hpp"
 #include "gemmi/fstream.hpp"
 #include "gemmi/cif.hpp"
 #define GEMMI_WRITE_IMPLEMENTATION
@@ -17,7 +17,7 @@
 #include "gemmi/to_pdb.hpp"
 
 // privateer-json.h
-#include "gemmi/third_party/sajson.h" 
+// #include "gemmi/third_party/sajson.h" 
 
 // privateer-restraints.h
 #include "gemmi/chemcomp.hpp"

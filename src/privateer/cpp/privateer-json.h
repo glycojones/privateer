@@ -11,8 +11,8 @@
 
 #include <iostream>
 #include "privateer-error.h"
-// #include "third-party/sajson.h" // Have to include it straight from gemmi, as otherwise it leads to "error: multiple definition of ‘enum sajson::type’" errors.
-#include "gemmi/third_party/sajson.h" 
+#include "third-party/sajson.h" // Have to include it straight from gemmi, as otherwise it leads to "error: multiple definition of ‘enum sajson::type’" errors.
+// #include "gemmi/third_party/sajson.h" 
 #include <vector>
 #include <unordered_map>
 #include <cstdio>    // for FILE, fopen, fclose
