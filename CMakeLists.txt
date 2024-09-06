@@ -10,6 +10,7 @@ set(PRIVATEER_CC_FLAGS "-O2 -w")
 set(PRIVATEER_CXX_FLAGS "-O2 -w -I${CMAKE_INSTALL_PREFIX}/include")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PRIVATEER_CC_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS} ")
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
 set(CMAKE_CXX_STANDARD 11)
@@ -83,6 +84,7 @@ include_directories(
   ${ccp4-dependencies_SOURCE_DIR}
   ${PRIVATEER_SOURCE_DIR}/cpp
   ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
+
 link_directories(
   ${CMAKE_BINARY_DIR}/mmdb2
   ${CMAKE_BINARY_DIR}/clipper
