@@ -23,26 +23,10 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: '3.7'
+        python-version: '3.9'
         repo-token: ${{secrets.GITHUB_TOKEN}}
-
-    - name: Check out dependencies
-      run : |
-        git clone https://github.com/Dialpuri/privateer_dependencies.git
-
-    - name: Source Environment 
-      run: source ccp4.envsetup-sh 
-
-    - name: Load python environment
-      run : pip install -r requirements.txt
-
-    - name: Setup cmake
-      uses: jwlawson/actions-setup-cmake@v1.13
  
     - name: Build
       run : |
-        pwd
-        export CLIBD=privateer_dependencies/lib/data
-
-        python setup_test.py install 
+        pip install -v . 
     

@@ -1,6 +1,6 @@
 # New Build System CMake File - Jordan Dialpuri - 05/09/24
 
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.15)
 project(privateer VERSION 0.5 LANGUAGES C CXX)
 
 SET(PRIVATEER_CC_FLAGS "-O2 -w")
@@ -174,12 +174,12 @@ target_link_directories(privateer_lib
 target_link_libraries(
     privateer_lib
     PUBLIC
+    clipper-contrib
     clipper-mmdb
     clipper-cif
     clipper-ccp4
     clipper-minimol
     clipper-core
-    clipper-contrib
     rfftw
     fftw
     ccp4
