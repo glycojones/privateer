@@ -587,6 +587,7 @@ def _copy_metadata(inputpdb, outputpdb, graftedGlycans):
         glycan = graftedGlycans[i]
         gly_chain_id = str(glycan["receiving_protein_residue_chain_PDBID"])
         gly_seq_num = int(glycan["donor_glycan_root_PDBID"])
+        gly_name = str(glycan["donor_glycan_root_type"])
         graft_status = glycan["GraftStatus"]
         num_sugars = glycan["donor_glycan_num_sugars"]
         for m in range(len(struct_in)):
@@ -599,7 +600,8 @@ def _copy_metadata(inputpdb, outputpdb, graftedGlycans):
                     for r in range(len(chain_out)):
                         residue = chain_out[r]
                         st_seq_num = int(residue.seqid.num)
-                        if st_chain_id == gly_chain_id and st_seq_num == gly_seq_num and graft_status:
+                        res_name = residue.name
+                        if st_chain_id == gly_chain_id and st_seq_num == gly_seq_num and res_name == gly_name and graft_status:
                             for s in range(num_sugars):
                                 residue_out = chain_out[r+s]
                                 chain.add_residue(residue_out)
@@ -700,11 +702,12 @@ def _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
     for i in range(len(graftedGlycans)):
         graftedglycan = graftedGlycans[i]
         graftedGlycans[i]["RSCC"] = 0
-        for key, pairs in residue_pairs.items():
-            if str(key[0]) == str(graftedglycan["glycan_grafted_as_chainID"]) and str(key[1]) == str(graftedglycan["donor_glycan_root_PDBID"]):
-                if len(pairs) > 0:
-                    values1, values2 = zip(*pairs)
-                    graftedGlycans[i]["RSCC"] = round(np.corrcoef(values1, values2)[0, 1], 3)
+        if graftedglycan["GraftStatus"]:
+            for key, pairs in residue_pairs.items():
+                if str(key[0]) == str(graftedglycan["glycan_grafted_as_chainID"]) and str(key[1]) == str(graftedglycan["donor_glycan_root_PDBID"]) and str(key[2]) == str(graftedglycan["donor_glycan_root_type"]):
+                    if len(pairs) > 0:
+                        values1, values2 = zip(*pairs)
+                        graftedGlycans[i]["RSCC"] = round(np.corrcoef(values1, values2)[0, 1], 3)
     return graftedGlycans
 
 def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpath, rscc_threshold = 0.5):
