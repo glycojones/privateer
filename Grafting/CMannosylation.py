@@ -622,10 +622,9 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
         if os.path.isfile(refined_pdb):
             print(f"Calculating RSCC for the grafted glycans...")
             try:
-                graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzfile, graftedGlycans)
+                graftedGlycans = grafter._calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans)
             except:
                 print(f"Error calculating RSCC for grafted glycans in {pdbcode}")
-                continue
         for i, graft in enumerate(graftedGlycans):
             protein_chain_ID = graft["receiving_protein_residue_chain_PDBID"]
             protein_res_ID = graft["receiving_protein_residue_monomer_PDBID"]
