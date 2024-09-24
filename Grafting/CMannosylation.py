@@ -405,6 +405,10 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
 
 def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo):
     failedlist = "failed.txt"
+    if mtzdir == "cryo-EM":
+        cryoEM = True
+    else:
+        cryoEM = False
     with open(failedlist, "w") as myfile:
         myfile.write(f"A list of pdb codes that failed to find and delete potentially problematic c-glycans\n")
     if redo:
@@ -425,10 +429,6 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         else:
             pdbcode = filename.partition(".")[0]
         pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
-        mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
-        if len(mtzfile) < 1:
-            cryoEM = True
-        print(f"Looking for c-glycans to fix in {pdbcode}")
         try:
             st = gemmi.read_structure(pdbfile)
             ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
@@ -441,6 +441,20 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                 with open(failedlist, "a") as myfile:
                     myfile.write(f"{pdbcode}\n")
                 continue
+        for key, value in st.info.items():
+            if key == '_exptl.method': 
+                method = value
+        if cryoEM:
+            if method != "CRYOEM":
+                continue
+            mtzfile = "cryo-EM"
+        if not cryoEM:
+            if method !="X-RAY DIFFRACTION":
+                continue
+            mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
+            if len(mtzfile) < 1:
+                continue
+        print(f"Looking for c-glycans to fix in {pdbcode}")
         save_structure = False
         glycosylations = []
         ms = []
