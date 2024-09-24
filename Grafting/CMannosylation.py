@@ -427,7 +427,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
         mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
         if len(mtzfile) < 1:
-            continue
+            cryoEM = True
         print(f"Looking for c-glycans to fix in {pdbcode}")
         try:
             st = gemmi.read_structure(pdbfile)
@@ -545,7 +545,10 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             for m, c, r in zip(ms[::-1], cs[::-1], rs[::-1]):
                 del st[m][c][r]
             receiver_path = receiverdir + f"/{pdbcode}.pdb"
-            mtz_path = sf_mtz_path(mtzdir,pdbcode) #find_mtz_path(mtzdir,receiverdir,pdbcode)
+            if cryoEM:
+                mtz_path = "cryo-EM"
+            else:
+                mtz_path = sf_mtz_path(mtzdir,pdbcode) #find_mtz_path(mtzdir,receiverdir,pdbcode)
             output_path = outputdir + f"/{pdbcode}.pdb"
             st.write_pdb(receiver_path)
             data_out[str(pdbcode)]={"receiver_path": receiver_path, "mtz_path": mtz_path, "output_path": output_path ,"glycosylations": glycosylations}
@@ -609,22 +612,27 @@ def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,
             print(f"Failed to generate link between TRP-MAN for file {pdbcode}")
         grafted_pdb = schema["output_path"]
         mtzfile = schema["mtz_path"]
-        outputloc = outputdir
-        pdbout = outputdir+f"/{pdbcode}_grafted.pdb"
-        mtzout = outputdir+f"/{pdbcode}_grafted.mtz"
-        print(f"Refining grafted strucutre...")
-        st = gemmi.read_structure(grafted_pdb)
-        resolution = st.resolution
-        #try:
-        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20, resolution)
-        # except:
-        #     print(f"Error refining grafted structure {pdbcode}")
-        if os.path.isfile(refined_pdb):
-            print(f"Calculating RSCC for the grafted glycans...")
-            try:
-                graftedGlycans = grafter._calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans)
-            except:
-                print(f"Error calculating RSCC for grafted glycans in {pdbcode}")
+        if mtzfile == "cryo-EM":
+            print(f"Not refining grafted strucutre due to lack of map... Refine locally after process finished")
+            for i, graft in enumerate(graftedGlycans):
+                graft["RSCC"] = -1
+        else:
+            outputloc = outputdir
+            pdbout = outputdir+f"/{pdbcode}_grafted.pdb"
+            mtzout = outputdir+f"/{pdbcode}_grafted.mtz"
+            print(f"Refining grafted strucutre...")
+            st = gemmi.read_structure(grafted_pdb)
+            resolution = st.resolution
+            #try:
+            refined_pdb, refined_mtz = grafter._refine_grafted_glycans(grafted_pdb, mtzfile, outputloc, pdbout, mtzout, 20, resolution)
+            # except:
+            #     print(f"Error refining grafted structure {pdbcode}")
+            if os.path.isfile(refined_pdb):
+                print(f"Calculating RSCC for the grafted glycans...")
+                try:
+                    graftedGlycans = grafter._calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans)
+                except:
+                    print(f"Error calculating RSCC for grafted glycans in {pdbcode}")
         for i, graft in enumerate(graftedGlycans):
             protein_chain_ID = graft["receiving_protein_residue_chain_PDBID"]
             protein_res_ID = graft["receiving_protein_residue_monomer_PDBID"]
