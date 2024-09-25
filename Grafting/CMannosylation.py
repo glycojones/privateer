@@ -460,15 +460,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         ms = []
         cs = []
         rs = []
-        try:
-            mtz = gemmi.read_mtz_file(mtzfile)
-            if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
-                glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "F,SIGF",nThreads=4)
-            elif ('FP' in mtz.column_labels()) and ('SIGFP' in mtz.column_labels()):
-                glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP",nThreads=4)
-            elif ('FMEAN' in mtz.column_labels()) and ('SIGFMEAN' in mtz.column_labels()):
-                glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FMEAN,SIGFMEAN",nThreads=4)
-        except:
+        if cryoEM:
             try:
                 glycosylation = pvtcore.GlycosylationComposition(mmcifile,nThreads=4)
             except:
@@ -476,6 +468,23 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                 with open(failedlist, "a") as myfile:
                     myfile.write(f"{pdbcode}\n")
                 continue
+        else:
+            try:
+                mtz = gemmi.read_mtz_file(mtzfile)
+                if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
+                    glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "F,SIGF",nThreads=4)
+                elif ('FP' in mtz.column_labels()) and ('SIGFP' in mtz.column_labels()):
+                    glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP",nThreads=4)
+                elif ('FMEAN' in mtz.column_labels()) and ('SIGFMEAN' in mtz.column_labels()):
+                    glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FMEAN,SIGFMEAN",nThreads=4)
+            except:
+                try:
+                    glycosylation = pvtcore.GlycosylationComposition(mmcifile,nThreads=4)
+                except:
+                    print(f"Error running privateer on structure {pdbcode}")
+                    with open(failedlist, "a") as myfile:
+                        myfile.write(f"{pdbcode}\n")
+                    continue
         #glycans = glycosylation.get_summary_of_detected_glycans()
         num_glycans = glycosylation.get_number_of_glycan_chains_detected() 
         for glycan_num in range(num_glycans):
@@ -575,8 +584,10 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
 
 def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo):
     if databasedir is not None:
+        print("Searching for C-glycans to fix in privateer database")
         pdbcodes = find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo)
     else:
+        print("Searching for C-glycans to fix in pdb mirror using privateer")
         pdbcodes = find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo)
     df_in = pd.read_json("c-mannosylation_sites.json")
     AllGlycans = []
