@@ -449,8 +449,8 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             if key == '_exptl.method': 
                 method = value
         if cryoEM:
-            if method != "ELECTRON MICROSCOPY":
-                continue
+            #if method != "ELECTRON MICROSCOPY":
+            #    continue
             mtzfile = "cryo-EM"
         if not cryoEM:
             if method !="X-RAY DIFFRACTION":
