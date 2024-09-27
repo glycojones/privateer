@@ -419,6 +419,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         mmcifiles = file_paths(os.path.join(pdbmirrordir , "mmCIF"))
     data_out = {}
     pdbcodes = []
+    cryoEM_pdbs = ["6dlw", "7nyc", "7nyd", "8de6", "8g04", "8u18"]
     for i in range(len(mmcifiles)):
         mmcifile = mmcifiles[i]
         filename = os.path.basename(mmcifile)
@@ -428,6 +429,9 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                 continue
         else:
             pdbcode = filename.partition(".")[0]
+        if cryoEM:
+            if pdbcode not in cryoEM_pdbs:
+                continue
         pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
         try:
             st = gemmi.read_structure(pdbfile)
