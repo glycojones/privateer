@@ -466,10 +466,10 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         rs = []
         if cryoEM:
             try:
-                glycosylation = pvtcore.GlycosylationComposition_memsafe(mmcifile)
+                glycosylation = pvtcore.GlycosylationComposition(mmcifile)
             except:
                 try:
-                    glycosylation = pvtcore.GlycosylationComposition_memsafe(pdbfile)
+                    glycosylation = pvtcore.GlycosylationComposition(pdbfile)
                 except:
                     print(f"Error running privateer on structure {pdbcode}")
                     with open(failedlist, "a") as myfile:
