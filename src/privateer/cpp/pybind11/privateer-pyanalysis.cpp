@@ -3044,7 +3044,7 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
         {
             sugardiagnostic = "check";
         }
-        else if (!inputSugar.ok_with_anomer())
+        else if (!inputSugar.second.ok_with_anomer())
         {
             sugardiagnostic = "check";
         }
