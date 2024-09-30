@@ -2767,6 +2767,10 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinit( clipper::MGlycan& mgl
         {
             sugardiagnostic = "check";
         }
+        else if (!inputSugar.ok_with_anomer())
+        {
+            sugardiagnostic = "check";
+        }
         else
             sugardiagnostic = "yes";
     }
@@ -3040,6 +3044,10 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitLigand( const int sugar
         {
             sugardiagnostic = "check";
         }
+        else if (!inputSugar.ok_with_anomer())
+        {
+            sugardiagnostic = "check";
+        }
         else
             sugardiagnostic = "yes";
     }
@@ -3283,6 +3291,10 @@ void privateer::pyanalysis::CarbohydrateStructure::pyinitWithExperimentalData( c
     if(inputSugar.is_sane())
     {
         if(!inputSugar.ok_with_conformation())
+        {
+            sugardiagnostic = "check";
+        }
+        else if (!inputSugar.ok_with_anomer())
         {
             sugardiagnostic = "check";
         }
@@ -4199,6 +4211,10 @@ pybind11::list privateer::pyanalysis::XRayData::generate_sugar_experimental_data
             {
                 sugardiagnostic = "check";
             }
+            else if (!finalLigandList[index].second.ok_with_anomer())
+            {
+                sugardiagnostic = "check";
+            }
             else
                 sugardiagnostic = "yes";
         }
@@ -4778,6 +4794,10 @@ pybind11::list privateer::pyanalysis::CryoEMData::generate_sugar_experimental_da
         if(finalLigandList[index].second.is_sane())
         {
             if(!finalLigandList[index].second.ok_with_conformation())
+            {
+                sugardiagnostic = "check";
+            }
+            else if (!finalLigandList[index].second.ok_with_anomer())
             {
                 sugardiagnostic = "check";
             }
