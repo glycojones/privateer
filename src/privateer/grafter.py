@@ -726,12 +726,14 @@ def _remove_grafted_glycans(refined_pdb, original_mtz, graftedGlycans, outputpat
                         st_seq_num = int(residue.seqid.num)
                         gly_seq_num = int(glycan["receiving_protein_residue_monomer_PDBID"])
                         st_chain_id = str(chain.name)
-                        gly_chain_id = str(glycan["receiving_protein_residue_chain_PDBID"])
+                        gly_chain_id = str(glycan["donor_glycan_root_PDBID"])
+                        num_sugars = int(glycan["donor_glycan_num_sugars"])
                         if st_seq_num == gly_seq_num and st_chain_id == gly_chain_id:
-                            print(f"Deleting glycan grafted at {chain.name}-{residue.seqid.num} from {refined_pdb} due to poor RSCC")
-                            ms.append(m)
-                            cs.append(c)
-                            rs.append(r)
+                            for s in range(num_sugars):
+                                print(f"Deleting glycan grafted at {chain.name}-{residue.seqid.num} from {refined_pdb} due to poor RSCC")
+                                ms.append(m)
+                                cs.append(c)
+                                rs.append(r+s)
     if len(rs) > 0:
         l = sorted(zip(rs, cs, ms))
         rs, cs, ms = zip(*l)
