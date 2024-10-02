@@ -898,8 +898,8 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
                         myfile.write("\tNo C-Mannosylation Targets found")
                         myfile.write("\n")
             continue
-        print(f"Refining grafted strucutre...")
-        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 20, resolution)
+        print(f"Refining grafted strucutre {pdbcode}...")
+        refined_pdb, refined_mtz = grafter._refine_grafted_glycans(outputpath, mtzpath, outputdir, outputdir+f"/{pdbcode}_refined.pdb", outputdir+f"/{pdbcode}_refined.mtz", 50, resolution)
         if os.path.isfile(refined_pdb):
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
