@@ -503,9 +503,10 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
                 for j in range(num_sugars):
                     sugar = glycan.get_monosaccharide(j)
                     summary = sugar.get_sugar_summary()
+                    conformation = sugar.conformation_name()
                     name = summary["sugar_name_short"]
                     diagnostic = sugar.get_privateer_diagnostic()
-                    if name == "MAN" and diagnostic != "yes" or name == "BMA":
+                    if name == "MAN" and diagnostic != "yes" or name == "MAN" and conformation != "1c4" or name == "BMA":
                         save_structure = True
                         for m, model in enumerate(st):
                             for c, chain in enumerate(model):
