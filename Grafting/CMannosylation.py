@@ -918,7 +918,7 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
             #graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
             graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, refined_mtz, graftedGlycans)
             os.remove(refined_mtz)
-            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
+            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.4)
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
                     myfile.write("\n")
