@@ -777,7 +777,7 @@ def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedli
                 pdbout = refined_pdb
                 print(f"Failed to remove waters close to TRP in {pdbout}")
             graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
-            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
+            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.4)
         for graft in graftedGlycans:
             graft["pdbcode"] = pdbcode
             AllGlycans.append(graft)
