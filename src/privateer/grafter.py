@@ -673,6 +673,25 @@ def _calc_rscc_grafted_glycans_privateer(refined_pdb, original_mtz, graftedGlyca
                     graftedGlycans[i]["RSCC"] = summary["RSCC"]
     return graftedGlycans
 
+def _calc_rscc_grafted_glycans_privateer_cryoEM(refined_pdb, fo_mrc, graftedGlycans):
+    st  = gemmi.read_structure(refined_pdb)
+    resolution = st.resolution
+    glycosylation = pvtcore.GlycosylationComposition(refined_pdb, fo_mrc, resolution)
+    num_glycans = glycosylation.get_number_of_glycan_chains_detected()  
+    for i in range(len(graftedGlycans)):
+        graftedglycan = graftedGlycans[i]
+        graftedGlycans[i]["RSCC"] = 0
+        for glycan_num in range(num_glycans):
+            glycan = glycosylation.get_glycan(glycan_num)
+            numsugars = glycan.get_total_number_of_sugars()
+            for j in range(numsugars):
+                sugar = glycan.get_monosaccharide(j)
+                root_info = glycan.get_root_info()
+                summary = sugar.get_sugar_summary()
+                if summary["sugar_name_short"] == graftedglycan["donor_glycan_root_type"] and summary["sugar_pdb_chain"] == graftedglycan["glycan_grafted_as_chainID"] and summary["sugar_seqnum"] == graftedglycan["donor_glycan_root_PDBID"]:
+                    graftedGlycans[i]["RSCC"] = summary["RSCC"]
+    return graftedGlycans
+
 def _calc_rscc_grafted_glycans(refined_pdb, refined_mtz, graftedGlycans):
     # Taken and edited from ModelCraft
     mtz = gemmi.read_mtz_file(refined_mtz)
