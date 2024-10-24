@@ -462,6 +462,8 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
             if mmcifile != os.path.join(pdbmirrordir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.cif"):
                 continue
             pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
+        elif singlefile:
+            pdbcode = filename.partition(".")[0]
         else:
             pdbcode = filename.partition(".")[0]
             pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
