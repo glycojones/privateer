@@ -449,11 +449,13 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
             filename = os.path.basename(pdbfile)
         else:
             pdbfile = ""
+        
         if mmcif_exist:
             mmcifile = mmcifiles[i]
             filename = os.path.basename(mmcifile)
         else:
             mmcifile = ""
+        
         if redo:
             pdbcode = filename.partition("_")[0]
             if mmcifile != os.path.join(pdbmirrordir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.cif"):
@@ -462,9 +464,11 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
         else:
             pdbcode = filename.partition(".")[0]
             pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
+        
         if cryoEM:
             if pdbcode not in cryoEM_pdbs:
                 continue
+        print(f"Looking in pdb {pdbcode}")
         try:
             st = gemmi.read_structure(pdbfile)
             ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
