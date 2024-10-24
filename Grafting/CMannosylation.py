@@ -406,6 +406,7 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
 def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,donordir,outputdir,redo):
     failedlist = "failed.txt"
     singlefile=False
+    pdbmirrordir=""
     if os.path.isdir(inputstructure):
         pdbmirrordir = inputstructure
         mtzdir = mtz
@@ -443,9 +444,6 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
         N = len(mmcifiles)
     else:
         N = len(pdbfiles)
-    print(f"N = {N}")
-    print(pdbfiles)
-    print(mmcifiles)
     for i in range(N):
         if pdb_exist:
             pdbfile = pdbfiles[i]
