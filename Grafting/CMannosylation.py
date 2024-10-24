@@ -470,18 +470,18 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
             if pdbcode not in cryoEM_pdbs:
                 continue
         print(f"Looking in pdb {pdbcode}")
-        try:
-            st = gemmi.read_structure(pdbfile)
-            ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
-        except:
-            try: 
-                st = gemmi.read_structure(mmcifile)
-                ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
-            except:
-                print(f"Error opening structure {pdbcode}")
-                with open(failedlist, "a") as myfile:
-                    myfile.write(f"{pdbcode}\n")
-                continue
+        #try:
+        st = gemmi.read_structure(pdbfile)
+        ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+        # except:
+        #     try: 
+        #         st = gemmi.read_structure(mmcifile)
+        #         ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+        #     except:
+        #         print(f"Error opening structure {pdbcode}")
+        #         with open(failedlist, "a") as myfile:
+        #             myfile.write(f"{pdbcode}\n")
+        #         continue
         for key, value in st.info.items():
             if key == '_exptl.method': 
                 method = value
