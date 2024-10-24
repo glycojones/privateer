@@ -459,8 +459,8 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             #    continue
             mtzfile = "cryo-EM"
         if not cryoEM:
-            if method !="X-RAY DIFFRACTION":
-                continue
+            #if method !="X-RAY DIFFRACTION":
+            #    continue
             mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
             if len(mtzfile) < 1:
                 continue
