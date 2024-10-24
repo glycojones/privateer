@@ -422,6 +422,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
     data_out = {}
     pdbcodes = []
     cryoEM_pdbs = ["6dlw", "7nyc", "7nyd", "8de6", "8g04", "8u18"]
+    print(mmcifiles)
     for i in range(len(mmcifiles)):
         mmcifile = mmcifiles[i]
         filename = os.path.basename(mmcifile)
