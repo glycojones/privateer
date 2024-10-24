@@ -432,7 +432,8 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         if cryoEM:
             if pdbcode not in cryoEM_pdbs:
                 continue
-        pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
+        #pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
+        pdbfile = os.path.join(pdbmirrordir , f"{pdbcode}.pdb")
         try:
             st = gemmi.read_structure(pdbfile)
             ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
