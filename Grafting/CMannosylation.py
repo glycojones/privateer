@@ -553,6 +553,7 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
                 for j in range(num_sugars):
                     sugar = glycan.get_monosaccharide(j)
                     summary = sugar.get_sugar_summary()
+                    print(summary)
                     conformation = sugar.get_conformation_name()
                     name = summary["sugar_name_short"]
                     diagnostic = sugar.get_privateer_diagnostic()
