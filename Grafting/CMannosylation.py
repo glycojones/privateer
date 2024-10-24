@@ -467,7 +467,13 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
         else:
             pdbcode = filename.partition(".")[0]
             pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
-        
+        structurefile = ""
+        if pdb_exist and mmcif_exist:
+            structurefile = mmcifile
+        elif pdb_exist:
+            structurefile = pdbfile
+        elif mmcif_exist:
+            strcuturefile = mmcifile
         if cryoEM:
             if pdbcode not in cryoEM_pdbs:
                 continue
@@ -523,14 +529,14 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
             try:
                 mtz = gemmi.read_mtz_file(mtzfile)
                 if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
-                    glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "F,SIGF",nThreads=4)
+                    glycosylation = pvtcore.GlycosylationComposition(structurefile, mtzfile, "F,SIGF",nThreads=4)
                 elif ('FP' in mtz.column_labels()) and ('SIGFP' in mtz.column_labels()):
-                    glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP",nThreads=4)
+                    glycosylation = pvtcore.GlycosylationComposition(structurefile, mtzfile, "FP,SIGFP",nThreads=4)
                 elif ('FMEAN' in mtz.column_labels()) and ('SIGFMEAN' in mtz.column_labels()):
-                    glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FMEAN,SIGFMEAN",nThreads=4)
+                    glycosylation = pvtcore.GlycosylationComposition(structurefile, mtzfile, "FMEAN,SIGFMEAN",nThreads=4)
             except:
                 try:
-                    glycosylation = pvtcore.GlycosylationComposition_memsafe(mmcifile,nThreads=4)
+                    glycosylation = pvtcore.GlycosylationComposition_memsafe(structurefile,nThreads=4)
                 except:
                     print(f"Error running privateer on structure {pdbcode}")
                     with open(failedlist, "a") as myfile:
