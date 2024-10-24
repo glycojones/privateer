@@ -422,11 +422,11 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
     mmcifiles = []
     pdbfiles = []
     if singlefile:
-        if inputstructure.partition(".")[0] == "pdb":
+        if inputstructure.partition(".")[2] == "pdb":
             pdbfiles = [inputstructure]
             mmcifiles = []
             mmcif_exist = False
-        elif inputstructure.partition(".")[0] == "cif" or inputstructure.partition(".")[0] == "mmcif":
+        elif inputstructure.partition(".")[2] == "cif" or inputstructure.partition(".")[0] == "mmcif":
             pdbfiles=[]
             mmcifiles = [inputstructure]
             pdb_exist = False
