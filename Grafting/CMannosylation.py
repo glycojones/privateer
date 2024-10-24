@@ -443,9 +443,10 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
         N = len(mmcifiles)
     else:
         N = len(pdbfiles)
-    print("Hello 0")
+    print(f"N = {N}")
+    print(pdbfiles)
+    print(mmcifiles)
     for i in range(N):
-        print("Hello 1")
         if pdb_exist:
             pdbfile = pdbfiles[i]
             filename = os.path.basename(pdbfile)
