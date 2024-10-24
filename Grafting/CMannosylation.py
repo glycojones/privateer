@@ -472,34 +472,36 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
             if pdbcode not in cryoEM_pdbs:
                 continue
         print(f"Looking in pdb {pdbcode}")
-        #try:
-        st = gemmi.read_structure(pdbfile)
-        ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
-        # except:
-        #     try: 
-        #         st = gemmi.read_structure(mmcifile)
-        #         ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
-        #     except:
-        #         print(f"Error opening structure {pdbcode}")
-        #         with open(failedlist, "a") as myfile:
-        #             myfile.write(f"{pdbcode}\n")
-        #         continue
-        for key, value in st.info.items():
-            if key == '_exptl.method': 
-                method = value
-        if cryoEM:
-            #if method != "ELECTRON MICROSCOPY":
-            #    continue
-            mtzfile = "cryo-EM"
-        if not cryoEM:
-            if method !="X-RAY DIFFRACTION":
+        try:
+            st = gemmi.read_structure(pdbfile)
+            ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+        except:
+            try: 
+                st = gemmi.read_structure(mmcifile)
+                ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
+            except:
+                print(f"Error opening structure {pdbcode}")
+                with open(failedlist, "a") as myfile:
+                    myfile.write(f"{pdbcode}\n")
                 continue
-            if singlefile:
-                mtzfile = mtz
-            else:
-                mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
-            if len(mtzfile) < 1:
-                continue
+        method = "unknown"
+        if singlefile:
+            mtzfile = mtz
+        else:
+            for key, value in st.info.items():
+                if key == '_exptl.method': 
+                    method = value
+            if cryoEM:
+                #if method != "ELECTRON MICROSCOPY":
+                #    continue
+                mtzfile = "cryo-EM"
+            if not cryoEM:
+                if method !="X-RAY DIFFRACTION":
+                    continue
+                else:
+                    mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
+                if len(mtzfile) < 1:
+                    continue
         print(f"Looking for c-glycans to fix in {pdbcode}")
         save_structure = False
         glycosylations = []
