@@ -403,43 +403,66 @@ def find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,
         json.dump(data_out, output_file)
     return pdbcodes
 
-def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo):
+def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,donordir,outputdir,redo):
     failedlist = "failed.txt"
-    if mtzdir == "cryo-EM":
+    singlefile=False
+    if os.path.isdir(inputstructure):
+        pdbmirrordir = inputstructure
+        mtzdir = mtz
+    if os.path.isfile(inputstructure):
+        singlefile = True
+    if mtz == "cryo-EM":
         cryoEM = True
     else:
         cryoEM = False
     with open(failedlist, "w") as myfile:
         myfile.write(f"A list of pdb codes that failed to find and delete potentially problematic c-glycans\n")
-    if redo:
+    mmcif_exist = True
+    pdb_exist = True
+    if singlefile:
+        if inputstructure.partition(".")[0] == "pdb":
+            pdbfiles = [inputstructure]
+            mmcifiles = []
+            mmcif_exist = False
+        elif inputstructure.partition(".")[0] == "cif" or inputstructure.partition(".")[0] == "mmcif":
+            pdbfiles=[]
+            mmcifiles = [inputstructure]
+            pdb_exist = False
+    elif redo:
         pdbfiles = file_paths(pdbmirrordir, ".pdb")
         mmcifiles = file_paths(pdbmirrordir, ".cif")
     else:
-        #pdbfiles = file_paths(os.path.join(pdbmirrordir , "pdb"))
-        #mmcifiles = file_paths(os.path.join(pdbmirrordir , "mmCIF"))
-        pdbfiles = file_paths(pdbmirrordir)
-        mmcifiles = file_paths(pdbmirrordir)
+        pdbfiles = file_paths(os.path.join(pdbmirrordir , "pdb"))
+        mmcifiles = file_paths(os.path.join(pdbmirrordir , "mmCIF"))
     data_out = {}
     pdbcodes = []
     cryoEM_pdbs = ["6dlw", "7nyc", "7nyd", "8de6", "8g04", "8u18"]
-    print(pdbmirrordir)
-    print(mmcifiles)
-    for i in range(len(mmcifiles)):
-        mmcifile = mmcifiles[i]
-        filename = os.path.basename(mmcifile)
+    if len(mmcifiles)>len(pdbfiles):
+        N = len(mmcifiles)
+    else:
+        N = len(pdbfiles)
+    for i in range(N):
+        if pdb_exist:
+            pdbfile = pdbfiles[i]
+            filename = os.path.basename(pdbfile)
+        else:
+            pdbfile = ""
+        if mmcif_exist:
+            mmcifile = mmcifiles[i]
+            filename = os.path.basename(mmcifile)
+        else:
+            mmcifile = ""
         if redo:
             pdbcode = filename.partition("_")[0]
             if mmcifile != os.path.join(pdbmirrordir,f"{pdbcode[1]}{pdbcode[2]}",f"{pdbcode}_final.cif"):
                 continue
+            pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
         else:
             pdbcode = filename.partition(".")[0]
+            pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
         if cryoEM:
             if pdbcode not in cryoEM_pdbs:
                 continue
-        #pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
-        print(f"Checking in pdb code {pdbcode}")
-        pdbfile = os.path.join(pdbmirrordir , f"{pdbcode}.pdb")
-        print(pdbfile)
         try:
             st = gemmi.read_structure(pdbfile)
             ns = gemmi.NeighborSearch(model=st[0],cell=st.cell,max_radius=5.0).populate(include_h=False)
@@ -460,9 +483,12 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             #    continue
             mtzfile = "cryo-EM"
         if not cryoEM:
-            #if method !="X-RAY DIFFRACTION":
-            #    continue
-            mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
+            if method !="X-RAY DIFFRACTION":
+                continue
+            if singlefile:
+                mtzfile = mtz
+            else:
+                mtzfile = sf_mtz_path(mtzdir, pdbcode) # find_mtz_path(mtzdir,receiverdir,pdbcode,redo)
             if len(mtzfile) < 1:
                 continue
         print(f"Looking for c-glycans to fix in {pdbcode}")
@@ -486,17 +512,13 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             try:
                 mtz = gemmi.read_mtz_file(mtzfile)
                 if ('F' in mtz.column_labels()) and ('SIGF' in mtz.column_labels()):
-                    #glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "F,SIGF",nThreads=4)
-                    glycosylation = pvtcore.GlycosylationComposition(pdbfile, mtzfile, "F,SIGF",nThreads=4)
+                    glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "F,SIGF",nThreads=4)
                 elif ('FP' in mtz.column_labels()) and ('SIGFP' in mtz.column_labels()):
-                    #glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP",nThreads=4)
-                    glycosylation = pvtcore.GlycosylationComposition(pdbfile, mtzfile, "FP,SIGFP",nThreads=4)
+                    glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FP,SIGFP",nThreads=4)
                 elif ('FMEAN' in mtz.column_labels()) and ('SIGFMEAN' in mtz.column_labels()):
-                    #glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FMEAN,SIGFMEAN",nThreads=4)
-                    glycosylation = pvtcore.GlycosylationComposition(pdbfile, mtzfile, "FMEAN,SIGFMEAN",nThreads=4)
+                    glycosylation = pvtcore.GlycosylationComposition(mmcifile, mtzfile, "FMEAN,SIGFMEAN",nThreads=4)
             except:
                 try:
-                    print(f"Error running privateer with experimental data {pdbcode}, proceeding without...")
                     glycosylation = pvtcore.GlycosylationComposition_memsafe(mmcifile,nThreads=4)
                 except:
                     print(f"Error running privateer on structure {pdbcode}")
@@ -589,6 +611,8 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             receiver_path = receiverdir + f"/{pdbcode}.pdb"
             if cryoEM:
                 mtz_path = "cryo-EM"
+            elif singlefile:
+                mtz_path = mtzfile
             else:
                 mtz_path = sf_mtz_path(mtzdir,pdbcode) #find_mtz_path(mtzdir,receiverdir,pdbcode)
             output_path = outputdir + f"/{pdbcode}.pdb"
@@ -601,13 +625,13 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
         json.dump(data_out, output_file)
     return pdbcodes
 
-def fix_Cglycans(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo):
+def fix_Cglycans(databasedir,inputstructure,mtz,receiverdir,donordir,outputdir,redo):
     if databasedir is not None:
         print("Searching for C-glycans to fix in privateer database")
-        pdbcodes = find_and_delete_glycans_to_replace_database(databasedir,pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo)
+        pdbcodes = find_and_delete_glycans_to_replace_database(databasedir,inputstructure,mtz,receiverdir,donordir,outputdir,redo)
     else:
         print("Searching for C-glycans to fix in pdb mirror using privateer")
-        pdbcodes = find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir,donordir,outputdir,redo)
+        pdbcodes = find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,donordir,outputdir,redo)
     df_in = pd.read_json("c-mannosylation_sites.json")
     AllGlycans = []
     for pdbcode in pdbcodes:
@@ -929,7 +953,7 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
             #graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, mtzpath, graftedGlycans)
             graftedGlycans = grafter._calc_rscc_grafted_glycans(pdbout, refined_mtz, graftedGlycans)
             os.remove(refined_mtz)
-            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.4)
+            graftedGlycans = grafter._remove_grafted_glycans(pdbout, mtzpath, graftedGlycans, outputdir, rscc_threshold = 0.5)
             if graftedlist is not None:
                 with open(graftedlist, "a") as myfile:
                     myfile.write("\n")
@@ -998,18 +1022,18 @@ if __name__ == "__main__":
         f"Path to the locally stored privateer database. If not set, defaults to {defaultdatabasedir}. If -mode is set to 'find' this parameter is ignored.",
     )
     parser.add_argument(
-        "-inputstructuredir",
+        "-inputstructure",
         action="store",
         default=defaultpdbmirrordir,
-        dest="pdbmirrordir",
+        dest="inputstructure",
         help=
         f"Path to the locally stored structures with cglycans to fix. If not set, defaults to {defaultpdbmirrordir}. If -mode is set to 'find' this parameter is ignored.",
     )
     parser.add_argument(
-        "-mtzdirdir",
+        "-mtzdir",
         action="store",
         default=defaultmtzdir,
-        dest="mtzdir",
+        dest="mtz",
         help=
         f"Path to the locally stored mtz filed. If not set, defaults to {defaultmtzdir}.",
     )
@@ -1054,12 +1078,12 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     if args.mode == 'fix':
-        fix_Cglycans(args.databasedir,args.pdbmirrordir,args.mtzdir,args.receiverdir,args.donordir,args.outputdir,args.redo)
+        fix_Cglycans(args.databasedir,args.inputstructure,args.mtz,args.receiverdir,args.donordir,args.outputdir,args.redo)
     elif args.mode == 'find':
         if args.graftsitescsv is not None:
-            graft_Cglycans_from_csv(args.graftsitescsv,args.receiverdir,args.mtzdir,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
+            graft_Cglycans_from_csv(args.graftsitescsv,args.receiverdir,args.mtz,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
         else:
-            find_and_graft_Cglycans(args.receiverdir,args.mtzdir,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
+            find_and_graft_Cglycans(args.receiverdir,args.mtz,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
     else:
         print("Mode of operation not specified. Exiting...")
 
