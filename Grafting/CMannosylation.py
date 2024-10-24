@@ -435,6 +435,7 @@ def find_and_delete_glycans_to_replace_privateer(pdbmirrordir,mtzdir,receiverdir
             if pdbcode not in cryoEM_pdbs:
                 continue
         #pdbfile = os.path.join(pdbmirrordir , "pdb", f"pdb{pdbcode}.ent.gz")
+        print(f"Checking in pdb code {pdbcode}")
         pdbfile = os.path.join(pdbmirrordir , f"{pdbcode}.pdb")
         try:
             st = gemmi.read_structure(pdbfile)
