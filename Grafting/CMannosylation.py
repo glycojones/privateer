@@ -419,6 +419,8 @@ def find_and_delete_glycans_to_replace_privateer(inputstructure,mtz,receiverdir,
         myfile.write(f"A list of pdb codes that failed to find and delete potentially problematic c-glycans\n")
     mmcif_exist = True
     pdb_exist = True
+    mmcifiles = []
+    pdbfiles = []
     if singlefile:
         if inputstructure.partition(".")[0] == "pdb":
             pdbfiles = [inputstructure]
