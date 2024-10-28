@@ -8,9 +8,18 @@ import urllib.request
 import re
 import argparse
 import numpy as np
-sys.path.append("/y/people/lah583/privateer/src/privateer")
+sys.path.append("/y/people/lah583/privateer/src/privateer") # CHANGE THIS TO THE LOCATION OF GRAFTER.PY ON YOUR MACHINE
 import grafter
 from privateer import privateer_core as pvtcore
+
+"""
+A wrapper script to handle finding and modelling unmodelled C-mannosylation in the pdb and to identify and fix distorted C-mannose residues in the PDB.
+
+It can be used to process many files at once, but in doing so, it should be noted that the majority of file names and paths assume the file structure 
+of the PDB mirror used by our research group and may need to be changed for use elsewhere.
+
+Alternatively, it can be used on a single structure at a time without changing anything other than the location of the grafter.py script
+"""
 
 def file_paths(root_directory, filetype=None):
     """
@@ -25,8 +34,6 @@ def file_paths(root_directory, filetype=None):
             else:
                 filepathlist.append(os.path.join(root,f))
     return filepathlist
-
-
 
 def find_mtz_path(mtzdir,receiverdir,pdbcode, redo = False):
     if redo:
@@ -735,9 +742,18 @@ def fix_Cglycans(databasedir,inputstructure,mtz,receiverdir,donordir,outputdir,r
     df_out.to_csv(output_csv)
     return
 
-def find_and_graft_Cglycans(receiverdir,mtzdir,donordir,outputdir,redo,graftedlist,savesummary):
+def find_and_graft_Cglycans(receiver,mtzdir,donordir,outputdir,redo,graftedlist,savesummary):
     donorpath = os.path.join(donordir, "Alpha-D-Mannose.pdb")
-    receivers = file_paths(receiverdir)
+    receivers = []
+    receiverdir=""
+    if os.path.isdir(receiver):
+        receivers = file_paths(receiver)
+        receiverdir = receiver
+    elif os.path.isfile(receiver):
+        receivers.append(receiver)
+        receiverdir = receiver.rpartition("/")[0]
+    else:
+        print(f"Input structure(s) location {receiver} is neither an existing file or directory.")
     AllGlycans = []
     for receiverpath in receivers:
         if graftedlist is not None:
@@ -1045,7 +1061,7 @@ if __name__ == "__main__":
         default=defaultpdbmirrordir,
         dest="inputstructure",
         help=
-        f"Path to the locally stored structures with cglycans to fix. If not set, defaults to {defaultpdbmirrordir}. If -mode is set to 'find' this parameter is ignored.",
+        f"Path to the locally stored structures with distorted cglycans to fix or missing cglycans to find. If not set, defaults to {defaultpdbmirrordir}.",
     )
     parser.add_argument(
         "-mtzdir",
@@ -1069,7 +1085,7 @@ if __name__ == "__main__":
         default=defaultreceiverdir,
         dest="receiverdir",
         help=
-        f"If mode is set to 'fix' this is the location structures are saved once problematic cglycans are removed before grafting. If mode is set to 'find' this is the location of the original input structures to find potential c-mannosylation and graft. If not set, defaults to {defaultreceiverdir}.",
+        f"If mode is set to 'fix' this is the location structures are saved once problematic cglycans are removed before grafting. If mode is set to 'find' this is ignored. If not set, defaults to {defaultreceiverdir}.",
     )
     parser.add_argument(
         "-donordir",
@@ -1092,7 +1108,7 @@ if __name__ == "__main__":
         action="store_true",
         dest="redo",
         help=
-        f"Boolean to say whether running on pdbredo (True) or not (False). If not set, defaults to {defaultredo}.",
+        f"Boolean to say whether running on pdbredo (True) or not (False). If not set, defaults to {defaultredo}. This assumes the file structure of the mirror of pdb redo on jarvis.its.york.ac.uk",
     )
     args = parser.parse_args()
     if args.mode == 'fix':
@@ -1101,7 +1117,7 @@ if __name__ == "__main__":
         if args.graftsitescsv is not None:
             graft_Cglycans_from_csv(args.graftsitescsv,args.receiverdir,args.mtz,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
         else:
-            find_and_graft_Cglycans(args.receiverdir,args.mtz,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
+            find_and_graft_Cglycans(args.inputstructure,args.mtz,args.donordir,args.outputdir,args.redo,"grafted_pdbs.txt",True)
     else:
         print("Mode of operation not specified. Exiting...")
 
