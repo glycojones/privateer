@@ -393,7 +393,7 @@ def _get_CMannosylation_targets_via_blob_search(pdbfile, mtzfile,sequences, avg_
     start = 1000 # arbitrary number
     if avg_dens_threshold == None:
         resolution = st.resolution
-        threshold = 0.41868*resolution - 0.17116
+        threshold = 0.390*resolution - 0.261
     else:
         threshold = avg_dens_threshold
 

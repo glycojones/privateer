@@ -195,13 +195,13 @@ def get_targets_via_blob_search_and_consensus_sequence(ciffile:str,mtzfile:str,r
     st = gemmi.read_structure(ciffile)
     if threshold == None:
         resolution = st.resolution
-        threshold = 0.41868*resolution - 0.17116
+        threshold = 0.390*resolution - 0.261
     if not os.path.exists(mtzfile): 
         print(f"No mtzfile for {pdbid}")
         return None
 
     pointlist = []
-    chainlist = []; residuelist = []; sum_density = []; mean_density = []; gridpoints = []
+    chainlist = []; residuelist = []
     consensus = []
     target_chainlist = []   ; target_residuelist = []
     for model in st:
@@ -214,7 +214,7 @@ def get_targets_via_blob_search_and_consensus_sequence(ciffile:str,mtzfile:str,r
                 if (residue.name == 'TRP'):
                     if residue.label_seq != None: 
                         pentaseq = get_consensus(inputchain=chain,inputresidue=residue)
-                        if re.search('W.{2}W',pentaseq[3:10]) == None: 
+                        if re.search('W.{2}[W|C]',pentaseq[3:10]) == None: 
                             continue # JUST DO BLOB_SEARCH AT W RESIDUES FOLLOWING WXXW|C
                     ce3,cd1 = None,None
                     for atom in residue:
@@ -254,10 +254,8 @@ def get_targets_via_blob_search_and_consensus_sequence(ciffile:str,mtzfile:str,r
             value = grid.get_value(point[0],point[1],point[2])
             values.append(value)
         if atomlist: 
-            s_density = np.sum(values).round(3)
             avg_density = np.mean(values).round(3)
         else: 
-            s_density = 0
             avg_density = 0
         if avg_density > threshold: 
             target_chainlist.append(chainlist[i])
