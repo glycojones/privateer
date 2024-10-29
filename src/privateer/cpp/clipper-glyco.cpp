@@ -4814,7 +4814,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f ) {
     std::string residue = sugar_list[i].id();
     //std::string chain = this->get_chain();
     std::string chain = sugar_list[i].chain_id().trim();
-    if ( this->kind_of_glycan == "c-glycan" ) { // needs 1C4 restraints
+    if (( this->kind_of_glycan == "c-glycan" ) || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUC") || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUL")){ // needs 1C4 restraints
       buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
                                       " chain " + chain + " residue " + residue + " atom C1 next" +
                                       " chain " + chain + " residue " + residue + " atom C2 next" +
@@ -5828,7 +5828,7 @@ std::string MGlycology::write_external_restraints ( bool restrain_rings,
         sigma_cglycan = 0.1;
     }
     else{
-        sigma_cglycan =  8.0/resolution - 1.0;
+        sigma_cglycan =  20.0/(3.0*resolution) - 1.0;
     }
     if (sigma_cglycan < 0.1){
         sigma_cglycan = 0.1;
