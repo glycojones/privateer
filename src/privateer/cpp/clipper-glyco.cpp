@@ -5828,7 +5828,7 @@ std::string MGlycology::write_external_restraints ( bool restrain_rings,
         sigma_cglycan = 0.1;
     }
     else{
-        sigma_cglycan =  10.0/resolution - 1.0;
+        sigma_cglycan =  8.0/resolution - 1.0;
     }
     if (sigma_cglycan < 0.1){
         sigma_cglycan = 0.1;
@@ -5847,7 +5847,7 @@ std::string MGlycology::write_external_restraints ( bool restrain_rings,
         }
         if ( restrain_links ) {
         restraints += "\n# Glycosidic bond conformation restraints\n" ;
-        restraints += glycan_list[i].write_link_ext_restraints ( sigma );
+        restraints += glycan_list[i].write_link_ext_restraints ( sigma/2.0 );
         }
     }
     restraints += "\n\n################ EOF ################\n" ;
