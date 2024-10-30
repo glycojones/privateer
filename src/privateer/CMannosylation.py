@@ -8,7 +8,6 @@ import urllib.request
 import re
 import argparse
 import numpy as np
-sys.path.append("/y/people/lah583/privateer/src/privateer") # CHANGE THIS TO THE LOCATION OF GRAFTER.PY ON YOUR MACHINE
 import grafter
 from privateer import privateer_core as pvtcore
 
