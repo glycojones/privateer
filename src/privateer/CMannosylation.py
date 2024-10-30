@@ -883,12 +883,19 @@ def graft_Cglycans_from_csv(csvfile,receiverdir,mtzdir,donordir,outputdir,redo,g
             elif os.path.isfile(pdbpath):
                 receiverpath = pdbpath
             else:
-                print(f"Error opening receiver structure {pdbcode}")
-                if graftedlist is not None:
-                    with open(graftedlist, "a") as myfile:
-                        myfile.write("\tError opening receiver structure")
-                        myfile.write("\n")
-                continue
+                cifpath = os.path.join(receiverdir,f"{pdbcode}.mmcif")
+                pdbpath = os.path.join(receiverdir,f"{pdbcode}.pdb")
+                if os.path.isfile(cifpath):
+                    receiverpath = cifpath
+                elif os.path.isfile(pdbpath):
+                    receiverpath = pdbpath
+                else:
+                    print(f"Error opening receiver structure {pdbcode}")
+                    if graftedlist is not None:
+                        with open(graftedlist, "a") as myfile:
+                            myfile.write("\tError opening receiver structure")
+                            myfile.write("\n")
+                    continue
         mtzpath = sf_mtz_path(mtzdir, pdbcode)
         if len(mtzpath)<1:
             if graftedlist is not None:
