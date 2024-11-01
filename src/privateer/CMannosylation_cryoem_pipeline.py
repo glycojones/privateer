@@ -270,10 +270,9 @@ def check_expression_system_with_cif(cifpath:str) -> tuple[list,bool]:
     """Check expression system of the structures 
         (Only if the input structures are the experimental structures)"""
     
-    PRIVATEERDIR = os.getenv("OLDPWD", None)
+    PRIVATEERDIR = os.getenv("PRIVATEER_USEFUL_DATA", None)
     if PRIVATEERDIR is not None:
-        ROOTENV= os.path.join(PRIVATEERDIR,'useful_data')
-        sourcefile = os.path.join(ROOTENV,'taxon_summary.json')# include metazoan and toxoplasma taxonomy ids
+        sourcefile = os.path.join(PRIVATEERDIR,'taxon_summary.json')# include metazoan and toxoplasma taxonomy ids
     else:
         raise 'Cannot get Privateer environment --> check Path'
     
@@ -395,10 +394,9 @@ def get_emdbid (cifpath:str) -> tuple[str,str]:
 
 def make_jsonfile_for_grafting(pdbfile:str, graftedmodel:str, residuelist:list):
     
-    PRIVATEERDIR = os.getenv("OLDPWD", None)
+    PRIVATEERDIR = os.getenv("PRIVATEER_USEFUL_DATA", None)
     if PRIVATEERDIR is not None:
-        ROOTENV= os.path.join(PRIVATEERDIR,'useful_data')
-        donorsugar = ROOTENV + '/glycan_donor_repertoire/Alpha-D-Mannose.pdb'
+        donorsugar = PRIVATEERDIR + '/glycan_donor_repertoire/Alpha-D-Mannose.pdb'
     else: 
         raise 'Cannot get environment of Privateer --> check Path'
     
@@ -427,23 +425,18 @@ def try_grafting_interface(pdbfile:str, outputgraft:str, residuelist:list):
 
     """Running python grafter.py"""
 
-    PRIVATEERDIR = os.getenv("OLDPWD", None)
-    if PRIVATEERDIR is None:
+    PRIVATEERSRC = os.getenv("PRIVATEERSRC", None)
+    if PRIVATEERSRC is None:
         raise 'Cannot get Privateer environment --> check Path'
     
-    print(PRIVATEERDIR)
-    # exit()
     manualgrafting = make_jsonfile_for_grafting(pdbfile=pdbfile,graftedmodel=outputgraft,residuelist=residuelist)
 
     name = os.path.basename(pdbfile).split('.')[0]
     print(f'Start grafting {name}')
-    command = f"""python {PRIVATEERDIR}/src/privateer/grafter.py -manual_grafting {manualgrafting}"""# -save_summary True"""# >/dev/null 2>&1"""
-    print(command)
-    # exit()
+    command = f"""python {PRIVATEERSRC}/grafter.py -manual_grafting {manualgrafting}"""# -save_summary True"""# >/dev/null 2>&1"""
     os.system(command)
     print(f'Finish grafting {name}')
 
-    # return outputgraft
 
 def make_connnection_C_Man(path:str): # return .pdb file
     
@@ -467,7 +460,6 @@ def make_connnection_C_Man(path:str): # return .pdb file
 
                 if str(hetatom.kind) != 'ResidueKind.AA': residue.het_flag = 'H' # change flag ATOM or HETATM
                 if str(hetatom.kind) != 'ResidueKind.PYR': continue
-                print(f'HERE {chain,residue}')
                 try: c1 = residue['C1'][0].pos
                 except RuntimeError as e:
                     print(f'{e} at {chain,residue}')
@@ -475,7 +467,6 @@ def make_connnection_C_Man(path:str): # return .pdb file
                 if residue.name != 'MAN': continue
 
                 for atom in residue:
-                    print(chain,residue,atom)
                     if atom.name == 'C1':
 
                         marks = ns.find_atoms(atom.pos, '\0', radius=5)
@@ -729,13 +720,11 @@ if __name__ == "__main__":
             sys.exit(0)
 
     filename = Path(inputfile).stem
-    PRIVATEERPATH = os.getenv("OLDPWD",None)
-    if PRIVATEERPATH is None:
-        raise 'Cannot get Privateer environment --> check path'
 
     if args.OutputPath == None:
         print('The result will be saved to the current directory with the name of the program')
-        outputpath = PRIVATEERPATH + '/results'
+        outputpath = os.getenv("PRIVATEERRESULTS",None)
+        if outputpath is None: raise 'Cannot get Privateer environment --> check path'
         outputpath = os.path.join(outputpath,f'{filename}_cmannosylation')
     else:
         outputpath = args.OutputPath
