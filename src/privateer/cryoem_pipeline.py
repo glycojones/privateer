@@ -792,7 +792,7 @@ if __name__ == "__main__":
                             resolution=resolution,halfmap1=hf1,halfmap2=hf2,maskmap=maskedmap,primmap=primmap)
     
     # calculate RSCC
-    rsccfile = f'{pdbid}_rscc_data.json'
+    rsccfile = f'{pdbid}_rscc_data.csv'
     calculate_em_rscc(emmap=primmap,pdbfile=refinepdb,resolution=resolution,outfile=rsccfile)
     print('Recommend: sugars with RSCC < 0.2 should be discarded')
     end = time.time()
