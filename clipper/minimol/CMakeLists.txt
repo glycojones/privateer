@@ -29,6 +29,9 @@ set(clipper-minimol_HEADERS
 
 target_compile_options(clipper-minimol PUBLIC "-DFFTW_ENABLE_FLOAT")
 set_target_properties(clipper-minimol PROPERTIES PUBLIC_HEADER "${clipper-minimol_HEADERS}")
+if(MSVC)
+    add_compile_definitions(CLIPPER_MINIMOL_DLL_EXPORT)
+endif()
 
 install(TARGETS clipper-minimol
         LIBRARY DESTINATION lib

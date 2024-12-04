@@ -93,6 +93,9 @@ ${clipper-dependencies_SOURCE_DIR}/clipper/core/clipper_util.h
 
 target_compile_options(clipper-core PUBLIC "-DFFTW_ENABLE_FLOAT")
 set_target_properties(clipper-core PROPERTIES PUBLIC_HEADER "${clipper-core_HEADERS}")
+if(MSVC)
+    add_compile_definitions(CLIPPER_DLL_EXPORT)
+endif()
 
 install(TARGETS clipper-core
 LIBRARY DESTINATION lib
