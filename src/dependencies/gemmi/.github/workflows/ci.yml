@@ -1,0 +1,254 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  macos15:
+    name: "macOS 15"
+    runs-on: macos-15
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    env:
+      SKBUILD_CMAKE_ARGS: "-DEXTRA_WARNINGS=ON;-DFETCH_ZLIB_NG=ON"
+      SKBUILD_BUILD_TARGETS: "all;check"
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build wheel and install
+      run: |
+        python3 -m venv pyenv
+        source pyenv/bin/activate
+        python3 -m pip install wheel
+        python3 -m pip wheel -v .
+        python3 -m pip install gemmi-*.whl
+    - name: Python Tests
+      run: |
+        source pyenv/bin/activate
+        python3 -m pip install sphinx
+        # run tests twice: without and with numpy
+        python3 -m unittest discover -s tests/
+        (cd docs && sphinx-build -M doctest . _build -n -E)
+        python3 -m pip install numpy
+        python3 -m unittest discover -v -s tests/
+        (cd docs && sphinx-build -M doctest . _build -n -E)
+    - uses: actions/upload-artifact@v4
+      with:
+        name: gemmi-macos15
+        path: |
+          ./gemmi-*.whl
+        retention-days: 14
+
+  macos13:
+    name: "macOS 13 (w/o python)"
+    runs-on: macos-13
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+    - uses: actions/checkout@v4
+    - name: mkdir build
+      run: cmake -E make_directory ${{runner.workspace}}/build
+    - name: CMake Build
+      working-directory: ${{runner.workspace}}/build
+      shell: bash
+      run: |
+        cmake --version
+        cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=MinSizeRel -DBUILD_SHARED_LIBS=OFF
+        cmake --build . -j3
+        cmake --build . --target check -j3
+    - name: Install
+      working-directory: ${{runner.workspace}}/build
+      shell: bash
+      run: sudo cmake --install .
+    - name: Test
+      run: |
+        ctest --output-on-failure
+        python3 tests/test_prog.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: gemmi-macos13
+        path: |
+          ${{runner.workspace}}/build/gemmi
+          ${{runner.workspace}}/build/libgemmi*
+        retention-days: 14
+
+  windows2022:
+    name: "Windows 2022"
+    runs-on: windows-2022
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    env:
+      SKBUILD_CMAKE_ARGS: "-DFETCH_ZLIB_NG=ON"
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+        allow-prereleases: true
+    - name: build and test
+      run: |
+        python -m pip install -v .
+        python -m pip install numpy
+        python -m unittest discover -v -s tests/
+    - name: run doctest
+      working-directory: ./docs
+      run: |
+        python -m pip install sphinx
+        sphinx-build -M doctest . _build -n -E
+
+  ubuntu2404:
+    name: "Ubuntu 24.04"
+    runs-on: ubuntu-24.04
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+    - uses: actions/checkout@v4
+    - name: apt-get
+      run: |
+        sudo apt-get update
+        sudo apt-get install python3-full g++ gfortran
+    - name: build and test
+      run: |
+        g++ --version
+        python3 -m venv pyenv
+        source pyenv/bin/activate
+        export SKBUILD_CMAKE_ARGS='-DFETCH_ZLIB_NG=ON;-DCMAKE_BUILD_TYPE=None'
+        python3 -m pip install -v .
+        python3 -m pip install numpy
+        python3 -m unittest discover -v -s tests/
+    - name: run doctest
+      run: |
+        source pyenv/bin/activate
+        python3 -m pip install -U sphinx
+        cd docs
+        sphinx-build -M doctest . _build -n -E
+
+  ubuntu2204:
+    name: "Ubuntu 22.04"
+    runs-on: ubuntu-22.04
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+    - uses: actions/checkout@v4
+    - name: apt-get
+      run: |
+        sudo apt-get update
+        sudo apt-get install libz-dev python3-pip g++ gfortran python3-numpy
+        sudo python3 -m pip install -U typing_extensions sphinx
+    - name: install nanobind
+      run: |
+        git clone --recursive --depth=1 https://github.com/wjakob/nanobind.git
+    - name: build and test
+      run: |
+        g++ --version
+        cmake --version
+        mkdir build
+        cd build
+        cmake .. -DCMAKE_BUILD_TYPE=MinSizeRel -DUSE_FORTRAN=1 -DEXTRA_WARNINGS=1 -DUSE_PYTHON=1 -DPython_EXECUTABLE=/usr/bin/python3 -DBUILD_SHARED_LIBS=ON -DCMAKE_CXX_VISIBILITY_PRESET=hidden
+        make -j2
+        make -j2 check
+        sudo make install
+        python3 -m unittest discover -v -s ../tests/
+        strip --strip-unneeded ./gemmi ./py/gemmi/gemmi_ext.cpython*.so
+    - name: run doctest
+      run: |
+        export PYTHONPATH=$PWD/build
+        cd docs
+        sphinx-build -M doctest . _build -n -E
+
+  ubuntu2004:
+    name: "Ubuntu 20.04"
+    runs-on: ubuntu-20.04
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+    - uses: actions/checkout@v4
+    - name: apt-get
+      run: |
+        sudo apt-get update
+        sudo apt-get install libz-dev python3-pip g++ gfortran python3-numpy valgrind
+    - name: install nanobind
+      run: |
+        python3 -m pip install nanobind typing_extensions sphinx
+    - name: build and test
+      run: |
+        g++ --version
+        cmake --version
+        mkdir build
+        cd build
+        cmake .. -DCMAKE_BUILD_TYPE=Debug -DUSE_PYTHON=1 -DPython_EXECUTABLE=python3 -DBUILD_SHARED_LIBS=OFF
+        cmake --build . --config Debug -j2
+        cmake --build . --config Debug --target check -j2
+        sudo cmake --install . --config Debug
+        cd ..
+        python3 -m unittest discover -v -s tests/
+    - name: run doctest
+      run: |
+        cd docs
+        sphinx-build -M doctest . _build -n -E
+    - name: run tests under valgrind
+      run: PYTHONMALLOC=malloc valgrind python3 -m unittest discover -v -s tests/
+
+  ubuntu2004_clang8:
+    name: "Ubuntu 20.04 with Clang 8"
+    runs-on: ubuntu-20.04
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    env:
+      CC: clang-8
+      CXX: clang++-8
+      SKBUILD_CMAKE_ARGS: "-DEXTRA_WARNINGS=ON;-DSTANDALONE_PYTHON_MODULE=OFF"
+      SKBUILD_BUILD_TARGETS: "all;check"
+    steps:
+    - uses: actions/checkout@v4
+    - run: sudo apt-get install clang-8 libz-dev python3-pip python3-numpy
+    - name: install nanobind
+      run: |
+        sudo /usr/bin/python3 -m pip install nanobind build
+    - name: build and test
+      run: |
+        $CXX --version
+        python3 -m build --sdist
+        python3 -m pip install -v dist/gemmi-*.tar.gz
+        python3 -m unittest discover -v -s tests/
+    - name: run doctest
+      run: |
+        python3 -m pip install -U sphinx
+        cd docs
+        sphinx-build -M doctest . _build -n -E
+
+  almalinux:
+    runs-on: ubuntu-latest
+    name: "AlmaLinux 8"
+    container: almalinux:8
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+    - uses: actions/checkout@v4
+    - name: yum
+      run: |
+        dnf update -y
+        dnf install -y gcc-c++ cmake make git python38-devel python38-pip
+        python3.8 -m pip install -U numpy typing_extensions sphinx
+        g++ --version
+        python3.8 --version
+        cmake --version
+        type python3.8
+    - name: install nanobind
+      run: |
+        git clone --recursive --depth=1 https://github.com/wjakob/nanobind.git
+        cd nanobind
+        cmake . -Wno-dev -DPYTHON_EXECUTABLE=/usr/bin/python3.8 -DNB_TEST=OFF
+        make
+        make install
+    - name: build and test
+      run: |
+        pwd
+        cmake . -DUSE_PYTHON=1 -DPython_EXECUTABLE=/usr/bin/python3.8 -DFETCH_ZLIB_NG=ON
+        make -j2
+        make -j2 check
+        make install
+        python3.8 -m unittest discover -v -s ./tests/
+        strip --strip-unneeded ./gemmi ./py/gemmi/gemmi_ext.cpython*.so
+    - name: run doctest
+      run: |
+        cd docs
+        PYTHONPATH=.. sphinx-build -M doctest . _build -n -E
+    - uses: actions/upload-artifact@v4
+      with:
+        name: gemmi-linux
+        path: |
+          ./gemmi
+          ./libgemmi_cpp.so
+          ./py
+        retention-days: 14
