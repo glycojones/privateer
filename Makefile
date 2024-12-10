@@ -12,13 +12,13 @@
 # to avoid clashes with package names in pypi.python.org.
 # When uploaded to the ChimeraX toolshed, the bundle
 # will be displayed without the ChimeraX- prefix.
-# BUNDLE_NAME = ChimeraX-Clipper
-# BUNDLE_VERSION = 0.9.4-dev1
+# BUNDLE_NAME = ChimeraX-privateer
+# BUNDLE_VERSION = 0.1
 # ChimeraX bundles should only include packages
 # that install as chimerax.package_name.
 # General Python packages should be uploaded to
 # pypi.python.org rather than the ChimeraX toolshed.
-# PKG_NAME = chimerax.clipper
+# PKG_NAME = chimerax.privateer
 
 # Define where ChimeraX is installed.
 OS = $(patsubst CYGWIN_NT%,CYGWIN_NT,$(shell uname -s))
@@ -38,7 +38,7 @@ ifeq ($(OS),Darwin)
 ifndef RELEASE
 CHIMERAX_APP = /Applications/ChimeraX_Daily.app
 else
-CHIMERAX_APP = /Applications/ChimeraX-1.8.app
+CHIMERAX_APP = /Applications/ChimeraX.app
 endif
 endif
 
