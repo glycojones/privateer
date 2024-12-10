@@ -115,9 +115,9 @@ will be displayed without the ChimeraX- prefix.
     <IncludeDir>src/dependencies/mmdb2</IncludeDir>
     <IncludeDir>src/dependencies/clipper</IncludeDir>
     <IncludeDir>src/dependencies/pocketfft</IncludeDir>
-    <!--<LibraryDir>src</LibraryDir>
+    <LibraryDir>src</LibraryDir>
     <Library>mmdb2</Library>
-    <Library>ccp4</Library>-->
+    <Library>ccp4</Library>
     
     <SourceFile>src/dependencies/clipper/core/atomsf.cpp</SourceFile>
     <SourceFile>src/dependencies/clipper/core/coords.cpp</SourceFile>
@@ -207,14 +207,14 @@ will be displayed without the ChimeraX- prefix.
     <LinkArgument platform="mac">-fvisibility-inlines-hidden</LinkArgument>
     <LinkArgument platform="mac">-s</LinkArgument>
 
-    <IncludeDir>src/dependencies/libccp4</IncludeDir>
-    <IncludeDir>src/dependencies/clipper</IncludeDir>
+    <IncludeDir>src/dependencies</IncludeDir>
     <IncludeDir>src/dependencies/mmdb2</IncludeDir>
-    <IncludeDir>src/dependencies/pocketfftw</IncludeDir>
     <IncludeDir>src/dependencies/pybind11/include</IncludeDir>
     <IncludeDir>src/dependencies/gemmi/include</IncludeDir>
-
-    <IncludeDir>src/cpp</IncludeDir>
+    <IncludeDir>src/cpp</IncludeDir> 
+    
+    <LibraryDir>src</LibraryDir>
+    <Library>clipper</Library>
 
     <SourceFile>src/cpp/clipper-glyco_data.cpp</SourceFile>
     <SourceFile>src/cpp/clipper-glyco.cpp</SourceFile>
