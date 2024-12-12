@@ -258,8 +258,9 @@ int main(int argc, char** argv)
         {
           produce_external_restraints = true;
         }
-        if ( args[arg] == "-phenix_restraints" )
+        else if ( args[arg] == "-phenix_restraints" )
         {
+          produce_external_restraints = true;
           phenix = true;
         }
         else if ( args[arg] == "-cores" )
