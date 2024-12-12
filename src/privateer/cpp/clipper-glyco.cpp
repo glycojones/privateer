@@ -4901,7 +4901,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
                 buffer += "\t\tangle_ideal = -55.71\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -4910,7 +4910,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
                 buffer += "\t\tangle_ideal = 51.72\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -4919,7 +4919,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
                 buffer += "\t\tangle_ideal = -47.55\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -4928,7 +4928,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
                 buffer += "\t\tangle_ideal = 45.67\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -4937,7 +4937,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
                 buffer += "\t\tangle_ideal = -51.06\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -4946,7 +4946,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
                 buffer += "\t\tangle_ideal = 56.33\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
             }
             else {
                 buffer += "\tdihedral {\n";
@@ -4956,7 +4956,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
                 buffer += "\t\tangle_ideal = 55.71\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -4965,7 +4965,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
                 buffer += "\t\tangle_ideal = -51.72\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -4974,7 +4974,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
                 buffer += "\t\tangle_ideal = 47.55\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -4983,7 +4983,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
                 buffer += "\t\tangle_ideal = -45.67\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -4992,7 +4992,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
                 buffer += "\t\tangle_ideal = 51.06\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}/\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
@@ -5001,7 +5001,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
                 buffer += "\t\tangle_ideal = -56.33\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "}\n";
             }
         }
         buffer += "}";
