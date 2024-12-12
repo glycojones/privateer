@@ -842,8 +842,8 @@ namespace clipper
             std::string get_root_by_name () const { return get_root().second.type().trim() + "-" + get_root().second.id().trim() + "/" + get_root_sugar_chainID().trim().substr(0,1) + "_" + get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
             std::string get_root_for_filename () { return  get_root().second.type().trim() + get_root().second.id().trim() + "-[" + get_root_sugar_chainID().trim().substr(0,1) + "]_[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
 
-            std::string write_ring_ext_restraints ( float sigma );
-            std::string write_link_ext_restraints ( float sigma );
+            std::string write_ring_ext_restraints ( float sigma, bool phenix = false );
+            std::string write_link_ext_restraints ( float sigma, bool phenix = false );
 
             clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
@@ -973,7 +973,8 @@ namespace clipper
             std::vector < clipper::MSugar > get_sugar_list() { return list_of_sugars; }
             std::string write_external_restraints ( bool restrain_rings,
                                                     bool restrain_links,
-                                                    float resolution );
+                                                    float resolution,
+                                                    bool phenix = false );
 
         private:
 

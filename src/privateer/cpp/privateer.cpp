@@ -118,6 +118,7 @@ int main(int argc, char** argv)
     bool useParallelism = true;
     bool rscc_best = false;
     bool produce_external_restraints = false;
+    bool phenix = false;
     bool closest_match_disable = false;
     bool potential_issue_shading = true;
     float resolution = -1;
@@ -256,6 +257,10 @@ int main(int argc, char** argv)
         else if ( args[arg] == "-external_restraints" )
         {
           produce_external_restraints = true;
+        }
+        if ( args[arg] == "-phenix_restraints" )
+        {
+          phenix = true;
         }
         else if ( args[arg] == "-cores" )
         {
@@ -1351,7 +1356,7 @@ int main(int argc, char** argv)
         }
 
         if ( produce_external_restraints ) {
-          std::string buffer = mgl.write_external_restraints ( true, false, resolution );
+          std::string buffer = mgl.write_external_restraints ( true, false, resolution, phenix );
           std::fstream of;
           of.open("privateer-restraints.txt", std::fstream::out);
           of << buffer;
@@ -3419,7 +3424,7 @@ int main(int argc, char** argv)
     }
 
     if ( produce_external_restraints ) {
-      std::string buffer = mgl.write_external_restraints ( true, false, resolution );
+      std::string buffer = mgl.write_external_restraints ( true, false, resolution, phenix );
       std::fstream of;
       of.open("privateer-restraints.txt", std::fstream::out);
       of << buffer;

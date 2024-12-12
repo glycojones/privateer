@@ -4804,102 +4804,275 @@ clipper::String MGlycan::generate_wurcs()
     return wurcs_string;
 }
 
-std::string MGlycan::write_ring_ext_restraints ( float sigma_f ) {
+std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
 
-  std::string buffer = "";
-  std::string sigma = std::to_string(sigma_f);
-  std::vector<clipper::MSugar> sugar_list = this->get_sugars();
-  for ( int i = 0; i < sugar_list.size(); i++ ) {
-    buffer += "# " + sugar_list[i].type() + " " + sugar_list[i].id() + "\n";
-    std::string residue = sugar_list[i].id();
-    //std::string chain = this->get_chain();
-    std::string chain = sugar_list[i].chain_id().trim();
-    if (( this->kind_of_glycan == "c-glycan" ) || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUC") || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUL")){ // needs 1C4 restraints
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
-                                      " chain " + chain + " residue " + residue + " atom C1 next" +
-                                      " chain " + chain + " residue " + residue + " atom C2 next" +
-                                      " chain " + chain + " residue " + residue + " atom C3 value -55.71 sigma " + sigma + " period 1\n";
+    std::string buffer = "";
+    std::string sigma = std::to_string(sigma_f);
+    std::vector<clipper::MSugar> sugar_list = this->get_sugars();
+    if (phenix == false)
+    {
+        for ( int i = 0; i < sugar_list.size(); i++ ) {
+            buffer += "# " + sugar_list[i].type() + " " + sugar_list[i].id() + "\n";
+            std::string residue = sugar_list[i].id();
+            //std::string chain = this->get_chain();
+            std::string chain = sugar_list[i].chain_id().trim();
+            if (( this->kind_of_glycan == "c-glycan" ) || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUC") || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUL")){ // needs 1C4 restraints
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 value -55.71 sigma " + sigma + " period 1\n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C1 next" +
-                                      " chain " + chain + " residue " + residue + " atom C2 next" +
-                                      " chain " + chain + " residue " + residue + " atom C3 next" +
-                                      " chain " + chain + " residue " + residue + " atom C4 value  51.72 sigma " + sigma + " period 1\n";
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 value  51.72 sigma " + sigma + " period 1\n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C2 next" +
-                                      " chain " + chain + " residue " + residue + " atom C3 next" +
-                                      " chain " + chain + " residue " + residue + " atom C4 next" +
-                                      " chain " + chain + " residue " + residue + " atom C5 value -47.55 sigma " + sigma + " period 1\n";
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 value -47.55 sigma " + sigma + " period 1\n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C3 next" +
-                                      " chain " + chain + " residue " + residue + " atom C4 next" +
-                                      " chain " + chain + " residue " + residue + " atom C5 next" +
-                                      " chain " + chain + " residue " + residue + " atom O5 value  45.67 sigma " + sigma + " period 1\n";
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 value  45.67 sigma " + sigma + " period 1\n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C4 next" +
-                                      " chain " + chain + " residue " + residue + " atom C5 next" +
-                                      " chain " + chain + " residue " + residue + " atom O5 next" +
-                                      " chain " + chain + " residue " + residue + " atom C1 value -51.06 sigma " + sigma + " period 1\n";
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 value -51.06 sigma " + sigma + " period 1\n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C5 next" +
-                                      " chain " + chain + " residue " + residue + " atom O5 next" +
-                                      " chain " + chain + " residue " + residue + " atom C1 next" +
-                                      " chain " + chain + " residue " + residue + " atom C2 value 56.33 sigma " + sigma + " period 1\n";
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 value 56.33 sigma " + sigma + " period 1\n";
+            }
+            else {
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 value  55.71 sigma " + sigma + " period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 value -51.72 sigma " + sigma + " period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C2 next" +
+                                            " chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 value  47.55 sigma " + sigma + " period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C3 next" +
+                                            " chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 value -45.67 sigma " + sigma + " period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C4 next" +
+                                            " chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 value  51.06 sigma " + sigma + " period 1\n";
+
+            buffer += "external torsion first chain " + chain + " residue " + residue + " atom C5 next" +
+                                            " chain " + chain + " residue " + residue + " atom O5 next" +
+                                            " chain " + chain + " residue " + residue + " atom C1 next" +
+                                            " chain " + chain + " residue " + residue + " atom C2 value -56.33 sigma " + sigma + " period 1\n\n";
+            }
+        }
     }
-    else {
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
-                                      " chain " + chain + " residue " + residue + " atom C1 next" +
-                                      " chain " + chain + " residue " + residue + " atom C2 next" +
-                                      " chain " + chain + " residue " + residue + " atom C3 value  55.71 sigma " + sigma + " period 1\n";
+    if (phenix == true)
+    {
+        buffer += "refinement.geometry_restraints.edits {\n";
+        for ( int i = 0; i < sugar_list.size(); i++ ) {
+            std::string sugar_name = sugar_list[i].type();
+            std::string residue = sugar_list[i].id();
+            std::string chain = sugar_list[i].chain_id().trim();
+            buffer += "\t" + chain +"_"+ sugar_name + "_" + residue + " = chain " + chain + " and resname " + sugar_name + " and resid " + residue +"\n";
+        }
+        for ( int i = 0; i < sugar_list.size(); i++ ) {
+            std::string sugar_name = sugar_list[i].type();
+            std::string residue = sugar_list[i].id();
+            std::string chain = sugar_list[i].chain_id().trim();
+            if (( this->kind_of_glycan == "c-glycan" ) || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUC") || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUL")){ // needs 1C4 restraints
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tangle_ideal = -55.71\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C1 next" +
-                                      " chain " + chain + " residue " + residue + " atom C2 next" +
-                                      " chain " + chain + " residue " + residue + " atom C3 next" +
-                                      " chain " + chain + " residue " + residue + " atom C4 value -51.72 sigma " + sigma + " period 1\n";
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tangle_ideal = 51.72\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C2 next" +
-                                      " chain " + chain + " residue " + residue + " atom C3 next" +
-                                      " chain " + chain + " residue " + residue + " atom C4 next" +
-                                      " chain " + chain + " residue " + residue + " atom C5 value  47.55 sigma " + sigma + " period 1\n";
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tangle_ideal = -47.55\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C3 next" +
-                                      " chain " + chain + " residue " + residue + " atom C4 next" +
-                                      " chain " + chain + " residue " + residue + " atom C5 next" +
-                                      " chain " + chain + " residue " + residue + " atom O5 value -45.67 sigma " + sigma + " period 1\n";
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tangle_ideal = 45.67\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C4 next" +
-                                      " chain " + chain + " residue " + residue + " atom C5 next" +
-                                      " chain " + chain + " residue " + residue + " atom O5 next" +
-                                      " chain " + chain + " residue " + residue + " atom C1 value  51.06 sigma " + sigma + " period 1\n";
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tangle_ideal = -51.06\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
 
-      buffer += "external torsion first chain " + chain + " residue " + residue + " atom C5 next" +
-                                      " chain " + chain + " residue " + residue + " atom O5 next" +
-                                      " chain " + chain + " residue " + residue + " atom C1 next" +
-                                      " chain " + chain + " residue " + residue + " atom C2 value -56.33 sigma " + sigma + " period 1\n\n";
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tangle_ideal = 56.33\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
+            }
+            else {
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tangle_ideal = 55.71\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
+
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tangle_ideal = -51.72\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
+
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tangle_ideal = 47.55\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
+
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tangle_ideal = -45.67\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
+
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tangle_ideal = 51.06\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
+
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tangle_ideal = -56.33\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
+            }
+        }
+        buffer += "}";
     }
-  }
   return buffer;
 }
 
-std::string MGlycan::write_link_ext_restraints ( float sigma_f ) {
+std::string MGlycan::write_link_ext_restraints ( float sigma_f, bool phenix ) {
     std::string buffer = "";
     std::string sigma = std::to_string(sigma_f);
     if ( this->kind_of_glycan == "c-glycan" ) { // currently only have link restraints for c-glycans, assumes ideal linkage
         std::vector<clipper::MSugar> sugar_list = this->get_sugars();
-        for ( int i = 0; i < sugar_list.size(); i++ ) {
-            std::string sugarresidue = sugar_list[i].id();
-            std::string sugarchain = this->get_root_sugar_chainID();
-            std::string proteinchain = this->get_chain();
-            std::string proteinresidue = this->get_root().first.id().trim();
-            buffer += "# " + sugar_list[i].type() + " " + sugar_list[i].id() + "\n";
-            buffer += "external torsion first chain " + sugarchain      + " residue " + sugarresidue    + " atom O5 next" +
-                                            " chain " + sugarchain      + " residue " + sugarresidue    + " atom C1 next" +
-                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CD1 next" +
-                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CG value 125.0 sigma " + sigma + " period 1\n";
+        if (phenix == false)
+        {
+            for ( int i = 0; i < sugar_list.size(); i++ ) {
+                std::string sugarresidue = sugar_list[i].id();
+                std::string sugarchain = this->get_root_sugar_chainID();
+                std::string proteinchain = this->get_chain();
+                std::string proteinresidue = this->get_root().first.id().trim();
+                buffer += "# " + sugar_list[i].type() + " " + sugar_list[i].id() + "\n";
+                buffer += "external torsion first chain " + sugarchain      + " residue " + sugarresidue    + " atom O5 next" +
+                                                " chain " + sugarchain      + " residue " + sugarresidue    + " atom C1 next" +
+                                                " chain " + proteinchain    + " residue " + proteinresidue  + " atom CD1 next" +
+                                                " chain " + proteinchain    + " residue " + proteinresidue  + " atom CG value 125.0 sigma " + sigma + " period 1\n";
 
-            buffer += "external torsion first chain " + sugarchain      + " residue " + sugarresidue    + " atom C1 next" +
-                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CD1 next" +
-                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CG next" +
-                                            " chain " + proteinchain    + " residue " + proteinresidue  + " atom CB value 0.0 sigma " + sigma + " period 1\n\n";
+                buffer += "external torsion first chain " + sugarchain      + " residue " + sugarresidue    + " atom C1 next" +
+                                                " chain " + proteinchain    + " residue " + proteinresidue  + " atom CD1 next" +
+                                                " chain " + proteinchain    + " residue " + proteinresidue  + " atom CG next" +
+                                                " chain " + proteinchain    + " residue " + proteinresidue  + " atom CB value 0.0 sigma " + sigma + " period 1\n\n";
+            }
+        }
+        if (phenix == true)
+        {
+            buffer += "refinement.geometry_restraints.edits {\n";
+            for ( int i = 0; i < sugar_list.size(); i++ ) {
+                std::string sugar_name = sugar_list[i].type();
+                std::string residue = sugar_list[i].id();
+                std::string chain = sugar_list[i].chain_id().trim();
+                std::string proteinchain = this->get_chain();
+                std::string proteinresidue = this->get_root().first.id().trim();
+                std::string protein_name = this->get_root_by_name();
+                buffer += "\t" + chain +"_"+ sugar_name + "_" + residue + " = chain " + chain + " and resname " + sugar_name + " and resid " + residue +"\n";
+                buffer += "\t" + proteinchain +"_"+ protein_name + "_" + proteinresidue + " = chain " + proteinchain + " and resname " + protein_name + " and resid " + proteinresidue +"\n";
+            }
+            for ( int i = 0; i < sugar_list.size(); i++ ) {
+                std::string sugar_name = sugar_list[i].type();
+                std::string residue = sugar_list[i].id();
+                std::string chain = sugar_list[i].chain_id().trim();
+                std::string proteinchain = this->get_chain();
+                std::string proteinresidue = this->get_root().first.id().trim();
+                std::string protein_name = this->get_root_by_name();
+
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_3 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CD1\n";
+                buffer += "\t\tatom_selection_4 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CG\n";
+                buffer += "\t\tangle_ideal = 125.0\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
+
+                buffer += "\tdihedral {\n";
+                buffer += "\t\taction = *add\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_2 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CD1\n";
+                buffer += "\t\tatom_selection_3 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CG\n";
+                buffer += "\t\tatom_selection_4 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CB\n";
+                buffer += "\t\tangle_ideal = 0.0\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
+                buffer += "}/n";
+            }
+            buffer += "}";
         }
     }
   return buffer;
@@ -5821,7 +5994,8 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
 
 std::string MGlycology::write_external_restraints ( bool restrain_rings,
                                                     bool restrain_links,
-                                                    float resolution ) {
+                                                    float resolution,
+                                                    bool phenix ) {
     float sigma_cglycan;
     float sigma;
     if (resolution == -1){
@@ -5843,11 +6017,11 @@ std::string MGlycology::write_external_restraints ( bool restrain_rings,
         if ( restrain_rings ) {
         restraints += "\n# Ring conformation restraints for " + glycan_list[i].get_type()
                     + " at " + glycan_list[i].get_root_description() + "\n";
-        restraints += glycan_list[i].write_ring_ext_restraints ( sigma );
+        restraints += glycan_list[i].write_ring_ext_restraints ( sigma, phenix );
         }
         if ( restrain_links ) {
         restraints += "\n# Glycosidic bond conformation restraints\n" ;
-        restraints += glycan_list[i].write_link_ext_restraints ( sigma/2.0 );
+        restraints += glycan_list[i].write_link_ext_restraints ( sigma/2.0, phenix );
         }
     }
     restraints += "\n\n################ EOF ################\n" ;
