@@ -4815,7 +4815,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
             buffer += "# " + sugar_list[i].type() + " " + sugar_list[i].id() + "\n";
             std::string residue = sugar_list[i].id();
             //std::string chain = this->get_chain();
-            std::string chain = sugar_list[i].chain_id().trim();
+            std::string chain = sugar_list[i].chain_id().trim().substr(0,1);
             if (( this->kind_of_glycan == "c-glycan" ) || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUC") || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUL")){ // needs 1C4 restraints
             buffer += "external torsion first chain " + chain + " residue " + residue + " atom O5 next" +
                                             " chain " + chain + " residue " + residue + " atom C1 next" +
@@ -4882,129 +4882,122 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
     }
     if (phenix == true)
     {
-        buffer += "refinement.geometry_restraints.edits {\n";
         for ( int i = 0; i < sugar_list.size(); i++ ) {
             std::string sugar_name = sugar_list[i].type();
-            std::string residue = sugar_list[i].id();
-            std::string chain = sugar_list[i].chain_id().trim();
+            std::string residue = sugar_list[i].id().trim();
+            std::string chain = sugar_list[i].chain_id().trim().substr(0,1);
             buffer += "\t" + chain +"_"+ sugar_name + "_" + residue + " = chain " + chain + " and resname " + sugar_name + " and resid " + residue +"\n";
-        }
-        for ( int i = 0; i < sugar_list.size(); i++ ) {
-            std::string sugar_name = sugar_list[i].type();
-            std::string residue = sugar_list[i].id();
-            std::string chain = sugar_list[i].chain_id().trim();
             if (( this->kind_of_glycan == "c-glycan" ) || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUC") || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUL")){ // needs 1C4 restraints
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
                 buffer += "\t\tangle_ideal = -55.71\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
                 buffer += "\t\tangle_ideal = 51.72\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
                 buffer += "\t\tangle_ideal = -47.55\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
                 buffer += "\t\tangle_ideal = 45.67\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
                 buffer += "\t\tangle_ideal = -51.06\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
                 buffer += "\t\tangle_ideal = 56.33\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
             }
             else {
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
                 buffer += "\t\tangle_ideal = 55.71\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
                 buffer += "\t\tangle_ideal = -51.72\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
                 buffer += "\t\tangle_ideal = 47.55\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C3\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
                 buffer += "\t\tangle_ideal = -45.67\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C4\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
                 buffer += "\t\tangle_ideal = 51.06\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/\n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C5\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + "residue and name C2\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
+                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
                 buffer += "\t\tangle_ideal = -56.33\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}\n";
+                buffer += "\t}\n";
             }
         }
-        buffer += "}";
     }
   return buffer;
 }
@@ -5035,44 +5028,33 @@ std::string MGlycan::write_link_ext_restraints ( float sigma_f, bool phenix ) {
         }
         if (phenix == true)
         {
-            buffer += "refinement.geometry_restraints.edits {\n";
             for ( int i = 0; i < sugar_list.size(); i++ ) {
                 std::string sugar_name = sugar_list[i].type();
-                std::string residue = sugar_list[i].id();
-                std::string chain = sugar_list[i].chain_id().trim();
+                std::string residue = sugar_list[i].id().trim();
+                std::string chain = sugar_list[i].chain_id().trim().substr(0,1);
                 std::string proteinchain = this->get_chain();
                 std::string proteinresidue = this->get_root().first.id().trim();
-                std::string protein_name = this->get_root_by_name();
+                std::string protein_name = this->get_root().first.type().trim();
                 buffer += "\t" + chain +"_"+ sugar_name + "_" + residue + " = chain " + chain + " and resname " + sugar_name + " and resid " + residue +"\n";
                 buffer += "\t" + proteinchain +"_"+ protein_name + "_" + proteinresidue + " = chain " + proteinchain + " and resname " + protein_name + " and resid " + proteinresidue +"\n";
-            }
-            for ( int i = 0; i < sugar_list.size(); i++ ) {
-                std::string sugar_name = sugar_list[i].type();
-                std::string residue = sugar_list[i].id();
-                std::string chain = sugar_list[i].chain_id().trim();
-                std::string proteinchain = this->get_chain();
-                std::string proteinresidue = this->get_root().first.id().trim();
-                std::string protein_name = this->get_root_by_name();
-
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name O5\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
-                buffer += "\t\tatom_selection_3 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CD1\n";
-                buffer += "\t\tatom_selection_4 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CG\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue +" and name O5\n";
+                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
+                buffer += "\t\tatom_selection_3 = $" + proteinchain + "_" + protein_name + "_" + proteinresidue + " and name CD1\n";
+                buffer += "\t\tatom_selection_4 = $" + proteinchain + "_" + protein_name + "_" + proteinresidue + " and name CG\n";
                 buffer += "\t\tangle_ideal = 125.0\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "\t}\n";
 
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + "residue and name C1\n";
-                buffer += "\t\tatom_selection_2 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CD1\n";
-                buffer += "\t\tatom_selection_3 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CG\n";
-                buffer += "\t\tatom_selection_4 = $" + proteinchain + "_" + protein_name + "_" + "residue and name CB\n";
+                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue +" and name C1\n";
+                buffer += "\t\tatom_selection_2 = $" + proteinchain + "_" + protein_name + "_" + proteinresidue + " and name CD1\n";
+                buffer += "\t\tatom_selection_3 = $" + proteinchain + "_" + protein_name + "_" + proteinresidue + " and name CG\n";
+                buffer += "\t\tatom_selection_4 = $" + proteinchain + "_" + protein_name + "_" + proteinresidue + " and name CB\n";
                 buffer += "\t\tangle_ideal = 0.0\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "}/n";
+                buffer += "\t}\n";
             }
-            buffer += "}";
         }
     }
   return buffer;
@@ -6007,23 +5989,41 @@ std::string MGlycology::write_external_restraints ( bool restrain_rings,
     if (sigma_cglycan < 0.1){
         sigma_cglycan = 0.1;
     }
-    std::string restraints = "# External restraints for glycan refinement with Refmac5\n";
-    restraints += "# Produced by Privateer MKIV, Glycojones team, University of York, UK.\n";
+    std::string restraints;
+    if (phenix == false)
+    {
+        restraints = "# External restraints for glycan refinement with Refmac5\n";
+        restraints += "# Produced by Privateer MKV, Glycojones team, University of York, UK.\n";
+    }
+    if (phenix == true)
+    {
+        restraints = "# External restraints for glycan refinement with Phenix\n";
+        restraints += "# Produced by Privateer MKV, Glycojones team, University of York, UK.\n";
+        restraints += "\nrefinement.geometry_restraints.edits {\n";
+    }
+    
     std::vector<clipper::MGlycan> glycan_list = this->get_list_of_glycans();
 
     for ( int i = 0; i < glycan_list.size(); i++ ) {
         if (glycan_list[i].get_type() == "c-glycan"){sigma = sigma_cglycan;}
         else{sigma = 0.1;}
         if ( restrain_rings ) {
-        restraints += "\n# Ring conformation restraints for " + glycan_list[i].get_type()
+            if (phenix == false)
+            {
+                restraints += "\n# Ring conformation restraints for " + glycan_list[i].get_type()
                     + " at " + glycan_list[i].get_root_description() + "\n";
-        restraints += glycan_list[i].write_ring_ext_restraints ( sigma, phenix );
+            }
+            restraints += glycan_list[i].write_ring_ext_restraints ( sigma, phenix );
         }
         if ( restrain_links ) {
-        restraints += "\n# Glycosidic bond conformation restraints\n" ;
-        restraints += glycan_list[i].write_link_ext_restraints ( sigma/2.0, phenix );
+            if (phenix == false)
+            {
+                restraints += "\n# Glycosidic bond conformation restraints\n" ;
+            }
+            restraints += glycan_list[i].write_link_ext_restraints ( sigma/2.0, phenix );
         }
     }
+    if (phenix == true) {restraints += "}";}
     restraints += "\n\n################ EOF ################\n" ;
     return restraints;
 }
