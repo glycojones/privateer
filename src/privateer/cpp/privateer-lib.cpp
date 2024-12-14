@@ -2109,7 +2109,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_header_ostringstream   ( std:
        << "     version=\"1.1\"\n"
        << "     width=\"" << get_width() << "\" \n"
        << "     height=\"" << get_height() << "\" \n"
-       << "     viewBox=\"" << get_viewbox() << " \"\n"
+       << "     viewBox=\"" << get_viewbox() << " \"\n>"
 //        << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
        << "  <style>\n"
        << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
