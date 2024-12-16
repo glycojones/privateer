@@ -4886,8 +4886,8 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
             std::string sugar_name = sugar_list[i].type();
             std::string residue = sugar_list[i].id().trim();
             std::string chain = sugar_list[i].chain_id().trim().substr(0,1);
-            buffer += "\t" + chain +"_"+ sugar_name + "_" + residue + " = chain " + chain + " and resname " + sugar_name + " and resid " + residue +"\n";
-            if (( this->kind_of_glycan == "c-glycan" ) || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUC") || (this->kind_of_glycan == "o-glycan" && sugar_list[i].type() == "FUL")){ // needs 1C4 restraints
+            if ( this->kind_of_glycan == "c-glycan" ) { // needs 1C4 restraints
+                buffer += "\t" + chain +"_"+ sugar_name + "_" + residue + " = chain " + chain + " and resname " + sugar_name + " and resid " + residue +"\n";
                 buffer += "\tdihedral {\n";
                 buffer += "\t\taction = *add\n";
                 buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
@@ -4940,61 +4940,6 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
                 buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
                 buffer += "\t\tangle_ideal = 56.33\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "\t}\n";
-            }
-            else {
-                buffer += "\tdihedral {\n";
-                buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
-                buffer += "\t\tangle_ideal = 55.71\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "\t}\n";
-
-                buffer += "\tdihedral {\n";
-                buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
-                buffer += "\t\tangle_ideal = -51.72\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "\t}\n";
-
-                buffer += "\tdihedral {\n";
-                buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
-                buffer += "\t\tangle_ideal = 47.55\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "\t}\n";
-
-                buffer += "\tdihedral {\n";
-                buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
-                buffer += "\t\tangle_ideal = -45.67\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "\t}\n";
-
-                buffer += "\tdihedral {\n";
-                buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
-                buffer += "\t\tangle_ideal = 51.06\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
-                buffer += "\t}\n";
-
-                buffer += "\tdihedral {\n";
-                buffer += "\t\taction = *add\n";
-                buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C5\n";
-                buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name O5\n";
-                buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
-                buffer += "\t\tangle_ideal = -56.33\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
                 buffer += "\t}\n";
             }
         }
@@ -5698,8 +5643,8 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                                                             aa_atom_bravo.coord_orth() );
 
 
-                    if ( psi < 0 )
-                        psi = clipper::Util::twopi() + psi;
+                    //if ( psi < 0 )
+                    //    psi = clipper::Util::twopi() + psi;
 
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
