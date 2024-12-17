@@ -1477,7 +1477,7 @@ bool privateer::util::do_report_linkage(std::string d_pos, std::string d_atom, s
         "NAG-1,3-FUC",
         "MAN-1,2-NAG", 
         "NAG-1,4-GAL",
-        "MAN-1,1-TRP",
+        "TRP-1,1-MAN",
     };
 
     std::string name = d_pos + "-" + d_atom + "," + a_atom + "-" + a_pos ;
