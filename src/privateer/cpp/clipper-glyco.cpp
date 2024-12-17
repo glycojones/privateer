@@ -4902,7 +4902,7 @@ std::string MGlycan::write_ring_ext_restraints ( float sigma_f, bool phenix ) {
                 buffer += "\t\tatom_selection_1 = $" + chain + "_" + sugar_name + "_" + residue + " and name C1\n";
                 buffer += "\t\tatom_selection_2 = $" + chain + "_" + sugar_name + "_" + residue + " and name C2\n";
                 buffer += "\t\tatom_selection_3 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
-                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C3\n";
+                buffer += "\t\tatom_selection_4 = $" + chain + "_" + sugar_name + "_" + residue + " and name C4\n";
                 buffer += "\t\tangle_ideal = 51.72\n\t\tsigma = " + sigma + "\n\t\tperiodicity = 1\n";
                 buffer += "\t}\n";
 
