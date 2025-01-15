@@ -6,7 +6,7 @@ will be displayed without the ChimeraX- prefix.
 -->
 
 <BundleInfo name="Privateer-for-ChimeraX" version="0.1" package="chimerax.privateer"
-  	    customInit="true" minSessionVersion="1" maxSessionVersion="1" installedIncludeDir="include">
+  	    customInit="false" minSessionVersion="1" maxSessionVersion="1" installedIncludeDir="include">
 
   <!-- Additional information about bundle source -->
   <Author>L. Holland, YSBL, University of York</Author>
@@ -32,12 +32,11 @@ will be displayed without the ChimeraX- prefix.
   <!-- Libraries code is dependent on to compile-->
   <CLibrary name="mmdb2">
     <Define>MMDB_EXPORT</Define>
-    <!--
     <CompileArgument platform="mac">-fvisibility=hidden</CompileArgument>
     <CompileArgument platform="mac">-fvisibility-inlines-hidden</CompileArgument>
     <LinkArgument platform="mac">-fvisibility=hidden -fvisibility-inlines-hidden -s</LinkArgument>
     <LinkArgument platform="mac">-fvisibility-inlines-hidden</LinkArgument>
-    <LinkArgument platform="mac">-s</LinkArgument>-->
+    <LinkArgument platform="mac">-s</LinkArgument>
     <SourceFile>src/dependencies/mmdb2/mmdb2/hybrid_36.cpp</SourceFile>
     <SourceFile>src/dependencies/mmdb2/mmdb2/mmdb_atom.cpp</SourceFile>
     <SourceFile>src/dependencies/mmdb2/mmdb2/mmdb_bondmngr.cpp</SourceFile>
@@ -200,7 +199,7 @@ will be displayed without the ChimeraX- prefix.
        Source files are listed in one or more SourceFile elements -->
 
   <!-- Module created using PyBind11 for bindings -->
-  <CModule name="carbohydrate_validation">
+  <CModule name="privateer_core">
     <CompileArgument platform="mac">-fvisibility=hidden</CompileArgument>
     <CompileArgument platform="mac">-fvisibility-inlines-hidden</CompileArgument>
     <LinkArgument platform="mac">-fvisibility=hidden -fvisibility-inlines-hidden -s</LinkArgument>
@@ -223,13 +222,13 @@ will be displayed without the ChimeraX- prefix.
     <SourceFile>src/cpp/privateer-dbquery.cpp</SourceFile>
     <SourceFile>src/cpp/privateer-lib.cpp</SourceFile>
     <SourceFile>src/cpp/privateer-xray.cpp</SourceFile>
-    <SourceFile>src/pybind/privateer-pyanalysis.cpp</SourceFile>
-    <SourceFile>src/pybind/privateer-pybind11.cpp</SourceFile>
+    <SourceFile>src/pybind/privateer-pychimeraX.cpp</SourceFile>
   </CModule>
 
   <!-- Dependencies on other ChimeraX/Python packages -->
   <Dependencies>
     <Dependency name="ChimeraX-Core" version="~=1.0"/>
+    <Dependency name="pandas"/>
   </Dependencies>
 
   <!-- Data files privateer uses to run offline> -->
@@ -244,7 +243,7 @@ will be displayed without the ChimeraX- prefix.
   <Providers manager="data formats">
     <Provider name="MTZ" suffixes=".mtz" category="Structure factors"/>
     <Provider name="MRC" suffixes=".mrc" category="Volume data"/>
-    <Provider name="PDB" suffixes=".mtz" category="Molecular structure"/>
+    <Provider name="PDB" suffixes=".pdb" category="Molecular structure"/>
     <Provider name="CIF" suffixes=".mmcif,.cif" category="Molecular structure"/>
     <Provider name="SVG" suffixes=".svg" category="Image"/>
     <Provider name="CSV" suffixes=".csv" category="General"/>
@@ -280,7 +279,7 @@ will be displayed without the ChimeraX- prefix.
     <!-- Development Status should be compatible with bundle version number -->
     <PythonClassifier>Development Status :: 2 - Pre-Alpha</PythonClassifier>
     <PythonClassifier>License :: Free for non-commercial use</PythonClassifier>
-    <ChimeraXClassifier>ChimeraX :: Command :: privateer :: Structure Analysis :: Command line privateer for carbohydrate validation</ChimeraXClassifier>
+    <ChimeraXClassifier>ChimeraX :: Command :: privateer_validation :: Structure Analysis :: Command line privateer for carbohydrate validation</ChimeraXClassifier>
     <!--<ChimeraXClassifier>ChimeraX :: Tool :: Sample Tool :: General :: Log model atom and bond counts</ChimeraXClassifier>-->
   </Classifiers>
 

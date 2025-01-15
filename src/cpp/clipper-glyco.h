@@ -842,8 +842,6 @@ namespace clipper
             std::string get_root_by_name () const { return get_root().second.type().trim() + "-" + get_root().second.id().trim() + "/" + get_root_sugar_chainID().trim().substr(0,1) + "_" + get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
             std::string get_root_for_filename () { return  get_root().second.type().trim() + get_root().second.id().trim() + "-[" + get_root_sugar_chainID().trim().substr(0,1) + "]_[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
 
-            std::string write_ring_ext_restraints ( float weight );
-            std::string write_link_ext_restraints ( float weight );
 
             clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
@@ -867,9 +865,9 @@ namespace clipper
             // const std::string get_wurcs() const { return wurcs; }
             int number_of_nodes ( ) const { return node_list.size(); }
 
-            void remove_node_at_index ( int index );
-            void replace_sugar_at_index ( int index, clipper::MSugar& donor );
-            void update_msugar_in_root ( clipper::MSugar& newmsug );
+            //void remove_node_at_index ( int index );
+            //void replace_sugar_at_index ( int index, clipper::MSugar& donor );
+            //void update_msugar_in_root ( clipper::MSugar& newmsug );
 
             int get_number_of_connections_at_index ( int index ) const { if (index>node_list.size()-1) return node_list.back().number_of_connections(); else return node_list[index].number_of_connections(); }
 
@@ -971,9 +969,6 @@ namespace clipper
             }
             std::vector < clipper::MGlycan > get_list_of_glycans () const { return list_of_glycans; }
             std::vector < clipper::MSugar > get_sugar_list() { return list_of_sugars; }
-            std::string write_external_restraints ( bool restrain_rings,
-                                                    bool restrain_links,
-                                                    float weight = 0.1 );
 
         private:
 

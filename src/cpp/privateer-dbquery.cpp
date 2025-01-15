@@ -28,8 +28,8 @@ void output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_d
 
                 std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
                 
-                if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, glucose_only, debug_output, nThreads, useParallelism);
-                else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, glucose_only, debug_output);   
+                //if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, glucose_only, debug_output, nThreads, useParallelism);
+                //else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, glucose_only, debug_output);   
                 
                 if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(glycomics_database, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
                 else std::cout << "ERROR: Privateer was unable to generate permutations that would be found in GlyConnect database!" << std::endl;
@@ -50,8 +50,8 @@ void output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_d
                 {
                     std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
 
-                    if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, glucose_only, debug_output, nThreads, useParallelism);
-                    else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, glucose_only, debug_output); 
+                    //if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, glucose_only, debug_output, nThreads, useParallelism);
+                    //else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, glucose_only, debug_output); 
 
                     if (!alternativeGlycans.empty()) push_data_to_final_permutation_container(glycomics_database, currentGlycan, alternativeGlycans, finalGlycanPermutationContainer);    
                     else std::cout << "ERROR: Privateer was unable to generate permutations that would be found on GlyConnect database!" << std::endl;

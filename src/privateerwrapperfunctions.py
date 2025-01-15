@@ -1,4 +1,4 @@
-from . import pvt_core as pvt
+from . import privateer_core as pvt
 import pandas as pd
 import gemmi
 import re

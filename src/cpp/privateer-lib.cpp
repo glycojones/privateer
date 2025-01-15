@@ -382,6 +382,227 @@ void privateer::util::print_supported_code_list ()
 
 }
 
+// bool privateer::util::write_libraries ( std::vector < std::string > code_list, float esd )
+// {
+
+//     class PrTorsion : public ccp4srs::Torsion
+//     {
+//       public:
+//         void set_period ( int period  ) { this->torsion_period = period; }
+//         void set_esd    ( float esd   ) { this->torsion_esd    = esd;    }
+//         void set_value  ( float value ) { this->torsion        = value;  }
+
+//         bool is_ring_torsion ( std::vector < clipper::String > &ring_atoms, ccp4srs::PMonomer Monomer )
+//         {
+//             int n_atoms_checked = 0;
+
+//             for ( int i = 0 ; i < ring_atoms.size() ; i ++ )
+//             {
+//                 if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom1() )->name() ).trim() )
+//                     n_atoms_checked++;
+//                 else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom2() )->name() ).trim() )
+//                     n_atoms_checked++;
+//                 else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom3() )->name() ).trim() )
+//                     n_atoms_checked++;
+//                 else if ( ring_atoms[i].trim() == clipper::String ( Monomer->atom ( this->atom4() )->name() ).trim() )
+//                     n_atoms_checked++;
+//             }
+
+//             if ( n_atoms_checked == 4 )
+//                 return true;
+//             else
+//                 return false;
+//         }
+//     };
+
+//     std::cout << "Writing out tighter geometry restraints to 'privateer-lib.cif'... " << std::endl;
+//     mmdb::InitMatType();
+
+//     ccp4srs::PManager srs;
+//     ccp4srs::PMonomer Monomer;
+//     mmdb::math::PGraph Graph;
+
+//     // remove replicas
+
+//     std::sort ( code_list.begin(), code_list.end() );
+//     std::vector< std::string >::iterator last = std::unique(code_list.begin(), code_list.end());
+//     code_list.erase ( last, code_list.end() );
+
+//     int rc;
+//     //char *S;
+
+//     std::string S(std::getenv ( "CCP4" ));
+
+//     if (S.length() < 200 )
+//         S.append ( "/share/ccp4srs" );
+//     else
+//         return true;
+
+//     srs = new ccp4srs::Manager();
+//     rc = srs->loadIndex ( S.c_str() );
+
+//     if (rc!=ccp4srs::CCP4SRS_Ok)
+//     {
+//         printf ( "\tError: unable to access CCP4 SRS library.\n" );
+//         delete srs;
+//         return true;
+//     }
+
+//     std::vector < ccp4srs::PMonomer > pmonomer_list;
+
+//     // write out the library file
+
+//     mmdb::io::File f;
+//     f.assign ( "privateer-lib.cif", true, false );
+
+//     if (!f.rewrite())
+//     {
+//         printf ( "\tError: cannot open file '%s' for writing.\n", f.FileName() );
+//         return true;
+//     }
+
+//     mmdb::mmcif::Data data;
+//     data.PutDataName ( "comp_list" );
+//     data.WriteMMCIF ( f );
+
+//     mmdb::mmcif::Loop loop_components;
+
+//     loop_components.SetCategoryName ( "_chem_comp" );
+//     loop_components.AddLoopTag ( "id" );
+//     loop_components.AddLoopTag ( "three_letter_code" );
+//     loop_components.AddLoopTag ( "name" );
+//     loop_components.AddLoopTag ( "group" );
+//     loop_components.AddLoopTag ( "number_atoms_all" );
+//     loop_components.AddLoopTag ( "number_atoms_nh" );
+//     loop_components.AddLoopTag ( "desc_level" );
+
+//     for ( int base_index = 0 ; base_index < code_list.size(); base_index++ )
+//     {
+
+//         Monomer = srs->getMonomer ( code_list[base_index].c_str(), NULL );
+
+//         std::cout << "Searching for " << code_list[base_index].c_str() << std::endl;
+
+//         if ( !Monomer )
+//         {
+//             std::cout << "Monomer not found... " << std::endl;
+//             return true;
+//         }
+//         else if ( Monomer->n_torsions() == 0 )
+//         {
+//             std::cout << std::endl << "\tWARNING: minimal description found for sugar " << code_list[base_index] << " in monomer library."
+//                       << std::endl << "\tSkipping..." << std::endl;
+//             continue;
+//         }
+
+//         std::vector < clipper::String > ring_atoms;
+
+//         for ( int i = 0 ; i < clipper::data::sugar_database_size ; i++ )
+//             if ( code_list[base_index] == clipper::data::sugar_database[i].name_short.trim() )
+//             {
+//                 ring_atoms = clipper::data::sugar_database[i].ring_atoms.trim().split(" ");
+//                 break;
+//             }
+
+//         if ( ring_atoms.size() < 3 )
+//             continue; // this means we haven't found our stuff
+//                          // by design, the only reason would be that we're handling a novel
+//                          // sugar we don't have a dictionary for yet
+
+//         // now we set period to 1 on JUST ring torsions
+
+//         loop_components.AddString ( code_list[base_index].c_str() );
+//         loop_components.AddString ( code_list[base_index].c_str() );
+//         loop_components.AddString ( Monomer->chem_name() );
+//         loop_components.AddString ( "pyranose" );
+//         loop_components.AddInteger ( Monomer->n_atoms() );
+//         loop_components.AddInteger ( Monomer->n_atoms() / 2 );
+//         loop_components.AddString ( "." );
+
+
+//         PrTorsion* torsion;
+
+//         for ( int i = 0; i < Monomer->n_torsions(); i++ )
+//         {
+//             torsion = (PrTorsion*)Monomer->torsion(i);
+
+//             if ( torsion->is_ring_torsion( ring_atoms, Monomer ) )
+//             {
+//                 clipper::Coord_orth atom1_coords ( Monomer->atom ( torsion->atom1() )->x(),
+//                                                    Monomer->atom ( torsion->atom1() )->y(),
+//                                                    Monomer->atom ( torsion->atom1() )->z() );
+
+//                 clipper::Coord_orth atom2_coords ( Monomer->atom ( torsion->atom2() )->x(),
+//                                                    Monomer->atom ( torsion->atom2() )->y(),
+//                                                    Monomer->atom ( torsion->atom2() )->z() );
+
+//                 clipper::Coord_orth atom3_coords ( Monomer->atom ( torsion->atom3() )->x(),
+//                                                    Monomer->atom ( torsion->atom3() )->y(),
+//                                                    Monomer->atom ( torsion->atom3() )->z() );
+
+//                 clipper::Coord_orth atom4_coords ( Monomer->atom ( torsion->atom4() )->x(),
+//                                                    Monomer->atom ( torsion->atom4() )->y(),
+//                                                    Monomer->atom ( torsion->atom4() )->z() );
+
+//                 float torsion_value = clipper::Coord_orth::torsion ( atom1_coords,
+//                                                                      atom2_coords,
+//                                                                      atom3_coords,
+//                                                                      atom4_coords );
+
+//                 float measured_period = clipper::Util::rad2d ( torsion_value );
+
+//                 if ( std::abs( measured_period - torsion->value()) > 10 )
+//                     std::cout << std::endl << "\tWARNING: torsion " << i << " ("
+//                                               + code_list[base_index]
+//                                               + ") from the monomer library doesn't match the measured torsion!!"
+//                               << std::endl << "\tThe measured value will be used, but this means the CCP4 monomer library is probably wrong."
+//                               << std::endl << "\tPlease report this to ccp4@ccp4.ac.uk"
+//                               << std::endl ;
+
+//                 torsion->set_period(1);
+//                 torsion->set_esd ( esd );
+//                 torsion->set_value ( measured_period );
+//             }
+//         }
+
+//         pmonomer_list.push_back ( Monomer );
+//     }
+
+//     loop_components.WriteMMCIF ( f );
+
+//     for ( int individual_monomer = 0 ; individual_monomer < pmonomer_list.size() ; individual_monomer++ )
+//     {
+//         mmdb::mmcif::PData data_out = pmonomer_list[individual_monomer]->makeCIF();
+
+//         // Fix for an mmdb2 bug that produces empty blocks
+
+//         if ( data_out->GetLoopLength("_chem_comp_plane_atom") == 0 )
+//         {
+//            data_out->DeleteLoop("_chem_comp_plane_atom");
+//         }
+
+//         data_out->WriteMMCIF ( f );
+//         data_out->FreeMemory ( 0 );
+//         delete data_out;
+//     }
+
+//     f.shut();
+
+//     std::filebuf myfile;
+//     myfile.open ("privateer-lib.cif", std::ios::in | std::ios::out);
+
+//     if (!myfile.is_open())
+//         std::cout << "Cannot open library file - this is a bug, please report (jon.agirre@york.ac.uk)" << std::endl;
+
+//     if ( Monomer )
+//         delete Monomer;
+
+//     if ( srs )
+//         delete srs;
+
+//     return false;
+// }
+
 void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, std::vector<privateer::json::GlycomicsDatabase>& glycomics_database )
 {
     std::fstream of_xml;
@@ -825,6 +1046,7 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
             printf("%c%c%c%c\t%s-",input_model[1+pos_slash],input_model[2+pos_slash],input_model[3+pos_slash],input_model[4+pos_slash], ligandList[index].second.type().c_str());
             std::cout << ligandList[index].first << "-" << ligandList[index].second.id().trim() << "  ";
         }
+
         if (batch)
         {
             std::vector<clipper::ftype> cpParams(10, 0);
@@ -884,10 +1106,6 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                     if (ligandList[index].second.is_sane())
                     {
                         if ( ! ligandList[index].second.ok_with_conformation () )
-                        {
-                            fprintf(output, "\tcheck");
-                        }
-                        else if ( ! ligandList[index].second.ok_with_anomer () )
                         {
                             fprintf(output, "\tcheck");
                         }
@@ -996,10 +1214,6 @@ void privateer::util::print_monosaccharide_summary (bool batch, bool showGeom, i
                     {
                         if ( ! ligandList[index].second.ok_with_conformation () )
                             printf("\tcheck");
-                        else if ( ! ligandList[index].second.ok_with_anomer () )
-                        {
-                            printf("\tcheck");
-                        }
                         else
                             printf("\tyes");
                     }
@@ -1126,10 +1340,6 @@ void privateer::util::print_monosaccharide_summary_python (bool batch, bool show
                 {
                     if ( ! ligandList[index].second.ok_with_conformation () )
                         printf("\tcheck");
-                    else if ( ! ligandList[index].second.ok_with_anomer () )
-                    {
-                        printf("\tcheck");
-                    }
                     else
                         printf("\tyes");
                 }
@@ -1267,6 +1477,7 @@ bool privateer::util::do_report_linkage(std::string d_pos, std::string d_atom, s
         "NAG-1,3-FUC",
         "MAN-1,2-NAG", 
         "NAG-1,4-GAL",
+        "TRP-1,1-MAN",
     };
 
     std::string name = d_pos + "-" + d_atom + "," + a_atom + "-" + a_pos ;
@@ -1396,7 +1607,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_header   ( std::fstream& of )
        << "     width=\"" << get_width() << "\" \n"
        << "     height=\"" << get_height() << "\" \n"
        << "     viewBox=\"" << get_viewbox() << " \"\n"
-       << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
+       << "     preserveAspectRatio=\"xMidYMid slice\">\n\n"
        << "  <style>\n"
        << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
        << "    .my_red    { fill:" << get_colour ( rootred, original_colour_scheme  ) << " }\n"
@@ -1661,7 +1872,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_header   ( )
        << "     width=\"" << get_width() << "\" \n"
        << "     height=\"" << get_height() << "\" \n"
        << "     viewBox=\"" << get_viewbox() << " \"\n"
-       << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
+       << "     preserveAspectRatio=\"xMidYMid slice\">\n\n"
        << "  <style>\n"
        << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
        << "    .my_red    { fill:" << get_colour ( rootred, original_colour_scheme  ) << " }\n"
@@ -1899,8 +2110,8 @@ void privateer::glycanbuilderplot::Plot::write_svg_header_ostringstream   ( std:
        << "     version=\"1.1\"\n"
        << "     width=\"" << get_width() << "\" \n"
        << "     height=\"" << get_height() << "\" \n"
-       << "     viewBox=\"" << get_viewbox() << " \"\n"
-       << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
+       << "     viewBox=\"" << get_viewbox() << " \"\n>"
+//        << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
        << "  <style>\n"
        << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
        << "    .my_red    { fill:" << get_colour ( rootred, original_colour_scheme  ) << " }\n"
@@ -2187,7 +2398,7 @@ std::string privateer::glycanbuilderplot::Plot::get_XML  ( )
 }
 
 
-bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
+bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan,  privateer::glycanbuilderplot::GlycanErrorCount* error_count)
 {
 
     this->set_size(3000,3000);
@@ -2199,17 +2410,17 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
     // first, let us draw the root
 
     if ( type == "n-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "N", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "N-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "N", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "N-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "o-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "O", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "O-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "O", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "O-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "s-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "S", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "S-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "S", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "S-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "c-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "C", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "C-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "C", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "C-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "p-glycan" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "P", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "P-glycosylation. " + glycan.get_root_description(), mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "P", glycan.get_root().first.type(), glycan.get_chain().substr(0,1) + "/" + glycan.get_root().first.id().trim(), "P-glycosylation. " + glycan.get_root_description(), glycan.get_chain().trim(), glycan.get_root().first.type().trim(), glycan.get_root().first.seqnum(), mmdbsel );
     else if ( type == "ligand" )
-        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "L-", "N/A", "Ligand", mmdbsel );
+        root = new privateer::glycanbuilderplot::GlycanRoot(2768, 990, "L-", "N/A", "Ligand", "Ligand", glycan.get_root_sugar_chainID().trim(), glycan.get_root().second.type().trim(), glycan.get_root().second.seqnum(), mmdbsel );
     else return true;
 
     add_block ( root );
@@ -2221,7 +2432,6 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
     else if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "beta") anomerSymbol = "&#946;";
     else                                                                                  anomerSymbol = "&#63;";
 
-
     Bond *first_bond = new Bond( 2800, 1015, anomerSymbol, side, glycan.get_link_description(), mmdbsel );
     add_link ( first_bond );
 
@@ -2229,7 +2439,7 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
 
     const clipper::MGlycan::Node node = glycan.get_node ( 0 ); // get the first node
 
-    if(glycan.get_type() == "n-glycan")
+    if(glycan.get_type() == "n-glycan" || glycan.get_type() == "c-glycan")
     {
         if (node.get_sugar().type().trim() == "NAG" && glycan.get_root().first.type().trim() == "ASN")
         {
@@ -2241,6 +2451,20 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
                 std::string message = os.str();
                 shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", mmdbsel  );
                 add_shaded_link(new_shaded_bond);
+                error_count->torsion_err++; 
+            }
+        }
+        else if (node.get_sugar().type().trim() == "MAN" && glycan.get_root().first.type().trim() == "TRP")
+        {
+            float link_zscore = glycan.get_protein_sugar_linkage_zscore();
+            if(link_zscore < -1 && link_zscore != 42069 && glycan.get_protein_sugar_linkage_zscore_attempt_to_calculate())
+            {
+                std::ostringstream os;
+                os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore << "\nWarning: Sample size is small. Check torsion plot to validate.";
+                std::string message = os.str();
+                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", mmdbsel  );
+                add_shaded_link(new_shaded_bond);
+                error_count->torsion_err++; 
             }
         }
         else
@@ -2252,20 +2476,28 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan )
                 std::string message = os.str();
                 shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbondnull", mmdbsel  );
                 add_shaded_link(new_shaded_bond);
+                error_count->torsion_err++;
             }
         }
     }
 
-    recursive_paint ( glycan, node, 2685, 990 ); // and initiate House Party protocol
+    recursive_paint ( glycan, node, 2685, 990, false, error_count); // and initiate House Party protocol
 
     this->tighten_viewbox();
 
     return false;
 }
 
-void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles )
+void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles, GlycanErrorCount* errors)
 {
     const clipper::MSugar& sugar = node.get_sugar();
+    GlycanErrorCount node_errors = privateer::glycanbuilderplot::get_error_counts(sugar, mg);
+
+    errors->torsion_err += node_errors.torsion_err; 
+    errors->conformation_err += node_errors.conformation_err; 
+    errors->anomer_err +=node_errors.anomer_err; 
+    errors->puckering_err += node_errors.puckering_err; 
+    errors->chirality_err += node_errors.chirality_err; 
 
     std::string mmdbsel = "mmdb:///" + mg.get_chain().substr(0,1) + "/" + sugar.id().trim();
     std::string sugname = clipper::data::carbname_of ( sugar.type() );
@@ -2279,192 +2511,192 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
     if ( sugname == "Glc" )
     {
-        Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+        Glc * glc = new Glc (x, y, get_svg_tooltip ( sugar, validation, mg), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( glc );
         if (node_contains_issue_with_sugar && this->potential_issue_shading)
         {
-            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shCrcl);
         }
     }
     else if ( sugname == "Gal" )
     {
-        Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        Gal * gal = new Gal (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( gal );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shCrcl);
         }
     }
     else if ( sugname == "Man" )
     {
-        Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        Man * man = new Man (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( man );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedCircle * shCrcl = new shadedCircle (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shCrcl);
         }
 
     }
     else if ( sugname == "Fuc" )
     {
-        Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        Fuc * fuc = new Fuc (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( fuc );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedTriangle * shTrngl = new shadedTriangle (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedTriangle * shTrngl = new shadedTriangle (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shTrngl);
         }
     }
     else if ( sugname == "Xyl" )
     {
-        Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        Xyl * xyl = new Xyl (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( xyl );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedStar * shStar = new shadedStar (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedStar * shStar = new shadedStar (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shStar);
         }
     }
     else if ( sugname == "GlcN" )
     {
-        GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        GlcN * glcn = new GlcN (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( glcn );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GalN" )
     {
-        GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        GalN * galn = new GalN (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( galn );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "ManN" )
     {
-        ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+        ManN * mann = new ManN (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( mann );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GlcNAc" )
     {
-        GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        GlcNAc * glcnac = new GlcNAc (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( glcnac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GalNAc" )
     {
-        GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation, mg ) , mmdbsel );
+        GalNAc * galnac = new GalNAc (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( galnac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "ManNAc" )
     {
-        ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation, mg ) , mmdbsel );
+        ManNAc * mannac = new ManNAc (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
         add_block ( mannac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GlcA" )
     {
-        GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        GlcA * glca = new GlcA (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( glca );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname == "GalA" )
     {
-        GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        GalA * gala = new GalA (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( gala );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname ==  "ManA" )
     {
-        ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        ManA * mana = new ManA (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( mana );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedSquare * shSqr = new shadedSquare (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shSqr);
         }
     }
     else if ( sugname ==  "Neu5Gc" )
     {
-        Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        Neu5Gc *neu5gc = new Neu5Gc ( x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( neu5gc );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else if ( sugname ==  "Neu5Ac" )
     {
-        Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        Neu5Ac *neu5ac = new Neu5Ac ( x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( neu5ac );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else if ( sugname ==  "IdoA" )
     {
-        IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        IdoA *idoa = new IdoA ( x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( idoa );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else if ( sugname ==  "KDN" )
     {
-        KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        KDN *kdn = new KDN ( x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( kdn );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedDiamond * shDiam = new shadedDiamond (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shDiam);
         }
     }
     else
     {
-        Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation, mg ), mmdbsel  );
+        Unk *unk = new Unk ( x, y, *(sugar.type().substr(0,1).c_str()), get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel  );
         add_block ( unk );
         if (node_contains_issue_with_sugar && this->potential_issue_shading )
         {
-            shadedHexagon * shHex = new shadedHexagon (x, y, get_svg_tooltip ( sugar, validation, mg ), mmdbsel );
+            shadedHexagon * shHex = new shadedHexagon (x, y, get_svg_tooltip ( sugar, validation, mg ), sugar.chain_id().trim(), sugar.short_name().trim(), sugar.get_seqnum(), mmdbsel );
             add_shaded_node (shHex);
         }
     }
@@ -2507,6 +2739,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::string message = os.str();
                             shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mmdbsel  );
                             add_shaded_link(new_shaded_bond);
+                            errors->torsion_err++; 
                         }
                     }
                     else
@@ -2516,10 +2749,11 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++; 
                     }
                 }
 
-                recursive_paint ( mg, linked_node, x, y + 110 );
+                recursive_paint ( mg, linked_node, x, y + 110, false, errors);
             }
             else // up it goes, then
             {
@@ -2545,6 +2779,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::string message = os.str();
                             shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mmdbsel  );
                             add_shaded_link(new_shaded_bond);
+                            errors->torsion_err++; 
                         }
                     }
                     else
@@ -2554,10 +2789,11 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++; 
                     }
                 }
                 // }
-                recursive_paint ( mg, linked_node, x, y - 110 );
+                recursive_paint ( mg, linked_node, x, y - 110, false, errors );
             }
         }
         else if ( clipper::data::carbname_of(linked_node.get_sugar().type()) == "Xyl" )
@@ -2587,6 +2823,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::string message = os.str();
                             shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mmdbsel  );
                             add_shaded_link(new_shaded_bond);
+                            errors->torsion_err++; 
                         }
                     }
                     else
@@ -2596,10 +2833,11 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++; 
                     }
                 }
 
-                recursive_paint ( mg, linked_node, x, y + 110 );
+                recursive_paint ( mg, linked_node, x, y + 110, false, errors);
             }
             else // up it goes, then
             {
@@ -2625,6 +2863,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::string message = os.str();
                             shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mmdbsel  );
                             add_shaded_link(new_shaded_bond);
+                            errors->torsion_err++; 
                         }
                     }
                     else
@@ -2634,10 +2873,12 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++;                         
+
                     }
                 }
 
-                recursive_paint ( mg, linked_node, x, y - 110 );
+                recursive_paint ( mg, linked_node, x, y - 110, false, errors);
             }
         }
         else // pseudo-general case
@@ -2735,6 +2976,8 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::string message = os.str();
                         shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbond", mmdbsel  );
                         add_shaded_link(new_shaded_bond);
+                        errors->torsion_err++; 
+
                     }
                 }
                 else
@@ -2744,10 +2987,12 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                     std::string message = os.str();
                     shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbondnull", mmdbsel  );
                     add_shaded_link(new_shaded_bond);
+                    errors->torsion_err++; 
+
                 }
             }
 
-            recursive_paint ( mg, linked_node, x - 110, y + ( sign * 80 ) );
+            recursive_paint ( mg, linked_node, x - 110, y + ( sign * 80 ), false, errors );
         }
     }
 }
@@ -2861,7 +3106,7 @@ std::string privateer::glycanbuilderplot::Glc::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#glc\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -2875,7 +3120,7 @@ std::string privateer::glycanbuilderplot::Man::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -2888,7 +3133,7 @@ std::string privateer::glycanbuilderplot::Gal::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#gal\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -2912,7 +3157,7 @@ std::string privateer::glycanbuilderplot::Fuc::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#fuc\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -2936,7 +3181,7 @@ std::string privateer::glycanbuilderplot::Xyl::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#xyl\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -2964,7 +3209,7 @@ std::string privateer::glycanbuilderplot::GalN::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#galn\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -2976,7 +3221,7 @@ std::string privateer::glycanbuilderplot::GlcN::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#glcn\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -2989,7 +3234,7 @@ std::string privateer::glycanbuilderplot::ManN::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#mann\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3004,7 +3249,7 @@ std::string privateer::glycanbuilderplot::GlcNAc::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3017,7 +3262,7 @@ std::string privateer::glycanbuilderplot::GalNAc::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#galnac\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3030,7 +3275,7 @@ std::string privateer::glycanbuilderplot::ManNAc::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#mannac\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3056,7 +3301,7 @@ std::string privateer::glycanbuilderplot::Neu5Ac::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#neu5ac\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3069,7 +3314,7 @@ std::string privateer::glycanbuilderplot::Neu5Gc::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#neu5gc\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3081,7 +3326,7 @@ std::string privateer::glycanbuilderplot::KDN::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#kdn\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3094,7 +3339,7 @@ std::string privateer::glycanbuilderplot::GlcA::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#glca\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3108,7 +3353,7 @@ std::string privateer::glycanbuilderplot::ManA::get_XML ()
 
 
     tmp     <<  "  <use xlink:href=\"#mana\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3120,7 +3365,7 @@ std::string privateer::glycanbuilderplot::GalA::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#gala\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3133,7 +3378,7 @@ std::string privateer::glycanbuilderplot::IdoA::get_XML ()
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#idoa\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
@@ -3158,7 +3403,7 @@ std::string privateer::glycanbuilderplot::Unk::get_XML ()
     std::ostringstream tmp;
 
     tmp <<  "  <use xlink:href=\"#unk\" x=\"" << get_x() << "\""
-        <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+        <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
         <<  "<title>" << get_tooltip() << "</title>"
         <<  "</use>\n"
         <<  "<text x=\"" << get_x() + 25 << "\""
@@ -3178,7 +3423,7 @@ std::string privateer::glycanbuilderplot::GlycanRoot::get_XML ()
     if ( link_name == "o" ) link_colour = "my_red";
     else if ( link_name == "s" ) link_colour = "my_yellow";
 
-    tmp << "  <g id=\"glycan_root\" transform=\"translate(" << get_x() << " " << get_y() << ")\" >\n"
+    tmp << "  <g id=\"glycan_root\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\" transform=\"translate(" << get_x() << " " << get_y() << ")\" >\n"
         << "    <rect width=\"160\" height=\"50\" rx=\"10\" ry=\"10\" style=\"stroke:#000000;"
         << " fill:#ffffff; stroke-width:2.0;\" />\n"
         << "    <line x1=\"30\" y1=\"0\" x2=\"30\" y2=\"50\" style=\"stroke:#000000;"

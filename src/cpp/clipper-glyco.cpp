@@ -5509,29 +5509,6 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
     this->list_of_glycans.insert(this->list_of_glycans.end(), list_of_glycans_modelled_as_single_residues.begin(), list_of_glycans_modelled_as_single_residues.end());
 }
 
-std::string MGlycology::write_external_restraints ( bool restrain_rings,
-                                                    bool restrain_links,
-                                                    float weight ) {
-
-  std::string restraints = "# External restraints for glycan refinement with Refmac5\n";
-  restraints += "# Produced by Privateer MKIV, Glycojones team, University of York, UK.\n";
-  std::vector<clipper::MGlycan> glycan_list = this->get_list_of_glycans();
-
-  for ( int i = 0; i < glycan_list.size(); i++ ) {
-    if ( restrain_rings ) {
-      restraints += "\n# Ring conformation restraints for " + glycan_list[i].get_type()
-                 + " at " + glycan_list[i].get_root_description() + "\n";
-      restraints += glycan_list[i].write_ring_ext_restraints ( weight );
-    }
-    if ( restrain_links ) {
-      restraints += "\n# Glycosidic bond conformation restraints\n" ;
-      restraints += glycan_list[i].write_link_ext_restraints ( weight );
-    }
-  }
-  restraints += "\n\n################ EOF ################\n" ;
-  return restraints;
-}
-
 
 /*! Internal function for getting the alternate conformation code
 	\param ma A clipper::MAtom object

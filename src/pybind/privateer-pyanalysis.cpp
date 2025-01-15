@@ -1172,8 +1172,8 @@ pybind11::dict privateer::pyanalysis::GlycanStructure::query_glycomics_database(
 
             std::vector<std::pair<clipper::MGlycan, std::vector<int>>> alternativeGlycans;
 
-            if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, returnAllPossiblePermutations, false, nThreads, useParallelism);
-            else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, returnAllPossiblePermutations, false);
+            //if(useParallelism) alternativeGlycans = generate_closest_matches_parallel(currentGlycan, glycomics_database, returnAllPossiblePermutations, false, nThreads, useParallelism);
+            //else               alternativeGlycans = generate_closest_matches_singlethreaded(currentGlycan, glycomics_database, returnAllPossiblePermutations, false);
 
             if(!alternativeGlycans.empty())
             {

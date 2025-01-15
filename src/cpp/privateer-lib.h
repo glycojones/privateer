@@ -19,6 +19,7 @@
 #include <clipper/clipper-contrib.h>
 #include <clipper/clipper-minimol.h>
 
+
 typedef clipper::HKL_data_base::HKL_reference_index HRI;
 
 inline const std::string b2s ( bool b )
@@ -104,7 +105,7 @@ namespace privateer
                 << "<tspan>Detected type: " << sugar.type_of_sugar() << ". </tspan>";
             if ( validation )
             {
-                if  ( glycan.get_type() == "c-glycan" )
+                if ( glycan.get_type() == "c-glycan" )
                 {
                     if ((sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
                     {
@@ -140,7 +141,63 @@ namespace privateer
             return str.str();
         }
 
-        inline const bool sugar_contains_issues ( clipper::MSugar sugar, clipper::MGlycan glycan  )
+        struct GlycanErrorCount { 
+            int torsion_err = 0; 
+            int conformation_err = 0; 
+            int anomer_err = 0; 
+            int puckering_err = 0; 
+            int chirality_err = 0; 
+
+            GlycanErrorCount operator+(const GlycanErrorCount& err) { 
+                GlycanErrorCount new_err; 
+                new_err.torsion_err = this->torsion_err; 
+                new_err.conformation_err = this->conformation_err; 
+                new_err.anomer_err = this->anomer_err; 
+                new_err.puckering_err = this->puckering_err; 
+                new_err.chirality_err = this->chirality_err; 
+                return new_err;
+            } 
+        };
+
+        static inline const GlycanErrorCount get_error_counts ( clipper::MSugar sugar , clipper::MGlycan glycan)
+        {
+            
+            GlycanErrorCount err; 
+                if  ( glycan.get_type() == "c-glycan" )
+                {
+                    if ((sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
+                    {
+                        sugar.override_conformation_diag ( true );
+                    }
+                    if ( sugar.conformation_name() == "4c1" )
+                    {
+                        sugar.override_conformation_diag ( false );
+                    }
+                    if (sugar.type().trim() == "BMA")
+                    {
+                        sugar.override_anomer_diag( false );
+                    }
+                }
+                if ( ! sugar.ok_with_anomer() ) {
+                    err.anomer_err++; 
+                }
+                if ( ! sugar.ok_with_chirality() ) {
+                    err.chirality_err++; 
+                }
+                if ( ! sugar.ok_with_puckering() ){
+
+                    err.puckering_err++;
+                }
+                if ( ! sugar.ok_with_conformation() ) {
+
+                    err.conformation_err++; 
+                }
+            
+            
+            return err;
+        };
+
+        inline const bool sugar_contains_issues ( clipper::MSugar sugar, clipper::MGlycan glycan )
         {
             if  ( glycan.get_type() == "c-glycan" )
             {
@@ -158,7 +215,6 @@ namespace privateer
 
                 }
             }
-
             if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
                     sugar.ok_with_chirality() && sugar.ok_with_puckering() )
                 return false;
@@ -183,6 +239,12 @@ namespace privateer
                 std::string get_tooltip ( ) { return this->tooltip; }
                 void set_mmdbsel ( std::string mmdbsel ) { this->mmdbsel = mmdbsel;  }
                 std::string get_mmdbsel ( ) { return this->mmdbsel; }
+                void set_chainID ( std::string chainID ) { this -> chainID = chainID; }
+                std::string get_chainID () { return this-> chainID; }
+                void set_resname ( std::string resname ) { this -> resname = resname; }
+                std::string get_resname () { return this -> resname; }
+                void set_seqnum ( int seqnum ) { this -> seqnum = seqnum; }
+                int get_seqnum ( ) { return this -> seqnum; }
 
             protected:
                 int pos_x;
@@ -190,6 +252,10 @@ namespace privateer
                 std::string svg_id;
                 std::string tooltip;
                 std::string mmdbsel;
+                std::string chainID;
+                std::string resname;
+                int seqnum; 
+
         };
 
 
@@ -308,7 +374,7 @@ namespace privateer
 
                 void set_title ( std::string title ) { this->title = title; }
                 std::string get_title () { return this->title; }
-                bool plot_glycan ( clipper::MGlycan glycan );
+                bool plot_glycan ( clipper::MGlycan glycan,  privateer::glycanbuilderplot::GlycanErrorCount* error_count = nullptr);
                 bool plot_demo ( ); //!< creates a demo plot with all the blocks, links and roots Privateer can generate
                 bool write_to_file  ( std::string file_path ); //!< returns true if there have been any problems
                 std::string write_to_string ( );
@@ -341,7 +407,7 @@ namespace privateer
                 void write_svg_contents_ostringstream      ( std::ostringstream& of );
                 void write_svg_footer_ostringstream        ( std::ostringstream& of );
 
-                void recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles = false );
+                void recursive_paint ( clipper::MGlycan mg, clipper::MGlycan::Node node, int x, int y, bool oxford_angles = false, GlycanErrorCount* errors=nullptr);
 
                 // we want to draw linkages and shades first, so that the blocks are then drawn on top of them
 
@@ -352,6 +418,11 @@ namespace privateer
                 std::vector<int> viewbox;
                 std::vector < Shape * > list_of_shaded_shapes;
                 std::vector < Shape * > list_of_shapes;
+
+                int anomer_err_no = 0; 
+                int torsion_err_no = 0; 
+                int conformation_err_no = 0;
+
 
         };
 
@@ -469,7 +540,7 @@ namespace privateer
         {
             public:
                 shadedCircle() { } //!< null constructor
-                shadedCircle( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                shadedCircle( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
         };
 
@@ -477,7 +548,7 @@ namespace privateer
         {
             public:
                 Glc() { } //!< null constructor
-                Glc( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                Glc( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -486,7 +557,7 @@ namespace privateer
         {
             public:
                 Gal() { } //!< null constructor
-                Gal( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                Gal( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -495,7 +566,7 @@ namespace privateer
         {
             public:
                 Man() { } //!< null constructor
-                Man( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                Man( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -504,7 +575,7 @@ namespace privateer
         {
             public:
                 shadedTriangle() { } //!< null constructor
-                shadedTriangle( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                shadedTriangle( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
         };
 
@@ -512,7 +583,7 @@ namespace privateer
         {
             public:
                 Fuc() { } //!< null constructor
-                Fuc( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                Fuc( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -521,7 +592,7 @@ namespace privateer
         {
             public:
                 shadedStar() { } //!< null constructor
-                shadedStar( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                shadedStar( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
         };
 
@@ -529,7 +600,7 @@ namespace privateer
         {
             public:
                 Xyl() { } //!< null constructor
-                Xyl( int x, int y, std::string message,  std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                Xyl( int x, int y, std::string message,  std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -541,7 +612,7 @@ namespace privateer
         {
             public:
                 shadedSquare() { } //!< null constructor
-                shadedSquare( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                shadedSquare( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
         };
 
@@ -549,7 +620,7 @@ namespace privateer
         {
             public:
                 GlcN() { } //!< null constructor
-                GlcN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                GlcN( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -558,7 +629,7 @@ namespace privateer
         {
             public:
                 GalN() { } //!< null constructor
-                GalN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                GalN( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -567,7 +638,7 @@ namespace privateer
         {
             public:
                 ManN() { } //!< null constructor
-                ManN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                ManN( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -579,7 +650,7 @@ namespace privateer
         {
             public:
                 GlcNAc() { } //!< null constructor
-                GlcNAc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                GlcNAc( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -588,7 +659,7 @@ namespace privateer
         {
             public:
                 GalNAc() { } //!< null constructor
-                GalNAc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                GalNAc( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -597,7 +668,7 @@ namespace privateer
         {
             public:
                 ManNAc() { } //!< null constructor
-                ManNAc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                ManNAc( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -608,7 +679,7 @@ namespace privateer
         {
             public:
                 shadedDiamond() { } //!< null constructor
-                shadedDiamond( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                shadedDiamond( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
         };
 
@@ -616,7 +687,7 @@ namespace privateer
         {
             public:
                 Neu5Ac() { } //!< null constructor
-                Neu5Ac( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                Neu5Ac( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -625,7 +696,7 @@ namespace privateer
         {
             public:
                 Neu5Gc() { } //!< null constructor
-                Neu5Gc( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                Neu5Gc( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -634,7 +705,7 @@ namespace privateer
         {
             public:
                 KDN() { } //!< null constructor
-                KDN( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                KDN( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -643,7 +714,7 @@ namespace privateer
         {
             public:
                 GlcA() { } //!< null constructor
-                GlcA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                GlcA( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -652,7 +723,7 @@ namespace privateer
         {
             public:
                 IdoA() { } //!< null constructor
-                IdoA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); }
+                IdoA( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -661,7 +732,7 @@ namespace privateer
         {
             public:
                 GalA() { } //!< null constructor
-                GalA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                GalA( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -670,7 +741,7 @@ namespace privateer
         {
             public:
                 ManA() { } //!< null constructor
-                ManA( int x, int y, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                ManA( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
 
         };
@@ -679,7 +750,7 @@ namespace privateer
         {
             public:
                 shadedHexagon() { } //!< null constructor
-                shadedHexagon( int x, int y, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel);}
+                shadedHexagon( int x, int y, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
         };
 
@@ -687,7 +758,7 @@ namespace privateer
         {
             public:
                 Unk() { } //!< null constructor
-                Unk( int x, int y, const char letter, std::string message, std::string mmdbsel = "") { set_pos(x, y); set_tooltip ( message ); code += letter;  set_mmdbsel(mmdbsel);}
+                Unk( int x, int y, const char letter, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); code += letter; set_mmdbsel(mmdbsel); set_chainID(chainID); set_resname(resname); set_seqnum(seqnum);}
                 std::string get_XML ( );
             private:
                 std::string code;
@@ -736,7 +807,7 @@ namespace privateer
             public:
                 GlycanRoot() {} //!< null constructor
 
-                GlycanRoot( int x, int y, std::string link_atom, std::string root_name, std::string root_id, std::string message, std::string mmdbsel="" )
+                GlycanRoot( int x, int y, std::string link_atom, std::string root_name, std::string root_id, std::string message, std::string chainID = "N/A", std::string resname = "N/A", int seqnum = 0, std::string mmdbsel="" )
                 {
                     set_pos(x, y);
                     set_tooltip ( message );
@@ -744,6 +815,9 @@ namespace privateer
                     set_root_name ( root_name );
                     set_root_id   ( root_id   );
                     set_mmdbsel ( mmdbsel );
+                    set_chainID ( chainID );
+                    set_resname ( resname );
+                    set_seqnum ( seqnum );
                 }
 
                 std::string get_XML ( );
@@ -768,8 +842,8 @@ namespace privateer
     {
         inline std::string carbname_of ( std::string name ) { return clipper::data::carbname_of ( name ); }
         inline bool found_in_database ( std::string name ) { return clipper::data::found_in_database ( name ); }
-        std::string get_annotated_glycans ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined" );
-        std::string get_annotated_glycans_hierarchical ( std::string pdb_filename, bool original_colour_scheme = false, std::string expression_system = "undefined"  );
+        std::string get_annotated_glycans ( std::string pdb_filename, bool original_colour_scheme = true, std::string expression_system = "undefined" );
+        std::string get_annotated_glycans_hierarchical ( std::string pdb_filename, bool original_colour_scheme = true, std::string expression_system = "undefined"  );
         std::string print_wurcs ( std::string pdb_filename, std::string expression_system = "undefined");
         std::string print_node ( const clipper::MiniMol& mmol, const clipper::MGlycan& mg, const clipper::MGlycan::Node& node, const std::string chain, const clipper::MGlycan::Linkage& connection );
         void svg_graphics_demo ( bool original_colour_scheme, bool inverted_background = false );
