@@ -6,7 +6,7 @@ will be displayed without the ChimeraX- prefix.
 -->
 
 <BundleInfo name="Privateer-for-ChimeraX" version="0.1" package="chimerax.privateer"
-  	    customInit="false" minSessionVersion="1" maxSessionVersion="1" installedIncludeDir="include">
+  	    customInit="false" minSessionVersion="1" maxSessionVersion="1" installedIncludeDir="include" installedDataDir = "data">
 
   <!-- Additional information about bundle source -->
   <Author>L. Holland, YSBL, University of York</Author>
@@ -236,7 +236,7 @@ will be displayed without the ChimeraX- prefix.
     <DataFile>data/glycomics/privateer_glycomics_database.json</DataFile>
     <DataFile>data/linkage_torsions/privateer_torsion_database.json</DataFile>
     <DataFile>data/linkage_torsions/privateer_torsions_z_score_database.json</DataFile>
-    <!--<DataDir>docs</DataDir>-->
+    <DataDir>data</DataDir>
   </DataFiles>
 
   <!-- Register PDB,MMCIF,MTZ,MRC format as one of the supported input file formats and SVG, CSV as ouput file formats -->

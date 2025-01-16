@@ -180,7 +180,7 @@ namespace privateer
         inline std::vector<GlycomicsDatabase> read_json_file_for_glycomics_database(const std::string& path) 
         {
             std::string path_copy = path;
-            if(path_copy == "nopath" || path_copy.empty()) 
+            /*if(path_copy == "nopath" || path_copy.empty()) 
             {
                 std::string env;
                 if(std::getenv("PRIVATEERDATA"))
@@ -193,7 +193,7 @@ namespace privateer
                     env = std::getenv("CLIBD");
                     path_copy = env + "/privateer_data/glycomics/privateer_glycomics_database.json";
                 }
-            }
+            }*/
 
             std::cout << "Reading " << path_copy << " for Glycomics database" << std::endl;
 
@@ -678,7 +678,7 @@ namespace privateer
         inline GlobalTorsionZScore read_json_file_for_torsions_zscore_database(const std::string& path) 
         {
             std::string path_copy = path;
-            if(path_copy == "nopath" || path_copy.empty()) 
+            /*if(path_copy == "nopath" || path_copy.empty()) 
             {
                 std::string env;
                 if(std::getenv("PRIVATEERDATA"))
@@ -691,7 +691,7 @@ namespace privateer
                     env = std::getenv("CLIBD");
                     path_copy = env + "/privateer_data/linkage_torsions/privateer_torsions_z_score_database.json";
                 }
-            }
+            }*/
 
             fileptr_t f = file_open(path_copy.c_str(), "rb");
             size_t buf_size = file_size(f.get(), path_copy);

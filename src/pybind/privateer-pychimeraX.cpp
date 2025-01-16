@@ -4,7 +4,7 @@
 
 using namespace pybind11::literals;
 
-pybind11::list validate(std::string& path_to_model_file)
+pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zscores)
 {
     clipper::MiniMol mmol;
     clipper::MMDBfile mfile;
@@ -14,7 +14,8 @@ pybind11::list validate(std::string& path_to_model_file)
 
 //   std::cout << "[Privateer] Molecule generated" << std::endl;
 
-    privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("/data/linkage_torsions/privateer_torsions_z_score_database.json");
+    privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database(path_to_zscores);
+    //privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("/Users/lah583/Development/privateer_chimeraX_bundle/data/linkage_torsions/privateer_torsions_z_score_database.json");
     const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0); // was 1.0
 
 //   clipper::MGlycology mgl = clipper::MGlycology(mol, false, ""); <- use this constructor if you do not want to use torsions DB
@@ -26,11 +27,11 @@ pybind11::list validate(std::string& path_to_model_file)
     auto torsionlist = pybind11::list();
     if (list_of_glycans.size() > 0)
     {
-        clipper::String current_chain = "";
+        std::string current_chain = "";
 
         for (int i = 0; i < list_of_glycans.size(); i++)
         {
-            clipper::String wurcs_string;
+            std::string wurcs_string;
             if (current_chain != list_of_glycans[i].get_chain())
             {
                 current_chain = list_of_glycans[i].get_chain();
@@ -46,22 +47,7 @@ pybind11::list validate(std::string& path_to_model_file)
             std::ostringstream os;
             os << list_of_glycans[i].get_root_for_filename() << ".svg";
 
-            //table_entry.svg = plot.write_to_string();
 
-            // GlycanData glycan_data = query_glycomics_database(list_of_glycans[i], wurcs_string, importedDatabase);
-
-            // table_entry.glyconnect_id = glycan_data.glyconnect_id;
-            // table_entry.glytoucan_id = glycan_data.glytoucan_id;
-            
-            //table_entry.wurcs = wurcs_string;
-            //table_entry.chain = current_chain;
-            //table_entry.id = list_of_glycans[i].get_root_by_name();
-
-            //table_entry.torsion_err = err->torsion_err;
-            //table_entry.conformation_err = err->conformation_err;
-            //table_entry.anomer_err = err->anomer_err;
-            //table_entry.puckering_err = err->puckering_err;
-            //table_entry.chirality_err = err->chirality_err;
 
 
             std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_list = list_of_glycans[i].return_torsion_summary_within_glycan();
@@ -70,17 +56,15 @@ pybind11::list validate(std::string& path_to_model_file)
                 {
                     std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>> torsion = torsion_list[i].combined_torsions[j];
                     for (int k = 0; k < torsion.second.size(); k++) {
-                        //TorsionEntry te;
-                        //te.sugar_1 = torsion_list[i].first_residue_name;
-                        //te.sugar_2 = torsion_list[i].second_residue_name;
-                        //te.atom_number_1 = torsion.first.first;
-                        //te.atom_number_2 = torsion.first.second;
-                        //te.phi = torsion.second[k].first;
-                        //te.psi = torsion.second[k].second;
-                        //table_entry.torsions.emplace_back(te);
-                        auto torsiondict = pybind11::dict("sugar_1"_a=torsion_list[i].first_residue_name,"sugar_2"_a=torsion_list[i].second_residue_name,
-                                                            "atom_number_1"_a=torsion.first.first, "atom_number_2"_a=torsion.first.second,
-                                                            "phi"_a=torsion.second[k].first, "psi"_a=torsion.second[k].second);
+                        std::string sugar_1 = torsion_list[i].first_residue_name;
+                        std::string sugar_2 = torsion_list[i].second_residue_name;
+                        std::string atom_number_1 = torsion.first.first;
+                        std::string atom_number_2 = torsion.first.second;
+                        float phi = torsion.second[k].first;
+                        float psi = torsion.second[k].second;
+                        auto torsiondict = pybind11::dict("sugar_1"_a=sugar_1,"sugar_2"_a=sugar_2,
+                                                            "atom_number_1"_a=atom_number_1, "atom_number_2"_a=atom_number_2,
+                                                            "phi"_a=phi, "psi"_a=psi);
                         torsionlist.append(torsiondict);
                     }
                 }
@@ -116,5 +100,5 @@ PYBIND11_MODULE(privateer_core, m) {
         }
     });
    m.def("validate",&validate, "A function that produces a validation report on the glycans in a model",
-   py::arg("path_to_model_file"));
+   py::arg("path_to_model_file"),py::arg("path_to_zscores"));
 }
