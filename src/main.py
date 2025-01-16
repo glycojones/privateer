@@ -1,11 +1,13 @@
 import pandas as pd
 import re
 import os
+import time
 from . import privateer_core as pvt
 
 
 def privateer_validation_wrapper(OutputFolderPath,m,i):
-    InputStructureFilePath = os.path.join(OutputFolderPath,"temp.pdb")
+    timestr = time.strftime("%Y%m%d-%H%M%S")
+    InputStructureFilePath = os.path.join(OutputFolderPath,f"temp_{timestr}.pdb")
     _write_pdb(m,InputStructureFilePath)
     structurefilename = os.path.basename(InputStructureFilePath)
     dpath = os.path.dirname(os.path.abspath(__file__))
@@ -21,6 +23,9 @@ _ATOM_FMT = ("ATOM  %5d %-4s%1s"                # serial, atom name, altloc
              "%8.3f%8.3f%8.3f%6.2f%6.2f      "  # xyz, occupancy, bfactor
              "%4s%2s%2s")                       # segment, element, charge
 def _write_pdb(m, filename):
+    # Function for writing a pdb from chimeraX model
+    # Taken from an example chimeraX bundle
+    # Writing then deleting temp.pdb is kinda hacky -- look into proper way to do this converting model too a clipper::mmol object
     atoms = m.atoms
     coords = atoms.coords
     atom_names = atoms.names
