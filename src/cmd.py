@@ -8,12 +8,13 @@ def privateer_validation(session,OutputFolderPath):
     models = atomic.all_structures(session)
     for i,m in enumerate(models):
         privateer_validation_wrapper(OutputFolderPath,m,i)
-    session.logger.info(f"Privateer has run carbohydrate validation on the structure. The validation report is saved in {OutputFolderPath}.")
+    session.logger.info(f"Privateer has run carbohydrate validation on the structure models currently loaded in the session. 
+                        The validation report is saved in {OutputFolderPath} with filename privateer-report-i.csv where i is the model index in the current session.")
 
 privateer_validation_desc = CmdDesc(
     required=[
-        ('OutputFolderPath', SaveFolderNameArg),
+        ("OutputFolderPath", SaveFolderNameArg),
     ],
-    synopsis='Provide a validation report on the input structure'
+    synopsis="Provide a validation report on the structure models currently loaded in the session. The validation report is saved in the specified location with filename privateer-report-i.csv where i is the model index in the current session."
 )
 
