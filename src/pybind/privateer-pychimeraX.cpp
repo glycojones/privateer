@@ -24,11 +24,9 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
     auto resultslist = pybind11::list();
-    auto torsionlist = pybind11::list();
     if (list_of_glycans.size() > 0)
     {
         std::string current_chain = "";
-
         for (int i = 0; i < list_of_glycans.size(); i++)
         {
             std::string wurcs_string;
@@ -51,6 +49,7 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
 
 
             std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_list = list_of_glycans[i].return_torsion_summary_within_glycan();
+            auto torsionlist = pybind11::list();
             for(int i = 0; i < torsion_list.size(); i++) {
                 for(int j = 0; j < torsion_list[i].combined_torsions.size(); j++)
                 {
