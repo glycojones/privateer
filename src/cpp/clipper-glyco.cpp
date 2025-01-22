@@ -4709,6 +4709,7 @@ void MGlycan::Linkage::calculate_and_set_zscore(float Phi, float Psi, clipper::S
         "NAG-1,3-FUC", 
         "MAN-1,2-NAG", 
         "NAG-1,4-GAL",
+        "TRP-1,1-MAN"
     };
     std::string linkage_name = donor_sugar + "-" + acceptor_position + "," + donor_position + "-" + acceptor_sugar;
 
@@ -5233,13 +5234,32 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                                                             aa_atom_bravo.coord_orth() );
 
 
-                    if ( psi < 0 )
-                        psi = clipper::Util::twopi() + psi;
+                    //if ( psi < 0 )
+                    //    psi = clipper::Util::twopi() + psi;
 
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
                     mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_c_roots[i].first.type().trim(), cd1, sugar.type().trim(), c1, potential_c_roots[i].first.seqnum(), sugar.seqnum());
 
+                    if(!torsions_zscore_database.database_array.empty())
+                    {
+                        mg.set_protein_sugar_linkage_zscore_attempt_to_calculate(true);
+                        std::string amino_acid = potential_c_roots[i].first.type().trim();
+                        std::string donor_position = std::regex_replace(cd1.name().trim(), std::regex(R"([^\d])"), "");
+                        std::string first_sugar = sugar.type().trim();
+                        std::string acceptor_position = std::regex_replace(c1.name().trim(), std::regex(R"([^\d])"), "");
+                        auto search_result_in_torsions_zscore_db = std::find_if(torsions_zscore_database.database_array.begin(), torsions_zscore_database.database_array.end(), [amino_acid, donor_position, acceptor_position, first_sugar](privateer::json::TorsionsZScoreDatabase& element)
+                        {
+                            return amino_acid == element.donor_sugar && donor_position == element.donor_end && acceptor_position == element.acceptor_end && first_sugar == element.acceptor_sugar;
+                        });
+                        if(search_result_in_torsions_zscore_db != std::end(torsions_zscore_database.database_array))
+                        {
+                            privateer::json::TorsionsZScoreDatabase& found_torsion_description = *search_result_in_torsions_zscore_db;
+                            float linkage_score = mg.calculate_zscore(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), found_torsion_description);
+                            mg.set_protein_sugar_linkage_zscore(linkage_score);
+                        }
+                    }
+                    
                     if ( linked[j].second.monomer()+3 < mmol[linked[j].second.polymer()].size() )
                     // Make sure that checks for consensus sequence do not occur outside the array, therefore causing segfaults.
                     {
