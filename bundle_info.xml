@@ -237,31 +237,32 @@ will be displayed without the ChimeraX- prefix.
     <DataFile>data/linkage_torsions/privateer_torsion_database.json</DataFile>
     <DataFile>data/linkage_torsions/privateer_torsions_z_score_database.json</DataFile>
     <DataDir>data</DataDir>
+    <DataDir>docs</DataDir>
   </DataFiles>
 
   <!-- Register PDB,MMCIF,MTZ,MRC format as one of the supported input file formats and SVG, CSV as ouput file formats -->
-  <Providers manager="data formats">
+  <!--Providers manager="data formats">
     <Provider name="MTZ" suffixes=".mtz" category="Structure factors"/>
     <Provider name="MRC" suffixes=".mrc" category="Volume data"/>
     <Provider name="PDB" suffixes=".pdb" category="Molecular structure"/>
     <Provider name="CIF" suffixes=".mmcif,.cif" category="Molecular structure"/>
     <Provider name="SVG" suffixes=".svg" category="Image"/>
     <Provider name="CSV" suffixes=".csv" category="General"/>
-  </Providers>
+  </Providers-->
 
   <!-- Inform the "open command" manager that we can open these files -->
-  <Providers manager="open command">
+  <!--Providers manager="open command">
     <Provider name="MTZ" want_path="true"/>
     <Provider name="MRC" want_path="true"/>
     <Provider name="PDB" want_path="true"/>
     <Provider name="CIF" want_path="true"/>
-  </Providers>
+  </Providers-->
 
   <!-- Inform the "save command" manager that we can open these files -->
-  <Providers manager="save command">
+  <!--Providers manager="save command">
     <Provider name="SVG" />
     <Provider name="CSV" />
-  </Providers>
+  </Providers-->
 
   <!-- Python and ChimeraX-specific classifiers
        From https://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -280,7 +281,7 @@ will be displayed without the ChimeraX- prefix.
     <PythonClassifier>Development Status :: 2 - Pre-Alpha</PythonClassifier>
     <PythonClassifier>License :: Free for non-commercial use</PythonClassifier>
     <ChimeraXClassifier>ChimeraX :: Command :: privateer_validation :: Structure Analysis :: Command line privateer for carbohydrate validation</ChimeraXClassifier>
-    <!--<ChimeraXClassifier>ChimeraX :: Tool :: Sample Tool :: General :: Log model atom and bond counts</ChimeraXClassifier>-->
+    <ChimeraXClassifier>ChimeraX :: Tool :: Validate Carbohydrates :: Structure Analysis :: Produce a validation report on carbohydrates within the structure</ChimeraXClassifier>
   </Classifiers>
 
 </BundleInfo>

@@ -12,8 +12,16 @@ def privateer_validation_wrapper(OutputFolderPath,m,i):
     structurefilename = os.path.basename(InputStructureFilePath)
     dpath = os.path.dirname(os.path.abspath(__file__))
     zscorefilepath = os.path.join(dpath,"data","linkage_torsions","privateer_torsions_z_score_database.json")
-    AllSugars = pvt.validate(InputStructureFilePath,zscorefilepath)
-    df = pd.DataFrame.from_dict(AllSugars)
+    AllGlycans = pvt.validate(InputStructureFilePath,zscorefilepath)
+    for glycan in AllGlycans:
+        svgstring = glycan["svg"]
+        rootID = glycan["RootID"]
+        rootID = rootID.replace("/","-")
+        svgfile = open(os.path.join(OutputFolderPath,f"{rootID}.svg"),"w")
+        svgfile.write(svgstring)
+        svgfile.close()
+    df = pd.DataFrame.from_dict(AllGlycans)
+    df = df.drop(["svg"], axis=1)
     csv_out = os.path.join(OutputFolderPath,f"privateer-report-{i}.csv")
     df.to_csv(csv_out)
     os.remove(InputStructureFilePath)

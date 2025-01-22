@@ -11,6 +11,8 @@ class _MyAPI(BundleAPI):
     # Override method
     @staticmethod
     def register_command(bi, ci, logger):
+        # bi is an instance of chimerax.core.toolshed.BundleInfo
+        # ci is an instance of chimerax.core.toolshed.CommandInfo
         # We expect that there is a function in "cmd"
         # corresponding to every registered command
         # in "bundle_info.xml" and that they are named
@@ -24,6 +26,17 @@ class _MyAPI(BundleAPI):
         if desc.synopsis is None:
             desc.synopsis = ci.synopsis
         register(command_name, desc, func)
+
+    # Override method
+    @staticmethod
+    def start_tool(session, bi, ti):
+        # session is an instance of chimerax.core.session.Session
+        # bi is an instance of chimerax.core.toolshed.BundleInfo
+        # ti is an instance of chimerax.core.toolshed.ToolInfomake 
+        from chimerax.core import tools
+        from .tool import PrivateerTool
+        return tools.get_singleton(session,PrivateerTool,ti.name,create=True)
+        
 
 
 bundle_api = _MyAPI()
