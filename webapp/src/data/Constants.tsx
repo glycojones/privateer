@@ -266,6 +266,8 @@ export const linkageDB: Record<string, string> = {
         'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,3-MAN.json',
     'MAN-1,2-MAN':
         'https://raw.githubusercontent.com/Dialpuri/N-glycanTorsionDatabase/main/data_json/MAN-1,2-MAN.json',
+    'MAN-1,1-TRP':
+        'https://raw.githubusercontent.com/louholland/C-glycanTorsionDatabase/main/TRP-1,1-MAN.json',
 };
 
 export const binDB = {
@@ -281,6 +283,7 @@ export const binDB = {
     'FUC-1,6-NAG': { start: -180, end: 180, size: 4 },
     'MAN-1,3-MAN': { start: -180, end: 180, size: 4 },
     'MAN-1,2-MAN': { start: -180, end: 180, size: 4 },
+    'MAN-1,1-TRP': { start: -180, end: 180, size: 4 },
 };
 
 export const sugarLinkageMap: Record<string, string[]> = {
