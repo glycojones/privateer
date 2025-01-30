@@ -7,7 +7,7 @@ import tempfile
 from . import privateer_core as pvt
 
 
-def privateer_validation_wrapper(OutputFolderPath,m,i):
+def privateer_validation_wrapper(OutputFolderPath,m,i,display=False):
     timestr = time.strftime("%Y%m%d-%H%M%S")
     tempdirpath = tempfile.gettempdir()
     InputStructureFilePath = os.path.join(tempdirpath,f"temp_{timestr}.pdb")
@@ -16,17 +16,20 @@ def privateer_validation_wrapper(OutputFolderPath,m,i):
     zscorefilepath = os.path.join(dpath,"data","linkage_torsions","privateer_torsions_z_score_database.json")
     AllGlycans = pvt.validate(InputStructureFilePath,zscorefilepath)
     os.remove(InputStructureFilePath)
-    for glycan in AllGlycans:
-        svgstring = glycan["svg"]
-        rootID = glycan["RootID"]
-        rootID = rootID.replace("/","-")
-        svgfile = open(os.path.join(OutputFolderPath,f"model-{i+1}_{rootID}.svg"),"w")
-        svgfile.write(svgstring)
-        svgfile.close()
-    df = pd.DataFrame.from_dict(AllGlycans)
-    df = df.drop(["svg"], axis=1)
-    csv_out = os.path.join(OutputFolderPath,f"model-{i+1}_privateer-report.csv")
-    df.to_csv(csv_out)
+    if display:
+        return AllGlycans
+    else:
+        for glycan in AllGlycans:
+            svgstring = glycan["svg"]
+            rootID = glycan["RootID"]
+            rootID = rootID.replace("/","-")
+            svgfile = open(os.path.join(OutputFolderPath,f"model-{i}_{rootID}.svg"),"w")
+            svgfile.write(svgstring)
+            svgfile.close()
+        df = pd.DataFrame.from_dict(AllGlycans)
+        df = df.drop(["svg"], axis=1)
+        csv_out = os.path.join(OutputFolderPath,f"model-{i}_privateer-report.csv")
+        df.to_csv(csv_out)  
 
 _ATOM_FMT = ("ATOM  %5d %-4s%1s"                # serial, atom name, altloc
              "%-3s %1s%4s%1s   "                # res name, chain, seq, insert
