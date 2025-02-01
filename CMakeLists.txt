@@ -13,7 +13,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS} ")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 
@@ -46,7 +46,7 @@ FetchContent_Declare(ccp4-dependencies
 
 # Download Gemmi
 FetchContent_Declare(gemmi-dependencies
-                     URL http://www.ysbl.york.ac.uk/jsd523/gemmi-0.6.5.tar.gz)
+                     URL http://www.ysbl.york.ac.uk/jsd523/gemmi-v0.7.0.tar.gz)
 
 FetchContent_MakeAvailable(
   clipper-dependencies mmdb2-dependencies fftw-dependencies ccp4-dependencies
