@@ -14,8 +14,11 @@ if (ZLIB_FOUND)
     message(STATUS "The build will use zlib code from emscripten")
 endif()
 
-include_directories("${gemmi_src}/include"
-        "${gemmi_src}/third_party")
+include_directories(
+        "${gemmi_src}/include"
+        "${gemmi_src}/third_party"
+        "${gemmi_src}/third_party/zlib"
+        )
 
 add_library(gemmi_cpp STATIC
         ${gemmi_src}/src/align.cpp

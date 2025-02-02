@@ -384,7 +384,7 @@ void privateer::util::print_supported_code_list ()
 
 bool privateer::util::write_libraries ( std::vector < std::string > code_list, float esd )
 {
-
+    return false; 
     // class PrTorsion : public ccp4srs::Torsion
     // {
     //   public:

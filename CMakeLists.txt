@@ -6,10 +6,6 @@ project(
   VERSION 0.5
   LANGUAGES C CXX)
 
-set(PRIVATEER_CC_FLAGS "-O2 -w")
-set(PRIVATEER_CXX_FLAGS "-O2 -w -I${CMAKE_INSTALL_PREFIX}/include")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PRIVATEER_CC_FLAGS}")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PRIVATEER_CXX_FLAGS} ")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 option(BUILD_SHARED_LIBS "Build as a shared library" ON)
@@ -24,13 +20,22 @@ set(CLIBDENV $ENV{CLIBD})
 set(PYBIND11_FINDPYTHON ON)
 find_package(pybind11 CONFIG REQUIRED)
 
+if (WIN32)
+    set(CMAKE_BUILD_TYPE Release)
+    set(CMAKE_GENERATOR_PLATFORM x64)
+endif()
+
+
 set(WRK_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
 include(FetchContent)
 # Download Clipper
 FetchContent_Declare(
   clipper-dependencies
-  URL http://www.ysbl.york.ac.uk/jsd523/clipper-2.1.20201109.tar.gz)
+  GIT_REPOSITORY https://ccp4forge.rc-harwell.ac.uk/ccp4/clipper.git
+  GIT_TAG origin/main
+  SOURCE_SUBDIR PLACEHOLDER
+  )
 
 # Download MMDB
 FetchContent_Declare(mmdb2-dependencies
@@ -52,6 +57,11 @@ FetchContent_MakeAvailable(
   clipper-dependencies mmdb2-dependencies fftw-dependencies ccp4-dependencies
   gemmi-dependencies)
 
+if (SKBUILD)
+    message("Building using SKBUILD.")
+    find_package(ZLIB)
+endif ()
+
 add_subdirectory(${WRK_DIR}/clipper/minimol)
 add_subdirectory(${WRK_DIR}/clipper/core)
 add_subdirectory(${WRK_DIR}/clipper/contrib)
@@ -65,6 +75,7 @@ add_subdirectory(${WRK_DIR}/rfftw)
 add_subdirectory(${WRK_DIR}/ccp4)
 add_subdirectory(${WRK_DIR}/mmdb2)
 add_subdirectory(${WRK_DIR}/gemmi)
+
 # add_subdirectory(${WRK_DIR}/dependencies/pybind11)
 
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
@@ -83,7 +94,10 @@ include_directories(
   ${mmdb2-dependencies_SOURCE_DIR}
   ${ccp4-dependencies_SOURCE_DIR}
   ${PRIVATEER_SOURCE_DIR}/cpp
-  ${PRIVATEER_SOURCE_DIR}/cpp/pybind11)
+  ${PRIVATEER_SOURCE_DIR}/third-party
+  ${PRIVATEER_SOURCE_DIR}/cpp/pybind11
+  ${pybind11_INCLUDE_DIRS}
+  )
 
 link_directories(
   ${CMAKE_BINARY_DIR}/mmdb2
@@ -95,22 +109,22 @@ link_directories(
   ${PRIVATEER_SOURCE_DIR}/cpp/pybind11
   ${Python_LIBRARY_DIRS})
 
-# link_directories( ${WRK_DIR}/mmdb2 ${WRK_DIR}/clipper ${WRK_DIR}/ccp4
-# ${WRK_DIR}/gemmi ${WRK_DIR}/src ${CMAKE_BINARY_DIR}
-# ${PRIVATEER_SOURCE_DIR}/cpp ${PRIVATEER_SOURCE_DIR}/cpp/pybind11
-# ${Python_LIBRARY_DIRS} )
+# # link_directories( ${WRK_DIR}/mmdb2 ${WRK_DIR}/clipper ${WRK_DIR}/ccp4
+# # ${WRK_DIR}/gemmi ${WRK_DIR}/src ${CMAKE_BINARY_DIR}
+# # ${PRIVATEER_SOURCE_DIR}/cpp ${PRIVATEER_SOURCE_DIR}/cpp/pybind11
+# # ${Python_LIBRARY_DIRS} )
 
-# add_custom_target(copy_resources ALL COMMAND ${CMAKE_COMMAND} -E
-# copy_directory ${CMAKE_SOURCE_DIR}/data ${CLIBDENV}/privateer_data COMMENT
-# "Copying Privateer Data files to ${CLIBDENV}/privateer_data")
+# # add_custom_target(copy_resources ALL COMMAND ${CMAKE_COMMAND} -E
+# # copy_directory ${CMAKE_SOURCE_DIR}/data ${CLIBDENV}/privateer_data COMMENT
+# # "Copying Privateer Data files to ${CLIBDENV}/privateer_data")
 
 find_package(Threads REQUIRED)
 
-# file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json
-# DESTINATION ${CLIBDENV})
+# # file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json
+# # DESTINATION ${CLIBDENV})
 
-# file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json
-# DESTINATION ${CLIBDENV})
+# # file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json
+# # DESTINATION ${CLIBDENV})
 
 add_library(
   privateer_lib STATIC
