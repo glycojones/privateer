@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: '3.9'
+        python-version: '3.11'
         repo-token: ${{secrets.GITHUB_TOKEN}}
  
     - name: Build
@@ -34,4 +34,5 @@ jobs:
       run : |
         export LD_LIBRARY_PATH=privateer_dependencies/lib
         export CLIBD_MON=privateer_dependencies/lib/data/monomers/
-        pytest tests/test_glycosylation_interaction.py -m fast
+        pip install pytest
+        pytest tests/test_core.py -m fast
