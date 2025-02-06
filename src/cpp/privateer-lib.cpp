@@ -1854,7 +1854,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_contents ( std::fstream& of )
 
 void privateer::glycanbuilderplot::Plot::write_svg_footer ( std::fstream& of )
 {
-    of << "\n</svg>" ;
+    of << "\n</div>\n</svg>" ;
 }
 
 
@@ -2101,6 +2101,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_header_ostringstream   ( std:
     of << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n"
        << "<!-- Generator: Privateer (YSBL, University of York, distributed by CCP4) -->\n"
        << "<!-- Please reference: Agirre, Iglesias, Rovira, Davies, Wilson & Cowtan (2015) Nat Struct & Mol Biol 22(11), 833-834 -->\n\n"
+       << "<div>\n"
        << "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n"
        << "     xmlns:cc=\"http://creativecommons.org/ns#\"\n"
        << "     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n"
@@ -2356,7 +2357,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_contents_ostringstream ( std:
 
 void privateer::glycanbuilderplot::Plot::write_svg_footer_ostringstream ( std::ostringstream& of )
 {
-    of << "\n</svg>" ;
+    of << "\n</div>\n</svg>" ;
 }
 
 
