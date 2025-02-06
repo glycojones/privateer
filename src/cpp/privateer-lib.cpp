@@ -1634,7 +1634,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "      <pattern id=\"half_yellow\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
        << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 0, 0 50, 50 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1643,7 +1643,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "      <pattern id=\"half_blue\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
        << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 0, 0 50, 50 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1652,7 +1652,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "      <pattern id=\"half_green\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
        << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 0, 0 50, 50 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1661,7 +1661,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "      <pattern id=\"yellow_left\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='25 0, 25 50, 0 25' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='25 0, 25 50, 0 25' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1670,7 +1670,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "      <pattern id=\"blue_up\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 25, 50 25, 25 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 25, 50 25, 25 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1679,7 +1679,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "      <pattern id=\"green_right\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 25, 25 50, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 25, 25 50, 25 0' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
     << "      </pattern>\n"
@@ -1688,7 +1688,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "      <pattern id=\"tan_down\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( tan, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 25, 50 25, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 25, 50 25, 25 0' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1715,21 +1715,21 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- shTrng --> "
-       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"shadedtriangle\" transform=\"scale(1.5) translate(-8.5 -10)\" style=\" fill:"
+       << "<polygon points='0 50, 25 0, 50 50' id=\"shadedtriangle\" transform=\"scale(1.5) translate(-8.5 -10)\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!--  Fuc   --> "
-       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
+       << "<polygon points='0 50, 25 0, 50 50' id=\"fuc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- shStar --> "
        << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " <<
-       "transform=\"scale(1.75) translate(-10.5 -12)\" rx=\"0\" ry=\"0\" id=\"shadedstar\" style=\""
+       "transform=\"scale(1.75) translate(-10.5 -12)\" id=\"shadedstar\" style=\""
        << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!--  Xyl   --> "
-       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx=\"0\" ry=\"0\" id=\"xyl\" style=\" stroke:"
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' id=\"xyl\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( orange, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
@@ -1774,41 +1774,41 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        // acidic sugars, diamond shapes in one or two colours
 
        << "    <!-- shDia  --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"shadeddiamond\" transform=\"scale(1.5) translate(-8 -8)\" style=\" fill:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"shadeddiamond\" transform=\"scale(1.5) translate(-8 -8)\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- Neu5Ac --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5ac\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"neu5ac\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( purple, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- Neu5Gc --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5gc\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"neu5gc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( cyan, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- KDN --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"kdn\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"kdn\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- GlcA --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"glca\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"glca\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#blue_up);"
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- IdoA --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"idoa\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"idoa\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#tan_down);"
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- GalA --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"gala\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"gala\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#yellow_left);"
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- ManA --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"mana\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"mana\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#green_right);"
        << "stroke-width:2.8;\" />\n"
 
@@ -1824,11 +1824,11 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
        // a generic hexagon shape for unsupported sugars
 
        << "    <!-- shHex  --> "
-       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' transform=\"scale(1.5) translate(-8 -8)\" rx=\"0\" ry=\"0\" id=\"shadedhexagon\" style=\" fill:"
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' transform=\"scale(1.5) translate(-8 -8)\" id=\"shadedhexagon\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- Other  --> "
-       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx=\"0\" ry=\"0\" id=\"unk\" style=\" stroke:"
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' id=\"unk\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( white, original_colour_scheme )
        << "stroke-width:4.0; \" />\n"
 
@@ -1839,15 +1839,15 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions( std::fstream& of
 void privateer::glycanbuilderplot::Plot::write_svg_contents ( std::fstream& of )
 {
     of << "<title>" << get_title() << "</title>\n";
-
+// FLAG: Maybe add a counter here to append to the IDs so that they are all unique
     for (int i = 0; i < list_of_shaded_shapes.size() ; i ++)
     {
-        of << list_of_shaded_shapes[i]->get_XML();
+        of << list_of_shaded_shapes[i]->get_XML(i);
     }
 
     for (int i = 0; i < list_of_shapes.size() ; i ++)
     {
-        of << list_of_shapes[i]->get_XML();
+        of << list_of_shapes[i]->get_XML(i);
     }
 } //!< doesn't add html anchors, as SVG files are supposed to be standalone and not linked to any other CCP4 application
 
@@ -1901,7 +1901,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << "      <pattern id=\"half_yellow\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
        << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 0, 0 50, 50 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1909,7 +1909,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << "      <pattern id=\"half_blue\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
        << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 0, 0 50, 50 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1917,7 +1917,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << "      <pattern id=\"half_green\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
        << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 0, 0 50, 50 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1925,7 +1925,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << "      <pattern id=\"yellow_left\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='25 0, 25 50, 0 25' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='25 0, 25 50, 0 25' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1933,7 +1933,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << "      <pattern id=\"blue_up\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 25, 50 25, 25 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 25, 50 25, 25 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1941,7 +1941,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << "      <pattern id=\"green_right\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 25, 25 50, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 25, 25 50, 25 0' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1949,7 +1949,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << "      <pattern id=\"tan_down\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( tan, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 25, 50 25, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 25, 50 25, 25 0' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -1971,18 +1971,18 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
-       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"shadedtriangle\" transform=\"scale(1.5) translate(-8.5 -10)\" style=\" fill:"
+       << "<polygon points='0 50, 25 0, 50 50' id=\"shadedtriangle\" transform=\"scale(1.5) translate(-8.5 -10)\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
-       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
+       << "<polygon points='0 50, 25 0, 50 50' id=\"fuc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " <<
-       "transform=\"scale(1.75) translate(-10.5 -12)\" rx=\"0\" ry=\"0\" id=\"shadedstar\" style=\""
+       "transform=\"scale(1.75) translate(-10.5 -12)\" id=\"shadedstar\" style=\""
        << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
-       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx=\"0\" ry=\"0\" id=\"xyl\" style=\" stroke:"
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' id=\"xyl\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( orange, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
@@ -2019,34 +2019,34 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
 
        // acidic sugars, diamond shapes in one or two colours
 
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"shadeddiamond\" transform=\"scale(1.5) translate(-8 -8)\" style=\" fill:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"shadeddiamond\" transform=\"scale(1.5) translate(-8 -8)\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5ac\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"neu5ac\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( purple, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5gc\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"neu5gc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( cyan, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"kdn\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"kdn\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"glca\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"glca\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#blue_up);"
        << "stroke-width:2.8;\" />\n"
 
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"idoa\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"idoa\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#tan_down);"
        << "stroke-width:2.8;\" />\n"
 
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"gala\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"gala\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#yellow_left);"
        << "stroke-width:2.8;\" />\n"
 
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"mana\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"mana\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#green_right);"
        << "stroke-width:2.8;\" />\n"
 
@@ -2057,10 +2057,10 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
 
        // a generic hexagon shape for unsupported sugars
 
-       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' transform=\"scale(1.5) translate(-8 -8)\" rx=\"0\" ry=\"0\" id=\"shadedhexagon\" style=\" fill:"
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' transform=\"scale(1.5) translate(-8 -8)\" id=\"shadedhexagon\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
-       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx=\"0\" ry=\"0\" id=\"unk\" style=\" stroke:"
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' id=\"unk\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( white, original_colour_scheme )
        << "stroke-width:4.0; \" />\n"
 
@@ -2070,7 +2070,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
     {
         of << "<a xmlns=\"http://www.w3.org/2000/svg\" id=\"anchor\" xlink:href=\""
            << list_of_shaded_shapes[i]->get_mmdbsel() << "\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" target=\"_top\">";
-        of << list_of_shaded_shapes[i]->get_XML();
+        of << list_of_shaded_shapes[i]->get_XML(i);
         of << "</a>\n";
     }
 
@@ -2078,7 +2078,7 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_contents ( )
     {
         of << "<a xmlns=\"http://www.w3.org/2000/svg\" id=\"anchor\" xlink:href=\""
            << list_of_shapes[i]->get_mmdbsel() << "\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" target=\"_top\">";
-        of << list_of_shapes[i]->get_XML();
+        of << list_of_shapes[i]->get_XML(i);
         of << "</a>\n";
     }
 
@@ -2138,7 +2138,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "      <pattern id=\"half_yellow\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
        << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 0, 0 50, 50 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -2147,7 +2147,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "      <pattern id=\"half_blue\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
        << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 0, 0 50, 50 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -2156,7 +2156,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "      <pattern id=\"half_green\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <rect width=\"50\" height=\"50\" x=\"0\" y=\"0\" style=\"stroke:"
        << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 0, 0 50, 50 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 0, 0 50, 50 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -2165,7 +2165,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "      <pattern id=\"yellow_left\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( yellow, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='25 0, 25 50, 0 25' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='25 0, 25 50, 0 25' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -2174,7 +2174,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "      <pattern id=\"blue_up\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( blue, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 25, 50 25, 25 50' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 25, 50 25, 25 50' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -2183,7 +2183,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "      <pattern id=\"green_right\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( green, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 25, 25 50, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 25, 25 50, 25 0' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -2192,7 +2192,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "      <pattern id=\"tan_down\" x=\"0\" y=\"0\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\" >\n"
        << "        <polygon points='25 0, 50 25, 25 50, 0 25' style=\"stroke:"
        << "none; " << "fill:" << get_colour ( tan, original_colour_scheme ) << "\"/>\n"
-       << "        <polygon points='0 25, 50 25, 25 0' rx=\"0\" ry=\"0\" style=\"stroke:"
+       << "        <polygon points='0 25, 50 25, 25 0' style=\"stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " stroke-width:1.5; fill:"
        << get_colour ( white, original_colour_scheme ) << "\" />\n"
        << "      </pattern>\n"
@@ -2219,21 +2219,21 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- shTrng --> "
-       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"shadedtriangle\" transform=\"scale(1.5) translate(-8.5 -10)\" style=\" fill:"
+       << "<polygon points='0 50, 25 0, 50 50' id=\"shadedtriangle\" transform=\"scale(1.5) translate(-8.5 -10)\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!--  Fuc   --> "
-       << "<polygon points='0 50, 25 0, 50 50' rx=\"0\" ry=\"0\" id=\"fuc\" style=\" stroke:"
+       << "<polygon points='0 50, 25 0, 50 50' id=\"fuc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( red, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- shStar --> "
        << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' " <<
-       "transform=\"scale(1.75) translate(-10.5 -12)\" rx=\"0\" ry=\"0\" id=\"shadedstar\" style=\""
+       "transform=\"scale(1.75) translate(-10.5 -12)\" id=\"shadedstar\" style=\""
        << " fill:" << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!--  Xyl   --> "
-       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' rx=\"0\" ry=\"0\" id=\"xyl\" style=\" stroke:"
+       << "<polygon points='39.5,50 24.5,37.5 9.5,50 14.5,32.5 0,20 19.5,20 24.5,0 29.5,20 50,20 34.5,32.5' id=\"xyl\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( orange, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
@@ -2278,41 +2278,41 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        // acidic sugars, diamond shapes in one or two colours
 
        << "    <!-- shDia  --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"shadeddiamond\" transform=\"scale(1.5) translate(-8 -8)\" style=\" fill:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"shadeddiamond\" transform=\"scale(1.5) translate(-8 -8)\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- Neu5Ac --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5ac\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"neu5ac\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( purple, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- Neu5Gc --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"neu5gc\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"neu5gc\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( cyan, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- KDN --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"kdn\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"kdn\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme )
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- GlcA --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"glca\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"glca\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#blue_up);"
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- IdoA --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"idoa\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"idoa\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#tan_down);"
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- GalA --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"gala\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"gala\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#yellow_left);"
        << "stroke-width:2.8;\" />\n"
 
        << "    <!-- ManA --> "
-       << "<polygon points='25 0, 50 25, 25 50, 0 25' rx=\"0\" ry=\"0\" id=\"mana\" style=\" stroke:"
+       << "<polygon points='25 0, 50 25, 25 50, 0 25' id=\"mana\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill: url(#green_right);"
        << "stroke-width:2.8;\" />\n"
 
@@ -2326,11 +2326,11 @@ void privateer::glycanbuilderplot::Plot::write_svg_definitions_ostringstream( st
        // a generic hexagon shape for unsupported sugars
 
        << "    <!-- shHex  --> "
-       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' transform=\"scale(1.5) translate(-8 -8)\" rx=\"0\" ry=\"0\" id=\"shadedhexagon\" style=\" fill:"
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' transform=\"scale(1.5) translate(-8 -8)\" id=\"shadedhexagon\" style=\" fill:"
        << get_colour ( corvette, original_colour_scheme, inverted_background ) << ";\" />\n"
 
        << "    <!-- Other  --> "
-       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' rx=\"0\" ry=\"0\" id=\"unk\" style=\" stroke:"
+       << "<polygon points='25 0, 50 11, 50 38, 25 50, 0 38, 0 11' id=\"unk\" style=\" stroke:"
        << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( white, original_colour_scheme )
        << "stroke-width:4.0; \" />\n"
 
@@ -2344,12 +2344,12 @@ void privateer::glycanbuilderplot::Plot::write_svg_contents_ostringstream ( std:
 
     for (int i = 0; i < list_of_shaded_shapes.size() ; i ++)
     {
-        of << list_of_shaded_shapes[i]->get_XML();
+        of << list_of_shaded_shapes[i]->get_XML(i);
     }
 
     for (int i = 0; i < list_of_shapes.size() ; i ++)
     {
-        of << list_of_shapes[i]->get_XML();
+        of << list_of_shapes[i]->get_XML(i);
     }
 } //!< doesn't add html anchors, as SVG files are supposed to be standalone and not linked to any other CCP4 application
 
@@ -3089,19 +3089,19 @@ bool privateer::glycanbuilderplot::Plot::plot_demo ( )
 
 // get XML from hexoses
 
-std::string privateer::glycanbuilderplot::shadedCircle::get_XML ()
+std::string privateer::glycanbuilderplot::shadedCircle::get_XML (int i)
 {
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#shadedcircle\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
 
 
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::Glc::get_XML ()
+std::string privateer::glycanbuilderplot::Glc::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3114,7 +3114,7 @@ std::string privateer::glycanbuilderplot::Glc::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::Man::get_XML ()
+std::string privateer::glycanbuilderplot::Man::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3127,7 +3127,7 @@ std::string privateer::glycanbuilderplot::Man::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::Gal::get_XML ()
+std::string privateer::glycanbuilderplot::Gal::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3140,19 +3140,19 @@ std::string privateer::glycanbuilderplot::Gal::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::shadedTriangle::get_XML ()
+std::string privateer::glycanbuilderplot::shadedTriangle::get_XML (int i)
 {
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#shadedtriangle\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
 
 
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::Fuc::get_XML ()
+std::string privateer::glycanbuilderplot::Fuc::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3164,19 +3164,19 @@ std::string privateer::glycanbuilderplot::Fuc::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::shadedStar::get_XML ()
+std::string privateer::glycanbuilderplot::shadedStar::get_XML (int i)
 {
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#shadedstar\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
 
 
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::Xyl::get_XML ()
+std::string privateer::glycanbuilderplot::Xyl::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3192,19 +3192,19 @@ std::string privateer::glycanbuilderplot::Xyl::get_XML ()
 
 // get XML from hexosamines
 
-std::string privateer::glycanbuilderplot::shadedSquare::get_XML ()
+std::string privateer::glycanbuilderplot::shadedSquare::get_XML (int i)
 {
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#shadedrectangle\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
 
 
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::GalN::get_XML ()
+std::string privateer::glycanbuilderplot::GalN::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3216,7 +3216,7 @@ std::string privateer::glycanbuilderplot::GalN::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::GlcN::get_XML ()
+std::string privateer::glycanbuilderplot::GlcN::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3228,7 +3228,7 @@ std::string privateer::glycanbuilderplot::GlcN::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::ManN::get_XML ()
+std::string privateer::glycanbuilderplot::ManN::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3244,7 +3244,7 @@ std::string privateer::glycanbuilderplot::ManN::get_XML ()
 
 // get XML from N-acetyl hexosamines
 
-std::string privateer::glycanbuilderplot::GlcNAc::get_XML ()
+std::string privateer::glycanbuilderplot::GlcNAc::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3256,7 +3256,7 @@ std::string privateer::glycanbuilderplot::GlcNAc::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::GalNAc::get_XML ()
+std::string privateer::glycanbuilderplot::GalNAc::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3269,7 +3269,7 @@ std::string privateer::glycanbuilderplot::GalNAc::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::ManNAc::get_XML ()
+std::string privateer::glycanbuilderplot::ManNAc::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3284,19 +3284,19 @@ std::string privateer::glycanbuilderplot::ManNAc::get_XML ()
 
 
 // get XML from acidic sugars
-std::string privateer::glycanbuilderplot::shadedDiamond::get_XML ()
+std::string privateer::glycanbuilderplot::shadedDiamond::get_XML (int i)
 {
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#shadeddiamond\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
 
 
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::Neu5Ac::get_XML ()
+std::string privateer::glycanbuilderplot::Neu5Ac::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3309,7 +3309,7 @@ std::string privateer::glycanbuilderplot::Neu5Ac::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::Neu5Gc::get_XML ()
+std::string privateer::glycanbuilderplot::Neu5Gc::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3321,7 +3321,7 @@ std::string privateer::glycanbuilderplot::Neu5Gc::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::KDN::get_XML ()
+std::string privateer::glycanbuilderplot::KDN::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3334,7 +3334,7 @@ std::string privateer::glycanbuilderplot::KDN::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::GlcA::get_XML ()
+std::string privateer::glycanbuilderplot::GlcA::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3347,7 +3347,7 @@ std::string privateer::glycanbuilderplot::GlcA::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::ManA::get_XML ()
+std::string privateer::glycanbuilderplot::ManA::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3360,7 +3360,7 @@ std::string privateer::glycanbuilderplot::ManA::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::GalA::get_XML ()
+std::string privateer::glycanbuilderplot::GalA::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3373,7 +3373,7 @@ std::string privateer::glycanbuilderplot::GalA::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::IdoA::get_XML ()
+std::string privateer::glycanbuilderplot::IdoA::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3386,19 +3386,19 @@ std::string privateer::glycanbuilderplot::IdoA::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::shadedHexagon::get_XML ()
+std::string privateer::glycanbuilderplot::shadedHexagon::get_XML (int i)
 {
     std::ostringstream tmp;
 
     tmp     <<  "  <use xlink:href=\"#shadedhexagon\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\" >"
+            <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
 
 
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::Unk::get_XML ()
+std::string privateer::glycanbuilderplot::Unk::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3414,7 +3414,7 @@ std::string privateer::glycanbuilderplot::Unk::get_XML ()
 
 // plus, get XML from the glycan root (protein part)
 
-std::string privateer::glycanbuilderplot::GlycanRoot::get_XML ()
+std::string privateer::glycanbuilderplot::GlycanRoot::get_XML (int i)
 {
     std::ostringstream tmp;
     std::string link_name = get_link_atom();
@@ -3437,7 +3437,7 @@ std::string privateer::glycanbuilderplot::GlycanRoot::get_XML ()
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::shadedBond::get_XML ()
+std::string privateer::glycanbuilderplot::shadedBond::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3500,27 +3500,27 @@ std::string privateer::glycanbuilderplot::shadedBond::get_XML ()
 
     if (this->get_svg_class() == "shadedbond")
     {
-        tmp << "  <g id=\"shadedLinkage\">\n"
-        <<  "  <use xlink:href=\"#shadedbond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
+        tmp << "  <g id=\"shadedLinkage" << i << "\">\n"
+        <<  "  <use xlink:href=\"#shadedbond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
         << "</g>\n";
     }
     else if(this->get_svg_class() == "shadedbondnull")
     {
-        tmp << "  <g id=\"shadedLinkage\">\n"
-        <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
+        tmp << "  <g id=\"shadedLinkage" << i << "\">\n"
+        <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
         << "</g>\n";
     }
     else
     {
-        tmp << "  <g id=\"shadedLinkage\">\n"
-        <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
+        tmp << "  <g id=\"shadedLinkage" << i << "\">\n"
+        <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
         << "</g>\n";
     }
 
     return tmp.str();
 }
 
-std::string privateer::glycanbuilderplot::Bond::get_XML ()
+std::string privateer::glycanbuilderplot::Bond::get_XML (int i)
 {
     std::ostringstream tmp;
 
@@ -3626,15 +3626,15 @@ std::string privateer::glycanbuilderplot::Bond::get_XML ()
         anomerSymbolPosX = get_x() - 60;
         anomerSymbolPosY = get_y() + 20;
 
-        tmp << "  <g id=\"Linkage\">\n"
-            <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
+        tmp << "  <g id=\"Linkage" << i << "\">\n"
+            <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
             <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
             << "</g>\n";
     }
     else
     {
-        tmp << "  <g id=\"Linkage\">\n"
-            <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" id=\"" << get_id() << "\">" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
+        tmp << "  <g id=\"Linkage" << i << "\">\n"
+            <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
             <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
             <<  "  <text x=\"" << linkageSymbolPosX << "\"" << " y=\"" << linkageSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << linkagePosition << "</text>\n"
             << "</g>\n";

@@ -40,6 +40,9 @@ class _MyAPI(BundleAPI):
         if ti.name == "Validate Carbohydrates Fancy":
             from .tool import FancyPrivateerTool
             return tools.get_singleton(session,FancyPrivateerTool,ti.name,create=True)
+        if ti.name == "Validate Carbohydrates Fancier":
+            from .tool import FancierPrivateerTool
+            return tools.get_singleton(session,FancierPrivateerTool,ti.name,create=True)
         raise ValueError("trying to start unknown tool: %s" % ti.name)
         
 
