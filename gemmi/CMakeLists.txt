@@ -34,6 +34,7 @@ add_library(gemmi_cpp STATIC
         ${gemmi_src}/src/mmread_gz.cpp
         ${gemmi_src}/src/mtz.cpp
         ${gemmi_src}/src/mtz2cif.cpp
+        ${gemmi_src}/src/pdb.cpp
         ${gemmi_src}/src/polyheur.cpp
         ${gemmi_src}/src/read_cif.cpp
         ${gemmi_src}/src/resinfo.cpp

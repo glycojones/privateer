@@ -15,13 +15,15 @@
 #include "clipper-glyco.h"
 #include "privateer-restraints.h"
 #include "privateer-lib.h"
-
+#include "gemmi/topo.hpp"
+#include "gemmi/polyheur.hpp"
 #include "gemmi/mmread.hpp"
 #include "gemmi/monlib.hpp"
 // #include "gemmi/placeh.hpp"
 #include "gemmi/fstream.hpp"
 #include "gemmi/cif.hpp"
 #include "gemmi/to_pdb.hpp"
+#include "gemmi/mmread.hpp"
 
 
 
@@ -145,7 +147,7 @@ namespace privateer {
 					return this->algorithm;
 				}
 
-				void set_algorithm ( ) {
+				void set_algorithm ( std::string& algorithm ) {
 					this->algorithm = algorithm;
 				}
 				
@@ -153,7 +155,7 @@ namespace privateer {
 					return this->sugar_chainID;
 				}
 
-				void set_sugar_chainID ( ) {
+				void set_sugar_chainID ( std::string sugar_chainID ) {
 					this->sugar_chainID = sugar_chainID;
 				}
 

@@ -302,4 +302,4 @@ execute_process(
 install(TARGETS privateer_lib LIBRARY DESTINATION privateer)
 install(TARGETS privateer_exec DESTINATION ${PYTHON_BIN_DIR})
 install(TARGETS privateer_core LIBRARY DESTINATION privateer)
-install(TARGETS privateer_modelling LIBRARY DESTINATION privateer)
+# install(TARGETS privateer_modelling LIBRARY DESTINATION privateer)

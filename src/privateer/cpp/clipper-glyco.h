@@ -39,7 +39,7 @@ inline bool altconf_compatible ( char m1, char m2 )
         // else
         //     return true;
     // would cause an endless while loop in is_stereocentre() when there would be altconfs like 'C'
-    if(( m1 == m2))
+    if(m1 == m2)
         return true;
     else if((m1 == ' ' && m2 != ' ') || (m1 != ' ' && m2 == ' '))
         return true;
@@ -48,119 +48,6 @@ inline bool altconf_compatible ( char m1, char m2 )
 
 }
 //!< false if one is from conf A and the other is from conf B
-
-
-inline clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon )
-{
-    clipper::Vec3<clipper::ftype> result (0.0, 0.0, 0.0);
-
-    if ( mmon.type() == "TRP" )
-    {
-        bool foundAtomAlpha = false, foundAtomBravo = false, foundAtomCharlie = false;
-        for(int atom = 0; atom < mmon.size(); atom++ )
-        {
-            clipper::MAtom currentAtom = mmon[atom];
-            if(currentAtom.id().trim() == "CD1")
-                foundAtomAlpha = true;
-            if(currentAtom.id().trim() == "CD2")
-                foundAtomBravo = true;
-            if(currentAtom.id().trim() == "CE2")
-                foundAtomCharlie = true;
-        }
-
-        if(foundAtomAlpha == false || foundAtomBravo == false || foundAtomCharlie == false)
-            return result;
-        clipper::Vec3<clipper::ftype> vec1 ( mmon.find ( "CD1", clipper::MM::ANY ).coord_orth().x() - mmon.find ( "CD2", clipper::MM::ANY ).coord_orth().x(),
-                                            mmon.find ( "CD1", clipper::MM::ANY ).coord_orth().y() - mmon.find ( "CD2", clipper::MM::ANY ).coord_orth().y(),
-                                            mmon.find ( "CD1", clipper::MM::ANY ).coord_orth().z() - mmon.find ( "CD2", clipper::MM::ANY ).coord_orth().z());
-
-        clipper::Vec3<clipper::ftype> vec2 ( mmon.find ( "CE2", clipper::MM::ANY ).coord_orth().x() - mmon.find ( "CD2", clipper::MM::ANY ).coord_orth().x(),
-                                            mmon.find ( "CE2", clipper::MM::ANY ).coord_orth().y() - mmon.find ( "CD2", clipper::MM::ANY ).coord_orth().y(),
-                                            mmon.find ( "CE2", clipper::MM::ANY ).coord_orth().z() - mmon.find ( "CD2", clipper::MM::ANY ).coord_orth().z());
-        result = clipper::Vec3<clipper::ftype>::cross ( vec1, vec2 );
-        return result.unit();
-
-    }
-    else if ( mmon.type() == "TYR" )
-    {
-        bool foundAtomAlpha = false, foundAtomBravo = false, foundAtomCharlie = false;
-        for(int atom = 0; atom < mmon.size(); atom++ )
-        {
-            clipper::MAtom currentAtom = mmon[atom];
-            if(currentAtom.id().trim() == "CE1")
-                foundAtomAlpha = true;
-            if(currentAtom.id().trim() == "CG")
-                foundAtomBravo = true;
-            if(currentAtom.id().trim() == "CE2")
-                foundAtomCharlie = true;
-        }
-
-        if(foundAtomAlpha == false || foundAtomBravo == false || foundAtomCharlie == false)
-            return result;
-        clipper::Vec3<clipper::ftype> vec2 ( mmon.find ( "CE1", clipper::MM::ANY ).coord_orth().x() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().x(),
-                                            mmon.find ( "CE1", clipper::MM::ANY ).coord_orth().y() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().y(),
-                                            mmon.find ( "CE1", clipper::MM::ANY ).coord_orth().z() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().z());
-
-        clipper::Vec3<clipper::ftype> vec1 ( mmon.find ( "CE2", clipper::MM::ANY ).coord_orth().x() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().x(),
-                                            mmon.find ( "CE2", clipper::MM::ANY ).coord_orth().y() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().y(),
-                                            mmon.find ( "CE2", clipper::MM::ANY ).coord_orth().z() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().z());
-        result = clipper::Vec3<clipper::ftype>::cross ( vec1, vec2 );
-        return result.unit();
-    }
-    else if ( mmon.type() == "PHE" )
-    {
-        bool foundAtomAlpha = false, foundAtomBravo = false, foundAtomCharlie = false;
-        for(int atom = 0; atom < mmon.size(); atom++ )
-        {
-            clipper::MAtom currentAtom = mmon[atom];
-            if(currentAtom.id().trim() == "CE1")
-                foundAtomAlpha = true;
-            if(currentAtom.id().trim() == "CG")
-                foundAtomBravo = true;
-            if(currentAtom.id().trim() == "CE2")
-                foundAtomCharlie = true;
-        }
-
-        if(foundAtomAlpha == false || foundAtomBravo == false || foundAtomCharlie == false)
-            return result;
-        clipper::Vec3<clipper::ftype> vec2 ( mmon.find ( "CE1", clipper::MM::ANY ).coord_orth().x() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().x(),
-                                            mmon.find ( "CE1", clipper::MM::ANY ).coord_orth().y() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().y(),
-                                            mmon.find ( "CE1", clipper::MM::ANY ).coord_orth().z() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().z());
-
-        clipper::Vec3<clipper::ftype> vec1 ( mmon.find ( "CE2", clipper::MM::ANY ).coord_orth().x() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().x(),
-                                            mmon.find ( "CE2", clipper::MM::ANY ).coord_orth().y() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().y(),
-                                            mmon.find ( "CE2", clipper::MM::ANY ).coord_orth().z() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().z());
-        result = clipper::Vec3<clipper::ftype>::cross ( vec1, vec2 );
-        return result.unit();
-    }
-    else if ( mmon.type() == "HIS" )
-    {
-        bool foundAtomAlpha = false, foundAtomBravo = false, foundAtomCharlie = false;
-        for(int atom = 0; atom < mmon.size(); atom++ )
-        {
-            clipper::MAtom currentAtom = mmon[atom];
-            if(currentAtom.id().trim() == "CE1")
-                foundAtomAlpha = true;
-            if(currentAtom.id().trim() == "CG")
-                foundAtomBravo = true;
-            if(currentAtom.id().trim() == "NE2")
-                foundAtomCharlie = true;
-        }
-
-        if(foundAtomAlpha == false || foundAtomBravo == false || foundAtomCharlie == false)
-            return result;
-        clipper::Vec3<clipper::ftype> vec2 ( mmon.find ( "CE1", clipper::MM::ANY ).coord_orth().x() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().x(),
-                                            mmon.find ( "CE1", clipper::MM::ANY ).coord_orth().y() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().y(),
-                                            mmon.find ( "CE1", clipper::MM::ANY ).coord_orth().z() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().z());
-
-        clipper::Vec3<clipper::ftype> vec1 ( mmon.find ( "NE2", clipper::MM::ANY ).coord_orth().x() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().x(),
-                                            mmon.find ( "NE2", clipper::MM::ANY ).coord_orth().y() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().y(),
-                                            mmon.find ( "NE2", clipper::MM::ANY ).coord_orth().z() - mmon.find ( "CG", clipper::MM::ANY ).coord_orth().z());
-        result = clipper::Vec3<clipper::ftype>::cross ( vec1, vec2 );
-        return result.unit();
-    }
-    return result;
-}
 
 
 inline clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 )
