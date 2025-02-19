@@ -1594,19 +1594,11 @@ std::string privateer::glycanbuilderplot::get_colour ( Colour colour, bool origi
 void privateer::glycanbuilderplot::Plot::write_svg_header   ( std::fstream& of )
 {
 
-    of << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n"
-       << "<!-- Generator: Privateer (YSBL, University of York, distributed by CCP4) -->\n"
-       << "<!-- Please reference: Agirre, Iglesias, Rovira, Davies, Wilson & Cowtan (2015) Nat Struct & Mol Biol 22(11), 833-834 -->\n\n"
-       << "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n"
-       << "     xmlns:cc=\"http://creativecommons.org/ns#\"\n"
-       << "     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n"
-       << "     xmlns:svg=\"http://www.w3.org/2000/svg\"\n"
-       << "     xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n"
-       << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
-       << "     version=\"1.1\"\n"
+    of << "<svg version=\"1.1\"\n"
        << "     width=\"" << get_width() << "\" \n"
        << "     height=\"" << get_height() << "\" \n"
        << "     viewBox=\"" << get_viewbox() << " \"\n"
+       << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
        << "     preserveAspectRatio=\"xMidYMid slice\">\n\n"
        << "  <style>\n"
        << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
@@ -1862,16 +1854,11 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_header   ( )
 {
     std::ostringstream of;
 
-    of << "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n"
-       << "     xmlns:cc=\"http://creativecommons.org/ns#\"\n"
-       << "     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n"
-       << "     xmlns:svg=\"http://www.w3.org/2000/svg\"\n"
-       << "     xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n"
-       << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
-       << "     version=\"1.1\"\n"
+    of << "<svg version=\"1.1\"\n"
        << "     width=\"" << get_width() << "\" \n"
        << "     height=\"" << get_height() << "\" \n"
        << "     viewBox=\"" << get_viewbox() << " \"\n"
+       << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
        << "     preserveAspectRatio=\"xMidYMid slice\">\n\n"
        << "  <style>\n"
        << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
@@ -2098,20 +2085,12 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_footer ( )
 void privateer::glycanbuilderplot::Plot::write_svg_header_ostringstream   ( std::ostringstream& of )
 {
 
-    of << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n\n"
-       << "<!-- Generator: Privateer (YSBL, University of York, distributed by CCP4) -->\n"
-       << "<!-- Please reference: Agirre, Iglesias, Rovira, Davies, Wilson & Cowtan (2015) Nat Struct & Mol Biol 22(11), 833-834 -->\n\n"
-       << "<div>\n"
-       << "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n"
-       << "     xmlns:cc=\"http://creativecommons.org/ns#\"\n"
-       << "     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n"
-       << "     xmlns:svg=\"http://www.w3.org/2000/svg\"\n"
-       << "     xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n"
-       << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
-       << "     version=\"1.1\"\n"
+    of << "<div>\n"
+       << "<svg version=\"1.1\"\n"
        << "     width=\"" << get_width() << "\" \n"
        << "     height=\"" << get_height() << "\" \n"
-       << "     viewBox=\"" << get_viewbox() << " \"\n>"
+       << "     viewBox=\"" << get_viewbox() << " \"\n"
+       << "     xmlns=\"http://www.w3.org/2000/svg\"\n>"
 //        << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
        << "  <style>\n"
        << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
@@ -2357,7 +2336,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_contents_ostringstream ( std:
 
 void privateer::glycanbuilderplot::Plot::write_svg_footer_ostringstream ( std::ostringstream& of )
 {
-    of << "\n</div>\n</svg>" ;
+    of << "\n<div>\n</svg>" ;
 }
 
 
@@ -3119,11 +3098,16 @@ std::string privateer::glycanbuilderplot::Man::get_XML (int i)
 {
     std::ostringstream tmp;
 
-
-    tmp     <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
+    std::string trimmed_chainID = get_chainID();
+    bool original_colour_scheme = true;
+    bool inverted_background = false;
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            << "<circle r =\"25\" cx =\"" << get_x() + 25 << "\" cy =\"" << get_y() + 25 << "\" id=\"man\" style=\" stroke:"
+            << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme ) << "stroke-width:2.8;\" "
+            <<  "data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << "/>"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
+            << "</a>\n";
 
     return tmp.str();
 }
@@ -3134,7 +3118,7 @@ std::string privateer::glycanbuilderplot::Gal::get_XML (int i)
 
 
     tmp     <<  "  <use xlink:href=\"#gal\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << "onclick=\"alert(\'TEST\')\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n";
 
