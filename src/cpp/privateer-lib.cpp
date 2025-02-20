@@ -3102,11 +3102,18 @@ std::string privateer::glycanbuilderplot::Man::get_XML (int i)
     bool original_colour_scheme = true;
     bool inverted_background = false;
     trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
-    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+    /*tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
             << "<circle r =\"25\" cx =\"" << get_x() + 25 << "\" cy =\"" << get_y() + 25 << "\" id=\"man\" style=\" stroke:"
             << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme ) << "stroke-width:2.8;\" "
             <<  "data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << "/>"
             <<  "<title>" << get_tooltip() << "</title>"
+            << "</a>\n";*/
+            
+     tmp    <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n"
             << "</a>\n";
 
     return tmp.str();

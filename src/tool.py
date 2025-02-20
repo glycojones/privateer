@@ -317,37 +317,23 @@ class FancierPrivateerTool(ToolInstance):
     def button_pressed(self):
         # The user has pressed the Return key; run the privateer command using their inputs
         from chimerax.ui import MainToolWindow
-        self.tool_window = MainToolWindow(self)
+        self.tool_window = MainToolWindow(self, close_destroys = False)
         # We will be adding an item to the tool's context menu, so override
         # the default MainToolWindow fill_context_menu method
         self.tool_window.fill_context_menu = self.fill_context_menu_svg
         from Qt.QtWidgets import QVBoxLayout
-        from PyQt6.QtWebEngineWidgets import QWebEngineView
-        from chimerax.ui.widgets.htmlview import ChimeraXHtmlView, create_chimerax_profile, chimerax_intercept
-        from tempfile import gettempdir
-        from os.path import join
-        from os import remove
+        from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
         from chimerax.core.commands import run
         # ToolInstance has a 'session' attribute...
         AllGlycans = run(self.session, f"privateer_validation None {self.combo_box.currentText()} True") 
         parent = self.tool_window.ui_area
-        #profile_parent = None
-        #def intercept(*args, session=self.session, view=ChimeraXHtmlView):
-        #    chimerax_intercept(*args, view=view, session=session)
-        #profile = create_chimerax_profile(profile_parent, interceptor = intercept, storage_name = 'privateer')
-        web_view = ChimeraXHtmlView(self.session, parent)#,profile=profile)
-        #web_view.destroyed.connect(lambda *, profile=profile: profile.deleteLater())
+        web_view = ChimeraXHtmlView(self.session, parent)
         layout = QVBoxLayout()
-        tempdirpath = gettempdir()
         htmlstring = "<html>\n"
         for i, glycan in enumerate(AllGlycans):
             svgstring = glycan["svg"]
             rootID = glycan["RootID"]
             htmlstring += svgstring
-            #htmlstring='<svg width="255" height="95" viewBox="2675 980 255 95" xmlns="http://www.w3.org/2000/svg"><a href="cxcmd:view /B:512"> <circle r ="25" cx ="2710" cy ="1015" id="man" stroke="#000000" fill="#00a651" stroke-width="2.8" data-chainID="B0" data-resname="MAN" data-seqnum="512"/><title><tspan>MAN 512 in ev4 conformation. </tspan><tspan>Mean B-factor: 0.00. </tspan><tspan>Detected type: alpha-D-aldopyranose. </tspan>Detected issues: <tspan>The sugar is in a high-energy conformation. </tspan></title></a></svg>'
-            #htmlstring='<svg version="1.1" width="255" height="95" viewBox="2675 980 255 95 " xmlns="http://www.w3.org/2000/svg"><a href="cxcmd:view /B:512"><circle r ="25" cx ="2710" cy ="1015" id="man" style=" stroke:#000000; fill:#00a651;stroke-width:2.8;" data-chainID="B0" data-resname="MAN" data-seqnum="512"/><title><tspan>MAN 512 in ev4 conformation. </tspan><tspan>Mean B-factor: 0.00. </tspan><tspan>Detected type: alpha-D-aldopyranose. </tspan>Detected issues: <tspan>The sugar is in a high-energy conformation; </tspan></title></a></svg>'
-            #svgstring='<svg width="255" height="95" viewBox="2675 980 255 95" xmlns="http://www.w3.org/2000/svg"><title>MAN-512/B_TRP-263/B</title><g id="shadedLinkage0"> <line x1="-3" y1="0" x2="110" y2="0" stroke="#f9cb9c" stroke-width="15" stroke-linecap="round" transform="rotate(180 2800 1015)" x="2800" y="1015" /> <title>Linkage Z-Score = -1 Warning: Sample size is small. Check torsion plot to validate.</title></g><circle r ="40" cx ="2710" cy ="1015" id="shadedcircle" fill="#f9cb9c"  x="2685" y="990"/><g id="Linkage0"><line x1="2797" y1="1015" x2="2910" y2="1015" stroke="#000000" stroke-width="2" stroke-linecap="round"  transform="rotate(180 2800 1015)" x="2800" y="1015" /> <title>alpha link. Phi: -33.5988; Psi: -0.2745;</title><text x="2740" y="1035" class ="black" font-weight="bold" font-family="Helvetica" font-size="24">&#945;</text></g><g id="glycan_root" data-chainID="B" data-resname="TRP" data-seqnum="263" transform="translate(2768 990)" ><rect width="160" height="50" rx="10" ry="10" stroke="#000000" fill="#ffffff" stroke-width="2.0" /><line x1="30" y1="0" x2="30" y2="50" stroke="#000000" fill="#ffffff" stroke-width="2.0" /><text x="7" y="32" class="my_blue" font-weight="bold" font-family="Helvetica" font-size="24">C</text><text x="92" y="32" fill="black" text-anchor="middle" font-weight="bold" font-family="Helvetica" font-size="24">TRP<tspan baseline-shift="sub" font-weight="normal" font-size="20">B/263</tspan></text></g><circle r ="25" cx ="2710" cy ="1015" id="man" stroke="#000000" fill="#00a651" stroke-width="2.8" data-chainID="B0" data-resname="MAN" data-seqnum="512"/><title><tspan>MAN 512 in ev4 conformation. </tspan><tspan>Mean B-factor: 0.00. </tspan><tspan>Detected type: alpha-D-aldopyranose. </tspan>Detected issues: <tspan>The sugar is in a high-energy conformation. </tspan></title></svg>'
-            #run(self.session, f"log html {svgstring}")
         htmlstring += "\n</html>"
         web_view.setHtml(htmlstring)
         layout.addWidget(web_view)
@@ -356,7 +342,6 @@ class FancierPrivateerTool(ToolInstance):
         # Show the window on the user-preferred side of the ChimeraX
         # main window
         self.tool_window.manage('side')
-        # FLAG: NOW NEED TO DISPLAY THE GLYCAN SVGS HERE and probably change layout which will require more than one function
 
     def fill_context_menu(self, menu, x, y):
         # Add any tool-specific items to the given context menu (a QMenu instance).
