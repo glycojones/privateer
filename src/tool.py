@@ -300,6 +300,7 @@ class FancierPrivateerTool(ToolInstance):
 
         layout.addRow(label1,self.combo_box)
         layout.addWidget(self.run_button)
+        #FLAG: Add another button here for toggle glycoblocks, then implement that
 
         layout.setFieldGrowthPolicy(QFormLayout.ExpandingFieldsGrow)
 

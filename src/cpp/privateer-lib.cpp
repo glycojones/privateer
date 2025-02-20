@@ -3072,112 +3072,97 @@ bool privateer::glycanbuilderplot::Plot::plot_demo ( )
 std::string privateer::glycanbuilderplot::shadedCircle::get_XML (int i)
 {
     std::ostringstream tmp;
-
     tmp     <<  "  <use xlink:href=\"#shadedcircle\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
-
-
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::Glc::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#glc\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#glc\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::Man::get_XML (int i)
 {
     std::ostringstream tmp;
-
     std::string trimmed_chainID = get_chainID();
-    bool original_colour_scheme = true;
-    bool inverted_background = false;
     trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
-    /*tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
-            << "<circle r =\"25\" cx =\"" << get_x() + 25 << "\" cy =\"" << get_y() + 25 << "\" id=\"man\" style=\" stroke:"
-            << get_colour ( black, original_colour_scheme, inverted_background ) << " fill:" << get_colour ( green, original_colour_scheme ) << "stroke-width:2.8;\" "
-            <<  "data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << "/>"
-            <<  "<title>" << get_tooltip() << "</title>"
-            << "</a>\n";*/
-            
-     tmp    <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
             <<  "  <use xlink:href=\"#man\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
             <<  "</use>\n"
             << "</a>\n";
-
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::Gal::get_XML (int i)
 {
     std::ostringstream tmp;
-
-
-    tmp     <<  "  <use xlink:href=\"#gal\" x=\"" << get_x() << "\""
-            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << "onclick=\"alert(\'TEST\')\"" << ">"
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#gal\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::shadedTriangle::get_XML (int i)
 {
     std::ostringstream tmp;
-
     tmp     <<  "  <use xlink:href=\"#shadedtriangle\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
-
-
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::Fuc::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#fuc\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#fuc\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::shadedStar::get_XML (int i)
 {
     std::ostringstream tmp;
-
     tmp     <<  "  <use xlink:href=\"#shadedstar\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
-
-
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::Xyl::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#xyl\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#xyl\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
@@ -3187,49 +3172,51 @@ std::string privateer::glycanbuilderplot::Xyl::get_XML (int i)
 std::string privateer::glycanbuilderplot::shadedSquare::get_XML (int i)
 {
     std::ostringstream tmp;
-
     tmp     <<  "  <use xlink:href=\"#shadedrectangle\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\"  >"
             <<  "</use>\n";
-
-
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::GalN::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#galn\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#galn\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::GlcN::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#glcn\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#glcn\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::ManN::get_XML (int i)
 {
     std::ostringstream tmp;
-
-
-    tmp     <<  "  <use xlink:href=\"#mann\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#mann\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
@@ -3239,38 +3226,42 @@ std::string privateer::glycanbuilderplot::ManN::get_XML (int i)
 std::string privateer::glycanbuilderplot::GlcNAc::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#glcnac\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::GalNAc::get_XML (int i)
 {
     std::ostringstream tmp;
-
-
-    tmp     <<  "  <use xlink:href=\"#galnac\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#galnac\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::ManNAc::get_XML (int i)
 {
     std::ostringstream tmp;
-
-
-    tmp     <<  "  <use xlink:href=\"#mannac\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#mannac\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
@@ -3291,90 +3282,98 @@ std::string privateer::glycanbuilderplot::shadedDiamond::get_XML (int i)
 std::string privateer::glycanbuilderplot::Neu5Ac::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#neu5ac\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#neu5ac\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::Neu5Gc::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#neu5gc\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#neu5gc\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::KDN::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#kdn\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#kdn\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::GlcA::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#glca\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#glca\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::ManA::get_XML (int i)
 {
     std::ostringstream tmp;
-
-
-    tmp     <<  "  <use xlink:href=\"#mana\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#mana\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::GalA::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#gala\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#gala\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
 std::string privateer::glycanbuilderplot::IdoA::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp     <<  "  <use xlink:href=\"#idoa\" x=\"" << get_x() << "\""
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#idoa\" x=\"" << get_x() << "\""
             <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
             <<  "<title>" << get_tooltip() << "</title>"
-            <<  "</use>\n";
-
-
+            <<  "</use>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
@@ -3393,14 +3392,16 @@ std::string privateer::glycanbuilderplot::shadedHexagon::get_XML (int i)
 std::string privateer::glycanbuilderplot::Unk::get_XML (int i)
 {
     std::ostringstream tmp;
-
-    tmp <<  "  <use xlink:href=\"#unk\" x=\"" << get_x() << "\""
-        <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
-        <<  "<title>" << get_tooltip() << "</title>"
-        <<  "</use>\n"
-        <<  "<text x=\"" << get_x() + 25 << "\""
-        <<  " y=\"" << get_y() +34 << "\" text-anchor=\"middle\" font-family=\"Helvetica\" font-size=\"24\" font-weight=\"bold\">" << code << "</text>\n";
-
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            <<  "  <use xlink:href=\"#unk\" x=\"" << get_x() << "\""
+            <<  " y=\"" << get_y() << "\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\"" << ">"
+            <<  "<title>" << get_tooltip() << "</title>"
+            <<  "</use>\n"
+            <<  "<text x=\"" << get_x() + 25 << "\""
+            <<  " y=\"" << get_y() +34 << "\" text-anchor=\"middle\" font-family=\"Helvetica\" font-size=\"24\" font-weight=\"bold\">" << code << "</text>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
@@ -3414,18 +3415,20 @@ std::string privateer::glycanbuilderplot::GlycanRoot::get_XML (int i)
 
     if ( link_name == "o" ) link_colour = "my_red";
     else if ( link_name == "s" ) link_colour = "my_yellow";
-
-    tmp << "  <g id=\"glycan_root\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\" transform=\"translate(" << get_x() << " " << get_y() << ")\" >\n"
-        << "    <rect width=\"160\" height=\"50\" rx=\"10\" ry=\"10\" style=\"stroke:#000000;"
-        << " fill:#ffffff; stroke-width:2.0;\" />\n"
-        << "    <line x1=\"30\" y1=\"0\" x2=\"30\" y2=\"50\" style=\"stroke:#000000;"
-        << " fill:#ffffff; stroke-width:2.0;\" />\n"
-        << "    <text x=\"7\" y=\"32\" class=\"" << link_colour << "\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">"
-        << link_name << "</text>\n"
-        << "    <text x=\"92\" y=\"32\" fill=\"black\" text-anchor=\"middle\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">"
-        << get_root_name() << "<tspan baseline-shift=\"sub\" font-weight=\"normal\" font-size=\"20\">" << get_root_id() << "</tspan></text>\n"
-        << "</g>\n";
-
+    std::string trimmed_chainID = get_chainID();
+    trimmed_chainID.erase(std::remove_if(trimmed_chainID.begin(),trimmed_chainID.end(),::isdigit),trimmed_chainID.end());
+    tmp     <<  "<a href=\"cxcmd:view /" << trimmed_chainID << ":" << get_seqnum() << "\">"
+            << "  <g id=\"glycan_root\" data-chainID=\"" << get_chainID() << "\" data-resname=\"" << get_resname() << "\" data-seqnum=\"" << get_seqnum() << "\" transform=\"translate(" << get_x() << " " << get_y() << ")\" >\n"
+            << "    <rect width=\"160\" height=\"50\" rx=\"10\" ry=\"10\" style=\"stroke:#000000;"
+            << " fill:#ffffff; stroke-width:2.0;\" />\n"
+            << "    <line x1=\"30\" y1=\"0\" x2=\"30\" y2=\"50\" style=\"stroke:#000000;"
+            << " fill:#ffffff; stroke-width:2.0;\" />\n"
+            << "    <text x=\"7\" y=\"32\" class=\"" << link_colour << "\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">"
+            << link_name << "</text>\n"
+            << "    <text x=\"92\" y=\"32\" fill=\"black\" text-anchor=\"middle\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">"
+            << get_root_name() << "<tspan baseline-shift=\"sub\" font-weight=\"normal\" font-size=\"20\">" << get_root_id() << "</tspan></text>\n"
+            << "</g>\n"
+            << "</a>\n";
     return tmp.str();
 }
 
