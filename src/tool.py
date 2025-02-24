@@ -336,6 +336,7 @@ class FancierPrivateerTool(ToolInstance):
             rootID = glycan["RootID"]
             htmlstring += svgstring
         htmlstring += "\n</html>"
+        htmlstring.replace("cxcmd:view /", f"cxcmd:view #{self.combo_box.currentText()}/")
         web_view.setHtml(htmlstring)
         layout.addWidget(web_view)
         # Set the layout as the contents of our window
@@ -369,3 +370,8 @@ class FancierPrivateerTool(ToolInstance):
         from Qt.QtGui import QAction
         clear_action = QAction("Clear", menu)
         menu.addAction(clear_action)
+
+
+
+
+

@@ -792,6 +792,7 @@ namespace privateer
                 std::string get_XML (int i);
 
             private:
+            //FLAG: Here need to add properties of sugar_1, sugar_2, donor_position, acceptor_position for the cxcmd in svg
                 std::string anomerSymbol;
                 std::string linkagePosition;
                 Link_type bond_type;

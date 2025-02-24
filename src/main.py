@@ -71,5 +71,48 @@ def _write_pdb(m, filename):
                                segment, element, charge),
                                file=f)
 
+def torsion_plot(sugar_1,atom_number_1,sugar_2,atom_number_2,phi,psi):
+    import os
+    dpath = os.path.dirname(os.path.abspath(__file__))
+    torsiondatabasefilepath = os.path.join(dpath,"data","linkage_torsions","privateer_torsion_database.json")
+
+    import json
+    with open(torsiondatabasefilepath) as json_file:
+        torsions = json.load(json_file)
+    torsions = torsions["data"]
+    phis = []
+    psis = []
+    for firsts in torsions:
+        if firsts["first"] == sugar_1:
+            for seconds in firsts["second"]:
+                if seconds["sugar"] == sugar_2 and str(seconds["donor_position"]) == str(atom_number_2) and str(seconds["acceptor_position"]) == str(atom_number_1): #Do I need to swap these two positions?
+                    for torsion_pairs in seconds["torsions"]:
+                        phis.append(torsion_pairs["Phi"])
+                        psis.append(torsion_pairs["Psi"])
+
+    linkageString = f"{sugar_1}-{atom_number_1},{atom_number_2}-{sugar_2}"
+
+    import matplotlib.pyplot as plt
+    if sugar_1 == "ASN" and sugar_2 == "NAG":
+        phimin = 0
+        phimax = 360
+        psimin = -180
+        psimax = 180
+    else:
+        phimin = -180
+        phimax = 180
+        psimin = -180
+        psimax = 180
+
+    fig, axs = plt.subplots(1,1,figsize=(5,5))
+    axs.hist2d(phis,psis,bins = 180,range=[[phimin,phimax],[psimin,psimax]], cmin = 1)
+    axs.plot(phi,psi,"rx")
+    axs.set_title(linkageString)
+    axs.set_xlabel("$\phi$")
+    axs.set_ylabel("$\psi$")
+    fig.tight_layout()
+    fig.show()
+
+
 
 
