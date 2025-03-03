@@ -334,9 +334,23 @@ class FancierPrivateerTool(ToolInstance):
         for i, glycan in enumerate(AllGlycans):
             svgstring = glycan["svg"]
             rootID = glycan["RootID"]
+            for j, torsion in enumerate(glycan["Torsions"]):
+                sugar1 = torsion["sugar_1"]
+                sugar2 = torsion["sugar_2"]
+                #if sugar1 == "ASN" and sugar2 == "NAG":
+                #    donorPosition = torsion["atom_number_2"]
+                #    acceptorPosition = torsion["atom_number_1"]
+                #else:
+                donorPosition = torsion["atom_number_1"]
+                acceptorPosition = torsion["atom_number_2"]
+                phi = torsion["phi"]
+                psi = torsion["psi"]
+                sugarchainID = torsion["chainID"]
+                sugarresID = str(torsion["sugar_2_resID"])
+                svgstring = svgstring.replace(f"cxcmd:{sugarchainID}{sugarresID}", f"cxcmd:privateer_torsion_plot {sugar1} {donorPosition} {sugar2} {acceptorPosition} {phi} {psi}")
             htmlstring += svgstring
         htmlstring += "\n</html>"
-        htmlstring.replace("cxcmd:view /", f"cxcmd:view #{self.combo_box.currentText()}/")
+        htmlstring = htmlstring.replace("cxcmd:view /", f"cxcmd:view #{self.combo_box.currentText()}/")
         web_view.setHtml(htmlstring)
         layout.addWidget(web_view)
         # Set the layout as the contents of our window

@@ -3370,7 +3370,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tphi_c1c2o8c8 = " << torsions[5] << "\t\tpsi = " << torsions[1] << "\t\tomega_seven = " << torsions[2] << "\t\tomega_eight = " << torsions[3] << "\t\tomega_nine = " << torsions[4] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
         if(!torsions_zscore_database.database_array.empty())
         {
             float Phi = clipper::Util::rad2d(phi);
@@ -3477,7 +3477,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tphi_c1c2o8c8 = " << torsions[5] << "\t\tpsi = " << torsions[1] << "\t\tomega_seven = " << torsions[2] << "\t\tomega_eight = " << torsions[3] << "\t\tomega_nine = " << torsions[4] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
         if(!torsions_zscore_database.database_array.empty())
         {
             float Phi = clipper::Util::rad2d(phi);
@@ -3566,7 +3566,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << "\t\tomega_six = " << torsions[2] << "\t\tomega_seven = " << torsions[3] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
         if(!torsions_zscore_database.database_array.empty())
         {
             float Phi = clipper::Util::rad2d(phi);
@@ -3639,7 +3639,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << "\t\tomega = " << torsions[2] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
         if(!torsions_zscore_database.database_array.empty())
         {
             float Phi = clipper::Util::rad2d(phi);
@@ -3707,7 +3707,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
         if(!torsions_zscore_database.database_array.empty())
         {
             float Phi = clipper::Util::rad2d(phi);
@@ -3773,7 +3773,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
         if(!torsions_zscore_database.database_array.empty())
         {
             float Phi = clipper::Util::rad2d(phi);
@@ -3840,7 +3840,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
         if(!torsions_zscore_database.database_array.empty())
         {
             float Phi = clipper::Util::rad2d(phi);
@@ -3905,7 +3905,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
             DBG << "Torsions for link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
         }
         new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+        add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
         if(!torsions_zscore_database.database_array.empty())
         {
             float Phi = clipper::Util::rad2d(phi);
@@ -3990,7 +3990,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                 DBG << "Torsions for when next_sugar has 6 members, link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << std::endl;
             }
             new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-            add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+            add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
             if(!torsions_zscore_database.database_array.empty())
             {
                 float Phi = clipper::Util::rad2d(phi);
@@ -4039,7 +4039,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
                 DBG << "Torsions for when next_sugar has 5 members, link = " << link << ", phi = " << torsions[0] << "\t\tpsi = " << torsions[1] << "\t\tomega = " << torsions[2] << std::endl;
             }
             new_connection.set_linkage_atoms(donorAtom, acceptorAtom);
-            add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum());
+            add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), first_sugar.type().trim(), donorAtom, next_sugar.type().trim(), acceptorAtom, first_sugar.seqnum(), next_sugar.seqnum(), next_sugar.chain_id());
             if(!torsions_zscore_database.database_array.empty())
             {
                 float Phi = clipper::Util::rad2d(phi);
@@ -4062,7 +4062,7 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
     return false;
 }
 
-void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom, int first_residue_seqnum, int second_residue_seqnum)
+void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom, int first_residue_seqnum, int second_residue_seqnum, clipper::String second_residue_chainID)
 {
     if(!all_torsions_within_mglycan.empty())
     {
@@ -4083,6 +4083,8 @@ void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::
             found_torsion_description.linkage_descriptors.push_back(std::make_pair(donorPosition, acceptorPosition));
             found_torsion_description.atoms.push_back(std::make_pair(first_atom, second_atom));
             found_torsion_description.torsions.push_back(std::make_pair(Phi, Psi));
+            found_torsion_description.sugresID = second_residue_seqnum;
+            found_torsion_description.sugchainID = second_residue_chainID;
 
             auto torsion_seach_result = std::find_if(found_torsion_description.combined_torsions.begin(), found_torsion_description.combined_torsions.end(), [donorPosition, acceptorPosition](std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>>& element)
                 {
@@ -4116,6 +4118,8 @@ void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::
             new_torsion.first_residue_name = first_residue_name;
             new_torsion.second_residue_name = second_residue_name;
             new_torsion.atoms.push_back(std::make_pair(first_atom, second_atom));
+            new_torsion.sugresID = second_residue_seqnum;
+            new_torsion.sugchainID = second_residue_chainID;
             // If donorPosition adn acceptorPositon are in linkkage_ddesc
             // Go to vector vector and add to that one not the top level vector 
 
@@ -4144,6 +4148,8 @@ void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::
         first_torsion.first_residue_name = first_residue_name;
         first_torsion.second_residue_name = second_residue_name;
         first_torsion.atoms.push_back(std::make_pair(first_atom, second_atom));
+        first_torsion.sugresID = second_residue_seqnum;
+        first_torsion.sugchainID = second_residue_chainID;
 
         std::vector<std::pair<float,float>> tmp_vector = {std::make_pair(Phi, Psi)};
         first_torsion.combined_torsions.push_back(std::make_pair(std::make_pair(donorPosition, acceptorPosition), tmp_vector));
@@ -4902,7 +4908,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                         psi = clipper::Util::twopi() + psi;
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
-                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_n_roots[i].first.type().trim(), nd2, sugar.type().trim(), c1, potential_n_roots[i].first.seqnum(), sugar.seqnum()); 
+                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_n_roots[i].first.type().trim(), nd2, sugar.type().trim(), c1, potential_n_roots[i].first.seqnum(), sugar.seqnum(), sugar.chain_id()); 
 
                     // This is hella cursed. A really cursed hacky implementation just to support linkage highlights in SNFG diagrams for ASN-NAG linkage.
                     // Ideally clipper::MGlycan::Linkage should have been reimplemented, but that would have taken too much time.
@@ -5059,7 +5065,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                         psi = clipper::Util::twopi() + psi;
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
-                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_o_roots[i].first.type().trim(), og1, sugar.type().trim(), c1, potential_o_roots[i].first.seqnum(), sugar.seqnum());
+                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_o_roots[i].first.type().trim(), og1, sugar.type().trim(), c1, potential_o_roots[i].first.seqnum(), sugar.seqnum(), sugar.chain_id());
 
 
                     list_of_glycans_modelled_as_glycosylation.push_back ( mg );
@@ -5143,7 +5149,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                         psi = clipper::Util::twopi() + psi;
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
-                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_s_roots[i].first.type().trim(), sg, sugar.type().trim(), c1, potential_s_roots[i].first.seqnum(), sugar.seqnum());
+                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_s_roots[i].first.type().trim(), sg, sugar.type().trim(), c1, potential_s_roots[i].first.seqnum(), sugar.seqnum(), sugar.chain_id());
 
 
                     list_of_glycans_modelled_as_glycosylation.push_back ( mg );
@@ -5239,7 +5245,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
 
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
-                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_c_roots[i].first.type().trim(), cd1, sugar.type().trim(), c1, potential_c_roots[i].first.seqnum(), sugar.seqnum());
+                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_c_roots[i].first.type().trim(), cd1, sugar.type().trim(), c1, potential_c_roots[i].first.seqnum(), sugar.seqnum(), sugar.chain_id());
 
                     if(!torsions_zscore_database.database_array.empty())
                     {
@@ -5354,7 +5360,7 @@ void MGlycology::init ( const clipper::MiniMol& mmol, const clipper::MAtomNonBon
                         psi = clipper::Util::twopi() + psi;
 
                     mg.set_glycosylation_torsions ( clipper::Util::rad2d(phi), clipper::Util::rad2d(psi) );
-                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_p_roots[i].first.type().trim(), op, sugar.type().trim(), c1, potential_p_roots[i].first.seqnum(), sugar.seqnum());
+                    mg.add_torsions_for_detected_linkages(clipper::Util::rad2d(phi), clipper::Util::rad2d(psi), potential_p_roots[i].first.type().trim(), op, sugar.type().trim(), c1, potential_p_roots[i].first.seqnum(), sugar.seqnum(), sugar.chain_id());
 
                     list_of_glycans_modelled_as_glycosylation.push_back ( mg );
                     break;

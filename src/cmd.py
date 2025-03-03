@@ -33,7 +33,7 @@ privateer_validation_desc = CmdDesc(
 
 
 def privateer_torsion_plot(session,sugar_1,atom_number_1,sugar_2,atom_number_2,phi,psi):
-    torsion_plot(sugar_1,atom_number_1,sugar_2,atom_number_2,phi,psi)
+    torsion_plot(session, sugar_1,atom_number_1,sugar_2,atom_number_2,phi,psi)
 
 privateer_torsion_plot_desc = CmdDesc(
     required=[

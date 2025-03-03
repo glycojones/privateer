@@ -2411,13 +2411,12 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan, 
     if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "alpha")     anomerSymbol = "&#945;";
     else if (clipper::data::get_anomer(glycan.get_root().second.type().trim()) == "beta") anomerSymbol = "&#946;";
     else                                                                                  anomerSymbol = "&#63;";
-
-    Bond *first_bond = new Bond( 2800, 1015, anomerSymbol, side, glycan.get_link_description(), mmdbsel );
+    
+    const clipper::MGlycan::Node node = glycan.get_node ( 0 ); // get the first node
+    Bond *first_bond = new Bond( 2800, 1015, anomerSymbol, side, glycan.get_link_description(), glycan.get_root_sugar_chainID().trim(), node.get_sugar().get_seqnum(), mmdbsel );
     add_link ( first_bond );
 
     // let the fun begin: paint the tree with yet another recursive function
-
-    const clipper::MGlycan::Node node = glycan.get_node ( 0 ); // get the first node
 
     if(glycan.get_type() == "n-glycan" || glycan.get_type() == "c-glycan")
     {
@@ -2429,7 +2428,7 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan, 
                 std::ostringstream os;
                 os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
                 std::string message = os.str();
-                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", mmdbsel  );
+                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", glycan.get_root_sugar_chainID().trim(), node.get_sugar().get_seqnum(), mmdbsel  );
                 add_shaded_link(new_shaded_bond);
                 error_count->torsion_err++; 
             }
@@ -2442,7 +2441,7 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan, 
                 std::ostringstream os;
                 os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore << "\nWarning: Sample size is small. Check torsion plot to validate.";
                 std::string message = os.str();
-                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", mmdbsel  );
+                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", glycan.get_root_sugar_chainID().trim(), node.get_sugar().get_seqnum(), mmdbsel  );
                 add_shaded_link(new_shaded_bond);
                 error_count->torsion_err++; 
             }
@@ -2454,7 +2453,7 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan, 
                 std::ostringstream os;
                 os << "Linkage does not have enough information in the database to calculate a linkage score.";
                 std::string message = os.str();
-                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbondnull", mmdbsel  );
+                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbondnull", glycan.get_root_sugar_chainID().trim(), node.get_sugar().get_seqnum(), mmdbsel  );
                 add_shaded_link(new_shaded_bond);
                 error_count->torsion_err++;
             }
@@ -2706,7 +2705,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                 add_link ( new_bond );
                 if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
                 {
@@ -2717,7 +2716,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::ostringstream os;
                             os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
                             std::string message = os.str();
-                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mmdbsel  );
+                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                             add_shaded_link(new_shaded_bond);
                             errors->torsion_err++; 
                         }
@@ -2727,7 +2726,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::ostringstream os;
                         os << "Linkage does not have enough information in the database to calculate a linkage score.";
                         std::string message = os.str();
-                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mmdbsel  );
+                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                         add_shaded_link(new_shaded_bond);
                         errors->torsion_err++; 
                     }
@@ -2745,7 +2744,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                 add_link ( new_bond );
                 if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
                 {
@@ -2757,7 +2756,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::ostringstream os;
                             os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
                             std::string message = os.str();
-                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mmdbsel  );
+                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                             add_shaded_link(new_shaded_bond);
                             errors->torsion_err++; 
                         }
@@ -2767,7 +2766,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::ostringstream os;
                         os << "Linkage does not have enough information in the database to calculate a linkage score.";
                         std::string message = os.str();
-                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mmdbsel  );
+                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                         add_shaded_link(new_shaded_bond);
                         errors->torsion_err++; 
                     }
@@ -2789,7 +2788,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, up, anomerSymbol, linkagePosition, link.get_description(), mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                 add_link ( new_bond );
                 if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
                 {
@@ -2801,7 +2800,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::ostringstream os;
                             os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
                             std::string message = os.str();
-                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mmdbsel  );
+                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbond", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                             add_shaded_link(new_shaded_bond);
                             errors->torsion_err++; 
                         }
@@ -2811,7 +2810,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::ostringstream os;
                         os << "Linkage does not have enough information in the database to calculate a linkage score.";
                         std::string message = os.str();
-                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mmdbsel  );
+                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, up, message, "shadedbondnull", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                         add_shaded_link(new_shaded_bond);
                         errors->torsion_err++; 
                     }
@@ -2829,7 +2828,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
                 std::string linkagePosition = std::to_string(link.get_order());
 
-                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mmdbsel  );
+                Bond * new_bond = new Bond( x+25, y + 25, down, anomerSymbol, linkagePosition, link.get_description(), mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                 add_link ( new_bond );
                 if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
                 {
@@ -2841,7 +2840,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                             std::ostringstream os;
                             os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
                             std::string message = os.str();
-                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mmdbsel  );
+                            shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbond", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                             add_shaded_link(new_shaded_bond);
                             errors->torsion_err++; 
                         }
@@ -2851,7 +2850,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::ostringstream os;
                         os << "Linkage does not have enough information in the database to calculate a linkage score.";
                         std::string message = os.str();
-                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mmdbsel  );
+                        shadedBond * new_shaded_bond = new shadedBond( x+25, y + 25, down, message, "shadedbondnull", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                         add_shaded_link(new_shaded_bond);
                         errors->torsion_err++;                         
 
@@ -2943,7 +2942,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
 
             std::string linkagePosition = std::to_string(link.get_order());
 
-            Bond * new_bond = new Bond( x, y + 25 + (sign * 15), orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mmdbsel  );
+            Bond * new_bond = new Bond( x, y + 25 + (sign * 15), orientation, anomerSymbol, linkagePosition, link.get_description(is_ketose), mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
             add_link ( new_bond );
             if(mg.get_type() == "n-glycan" && link.check_if_linkage_zscore_calculated())
             {
@@ -2954,7 +2953,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                         std::ostringstream os;
                         os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
                         std::string message = os.str();
-                        shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbond", mmdbsel  );
+                        shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbond", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                         add_shaded_link(new_shaded_bond);
                         errors->torsion_err++; 
 
@@ -2965,7 +2964,7 @@ void privateer::glycanbuilderplot::Plot::recursive_paint ( clipper::MGlycan mg, 
                     std::ostringstream os;
                     os << "Linkage does not have enough information in the database to calculate a linkage score.";
                     std::string message = os.str();
-                    shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbondnull", mmdbsel  );
+                    shadedBond * new_shaded_bond = new shadedBond( x, y + 25 + (sign * 15), orientation, message, "shadedbondnull", mg.get_root_sugar_chainID().trim(), linked_node.get_sugar().get_seqnum(), mmdbsel  );
                     add_shaded_link(new_shaded_bond);
                     errors->torsion_err++; 
 
@@ -3495,21 +3494,27 @@ std::string privateer::glycanbuilderplot::shadedBond::get_XML (int i)
 
     if (this->get_svg_class() == "shadedbond")
     {
-        tmp << "  <g id=\"shadedLinkage" << i << "\">\n"
-        <<  "  <use xlink:href=\"#shadedbond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
-        << "</g>\n";
+        tmp <<  "  <a href=\"cxcmd:" << this->get_sug_chain_ID() << this->get_sug_seqnum() << "\">\n"
+            <<  "  <g id=\"shadedLinkage" << i << "\">\n"
+            <<  "  <use xlink:href=\"#shadedbond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
+            <<  "  </g>\n"
+            <<  "  </a>\n";
     }
     else if(this->get_svg_class() == "shadedbondnull")
     {
-        tmp << "  <g id=\"shadedLinkage" << i << "\">\n"
-        <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
-        << "</g>\n";
+        tmp <<  "  <a href=\"cxcmd:" << this->get_sug_chain_ID() << this->get_sug_seqnum() << "\">\n" 
+            <<  "  <g id=\"shadedLinkage" << i << "\">\n"
+            <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
+            << "   </g>\n"
+            <<  "  </a>\n";
     }
     else
     {
-        tmp << "  <g id=\"shadedLinkage" << i << "\">\n"
-        <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
-        << "</g>\n";
+        tmp << "   <a href=\"cxcmd:" << this->get_sug_chain_ID() << this->get_sug_seqnum() << "\">\n"
+            <<  "  <g id=\"shadedLinkage" << i << "\">\n"
+            <<  "  <use xlink:href=\"#shadedbondnull\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>" << "</use>\n"
+            << "   </g>\n"
+            <<  "  </a>\n";
     }
 
     return tmp.str();
@@ -3621,18 +3626,22 @@ std::string privateer::glycanbuilderplot::Bond::get_XML (int i)
         anomerSymbolPosX = get_x() - 60;
         anomerSymbolPosY = get_y() + 20;
 
-        tmp << "  <g id=\"Linkage" << i << "\">\n"
+        tmp <<  "  <a href=\"cxcmd:" << this->get_sug_chain_ID() << this->get_sug_seqnum() << "\">\n"
+            <<  "  <g id=\"Linkage" << i << "\">\n"
             <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
             <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
-            << "</g>\n";
+            << "   </g>\n"
+            << "   </a>\n";
     }
     else
     {
-        tmp << "  <g id=\"Linkage" << i << "\">\n"
+        tmp <<  "  <a href=\"cxcmd:" << this->get_sug_chain_ID() << this->get_sug_seqnum() << "\">\n"
+            <<  "  <g id=\"Linkage" << i << "\">\n"
             <<  "  <use xlink:href=\"#bond\"" << transformation <<  " x=\"" << get_x() << "\"" <<  " y=\"" << get_y() << "\" >" << " <title>" << get_tooltip() << "</title>"<<  "</use>\n"
             <<  "  <text x=\"" << anomerSymbolPosX << "\"" << " y=\"" << anomerSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << anomerSymbol << "</text>\n"
             <<  "  <text x=\"" << linkageSymbolPosX << "\"" << " y=\"" << linkageSymbolPosY << "\"" << " class =\"black\" font-weight=\"bold\" font-family=\"Helvetica\" font-size=\"24\">" << linkagePosition << "</text>\n"
-            << "</g>\n";
+            << "   </g>\n"
+            << "   </a>\n";
 
     }
 

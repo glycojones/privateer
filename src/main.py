@@ -89,30 +89,47 @@ def torsion_plot(sugar_1,atom_number_1,sugar_2,atom_number_2,phi,psi):
                     for torsion_pairs in seconds["torsions"]:
                         phis.append(torsion_pairs["Phi"])
                         psis.append(torsion_pairs["Psi"])
+    linkageString = f"{sugar_1}-{atom_number_2},{atom_number_1}-{sugar_2}" 
+    
+    if len(phis) < 10:
+        print(f"Not enough data for linkage {linkageString} to calculate statistics or produce torsion plot.")
+        return
 
-    linkageString = f"{sugar_1}-{atom_number_1},{atom_number_2}-{sugar_2}"
-
-    import matplotlib.pyplot as plt
     if sugar_1 == "ASN" and sugar_2 == "NAG":
-        phimin = 0
-        phimax = 360
-        psimin = -180
-        psimax = 180
+        phimin = -180
+        phimax = 180
+        psimin = 0
+        psimax = 360
     else:
         phimin = -180
         phimax = 180
         psimin = -180
         psimax = 180
 
-    fig, axs = plt.subplots(1,1,figsize=(5,5))
-    axs.hist2d(phis,psis,bins = 180,range=[[phimin,phimax],[psimin,psimax]], cmin = 1)
+    #import matplotlib.pyplot as plt
+    #fig, axs = plt.subplots(1,1,figsize=(5,5))
+    #axs.plot(phi,psi,"rx")
+    #axs.hist2d(phis,psis,bins = 180,range=[[phimin,phimax],[psimin,psimax]], cmin = 1)
+    #axs.set_title(linkageString)
+    #axs.set_ylabel("$\psi$")
+    #axs.set_xlabel("$\phi$")
+    #fig.tight_layout()
+    #fig.show()
+    from matplotlib.figure import Figure
+    from matplotlib.backends.backend_qtagg import (FigureCanvasQTAgg as Canvas,)
+    from Qt.QtWidgets import QVBoxLayout
+    layout = QVBoxLayout()
+    fig = Figure()
+    axs = fig.add_subplot(111)
     axs.plot(phi,psi,"rx")
+    axs.hist2d(phis,psis,bins = 180,range=[[phimin,phimax],[psimin,psimax]], cmin = 1)
     axs.set_title(linkageString)
-    axs.set_xlabel("$\phi$")
     axs.set_ylabel("$\psi$")
+    axs.set_xlabel("$\phi$")
     fig.tight_layout()
-    fig.show()
-
+    canvas = Canvas(fig)
+    layout.addWidget(canvas)
+    canvas.draw()
 
 
 

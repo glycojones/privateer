@@ -59,9 +59,11 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                         std::string sugar_2 = torsion_list[i].second_residue_name;
                         std::string atom_number_1 = torsion.first.first;
                         std::string atom_number_2 = torsion.first.second;
+                        std::string chainID = torsion_list[i].sugchainID.substr(0,1);
+                        int resID = torsion_list[i].sugresID;
                         float phi = torsion.second[k].first;
                         float psi = torsion.second[k].second;
-                        auto torsiondict = pybind11::dict("sugar_1"_a=sugar_1,"sugar_2"_a=sugar_2,
+                        auto torsiondict = pybind11::dict("chainID"_a = chainID, "sugar_2_resID"_a = resID, "sugar_1"_a=sugar_1,"sugar_2"_a=sugar_2,
                                                             "atom_number_1"_a=atom_number_1, "atom_number_2"_a=atom_number_2,
                                                             "phi"_a=phi, "psi"_a=psi);
                         torsionlist.append(torsiondict);

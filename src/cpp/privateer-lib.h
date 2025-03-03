@@ -227,6 +227,7 @@ namespace privateer
         class Shape
         {
             public:
+            // FLAG: I think this is where I need to get the chainID and resID from and I use these functiont to set them
                 Shape() { }
                 Shape( int x, int y ) { pos_x = x; pos_y = y; }
                 virtual ~Shape() { };
@@ -769,10 +770,16 @@ namespace privateer
         {
             public:
                 shadedBond() { } //!< null constructor
-                shadedBond( int x, int y, Link_type bond, std::string message, std::string svg_class, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel ); this->set_svg_class(svg_class); }
+                shadedBond( int x, int y, Link_type bond, std::string message, std::string svg_class, clipper::String sugarChainID, int sugarSeqNum, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel ); this->set_svg_class(svg_class); this->set_sug_chain_ID(sugarChainID); this->set_sug_seqnum(sugarSeqNum);}
                 std::string get_XML (int i);
 
             private:
+                clipper::String sugarChainID;
+                void set_sug_chain_ID(clipper::String chain_id){this->sugarChainID = chain_id;}
+                clipper::String get_sug_chain_ID() {return sugarChainID;}
+                int sugarSeqNum;
+                void set_sug_seqnum(int seqnum){this->sugarSeqNum = seqnum;}
+                int get_sug_seqnum() {return sugarSeqNum;}
                 std::string svgclass;
                 void set_svg_class ( std::string input_string) { this->svgclass = input_string; }
                 std::string get_svg_class () { return svgclass; };
@@ -786,9 +793,9 @@ namespace privateer
         {
             public:
                 Bond() { } //!< null constructor
-                Bond( int x, int y, Link_type bond, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel );}
-                Bond( int x, int y, std::string anomerSymbol, Link_type bond, std::string message,  std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->anomerSymbol = anomerSymbol; this->set_mmdbsel ( mmdbsel );}
-                Bond( int x, int y, Link_type bond, std::string anomerSymbol, std::string linkagePosition, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->anomerSymbol = anomerSymbol; this->linkagePosition = linkagePosition; this->set_mmdbsel ( mmdbsel );}
+                Bond( int x, int y, Link_type bond, std::string message, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->set_mmdbsel ( mmdbsel ); }
+                Bond( int x, int y, std::string anomerSymbol, Link_type bond, std::string message, clipper::String sugarChainID, int sugarSeqNum, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->anomerSymbol = anomerSymbol; this->set_mmdbsel ( mmdbsel ); this->set_sug_chain_ID(sugarChainID); this->set_sug_seqnum(sugarSeqNum);}
+                Bond( int x, int y, Link_type bond, std::string anomerSymbol, std::string linkagePosition, std::string message, clipper::String sugarChainID, int sugarSeqNum, std::string mmdbsel = "" ) { set_pos(x, y); set_tooltip ( message ); set_bond_type (bond); this->anomerSymbol = anomerSymbol; this->linkagePosition = linkagePosition; this->set_mmdbsel ( mmdbsel ); this->set_sug_chain_ID(sugarChainID); this->set_sug_seqnum(sugarSeqNum);}
                 std::string get_XML (int i);
 
             private:
@@ -798,6 +805,12 @@ namespace privateer
                 Link_type bond_type;
                 void set_bond_type ( Link_type bond ) { this->bond_type = bond; }
                 Link_type get_bond_type () { return bond_type; }
+                clipper::String sugarChainID;
+                void set_sug_chain_ID(clipper::String chain_id){this->sugarChainID = chain_id;}
+                clipper::String get_sug_chain_ID() {return sugarChainID;}
+                int sugarSeqNum;
+                void set_sug_seqnum(int seqnum){this->sugarSeqNum = seqnum;}
+                int get_sug_seqnum() {return sugarSeqNum;}
         };
 
 
