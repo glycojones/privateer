@@ -317,17 +317,16 @@ class FancierPrivateerTool(ToolInstance):
 
     def button_pressed(self):
         # The user has pressed the Return key; run the privateer command using their inputs
-        from chimerax.ui import MainToolWindow
-        self.tool_window = MainToolWindow(self, close_destroys = False)
+        self.child_tool_window = self.tool_window.create_child_window("Validation Report", close_destroys = False)
         # We will be adding an item to the tool's context menu, so override
         # the default MainToolWindow fill_context_menu method
-        self.tool_window.fill_context_menu = self.fill_context_menu_svg
+        self.child_tool_window.fill_context_menu = self.fill_context_menu_svg
         from Qt.QtWidgets import QVBoxLayout
         from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
         from chimerax.core.commands import run
         # ToolInstance has a 'session' attribute...
         AllGlycans = run(self.session, f"privateer_validation None {self.combo_box.currentText()} True") 
-        parent = self.tool_window.ui_area
+        parent = self.child_tool_window.ui_area
         web_view = ChimeraXHtmlView(self.session, parent)
         layout = QVBoxLayout()
         htmlstring = "<html>\n"
@@ -354,10 +353,9 @@ class FancierPrivateerTool(ToolInstance):
         web_view.setHtml(htmlstring)
         layout.addWidget(web_view)
         # Set the layout as the contents of our window
-        self.tool_window.ui_area.setLayout(layout)
+        self.child_tool_window.ui_area.setLayout(layout)
         # Show the window on the user-preferred side of the ChimeraX
-        # main window
-        self.tool_window.manage('side')
+        self.child_tool_window.manage('side')
 
     def fill_context_menu(self, menu, x, y):
         # Add any tool-specific items to the given context menu (a QMenu instance).
@@ -384,6 +382,61 @@ class FancierPrivateerTool(ToolInstance):
         from Qt.QtGui import QAction
         clear_action = QAction("Clear", menu)
         menu.addAction(clear_action)
+    
+    def torsion_plot(self,sugar_1,atom_number_1,sugar_2,atom_number_2,phi,psi):
+        import os
+        dpath = os.path.dirname(os.path.abspath(__file__))
+        torsiondatabasefilepath = os.path.join(dpath,"data","linkage_torsions","privateer_torsion_database.json")
+
+        import json
+        with open(torsiondatabasefilepath) as json_file:
+            torsions = json.load(json_file)
+        torsions = torsions["data"]
+        phis = []
+        psis = []
+        for firsts in torsions:
+            if firsts["first"] == sugar_1:
+                for seconds in firsts["second"]:
+                    if seconds["sugar"] == sugar_2 and str(seconds["donor_position"]) == str(atom_number_2) and str(seconds["acceptor_position"]) == str(atom_number_1): #Do I need to swap these two positions?
+                        for torsion_pairs in seconds["torsions"]:
+                            phis.append(torsion_pairs["Phi"])
+                            psis.append(torsion_pairs["Psi"])
+        linkageString = f"{sugar_1}-{atom_number_2},{atom_number_1}-{sugar_2}" 
+        
+        if len(phis) < 10:
+            self.session.logger.info(f"Not enough data for linkage {linkageString} to calculate statistics or produce torsion plot.")
+            return
+
+        if sugar_1 == "ASN" and sugar_2 == "NAG":
+            phimin = -180
+            phimax = 180
+            psimin = 0
+            psimax = 360
+        else:
+            phimin = -180
+            phimax = 180
+            psimin = -180
+            psimax = 180
+            
+        from matplotlib.figure import Figure
+        from matplotlib.backends.backend_qtagg import (FigureCanvasQTAgg as Canvas,)
+        from Qt.QtWidgets import QVBoxLayout
+        self.child_tool_window = self.tool_window.create_child_window("Validation Report", close_destroys = False)
+        layout = QVBoxLayout()
+        fig = Figure()
+        axs = fig.add_subplot(111)
+        axs.plot(phi,psi,"rx")
+        axs.hist2d(phis,psis,bins = 180,range=[[phimin,phimax],[psimin,psimax]], cmin = 1)
+        axs.set_title(linkageString)
+        axs.set_ylabel("$\psi$")
+        axs.set_xlabel("$\phi$")
+        fig.tight_layout()
+        canvas = Canvas(fig)
+        layout.addWidget(canvas)
+        canvas.draw()
+        self.tool_window.ui_area.setLayout(layout)
+        self.tool_window.manage('side')
+
 
 
 
