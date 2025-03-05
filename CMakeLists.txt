@@ -20,62 +20,78 @@ set(CLIBDENV $ENV{CLIBD})
 set(PYBIND11_FINDPYTHON ON)
 find_package(pybind11 CONFIG REQUIRED)
 
-if (WIN32)
-    set(CMAKE_BUILD_TYPE Release)
-    set(CMAKE_GENERATOR_PLATFORM x64)
+if(WIN32)
+  set(CMAKE_BUILD_TYPE Release)
+  set(CMAKE_GENERATOR_PLATFORM x64)
 endif()
 
-
 set(WRK_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+if(CCP4BUILD)
+  find_package(
+    CCP4
+    REQUIRED
+    mmdb2
+    clipper-core
+    clipper-mmdb
+    clipper-ccp4
+    clipper-cif
+    clipper-minimol
+    clipper-contrib
+    ccp4c)
+  find_package(gemmi-cpp)
+else()
+  include(FetchContent)
+  # Download Clipper
+  FetchContent_Declare(
+    clipper-dependencies
+    GIT_REPOSITORY https://ccp4forge.rc-harwell.ac.uk/ccp4/clipper.git
+    GIT_TAG origin/main
+    SOURCE_SUBDIR PLACEHOLDER)
 
-include(FetchContent)
-# Download Clipper
-FetchContent_Declare(
-  clipper-dependencies
-  GIT_REPOSITORY https://ccp4forge.rc-harwell.ac.uk/ccp4/clipper.git
-  GIT_TAG origin/main
-  SOURCE_SUBDIR PLACEHOLDER
-  )
+  # Download MMDB
+  FetchContent_Declare(
+    mmdb2-dependencies
+    URL http://www.ysbl.york.ac.uk/jsd523/mmdb2-2.0.22.tar.gz)
 
-# Download MMDB
-FetchContent_Declare(mmdb2-dependencies
-                     URL http://www.ysbl.york.ac.uk/jsd523/mmdb2-2.0.22.tar.gz)
+  # Download FFTW
+  FetchContent_Declare(fftw-dependencies
+                       URL http://www.fftw.org/fftw-2.1.5.tar.gz)
 
-# Download FFTW
-FetchContent_Declare(fftw-dependencies
-                     URL http://www.fftw.org/fftw-2.1.5.tar.gz)
+  # Download CCP4
+  FetchContent_Declare(
+    ccp4-dependencies
+    URL http://www.ysbl.york.ac.uk/jsd523/libccp4-8.0.0.tar.gz)
 
-# Download CCP4
-FetchContent_Declare(ccp4-dependencies
-                     URL http://www.ysbl.york.ac.uk/jsd523/libccp4-8.0.0.tar.gz)
+  # Download Gemmi
+  FetchContent_Declare(
+    gemmi-dependencies
+    URL http://www.ysbl.york.ac.uk/jsd523/gemmi-v0.7.0.tar.gz)
 
-# Download Gemmi
-FetchContent_Declare(gemmi-dependencies
-                     URL http://www.ysbl.york.ac.uk/jsd523/gemmi-v0.7.0.tar.gz)
+  FetchContent_MakeAvailable(
+    clipper-dependencies mmdb2-dependencies fftw-dependencies ccp4-dependencies
+    gemmi-dependencies)
 
-FetchContent_MakeAvailable(
-  clipper-dependencies mmdb2-dependencies fftw-dependencies ccp4-dependencies
-  gemmi-dependencies)
-
-if (SKBUILD)
+  if(SKBUILD)
     message("Building using SKBUILD.")
     find_package(ZLIB)
-endif ()
+  endif()
 
-add_subdirectory(${WRK_DIR}/clipper/minimol)
-add_subdirectory(${WRK_DIR}/clipper/core)
-add_subdirectory(${WRK_DIR}/clipper/contrib)
-add_subdirectory(${WRK_DIR}/clipper/cns)
-add_subdirectory(${WRK_DIR}/clipper/mmdb)
-add_subdirectory(${WRK_DIR}/clipper/cif)
-add_subdirectory(${WRK_DIR}/clipper/phs)
-add_subdirectory(${WRK_DIR}/clipper/ccp4)
-add_subdirectory(${WRK_DIR}/fftw)
-add_subdirectory(${WRK_DIR}/rfftw)
-add_subdirectory(${WRK_DIR}/ccp4)
-add_subdirectory(${WRK_DIR}/mmdb2)
-add_subdirectory(${WRK_DIR}/gemmi)
+  include_directories(${CCP4_INCLUDE_DIRS} ${CCP4_INCLUDE_DIRS}/clipper)
 
+  add_subdirectory(${WRK_DIR}/clipper/minimol)
+  add_subdirectory(${WRK_DIR}/clipper/core)
+  add_subdirectory(${WRK_DIR}/clipper/contrib)
+  add_subdirectory(${WRK_DIR}/clipper/cns)
+  add_subdirectory(${WRK_DIR}/clipper/mmdb)
+  add_subdirectory(${WRK_DIR}/clipper/cif)
+  add_subdirectory(${WRK_DIR}/clipper/phs)
+  add_subdirectory(${WRK_DIR}/clipper/ccp4)
+  add_subdirectory(${WRK_DIR}/fftw)
+  add_subdirectory(${WRK_DIR}/rfftw)
+  add_subdirectory(${WRK_DIR}/ccp4)
+  add_subdirectory(${WRK_DIR}/mmdb2)
+  add_subdirectory(${WRK_DIR}/gemmi)
+endif()
 # add_subdirectory(${WRK_DIR}/dependencies/pybind11)
 
 set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
@@ -96,8 +112,7 @@ include_directories(
   ${PRIVATEER_SOURCE_DIR}/cpp
   ${PRIVATEER_SOURCE_DIR}/third-party
   ${PRIVATEER_SOURCE_DIR}/cpp/pybind11
-  ${pybind11_INCLUDE_DIRS}
-  )
+  ${pybind11_INCLUDE_DIRS})
 
 link_directories(
   ${CMAKE_BINARY_DIR}/mmdb2
@@ -109,19 +124,19 @@ link_directories(
   ${PRIVATEER_SOURCE_DIR}/cpp/pybind11
   ${Python_LIBRARY_DIRS})
 
-# # link_directories( ${WRK_DIR}/mmdb2 ${WRK_DIR}/clipper ${WRK_DIR}/ccp4
-# # ${WRK_DIR}/gemmi ${WRK_DIR}/src ${CMAKE_BINARY_DIR}
-# # ${PRIVATEER_SOURCE_DIR}/cpp ${PRIVATEER_SOURCE_DIR}/cpp/pybind11
-# # ${Python_LIBRARY_DIRS} )
+# # link_directories( ${WRK_DIR}/mmdb2 ${WRK_DIR}/clipper ${WRK_DIR}/ccp4 #
+# ${WRK_DIR}/gemmi ${WRK_DIR}/src ${CMAKE_BINARY_DIR} #
+# ${PRIVATEER_SOURCE_DIR}/cpp ${PRIVATEER_SOURCE_DIR}/cpp/pybind11 #
+# ${Python_LIBRARY_DIRS} )
 
-# # add_custom_target(copy_resources ALL COMMAND ${CMAKE_COMMAND} -E
-# # copy_directory ${CMAKE_SOURCE_DIR}/data ${CLIBDENV}/privateer_data COMMENT
-# # "Copying Privateer Data files to ${CLIBDENV}/privateer_data")
+# # add_custom_target(copy_resources ALL COMMAND ${CMAKE_COMMAND} -E #
+# copy_directory ${CMAKE_SOURCE_DIR}/data ${CLIBDENV}/privateer_data COMMENT #
+# "Copying Privateer Data files to ${CLIBDENV}/privateer_data")
 
 find_package(Threads REQUIRED)
 
-# # file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json
-# # DESTINATION ${CLIBDENV})
+# # file(COPY ${PRIVATEERDATA}/glycomics/privateer_glycomics_database.json #
+# DESTINATION ${CLIBDENV})
 
 # # file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json
 # # DESTINATION ${CLIBDENV})
@@ -173,11 +188,16 @@ target_link_libraries(
          clipper-core
          rfftw
          fftw
-         ccp4
          mmdb2
          gemmi_cpp
          Threads::Threads
          pybind11::module)
+
+if(CCP4BUILD)
+  target_link_libraries(privateer_lib PUBLIC ccp4c)
+else()
+  target_link_libraries(privateer_lib PUBLIC ccp4)
+endif()
 
 add_executable(privateer_exec ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 
@@ -217,21 +237,26 @@ target_link_directories(
 
 target_link_libraries(
   privateer_exec
-  privateer_lib
-  clipper-contrib
-  clipper-mmdb
-  clipper-cif
-  clipper-ccp4
-  clipper-minimol
-  clipper-core
-  rfftw
-  fftw
-  ccp4
-  mmdb2
-  gemmi_cpp
-  Threads::Threads
-  pybind11::module
-  ${Python_LIBRARIES})
+  PUBLIC privateer_lib
+         clipper-contrib
+         clipper-mmdb
+         clipper-cif
+         clipper-ccp4
+         clipper-minimol
+         clipper-core
+         rfftw
+         fftw
+         mmdb2
+         gemmi_cpp
+         Threads::Threads
+         pybind11::module
+         ${Python_LIBRARIES})
+
+if(CCP4BUILD)
+  target_link_libraries(privateer_exec PUBLIC ccp4c)
+else()
+  target_link_libraries(privateer_exec PUBLIC ccp4)
+endif()
 
 target_link_libraries(
   privateer_core
@@ -244,12 +269,17 @@ target_link_libraries(
           clipper-core
           rfftw
           fftw
-          ccp4
           mmdb2
           gemmi_cpp
           Threads::Threads
           ${Python_LIBRARIES}
           pybind11::module)
+
+if(CCP4BUILD)
+  target_link_libraries(privateer_core PUBLIC ccp4c)
+else()
+  target_link_libraries(privateer_core PUBLIC ccp4)
+endif()
 
 target_link_libraries(
   privateer_modelling
@@ -263,12 +293,17 @@ target_link_libraries(
           clipper-minimol
           rfftw
           fftw
-          ccp4
           mmdb2
           gemmi_cpp
           Threads::Threads
           ${Python_LIBRARIES}
           pybind11::module)
+
+if(CCP4BUILD)
+  target_link_libraries(privateer_modelling PUBLIC ccp4c)
+else()
+  target_link_libraries(privateer_modelling PUBLIC ccp4)
+endif()
 
 set(privateer_HEADERS
     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.h
@@ -294,10 +329,10 @@ set(PRIVATEER_SOURCE ${PRIVATEER_SOURCE_DIR}/cpp/privateer.cpp)
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 execute_process(
-    COMMAND ${Python3_EXECUTABLE} -c "import sysconfig; print(sysconfig.get_path('scripts'))"
-    OUTPUT_VARIABLE PYTHON_BIN_DIR
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-)
+  COMMAND ${Python3_EXECUTABLE} -c
+          "import sysconfig; print(sysconfig.get_path('scripts'))"
+  OUTPUT_VARIABLE PYTHON_BIN_DIR
+  OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 install(TARGETS privateer_lib LIBRARY DESTINATION privateer)
 install(TARGETS privateer_exec DESTINATION ${PYTHON_BIN_DIR})
