@@ -14,7 +14,8 @@ def privateer_validation_wrapper(OutputFolderPath,m,i,display=False):
     _write_pdb(m,InputStructureFilePath)
     dpath = os.path.dirname(os.path.abspath(__file__))
     zscorefilepath = os.path.join(dpath,"data","linkage_torsions","privateer_torsions_z_score_database.json")
-    AllGlycans = pvt.validate(InputStructureFilePath,zscorefilepath)
+    glycomicsfilepath = os.path.join(dpath,"data","glycomics","privateer_glycomics_database.json")
+    AllGlycans = pvt.validate(InputStructureFilePath,zscorefilepath,glycomicsfilepath)
     os.remove(InputStructureFilePath)
     if display:
         return AllGlycans
@@ -71,50 +72,6 @@ def _write_pdb(m, filename):
                                segment, element, charge),
                                file=f)
 
-def torsion_plot(session,sugar_1,atom_number_1,sugar_2,atom_number_2,phi,psi):
-    import os
-    dpath = os.path.dirname(os.path.abspath(__file__))
-    torsiondatabasefilepath = os.path.join(dpath,"data","linkage_torsions","privateer_torsion_database.json")
-
-    import json
-    with open(torsiondatabasefilepath) as json_file:
-        torsions = json.load(json_file)
-    torsions = torsions["data"]
-    phis = []
-    psis = []
-    for firsts in torsions:
-        if firsts["first"] == sugar_1:
-            for seconds in firsts["second"]:
-                if seconds["sugar"] == sugar_2 and str(seconds["donor_position"]) == str(atom_number_2) and str(seconds["acceptor_position"]) == str(atom_number_1): #Do I need to swap these two positions?
-                    for torsion_pairs in seconds["torsions"]:
-                        phis.append(torsion_pairs["Phi"])
-                        psis.append(torsion_pairs["Psi"])
-    linkageString = f"{sugar_1}-{atom_number_2},{atom_number_1}-{sugar_2}" 
-    
-    if len(phis) < 10:
-        session.logger.info(f"Not enough data for linkage {linkageString} to calculate statistics or produce torsion plot.")
-        return
-
-    if sugar_1 == "ASN" and sugar_2 == "NAG":
-        phimin = -180
-        phimax = 180
-        psimin = 0
-        psimax = 360
-    else:
-        phimin = -180
-        phimax = 180
-        psimin = -180
-        psimax = 180
-
-    import matplotlib.pyplot as plt
-    fig, axs = plt.subplots(1,1,figsize=(5,5))
-    axs.plot(phi,psi,"rx")
-    axs.hist2d(phis,psis,bins = 180,range=[[phimin,phimax],[psimin,psimax]], cmin = 1)
-    axs.set_title(linkageString)
-    axs.set_ylabel("$\psi$")
-    axs.set_xlabel("$\phi$")
-    fig.tight_layout()
-    fig.show()
 
 
 

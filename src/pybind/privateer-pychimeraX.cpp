@@ -1,10 +1,11 @@
 #include <pybind11/pybind11.h>
 #include <privateer-lib.h>
 #include <privateer-json.h>
+#include <privateer-dbquery.h>
 
 using namespace pybind11::literals;
 
-pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zscores)
+pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zscores, std::string& path_to_glycomics)
 {
     clipper::MiniMol mmol;
     clipper::MMDBfile mfile;
@@ -12,14 +13,10 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
 
     privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
 
-//   std::cout << "[Privateer] Molecule generated" << std::endl;
-
     privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database(path_to_zscores);
-    //privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database("/Users/lah583/Development/privateer_chimeraX_bundle/data/linkage_torsions/privateer_torsions_z_score_database.json");
     const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0); // was 1.0
-
-//   clipper::MGlycology mgl = clipper::MGlycology(mol, false, ""); <- use this constructor if you do not want to use torsions DB
     clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, false);
+    std::vector<privateer::json::GlycomicsDatabase> glycomics_database = privateer::json::read_json_file_for_glycomics_database(path_to_glycomics);
 
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
@@ -29,13 +26,16 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
         std::string current_chain = "";
         for (int i = 0; i < list_of_glycans.size(); i++)
         {
-            std::string wurcs_string;
             if (current_chain != list_of_glycans[i].get_chain())
             {
                 current_chain = list_of_glycans[i].get_chain();
             }
-            wurcs_string = list_of_glycans[i].generate_wurcs();
+            clipper::String wurcs = list_of_glycans[i].generate_wurcs();
+            std::string wurcs_string = list_of_glycans[i].generate_wurcs();
             std::string kindOfGlycan = list_of_glycans[i].get_type();
+            std::pair<std::string, std::string> GlycanIDs = privateer::dbquery::output_dbquery(glycomics_database, wurcs, list_of_glycans[i]);
+            std::string GlyConnectID = GlycanIDs.second;
+            std::string GlyToucanID = GlycanIDs.first;
 
             privateer::glycanbuilderplot::GlycanErrorCount* err = new privateer::glycanbuilderplot::GlycanErrorCount;
 
@@ -74,7 +74,7 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
             // table_entry.description = list_of_glycans[i].get_description();
             auto resultsdict = pybind11::dict ("GlycanNum"_a=i, "WURCS"_a=wurcs_string, "GlycosylationType"_a=kindOfGlycan, "RootID"_a=list_of_glycans[i].get_root_by_name(), "glycanChainID"_a=current_chain,
                                                 "TorsionErr"_a=err->torsion_err, "ConformationErr"_a=err->conformation_err, "AnomerErr"_a=err->anomer_err, "PuckeringErr"_a=err->puckering_err, "ChiralityErr"_a=err->chirality_err,
-                                                "Torsions"_a=torsionlist, "svg"_a=plot.write_to_string());
+                                                "Torsions"_a=torsionlist, "svg"_a=plot.write_to_string(),"GlyToucanID"_a = GlyToucanID, "GlyConnectID"_a = GlyConnectID);
             resultslist.append(resultsdict);
 
             //table_list.emplace_back(table_entry);
@@ -101,5 +101,5 @@ PYBIND11_MODULE(privateer_core, m) {
         }
     });
    m.def("validate",&validate, "A function that produces a validation report on the glycans in a model",
-   py::arg("path_to_model_file"),py::arg("path_to_zscores"));
+   py::arg("path_to_model_file"),py::arg("path_to_zscores"),py::arg("path_to_glycomics"));
 }

@@ -30,10 +30,19 @@
 #include <clipper/minimol/minimol_utils.h>
 #include "privateer-json.h"
 
-
-void output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, clipper::String glycanWURCS, clipper::MGlycan& currentGlycan, bool closest_match_disable, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer, bool glucose_only, bool debug_output, int nThreads, bool useParallelism);
-void push_data_to_final_permutation_container(std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, clipper::MGlycan &currentGlycan, std::vector<std::pair<clipper::MGlycan, std::vector<int>>>& alternativeGlycans, std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>& finalGlycanPermutationContainer);
-void print_output_from_database(std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, int valueLocation, clipper::MGlycan &currentGlycan);
+namespace privateer
+{
+    namespace dbquery
+    {
+        inline std::pair<std::string, std::string> output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan)
+        {
+            int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
+            std::string glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
+            std::string glyconnectID = glycomics_database[valueLocation].GlyConnectID;
+            return std::make_pair(glytoucanID, glyconnectID);
+        }
+    }
+}
 
 
 

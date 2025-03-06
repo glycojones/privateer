@@ -73,16 +73,34 @@ def privateer_torsion_plot(session,sugar_1,atom_number_1,sugar_2,atom_number_2,p
     from chimerax.privateer.tool import FancierPrivateerTool
     tool = session.tools.find_by_class(FancierPrivateerTool)[0]
     torsion_tool_window = tool.tool_window.create_child_window("Torsion Plot")
+    ui_area = torsion_tool_window.ui_area
+    ui_area.setMinimumHeight(1)
     layout = QVBoxLayout()
     fig = Figure()
     axs = fig.add_subplot(111)
-    axs.plot(phi,psi,"rx")
-    axs.hist2d(phis,psis,bins = 180,range=[[phimin,phimax],[psimin,psimax]], cmin = 1)
+    axs.hist2d(phis,psis,bins = 90,range=[[phimin,phimax],[psimin,psimax]], cmin = 1)
+    axs.plot(phi,psi,"rx",label=f"$\phi$ = {round(phi,2)}$^\circ$, $\psi$ = {round(psi,2)}$^\circ$")
+    axs.legend()
     axs.set_title(linkageString)
     axs.set_ylabel("$\psi$")
     axs.set_xlabel("$\phi$")
+    #annotation = axs.annotate(f"({round(phi,2)}$^\circ$,{round(psi,2)}$^\circ$)",xy=(phi,psi),xytext=(10,10),textcoords="offset points",bbox=dict(boxstyle="round", fc="r",alpha=0.4))
+    anno = axs.annotate("",xy=(0,0),xytext=(2,2),textcoords="offset points",bbox=dict(boxstyle="round", fc="w",alpha=0.5))
+    anno.set_visible(False)
+
+    def on_move(event):
+        if event.inaxes:
+            anno.xy = (event.xdata,event.ydata)
+            anno.set_text(f"({round(event.xdata,2)}$^\circ$,{round(event.ydata,2)}$^\circ$)")
+            anno.set_visible(True)
+            fig.canvas.draw_idle()
+        else:
+            anno.set_visible(False)
+            fig.canvas.draw_idle()
     fig.tight_layout()
+    fig.canvas.mpl_connect("motion_notify_event",on_move)
     canvas = Canvas(fig)
+    canvas.setParent(ui_area)
     layout.addWidget(canvas)
     canvas.draw()
     torsion_tool_window.ui_area.setLayout(layout)

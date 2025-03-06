@@ -318,28 +318,30 @@ class FancierPrivateerTool(ToolInstance):
     def button_pressed(self):
         # The user has pressed the Return key; run the privateer command using their inputs
         self.child_tool_window = self.tool_window.create_child_window("Validation Report", close_destroys = False)
-        # We will be adding an item to the tool's context menu, so override
-        # the default MainToolWindow fill_context_menu method
-        self.child_tool_window.fill_context_menu = self.fill_context_menu_svg
         from Qt.QtWidgets import QVBoxLayout
         from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
         from chimerax.core.commands import run
         # ToolInstance has a 'session' attribute...
         AllGlycans = run(self.session, f"privateer_validation None {self.combo_box.currentText()} True") 
         parent = self.child_tool_window.ui_area
+        parent.setMinimumHeight(1)
         web_view = ChimeraXHtmlView(self.session, parent)
         layout = QVBoxLayout()
         htmlstring = "<html>\n"
+        htmlstring += "<table border=\"1\">\n"
+        htmlstring += "<tr>\n"
+        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:20; text-align:center; font-weight:\"bold\";padding:15'>GlyConnectID</th>\n"
+        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:20; text-align:center; font-weight:\"bold\";padding:15'>GlyToucanID</th>\n"
+        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:20; text-align:center; font-weight:\"bold\";padding:15'>SNFG</th>\n"
+        htmlstring += "</tr>\n"
         for i, glycan in enumerate(AllGlycans):
             svgstring = glycan["svg"]
             rootID = glycan["RootID"]
+            glyconnectID = glycan["GlyConnectID"]
+            glytoucanID = glycan["GlyToucanID"]
             for j, torsion in enumerate(glycan["Torsions"]):
                 sugar1 = torsion["sugar_1"]
                 sugar2 = torsion["sugar_2"]
-                #if sugar1 == "ASN" and sugar2 == "NAG":
-                #    donorPosition = torsion["atom_number_2"]
-                #    acceptorPosition = torsion["atom_number_1"]
-                #else:
                 donorPosition = torsion["atom_number_1"]
                 acceptorPosition = torsion["atom_number_2"]
                 phi = torsion["phi"]
@@ -347,8 +349,13 @@ class FancierPrivateerTool(ToolInstance):
                 sugarchainID = torsion["chainID"]
                 sugarresID = str(torsion["sugar_2_resID"])
                 svgstring = svgstring.replace(f"cxcmd:{sugarchainID}{sugarresID}", f"cxcmd:privateer_torsion_plot {sugar1} {donorPosition} {sugar2} {acceptorPosition} {phi} {psi}")
-            htmlstring += svgstring
-        htmlstring += "\n</html>"
+            htmlstring += "<tr>\n"
+            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:20; text-align:center; padding:15'>{glyconnectID}</td>\n" # CENTERING NOT WORKING YET
+            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:20; text-align:center; padding:15'>{glytoucanID}</td>\n"
+            htmlstring += f"<td>\n{svgstring}\n</td>\n"
+            htmlstring += "</tr>\n"
+        htmlstring += "</table>\n"
+        htmlstring += "</html>"
         htmlstring = htmlstring.replace("cxcmd:view /", f"cxcmd:view #{self.combo_box.currentText()}/")
         web_view.setHtml(htmlstring)
         layout.addWidget(web_view)
@@ -370,72 +377,6 @@ class FancierPrivateerTool(ToolInstance):
         clear_action.triggered.connect(lambda *args: self.combo_box.clear())
         clear_action.triggered.connect(lambda *args: self.run_button.clear())
         menu.addAction(clear_action)
-    
-    def fill_context_menu_svg(self, menu, x, y):
-        # Add any tool-specific items to the given context menu (a QMenu instance).
-        # The menu will then be automatically filled out with generic tool-related actions
-        # (e.g. Hide Tool, Help, Dockable Tool, etc.) 
-        #
-        # The x,y args are the x() and y() values of QContextMenuEvent, in the rare case
-        # where the items put in the menu depends on where in the tool interface the menu
-        # was raised.
-        from Qt.QtGui import QAction
-        clear_action = QAction("Clear", menu)
-        menu.addAction(clear_action)
-    
-    def torsion_plot(self,sugar_1,atom_number_1,sugar_2,atom_number_2,phi,psi):
-        import os
-        dpath = os.path.dirname(os.path.abspath(__file__))
-        torsiondatabasefilepath = os.path.join(dpath,"data","linkage_torsions","privateer_torsion_database.json")
-
-        import json
-        with open(torsiondatabasefilepath) as json_file:
-            torsions = json.load(json_file)
-        torsions = torsions["data"]
-        phis = []
-        psis = []
-        for firsts in torsions:
-            if firsts["first"] == sugar_1:
-                for seconds in firsts["second"]:
-                    if seconds["sugar"] == sugar_2 and str(seconds["donor_position"]) == str(atom_number_2) and str(seconds["acceptor_position"]) == str(atom_number_1): #Do I need to swap these two positions?
-                        for torsion_pairs in seconds["torsions"]:
-                            phis.append(torsion_pairs["Phi"])
-                            psis.append(torsion_pairs["Psi"])
-        linkageString = f"{sugar_1}-{atom_number_2},{atom_number_1}-{sugar_2}" 
-        
-        if len(phis) < 10:
-            self.session.logger.info(f"Not enough data for linkage {linkageString} to calculate statistics or produce torsion plot.")
-            return
-
-        if sugar_1 == "ASN" and sugar_2 == "NAG":
-            phimin = -180
-            phimax = 180
-            psimin = 0
-            psimax = 360
-        else:
-            phimin = -180
-            phimax = 180
-            psimin = -180
-            psimax = 180
-            
-        from matplotlib.figure import Figure
-        from matplotlib.backends.backend_qtagg import (FigureCanvasQTAgg as Canvas,)
-        from Qt.QtWidgets import QVBoxLayout
-        self.child_tool_window = self.tool_window.create_child_window("Validation Report", close_destroys = False)
-        layout = QVBoxLayout()
-        fig = Figure()
-        axs = fig.add_subplot(111)
-        axs.plot(phi,psi,"rx")
-        axs.hist2d(phis,psis,bins = 180,range=[[phimin,phimax],[psimin,psimax]], cmin = 1)
-        axs.set_title(linkageString)
-        axs.set_ylabel("$\psi$")
-        axs.set_xlabel("$\phi$")
-        fig.tight_layout()
-        canvas = Canvas(fig)
-        layout.addWidget(canvas)
-        canvas.draw()
-        self.tool_window.ui_area.setLayout(layout)
-        self.tool_window.manage('side')
 
 
 
