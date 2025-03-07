@@ -51,22 +51,21 @@ def privateer_torsion_plot(session,sugar_1,atom_number_1,sugar_2,atom_number_2,p
                     for torsion_pairs in seconds["torsions"]:
                         phis.append(torsion_pairs["Phi"])
                         psis.append(torsion_pairs["Psi"])
-    linkageString = f"{sugar_1}-{atom_number_2},{atom_number_1}-{sugar_2}" 
-    
-    if len(phis) < 10:
-        session.logger.info(f"Not enough data for linkage {linkageString} to calculate statistics or produce torsion plot.")
-        return
-
     if sugar_1 == "ASN" and sugar_2 == "NAG":
+        linkageString = f"{sugar_1}-{atom_number_2},{atom_number_1}-{sugar_2}" 
         phimin = -180
         phimax = 180
         psimin = 0
         psimax = 360
     else:
+        linkageString = f"{sugar_2}-{atom_number_2},{atom_number_1}-{sugar_1}" 
         phimin = -180
         phimax = 180
         psimin = -180
         psimax = 180
+    if len(phis) < 10:
+        session.logger.info(f"Not enough data for linkage {linkageString} to calculate statistics or produce torsion plot.")
+        return
     from matplotlib.figure import Figure
     from matplotlib.backends.backend_qtagg import (FigureCanvasQTAgg as Canvas,)
     from Qt.QtWidgets import QVBoxLayout
@@ -82,8 +81,8 @@ def privateer_torsion_plot(session,sugar_1,atom_number_1,sugar_2,atom_number_2,p
     axs.plot(phi,psi,"rx",label=f"$\phi$ = {round(phi,2)}$^\circ$, $\psi$ = {round(psi,2)}$^\circ$")
     axs.legend()
     axs.set_title(linkageString)
-    axs.set_ylabel("$\psi$")
-    axs.set_xlabel("$\phi$")
+    axs.set_ylabel("$\psi^\circ$")
+    axs.set_xlabel("$\phi^\circ$")
     #annotation = axs.annotate(f"({round(phi,2)}$^\circ$,{round(psi,2)}$^\circ$)",xy=(phi,psi),xytext=(10,10),textcoords="offset points",bbox=dict(boxstyle="round", fc="r",alpha=0.4))
     anno = axs.annotate("",xy=(0,0),xytext=(2,2),textcoords="offset points",bbox=dict(boxstyle="round", fc="w",alpha=0.5))
     anno.set_visible(False)

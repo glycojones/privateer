@@ -350,7 +350,7 @@ class FancierPrivateerTool(ToolInstance):
                 sugarresID = str(torsion["sugar_2_resID"])
                 svgstring = svgstring.replace(f"cxcmd:{sugarchainID}{sugarresID}", f"cxcmd:privateer_torsion_plot {sugar1} {donorPosition} {sugar2} {acceptorPosition} {phi} {psi}")
             htmlstring += "<tr>\n"
-            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:20; text-align:center; padding:15'>{glyconnectID}</td>\n" # CENTERING NOT WORKING YET
+            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:20; text-align:center; padding:15'>{glyconnectID}</td>\n"
             htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:20; text-align:center; padding:15'>{glytoucanID}</td>\n"
             htmlstring += f"<td>\n{svgstring}\n</td>\n"
             htmlstring += "</tr>\n"
