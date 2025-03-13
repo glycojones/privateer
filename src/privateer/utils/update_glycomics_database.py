@@ -89,15 +89,18 @@ def return_data_from_glyconnect(outputFolder):
 
         return None
 
+    #glyconnect_address = (
+    #    "https://glyconnect.expasy.org/browser/export?type=structure&query=id:"
+    #)
     glyconnect_address = (
-        "https://glyconnect.expasy.org/browser/export?type=structure&query=id:"
+        "https://glyconnect.expasy.org/all/structures/export/csv?query=id%3A"
     )
     _output_file = os.path.join(outputFolder, "glyconnect_query.json")
     print(f"Downloading GlyConnect data and making backup in {_output_file}")
 
     exceptions = {8849: "G49108TO", 8850: "G70323CJ"}
 
-    _ranges = [{"start": 0, "end": 3687}, {"start": 8847, "end": 11462}]
+    _ranges = [{"start": 0, "end": 3687}, {"start": 8847, "end": 11970}]
     # _ranges = [{"start": 0, "end": 25}, {"start": 8845, "end": 8897}]
     _structure_entries_begin = 7
     output = {}
@@ -160,7 +163,7 @@ if __name__ == "__main__":
             raise EnvironmentError(
                 "Unable to retrieve 'PRIVATEERDATA' nor 'CLIBD' environment variable. Please try sourcing the ccp4.envsetup-sh file again"
             )
-        ROOTPATH = os.path.join(ROOTPATH, "privateer_data")
+        ROOTPATH = os.path.join(ROOTPATH, "data")
     if ROOTPATH is not None:
         outputFolder = os.path.join(ROOTPATH, "glycomics")
         fullPath = os.path.join(outputFolder, fileName)
@@ -178,12 +181,13 @@ if __name__ == "__main__":
         with open(backup_file) as f:
             glyconnect_data = json.load(f)
 
-    print(glyconnect_data)
-
     print(f"Downloading GlyTouCan data as: {fileName} in {fullPath}")
 
-    jsonObject = return_json(
-        "https://api.glycosmos.org/glytoucan/sparql/glytoucan-data")
+    jsonObject = return_json("https://api.glycosmos.org/sparqlist/Glytoucan-list")
+    
+
+    with open(os.path.join(outputFolder,"glytoucan_query.json"), "w") as file:
+        file.write(json.dumps(jsonObject))
 
     print(f"Finished downloading GlyTouCan data.")
 
@@ -194,15 +198,17 @@ if __name__ == "__main__":
     }
     array_of_entries = []
     for count, line in enumerate(jsonObject):
+        output_dict = {}
         print(
-            f'Currently processing: {line["AccessionNumber"]}\nProgress: {count} out of {len(jsonObject)}\t Progress - {int((count/len(jsonObject)*100))}%'
+            f'Currently processing: {line["gtcid"]}\nProgress: {count} out of {len(jsonObject)}\t Progress - {int((count/len(jsonObject)*100))}%'
         )
-        glytoucanID = line["AccessionNumber"]
-
-        line["glyconnect"] = find_glytoucan_id_in_glyconnect_data(
+        glytoucanID = line["gtcid"]
+        output_dict["AccessionNumber"] = glytoucanID
+        output_dict["Sequence"] = line["wurcs"]
+        output_dict["glyconnect"] = find_glytoucan_id_in_glyconnect_data(
             glyconnect_data, glytoucanID)
 
-        array_of_entries.append(line)
+        array_of_entries.append(output_dict)
 
     if os.path.exists(fullPath):
         os.remove(fullPath)
