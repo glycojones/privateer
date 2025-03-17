@@ -36,6 +36,7 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
             std::pair<std::string, std::string> GlycanIDs = privateer::dbquery::output_dbquery(glycomics_database, wurcs, list_of_glycans[i]);
             std::string GlyConnectID = GlycanIDs.second;
             std::string GlyToucanID = GlycanIDs.first;
+            
 
             privateer::glycanbuilderplot::GlycanErrorCount* err = new privateer::glycanbuilderplot::GlycanErrorCount;
 
@@ -50,19 +51,19 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
 
             std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_list = list_of_glycans[i].return_torsion_summary_within_glycan();
             auto torsionlist = pybind11::list();
-            for(int i = 0; i < torsion_list.size(); i++) {
-                for(int j = 0; j < torsion_list[i].combined_torsions.size(); j++)
+            for(int j = 0; j < torsion_list.size(); j++) {
+                for(int k = 0; k < torsion_list[i].combined_torsions.size(); k++)
                 {
-                    std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>> torsion = torsion_list[i].combined_torsions[j];
-                    for (int k = 0; k < torsion.second.size(); k++) {
-                        std::string sugar_1 = torsion_list[i].first_residue_name;
-                        std::string sugar_2 = torsion_list[i].second_residue_name;
+                    std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>> torsion = torsion_list[j].combined_torsions[k];
+                    for (int l = 0; l < torsion.second.size(); l++) {
+                        std::string sugar_1 = torsion_list[j].first_residue_name;
+                        std::string sugar_2 = torsion_list[j].second_residue_name;
                         std::string atom_number_1 = torsion.first.first;
                         std::string atom_number_2 = torsion.first.second;
-                        std::string chainID = torsion_list[i].sugchainID.substr(0,1);
-                        int resID = torsion_list[i].sugresID;
-                        float phi = torsion.second[k].first;
-                        float psi = torsion.second[k].second;
+                        std::string chainID = torsion_list[j].sugchainID.substr(0,1);
+                        int resID = torsion_list[j].sugresID;
+                        float phi = torsion.second[l].first;
+                        float psi = torsion.second[l].second;
                         auto torsiondict = pybind11::dict("chainID"_a = chainID, "sugar_2_resID"_a = resID, "sugar_1"_a=sugar_1,"sugar_2"_a=sugar_2,
                                                             "atom_number_1"_a=atom_number_1, "atom_number_2"_a=atom_number_2,
                                                             "phi"_a=phi, "psi"_a=psi);
@@ -70,11 +71,27 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                     }
                 }
             }
-
+            auto sugarcoordlist = pybind11::list();
+            std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+            for(int j = 0; j < list_of_sugars.size(); j++) {
+                clipper::Coord_orth sugarcentre = list_of_sugars[j].ring_centre();
+                float sugarcentre_x = sugarcentre.x();
+                float sugarcentre_y = sugarcentre.y();
+                float sugarcentre_z = sugarcentre.z();
+                clipper::Vec3<clipper::ftype> sugarplane = list_of_sugars[j].ring_mean_plane();
+                float sugarplane_x = sugarplane[0];
+                float sugarplane_y = sugarplane[1];
+                float sugarplane_z = sugarplane[2];
+                //std::string sugarname = list_of_sugars[j].id().trim();
+                std::string sugarname = clipper::data::carbname_of ( list_of_sugars.type() );
+                auto coorddict = pybind11::dict("sugarname"_a = sugarname, "sugar_centre_x"_a = sugarcentre_x,"sugar_centre_y"_a = sugarcentre_y,"sugar_centre_z"_a = sugarcentre_z,
+                                                "sugar_plane_i"_a = sugarplane_x, "sugar_plane_j"_a = sugarplane_y, "sugar_plane_k"_a = sugarplane_z);
+                sugarcoordlist.append(coorddict);
+            }
             // table_entry.description = list_of_glycans[i].get_description();
             auto resultsdict = pybind11::dict ("GlycanNum"_a=i, "WURCS"_a=wurcs_string, "GlycosylationType"_a=kindOfGlycan, "RootID"_a=list_of_glycans[i].get_root_by_name(), "glycanChainID"_a=current_chain,
                                                 "TorsionErr"_a=err->torsion_err, "ConformationErr"_a=err->conformation_err, "AnomerErr"_a=err->anomer_err, "PuckeringErr"_a=err->puckering_err, "ChiralityErr"_a=err->chirality_err,
-                                                "Torsions"_a=torsionlist, "svg"_a=plot.write_to_string(),"GlyToucanID"_a = GlyToucanID, "GlyConnectID"_a = GlyConnectID);
+                                                "Torsions"_a=torsionlist, "svg"_a=plot.write_to_string(),"GlyToucanID"_a = GlyToucanID, "GlyConnectID"_a = GlyConnectID, "Sugars"_a=sugarcoordlist);
             resultslist.append(resultsdict);
 
             //table_list.emplace_back(table_entry);

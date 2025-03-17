@@ -31,8 +31,6 @@ privateer_validation_desc = CmdDesc(
     synopsis="Provide a validation report on the model specified, or if no model is specified, on all the structure models currently loaded in the session. The validation report is saved in the specified location with filename model-i_privateer-report.csv where i is the model index in the current session."
 )
 
-
-
 def privateer_torsion_plot(session,sugar_1,atom_number_1,sugar_2,atom_number_2,phi,psi):
     import os
     dpath = os.path.dirname(os.path.abspath(__file__))
@@ -105,7 +103,6 @@ def privateer_torsion_plot(session,sugar_1,atom_number_1,sugar_2,atom_number_2,p
     torsion_tool_window.ui_area.setLayout(layout)
     torsion_tool_window.manage('side')
 
-
 privateer_torsion_plot_desc = CmdDesc(
     required=[
         ("sugar_1", StringArg),
@@ -116,4 +113,87 @@ privateer_torsion_plot_desc = CmdDesc(
         ("psi",FloatArg),
     ],
     synopsis="Producs a plot of known torsion angles for the specified linkage."
+)
+
+def privateer_glycoblocks(session, modelID):
+    models = atomic.all_structures(session)
+    model = models[modelID-1]
+    Glycans = privateer_validation_wrapper(None,model,modelID,True)
+    from chimerax.surface.shapes import cylinder_geometry
+    from chimerax.core.models import Drawing, Model
+    from chimerax.geometry import Place, vector_rotation
+    dm = Model('glycoblock test',session)
+    blue = [0,0,255,255]
+    green = [0,255,0,255]
+    red = [255,0,0,255]
+    orange = [255,165,0,255]
+    yellow = [255,255,0,255]
+    grey = [128,128,128,255]
+    # Glc = blue circle
+    # Gal = yellow circle
+    # Man = green circle
+    # Fuc = red triangle
+    # Xyl = orange star
+    # GlcNAc = blue square
+    # GalNAc = yellow square
+    # ManNAc = green square
+    # GlcN
+    # GalN
+    # ManN
+    # GlcA
+    # GalA
+    # ManA
+    # Neu5Gc
+    # Neu5Ac
+    # IdoA
+    # KDN
+    bluesugars = ["Glc","GlcNAc"]
+    greensugars = ["Man","ManNAc"]
+    redsugars = ["Fuc"]
+    yellowsugars = ["GalNAc"]
+    orangesugars = ["Xyls"]
+    for glycan in Glycans:
+        for sugar in glycan["Sugars"]:
+            sugarname = sugar["sugarname"]
+            sugar_centre_x = sugar["sugar_centre_x"]
+            sugar_centre_y = sugar["sugar_centre_y"]
+            sugar_centre_z = sugar["sugar_centre_z"]
+            sugar_plane_i = sugar["sugar_plane_i"]
+            sugar_plane_j = sugar["sugar_plane_j"]
+            sugar_plane_k = sugar["sugar_plane_k"]
+            sugar_plane_i = sugar_plane_i / (sugar_plane_i**2 + sugar_plane_j**2 + sugar_plane_k**2)
+            sugar_plane_j = sugar_plane_j / (sugar_plane_i**2 + sugar_plane_j**2 + sugar_plane_k**2)
+            sugar_plane_k = sugar_plane_k / (sugar_plane_i**2 + sugar_plane_j**2 + sugar_plane_k**2)
+            d = Drawing('privateer glycoblocks')
+            # Create the shape
+            v, n, t = cylinder_geometry(radius = 1.5, height = 0.25, nc=25)
+            # Rotate to match the plane of the sugar ring
+            tr = vector_rotation((0,0,1),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+            v = tr.transform_points(v, in_place=True)
+            n = tr.transform_vectors(n, in_place=True)
+            # Translate to the centre of the sugar ring
+            vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
+            v = vp.transform_points(v)
+            d.set_geometry(v, n, t)
+            # Colour according to sugar type
+            if sugarname in bluesugars:
+                d.color = blue 
+            elif sugarname in greensugars:
+                d.color = green
+            elif sugarname in redsugars:
+                d.color = red
+            elif sugarname in yellowsugars:
+                d.color = yellow
+            elif sugarname in orangesugars:
+                d.color = orange
+            else:
+                d.color = grey
+            dm.add_drawing(d)
+    session.models.add([dm])
+
+privateer_glycoblocks_desc = CmdDesc(
+    required=[
+        ("modelID", IntArg)
+    ],
+    synopsis="Display glycans in glycoblock represenstation in the ChimeraX view."
 )

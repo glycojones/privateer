@@ -157,15 +157,17 @@ class FancyPrivateerTool(ToolInstance):
             self.combo_box.addItem(str(i+1))
         #self.line_edit = QLineEdit()
         self.run_button = QPushButton("Run Privateer")
+        self.glycoblocks_button = QPushButton("Show Glycoblocks")
 
         layout.addRow(label1,self.combo_box)
-        layout.addWidget(self.run_button)
+        layout.addRow(self.run_button,self.glycoblocks_button) 
 
         layout.setFieldGrowthPolicy(QFormLayout.ExpandingFieldsGrow)
 
-        # Arrange for our 'return_pressed' method to be called when the
+        # Arrange for our 'button_pressed' method to be called when the
         # user presses the Return key
-        self.run_button.clicked.connect(self.button_pressed)
+        self.run_button.clicked.connect(self.run_button_pressed)
+        self.glycoblocks_button.clicked.connect(self.glycoblocks_button_pressed)
 
         # Set the layout as the contents of our window
         self.tool_window.ui_area.setLayout(layout)
@@ -174,7 +176,7 @@ class FancyPrivateerTool(ToolInstance):
         # main window
         self.tool_window.manage('side')
 
-    def button_pressed(self):
+    def run_button_pressed(self):
         # The user has pressed the Return key; run the privateer command using their inputs
         from chimerax.ui import MainToolWindow
         self.tool_window = MainToolWindow(self)
@@ -218,6 +220,10 @@ class FancyPrivateerTool(ToolInstance):
         # main window
         self.tool_window.manage('side')
         # FLAG: NOW NEED TO DISPLAY THE GLYCAN SVGS HERE and probably change layout which will require more than one function
+    
+    def glycoblocks_button_pressed(self):
+        from chimerax.core.commands import run
+        run(self.session, f"privateer_glycoblocks {self.combo_box.currentText()}")
 
     def fill_context_menu(self, menu, x, y):
         # Add any tool-specific items to the given context menu (a QMenu instance).

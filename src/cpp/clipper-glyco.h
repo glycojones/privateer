@@ -331,7 +331,7 @@ namespace clipper
             const clipper::Coord_orth& ring_centre() const { return this->sugar_centre; }
             //!< get the ring's centre (original coordinates)
 
-            const clipper::Vec3<ftype>& ring_mean_plane() const { return sugar_mean_plane; }
+            const clipper::Vec3<clipper::ftype>& ring_mean_plane() const { return sugar_mean_plane; }
             //!< get the vector normal to the sugar ring's mean plane, with origin in ring_centre()
 
             std::vector<ftype> cremer_pople_params() const { return sugar_cremer_pople_params; }
