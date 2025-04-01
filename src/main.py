@@ -126,6 +126,8 @@ def draw_glycoblocks(session,Glycans):
             sugar_plane_j = sugar_plane_j / (sugar_plane_i**2 + sugar_plane_j**2 + sugar_plane_k**2)
             sugar_plane_k = sugar_plane_k / (sugar_plane_i**2 + sugar_plane_j**2 + sugar_plane_k**2)
             C1 = [sugar["C1_x"],sugar["C1_y"],sugar["C1_z"]]
+            C2 = [sugar["C2_x"],sugar["C2_y"],sugar["C2_z"]]
+            C3 = [sugar["C3_x"],sugar["C3_y"],sugar["C3_z"]]
             C4 = [sugar["C4_x"],sugar["C4_y"],sugar["C4_z"]]
             d = Drawing('sugar')
             if sugarname in circlesugars:
@@ -156,18 +158,33 @@ def draw_glycoblocks(session,Glycans):
                 d.set_geometry(v, n, t)
             elif sugarname in trianglesugars:
                 # Create the shape
-                v, n, t = triangular_prism_geometry(3.5,1.0)
-                # Rotate to match the plane of the sugar ring
-                tr = vector_rotation((0,0,1),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
-                v = tr.transform_points(v, in_place=True)
-                n = tr.transform_vectors(n, in_place=True)
-                # Rotate to match linkage positions
-                tl = vector_rotation((v[12,0]-(v[13,0]+v[14,0])/2.0,v[12,1]-(v[13,1]+v[14,1])/2.0,v[12,2]-(v[13,2]+v[14,2])/2.0),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
-                v = tl.transform_points(v, in_place=True)
-                n = tl.transform_vectors(n, in_place=True)
+                v, n, t = triangular_prism_geometry(3.5,1.0) 
+                # Rotate to match linkage positions of 2D SNFG based on number of bonds
+                if sugar["num_bonds"] == 1:
+                    tl = vector_rotation(((v[13,0]+v[14,0])/2.0-v[12,0],(v[13,1]+v[14,1])/2.0-v[12,1],(v[13,2]+v[14,2])/2.0)-v[12,2],(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                    v = tl.transform_points(v, in_place=True)
+                    n = tl.transform_vectors(n, in_place=True)
+                    # Rotate to match the plane of the sugar ring
+                    tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+                    v = tr.transform_points(v, in_place=True)
+                    n = tr.transform_vectors(n, in_place=True)  
+                    # Translate to correct location based on vertex of triangle
+                    vp = Place(origin = (C4[0], C4[1], C4[2]))
+                    v = vp.transform_points(v)
+                if sugar["num_bonds"] == 2:  
+                    tl = vector_rotation((v[8,0]-v[10,0],v[8,1]-v[10,1],v[8,2]-v[10,2]),(C1[0]-C3[0],C1[1]-C3[1],C1[2]-C3[2]))
+                    v = tl.transform_points(v, in_place=True)
+                    n = tl.transform_vectors(n, in_place=True)
+                    # Rotate to match the plane of the sugar ring
+                    tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+                    v = tr.transform_points(v, in_place=True)
+                    n = tr.transform_vectors(n, in_place=True)  
+                    # Translate to correct location based on vertex of triangle
+                    vp = Place(origin = (C2[0], C2[1], C2[2]))
+                    v = vp.transform_points(v)
                 # Translate to the centre of the sugar ring
-                vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
-                v = vp.transform_points(v)
+                #vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
+                #v = vp.transform_points(v)
                 d.set_geometry(v, n, t)
             else:
                 v, n, t = cylinder_geometry(radius = 1.5, height = 0.9, nc=25)
@@ -231,9 +248,7 @@ def draw_glycoblocks(session,Glycans):
 def triangular_prism_geometry(l,h):
     # Return vertex, normal vector, and triangle arrays for triangular prism
     from numpy import array, sqrt, float32, int32
-    x = l/2
-    y = sqrt(3.0)*l/4.0
-    z = h/2.0
+    
     #
     #          v4___v5         y  z
     #          /\  / \         | /
@@ -244,34 +259,69 @@ def triangular_prism_geometry(l,h):
     #     /  v1------\----v3  
     #  v0 ------------ v2  
     #
+    # x = l/2
+    # y = sqrt(3.0)*l/4.0
+    # z = h/2.0
+    # vertices = array([
+    #     # -x, v0 - v1 - v4 - v5 
+    #     [-x, -y, -z],
+    #     [-x, -y,  z],
+    #     [ 0,  y, -z],
+    #     [ 0,  y,  z],
+
+    #     # -y, v0 - v1 - v2 - v3
+    #     [-x, -y, -z],
+    #     [-x, -y,  z],
+    #     [ x, -y, -z],
+    #     [ x, -y,  z],
+
+    #     # x,  v2 - v3 - v4 - v5
+    #     [ x, -y, -z],
+    #     [ x, -y,  z],
+    #     [ 0,  y, -z],
+    #     [ 0,  y,  z],
+
+    #     # -z, v0 - v2 - v4
+    #     [-x, -y, -z],
+    #     [ x, -y, -z],
+    #     [ 0,  y, -z],
+
+    #     # z, v1 - v3 - v5
+    #     [-x, -y,  z],
+    #     [ x, -y,  z],
+    #     [ 0,  y,  z],
+    # ],dtype=float32)
+    x = l
+    y = sqrt(3.0)*l/2.0
+    z = h/2.0
     vertices = array([
         # -x, v0 - v1 - v4 - v5 
-        [-x, -y, -z],
-        [-x, -y,  z],
-        [ 0,  y, -z],
-        [ 0,  y,  z],
+        [ 0,    0, -z],
+        [ 0,    0,  z],
+        [ x/2,  y, -z],
+        [ x/2,  y,  z],
 
         # -y, v0 - v1 - v2 - v3
-        [-x, -y, -z],
-        [-x, -y,  z],
-        [ x, -y, -z],
-        [ x, -y,  z],
+        [ 0,    0, -z],
+        [ 0,    0,  z],
+        [ x,    0, -z],
+        [ x,    0,  z],
 
         # x,  v2 - v3 - v4 - v5
-        [ x, -y, -z],
-        [ x, -y,  z],
-        [ 0,  y, -z],
-        [ 0,  y,  z],
+        [ x,    0, -z],
+        [ x,    0,  z],
+        [ x/2,  y, -z],
+        [ x/2,  y,  z],
 
         # -z, v0 - v2 - v4
-        [-x, -y, -z],
-        [ x, -y, -z],
-        [ 0,  y, -z],
+        [ 0,    0, -z],
+        [ x,    0, -z],
+        [ x/2,  y, -z],
 
         # z, v1 - v3 - v5
-        [-x, -y,  z],
-        [ x, -y,  z],
-        [ 0,  y,  z],
+        [ 0,    0,  z],
+        [ x,    0,  z],
+        [ x/2,  y,  z],
     ],dtype=float32)
 
     normals = array([ # FLAG: Need to fix these by trial and error but the basic shape is there now.
