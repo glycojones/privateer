@@ -34,15 +34,9 @@ class _MyAPI(BundleAPI):
         # bi is an instance of chimerax.core.toolshed.BundleInfo
         # ti is an instance of chimerax.core.toolshed.ToolInfomake 
         from chimerax.core import tools
-        if ti.name == "Validate Carbohydrates Basic":
-            from .tool import BasicPrivateerTool
-            return tools.get_singleton(session,BasicPrivateerTool,ti.name,create=True)
-        if ti.name == "Validate Carbohydrates Fancy":
-            from .tool import FancyPrivateerTool
-            return tools.get_singleton(session,FancyPrivateerTool,ti.name,create=True)
-        if ti.name == "Validate Carbohydrates Fancier":
-            from .tool import FancierPrivateerTool
-            return tools.get_singleton(session,FancierPrivateerTool,ti.name,create=True)
+        if ti.name == "Privateer - Validate Carbohydrates":
+            from .tool import PrivateerTool
+            return tools.get_singleton(session,PrivateerTool,ti.name,create=True)
         raise ValueError("trying to start unknown tool: %s" % ti.name)
         
 

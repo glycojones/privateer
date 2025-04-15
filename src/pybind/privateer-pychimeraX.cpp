@@ -119,7 +119,7 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                         pos2_y = pos2.coord_orth().y();
                         pos2_z = pos2.coord_orth().z();
                         
-                        auto torsiondict = pybind11::dict("chainID"_a = secondchainID, "sugar_2_resID"_a = secondresID, "sugar_1"_a=sugar_1,"sugar_2"_a=sugar_2,
+                        auto torsiondict = pybind11::dict("chainID"_a = secondchainID, "sugar_1_resID"_a = firstresID, "sugar_2_resID"_a = secondresID, "sugar_1"_a=sugar_1,"sugar_2"_a=sugar_2,
                                                             "atom_number_1"_a=atom_number_1, "atom_number_2"_a=atom_number_2, "phi"_a=phi, "psi"_a=psi, 
                                                             "x1"_a= pos1_x, "y1"_a= pos1_y, "z1"_a= pos1_z, "x2"_a= pos2_x, "y2"_a= pos2_y, "z2"_a= pos2_z);
                         torsionlist.append(torsiondict);
@@ -139,16 +139,8 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                 float sugarplane_y = sugarplane[1];
                 float sugarplane_z = sugarplane[2];
                 std::string sugarname = sugar.type().trim();
-                //std::string atom_name_1, atom_name_2;
-                //if (j+1 == list_of_sugars.size())
-                //{
-                //    atom_name_1 = "C4";
-                //}
-                //else
-                //{
-                //    atom_name_1 = "C" + torsion_list[j+1].combined_torsions[0].first.first;
-                //}
-                //atom_name_2 = "C" + torsion_list[j].combined_torsions[0].first.second;
+                std::string sugar_chain_ID = sugar.chain_id().trim().substr(0,1);
+                int sugar_res_ID = sugar.get_seqnum();
                 clipper::MAtom pos1 = sugar[sugar.lookup("C1",clipper::MM::ANY)];
                 clipper::MAtom pos2 = sugar[sugar.lookup("C2",clipper::MM::ANY)];
                 clipper::MAtom pos3 = sugar[sugar.lookup("C3",clipper::MM::ANY)];
@@ -191,7 +183,8 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                         }
                     }
                 }
-                auto coorddict = pybind11::dict("sugarname"_a = sugarname, "sugar_centre_x"_a = sugarcentre_x,"sugar_centre_y"_a = sugarcentre_y,"sugar_centre_z"_a = sugarcentre_z,
+                auto coorddict = pybind11::dict("sugarname"_a = sugarname, "chainID"_a = sugar_chain_ID, "resID"_a = sugar_res_ID,
+                                                "sugar_centre_x"_a = sugarcentre_x,"sugar_centre_y"_a = sugarcentre_y,"sugar_centre_z"_a = sugarcentre_z,
                                                 "sugar_plane_i"_a = sugarplane_x, "sugar_plane_j"_a = sugarplane_y, "sugar_plane_k"_a = sugarplane_z, 
                                                 "C1_x"_a=C1_x, "C1_y"_a=C1_y, "C1_z"_a=C1_z, "C2_x"_a=C2_x, "C2_y"_a=C2_y, "C2_z"_a=C2_z,
                                                 "C3_x"_a=C3_x, "C3_y"_a=C3_y, "C3_z"_a=C3_z, "C4_x"_a=C4_x, "C4_y"_a=C4_y, "C4_z"_a=C4_z,
