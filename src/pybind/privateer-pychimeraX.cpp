@@ -145,6 +145,7 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                 clipper::MAtom pos2 = sugar[sugar.lookup("C2",clipper::MM::ANY)];
                 clipper::MAtom pos3 = sugar[sugar.lookup("C3",clipper::MM::ANY)];
                 clipper::MAtom pos4 = sugar[sugar.lookup("C4",clipper::MM::ANY)];
+                clipper::MAtom pos5 = sugar[sugar.lookup("C5",clipper::MM::ANY)];
                 float C1_x = pos1.coord_orth().x();
                 float C1_y = pos1.coord_orth().y();
                 float C1_z = pos1.coord_orth().z();
@@ -157,6 +158,9 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                 float C4_x = pos4.coord_orth().x();
                 float C4_y = pos4.coord_orth().y();
                 float C4_z = pos4.coord_orth().z();
+                float C5_x = pos5.coord_orth().x();
+                float C5_y = pos5.coord_orth().y();
+                float C5_z = pos5.coord_orth().z();
                 int count = 0;
                 for(int j = 0; j < torsion_list.size(); j++) {
                     for(int k = 0; k < torsion_list[j].combined_torsions.size(); k++)
@@ -188,7 +192,7 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                                                 "sugar_plane_i"_a = sugarplane_x, "sugar_plane_j"_a = sugarplane_y, "sugar_plane_k"_a = sugarplane_z, 
                                                 "C1_x"_a=C1_x, "C1_y"_a=C1_y, "C1_z"_a=C1_z, "C2_x"_a=C2_x, "C2_y"_a=C2_y, "C2_z"_a=C2_z,
                                                 "C3_x"_a=C3_x, "C3_y"_a=C3_y, "C3_z"_a=C3_z, "C4_x"_a=C4_x, "C4_y"_a=C4_y, "C4_z"_a=C4_z,
-                                                "num_bonds"_a=count);
+                                                "C5_x"_a=C5_x, "C5_y"_a=C5_y, "C5_z"_a=C5_z, "num_bonds"_a=count);
                 sugarcoordlist.append(coorddict);
             }
             auto resultsdict = pybind11::dict ("GlycanNum"_a=i, "WURCS"_a=wurcs_string, "GlycosylationType"_a=kindOfGlycan, "RootID"_a=list_of_glycans[i].get_root_by_name(), "glycanChainID"_a=current_chain,

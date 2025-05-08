@@ -90,35 +90,39 @@ def draw_glycoblocks(session,Glycans):
     orange = [255,127,0,255]
     yellow = [255,221,0,255]
     grey = [128,128,128,255]
-    # Glc       = GLC,BGC       = blue      circle
-    # Gal       = GAL,GLA       = yellow    circle
-    # Man       = MAN,BMA       = green     circle
-    # Fuc       = FUC,FCB,FUL   = red       triangle
-    # Xyl       = XYS,XYP       = orange    star
-    # GlcNAc    = NAG,NDG       = blue      square
-    # GalNAc    = NGA,A2G       = yellow    square
-    # ManNAc    = BM3,BM7       = green     square
-    # GlcN      = GCS,PA1
-    # GalN      = 
-    # ManN      =
-    # GlcA      = BDP,GCU
-    # GalA      = GTR,ADA
-    # ManA      = MAV,BEM
-    # Neu5Gc    =
-    # Neu5Ac    = SIA,SLB
-    # IdoA      = IDR
-    # KDN       = KDM,KDN
+    cyan = [143,204,233,255]
+    purple = [165,67,153,255]
+    # Glc       = GLC,BGC       = blue          circle
+    # Gal       = GAL,GLA       = yellow        circle
+    # Man       = MAN,BMA       = green         circle
+    # Fuc       = FUC,FCB,FUL   = red           triangle
+    # Xyl       = XYS,XYP       = orange        star
+    # GlcNAc    = NAG,NDG       = blue          square
+    # GalNAc    = NGA,A2G       = yellow        square
+    # ManNAc    = BM3,BM7       = green         square
+    # GlcN      = GCS,PA1       = half-blue     square
+    # GalN      =               = half-yellow   square
+    # ManN      =               = half-green    square
+    # GlcA      = BDP,GCU       = blue-up       diamond
+    # GalA      = GTR,ADA       = yellow-left   diamond
+    # ManA      = MAV,BEM       = green-right   diamond
+    # Neu5Gc    = NGC, NGE      = cyan          diamond
+    # Neu5Ac    = SIA,SLB       = purple        diamond
+    # IdoA      = IDR           = tan-down      diamond
+    # KDN       = KDM,KDN       = green         diamond
     bluesugars = ["GLC","BGC","NAG","NDG"]
-    greensugars = ["MAN","BMA","BM3","BM7"]
+    greensugars = ["MAN","BMA","BM3","BM7","KDM","KDN"]
     redsugars = ["FUC","FCB","FUL"]
     yellowsugars = ["GAL","GLA","NGA","AG2"]
     orangesugars = ["XYS","XYP"]
+    cyansugars = ["NGC","NGE"]
+    purplesugars = ["SIA","SLB"]
 
     circlesugars = ["GLC","BGC","GAL","GLA","MAN","BMA"]
     squaresugars = ["NAG","NDG","NGA","A2G","BM3","BM7"]
     trianglesugars = ["FUC","FCB","FUL"]
-    starsugars = []
-    diamondsugars = []
+    starsugars = ["XYL","XYP"]
+    diamondsugars = ["BDP","GCU","GTR","ADA","MAV","BEM","NGC","NGE","SIA","SLB","IDR","KDM","KDN"]
     # for glycan in Glycans:
     #     for sugar in glycan["Sugars"]:
     #         sugarname = sugar["sugarname"]
@@ -233,6 +237,7 @@ def draw_glycoblocks(session,Glycans):
             C2 = [sugar["C2_x"],sugar["C2_y"],sugar["C2_z"]]
             C3 = [sugar["C3_x"],sugar["C3_y"],sugar["C3_z"]]
             C4 = [sugar["C4_x"],sugar["C4_y"],sugar["C4_z"]]
+            C5 = [sugar["C5_x"],sugar["C5_y"],sugar["C5_z"]]
             d = Drawing('sugar')
             if sugarname in circlesugars:
                 # Create the shape
@@ -248,6 +253,7 @@ def draw_glycoblocks(session,Glycans):
                 tr = vector_rotation((n[-1,0],n[-1,1],n[-1,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
                 v = tr.transform_points(v, in_place=True)
                 n = tr.transform_vectors(n, in_place=True)
+                # Rotate so we know which points are closest to C1 and C4 again now we're in plane
                 tr = vector_rotation((v1[0]-v4[0],v1[1]-v4[1],v1[2]-v4[2]),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
                 v = tr.transform_points(v, in_place=True)
                 n = tr.transform_vectors(n, in_place=True)
@@ -258,11 +264,15 @@ def draw_glycoblocks(session,Glycans):
             elif sugarname in squaresugars:
                 # Create the shape
                 v, n, t = box_geometry((-1.4,-1.4,-0.5),(1.4,1.4,0.5))
+                # Rotate to match linkage positions
+                tl = vector_rotation((v[0,0]-v[2,0],v[0,1]-v[2,1],v[0,2]-v[2,2]),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                v = tl.transform_points(v, in_place=True)
+                n = tl.transform_vectors(n, in_place=True)
                 # Rotate to match the plane of the sugar ring
-                tr = vector_rotation((0,0,1),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+                tr = vector_rotation((n[20,0],n[20,1],n[20,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
                 v = tr.transform_points(v, in_place=True)
                 n = tr.transform_vectors(n, in_place=True)
-                # Rotate to match linkage positions
+                # Rotate to match linkage positions again now we're in plane
                 tl = vector_rotation((v[0,0]-v[2,0],v[0,1]-v[2,1],v[0,2]-v[2,2]),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
                 v = tl.transform_points(v, in_place=True)
                 n = tl.transform_vectors(n, in_place=True)
@@ -274,11 +284,15 @@ def draw_glycoblocks(session,Glycans):
                 # Create the shape
                 v, n, t = triangular_prism_geometry(3.5,1.0) 
                 if sugar["num_bonds"] == 1:
+                    # Rotate to match linkage positions of 2D SNFG based on number of bonds
+                    tl = vector_rotation(((v[2,0]+v[6,0])/2.0-v[0,0],(v[2,1]+v[6,1])/2.0-v[0,1],(v[2,2]+v[6,2])/2.0)-v[0,2],(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                    v = tl.transform_points(v, in_place=True)
+                    n = tl.transform_vectors(n, in_place=True)  
                     # Rotate to match the plane of the sugar ring
                     tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
                     v = tr.transform_points(v, in_place=True)
                     n = tr.transform_vectors(n, in_place=True)
-                    # Rotate to match linkage positions of 2D SNFG based on number of bonds
+                    # Rotate to match linkage positions of 2D SNFG based on number of bonds again now we're in plane
                     tl = vector_rotation(((v[2,0]+v[6,0])/2.0-v[0,0],(v[2,1]+v[6,1])/2.0-v[0,1],(v[2,2]+v[6,2])/2.0)-v[0,2],(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
                     v = tl.transform_points(v, in_place=True)
                     n = tl.transform_vectors(n, in_place=True)  
@@ -286,11 +300,15 @@ def draw_glycoblocks(session,Glycans):
                     vp = Place(origin = (C4[0], C4[1], C4[2]))
                     v = vp.transform_points(v)
                 if sugar["num_bonds"] == 2: 
+                    # Rotate to match linkage positions of 2D SNFG based on number of bonds 
+                    tl = vector_rotation((v[8,0]-v[10,0],v[8,1]-v[10,1],v[8,2]-v[10,2]),(C1[0]-C3[0],C1[1]-C3[1],C1[2]-C3[2]))
+                    v = tl.transform_points(v, in_place=True)
+                    n = tl.transform_vectors(n, in_place=True)
                     # Rotate to match the plane of the sugar ring
                     tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
                     v = tr.transform_points(v, in_place=True)
                     n = tr.transform_vectors(n, in_place=True)  
-                    # Rotate to match linkage positions of 2D SNFG based on number of bonds 
+                    # Rotate to match linkage positions of 2D SNFG based on number of bonds again now we're in plane
                     tl = vector_rotation((v[8,0]-v[10,0],v[8,1]-v[10,1],v[8,2]-v[10,2]),(C1[0]-C3[0],C1[1]-C3[1],C1[2]-C3[2]))
                     v = tl.transform_points(v, in_place=True)
                     n = tl.transform_vectors(n, in_place=True)
@@ -300,6 +318,25 @@ def draw_glycoblocks(session,Glycans):
                 # Translate to the centre of the sugar ring
                 #vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
                 #v = vp.transform_points(v)
+                d.set_geometry(v, n, t)
+            elif sugarname in diamondsugars:
+                # Create the shape
+                v, n, t = box_geometry((-1.4,-1.4,-0.5),(1.4,1.4,0.5))
+                # Rotate to match linkage positions
+                tl = vector_rotation((v[9,0]-v[10,0],v[9,1]-v[10,1],v[9,2]-v[10,2]),(C2[0]-C5[0],C2[1]-C5[1],C2[2]-C5[2]))
+                v = tl.transform_points(v, in_place=True)
+                n = tl.transform_vectors(n, in_place=True)
+                # Rotate to match the plane of the sugar ring
+                tr = vector_rotation((n[20,0],n[20,1],n[20,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+                v = tr.transform_points(v, in_place=True)
+                n = tr.transform_vectors(n, in_place=True)
+                # Rotate to match linkage positions again now we're in plane
+                tl = vector_rotation((v[9,0]-v[10,0],v[9,1]-v[10,1],v[9,2]-v[10,2]),(C2[0]-C5[0],C2[1]-C5[1],C2[2]-C5[2]))
+                v = tl.transform_points(v, in_place=True)
+                n = tl.transform_vectors(n, in_place=True)
+                # Translate to the centre of the sugar ring
+                vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
+                v = vp.transform_points(v)
                 d.set_geometry(v, n, t)
             else:
                 v, n, t = cylinder_geometry(radius = 1.5, height = 0.9, nc=25)
@@ -322,6 +359,10 @@ def draw_glycoblocks(session,Glycans):
                 d.color = yellow
             elif sugarname in orangesugars:
                 d.color = orange
+            elif sugarname in cyansugars:
+                d.color = cyan
+            elif sugarname in purplesugars:
+                d.color = purple
             else:
                 d.color = grey
             dm.add_drawing(d)
@@ -359,6 +400,15 @@ def draw_glycoblocks(session,Glycans):
                                 pos1 = (v[0,:]*2 + v[1,:]*2 + v[2,:] + v[3,:])/6.0
                             else:
                                 pos1 = [link["x1"],link["y1"],link["z1"]]
+                    elif sugarname in diamondsugars:
+                        if link["atom_number_1"] == "2":
+                            pos1 = (v[0,:] + v[1,:])/2.0
+                        elif link["atom_number_1"] == "5":
+                            pos1 = (v[14,:] + v[15,:])/2.0
+                        #elif link["atom_number_1"] == "6":
+                        #    pos1 = (v[12,:] + v[13,:] + v[14,:] + v[15,:])/4.0
+                        else: 
+                            pos1 = [link["x1"],link["y1"],link["z1"]]
                     glycan["Torsions"][i]["x1"] = pos1[0]
                     glycan["Torsions"][i]["y1"] = pos1[1]
                     glycan["Torsions"][i]["z1"] = pos1[2]
@@ -390,6 +440,15 @@ def draw_glycoblocks(session,Glycans):
                                 pos2 = (v[0,:]*2 + v[1,:]*2 + v[2,:] + v[3,:])/6.0
                             else:
                                 pos2 = [link["x2"],link["y2"],link["z2"]]
+                    elif sugarname in diamondsugars:
+                        if link["atom_number_2"] == "2":
+                            pos2 = (v[0,:] + v[1,:])/2.0
+                        elif link["atom_number_2"] == "5":
+                            pos2 = (v[14,:] + v[15,:])/2.0
+                        #elif link["atom_number_2"] == "6":
+                        #    pos2 = (v[12,:] + v[13,:] + v[14,:] + v[15,:])/4.0
+                        else: 
+                            pos2 = [link["x2"],link["y2"],link["z2"]]
                     glycan["Torsions"][i]["x2"] = pos2[0]
                     glycan["Torsions"][i]["y2"] = pos2[1]
                     glycan["Torsions"][i]["z2"] = pos2[2]
