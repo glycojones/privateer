@@ -4064,6 +4064,24 @@ bool MGlycan::link_sugars ( int link, clipper::MSugar& first_sugar, clipper::MSu
 
 void MGlycan::add_torsions_for_detected_linkages(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom, int first_residue_seqnum, int second_residue_seqnum, clipper::String first_residue_chainID, clipper::String second_residue_chainID)
 {
+    std::string type;
+    if(clipper::data::is_amino_acid(first_residue_name) || clipper::data::is_amino_acid(second_residue_name))
+        type = "protein-sugar";
+    else
+        type = "sugar-sugar";
+    MGlycanTorsion new_torsion_entry; 
+    new_torsion_entry.type = type;
+    new_torsion_entry.psi = Psi; 
+    new_torsion_entry.phi = Phi; 
+    new_torsion_entry.first_residue_name = first_residue_name;
+    new_torsion_entry.second_residue_name = second_residue_name;
+    new_torsion_entry.donor_atom = std::regex_replace(first_atom.name().trim(), std::regex(R"([^\d])"), "");
+    new_torsion_entry.acceptor_atom = std::regex_replace(second_atom.name().trim(), std::regex(R"([^\d])"), "");
+    new_torsion_entry.firstsugchainID = first_residue_chainID;
+    new_torsion_entry.secondsugchainID = second_residue_chainID;
+    new_torsion_entry.first_seqid = first_residue_seqnum; 
+    new_torsion_entry.second_seqid = second_residue_seqnum; 
+    torsion_collection.push_back(new_torsion_entry);
     if(!all_torsions_within_mglycan.empty())
     {
         auto search_result = std::find_if(all_torsions_within_mglycan.begin(), all_torsions_within_mglycan.end(), [first_residue_name, second_residue_name](MGlycanTorsionSummary& element)

@@ -3,6 +3,7 @@
 #include <privateer-json.h>
 #include <privateer-dbquery.h>
 
+
 using namespace pybind11::literals;
 
 pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zscores, std::string& path_to_glycomics)
@@ -43,28 +44,95 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
             privateer::glycanbuilderplot::Plot plot(true, true, list_of_glycans[i].get_root_by_name());
             plot.plot_glycan(list_of_glycans[i], err);
 
-            std::ostringstream os;
-            os << list_of_glycans[i].get_root_for_filename() << ".svg";
+            std::vector<clipper::MGlycan::MGlycanTorsion> torsion_list = list_of_glycans[i].return_torsion_collection(); //FLAG: Edit this loop based on the new torsion collection structure I added.
+            std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_summary = list_of_glycans[i].return_torsion_summary_within_glycan();
+            auto torsionlist = pybind11::list();
+            for(int j = 0; j < torsion_list.size(); j++) {
+                std::string type = torsion_list[j].type;
+                std::string sugar_1 = torsion_list[j].first_residue_name;
+                std::string sugar_2 = torsion_list[j].second_residue_name;
+                std::string firstchainID = torsion_list[j].firstsugchainID.substr(0,1);
+                std::string secondchainID = torsion_list[j].secondsugchainID.substr(0,1);
+                int firstresID = torsion_list[j].first_seqid;
+                int secondresID = torsion_list[j].second_seqid;
+                float phi = torsion_list[j].phi;
+                float psi = torsion_list[j].psi;
+                std::string atom_number_1 = torsion_list[j].donor_atom;
+                std::string atom_number_2 = torsion_list[j].acceptor_atom;
+                std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
+                clipper::MAtom pos1, pos2;
+                float pos1_x, pos1_y, pos1_z, pos2_x, pos2_y, pos2_z;
+                if (type == "protein-sugar")
+                {
+                    for(int m = 0; m < list_of_sugars.size(); m++) {
+                        clipper::MSugar sugar = list_of_sugars[m];
+                        pos1 = torsion_summary[j].atoms[0].first;
+                        if (sugar.chain_id().trim().substr(0,1) == secondchainID && sugar.get_seqnum() == secondresID && sugar.type().trim() == sugar_2){
+                            if (atom_number_2 == "6"){
+                                std::string atom_name_2 = "C5";
+                                pos2 = sugar[sugar.lookup(atom_name_2,clipper::MM::ANY)];
+                            }
+                            else{
+                                std::string atom_name_2 = "C" + atom_number_2;
+                                pos2 = sugar[sugar.lookup(atom_name_2,clipper::MM::ANY)];   
+                            }
+                        }
+                    }
+                }
+                else{
+                    for(int m = 0; m < list_of_sugars.size(); m++) {
+                        clipper::MSugar sugar = list_of_sugars[m];
+                        if (sugar.chain_id().trim().substr(0,1) == firstchainID && sugar.get_seqnum() == firstresID && sugar.type().trim() == sugar_1){
+                            if (atom_number_1 == "6"){
+                                std::string atom_name_1 = "C5";
+                                pos1 = sugar[sugar.lookup(atom_name_1,clipper::MM::ANY)];
+                            }
+                            else{
+                                std::string atom_name_1 = "C" + atom_number_1;
+                                pos1 = sugar[sugar.lookup(atom_name_1,clipper::MM::ANY)];   
+                            }
+                        }
+                        if (sugar.chain_id().trim().substr(0,1) == secondchainID && sugar.get_seqnum() == secondresID && sugar.type().trim() == sugar_2){
+                            if (atom_number_2 == "6"){
+                                std::string atom_name_2 = "C5";
+                                pos2 = sugar[sugar.lookup(atom_name_2,clipper::MM::ANY)];
+                            }
+                            else{
+                                std::string atom_name_2 = "C" + atom_number_2;
+                                pos2 = sugar[sugar.lookup(atom_name_2,clipper::MM::ANY)];   
+                            }
+                        }
+                    }
+                }
+                pos1_x = pos1.coord_orth().x();
+                pos1_y = pos1.coord_orth().y();
+                pos1_z = pos1.coord_orth().z();
+                pos2_x = pos2.coord_orth().x();
+                pos2_y = pos2.coord_orth().y();
+                pos2_z = pos2.coord_orth().z();
+                auto torsiondict = pybind11::dict("chainID"_a = secondchainID, "sugar_1_resID"_a = firstresID, "sugar_2_resID"_a = secondresID, "sugar_1"_a=sugar_1,"sugar_2"_a=sugar_2,
+                                                    "atom_number_1"_a=atom_number_1, "atom_number_2"_a=atom_number_2, "phi"_a=phi, "psi"_a=psi,
+                                                    "x1"_a= pos1_x, "y1"_a= pos1_y, "z1"_a= pos1_z, "x2"_a= pos2_x, "y2"_a= pos2_y, "z2"_a= pos2_z);
+                torsionlist.append(torsiondict);
+            }
 
-
-
-
+/*
             std::vector<clipper::MGlycan::MGlycanTorsionSummary> torsion_list = list_of_glycans[i].return_torsion_summary_within_glycan();
             auto torsionlist = pybind11::list();
             for(int j = 0; j < torsion_list.size(); j++) {
+                std::string secondchainID = torsion_list[j].secondsugchainID.substr(0,1);
+                std::string firstchainID = torsion_list[j].firstsugchainID.substr(0,1);
+                int secondresID = torsion_list[j].secondsugresID;
+                int firstresID = torsion_list[j].firstsugresID;
+                std::string sugar_1 = torsion_list[j].first_residue_name;
+                std::string sugar_2 = torsion_list[j].second_residue_name;
+                std::string type = torsion_list[j].type;
                 for(int k = 0; k < torsion_list[j].combined_torsions.size(); k++)
                 {
                     std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>> torsion = torsion_list[j].combined_torsions[k];
+                    std::string atom_number_1 = torsion.first.first;
+                    std::string atom_number_2 = torsion.first.second;
                     for (int l = 0; l < torsion.second.size(); l++) {
-                        std::string sugar_1 = torsion_list[j].first_residue_name;
-                        std::string sugar_2 = torsion_list[j].second_residue_name;
-                        std::string type = torsion_list[j].type;
-                        std::string atom_number_1 = torsion.first.first;
-                        std::string atom_number_2 = torsion.first.second;
-                        std::string secondchainID = torsion_list[j].secondsugchainID.substr(0,1);
-                        std::string firstchainID = torsion_list[j].firstsugchainID.substr(0,1);
-                        int secondresID = torsion_list[j].secondsugresID;
-                        int firstresID = torsion_list[j].firstsugresID;
                         float phi = torsion.second[l].first;
                         float psi = torsion.second[l].second;
                         std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
@@ -126,6 +194,7 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                     }
                 }
             }
+*/
             auto sugarcoordlist = pybind11::list();
             std::vector < clipper::MSugar > list_of_sugars = list_of_glycans[i].get_sugars();
             for(int m = 0; m < list_of_sugars.size(); m++) {
@@ -163,28 +232,17 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                 float C5_z = pos5.coord_orth().z();
                 int count = 0;
                 for(int j = 0; j < torsion_list.size(); j++) {
-                    for(int k = 0; k < torsion_list[j].combined_torsions.size(); k++)
-                    {
-                        std::pair<std::pair<std::string, std::string>, std::vector<std::pair<float,float>>> torsion = torsion_list[j].combined_torsions[k];
-                        for (int l = 0; l < torsion.second.size(); l++) {
-                            std::string sugar_1 = torsion_list[j].first_residue_name;
-                            std::string sugar_2 = torsion_list[j].second_residue_name;
-                            std::string type = torsion_list[j].type;
-                            std::string atom_number_1 = torsion.first.first;
-                            std::string atom_number_2 = torsion.first.second;
-                            std::string secondchainID = torsion_list[j].secondsugchainID.substr(0,1);
-                            std::string firstchainID = torsion_list[j].firstsugchainID.substr(0,1);
-                            int secondresID = torsion_list[j].secondsugresID;
-                            int firstresID = torsion_list[j].firstsugresID;
-                            float phi = torsion.second[l].first;
-                            float psi = torsion.second[l].second;
-                            if (sugar.chain_id().trim().substr(0,1) == firstchainID && sugar.get_seqnum() == firstresID && sugar.type().trim() == sugar_1){
-                                count += 1;
-                            }
-                            if (sugar.chain_id().trim().substr(0,1) == secondchainID && sugar.get_seqnum() == secondresID && sugar.type().trim() == sugar_2){
-                                count +=1;
-                            }
-                        }
+                    std::string sugar_1 = torsion_list[j].first_residue_name;
+                    std::string sugar_2 = torsion_list[j].second_residue_name;
+                    std::string firstchainID = torsion_list[j].firstsugchainID.substr(0,1);
+                    std::string secondchainID = torsion_list[j].secondsugchainID.substr(0,1);
+                    int firstresID = torsion_list[j].first_seqid;
+                    int secondresID = torsion_list[j].second_seqid;
+                    if (sugar.chain_id().trim().substr(0,1) == firstchainID && sugar.get_seqnum() == firstresID && sugar.type().trim() == sugar_1){
+                        count += 1;
+                    }
+                    if (sugar.chain_id().trim().substr(0,1) == secondchainID && sugar.get_seqnum() == secondresID && sugar.type().trim() == sugar_2){
+                        count +=1;
                     }
                 }
                 auto coorddict = pybind11::dict("sugarname"_a = sugarname, "chainID"_a = sugar_chain_ID, "resID"_a = sugar_res_ID,

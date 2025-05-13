@@ -221,6 +221,8 @@ def draw_glycoblocks(session,Glycans):
     #         else:
     #             d.color = grey
     #         dm.add_drawing(d)
+    df = pd.DataFrame(Glycans)
+    df.to_csv("/Users/lah583/Development/privateer_chimeraX_bundle/results/testing_torsions.csv")
     for glycan in Glycans:
         for sugar in glycan["Sugars"]:
             sugarname = sugar["sugarname"]
