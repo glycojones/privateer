@@ -1477,6 +1477,7 @@ bool privateer::util::do_report_linkage(std::string d_pos, std::string d_atom, s
         "NAG-1,3-FUC",
         "MAN-1,2-NAG", 
         "NAG-1,4-GAL",
+        "TRP-1,1-MAN",
     };
 
     std::string name = d_pos + "-" + d_atom + "," + a_atom + "-" + a_pos ;
@@ -2109,7 +2110,7 @@ void privateer::glycanbuilderplot::Plot::write_svg_header_ostringstream   ( std:
        << "     version=\"1.1\"\n"
        << "     width=\"" << get_width() << "\" \n"
        << "     height=\"" << get_height() << "\" \n"
-       << "     viewBox=\"" << get_viewbox() << " \"\n"
+       << "     viewBox=\"" << get_viewbox() << " \"\n>"
 //        << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
        << "  <style>\n"
        << "    .my_blue   { fill:" << get_colour ( rootblue, original_colour_scheme ) << " }\n"
@@ -2438,7 +2439,7 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan, 
 
     const clipper::MGlycan::Node node = glycan.get_node ( 0 ); // get the first node
 
-    if(glycan.get_type() == "n-glycan")
+    if(glycan.get_type() == "n-glycan" || glycan.get_type() == "c-glycan")
     {
         if (node.get_sugar().type().trim() == "NAG" && glycan.get_root().first.type().trim() == "ASN")
         {
@@ -2447,6 +2448,19 @@ bool privateer::glycanbuilderplot::Plot::plot_glycan ( clipper::MGlycan glycan, 
             {
                 std::ostringstream os;
                 os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore;
+                std::string message = os.str();
+                shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", mmdbsel  );
+                add_shaded_link(new_shaded_bond);
+                error_count->torsion_err++; 
+            }
+        }
+        else if (node.get_sugar().type().trim() == "MAN" && glycan.get_root().first.type().trim() == "TRP")
+        {
+            float link_zscore = glycan.get_protein_sugar_linkage_zscore();
+            if(link_zscore < -1 && link_zscore != 42069 && glycan.get_protein_sugar_linkage_zscore_attempt_to_calculate())
+            {
+                std::ostringstream os;
+                os << "Linkage Z-Score = " << std::setprecision(3) << link_zscore << "\nWarning: Sample size is small. Check torsion plot to validate.";
                 std::string message = os.str();
                 shadedBond * new_shaded_bond = new shadedBond( 2800, 1015, side, message, "shadedbond", mmdbsel  );
                 add_shaded_link(new_shaded_bond);
