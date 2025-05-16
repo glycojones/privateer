@@ -69,6 +69,10 @@ export default function TorsionPlot({
         const overlayPhi: number[] = [];
         const overlayPsi: number[] = [];
 
+        if (!(linkageType in sortedTorsionList)) {
+            return;
+        }
+
         for (let i = 0; i < sortedTorsionList[linkageType].length; i++) {
             overlayPhi.push(sortedTorsionList[linkageType][i].phi as number);
             overlayPsi.push(sortedTorsionList[linkageType][i].psi as number);
