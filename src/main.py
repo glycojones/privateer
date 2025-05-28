@@ -123,106 +123,6 @@ def draw_glycoblocks(session,Glycans):
     trianglesugars = ["FUC","FCB","FUL"]
     starsugars = ["XYL","XYP"]
     diamondsugars = ["BDP","GCU","GTR","ADA","MAV","BEM","NGC","NGE","SIA","SLB","IDR","KDM","KDN"]
-    # for glycan in Glycans:
-    #     for sugar in glycan["Sugars"]:
-    #         sugarname = sugar["sugarname"]
-    #         sugar_centre_x = sugar["sugar_centre_x"]
-    #         sugar_centre_y = sugar["sugar_centre_y"]
-    #         sugar_centre_z = sugar["sugar_centre_z"]
-    #         sugar_plane_i = sugar["sugar_plane_i"]
-    #         sugar_plane_j = sugar["sugar_plane_j"]
-    #         sugar_plane_k = sugar["sugar_plane_k"]
-    #         sugar_plane_i = sugar_plane_i / (sugar_plane_i**2 + sugar_plane_j**2 + sugar_plane_k**2)
-    #         sugar_plane_j = sugar_plane_j / (sugar_plane_i**2 + sugar_plane_j**2 + sugar_plane_k**2)
-    #         sugar_plane_k = sugar_plane_k / (sugar_plane_i**2 + sugar_plane_j**2 + sugar_plane_k**2)
-    #         C1 = [sugar["C1_x"],sugar["C1_y"],sugar["C1_z"]]
-    #         C2 = [sugar["C2_x"],sugar["C2_y"],sugar["C2_z"]]
-    #         C3 = [sugar["C3_x"],sugar["C3_y"],sugar["C3_z"]]
-    #         C4 = [sugar["C4_x"],sugar["C4_y"],sugar["C4_z"]]
-    #         d = Drawing('sugar')
-    #         if sugarname in circlesugars:
-    #             # Create the shape
-    #             v, n, t = cylinder_geometry(radius = 1.4, height = 1.0, nc=25)
-    #             # Rotate to match the plane of the sugar ring
-    #             tr = vector_rotation((0,0,1),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
-    #             v = tr.transform_points(v, in_place=True)
-    #             n = tr.transform_vectors(n, in_place=True)
-    #             # Translate to the centre of the sugar ring
-    #             vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
-    #             v = vp.transform_points(v)
-    #             d.set_geometry(v, n, t)
-    #         elif sugarname in squaresugars:
-    #             # Create the shape
-    #             v, n, t = box_geometry((-1.4,-1.4,-0.5),(1.4,1.4,0.5))
-    #             # Rotate to match the plane of the sugar ring
-    #             tr = vector_rotation((0,0,1),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
-    #             v = tr.transform_points(v, in_place=True)
-    #             n = tr.transform_vectors(n, in_place=True)
-    #             # Rotate to match linkage positions
-    #             tl = vector_rotation((v[0,0]-v[2,0],v[0,1]-v[2,1],v[0,2]-v[2,2]),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
-    #             v = tl.transform_points(v, in_place=True)
-    #             n = tl.transform_vectors(n, in_place=True)
-    #             # Translate to the centre of the sugar ring
-    #             vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
-    #             v = vp.transform_points(v)
-    #             d.set_geometry(v, n, t)
-    #         elif sugarname in trianglesugars:
-    #             # Create the shape
-    #             v, n, t = triangular_prism_geometry(3.5,1.0) 
-    #             if sugar["num_bonds"] == 1:
-    #                 # Rotate to match the plane of the sugar ring
-    #                 tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
-    #                 v = tr.transform_points(v, in_place=True)
-    #                 n = tr.transform_vectors(n, in_place=True)
-    #                 # Rotate to match linkage positions of 2D SNFG based on number of bonds
-    #                 tl = vector_rotation(((v[2,0]+v[6,0])/2.0-v[0,0],(v[2,1]+v[6,1])/2.0-v[0,1],(v[2,2]+v[6,2])/2.0)-v[0,2],(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
-    #                 v = tl.transform_points(v, in_place=True)
-    #                 n = tl.transform_vectors(n, in_place=True)  
-    #                 # Translate to correct location based on vertex of triangle
-    #                 vp = Place(origin = (C4[0], C4[1], C4[2]))
-    #                 v = vp.transform_points(v)
-    #             if sugar["num_bonds"] == 2: 
-    #                 # Rotate to match the plane of the sugar ring
-    #                 tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
-    #                 v = tr.transform_points(v, in_place=True)
-    #                 n = tr.transform_vectors(n, in_place=True)  
-    #                 # Rotate to match linkage positions of 2D SNFG based on number of bonds 
-    #                 tl = vector_rotation((v[8,0]-v[10,0],v[8,1]-v[10,1],v[8,2]-v[10,2]),(C1[0]-C3[0],C1[1]-C3[1],C1[2]-C3[2]))
-    #                 v = tl.transform_points(v, in_place=True)
-    #                 n = tl.transform_vectors(n, in_place=True)
-    #                 # Translate to correct location based on vertex of triangle
-    #                 vp = Place(origin = (C2[0], C2[1], C2[2]))
-    #                 v = vp.transform_points(v)
-    #             # Translate to the centre of the sugar ring
-    #             #vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
-    #             #v = vp.transform_points(v)
-    #             d.set_geometry(v, n, t)
-    #         else:
-    #             v, n, t = cylinder_geometry(radius = 1.5, height = 0.9, nc=25)
-    #             # Rotate to match the plane of the sugar ring
-    #             tr = vector_rotation((0,0,1),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
-    #             v = tr.transform_points(v, in_place=True)
-    #             n = tr.transform_vectors(n, in_place=True)
-    #             # Translate to the centre of the sugar ring
-    #             vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
-    #             v = vp.transform_points(v)
-    #             d.set_geometry(v, n, t)
-    #         # Colour according to sugar type
-    #         if sugarname in bluesugars:
-    #             d.color = blue 
-    #         elif sugarname in greensugars:
-    #             d.color = green
-    #         elif sugarname in redsugars:
-    #             d.color = red
-    #         elif sugarname in yellowsugars:
-    #             d.color = yellow
-    #         elif sugarname in orangesugars:
-    #             d.color = orange
-    #         else:
-    #             d.color = grey
-    #         dm.add_drawing(d)
-    df = pd.DataFrame(Glycans)
-    df.to_csv("/Users/lah583/Development/privateer_chimeraX_bundle/results/testing_torsions.csv")
     for glycan in Glycans:
         for sugar in glycan["Sugars"]:
             sugarname = sugar["sugarname"]
@@ -336,6 +236,24 @@ def draw_glycoblocks(session,Glycans):
                 tl = vector_rotation((v[9,0]-v[10,0],v[9,1]-v[10,1],v[9,2]-v[10,2]),(C2[0]-C5[0],C2[1]-C5[1],C2[2]-C5[2]))
                 v = tl.transform_points(v, in_place=True)
                 n = tl.transform_vectors(n, in_place=True)
+                # Translate to the centre of the sugar ring
+                vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
+                v = vp.transform_points(v)
+                d.set_geometry(v, n, t)
+            elif sugarname in starsugars:
+                v, n, t = star_geometry(1.4,1)
+                # Rotate to match linkage positions
+                #tl = vector_rotation((v[9,0]-v[10,0],v[9,1]-v[10,1],v[9,2]-v[10,2]),(C2[0]-C5[0],C2[1]-C5[1],C2[2]-C5[2]))
+                #v = tl.transform_points(v, in_place=True)
+                #n = tl.transform_vectors(n, in_place=True)
+                # Rotate to match the plane of the sugar ring
+                tr = vector_rotation((n[0,0],n[0,1],n[0,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+                v = tr.transform_points(v, in_place=True)
+                n = tr.transform_vectors(n, in_place=True)
+                # Rotate to match linkage positions again now we're in plane
+                #tl = vector_rotation((v[9,0]-v[10,0],v[9,1]-v[10,1],v[9,2]-v[10,2]),(C2[0]-C5[0],C2[1]-C5[1],C2[2]-C5[2]))
+                #v = tl.transform_points(v, in_place=True)
+                #n = tl.transform_vectors(n, in_place=True)
                 # Translate to the centre of the sugar ring
                 vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
                 v = vp.transform_points(v)
@@ -503,38 +421,6 @@ def triangular_prism_geometry(l,h):
     #     /  v1------\----v3  
     #  v0 ------------ v2  
     #
-    # x = l/2
-    # y = sqrt(3.0)*l/4.0
-    # z = h/2.0
-    # vertices = array([
-    #     # -x, v0 - v1 - v4 - v5 
-    #     [-x, -y, -z],
-    #     [-x, -y,  z],
-    #     [ 0,  y, -z],
-    #     [ 0,  y,  z],
-
-    #     # -y, v0 - v1 - v2 - v3
-    #     [-x, -y, -z],
-    #     [-x, -y,  z],
-    #     [ x, -y, -z],
-    #     [ x, -y,  z],
-
-    #     # x,  v2 - v3 - v4 - v5
-    #     [ x, -y, -z],
-    #     [ x, -y,  z],
-    #     [ 0,  y, -z],
-    #     [ 0,  y,  z],
-
-    #     # -z, v0 - v2 - v4
-    #     [-x, -y, -z],
-    #     [ x, -y, -z],
-    #     [ 0,  y, -z],
-
-    #     # z, v1 - v3 - v5
-    #     [-x, -y,  z],
-    #     [ x, -y,  z],
-    #     [ 0,  y,  z],
-    # ],dtype=float32)
     x = l
     y = sqrt(3.0)*l/2.0
     z = h/2.0
@@ -613,6 +499,227 @@ def triangular_prism_geometry(l,h):
         # z, v1 - v3 - v5
         [15,16,17],
     ],dtype=int32)
+    return vertices, normals, triangles
+
+def star_geometry(rout, h):
+    from numpy import array, zeros, sqrt, cos, sin, pi, float32, int32
+    xo = zeros(5)
+    yo = zeros(5)
+    xi = zeros(5)
+    yi = zeros(5)
+    # Set inner radius of star
+    ratio = 2/(3.0 + sqrt(5))
+    rin = rout * ratio
+    # Define the vertices of the star by
+    for i in range(5):
+        # 5 points are equally spaced on outer circle
+        xo[i] = rout*cos(2*pi*i/5.0 + pi/2.0)
+        yo[i] = rout*sin(2*pi*i/5.0 + pi/2.0)
+        # Other 5 vertices are equally spaced on inner circle, offset by 36 deg
+        xi[i] = rin*cos(2*pi*i/5.0 + pi/2.0 + pi/5.0)
+        yi[i] = rin*sin(2*pi*i/5.0 + pi/2.0 + pi/5.0)
+    z = h/2.0
+    vertices = array([
+        [xo[0],yo[0],z],    # 0
+        [xi[0],yi[0],z],    # 1 
+        [xo[1],yo[1],z],    # 2
+        [xi[1],yi[1],z],    # 3
+        [xo[2],yo[2],z],    # 4
+        [xi[2],yi[2],z],    # 5
+        [xo[3],yo[3],z],    # 6
+        [xi[3],yi[3],z],    # 7
+        [xo[4],yo[4],z],    # 8
+        [xi[4],yi[4],z],    # 9
+
+        [xo[0],yo[0],z],    # 10
+        [xi[0],yi[0],z],    # 11
+        [xo[0],yo[0],-z],   # 12
+        [xi[0],yi[0],-z],   # 13
+
+        [xi[0],yi[0],z],    # 14
+        [xo[1],yo[1],z],    # 15
+        [xi[0],yi[0],-z],   # 16
+        [xo[1],yo[1],-z],   # 17
+
+        [xo[1],yo[1],z],    # 18
+        [xi[1],yi[1],z],    # 19
+        [xo[1],yo[1],-z],   # 20
+        [xi[1],yi[1],-z],   # 21
+
+        [xi[1],yi[1],z],    # 22
+        [xo[2],yo[2],z],    # 23
+        [xi[1],yi[1],-z],   # 24
+        [xo[2],yo[2],-z],   # 25
+
+        [xo[2],yo[2],z],    # 26
+        [xi[2],yi[2],z],    # 27
+        [xo[2],yo[2],-z],   # 28
+        [xi[2],yi[2],-z],   # 29
+
+        [xi[2],yi[2],z],    # 30
+        [xo[3],yo[3],z],    # 31
+        [xi[2],yi[2],-z],   # 32
+        [xo[3],yo[3],-z],   # 33
+
+        [xo[3],yo[3],z],    # 34
+        [xi[3],yi[3],z],    # 35
+        [xo[3],yo[3],-z],   # 36
+        [xi[3],yi[3],-z],   # 37
+
+        [xi[3],yi[3],z],    # 38
+        [xo[4],yo[4],z],    # 39
+        [xi[3],yi[3],-z],   # 40
+        [xo[4],yo[4],-z],   # 41
+
+        [xo[4],yo[4],z],    # 42
+        [xi[4],yi[4],z],    # 43
+        [xo[4],yo[4],-z],   # 44
+        [xi[4],yi[4],-z],   # 45
+
+        [xi[4],yi[4],z],    # 46
+        [xo[0],yo[0],z],    # 47
+        [xi[4],yi[4],-z],   # 48
+        [xo[0],yo[0],-z],   # 49
+
+        [xo[0],yo[0],-z],   # 50
+        [xi[0],yi[0],-z],   # 51
+        [xo[1],yo[1],-z],   # 52
+        [xi[1],yi[1],-z],   # 53
+        [xo[2],yo[2],-z],   # 54
+        [xi[2],yi[2],-z],   # 55
+        [xo[3],yo[3],-z],   # 56
+        [xi[3],yi[3],-z],   # 57
+        [xo[4],yo[4],-z],   # 58
+        [xi[4],yi[4],-z],   # 59
+    ],dtype=float32)
+    normals = array([
+        [0,0,z],            # 0
+        [0,0,z],            # 1
+        [0,0,z],            # 2
+        [0,0,z],            # 3
+        [0,0,z],            # 4
+        [0,0,z],            # 5
+        [0,0,z],            # 6
+        [0,0,z],            # 7
+        [0,0,z],            # 8
+        [0,0,z],            # 9
+
+        [-xi[3],-yi[3],0],  # 10
+        [-xi[3],-yi[3],0],  # 11
+        [-xi[3],-yi[3],0],  # 12
+        [-xi[3],-yi[3],0],  # 13
+
+        [-xi[2],-yi[2],0],  # 14
+        [-xi[2],-yi[2],0],  # 15
+        [-xi[2],-yi[2],0],  # 16
+        [-xi[2],-yi[2],0],  # 17
+
+        [-xi[4],-yi[4],0],  # 18
+        [-xi[4],-yi[4],0],  # 19
+        [-xi[4],-yi[4],0],  # 20
+        [-xi[4],-yi[4],0],  # 21
+
+        [-xi[3],-yi[3],0],  # 22
+        [-xi[3],-yi[3],0],  # 23
+        [-xi[3],-yi[3],0],  # 24
+        [-xi[3],-yi[3],0],  # 25
+
+        [-xi[0],-yi[0],0],  # 26
+        [-xi[0],-yi[0],0],  # 27
+        [-xi[0],-yi[0],0],  # 28
+        [-xi[0],-yi[0],0],  # 29
+
+        [-xi[4],-yi[4],0],  # 30
+        [-xi[4],-yi[4],0],  # 31
+        [-xi[4],-yi[4],0],  # 32
+        [-xi[4],-yi[4],0],  # 33
+
+        [-xi[1],-yi[1],0],  # 34
+        [-xi[1],-yi[1],0],  # 35
+        [-xi[1],-yi[1],0],  # 36
+        [-xi[1],-yi[1],0],  # 37
+
+        [-xi[0],-yi[0],0],  # 38
+        [-xi[0],-yi[0],0],  # 39
+        [-xi[0],-yi[0],0],  # 40
+        [-xi[0],-yi[0],0],  # 41
+
+        [-xi[2],-yi[2],0],  # 42
+        [-xi[2],-yi[2],0],  # 43
+        [-xi[2],-yi[2],0],  # 44
+        [-xi[2],-yi[2],0],  # 45
+
+        [-xi[1],-yi[1],0],  # 46
+        [-xi[1],-yi[1],0],  # 47
+        [-xi[1],-yi[1],0],  # 48
+        [-xi[1],-yi[1],0],  # 49
+
+        [0,0,-z],           # 50
+        [0,0,-z],           # 51
+        [0,0,-z],           # 52
+        [0,0,-z],           # 53
+        [0,0,-z],           # 54
+        [0,0,-z],           # 55
+        [0,0,-z],           # 56
+        [0,0,-z],           # 57
+        [0,0,-z],           # 58
+        [0,0,-z],           # 59
+    ],dtype=float32)
+    #triangles = array([
+    #    [0,1,9],
+    #    [1,2,3],
+    #    [3,4,5],
+    #    [5,6,7],
+    #    [7,8,9],
+    #])
+    triangles = array([
+        # Top face
+        [0,4,7],
+        [2,5,8],
+        [0,3,6],
+
+        # Sides
+        [10,11,12],
+        [11,12,13],
+
+        [14,15,16],
+        [15,16,17],
+
+        [18,19,20],
+        [19,20,21],
+
+        [22,23,24],
+        [23,24,25],
+
+        [26,27,28],
+        [27,28,29],
+
+        [30,31,32],
+        [31,32,33],
+
+        [34,35,36],
+        [35,36,37],
+
+        [38,39,40],
+        [39,40,41],
+
+        [42,43,44],
+        [43,44,45],
+
+        [46,47,48],
+        [47,48,49],
+
+        # Bottom face
+        [50,54,57],
+        [52,55,58],
+        [50,53,56],
+    ],dtype=int32)
+    # Shift points so that one of the star points is on the origi
+    # FLAG: This need to be applied to column 0 and 1 of vertices
+    #xo = xo - xo[0]
+    #yo = yo - yo[0]
+    #xi = xi - xo[0]
+    #yi = yi - yo[0]
     return vertices, normals, triangles
 
    
