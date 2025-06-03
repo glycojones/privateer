@@ -241,19 +241,19 @@ def draw_glycoblocks(session,Glycans):
                 v = vp.transform_points(v)
                 d.set_geometry(v, n, t)
             elif sugarname in starsugars:
-                v, n, t = star_geometry(1.4,1)
+                v, n, t = star_geometry(2.0,1)
                 # Rotate to match linkage positions
-                #tl = vector_rotation((v[9,0]-v[10,0],v[9,1]-v[10,1],v[9,2]-v[10,2]),(C2[0]-C5[0],C2[1]-C5[1],C2[2]-C5[2]))
-                #v = tl.transform_points(v, in_place=True)
-                #n = tl.transform_vectors(n, in_place=True)
+                tl = vector_rotation((v[5,0]-v[0,0],v[5,1]-v[0,1],v[5,2]-v[0,2]),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                v = tl.transform_points(v, in_place=True)
+                n = tl.transform_vectors(n, in_place=True)
                 # Rotate to match the plane of the sugar ring
                 tr = vector_rotation((n[0,0],n[0,1],n[0,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
                 v = tr.transform_points(v, in_place=True)
                 n = tr.transform_vectors(n, in_place=True)
                 # Rotate to match linkage positions again now we're in plane
-                #tl = vector_rotation((v[9,0]-v[10,0],v[9,1]-v[10,1],v[9,2]-v[10,2]),(C2[0]-C5[0],C2[1]-C5[1],C2[2]-C5[2]))
-                #v = tl.transform_points(v, in_place=True)
-                #n = tl.transform_vectors(n, in_place=True)
+                tl = vector_rotation((v[5,0]-v[0,0],v[5,1]-v[0,1],v[5,2]-v[0,2]),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                v = tl.transform_points(v, in_place=True)
+                n = tl.transform_vectors(n, in_place=True)
                 # Translate to the centre of the sugar ring
                 vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
                 v = vp.transform_points(v)
@@ -329,6 +329,9 @@ def draw_glycoblocks(session,Glycans):
                         #    pos1 = (v[12,:] + v[13,:] + v[14,:] + v[15,:])/4.0
                         else: 
                             pos1 = [link["x1"],link["y1"],link["z1"]]
+                    elif sugarname in starsugars:
+                        if link["atom_number_1"] == "1":
+                            pos1 = (v[5,:] + v[55,:])/2.0
                     glycan["Torsions"][i]["x1"] = pos1[0]
                     glycan["Torsions"][i]["y1"] = pos1[1]
                     glycan["Torsions"][i]["z1"] = pos1[2]
@@ -369,6 +372,9 @@ def draw_glycoblocks(session,Glycans):
                         #    pos2 = (v[12,:] + v[13,:] + v[14,:] + v[15,:])/4.0
                         else: 
                             pos2 = [link["x2"],link["y2"],link["z2"]]
+                    elif sugarname in starsugars:
+                        if link["atom_number_2"] == "1":
+                            pos2 = (v[5,:] + v[55,:])/2.0
                     glycan["Torsions"][i]["x2"] = pos2[0]
                     glycan["Torsions"][i]["y2"] = pos2[1]
                     glycan["Torsions"][i]["z2"] = pos2[2]
@@ -500,7 +506,6 @@ def triangular_prism_geometry(l,h):
         [15,16,17],
     ],dtype=int32)
     return vertices, normals, triangles
-
 def star_geometry(rout, h):
     from numpy import array, zeros, sqrt, cos, sin, pi, float32, int32
     xo = zeros(5)
@@ -654,24 +659,18 @@ def star_geometry(rout, h):
         [-xi[1],-yi[1],0],  # 48
         [-xi[1],-yi[1],0],  # 49
 
-        [0,0,-z],           # 50
-        [0,0,-z],           # 51
-        [0,0,-z],           # 52
-        [0,0,-z],           # 53
-        [0,0,-z],           # 54
-        [0,0,-z],           # 55
-        [0,0,-z],           # 56
-        [0,0,-z],           # 57
-        [0,0,-z],           # 58
-        [0,0,-z],           # 59
+        [0,0,z],           # 50
+        [0,0,z],           # 51
+        [0,0,z],           # 52
+        [0,0,z],           # 53
+        [0,0,z],           # 54
+        [0,0,z],           # 55
+        [0,0,z],           # 56
+        [0,0,z],           # 57
+        [0,0,z],           # 58
+        [0,0,z],           # 59
     ],dtype=float32)
-    #triangles = array([
-    #    [0,1,9],
-    #    [1,2,3],
-    #    [3,4,5],
-    #    [5,6,7],
-    #    [7,8,9],
-    #])
+
     triangles = array([
         # Top face
         [0,4,7],
@@ -714,12 +713,9 @@ def star_geometry(rout, h):
         [52,55,58],
         [50,53,56],
     ],dtype=int32)
-    # Shift points so that one of the star points is on the origi
-    # FLAG: This need to be applied to column 0 and 1 of vertices
-    #xo = xo - xo[0]
-    #yo = yo - yo[0]
-    #xi = xi - xo[0]
-    #yi = yi - yo[0]
+    # Shift points so that one of the star points is on the origin
+    #vertices[:,0] = vertices[:,0]-xo[0]
+    #vertices[:,1] = vertices[:,1]-yo[0]
     return vertices, normals, triangles
 
    
