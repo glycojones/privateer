@@ -600,7 +600,7 @@ def star_geometry(rout, h):
         [xo[4],yo[4],-z],   # 58
         [xi[4],yi[4],-z],   # 59
     ],dtype=float32)
-    """
+
     normals = array([
         [0,0,z],            # 0
         [0,0,z],            # 1
@@ -617,80 +617,6 @@ def star_geometry(rout, h):
         [-xi[3],-yi[3],0],  # 11
         [-xi[3],-yi[3],0],  # 12
         [-xi[3],-yi[3],0],  # 13
-
-        [-xi[2],-yi[2],0],  # 14
-        [-xi[2],-yi[2],0],  # 15
-        [-xi[2],-yi[2],0],  # 16
-        [-xi[2],-yi[2],0],  # 17
-
-        [-xi[4],-yi[4],0],  # 18
-        [-xi[4],-yi[4],0],  # 19
-        [-xi[4],-yi[4],0],  # 20
-        [-xi[4],-yi[4],0],  # 21
-
-        [-xi[3],-yi[3],0],  # 22
-        [-xi[3],-yi[3],0],  # 23
-        [-xi[3],-yi[3],0],  # 24
-        [-xi[3],-yi[3],0],  # 25
-
-        [-xi[0],-yi[0],0],  # 26
-        [-xi[0],-yi[0],0],  # 27
-        [-xi[0],-yi[0],0],  # 28
-        [-xi[0],-yi[0],0],  # 29
-
-        [-xi[4],-yi[4],0],  # 30
-        [-xi[4],-yi[4],0],  # 31
-        [-xi[4],-yi[4],0],  # 32
-        [-xi[4],-yi[4],0],  # 33
-
-        [-xi[1],-yi[1],0],  # 34
-        [-xi[1],-yi[1],0],  # 35
-        [-xi[1],-yi[1],0],  # 36
-        [-xi[1],-yi[1],0],  # 37
-
-        [-xi[0],-yi[0],0],  # 38
-        [-xi[0],-yi[0],0],  # 39
-        [-xi[0],-yi[0],0],  # 40
-        [-xi[0],-yi[0],0],  # 41
-
-        [-xi[2],-yi[2],0],  # 42
-        [-xi[2],-yi[2],0],  # 43
-        [-xi[2],-yi[2],0],  # 44
-        [-xi[2],-yi[2],0],  # 45
-
-        [-xi[1],-yi[1],0],  # 46
-        [-xi[1],-yi[1],0],  # 47
-        [-xi[1],-yi[1],0],  # 48
-        [-xi[1],-yi[1],0],  # 49
-
-        [0,0,z],            # 50
-        [0,0,z],            # 51
-        [0,0,z],            # 52
-        [0,0,z],            # 53
-        [0,0,z],            # 54
-        [0,0,z],            # 55
-        [0,0,z],            # 56
-        [0,0,z],            # 57
-        [0,0,z],            # 58
-        [0,0,z],            # 59
-    ],dtype=float32)
-    """
-    normals = array([
-        [0,0,z],            # 0
-        [0,0,z],            # 1
-        [0,0,z],            # 2
-        [0,0,z],            # 3
-        [0,0,z],            # 4
-        [0,0,z],            # 5
-        [0,0,z],            # 6
-        [0,0,z],            # 7
-        [0,0,z],            # 8
-        [0,0,z],            # 9
-
-        [-xi[3],yi[3],0],  # 10
-        [-xi[3],yi[3],0],  # 11
-        [-xi[3],yi[3],0],  # 12
-        [-xi[3],yi[3],0],  # 13
 
         [-xi[2],-yi[2],0],  # 14
         [-xi[2],-yi[2],0],  # 15
@@ -791,13 +717,6 @@ def star_geometry(rout, h):
         [52,55,58],
         [50,53,56],
     ],dtype=int32)
-    # Shift points so that one of the star points is on the origin
-    #vertices[:,0] = vertices[:,0]-xo[0]
-    #vertices[:,1] = vertices[:,1]-yo[0]
-    # Subdivide triangles
-    #while 4*len(triangles) <= 1000:
-    #    from chimerax.surface._surface import subdivide_triangles
-    #    vertices, triangles = subdivide_triangles(vertices, triangles)
     return vertices, normals, triangles
 """
 def hexagon_geometry(l,h):
