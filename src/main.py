@@ -357,12 +357,20 @@ def draw_glycoblocks(session,Glycans):
                         #         pos1 = [link["x1"],link["y1"],link["z1"]]
                         # else:
                         #     pos1 = [link["x1"],link["y1"],link["z1"]]
-                        if link["atom_number_1"] == 1:
+                        if link["atom_number_1"] == "1":
                             pos1 = (v[0,:]+v[1,:])/2.0
-                        elif link["atom_number_1"] == 4:
+                        elif link["atom_number_1"] == "2":
+                            pos1 = (v[0,:] + v[1,:] + v[2,:] + v[3,:])/4.0
+                        elif link["atom_number_1"] == "3":
+                            pos1 = (v[2,:]+v[3,:])/2.0
+                        elif link["atom_number_1"] == "4":
                             pos1 = (v[8,:] + v[9,:] + v[10,:] + v[11,:])/4.0
-                        else:
-                            pos1 = [link["x1"],link["y1"],link["z1"]]
+                        elif link["atom_number_1"] == "5":
+                            pos1 = (v[8,:]+v[9,:])/2.0
+                        elif link["atom_number_1"] == "6":
+                            pos1 = (v[8,:]+v[9,:])/2.0
+                        #else:
+                        #    pos1 = [link["x1"],link["y1"],link["z1"]]
                     elif sugarname in diamondsugars:
                         if link["atom_number_1"] == "2":
                             pos1 = (v[0,:] + v[1,:])/2.0
@@ -420,12 +428,20 @@ def draw_glycoblocks(session,Glycans):
                         #         pos2 = [link["x2"],link["y2"],link["z2"]]
                         # else:
                         #     pos2 = [link["x2"],link["y2"],link["z2"]]
-                        if link["atom_number_2"] == 1:
+                        if link["atom_number_2"] == "1":
                             pos2 = (v[0,:]+v[1,:])/2.0
-                        elif link["atom_number_2"] == 4:
+                        elif link["atom_number_2"] == "2":
+                            pos2 = (v[0,:] + v[1,:] + v[2,:] + v[3,:])/4.0
+                        elif link["atom_number_2"] == "3":
+                            pos2 = (v[2,:]+v[3,:])/2.0
+                        elif link["atom_number_2"] == "4":
                             pos2 = (v[8,:] + v[9,:] + v[10,:] + v[11,:])/4.0
-                        else:
-                            pos2 = [link["x2"],link["y2"],link["z2"]]
+                        elif link["atom_number_2"] == "5":
+                            pos2 = (v[8,:]+v[9,:])/2.0
+                        elif link["atom_number_2"] == "6":
+                            pos2 = (v[8,:]+v[9,:])/2.0
+                        #else:
+                        #    pos2 = [link["x2"],link["y2"],link["z2"]]
                     elif sugarname in diamondsugars:
                         if link["atom_number_2"] == "2":
                             pos2 = (v[0,:] + v[1,:])/2.0
