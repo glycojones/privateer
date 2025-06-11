@@ -184,42 +184,70 @@ def draw_glycoblocks(session,Glycans):
                 d.set_geometry(v, n, t)
             elif sugarname in trianglesugars:
                 # Create the shape
-                v, n, t = triangular_prism_geometry(3.5,1.0) 
-                if sugar["num_bonds"] == 1:
-                    # Rotate to match linkage positions of 2D SNFG based on number of bonds
-                    tl = vector_rotation(((v[2,0]+v[6,0])/2.0-v[0,0],(v[2,1]+v[6,1])/2.0-v[0,1],(v[2,2]+v[6,2])/2.0)-v[0,2],(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
-                    v = tl.transform_points(v, in_place=True)
-                    n = tl.transform_vectors(n, in_place=True)  
-                    # Rotate to match the plane of the sugar ring
-                    tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
-                    v = tr.transform_points(v, in_place=True)
-                    n = tr.transform_vectors(n, in_place=True)
-                    # Rotate to match linkage positions of 2D SNFG based on number of bonds again now we're in plane
-                    tl = vector_rotation(((v[2,0]+v[6,0])/2.0-v[0,0],(v[2,1]+v[6,1])/2.0-v[0,1],(v[2,2]+v[6,2])/2.0)-v[0,2],(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
-                    v = tl.transform_points(v, in_place=True)
-                    n = tl.transform_vectors(n, in_place=True)  
-                    # Translate to correct location based on vertex of triangle
-                    vp = Place(origin = (C4[0], C4[1], C4[2]))
-                    v = vp.transform_points(v)
-                if sugar["num_bonds"] == 2: 
-                    # Rotate to match linkage positions of 2D SNFG based on number of bonds 
-                    tl = vector_rotation((v[8,0]-v[10,0],v[8,1]-v[10,1],v[8,2]-v[10,2]),(C1[0]-C3[0],C1[1]-C3[1],C1[2]-C3[2]))
-                    v = tl.transform_points(v, in_place=True)
-                    n = tl.transform_vectors(n, in_place=True)
-                    # Rotate to match the plane of the sugar ring
-                    tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
-                    v = tr.transform_points(v, in_place=True)
-                    n = tr.transform_vectors(n, in_place=True)  
-                    # Rotate to match linkage positions of 2D SNFG based on number of bonds again now we're in plane
-                    tl = vector_rotation((v[8,0]-v[10,0],v[8,1]-v[10,1],v[8,2]-v[10,2]),(C1[0]-C3[0],C1[1]-C3[1],C1[2]-C3[2]))
-                    v = tl.transform_points(v, in_place=True)
-                    n = tl.transform_vectors(n, in_place=True)
-                    # Translate to correct location based on vertex of triangle
-                    vp = Place(origin = (C2[0], C2[1], C2[2]))
-                    v = vp.transform_points(v)
-                # Translate to the centre of the sugar ring
-                #vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
-                #v = vp.transform_points(v)
+                v, n, t = triangular_prism_geometry(3.2,1.0) 
+                # if sugar["num_bonds"] == 1:
+                #     # Rotate to match linkage positions of 2D SNFG based on number of bonds
+                #     tl = vector_rotation(((v[2,0]+v[6,0])/2.0-v[0,0],(v[2,1]+v[6,1])/2.0-v[0,1],(v[2,2]+v[6,2])/2.0)-v[0,2],(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                #     v = tl.transform_points(v, in_place=True)
+                #     n = tl.transform_vectors(n, in_place=True)  
+                #     # Rotate to match the plane of the sugar ring
+                #     tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+                #     v = tr.transform_points(v, in_place=True)
+                #     n = tr.transform_vectors(n, in_place=True)
+                #     # Rotate to match linkage positions of 2D SNFG based on number of bonds again now we're in plane
+                #     tl = vector_rotation(((v[2,0]+v[6,0])/2.0-v[0,0],(v[2,1]+v[6,1])/2.0-v[0,1],(v[2,2]+v[6,2])/2.0)-v[0,2],(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                #     v = tl.transform_points(v, in_place=True)
+                #     n = tl.transform_vectors(n, in_place=True)  
+                #     # Translate to correct location based on vertex of triangle
+                #     vp = Place(origin = (C4[0], C4[1], C4[2]))
+                #     v = vp.transform_points(v)
+                # elif sugar["num_bonds"] == 2: 
+                #     # Rotate to match linkage positions of 2D SNFG based on number of bonds 
+                #     tl = vector_rotation((v[8,0]-v[10,0],v[8,1]-v[10,1],v[8,2]-v[10,2]),(C1[0]-C3[0],C1[1]-C3[1],C1[2]-C3[2]))
+                #     v = tl.transform_points(v, in_place=True)
+                #     n = tl.transform_vectors(n, in_place=True)
+                #     # Rotate to match the plane of the sugar ring
+                #     tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+                #     v = tr.transform_points(v, in_place=True)
+                #     n = tr.transform_vectors(n, in_place=True)  
+                #     # Rotate to match linkage positions of 2D SNFG based on number of bonds again now we're in plane
+                #     tl = vector_rotation((v[8,0]-v[10,0],v[8,1]-v[10,1],v[8,2]-v[10,2]),(C1[0]-C3[0],C1[1]-C3[1],C1[2]-C3[2]))
+                #     v = tl.transform_points(v, in_place=True)
+                #     n = tl.transform_vectors(n, in_place=True)
+                #     # Translate to correct location based on vertex of triangle
+                #     vp = Place(origin = (C2[0], C2[1], C2[2]))
+                #     v = vp.transform_points(v)
+                # else: 
+                #     # Rotate to match linkage positions of 2D SNFG based on number of bonds
+                #     tl = vector_rotation((v[0,0]-(v[2,0]+v[6,0])/2.0,v[0,1]-(v[2,1]+v[6,1])/2.0,v[0,2]-(v[2,2]+v[6,2])/2.0),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                #     v = tl.transform_points(v, in_place=True)
+                #     n = tl.transform_vectors(n, in_place=True)  
+                #     # Rotate to match the plane of the sugar ring
+                #     tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+                #     v = tr.transform_points(v, in_place=True)
+                #     n = tr.transform_vectors(n, in_place=True)
+                #     # Rotate to match linkage positions of 2D SNFG based on number of bonds again now we're in plane
+                #     tl = vector_rotation(((v[2,0]+v[6,0])/2.0-v[0,0],(v[2,1]+v[6,1])/2.0-v[0,1],(v[2,2]+v[6,2])/2.0)-v[0,2],(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                #     v = tl.transform_points(v, in_place=True)
+                #     n = tl.transform_vectors(n, in_place=True)  
+                #     # Translate to correct location based on vertex of triangle
+                #     vp = Place(origin = (C4[0], C4[1], C4[2]))
+                #     v = vp.transform_points(v)
+                # Rotate to match linkage positions of 2D SNFG based on number of bonds
+                tl = vector_rotation((v[0,0]-(v[2,0]+v[6,0])/2.0,v[0,1]-(v[2,1]+v[6,1])/2.0,v[0,2]-(v[2,2]+v[6,2])/2.0),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                v = tl.transform_points(v, in_place=True)
+                n = tl.transform_vectors(n, in_place=True)  
+                # Rotate to match the plane of the sugar ring
+                tr = vector_rotation((n[15,0],n[15,1],n[15,2]),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
+                v = tr.transform_points(v, in_place=True)
+                n = tr.transform_vectors(n, in_place=True)
+                # Rotate to match linkage positions of 2D SNFG based on number of bonds again now we're in plane
+                tl = vector_rotation((v[0,0]-(v[2,0]+v[6,0])/2.0,v[0,1]-(v[2,1]+v[6,1])/2.0,v[0,2]-(v[2,2]+v[6,2])/2.0),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
+                v = tl.transform_points(v, in_place=True)
+                n = tl.transform_vectors(n, in_place=True)  
+                #     # Translate to correct location based on vertex of triangle
+                vp = Place(origin = (C1[0], C1[1], C1[2]))
+                v = vp.transform_points(v)
                 d.set_geometry(v, n, t)
             elif sugarname in diamondsugars:
                 # Create the shape
@@ -259,7 +287,7 @@ def draw_glycoblocks(session,Glycans):
                 v = vp.transform_points(v)
                 d.set_geometry(v, n, t)
             else:
-                v, n, t = cylinder_geometry(radius = 1.5, height = 0.9, nc=25)
+                v, n, t = hexagon_geometry(1.5, 1.0)
                 # Rotate to match the plane of the sugar ring
                 tr = vector_rotation((0,0,1),(sugar_plane_i, sugar_plane_j, sugar_plane_k))
                 v = tr.transform_points(v, in_place=True)
@@ -293,8 +321,16 @@ def draw_glycoblocks(session,Glycans):
                     if sugarname in circlesugars:
                         if link["atom_number_1"] == "1":
                             pos1 = (v[0,:] + v[nc,:])/2.0
+                        elif link["atom_number_1"] == "2":
+                            pos1 = (v[int(5*nc/6),:]+v[int(5*nc/6)+nc,:])/2.0
+                        elif link["atom_number_1"] == "3":
+                            pos1 = (v[int(2*nc/3),:]+v[int(2*nc/3)+nc,:])/2.0
                         elif link["atom_number_1"] == "4":
                             pos1 = (v[int(nc/2),:]+v[int(nc/2)+nc,:])/2.0
+                        elif link["atom_number_1"] == "5":
+                            pos1 = (v[int(nc/3),:]+v[int(nc/3)+nc,:])/2.0
+                        elif link["atom_number_1"] == "6":
+                            pos1 = (v[int(nc/3),:]+v[int(nc/3)+nc,:])/2.0
                         else: 
                             pos1 = [link["x1"],link["y1"],link["z1"]]
                     elif sugarname in squaresugars:
@@ -307,19 +343,26 @@ def draw_glycoblocks(session,Glycans):
                         else: 
                             pos1 = [link["x1"],link["y1"],link["z1"]]
                     elif sugarname in trianglesugars:
-                        if sugar["num_bonds"] == 1:
-                            if link["atom_number_1"] == "1":
-                                pos1 = (v[8,:] + v[9,:] + v[10,:] + v[11,:])/4.0
-                                
-                            else:
-                                pos1 = [link["x1"],link["y1"],link["z1"]]
-                        elif sugar["num_bonds"] == 2:
-                            if link["atom_number_1"] == "1":
-                                pos1 = (v[4,:]*2 + v[5,:]*2 + v[6,:] + v[7,:])/6.0
-                            elif link["atom_number_1"] == "3":
-                                pos1 = (v[0,:]*2 + v[1,:]*2 + v[2,:] + v[3,:])/6.0
-                            else:
-                                pos1 = [link["x1"],link["y1"],link["z1"]]
+                        # if sugar["num_bonds"] == 1:
+                        #     if link["atom_number_1"] == "1":
+                        #         pos1 = (v[8,:] + v[9,:] + v[10,:] + v[11,:])/4.0
+                        #     else:
+                        #         pos1 = [link["x1"],link["y1"],link["z1"]]
+                        # elif sugar["num_bonds"] == 2:
+                        #     if link["atom_number_1"] == "1":
+                        #         pos1 = (v[4,:]*2 + v[5,:]*2 + v[6,:] + v[7,:])/6.0
+                        #     elif link["atom_number_1"] == "3":
+                        #         pos1 = (v[0,:]*2 + v[1,:]*2 + v[2,:] + v[3,:])/6.0
+                        #     else:
+                        #         pos1 = [link["x1"],link["y1"],link["z1"]]
+                        # else:
+                        #     pos1 = [link["x1"],link["y1"],link["z1"]]
+                        if link["atom_number_1"] == 1:
+                            pos1 = (v[0,:]+v[1,:])/2.0
+                        elif link["atom_number_1"] == 4:
+                            pos1 = (v[8,:] + v[9,:] + v[10,:] + v[11,:])/4.0
+                        else:
+                            pos1 = [link["x1"],link["y1"],link["z1"]]
                     elif sugarname in diamondsugars:
                         if link["atom_number_1"] == "2":
                             pos1 = (v[0,:] + v[1,:])/2.0
@@ -332,6 +375,10 @@ def draw_glycoblocks(session,Glycans):
                     elif sugarname in starsugars:
                         if link["atom_number_1"] == "1":
                             pos1 = (v[5,:] + v[55,:])/2.0
+                        else:
+                            pos1 = [link["x1"],link["y1"],link["z1"]]
+                    else:
+                        pos1 = [link["x1"],link["y1"],link["z1"]]
                     glycan["Torsions"][i]["x1"] = pos1[0]
                     glycan["Torsions"][i]["y1"] = pos1[1]
                     glycan["Torsions"][i]["z1"] = pos1[2]
@@ -339,8 +386,16 @@ def draw_glycoblocks(session,Glycans):
                     if sugarname in circlesugars:
                         if link["atom_number_2"] == "1":
                             pos2 = (v[0,:] + v[nc,:])/2.0
+                        elif link["atom_number_2"] == "2":
+                            pos2 = (v[int(5*nc/6),:]+v[int(5*nc/6)+nc,:])/2.0
+                        elif link["atom_number_2"] == "3":
+                            pos2 = (v[int(2*nc/3),:]+v[int(2*nc/3)+nc,:])/2.0
                         elif link["atom_number_2"] == "4":
                             pos2 = (v[int(nc/2),:]+v[int(nc/2)+nc,:])/2.0
+                        elif link["atom_number_2"] == "5":
+                            pos2 = (v[int(nc/3),:]+v[int(nc/3)+nc,:])/2.0
+                        elif link["atom_number_2"] == "6":
+                            pos2 = (v[int(nc/3),:]+v[int(nc/3)+nc,:])/2.0
                         else: 
                             pos2 = [link["x2"],link["y2"],link["z2"]] 
                     elif sugarname in squaresugars:
@@ -351,18 +406,26 @@ def draw_glycoblocks(session,Glycans):
                         else: 
                             pos2 = [link["x2"],link["y2"],link["z2"]]
                     elif sugarname in trianglesugars:
-                        if sugar["num_bonds"] == 1:
-                            if link["atom_number_2"] == "1":
-                                pos2 = (v[8,:] + v[9,:] + v[10,:] + v[11,:])/4.0
-                            else:
-                                pos2 = [link["x2"],link["y2"],link["z2"]]
-                        elif sugar["num_bonds"] == 2:
-                            if link["atom_number_2"] == "1":
-                                pos2 = (v[4,:]*2 + v[5,:]*2 + v[6,:] + v[7,:])/6.0
-                            elif link["atom_number_2"] == "3":
-                                pos2 = (v[0,:]*2 + v[1,:]*2 + v[2,:] + v[3,:])/6.0
-                            else:
-                                pos2 = [link["x2"],link["y2"],link["z2"]]
+                        # if sugar["num_bonds"] == 1:
+                        #     if link["atom_number_2"] == "1":
+                        #         pos2 = (v[8,:] + v[9,:] + v[10,:] + v[11,:])/4.0
+                        #     else:
+                        #         pos2 = [link["x2"],link["y2"],link["z2"]]
+                        # elif sugar["num_bonds"] == 2:
+                        #     if link["atom_number_2"] == "1":
+                        #         pos2 = (v[4,:]*2 + v[5,:]*2 + v[6,:] + v[7,:])/6.0
+                        #     elif link["atom_number_2"] == "3":
+                        #         pos2 = (v[0,:]*2 + v[1,:]*2 + v[2,:] + v[3,:])/6.0
+                        #     else:
+                        #         pos2 = [link["x2"],link["y2"],link["z2"]]
+                        # else:
+                        #     pos2 = [link["x2"],link["y2"],link["z2"]]
+                        if link["atom_number_2"] == 1:
+                            pos2 = (v[0,:]+v[1,:])/2.0
+                        elif link["atom_number_2"] == 4:
+                            pos2 = (v[8,:] + v[9,:] + v[10,:] + v[11,:])/4.0
+                        else:
+                            pos2 = [link["x2"],link["y2"],link["z2"]]
                     elif sugarname in diamondsugars:
                         if link["atom_number_2"] == "2":
                             pos2 = (v[0,:] + v[1,:])/2.0
@@ -375,6 +438,10 @@ def draw_glycoblocks(session,Glycans):
                     elif sugarname in starsugars:
                         if link["atom_number_2"] == "1":
                             pos2 = (v[5,:] + v[55,:])/2.0
+                        else:
+                            pos2 = [link["x2"],link["y2"],link["z2"]]
+                    else:
+                        pos2 = [link["x2"],link["y2"],link["z2"]]
                     glycan["Torsions"][i]["x2"] = pos2[0]
                     glycan["Torsions"][i]["y2"] = pos2[1]
                     glycan["Torsions"][i]["z2"] = pos2[2]
@@ -718,7 +785,7 @@ def star_geometry(rout, h):
         [50,53,56],
     ],dtype=int32)
     return vertices, normals, triangles
-"""
+
 def hexagon_geometry(l,h):
     from numpy import array, zeros, sqrt, cos, sin, pi, float32, int32
     vertices = array([
@@ -766,9 +833,88 @@ def hexagon_geometry(l,h):
         [l/2,   -sqrt(3)*l/2,   -h/2],  # 34
         [-l/2,  -sqrt(3)*l/2,   -h/2],  # 35
     ],dtype=float32)
-    normals = 
-    triangles  = 
+    normals = array([
+        [0,0,1],    # 0
+        [0,0,1],    # 1
+        [0,0,1],    # 2
+        [0,0,1],    # 3
+        [0,0,1],    # 4
+        [0,0,1],    # 5
+
+        [0,1,0],    # 6
+        [0,1,0],    # 7
+        [0,1,0],    # 8
+        [0,1,0],    # 9
+
+        [1,1,0],    # 10
+        [1,1,0],    # 11
+        [1,1,0],    # 12
+        [1,1,0],    # 13
+
+        [1,-1,0],   # 14
+        [1,-1,0],   # 15
+        [1,-1,0],   # 16
+        [1,-1,0],   # 17
+
+        [0,-1,0],   # 18
+        [0,-1,0],   # 19
+        [0,-1,0],   # 20
+        [0,-1,0],   # 21
+
+        [-1,-1,0],  # 22
+        [-1,-1,0],  # 23
+        [-1,-1,0],  # 24
+        [-1,-1,0],  # 25
+
+        [-1,1,0],   # 26
+        [-1,1,0],   # 27
+        [-1,1,0],   # 28
+        [-1,1,0],   # 29
+
+        [0,0,-1],   # 30
+        [0,0,-1],   # 31
+        [0,0,-1],   # 32
+        [0,0,-1],   # 33
+        [0,0,-1],   # 34
+        [0,0,-1],   # 35
+        ],dtype=float32)
+    triangles = array([
+        # Top face
+        [0,3,1],
+        [1,4,2],
+        [2,5,3],
+        [3,0,4],
+        [4,1,5],
+        [5,2,0],
+
+        # Sides
+        [6,7,8],
+        [9,8,7],
+
+        [10,11,12],
+        [13,12,11],
+
+        [14,15,16],
+        [17,16,15],
+
+        [18,19,20],
+        [21,20,19],
+
+        [22,23,24],
+        [25,24,23],
+
+        [26,27,28],
+        [29,28,27],
+
+        # Bottom face
+        [31,33,30],
+        [32,34,31],
+        [33,35,32],
+        [34,30,33],
+        [35,31,34],
+        [30,32,35],
+    ],dtype=int32)
     return vertices, normals, triangles
-"""
+
    
 
