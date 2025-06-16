@@ -231,6 +231,7 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                 float C5_y = pos5.coord_orth().y();
                 float C5_z = pos5.coord_orth().z();
                 int count = 0;
+                auto linkageatomslist = pybind11::list();
                 for(int j = 0; j < torsion_list.size(); j++) {
                     std::string sugar_1 = torsion_list[j].first_residue_name;
                     std::string sugar_2 = torsion_list[j].second_residue_name;
@@ -240,9 +241,12 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                     int secondresID = torsion_list[j].second_seqid;
                     if (sugar.chain_id().trim().substr(0,1) == firstchainID && sugar.get_seqnum() == firstresID && sugar.type().trim() == sugar_1){
                         count += 1;
+                        linkageatomslist.append(torsion_list[j].donor_atom);
+                        // FLAG: Add in here a list of atoms so that I know if both C2 and C3 are in use on square and diamond sugars
                     }
                     if (sugar.chain_id().trim().substr(0,1) == secondchainID && sugar.get_seqnum() == secondresID && sugar.type().trim() == sugar_2){
                         count +=1;
+                        linkageatomslist.append(torsion_list[j].acceptor_atom);
                     }
                 }
                 auto coorddict = pybind11::dict("sugarname"_a = sugarname, "chainID"_a = sugar_chain_ID, "resID"_a = sugar_res_ID,
@@ -250,8 +254,9 @@ pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zs
                                                 "sugar_plane_i"_a = sugarplane_x, "sugar_plane_j"_a = sugarplane_y, "sugar_plane_k"_a = sugarplane_z, 
                                                 "C1_x"_a=C1_x, "C1_y"_a=C1_y, "C1_z"_a=C1_z, "C2_x"_a=C2_x, "C2_y"_a=C2_y, "C2_z"_a=C2_z,
                                                 "C3_x"_a=C3_x, "C3_y"_a=C3_y, "C3_z"_a=C3_z, "C4_x"_a=C4_x, "C4_y"_a=C4_y, "C4_z"_a=C4_z,
-                                                "C5_x"_a=C5_x, "C5_y"_a=C5_y, "C5_z"_a=C5_z, "num_bonds"_a=count);
+                                                "C5_x"_a=C5_x, "C5_y"_a=C5_y, "C5_z"_a=C5_z, "num_bonds"_a=count, "link_atoms"_a=linkageatomslist);
                 sugarcoordlist.append(coorddict);
+
             }
             auto resultsdict = pybind11::dict ("GlycanNum"_a=i, "WURCS"_a=wurcs_string, "GlycosylationType"_a=kindOfGlycan, "RootID"_a=list_of_glycans[i].get_root_by_name(), "glycanChainID"_a=current_chain,
                                                 "TorsionErr"_a=err->torsion_err, "ConformationErr"_a=err->conformation_err, "AnomerErr"_a=err->anomer_err, "PuckeringErr"_a=err->puckering_err, "ChiralityErr"_a=err->chirality_err,
