@@ -48,8 +48,8 @@ class PrivateerTool(ToolInstance):
         layout = QFormLayout()
         label1 = "Model ID:"
         self.combo_box = QComboBox()
-        for i, m in enumerate(models):
-            self.combo_box.addItem(str(i+1))
+        for m in models:
+            self.combo_box.addItem(str(m.id_string))
         #self.line_edit = QLineEdit()
         self.run_button = QPushButton("Run Privateer")
         self.glycoblocks_button = QPushButton("Show Glycoblocks")
