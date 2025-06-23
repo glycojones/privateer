@@ -1,4 +1,4 @@
-from chimerax.core.commands import CmdDesc, SaveFolderNameArg, IntArg, BoolArg, FloatArg, StringArg
+from chimerax.core.commands import CmdDesc, SaveFolderNameArg, IntArg, BoolArg, FloatArg, StringArg, ModelIdArg
 from chimerax import atomic
 from .main import *
 
@@ -6,18 +6,23 @@ from .main import *
 
 def privateer_validation(session,OutputFolderPath,modelID=None,display=False):
     models = atomic.all_structures(session)
+    if modelID != None:
+        model = None
+        for m in models:
+            if m.id_string == modelID:
+                model = m
+        if model == None:
+            session.logger.info(f"Error in running Privateer... Chosen modelID does not correspond to model loaded in the session.")
     if display:
-        ValidationReportAllGlycans = privateer_validation_wrapper(OutputFolderPath,models[modelID-1],modelID,display)
+        ValidationReportAllGlycans = privateer_validation_wrapper(session,OutputFolderPath,model,modelID,display)
         return ValidationReportAllGlycans
     else:
         if modelID == None:
             for i,m in enumerate(models):
-                privateer_validation_wrapper(OutputFolderPath,m,i+1)
+                privateer_validation_wrapper(session,OutputFolderPath,m,i+1)
             session.logger.info(f"Privateer has run carbohydrate validation on the structure models currently loaded in the session. The validation report is saved in {OutputFolderPath} with filename model-i_privateer-report.csv where i is the model index in the current session.")
         else:
-            if modelID-1 > len(models):
-                session.logger.info(f"Error in running Privateer... Chosen modelID exceeds the number of models loaded in the session.")
-            privateer_validation_wrapper(OutputFolderPath,models[modelID-1],modelID)
+            privateer_validation_wrapper(session,OutputFolderPath,model,modelID)
             session.logger.info(f"Privateer has run carbohydrate validation on the structure model {modelID}. The validation report is saved in {OutputFolderPath} with filename model-{modelID}_privateer-report.csv.")
 
 privateer_validation_desc = CmdDesc(
@@ -25,7 +30,7 @@ privateer_validation_desc = CmdDesc(
         ("OutputFolderPath", SaveFolderNameArg),
     ],
     optional=[
-        ("modelID", IntArg),
+        ("modelID", StringArg),
         ("display", BoolArg)
         ],
     synopsis="Provide a validation report on the model specified, or if no model is specified, on all the structure models currently loaded in the session. The validation report is saved in the specified location with filename model-i_privateer-report.csv where i is the model index in the current session."
@@ -117,13 +122,18 @@ privateer_torsion_plot_desc = CmdDesc(
 
 def privateer_glycoblocks(session, modelID):
     models = atomic.all_structures(session)
-    model = models[modelID-1]
-    Glycans = privateer_validation_wrapper(None,model,modelID,True)
-    draw_glycoblocks(session,Glycans)
+    m = None
+    for m in models:
+        if m.id_string == modelID:
+            model = m
+    if model == None:
+        session.logger.info(f"Error in running Privateer... Chosen modelID does not correspond to model loaded in the session.")
+    Glycans = privateer_validation_wrapper(session,None,model,modelID,True)
+    draw_glycoblocks(session,Glycans,modelID)
     
 privateer_glycoblocks_desc = CmdDesc(
     required=[
-        ("modelID", IntArg)
+        ("modelID", StringArg)
     ],
     synopsis="Display glycans in glycoblock represenstation in the ChimeraX view."
 )
