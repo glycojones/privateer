@@ -120,16 +120,28 @@ privateer_torsion_plot_desc = CmdDesc(
     synopsis="Producs a plot of known torsion angles for the specified linkage."
 )
 
+# def privateer_glycoblocks(session, modelID):
+#     models = atomic.all_structures(session)
+#     model = None
+#     for m in models:
+#         if m.id_string == modelID:
+#             model = m
+#     if model == None:
+#         session.logger.info(f"Error in running Privateer... Chosen modelID does not correspond to model loaded in the session.")
+#     Glycans = privateer_validation_wrapper(session,None,model,modelID,True)
+#     draw_glycoblocks(session,Glycans,modelID)
+
 def privateer_glycoblocks(session, modelID):
     models = atomic.all_structures(session)
-    m = None
+    model = None
     for m in models:
         if m.id_string == modelID:
             model = m
-    if model == None:
-        session.logger.info(f"Error in running Privateer... Chosen modelID does not correspond to model loaded in the session.")
-    Glycans = privateer_validation_wrapper(session,None,model,modelID,True)
-    draw_glycoblocks(session,Glycans,modelID)
+        if model == None:
+            session.logger.info(f"Error in running Privateer... Chosen modelID does not correspond to model loaded in the session.")
+    from .glycoblocks import Glycoblocks
+    Glycoblocks(model)
+        
     
 privateer_glycoblocks_desc = CmdDesc(
     required=[
