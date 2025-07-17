@@ -28,7 +28,7 @@ namespace privateer
                 std::string monomer_dir = privateer::restraints::check_monlib_access();
                 if (monomer_dir.empty())
                     throw std::runtime_error("Failed to locate $CLIBD_MON. Have ccp4 env variables been sourced?");
-
+        
                 gemmi::Structure st = gemmi::read_structure_file(input_model);
 
                 if (st.models.empty() || st.models[0].chains.empty())
@@ -36,21 +36,20 @@ namespace privateer
 
                 gemmi::setup_entities(st);
                 size_t initial_h = 0;
-                initial_h = gemmi::count_hydrogen_sites(st);
+                initial_h = gemmi::count_atom_sites(st);
 
                 std::vector<std::string> res_names = st.models[0].get_all_residue_names();
 
                 std::printf("Reading %zu monomers and all links from %s\n",
                             res_names.size(), input_model.c_str());
 
-                gemmi::MonLib monlib = gemmi::read_monomer_lib(monomer_dir, res_names,
-                                                               gemmi::cif::read_file);
+                gemmi::MonLib monlib = gemmi::read_monomer_lib(monomer_dir, res_names);
 
                 for (size_t i = 0; i != st.models.size(); ++i)
                     gemmi::prepare_topology(st, monlib, i, h_change, false);
 
-                std::printf("Hydrogen site count: %zu in input, %zu in output.\n",
-                            initial_h, gemmi::count_hydrogen_sites(st));
+                std::printf("Atom site count: %zu in input, %zu in output.\n",
+                            initial_h, gemmi::count_atom_sites(st));
 
                 // Clean up the H atoms that were placed at (0.00, 0.00, 0.00)
                 for (gemmi::Model &model : st.models)
@@ -84,7 +83,7 @@ namespace privateer
             catch (std::exception &e)
             {
                 std::fprintf(stderr, "ERROR: %s\n", e.what());
-                throw stderr;
+                // throw stderr;
             }
         }
 
@@ -106,7 +105,7 @@ namespace privateer
             this->hydrogenated_mglycology = clipper::MGlycology(this->hydrogenated_input_model, this->manb_object, torsions_zscore_database, false, "undefined");
         }
 
-        std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_CHPi_interactions(int glycanIndex)
+        std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_CHPi_interactions(int glycanIndex) // reference binding? vector of missed interactions / struct - possible interactions
         {
             std::vector<clipper::MGlycan> list_of_glycans = this->hydrogenated_mglycology.get_list_of_glycans();
             if (glycanIndex >= list_of_glycans.size() || glycanIndex < 0)
@@ -119,461 +118,286 @@ namespace privateer
             for (int sugar = 0; sugar < sugars_in_glycan.size(); sugar++)
             {
                 clipper::MSugar currentSugar = sugars_in_glycan[sugar];
-                std::vector<privateer::interactions::CHPiBond> contacts = get_stacked_residues_python(currentSugar, this->algorithm);
+                std::vector<privateer::interactions::CHPiBond> contacts = get_stacked_residues_python(currentSugar, sugar, sugars_in_glycan.size(), this->algorithm);
 
-                for (int contact = 0; contact < contacts.size(); contact++)
-                    result.push_back(contacts[contact]);
+                if (!contacts.empty())
+                {
+                    for(int contact = 0; contact < contacts.size(); contact++)
+                    {
+                        result.push_back(contacts[contact]);
+                    }
+                }
             }
             return result;
         }
 
-        clipper::Coord_orth get_aromatic_centre(clipper::MMonomer mmon, std::string ring = "A")
+    clipper::Coord_orth get_ring_atoms (clipper::MMonomer mmon, std::vector<std::string> ring_atoms)
+    {
+    clipper::Coord_orth coords(0.0, 0.0, 0.0);
+    int ring_size = ring_atoms.size();
+    
+        for (int atom = 0; atom < ring_atoms.size(); atom++)
         {
-            std::cout << "Inside get_aromatic centre" << std::endl;
+            coords += mmon.find(ring_atoms[atom], clipper::MM::ANY).coord_orth();
+        }
+        return clipper::Coord_orth(coords.x() / ring_size, coords.y() / ring_size, coords.z() / ring_size); // get coordinates for centre of π-ring
+    }
+    
+    clipper::Coord_orth get_aromatic_centre(clipper::MMonomer mmon, std::string ring) // change to references
+        {   // Average coordinates of atoms in the π-ring to get π-ring centre
+            clipper::Coord_orth result(0.0, 0.0, 0.0);
+
             if (mmon.type().trim() == "TRP")
             {
                 if (ring == "A")
-                { // pyrrole ring
-                    clipper::Coord_orth coords(0.0, 0.0, 0.0);
-                    coords += mmon.find("CE2", clipper::MM::ANY).coord_orth();
-                    coords += mmon.find("NE1", clipper::MM::ANY).coord_orth();
-                    coords += mmon.find("CD1", clipper::MM::ANY).coord_orth();
-                    coords += mmon.find("CG", clipper::MM::ANY).coord_orth();
-                    coords += mmon.find("CD2", clipper::MM::ANY).coord_orth();
-                    std::cout << "TrpA coords: " << coords.x() << ", " << coords.y() << ", " << coords.z() << std::endl;
-                    return clipper::Coord_orth(coords.x() * 0.2,
-                                               coords.y() * 0.2,
-                                               coords.z() * 0.2);
+                { // smaller pyrrole ring
+                    std::vector<std::string> trp_ringa_atoms = {"CE2", "NE1", "CD1", "CG", "CD2"};
+                    result = get_ring_atoms(mmon, trp_ringa_atoms);
                 }
                 else
-                { // the bigger benzene ring
-                    clipper::Coord_orth coords(0.0, 0.0, 0.0);
-                    coords += mmon.find("CE2", clipper::MM::ANY).coord_orth();
-                    coords += mmon.find("CZ2", clipper::MM::ANY).coord_orth();
-                    coords += mmon.find("CH2", clipper::MM::ANY).coord_orth();
-                    coords += mmon.find("CZ3", clipper::MM::ANY).coord_orth();
-                    coords += mmon.find("CE3", clipper::MM::ANY).coord_orth();
-                    coords += mmon.find("CD2", clipper::MM::ANY).coord_orth();
-                    std::cout << "TrpB coords: " << coords.x() << ", " << coords.y() << ", " << coords.z() << std::endl;
-                    return clipper::Coord_orth(coords.x() * 0.166,
-                                               coords.y() * 0.166,
-                                               coords.z() * 0.166);
+                {
+                    std::vector<std::string> trp_ringb_atoms = {"CE2", "CZ2", "CH2", "CZ3", "CE3", "CD2"};
+                    result = get_ring_atoms(mmon, trp_ringb_atoms);
                 }
             }
-            else if (mmon.type().trim() == "TYR")
+            else if (mmon.type().trim() == "TYR" || mmon.type().trim() == "PHE")
             {
-                clipper::Coord_orth coords(0.0, 0.0, 0.0);
-                coords += mmon.find("CE2", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CZ", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CD1", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CE1", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CD2", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CG", clipper::MM::ANY).coord_orth();
-                std::cout << "Tyr coords: " << coords.x() << ", " << coords.y() << ", " << coords.z() << std::endl;
-                return clipper::Coord_orth(coords.x() * 0.166,
-                                           coords.y() * 0.166,
-                                           coords.z() * 0.166);
-            }
-            else if (mmon.type().trim() == "PHE")
-            {
-                clipper::Coord_orth coords(0.0, 0.0, 0.0);
-                coords += mmon.find("CE2", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CZ", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CD1", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CE1", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CD2", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CG", clipper::MM::ANY).coord_orth();
-                std::cout << "Phe coords: " << coords.x() << ", " << coords.y() << ", " << coords.z() << std::endl;
-                return clipper::Coord_orth(coords.x() * 0.166,
-                                           coords.y() * 0.166,
-                                           coords.z() * 0.166);
+                std::vector<std::string> tyrphe_ring_atoms = {"CE2", "CZ", "CD1", "CE1", "CD2", "CG"};
+                result = get_ring_atoms(mmon, tyrphe_ring_atoms);
             }
             else if (mmon.type().trim() == "HIS")
             {
-                clipper::Coord_orth coords(0.0, 0.0, 0.0);
-                coords += mmon.find("CE1", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("ND1", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("NE2", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CG", clipper::MM::ANY).coord_orth();
-                coords += mmon.find("CD2", clipper::MM::ANY).coord_orth();
-                std::cout << "His coords: " << coords.x() << ", " << coords.y() << ", " << coords.z() << std::endl;
-                return clipper::Coord_orth(coords.x() * 0.2,
-                                           coords.y() * 0.2,
-                                           coords.z() * 0.2);
+                std::vector<std::string> his_ring_atoms = {"CE1", "ND1", "NE2", "CG", "CD2"};
+                result = get_ring_atoms(mmon, his_ring_atoms);
             }
+            return result;
         }
     }
 
+        clipper::Vec3<clipper::ftype> get_plane(clipper::MMonomer mmon, std::string atom_1, std::string atom_2, std::string atom_3)
+        {   // Three atoms in π-ring used to create two vectors to find the normal to the π-ring 
+            clipper::Vec3<clipper::ftype> result(0.0, 0.0, 0.0);
+            bool foundAtomAlpha = false, foundAtomBravo = false, foundAtomCharlie = false;
+            clipper::Coord_orth coords_a(0.0, 0.0, 0.0), coords_b(0.0, 0.0, 0.0), coords_c(0.0, 0.0, 0.0);
+
+            for (int atom = 0; atom < mmon.size(); atom++)
+            {
+                clipper::MAtom currentAtom = mmon[atom];
+                if (currentAtom.id().trim() == atom_1)
+                    foundAtomAlpha = true;
+                    coords_a += mmon.find(atom_1, clipper::MM::ANY).coord_orth(); 
+                if (currentAtom.id().trim() == atom_2)
+                    foundAtomBravo = true;
+                    coords_b += mmon.find(atom_2, clipper::MM::ANY).coord_orth(); 
+                if (currentAtom.id().trim() == atom_3)
+                    foundAtomCharlie = true;
+                    coords_c += mmon.find(atom_3 , clipper::MM::ANY).coord_orth(); 
+            }
+
+            if (foundAtomAlpha == false || foundAtomBravo == false || foundAtomCharlie == false)
+                return result;
+        
+            clipper::Vec3<clipper::ftype> vec1(coords_a - coords_b);
+            clipper::Vec3<clipper::ftype> vec2(coords_c - coords_b);
+            result = clipper::Vec3<clipper::ftype>::cross(vec1, vec2);
+            return result;
+        }
+
     inline clipper::Vec3<clipper::ftype> find_aromatic_plane(clipper::MMonomer mmon)
-    {
+    {   // Three atoms in π-ring used to create two vectors to find the normal to the π-ring 
         clipper::Vec3<clipper::ftype> result(0.0, 0.0, 0.0);
+        std::string atom_a, atom_b, atom_c = "";
 
         if (mmon.type().trim() == "TRP")
         {
-            bool foundAtomAlpha = false, foundAtomBravo = false, foundAtomCharlie = false;
-            for (int atom = 0; atom < mmon.size(); atom++)
-            {
-                clipper::MAtom currentAtom = mmon[atom];
-                if (currentAtom.id().trim() == "CD1")
-                    foundAtomAlpha = true;
-                if (currentAtom.id().trim() == "CD2")
-                    foundAtomBravo = true;
-                if (currentAtom.id().trim() == "CE2")
-                    foundAtomCharlie = true;
-            }
-
-            if (foundAtomAlpha == false || foundAtomBravo == false || foundAtomCharlie == false)
-                return result;
-            clipper::Vec3<clipper::ftype> vec1(mmon.find("CD1", clipper::MM::ANY).coord_orth().x() - mmon.find("CD2", clipper::MM::ANY).coord_orth().x(),
-                                               mmon.find("CD1", clipper::MM::ANY).coord_orth().y() - mmon.find("CD2", clipper::MM::ANY).coord_orth().y(),
-                                               mmon.find("CD1", clipper::MM::ANY).coord_orth().z() - mmon.find("CD2", clipper::MM::ANY).coord_orth().z());
-
-            clipper::Vec3<clipper::ftype> vec2(mmon.find("CE2", clipper::MM::ANY).coord_orth().x() - mmon.find("CD2", clipper::MM::ANY).coord_orth().x(),
-                                               mmon.find("CE2", clipper::MM::ANY).coord_orth().y() - mmon.find("CD2", clipper::MM::ANY).coord_orth().y(),
-                                               mmon.find("CE2", clipper::MM::ANY).coord_orth().z() - mmon.find("CD2", clipper::MM::ANY).coord_orth().z());
-            result = clipper::Vec3<clipper::ftype>::cross(vec1, vec2);
-            return result.unit();
+            atom_a = "CD1", atom_b = "CD2", atom_c = "CE2";
+            result = get_plane(mmon, atom_a, atom_b, atom_c);
         }
-        else if (mmon.type().trim() == "TYR")
+        else if (mmon.type().trim() == "TYR" || mmon.type().trim() == "PHE")
         {
-            bool foundAtomAlpha = false, foundAtomBravo = false, foundAtomCharlie = false;
-            for (int atom = 0; atom < mmon.size(); atom++)
-            {
-                clipper::MAtom currentAtom = mmon[atom];
-                if (currentAtom.id().trim() == "CE1")
-                    foundAtomAlpha = true;
-                if (currentAtom.id().trim() == "CG")
-                    foundAtomBravo = true;
-                if (currentAtom.id().trim() == "CE2")
-                    foundAtomCharlie = true;
-            }
-
-            if (foundAtomAlpha == false || foundAtomBravo == false || foundAtomCharlie == false)
-                return result;
-            clipper::Vec3<clipper::ftype> vec2(mmon.find("CE1", clipper::MM::ANY).coord_orth().x() - mmon.find("CG", clipper::MM::ANY).coord_orth().x(),
-                                               mmon.find("CE1", clipper::MM::ANY).coord_orth().y() - mmon.find("CG", clipper::MM::ANY).coord_orth().y(),
-                                               mmon.find("CE1", clipper::MM::ANY).coord_orth().z() - mmon.find("CG", clipper::MM::ANY).coord_orth().z());
-
-            clipper::Vec3<clipper::ftype> vec1(mmon.find("CE2", clipper::MM::ANY).coord_orth().x() - mmon.find("CG", clipper::MM::ANY).coord_orth().x(),
-                                               mmon.find("CE2", clipper::MM::ANY).coord_orth().y() - mmon.find("CG", clipper::MM::ANY).coord_orth().y(),
-                                               mmon.find("CE2", clipper::MM::ANY).coord_orth().z() - mmon.find("CG", clipper::MM::ANY).coord_orth().z());
-            result = clipper::Vec3<clipper::ftype>::cross(vec1, vec2);
-            return result.unit();
-        }
-        else if (mmon.type().trim() == "PHE")
-        {
-            bool foundAtomAlpha = false, foundAtomBravo = false, foundAtomCharlie = false;
-            for (int atom = 0; atom < mmon.size(); atom++)
-            {
-                clipper::MAtom currentAtom = mmon[atom];
-                if (currentAtom.id().trim() == "CE1")
-                    foundAtomAlpha = true;
-                if (currentAtom.id().trim() == "CG")
-                    foundAtomBravo = true;
-                if (currentAtom.id().trim() == "CE2")
-                    foundAtomCharlie = true;
-            }
-
-            if (foundAtomAlpha == false || foundAtomBravo == false || foundAtomCharlie == false)
-                return result;
-            clipper::Vec3<clipper::ftype> vec2(mmon.find("CE1", clipper::MM::ANY).coord_orth().x() - mmon.find("CG", clipper::MM::ANY).coord_orth().x(),
-                                               mmon.find("CE1", clipper::MM::ANY).coord_orth().y() - mmon.find("CG", clipper::MM::ANY).coord_orth().y(),
-                                               mmon.find("CE1", clipper::MM::ANY).coord_orth().z() - mmon.find("CG", clipper::MM::ANY).coord_orth().z());
-
-            clipper::Vec3<clipper::ftype> vec1(mmon.find("CE2", clipper::MM::ANY).coord_orth().x() - mmon.find("CG", clipper::MM::ANY).coord_orth().x(),
-                                               mmon.find("CE2", clipper::MM::ANY).coord_orth().y() - mmon.find("CG", clipper::MM::ANY).coord_orth().y(),
-                                               mmon.find("CE2", clipper::MM::ANY).coord_orth().z() - mmon.find("CG", clipper::MM::ANY).coord_orth().z());
-            result = clipper::Vec3<clipper::ftype>::cross(vec1, vec2);
-            return result.unit();
+            atom_a = "CE1", atom_b = "CG", atom_c = "CE2";
+            result = get_plane(mmon, atom_a, atom_b, atom_c);
         }
         else if (mmon.type().trim() == "HIS")
         {
-            bool foundAtomAlpha = false, foundAtomBravo = false, foundAtomCharlie = false;
-            for (int atom = 0; atom < mmon.size(); atom++)
-            {
-                clipper::MAtom currentAtom = mmon[atom];
-                if (currentAtom.id().trim() == "CE1")
-                    foundAtomAlpha = true;
-                if (currentAtom.id().trim() == "CG")
-                    foundAtomBravo = true;
-                if (currentAtom.id().trim() == "NE2")
-                    foundAtomCharlie = true;
-            }
-
-            if (foundAtomAlpha == false || foundAtomBravo == false || foundAtomCharlie == false)
-                return result;
-            clipper::Vec3<clipper::ftype> vec2(mmon.find("CE1", clipper::MM::ANY).coord_orth().x() - mmon.find("CG", clipper::MM::ANY).coord_orth().x(),
-                                               mmon.find("CE1", clipper::MM::ANY).coord_orth().y() - mmon.find("CG", clipper::MM::ANY).coord_orth().y(),
-                                               mmon.find("CE1", clipper::MM::ANY).coord_orth().z() - mmon.find("CG", clipper::MM::ANY).coord_orth().z());
-
-            clipper::Vec3<clipper::ftype> vec1(mmon.find("NE2", clipper::MM::ANY).coord_orth().x() - mmon.find("CG", clipper::MM::ANY).coord_orth().x(),
-                                               mmon.find("NE2", clipper::MM::ANY).coord_orth().y() - mmon.find("CG", clipper::MM::ANY).coord_orth().y(),
-                                               mmon.find("NE2", clipper::MM::ANY).coord_orth().z() - mmon.find("CG", clipper::MM::ANY).coord_orth().z());
-            result = clipper::Vec3<clipper::ftype>::cross(vec1, vec2);
-            return result.unit();
+            atom_a = "CE1", atom_b = "CG", atom_c = "NE2";
+            result = get_plane(mmon, atom_a, atom_b, atom_c);
         }
-        return result;
+            return result.unit();
+            return result;
     }
 
-    clipper::ftype get_angle(clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2)
+    clipper::ftype get_angle(clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2, bool modulus)
     {
-        clipper::ftype angle = acos(clipper::Vec3<clipper::ftype>::dot(vec1, vec2) /
-                                    (sqrt(pow(vec1[0], 2) + pow(vec1[1], 2) + pow(vec1[2], 2)) *
-                                     sqrt(pow(vec2[0], 2) + pow(vec2[1], 2) + pow(vec2[2], 2))));
+        clipper::ftype angle = acos(clipper::Vec3<clipper::ftype>::dot(vec1, vec2) / (sqrt(pow(vec1[0], 2) + pow(vec1[1], 2) + pow(vec1[2], 2)) *
+                                                                                      sqrt(pow(vec2[0], 2) + pow(vec2[1], 2) + pow(vec2[2], 2))));
 
+        if (modulus && clipper::Vec3<clipper::ftype>::dot(vec1, vec2) < 0) // For theta, we do not want an obtuse angle - it must be < 180˚
+            angle = M_PI - angle;
         return angle;
     }
+    
+    bool is_same_side(const clipper::Coord_orth& h_coords, const clipper::Coord_orth& anomeric_O_coords, const clipper::Vec3<clipper::ftype>& sugar_normal)
+    { // is h-atom on the same side as anomeric oxygen (beta-face) or not (alpha-face)
+        float dot_product = ((h_coords - anomeric_O_coords) * sugar_normal) / std::sqrt(sugar_normal[0] * sugar_normal[0] +
+                                                                                        sugar_normal[1] * sugar_normal[1] +
+                                                                                        sugar_normal[2] * sugar_normal[2]);
+        return dot_product >= 0; // Points on the same side have a non-negative dot product
+    }
 
-    std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_stacked_residues_python(clipper::MSugar &input_sugar,
-                                                                                                                         std::string algorithm,
-                                                                                                                         float distance,
-                                                                                                                         float theta,
-                                                                                                                         float phi) const
+    std::string find_sugar_face(clipper::MSugar &input_sugar, std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms)
+    { // checks whether the h_atom is on the same side as the anomeric oxygen (beta) or the other side (alpha)
+        std::string sugar_face = "alpha";
+        const clipper::Vec3<clipper::ftype>& sugar_normal = input_sugar.ring_mean_plane(); // normal vector of the plane
+        clipper::Coord_orth anomeric_O_coords = input_sugar.find("O5", clipper::MM::ANY).coord_orth(); // point on the plane: anomeric oxygen
+        clipper::Coord_orth h_coords = xh_atoms.second.coord_orth(); // point (h_atom coords) to check
+        
+        if (is_same_side(h_coords, anomeric_O_coords, sugar_normal)) // if true, h_atom is on same side as anomeric oxygen so it is beta face
+            sugar_face = "beta";
+        return sugar_face;
+    }
+    
+    bool privateer::interactions::CHPiBond::get_chpi_interaction(clipper::MSugar &input_sugar,
+                                                                 const clipper::MAtomIndexSymmetry &neighbourhood, 
+                                                                 std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms, 
+                                                                 const std::string &trp_ring,
+                                                                 const clipper::MiniMol &hydrogenated_input_model,
+                                                                 clipper::MMonomer &mmon,
+                                                                 std::vector<privateer::interactions::CHPiBond> results,
+                                                                 privateer::interactions::CHPiBond &the_interaction,
+                                                                 int sugarIndex,
+                                                                 int glycanSize,
+                                                                 std::string algorithm)
     {
-        std::vector<std::pair<clipper::MAtom, clipper::MAtom>> ch_atoms;
-        std::vector<clipper::Vec3<clipper::ftype>> c_to_h_vectors;
+        clipper::ftype distance_xo = 0.0;
+        clipper::Coord_orth aromatic_centre = get_aromatic_centre(mmon, trp_ring);
+        clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
+
+        if (std::isnan(aromatic_vector[0]) || std::isnan(aromatic_vector[1]) || std::isnan(aromatic_vector[2])){
+            return false;
+        }
+
+        if (neighbourhood.symmetry() == 0)
+        {
+            distance_xo = clipper::Coord_orth::length(xh_atoms.first.coord_orth(), aromatic_centre);
+        }
+        else // this neighbour is actually a symmetry mate
+        {
+            clipper::Spacegroup spgr = hydrogenated_input_model.spacegroup();
+            clipper::Coord_frac f1 = xh_atoms.first.coord_orth().coord_frac(hydrogenated_input_model.cell());
+            clipper::Coord_frac f2 = aromatic_centre.coord_frac(hydrogenated_input_model.cell());
+            f1 = spgr.symop(neighbourhood.symmetry()) * f1;
+            f1 = f1.lattice_copy_near(f2);
+            distance_xo = sqrt((f2 - f1).lengthsq(hydrogenated_input_model.cell()));
+        }
+        
+        if ((algorithm == "hudson" && distance_xo > 4.5) || algorithm == "plevin" && distance_xo >= 4.3) return false;
+
+        if (algorithm == "hudson") // PARAMETERS: distance_xo (X-ring centre), angle_theta (sugar ring normal, X-H), distance_xp (Xp-ring centre)
+        {   // calculate theta
+            clipper::ftype distance_ho = clipper::Coord_orth::length(xh_atoms.second.coord_orth(), aromatic_centre);      
+        
+            if (distance_xo < distance_ho) return false; // ensures CH is pointing towards the ring (C-πring distance must be longer than H-πring distance)
+            clipper::Vec3<clipper::ftype> hx_vector = xh_atoms.second.coord_orth() - xh_atoms.first.coord_orth();
+            clipper::ftype angle_theta = clipper::Util::rad2d((get_angle(hx_vector, aromatic_vector, true)));
+            
+            if (angle_theta > 40) return false;
+            clipper::Vec3<clipper::ftype> xo_vector = aromatic_centre - xh_atoms.first.coord_orth(); // calcualte distance_xp
+            clipper::ftype angle1 = clipper::Util::rad2d((get_angle(aromatic_vector, xo_vector, false)));
+            clipper::ftype distance_xp = abs(cos(clipper::Util::d2rad(90 - angle1)) * distance_xo);
+            
+            if ((mmon.type().trim() == "HIS" || trp_ring == "A") && distance_xp > 1.6)
+                return false; // TrpA/His: distance_xp <= 1.6
+            else if (distance_xp > 2.0)
+                return false; // TrpB/Tyr/Phe: distance_xp <= 2.0
+
+            the_interaction.set_distance_xp(distance_xp);
+            the_interaction.set_angle_theta_h(angle_theta);
+            the_interaction.set_distance_xo(distance_xo);
+        }
+
+        else if (algorithm == "plevin") // PARAMETERS: distance_xo (X-ring centre), angle_theta (sugar ring normal, X-ring centre), angle_phi (X-H, H-ring centre)
+        {   // calcualte angle_theta
+            clipper::ftype distance_ho = clipper::Coord_orth::length(xh_atoms.second.coord_orth(), aromatic_centre);             
+
+            if (distance_xo < distance_ho) return false;
+            clipper::Vec3<clipper::ftype> ox_vector = aromatic_centre - xh_atoms.first.coord_orth(); // centre of ring-x atom
+            clipper::ftype angle_theta = clipper::Util::rad2d(get_angle(ox_vector, aromatic_vector, true));
+   
+            if (angle_theta >= 25) return false;
+            clipper::Vec3<clipper::ftype> hx_vector = xh_atoms.second.coord_orth() - xh_atoms.first.coord_orth(); // Calculate angle_phix: H-X vector
+            clipper::Vec3<clipper::ftype> oh_vector = xh_atoms.second.coord_orth() - aromatic_centre; // centre of ring-H vector
+            clipper::ftype angle_phi = clipper::Util::rad2d(get_angle(oh_vector, hx_vector, false));
+
+            if (angle_phi <= 120) return false;
+
+            the_interaction.set_angle_phi(angle_phi);
+            the_interaction.set_angle_theta_p(angle_theta);
+            the_interaction.set_distance_xo(distance_xo);
+        }
+
+        the_interaction.set_sugar_index(sugarIndex);
+        the_interaction.set_glycan_size(glycanSize);
+        the_interaction.set_trp_ring(trp_ring);
+        the_interaction.set_xh_pair(xh_atoms);
+        the_interaction.set_sugar_face(find_sugar_face(input_sugar, xh_atoms));
+
+        int residue;
+        for (residue = 0; residue < results.size(); residue++)
+        {   // compare results already in results vector and this_interaction: if:
+            if(results[residue].get_stacked_residue().id() == mmon.id() && // same monomer
+               results[residue].get_stacked_residue().type().trim() == mmon.type().trim() &&  // same monomer
+               results[residue].get_stacked_residue_chainID() == hydrogenated_input_model[neighbourhood.polymer()].id() && // same sugar ring
+               results[residue].get_xh_pair().first.id().trim() == xh_atoms.first.id().trim() && // same xh_pair
+               results[residue].get_trp_ring() == trp_ring) // same trp_ring (this allows TrpA & TrpB to have interactions)
+            return false; // this interaction has already been pushed into results vector
+        }
+        return true;
+    }
+
+    std::vector<privateer::interactions::CHPiBond> privateer::interactions::CHPiBondsParser::get_stacked_residues_python(   clipper::MSugar &input_sugar,
+                                                                                                                            int sugarIndex,
+                                                                                                                            int glycanSize,
+                                                                                                                            std::string algorithm,
+                                                                                                                            float distance,
+                                                                                                                            float theta,
+                                                                                                                            float phi,
+                                                                                                                            std::string sugarFace) const
+    {
+        std::vector<std::pair<clipper::MAtom, clipper::MAtom>> xh_atoms;
         clipper::MAtom ma;
-        clipper::Coord_orth centre_apolar;
+        clipper::Coord_orth centre_apolar = input_sugar.ring_centre();
         std::vector<privateer::interactions::CHPiBond> results;
 
-        if (input_sugar.type_of_sugar() == "beta-D-aldopyranose")
-        {
+        for (int atom = 0; atom < input_sugar.size(); atom++)
+        {            
+            if (input_sugar[atom].element().trim() == "H") // find all h-atoms in sugar
             {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C1", clipper::MM::ANY),
-                                                               input_sugar.find("H1 ", clipper::MM::ANY));
-                std::cout << "beta-d-aldopyranose c1h1_atom coordinates: c1,x: " << pair.first.coord_orth().x() << "; c1,y: " << pair.first.coord_orth().y()<< "; c1,z: " << pair.first.coord_orth().z() << "; h1,x: " << pair.second.coord_orth().x() << "; h1,y: " << pair.second.coord_orth().y() << "; h1,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
+                clipper::MAtom h_atom = input_sugar[atom];
+                const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(h_atom.coord_orth(), 2.0); // find neighbourhood atoms of h_atom - change this because it looks at symmetry mates / between unit cells
 
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3", clipper::MM::ANY),
-                                                               input_sugar.find("H3 ", clipper::MM::ANY));
-                std::cout << "beta-d-aldopyranose c3h3_atom coordinates: c3,x: " << pair.first.coord_orth().x() << "; c3,y: " << pair.first.coord_orth().y()<< "; c3,z: " << pair.first.coord_orth().z() << "; h3,x: " << pair.second.coord_orth().x() << "; h3,y: " << pair.second.coord_orth().y() << "; h3,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5", clipper::MM::ANY),
-                                                               input_sugar.find("H5 ", clipper::MM::ANY));
-                std::cout << "beta-d-aldopyranose c5h5_atom coordinates: c5,x: " << pair.first.coord_orth().x() << "; c5,y: " << pair.first.coord_orth().y()<< "; c5,z: " << pair.first.coord_orth().z() << "; h5,x: " << pair.second.coord_orth().x() << "; h5,y: " << pair.second.coord_orth().y() << "; h5,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
+                for (int i = 0; i < neighbourhood.size(); i++)
+                {   
+                    clipper::MAtom sug_atom = this->hydrogenated_input_model[neighbourhood[i].polymer()][neighbourhood[i].monomer()][neighbourhood[i].atom()];
+                    clipper::MMonomer sug_res = this->hydrogenated_input_model[neighbourhood[i].polymer()][neighbourhood[i].monomer()];
+    
+                    if (input_sugar.id() == sug_res.id() && input_sugar.check_if_bonded(sug_atom, h_atom)) // check if the sug_atom and H-atom are in the same residue and covalently bonded
+                    {    
+                        if (sug_atom.element().trim() == "C" || 
+                            sug_atom.element().trim() == "N" || 
+                            sug_atom.element().trim() == "O" ||
+                            sug_atom.element().trim() == "S" )
+                        {    
+                            std::pair<clipper::MAtom, clipper::MAtom> pair(sug_atom, h_atom);
+                            xh_atoms.push_back(pair);
+                        }
+                    }
+                }
+            }    
+            continue;
         }
-        else if (input_sugar.type_of_sugar() == "alpha-D-aldopyranose")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3", clipper::MM::ANY),
-                                                               input_sugar.find("H3 ", clipper::MM::ANY));
-                std::cout << "alpha-d-aldopyranose c3h3_atom coordinates: c3,x: " << pair.first.coord_orth().x() << "; c3,y: " << pair.first.coord_orth().y()<< "; c3,z: " << pair.first.coord_orth().z() << "; h3,x: " << pair.second.coord_orth().x() << "; h3,y: " << pair.second.coord_orth().y() << "; h3,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5", clipper::MM::ANY),
-                                                               input_sugar.find("H5 ", clipper::MM::ANY));
-                std::cout << "alpha-d-aldopyranose c5h5_atom coordinates: c5,x: " << pair.first.coord_orth().x() << "; c5,y: " << pair.first.coord_orth().y()<< "; c5,z: " << pair.first.coord_orth().z() << "; h5,x: " << pair.second.coord_orth().x() << "; h5,y: " << pair.second.coord_orth().y() << "; h5,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type_of_sugar() == "beta-L-aldopyranose")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C1", clipper::MM::ANY),
-                                                               input_sugar.find("H1 ", clipper::MM::ANY));
-                std::cout << "beta-L-aldopyranose c1h1_atom coordinates: c1,x: " << pair.first.coord_orth().x() << "; c1,y: " << pair.first.coord_orth().y()<< "; c1,z: " << pair.first.coord_orth().z() << "; h1,x: " << pair.second.coord_orth().x() << "; h1,y: " << pair.second.coord_orth().y() << "; h1,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3", clipper::MM::ANY),
-                                                               input_sugar.find("H3 ", clipper::MM::ANY));
-                std::cout << "beta-L-aldopyranose c3h3_atom coordinates: c3,x: " << pair.first.coord_orth().x() << "; c3,y: " << pair.first.coord_orth().y()<< "; c3,z: " << pair.first.coord_orth().z() << "; h3,x: " << pair.second.coord_orth().x() << "; h3,y: " << pair.second.coord_orth().y() << "; h3,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5", clipper::MM::ANY),
-                                                               input_sugar.find("H5 ", clipper::MM::ANY));
-                std::cout << "beta-L-aldopyranose c5h5_atom coordinates: c5,x: " << pair.first.coord_orth().x() << "; c5,y: " << pair.first.coord_orth().y()<< "; c5,z: " << pair.first.coord_orth().z() << "; h5,x: " << pair.second.coord_orth().x() << "; h5,y: " << pair.second.coord_orth().y() << "; h5,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type_of_sugar() == "alpha-L-aldopyranose")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3", clipper::MM::ANY),
-                                                               input_sugar.find("H3 ", clipper::MM::ANY));
-                std::cout << "alpha-L-aldopyranose c3h3_atom coordinates: c3,x: " << pair.first.coord_orth().x() << "; c3,y: " << pair.first.coord_orth().y()<< "; c3,z: " << pair.first.coord_orth().z() << "; h3,x: " << pair.second.coord_orth().x() << "; h3,y: " << pair.second.coord_orth().y() << "; h3,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5", clipper::MM::ANY),
-                                                               input_sugar.find("H5 ", clipper::MM::ANY));
-                std::cout << "alpha-L-aldopyranose c5h5_atom coordinates: c5,x: " << pair.first.coord_orth().x() << "; c5,y: " << pair.first.coord_orth().y()<< "; c5,z: " << pair.first.coord_orth().z() << "; h5,x: " << pair.second.coord_orth().x() << "; h5,y: " << pair.second.coord_orth().y() << "; h5,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type_of_sugar() == "beta-L-ketopyranose")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C4", clipper::MM::ANY),
-                                                               input_sugar.find("H4", clipper::MM::ANY));
-                std::cout << "beta-L-ketopyranose c4h4_atom coordinates: c4,x: " << pair.first.coord_orth().x() << "; c4,y: " << pair.first.coord_orth().y()<< "; c4,z: " << pair.first.coord_orth().z() << "; h4,x: " << pair.second.coord_orth().x() << "; h4,y: " << pair.second.coord_orth().y() << "; h4,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C6", clipper::MM::ANY),
-                                                               input_sugar.find("H6 ", clipper::MM::ANY));
-                std::cout << "beta-L-ketopyranose c6h6_atom coordinates: c6,x: " << pair.first.coord_orth().x() << "; c6,y: " << pair.first.coord_orth().y()<< "; c6,z: " << pair.first.coord_orth().z() << "; h6,x: " << pair.second.coord_orth().x() << "; h6,y: " << pair.second.coord_orth().y() << "; h6,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type_of_sugar() == "alpha-L-ketopyranose")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C4", clipper::MM::ANY),
-                                                               input_sugar.find("H4", clipper::MM::ANY));
-                std::cout << "alpha-L-ketopyranose c4h4_atom coordinates: c4,x: " << pair.first.coord_orth().x() << "; c4,y: " << pair.first.coord_orth().y()<< "; c4,z: " << pair.first.coord_orth().z() << "; h4,x: " << pair.second.coord_orth().x() << "; h4,y: " << pair.second.coord_orth().y() << "; h4,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C6", clipper::MM::ANY),
-                                                               input_sugar.find("H6 ", clipper::MM::ANY));
-                std::cout << "alpha-L-ketopyranose c6h6_atom coordinates: c6,x: " << pair.first.coord_orth().x() << "; c6,y: " << pair.first.coord_orth().y()<< "; c6,z: " << pair.first.coord_orth().z() << "; h6,x: " << pair.second.coord_orth().x() << "; h6,y: " << pair.second.coord_orth().y() << "; h6,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type().trim() == "XYP")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C1B", clipper::MM::ANY),
-                                                               input_sugar.find("H1B", clipper::MM::ANY));
-                std::cout << "XYP c1Bh1B_atom coordinates: c1B,x: " << pair.first.coord_orth().x() << "; c1B,y: " << pair.first.coord_orth().y()<< "; c1B,z: " << pair.first.coord_orth().z() << "; h1B,x: " << pair.second.coord_orth().x() << "; h1B,y: " << pair.second.coord_orth().y() << "; h1B,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3B", clipper::MM::ANY),
-                                                               input_sugar.find("H3B", clipper::MM::ANY));
-                std::cout << "XYP c3Bh3B_atom coordinates: c3B,x: " << pair.first.coord_orth().x() << "; c3B,y: " << pair.first.coord_orth().y()<< "; c3B,z: " << pair.first.coord_orth().z() << "; h3B,x: " << pair.second.coord_orth().x() << "; h3B,y: " << pair.second.coord_orth().y() << "; h3B,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5B", clipper::MM::ANY),
-                                                               input_sugar.find("H5B2", clipper::MM::ANY));
-                std::cout << "XYP c5Bh5B2_atom coordinates: c5,x: " << pair.first.coord_orth().x() << "; c5B,y: " << pair.first.coord_orth().y()<< "; c5B,z: " << pair.first.coord_orth().z() << "; h5B2,x: " << pair.second.coord_orth().x() << "; h5B2,y: " << pair.second.coord_orth().y() << "; h5B2,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-        }
-        else if (input_sugar.type().trim() == "XYS")
-        {
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C3", clipper::MM::ANY),
-                                                               input_sugar.find("H3 ", clipper::MM::ANY));
-                std::cout << "XYS c3h3_atom coordinates: c3,x: " << pair.first.coord_orth().x() << "; c3,y: " << pair.first.coord_orth().y()<< "; c3,z: " << pair.first.coord_orth().z() << "; h3,x: " << pair.second.coord_orth().x() << "; h3,y: " << pair.second.coord_orth().y() << "; h3,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-            {
-                std::pair<clipper::MAtom, clipper::MAtom> pair(input_sugar.find("C5", clipper::MM::ANY),
-                                                               input_sugar.find("H51", clipper::MM::ANY));
-                std::cout << "XYS c5h5_atom coordinates: c5,x: " << pair.first.coord_orth().x() << "; c5,y: " << pair.first.coord_orth().y()<< "; c5,z: " << pair.first.coord_orth().z() << "; h51,x: " << pair.second.coord_orth().x() << "; h51,y: " << pair.second.coord_orth().y() << "; h51,z: " << pair.second.coord_orth().z() << std::endl;
-                clipper::Vec3<clipper::ftype> vector(pair.second.coord_orth().x() - pair.first.coord_orth().x(),
-                                                     pair.second.coord_orth().y() - pair.first.coord_orth().y(),
-                                                     pair.second.coord_orth().z() - pair.first.coord_orth().z());
-
-                ch_atoms.push_back(pair);
-                c_to_h_vectors.push_back(vector);
-            }
-        }
-        else // this monosaccharide is unsupported, return empty results
-            return results;
 
         const std::vector<clipper::MAtomIndexSymmetry> neighbourhood = this->manb_object.atoms_near(centre_apolar, 5.0);
-
         for (int k = 0; k < neighbourhood.size(); k++)
         {
             clipper::MMonomer mmon = this->hydrogenated_input_model[neighbourhood[k].polymer()][neighbourhood[k].monomer()];
@@ -583,253 +407,22 @@ namespace privateer
                 (mmon.type().trim() != "PHE") &&
                 (mmon.type().trim() != "HIS"))
                 continue;
+            
+            for (int j = 0; j < xh_atoms.size(); j++)  // for every xh pair in xh_atoms
+            {       
+                privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, algorithm);
+                if (mmon.type().trim() == "TRP")
+                {             
+                    if (privateer::interactions::CHPiBond::get_chpi_interaction(input_sugar, neighbourhood[k], xh_atoms[j], "A", this->hydrogenated_input_model, mmon, results, the_interaction, sugarIndex, glycanSize, algorithm))
+                    results.push_back(the_interaction);
 
-            clipper::ftype distance = 0.0;
-
-            // Need to do this for each of the vectors in c_to_h_vectors
-            for (int j = 0; j < ch_atoms.size(); j++)
-            {
-                if (algorithm == "hudson")
-                { // Parameters: Theta(CH^normal), CX(C..ring centre), ?Cp(C..Cprojection)?
-                    if (mmon.type().trim() == "TRP")
-                    {
-                        clipper::Coord_orth aromatic_centre_a = get_aromatic_centre(mmon, "A");
-                        std::cout << "TrpA aromatic centre: " << aromatic_centre_a.x() << ", " << aromatic_centre_a.y() << ", " << aromatic_centre_a.z() << std::endl;
-                        if (neighbourhood[k].symmetry() == 0)
-                        {
-                            distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre_a);
-
-                        }
-                        else // this neighbour is actually a symmetry mate
-                        {
-                            clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
-                            clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac(this->hydrogenated_input_model.cell());
-                            clipper::Coord_frac f2 = aromatic_centre_a.coord_frac(this->hydrogenated_input_model.cell());
-                            f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                            f1 = f1.lattice_copy_near(f2);
-                            distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
-                        }
-                        std::cout << "TrpA distance: " << distance << std::endl;
-                        if (distance < 4.5)
-                        {
-                            // std::cout << "TrpA distance: " << distance << std::endl;
-                            clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(),
-                                                                    ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-                                                                    ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                            clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = get_angle(hx_vector, aromatic_vector);
-                            if (theta <= 40.0)
-                            {
-                                std::cout << "TrpA theta: " << theta << std::endl;
-                                privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
-                                the_interaction.set_distance_cx(distance);
-                                the_interaction.set_trp_ring("A");
-                                results.push_back(the_interaction);
-                            }
-                        }
-
-                        clipper::Coord_orth aromatic_centre_b = get_aromatic_centre(mmon, "B");
-                        std::cout << "TrpB aromatic centre: " << aromatic_centre_b.x() << ", " << aromatic_centre_b.y() << ", " << aromatic_centre_b.z() << std::endl;
-                        if (neighbourhood[k].symmetry() == 0)
-                        {
-                            distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre_b);
-                            // std::cout << "TrpB distance: " << distance << std::endl;
-                        }
-                        else // this neighbour is actually a symmetry mate
-                        {
-                            clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
-                            clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac(this->hydrogenated_input_model.cell());
-                            clipper::Coord_frac f2 = aromatic_centre_b.coord_frac(this->hydrogenated_input_model.cell());
-                            f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                            f1 = f1.lattice_copy_near(f2);
-                            distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
-
-                        } 
-                        std::cout << "TrpB distance: " << distance << std::endl;
-                        if (distance < 4.5)
-                        {
-                            // std::cout << "TrpB distance: " << distance << std::endl;
-                            clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(),
-                                                                    ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-                                                                    ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                            clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = get_angle(hx_vector, aromatic_vector);
-                            if (theta <= 40.0)
-                            {
-                                std::cout << "TrpB theta: " << theta << std::endl;
-                                privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
-                                the_interaction.set_distance_cx(distance);
-                                the_interaction.set_trp_ring("B");
-                                results.push_back(the_interaction);
-                            }
-                        }
-                    }
-                    else if (mmon.type().trim() == "TYR" || mmon.type().trim() == "PHE" || mmon.type().trim() == "HIS")
-                    {
-                        std::cout << "Inside algorithm Tyr/Phe.His" << std::endl;
-                        clipper::Coord_orth aromatic_centre = get_aromatic_centre(mmon);
-                        std::cout << "Tyr/Phe/His aromatic centre: " << aromatic_centre.x() << ", " << aromatic_centre.y() << ", " << aromatic_centre.z() << std::endl;
-                        if (neighbourhood[k].symmetry() == 0)
-                        {
-                            distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre);
-                            // std::cout << "Tyr/Phe/His distance: " << distance << std::endl;
-                        }
-                        else // this neighbour is actually a symmetry mate
-                        {
-                            clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
-                            clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac(this->hydrogenated_input_model.cell());
-                            clipper::Coord_frac f2 = aromatic_centre.coord_frac(this->hydrogenated_input_model.cell());
-                            f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                            f1 = f1.lattice_copy_near(f2);
-                            // std::cout << "f1: coordinates for ch_atoms vector" << f1.u() << ", " << f1.v() << ", " << f1.w() << std::endl;
-                            // std::cout << "f2: coordinates for aromatic centre" << f2.u() << ", " << f2.v() << ", " << f2.w() << std::endl;
-                            distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
-                        }
-                        std::cout << "Tyr/Phe/His distance: " << distance << std::endl;
-                        if (distance < 4.5)
-                        {
-                            // std::cout << "Tyr/Phe/His distance: " << distance << std::endl;
-                            clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(),
-                                                                    ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-                                                                    ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                            clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = clipper::Util::rad2d(get_angle(hx_vector, aromatic_vector));
-                            if (theta <= 40.0)
-                            {
-                                std::cout << "Tyr/Phe/His theta: " << theta << std::endl;
-                                privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
-                                the_interaction.set_distance_cx(distance);
-                                results.push_back(the_interaction);
-                            }
-                        }
-                    }
+                    if (privateer::interactions::CHPiBond::get_chpi_interaction(input_sugar, neighbourhood[k], xh_atoms[j], "B", this->hydrogenated_input_model, mmon, results, the_interaction, sugarIndex, glycanSize, algorithm))
+                    results.push_back(the_interaction);
                 }
-                else
-                { // plevin algortihm
-                    if (mmon.type().trim() == "TRP")
-                    {
-                        clipper::Coord_orth aromatic_centre_a = get_aromatic_centre(mmon, "A");
-                        if (neighbourhood[k].symmetry() == 0)
-                        {
-                            distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre_a);
-                        }
-                        else // this neighbour is actually a symmetry mate
-                        {
-                            clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
-                            clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac(this->hydrogenated_input_model.cell());
-                            clipper::Coord_frac f2 = aromatic_centre_a.coord_frac(this->hydrogenated_input_model.cell());
-                            f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                            f1 = f1.lattice_copy_near(f2);
-                            distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
-                        }
-                        if (distance < 4.3)
-                        {
-                            clipper::Vec3<clipper::ftype> ox_vector(aromatic_centre_a.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
-                                                                    aromatic_centre_a.y() - ch_atoms[j].first.coord_orth().y(),
-                                                                    aromatic_centre_a.z() - ch_atoms[j].first.coord_orth().z());
-                            clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = get_angle(ox_vector, aromatic_vector);
-                            if (theta <= 25.0)
-                            {
-                                clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // heavy atom-hydrogen
-                                                                        ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-                                                                        ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                                clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre_a.x(), // centre of ring-hydrogen
-                                                                        ch_atoms[j].second.coord_orth().y() - aromatic_centre_a.y(),
-                                                                        ch_atoms[j].second.coord_orth().z() - aromatic_centre_a.z());
-                                clipper::ftype theta = get_angle(oh_vector, hx_vector);
-                                if (phi >= 120.0)
-                                {
-                                    privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
-                                    the_interaction.set_distance_cx(distance);
-                                    the_interaction.set_trp_ring("A");
-                                    results.push_back(the_interaction);
-                                }
-                            }
-                        }
-
-                        clipper::Coord_orth aromatic_centre_b = get_aromatic_centre(mmon, "B");
-                        if (neighbourhood[k].symmetry() == 0)
-                        {
-                            distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre_b);
-                        }
-                        else // this neighbour is actually a symmetry mate
-                        {
-                            clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
-                            clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac(this->hydrogenated_input_model.cell());
-                            clipper::Coord_frac f2 = aromatic_centre_b.coord_frac(this->hydrogenated_input_model.cell());
-                            f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                            f1 = f1.lattice_copy_near(f2);
-                            distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
-                        }
-                        if (distance < 4.3)
-                        {
-                            clipper::Vec3<clipper::ftype> ox_vector(aromatic_centre_b.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
-                                                                    aromatic_centre_b.y() - ch_atoms[j].first.coord_orth().y(),
-                                                                    aromatic_centre_b.z() - ch_atoms[j].first.coord_orth().z());
-                            clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = get_angle(ox_vector, aromatic_vector);
-                            if (theta <= 25.0)
-                            {
-                                clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // heavy atom-hydrogen
-                                                                        ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-                                                                        ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                                clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre_b.x(), // centre of ring-hydrogen
-                                                                        ch_atoms[j].second.coord_orth().y() - aromatic_centre_b.y(),
-                                                                        ch_atoms[j].second.coord_orth().z() - aromatic_centre_b.z());
-                                clipper::ftype theta = get_angle(oh_vector, hx_vector);
-                                if (phi >= 120.0)
-                                {
-                                    privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
-                                    the_interaction.set_distance_cx(distance);
-                                    the_interaction.set_trp_ring("A");
-                                    results.push_back(the_interaction);
-                                }
-                            }
-                        }
-                    }
-                    else if (mmon.type().trim() == "TYR" || mmon.type().trim() == "PHE" || mmon.type().trim() == "HIS")
-                    {
-                        clipper::Coord_orth aromatic_centre = get_aromatic_centre(mmon);
-                        if (neighbourhood[k].symmetry() == 0)
-                        {
-                            distance = clipper::Coord_orth::length(ch_atoms[j].first.coord_orth(), aromatic_centre);
-                        }
-                        else // this neighbour is actually a symmetry mate
-                        {
-                            clipper::Spacegroup spgr = this->hydrogenated_input_model.spacegroup();
-                            clipper::Coord_frac f1 = ch_atoms[j].first.coord_orth().coord_frac(this->hydrogenated_input_model.cell());
-                            clipper::Coord_frac f2 = aromatic_centre.coord_frac(this->hydrogenated_input_model.cell());
-                            f1 = spgr.symop(neighbourhood[k].symmetry()) * f1;
-                            f1 = f1.lattice_copy_near(f2);
-                            distance = sqrt((f2 - f1).lengthsq(this->hydrogenated_input_model.cell()));
-                        }
-                        if (distance < 4.3)
-                        {
-                            clipper::Vec3<clipper::ftype> ox_vector(aromatic_centre.x() - ch_atoms[j].first.coord_orth().x(), // centre of ring-heavy atom
-                                                                    aromatic_centre.y() - ch_atoms[j].first.coord_orth().y(),
-                                                                    aromatic_centre.z() - ch_atoms[j].first.coord_orth().z());
-                            clipper::Vec3<clipper::ftype> aromatic_vector = find_aromatic_plane(mmon);
-                            clipper::ftype theta = get_angle(ox_vector, aromatic_vector);
-                            if (theta <= 25.0)
-                            {
-                                clipper::Vec3<clipper::ftype> hx_vector(ch_atoms[j].second.coord_orth().x() - ch_atoms[j].first.coord_orth().x(), // hydrogen-heavy atom
-                                                                        ch_atoms[j].second.coord_orth().y() - ch_atoms[j].first.coord_orth().y(),
-                                                                        ch_atoms[j].second.coord_orth().z() - ch_atoms[j].first.coord_orth().z());
-                                clipper::Vec3<clipper::ftype> oh_vector(ch_atoms[j].second.coord_orth().x() - aromatic_centre.x(), // centre of ring-hydrogen
-                                                                        ch_atoms[j].second.coord_orth().y() - aromatic_centre.y(),
-                                                                        ch_atoms[j].second.coord_orth().z() - aromatic_centre.z());
-                                clipper::ftype theta = get_angle(oh_vector, hx_vector);
-                                if (phi >= 120.0)
-                                {
-                                    privateer::interactions::CHPiBond the_interaction(input_sugar.chain_id(), this->hydrogenated_input_model[neighbourhood[k].polymer()].id(), input_sugar, mmon, theta, "hudson");
-                                    the_interaction.set_distance_cx(distance);
-                                    the_interaction.set_trp_ring("A");
-                                    results.push_back(the_interaction);
-                                }
-                            }
-                        }
-                    }
+                else if (mmon.type().trim() == "TYR" || mmon.type().trim() == "PHE" || mmon.type().trim() == "HIS")
+                {
+                    if (privateer::interactions::CHPiBond::get_chpi_interaction(input_sugar, neighbourhood[k], xh_atoms[j], "", this->hydrogenated_input_model, mmon, results, the_interaction, sugarIndex, glycanSize, algorithm))           
+                    results.push_back(the_interaction);
                 }
             }
         }

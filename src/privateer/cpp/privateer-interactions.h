@@ -15,13 +15,15 @@
 #include "clipper-glyco.h"
 #include "privateer-restraints.h"
 #include "privateer-lib.h"
-
+#include "gemmi/topo.hpp"
+#include "gemmi/polyheur.hpp"
 #include "gemmi/mmread.hpp"
 #include "gemmi/monlib.hpp"
-#include "gemmi/placeh.hpp"
+// #include "gemmi/placeh.hpp"
 #include "gemmi/fstream.hpp"
 #include "gemmi/cif.hpp"
 #include "gemmi/to_pdb.hpp"
+#include "gemmi/mmread.hpp"
 
 
 
@@ -133,10 +135,28 @@ namespace privateer {
 					angle = input_angle;
 					sugarIndex = -1;
 					glycanSize = -1;
-
+					angle_theta_h = 0.0f;
+					angle_theta_p = 0.0f;
+					angle_phi = 0.0f;
+					distance_xo = 0.0f;
+					distance_xp = 0.0f;
+					sugarFace = "β";
 				}
+				
+				std::string get_algorithm ( ) {
+					return this->algorithm;
+				}
+
+				void set_algorithm ( std::string& algorithm ) {
+					this->algorithm = algorithm;
+				}
+				
 				std::string get_sugar_chainID ( ) {
 					return this->sugar_chainID;
+				}
+
+				void set_sugar_chainID ( std::string sugar_chainID ) {
+					this->sugar_chainID = sugar_chainID;
 				}
 
 				int get_sugar_index ( ) {
@@ -171,15 +191,6 @@ namespace privateer {
 					return this->stacked_residue_chainID;
 				}
 
-				float get_angle ( ){
-					return this->angle;
-				}
-
-				void set_angle ( float angle ){
-					this->angle = angle;
-
-				}
-
 				float get_angle_theta_h ( ) {
 					return this->angle_theta_h;
 				}
@@ -204,20 +215,20 @@ namespace privateer {
 					this->angle_phi = angle_phi;
 				}
 
-				float get_distance_cx ( ) {
-					return this->distance_cx;
+				float get_distance_xo ( ) {
+					return this->distance_xo;
 				}
 
-				void set_distance_cx ( float distance_cx ) {
-					this->distance_cx = distance_cx;
+				void set_distance_xo ( float distance_xo ) {
+					this->distance_xo = distance_xo;
 				}
 
-				float get_distance_cp ( ) {
-					return this->distance_cp;
+				float get_distance_xp ( ) {
+					return this->distance_xp;
 				}
 
-				void set_distance_cp ( float distance_cp ) {
-					this->distance_cp = distance_cp;
+				void set_distance_xp ( float distance_xp ) {
+					this->distance_xp = distance_xp;
 				}
 
 				std::string get_trp_ring () {
@@ -228,7 +239,36 @@ namespace privateer {
 					this->trp_ring = trp_ring;
 				}
 
-			private:
+				std::pair<clipper::MAtom, clipper::MAtom> get_xh_pair () {
+					return xh_pair;
+				}
+				
+				void set_xh_pair ( std::pair<clipper::MAtom, clipper::MAtom> xh_pair) {
+					this->xh_pair = xh_pair;
+				}
+
+				std::string get_sugar_face ( ) {
+					return this->sugarFace;
+				}
+
+				void set_sugar_face ( std::string sugar_face ) {
+					this->sugarFace = sugar_face;
+				}
+				
+				static bool get_chpi_interaction(clipper::MSugar &input_sugar,
+												   const clipper::MAtomIndexSymmetry &neighbourhood, 
+												   std::pair<clipper::MAtom, clipper::MAtom> &xh_atoms, 
+												   const std::string &trp_ring,
+												   const clipper::MiniMol &hydrogenated_input_model,
+												   clipper::MMonomer &mmon,
+												   std::vector<privateer::interactions::CHPiBond> results,
+												   privateer::interactions::CHPiBond &the_interaction,
+												   int sugarIndex,
+												   int glycanSize,
+												   std::string algorithm);
+				
+				private:
+				clipper::MiniMol hydrogenated_input_model;
 				std::string sugar_chainID;
 				std::string stacked_residue_chainID;
 				clipper::MSugar sugar;
@@ -241,25 +281,34 @@ namespace privateer {
 				float angle_theta_h;
 				float angle_theta_p;
 				float angle_phi;
-				float distance_cx;
-				float distance_cp;
-				std::string trp_ring; // For TRP exclusively, A + B
-				clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
-				clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
-				clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon );
-		};
+				float distance_xo;
+				float distance_xp;
+				std::string sugarFace;
+				std::string trp_ring; // A, B, or blank (for Tyr/Phe/His)
+				// clipper::Coord_orth get_aromatic_centre ( clipper::MMonomer mmon, std::string ring = "A" );
+				// clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::Vec3<clipper::ftype> vec2 );
+				// clipper::Vec3<clipper::ftype> find_aromatic_plane ( clipper::MMonomer mmon );
+    	};
 
 		class CHPiBondsParser
 		{
+			
+			typedef std::vector <privateer::interactions::CHPiBond> chpibonds;
+	
+			enum algorithm_type {HUDSON, PLEVIN};
+			
 			public:
 				CHPiBondsParser() { }
 				CHPiBondsParser(std::string& input_model, std::string output_path = "undefined", std::string algorithm = "hudson");
 				std::vector<privateer::interactions::CHPiBond> get_CHPi_interactions(int glycanIndex);
 				std::vector <privateer::interactions::CHPiBond> get_stacked_residues_python(clipper::MSugar& input_sugar,
-																																										std::string = "hudson",
-																																										float = 4.5,
-																																										float = 40.0,
-																																										float = 0.0 ) const ;
+																							int sugarIndex,
+																							int glycanSize,
+																							std::string = "hudson",
+																							float = 4.5,
+																							float = 40.0,
+																							float = 0.0,
+																							std::string sugarFace = "β") const ;
 			private:
 				clipper::MiniMol input_model;
 				clipper::MAtomNonBond manb_object;

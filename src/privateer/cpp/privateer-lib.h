@@ -18,8 +18,8 @@
 #include <clipper/clipper-ccp4.h>
 #include <clipper/clipper-contrib.h>
 #include <clipper/clipper-minimol.h>
-#include <ccp4srs/ccp4srs_manager.h>
-#include <ccp4srs/ccp4srs_defs.h>
+// #include <ccp4srs/ccp4srs_manager.h>
+// #include <ccp4srs/ccp4srs_defs.h>
 #include "privateer-restraints.h"
 #include "privateer-interactions.h"
 
@@ -108,20 +108,9 @@ namespace privateer
                 << "<tspan>Detected type: " << sugar.type_of_sugar() << ". </tspan>";
             if ( validation )
             {
-                if  ( glycan.get_type() == "c-glycan" )
+                if ( ( glycan.get_type() == "c-glycan" ) && (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
                 {
-                    if ((sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
-                    {
-                        sugar.override_conformation_diag ( true );
-                    }
-                    if ( sugar.conformation_name() == "4c1" )
-                    {
-                        sugar.override_conformation_diag ( false );
-                    }
-                    if (sugar.type().trim() == "BMA")
-                    {
-                        sugar.override_anomer_diag( false );
-                    }
+                    sugar.override_conformation_diag ( true );
                 }
                 if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
                      sugar.ok_with_chirality() && sugar.ok_with_puckering() )
@@ -146,21 +135,9 @@ namespace privateer
 
         inline const bool sugar_contains_issues ( clipper::MSugar sugar, clipper::MGlycan glycan  )
         {
-            if  ( glycan.get_type() == "c-glycan" )
+            if ( ( glycan.get_type() == "c-glycan" ) && (sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
             {
-                if ((sugar.type().trim() == "MAN" ) && (sugar.conformation_name() == "1c4"))
-                {
-                    sugar.override_conformation_diag ( true );
-                }
-                if ( sugar.conformation_name() == "4c1" )
-                {
-                    sugar.override_conformation_diag ( false );
-                }
-                if (sugar.type().trim() == "BMA")
-                {
-                    sugar.override_anomer_diag( false );
-
-                }
+                sugar.override_conformation_diag ( true );
             }
 
             if ( sugar.ok_with_conformation() && sugar.ok_with_anomer() &&
