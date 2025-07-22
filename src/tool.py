@@ -33,7 +33,7 @@ class PrivateerTool(ToolInstance):
         # We will be adding an item to the tool's context menu, so override
         # the default MainToolWindow fill_context_menu method
         self.tool_window.fill_context_menu = self.fill_context_menu
-
+        self.glycoblocksexist = False
         self._build_ui()
 
     def _build_ui(self):
@@ -42,7 +42,7 @@ class PrivateerTool(ToolInstance):
         # We will use an editable single-line text input field (QLineEdit)
         # with a descriptive text label to the left of it (QLabel).  To
         # arrange them horizontally side by side we use QHBoxLayout
-        from Qt.QtWidgets import QFormLayout, QComboBox, QPushButton
+        from Qt.QtWidgets import QFormLayout, QComboBox, QPushButton, QCheckBox
         from chimerax import atomic
         models = atomic.all_structures(self.session)
         layout = QFormLayout()
@@ -50,13 +50,15 @@ class PrivateerTool(ToolInstance):
         self.combo_box = QComboBox()
         for m in models:
             self.combo_box.addItem(str(m.id_string))
-        #self.line_edit = QLineEdit()
         self.run_button = QPushButton("Run Privateer")
         self.glycoblocks_button = QPushButton("Show Glycoblocks")
+        self.report_update_tickbox = QCheckBox(text="Auto Update Validation Report")
+        self.glycoblocks_update_tickbox = QCheckBox(text="Auto Update Glycoblocks")
 
         layout.addRow(label1,self.combo_box)
-        layout.addRow(self.run_button,self.glycoblocks_button)
-        #FLAG: Add another button here for toggle glycoblocks, then implement that
+        layout.addRow(self.run_button,self.report_update_tickbox)
+        layout.addRow(self.glycoblocks_button,self.glycoblocks_update_tickbox)
+        #FLAG: Add tickboxes for autoupdate validation report and glycoblocks
 
         layout.setFieldGrowthPolicy(QFormLayout.ExpandingFieldsGrow)
 
@@ -64,7 +66,7 @@ class PrivateerTool(ToolInstance):
         # user presses the Return key
         self.run_button.clicked.connect(self.button_pressed)
         self.glycoblocks_button.clicked.connect(self.glycoblocks_button_pressed)
-
+        self.glycoblocks_update_tickbox.stateChanged.connect(self.glycoblock_update_state_changed)
         # Set the layout as the contents of our window
         self.tool_window.ui_area.setLayout(layout)
 
@@ -79,6 +81,7 @@ class PrivateerTool(ToolInstance):
         from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
         from chimerax.core.commands import run
         # ToolInstance has a 'session' attribute...
+
         AllGlycans = run(self.session, f"privateer_validation None {self.combo_box.currentText()} True") 
         parent = self.child_tool_window.ui_area
         parent.setMinimumHeight(1)
@@ -123,7 +126,16 @@ class PrivateerTool(ToolInstance):
     
     def glycoblocks_button_pressed(self):
         from chimerax.core.commands import run
-        run(self.session, f"privateer_glycoblocks {self.combo_box.currentText()}")
+        self.glycoblocksexist = True
+        # FLAG: this is not really the end product. I need to have a "on state changed" set up for the tick box so the user can tick and untick whenever.
+        self.glycoblocks = run(self.session, f"privateer_glycoblocks {self.combo_box.currentText()} {self.glycoblocks_update_tickbox.isChecked()}")
+
+    def glycoblock_update_state_changed(self):
+        if self.glycoblocksexist:
+            if self.glycoblocks_update_tickbox.isChecked():
+                self.glycoblocks.update()
+            self.glycoblocks._auto_update = self.glycoblocks_update_tickbox.isChecked()
+        # Add in thing here to set that update is needed after a state change to auto_update
 
     def fill_context_menu(self, menu, x, y):
         # Add any tool-specific items to the given context menu (a QMenu instance).
