@@ -139,7 +139,7 @@ def privateer_glycoblocks(session, modelID, auto_update):
             model = m
         if model == None:
             session.logger.info(f"Error in running Privateer... Chosen modelID does not correspond to model loaded in the session.")
-    from .glycoblocks import Glycoblocks
+    from .tool import Glycoblocks
     return Glycoblocks(model,auto_update)
         
     
