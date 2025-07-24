@@ -67,62 +67,31 @@ class PrivateerTool(ToolInstance):
         self.run_button.clicked.connect(self.button_pressed)
         self.glycoblocks_button.clicked.connect(self.glycoblocks_button_pressed)
         self.glycoblocks_update_tickbox.stateChanged.connect(self.glycoblock_update_state_changed)
+        self.report_update_tickbox.stateChanged.connect(self.report_update_state_changed)
         # Set the layout as the contents of our window
         self.tool_window.ui_area.setLayout(layout)
 
         # Show the window on the user-preferred side of the ChimeraX
         # main window
         self.tool_window.manage('side')
-
+    
     def button_pressed(self):
-        # The user has pressed the Return key; run the privateer command using their inputs
-        self.child_tool_window = self.tool_window.create_child_window("Validation Report", close_destroys = False)
-        from Qt.QtWidgets import QVBoxLayout
-        from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
-        from chimerax.core.commands import run
-        # ToolInstance has a 'session' attribute...
-
-        AllGlycans = run(self.session, f"privateer_validation None {self.combo_box.currentText()} True") 
-        parent = self.child_tool_window.ui_area
-        parent.setMinimumHeight(1)
-        web_view = ChimeraXHtmlView(self.session, parent)
-        layout = QVBoxLayout()
-        htmlstring = "<html>\n"
-        htmlstring += "<table border=\"1\">\n"
-        htmlstring += "<tr>\n"
-        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:20; text-align:center; font-weight:\"bold\";padding:15'>GlyConnectID</th>\n"
-        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:20; text-align:center; font-weight:\"bold\";padding:15'>GlyToucanID</th>\n"
-        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:20; text-align:center; font-weight:\"bold\";padding:15'>SNFG</th>\n"
-        htmlstring += "</tr>\n"
-        for i, glycan in enumerate(AllGlycans):
-            svgstring = glycan["svg"]
-            rootID = glycan["RootID"]
-            glyconnectID = glycan["GlyConnectID"]
-            glytoucanID = glycan["GlyToucanID"]
-            for j, torsion in enumerate(glycan["Torsions"]):
-                sugar1 = torsion["sugar_1"]
-                sugar2 = torsion["sugar_2"]
-                donorPosition = torsion["atom_number_1"]
-                acceptorPosition = torsion["atom_number_2"]
-                phi = torsion["phi"]
-                psi = torsion["psi"]
-                sugarchainID = torsion["chainID"]
-                sugarresID = str(torsion["sugar_2_resID"])
-                svgstring = svgstring.replace(f"cxcmd:{sugarchainID}{sugarresID}", f"cxcmd:privateer_torsion_plot {sugar1} {donorPosition} {sugar2} {acceptorPosition} {phi} {psi}")
-            htmlstring += "<tr>\n"
-            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:20; text-align:center; padding:15'>{glyconnectID}</td>\n"
-            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:20; text-align:center; padding:15'>{glytoucanID}</td>\n"
-            htmlstring += f"<td>\n{svgstring}\n</td>\n"
-            htmlstring += "</tr>\n"
-        htmlstring += "</table>\n"
-        htmlstring += "</html>"
-        htmlstring = htmlstring.replace("cxcmd:view /", f"cxcmd:view #{self.combo_box.currentText()}/")
-        web_view.setHtml(htmlstring)
-        layout.addWidget(web_view)
-        # Set the layout as the contents of our window
-        self.child_tool_window.ui_area.setLayout(layout)
-        # Show the window on the user-preferred side of the ChimeraX
-        self.child_tool_window.manage('side')
+        from .glycoblocks import ValidationReport
+        from chimerax import atomic
+        modelID = self.combo_box.currentText()
+        models = atomic.all_structures(self.session)
+        for m in models:
+            if m.id_string == modelID:
+                self.model = m
+        self.auto_update = self.report_update_tickbox.isChecked()
+        self.report = ValidationReport(self.session, self) 
+        self.reportexist = True
+    
+    def report_update_state_changed(self):
+        if self.reportexist:
+            if self.report_update_tickbox.isChecked():
+                self.report.update()
+            self.report._auto_update = self.report_update_tickbox.isChecked()
     
     def glycoblocks_button_pressed(self):
         from chimerax.core.commands import run
@@ -135,7 +104,7 @@ class PrivateerTool(ToolInstance):
             if self.glycoblocks_update_tickbox.isChecked():
                 self.glycoblocks.update()
             self.glycoblocks._auto_update = self.glycoblocks_update_tickbox.isChecked()
-        # Add in thing here to set that update is needed after a state change to auto_update
+
 
     def fill_context_menu(self, menu, x, y):
         # Add any tool-specific items to the given context menu (a QMenu instance).
