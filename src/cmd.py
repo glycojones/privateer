@@ -131,7 +131,7 @@ privateer_torsion_plot_desc = CmdDesc(
 #     Glycans = privateer_validation_wrapper(session,None,model,modelID,True)
 #     draw_glycoblocks(session,Glycans,modelID)
 
-def privateer_glycoblocks(session, modelID, auto_update):
+def privateer_glycoblocks(session, modelID, auto_update, scroll_resize):
     models = atomic.all_structures(session)
     model = None
     for m in models:
@@ -140,13 +140,14 @@ def privateer_glycoblocks(session, modelID, auto_update):
         if model == None:
             session.logger.info(f"Error in running Privateer... Chosen modelID does not correspond to model loaded in the session.")
     from .tool import Glycoblocks
-    return Glycoblocks(model,auto_update)
+    return Glycoblocks(model,auto_update,scroll_resize)
         
     
 privateer_glycoblocks_desc = CmdDesc(
     required=[
         ("modelID", StringArg),
-        ("auto_update", BoolArg)
+        ("auto_update", BoolArg),
+        ("scroll_resize", BoolArg)
     ],
-    synopsis="Display glycans in glycoblock represenstation in the ChimeraX view."
+    synopsis="Display 3D symbols for glycans on model"
 )

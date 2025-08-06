@@ -42,23 +42,26 @@ class PrivateerTool(ToolInstance):
         # We will use an editable single-line text input field (QLineEdit)
         # with a descriptive text label to the left of it (QLabel).  To
         # arrange them horizontally side by side we use QHBoxLayout
-        from Qt.QtWidgets import QFormLayout, QComboBox, QPushButton, QCheckBox
+        from Qt.QtWidgets import QFormLayout, QComboBox, QPushButton, QCheckBox, QVBoxLayout
         from chimerax import atomic
         models = atomic.all_structures(self.session)
         layout = QFormLayout()
+        vbox = QVBoxLayout()
         label1 = "Model ID:"
         self.combo_box = QComboBox()
         for m in models:
             self.combo_box.addItem(str(m.id_string))
         self.run_button = QPushButton("Run Privateer")
-        self.glycoblocks_button = QPushButton("Show Glycoblocks")
+        self.glycoblocks_button = QPushButton("Show Glycan 3D Symbols")
         self.report_update_tickbox = QCheckBox(text="Auto Update Validation Report")
-        self.glycoblocks_update_tickbox = QCheckBox(text="Auto Update Glycoblocks")
+        self.glycoblocks_update_tickbox = QCheckBox(text="Auto Update Glycan 3D Symbols")
+        self.glycoblocks_resize_tickbox = QCheckBox(text="Resize Glycan 3D Symbols With Zoom")
 
         layout.addRow(label1,self.combo_box)
         layout.addRow(self.run_button,self.report_update_tickbox)
-        layout.addRow(self.glycoblocks_button,self.glycoblocks_update_tickbox)
-        #FLAG: Add tickboxes for autoupdate validation report and glycoblocks
+        vbox.addWidget(self.glycoblocks_update_tickbox)
+        vbox.addWidget(self.glycoblocks_resize_tickbox)
+        layout.addRow(self.glycoblocks_button,vbox)
 
         layout.setFieldGrowthPolicy(QFormLayout.ExpandingFieldsGrow)
 
@@ -67,6 +70,7 @@ class PrivateerTool(ToolInstance):
         self.run_button.clicked.connect(self.button_pressed)
         self.glycoblocks_button.clicked.connect(self.glycoblocks_button_pressed)
         self.glycoblocks_update_tickbox.stateChanged.connect(self.glycoblock_update_state_changed)
+        self.glycoblocks_resize_tickbox.stateChanged.connect(self.glycoblock_resize_state_changed)
         self.report_update_tickbox.stateChanged.connect(self.report_update_state_changed)
         # Set the layout as the contents of our window
         self.tool_window.ui_area.setLayout(layout)
@@ -96,13 +100,19 @@ class PrivateerTool(ToolInstance):
         from chimerax.core.commands import run
         self.glycoblocksexist = True
         # FLAG: this is not really the end product. I need to have a "on state changed" set up for the tick box so the user can tick and untick whenever.
-        self.glycoblocks = run(self.session, f"privateer_glycoblocks {self.combo_box.currentText()} {self.glycoblocks_update_tickbox.isChecked()}")
+        self.glycoblocks = run(self.session, f"privateer_glycoblocks {self.combo_box.currentText()} {self.glycoblocks_update_tickbox.isChecked()} {self.glycoblocks_resize_tickbox.isChecked()}")
 
     def glycoblock_update_state_changed(self):
         if self.glycoblocksexist:
             if self.glycoblocks_update_tickbox.isChecked():
                 self.glycoblocks.update()
             self.glycoblocks._auto_update = self.glycoblocks_update_tickbox.isChecked()
+    
+    def glycoblock_resize_state_changed(self):
+        if self.glycoblocksexist:
+            if self.glycoblocks_resize_tickbox.isChecked():
+                self.glycoblocks.resize_with_scroll()
+            self.glycoblocks._scroll_resize = self.glycoblocks_resize_tickbox.isChecked()
 
 
     def fill_context_menu(self, menu, x, y):
@@ -127,7 +137,7 @@ class Glycoblocks(Model):
     :py:class:`chimerax.AtomicStructure` and, if set to, updates them as
     the model is edited.
     """
-    def __init__(self,atomic_structure,auto_update):
+    def __init__(self,atomic_structure,auto_update,scroll_resize):
         """
         Create the glycoblock object, 
         add it as a child model to the target structure.
@@ -139,10 +149,16 @@ class Glycoblocks(Model):
         structure = self._atomic_structure = atomic_structure
         modelID = self._modelID = atomic_structure.id_string
         self.session = structure.session
-        Model.__init__(self, "Privateer Glycoblocks", self.session)
+        Model.__init__(self, "Privateer Glycan 3D Symbols", self.session)
         self._auto_update = auto_update
+        self._scroll_resize = scroll_resize
         t = structure.triggers
         self._structure_change_handler = t.add_handler('changes', self.is_update_needed)
+        self._structure_resize_handler = t.add_handler('changes', self.is_resize_needed)
+        self._bounds = self._atomic_structure.bounds() 
+        #self._bounds = self.session.main_view.drawing_bounds() 
+        self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
+        self._scale = self._view_window/self._bounds.width()
         self.update()
         structure.add([self])
 
@@ -170,7 +186,39 @@ class Glycoblocks(Model):
         from chimerax.core.triggerset import DEREGISTER
         from .main import privateer_validation_wrapper, draw_glycoblocks
         self._glycans = privateer_validation_wrapper(self.session,None,self._atomic_structure,self._modelID,True)
-        v,n,t,c = draw_glycoblocks(session,self._glycans,self._modelID)
+        if self._scroll_resize:
+            v,n,t,c = draw_glycoblocks(session,self._glycans,self._modelID,self._scale)
+        else:
+            v,n,t,c = draw_glycoblocks(session,self._glycans,self._modelID)
+        self.set_geometry(v,n,t)
+        self.vertex_colors = c
+        self.display = True
+        return DEREGISTER
+    
+    def is_resize_needed(self, trigger_name, changes):
+        changes = changes[1]
+        reasons = changes.atom_reasons()
+        resize_needed = False
+        self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
+        if self._scroll_resize:
+            if "display changed" in reasons:
+                #self.bounds = self.session.main_view.drawing_bounds() 
+                self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
+                scale = self._view_window/self._bounds.width()
+                if scale != self._scale:
+                    resize_needed = True
+                    self._scale = scale
+        else:
+            resize_needed = False
+        if resize_needed:
+            from chimerax.atomic import get_triggers
+            self.handler = get_triggers().add_handler('changes done', self.resize_with_scroll)
+
+    def resize_with_scroll(self, *_):
+        session = self._atomic_structure.session
+        from chimerax.core.triggerset import DEREGISTER
+        from .main import draw_glycoblocks
+        v,n,t,c = draw_glycoblocks(session,self._glycans,self._modelID,self._scale)
         self.set_geometry(v,n,t)
         self.vertex_colors = c
         self.display = True

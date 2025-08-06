@@ -33,7 +33,7 @@ def privateer_validation_wrapper(session,OutputFolderPath,m,i,display=False):
         csv_out = os.path.join(OutputFolderPath,f"model-{i}_privateer-report.csv")
         df.to_csv(csv_out)  
 
-def draw_glycoblocks(session,Glycans, modelID):
+def draw_glycoblocks(session,Glycans, modelID,gb_scale=1):
     from chimerax.surface.shapes import cylinder_geometry, box_geometry, sphere_geometry
     from chimerax.geometry import Place, vector_rotation, scale
     import numpy as np
@@ -103,7 +103,7 @@ def draw_glycoblocks(session,Glycans, modelID):
             if sugarname in circlesugars:
                 # Create the shape
                 nc = 25
-                v, n, t = cylinder_geometry(radius = 1.4, height = 1.0, nc=nc)
+                v, n, t = cylinder_geometry(radius = 1.4, height = gb_scale, nc=nc)
                 # Rotate so we know which points are closest to C1 and C4
                 v1 = v[0,:]
                 v4 = v[int(nc/2),:]
@@ -123,7 +123,7 @@ def draw_glycoblocks(session,Glycans, modelID):
                 v = vp.transform_points(v)
             elif sugarname in squaresugars:
                 # Create the shape
-                v, n, t = box_geometry((-1.4,-1.4,-0.5),(1.4,1.4,0.5))
+                v, n, t = box_geometry((-1.4,-1.4,-0.5*gb_scale),(1.4,1.4,0.5*gb_scale))
                 # Rotate to match linkage positions
                 tl = vector_rotation((v[0,0]-v[2,0],v[0,1]-v[2,1],v[0,2]-v[2,2]),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
                 v = tl.transform_points(v, in_place=True)
@@ -141,7 +141,7 @@ def draw_glycoblocks(session,Glycans, modelID):
                 v = vp.transform_points(v)
             elif sugarname in trianglesugars:
                 # Create the shape
-                v, n, t = triangular_prism_geometry(3.2,1.0) 
+                v, n, t = triangular_prism_geometry(3.2,gb_scale) 
                 # Rotate to match linkage positions of 2D SNFG based on number of bonds
                 tl = vector_rotation((v[0,0]-(v[2,0]+v[6,0])/2.0,v[0,1]-(v[2,1]+v[6,1])/2.0,v[0,2]-(v[2,2]+v[6,2])/2.0),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
                 v = tl.transform_points(v, in_place=True)
@@ -159,7 +159,7 @@ def draw_glycoblocks(session,Glycans, modelID):
                 v = vp.transform_points(v)
             elif sugarname in diamondsugars:
                 # Create the shape
-                v, n, t = box_geometry((-1.4,-1.4,-0.5),(1.4,1.4,0.5))
+                v, n, t = box_geometry((-1.4,-1.4,-0.5*gb_scale),(1.4,1.4,0.5*gb_scale))
                 # Rotate to match linkage positions
                 tl = vector_rotation((v[9,0]-v[10,0],v[9,1]-v[10,1],v[9,2]-v[10,2]),(C2[0]-C5[0],C2[1]-C5[1],C2[2]-C5[2]))
                 v = tl.transform_points(v, in_place=True)
@@ -176,7 +176,7 @@ def draw_glycoblocks(session,Glycans, modelID):
                 vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
                 v = vp.transform_points(v)
             elif sugarname in starsugars:
-                v, n, t = star_geometry(2.0,1)
+                v, n, t = star_geometry(2.0,gb_scale)
                 # Rotate to match linkage positions
                 tl = vector_rotation((v[5,0]-v[0,0],v[5,1]-v[0,1],v[5,2]-v[0,2]),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
                 v = tl.transform_points(v, in_place=True)
@@ -193,7 +193,7 @@ def draw_glycoblocks(session,Glycans, modelID):
                 vp = Place(origin = (sugar_centre_x, sugar_centre_y, sugar_centre_z))
                 v = vp.transform_points(v)
             else:
-                v, n, t = hexagon_geometry(1.5, 1.0)
+                v, n, t = hexagon_geometry(1.5,gb_scale)
                 # Rotate to match linkage positions
                 tl = vector_rotation(((v[6,0]+v[7,0])/2-(v[18,0]+v[19,0])/2,(v[6,1]+v[7,1])/2-(v[18,1]+v[19,1])/2,(v[6,2]+v[7,2])/2-(v[18,2]+v[19,2])/2),(C1[0]-C4[0],C1[1]-C4[1],C1[2]-C4[2]))
                 v = tl.transform_points(v, in_place=True)
