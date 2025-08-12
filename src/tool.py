@@ -110,9 +110,12 @@ class PrivateerTool(ToolInstance):
     
     def glycoblock_resize_state_changed(self):
         if self.glycoblocksexist:
-            if self.glycoblocks_resize_tickbox.isChecked():
-                self.glycoblocks.resize_with_scroll()
             self.glycoblocks._scroll_resize = self.glycoblocks_resize_tickbox.isChecked()
+            if self.glycoblocks._scroll_resize:
+                self.glycoblocks.resize_with_scroll()
+            else:
+                self.glycoblocks.update()
+                
 
 
     def fill_context_menu(self, menu, x, y):
@@ -152,9 +155,10 @@ class Glycoblocks(Model):
         Model.__init__(self, "Privateer Glycan 3D Symbols", self.session)
         self._auto_update = auto_update
         self._scroll_resize = scroll_resize
-        t = structure.triggers
-        self._structure_change_handler = t.add_handler('changes', self.is_update_needed)
-        self._structure_resize_handler = t.add_handler('changes', self.is_resize_needed)
+        st = structure.triggers
+        self._structure_change_handler = st.add_handler('changes', self.is_update_needed)
+        vt = self.session.main_view.triggers
+        self._structure_resize_handler = vt.add_handler('graphics update', self.is_resize_needed)
         self._bounds = self._atomic_structure.bounds() 
         #self._bounds = self.session.main_view.drawing_bounds() 
         self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
@@ -181,6 +185,7 @@ class Glycoblocks(Model):
             self.handler = get_triggers().add_handler('changes done', self.update)
             self._updated = True
 
+
     def update(self, *_):
         session = self._atomic_structure.session
         from chimerax.core.triggerset import DEREGISTER
@@ -195,24 +200,20 @@ class Glycoblocks(Model):
         self.display = True
         return DEREGISTER
     
-    def is_resize_needed(self, trigger_name, changes):
-        changes = changes[1]
-        reasons = changes.atom_reasons()
+    def is_resize_needed(self, *_):
         resize_needed = False
         self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
         if self._scroll_resize:
-            if "display changed" in reasons:
-                #self.bounds = self.session.main_view.drawing_bounds() 
-                self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
-                scale = self._view_window/self._bounds.width()
-                if scale != self._scale:
-                    resize_needed = True
-                    self._scale = scale
-        else:
-            resize_needed = False
+            #self.bounds = self.session.main_view.drawing_bounds() 
+            self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
+            scale = self._view_window/self._bounds.width()
+            if scale != self._scale:
+                resize_needed = True
+                self._scale = scale
         if resize_needed:
             from chimerax.atomic import get_triggers
-            self.handler = get_triggers().add_handler('changes done', self.resize_with_scroll)
+            #self.resize_handler = get_triggers().add_handler('changes done', self.resize_with_scroll)
+            self.resize_with_scroll()
 
     def resize_with_scroll(self, *_):
         session = self._atomic_structure.session
