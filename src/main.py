@@ -36,6 +36,8 @@ def privateer_validation_wrapper(session,OutputFolderPath,m,i,display=False):
 def draw_glycoblocks(session,Glycans, modelID,gb_scale=1):
     if gb_scale < 1:
         gb_scale = 1
+    if gb_scale > 3:
+        gb_scale = 3
     from chimerax.surface.shapes import cylinder_geometry, box_geometry, sphere_geometry
     from chimerax.geometry import Place, vector_rotation, scale
     import numpy as np
