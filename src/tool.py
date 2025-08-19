@@ -10,7 +10,7 @@ class PrivateerTool(ToolInstance):
 
     SESSION_ENDURING = False    # Does this instance persist when session closes
     SESSION_SAVE = True         # We do save/restore in sessions
-    help = "help:privateer_for_chimeraX_docs.html"
+    help = "help:user/tools/privateer_for_chimeraX_docs.html"
                                 # Let ChimeraX know about our help page
 
     def __init__(self, session, tool_name):
@@ -47,6 +47,7 @@ class PrivateerTool(ToolInstance):
         models = atomic.all_structures(self.session)
         layout = QFormLayout()
         vbox = QVBoxLayout()
+        self.documentation_button = QPushButton("Open Privateer for ChimeraX User Guide")
         label1 = "Model ID:"
         self.combo_box = QComboBox()
         for m in models:
@@ -57,6 +58,7 @@ class PrivateerTool(ToolInstance):
         self.glycoblocks_update_tickbox = QCheckBox(text="Auto Update Glycan 3D Symbols")
         self.glycoblocks_resize_tickbox = QCheckBox(text="Resize Glycan 3D Symbols With Zoom")
 
+        layout.addRow(self.documentation_button)
         layout.addRow(label1,self.combo_box)
         layout.addRow(self.run_button,self.report_update_tickbox)
         vbox.addWidget(self.glycoblocks_update_tickbox)
@@ -67,6 +69,7 @@ class PrivateerTool(ToolInstance):
 
         # Arrange for our 'return_pressed' method to be called when the
         # user presses the Return key
+        self.documentation_button.clicked.connect(self.documentation_button_pressed)
         self.run_button.clicked.connect(self.button_pressed)
         self.glycoblocks_button.clicked.connect(self.glycoblocks_button_pressed)
         self.glycoblocks_update_tickbox.stateChanged.connect(self.glycoblock_update_state_changed)
@@ -78,6 +81,25 @@ class PrivateerTool(ToolInstance):
         # Show the window on the user-preferred side of the ChimeraX
         # main window
         self.tool_window.manage('side')
+
+    def documentation_button_pressed(self):
+        from chimerax.core.commands import run
+        from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
+        from Qt.QtWidgets import QVBoxLayout
+        import os
+        dirpath = os.path.dirname(os.path.abspath(__file__))
+        documentation_file = os.path.join(dirpath,"docs","user","tools","documentation.html")
+        #with open(documentation_file,"r") as htmlfile:
+        #    htmlstring = htmlfile.read()
+        #child_tool_window = self.tool_window.create_child_window("Documentation", close_destroys = False)
+        #parent = child_tool_window.ui_area
+        #webview = ChimeraXHtmlView(self.session, parent)
+        #layout.addWidget(webview)
+        #layout = QVBoxLayout()
+        #child_tool_window.ui_area.setLayout(layout)
+        #child_tool_window.manage('side')
+        #webview.setHtml(htmlstring)
+        run(self.session, f"open '{documentation_file}'")
     
     def button_pressed(self):
         from chimerax import atomic
@@ -111,10 +133,8 @@ class PrivateerTool(ToolInstance):
     def glycoblock_resize_state_changed(self):
         if self.glycoblocksexist:
             self.glycoblocks._scroll_resize = self.glycoblocks_resize_tickbox.isChecked()
-            if self.glycoblocks._scroll_resize:
-                self.glycoblocks.resize_with_scroll()
-            else:
-                self.glycoblocks.update()
+            self.glycoblocks.resize_with_scroll()
+
                 
 
 
@@ -162,7 +182,7 @@ class Glycoblocks(Model):
         self._bounds = self._atomic_structure.bounds() 
         #self._bounds = self.session.main_view.drawing_bounds() 
         self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
-        self._scale = self._view_window/self._bounds.width()
+        self._scale = 2*self._view_window/self._bounds.width()
         self.update()
         structure.add([self])
 
@@ -206,7 +226,7 @@ class Glycoblocks(Model):
         if self._scroll_resize:
             #self.bounds = self.session.main_view.drawing_bounds() 
             self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
-            scale = self._view_window/self._bounds.width()
+            scale = 2*self._view_window/self._bounds.width()
             if scale != self._scale:
                 resize_needed = True
                 self._scale = scale
@@ -219,7 +239,10 @@ class Glycoblocks(Model):
         session = self._atomic_structure.session
         from chimerax.core.triggerset import DEREGISTER
         from .main import draw_glycoblocks
-        v,n,t,c = draw_glycoblocks(session,self._glycans,self._modelID,self._scale)
+        if self._scroll_resize:
+            v,n,t,c = draw_glycoblocks(session,self._glycans,self._modelID,self._scale)
+        else:
+            v,n,t,c = draw_glycoblocks(session,self._glycans,self._modelID)
         self.set_geometry(v,n,t)
         self.vertex_colors = c
         self.display = True
