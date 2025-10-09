@@ -297,12 +297,10 @@ class ValidationReportWindow(QFrame):
     """
     def __init__(self,session,privateer_tool):
         """
-        Create the validation report widget, and add to the tool window.
+        Create the validation report window, and add to the tool window.
 
         Args:
-        - atomic_structure: a :py:class:`ChimeraX.AtomicStructure` instance
         - privateer_tool_instance: an instance of the privateer tool used to create the validation report
-        - auto_update: if true, glycoblocks will update with any changes to the model
         """
         # Initialize base class.
         super().__init__()
@@ -310,6 +308,7 @@ class ValidationReportWindow(QFrame):
         from Qt.QtWidgets import QVBoxLayout, QTabWidget
         self.session = session
         self.tabs = QTabWidget(tabsClosable=True)
+        self.tabs.tabCloseRequested.connect(self.close_tab)
         self.layout = QVBoxLayout()
         self.layout.addWidget(self.tabs)
         self.child_tool_window = privateer_tool.tool_window.create_child_window("Validation Report", close_destroys = False)
@@ -319,9 +318,10 @@ class ValidationReportWindow(QFrame):
     def new_tab(self, privateer_tool):
         parent = self.child_tool_window.ui_area
         parent.setMinimumHeight(1)
-        ValidationReport(self.session,privateer_tool, self, parent)
+        return ValidationReport(self.session,privateer_tool, self, parent)
 
-    #def close_tab(self,tabindx):
+    def close_tab(self,tabindx):
+        self.tabs.removeTab(tabindx)
 
 from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
 class ValidationReport(ChimeraXHtmlView):
