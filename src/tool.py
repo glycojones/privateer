@@ -33,7 +33,9 @@ class PrivateerTool(ToolInstance):
         # We will be adding an item to the tool's context menu, so override
         # the default MainToolWindow fill_context_menu method
         self.tool_window.fill_context_menu = self.fill_context_menu
+        self.reportexist = False
         self.glycoblocksexist = False
+        self.valreportwindow = None
         self._build_ui()
 
     def _build_ui(self):
@@ -49,23 +51,37 @@ class PrivateerTool(ToolInstance):
         vbox = QVBoxLayout()
         self.documentation_button = QPushButton("Open Privateer for ChimeraX User Guide")
         label1 = "Model ID:"
-        self.combo_box = QComboBox()
+        self.combobox = QComboBox()
+        self.modellist = []
         for m in models:
-            self.combo_box.addItem(str(m.id_string))
+            self.modellist.append({"modelID": m.id_string, "report": None})
+            self.combobox.addItem(str(m.id_string))
         self.run_button = QPushButton("Run Privateer")
         self.glycoblocks_button = QPushButton("Show Glycan 3D Symbols")
+        if len(models) > 0:
+            self.run_button.setEnabled(True)
+            self.glycoblocks_button.setEnabled(True)
+        else:
+            self.run_button.setEnabled(False)
+            self.glycoblocks_button.setEnabled(False)
         self.report_update_tickbox = QCheckBox(text="Auto Update Validation Report")
         self.glycoblocks_update_tickbox = QCheckBox(text="Auto Update Glycan 3D Symbols")
         self.glycoblocks_resize_tickbox = QCheckBox(text="Resize Glycan 3D Symbols With Zoom")
 
         layout.addRow(self.documentation_button)
-        layout.addRow(label1,self.combo_box)
+        layout.addRow(label1,self.combobox)
         layout.addRow(self.run_button,self.report_update_tickbox)
         vbox.addWidget(self.glycoblocks_update_tickbox)
         vbox.addWidget(self.glycoblocks_resize_tickbox)
         layout.addRow(self.glycoblocks_button,vbox)
 
         layout.setFieldGrowthPolicy(QFormLayout.ExpandingFieldsGrow)
+
+        # Add triggers for new models being added
+        from chimerax.core.models import ADD_MODELS, REMOVE_MODELS
+        st = self.session.triggers
+        self._models_add_handler = st.add_handler(ADD_MODELS, self.update_models)
+        self._models_del_handler = st.add_handler(REMOVE_MODELS, self.update_models)
 
         # Arrange for our 'return_pressed' method to be called when the
         # user presses the Return key
@@ -82,6 +98,34 @@ class PrivateerTool(ToolInstance):
         # main window
         self.tool_window.manage('side')
 
+    def update_models(self, *_):
+        # If a new model is added or deleted, the model ID needs to be added/deleted to the combo box
+        from chimerax import atomic
+        self.combobox.clear()   
+        models = atomic.all_structures(self.session)   
+        modelIDs = [] 
+        for i,m in enumerate(models): #FLAG: Add iten here for if a model ID exists in the list that no longer exists in the models
+            modelIDs.append(m.id_string)
+            if not any(model['modelID'] == m.id_string for model in self.modellist):
+                self.modellist.append({"modelID": m.id_string})
+            else:
+                for j,model in enumerate(self.modellist):
+                    if model["modelID"] == m.id_string:
+                        self.modellist[j]["modelID"] = m.id_string
+                self.modellist
+            self.combobox.addItem(str(m.id_string))
+        if len(modelIDs) == 0:
+            self.reportexist = False
+        for i,m in enumerate(self.modellist):
+            if not m["modelID"] in modelIDs:
+                del self.modellist[i]
+        if len(models) > 0:
+            self.run_button.setEnabled(True)
+            self.glycoblocks_button.setEnabled(True)
+        else:
+            self.run_button.setEnabled(False)
+            self.glycoblocks_button.setEnabled(False)
+        
     def documentation_button_pressed(self):
         from chimerax.core.commands import run
         from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
@@ -89,40 +133,38 @@ class PrivateerTool(ToolInstance):
         import os
         dirpath = os.path.dirname(os.path.abspath(__file__))
         documentation_file = os.path.join(dirpath,"docs","user","tools","documentation.html")
-        #with open(documentation_file,"r") as htmlfile:
-        #    htmlstring = htmlfile.read()
-        #child_tool_window = self.tool_window.create_child_window("Documentation", close_destroys = False)
-        #parent = child_tool_window.ui_area
-        #webview = ChimeraXHtmlView(self.session, parent)
-        #layout.addWidget(webview)
-        #layout = QVBoxLayout()
-        #child_tool_window.ui_area.setLayout(layout)
-        #child_tool_window.manage('side')
-        #webview.setHtml(htmlstring)
         run(self.session, f"open '{documentation_file}'")
     
     def button_pressed(self):
         from chimerax import atomic
-        modelID = self.combo_box.currentText()
+        modelID = self.combobox.currentText()
         models = atomic.all_structures(self.session)
         for m in models:
             if m.id_string == modelID:
                 self.model = m
+        for i in range(len(self.modellist)):
+            if self.modellist[i]["modelID"] == modelID:
+                modelindx = i
         self.auto_update = self.report_update_tickbox.isChecked()
-        self.report = ValidationReport(self.session, self) 
+        if self.reportexist:
+            self.modellist[modelindx]["report"] = self.valreportwindow.new_tab(self) 
+        else:
+            self.valreportwindow = ValidationReportWindow(self.session, self)
+            self.modellist[modelindx]["report"] = self.valreportwindow.new_tab(self) 
         self.reportexist = True
     
     def report_update_state_changed(self):
         if self.reportexist:
-            if self.report_update_tickbox.isChecked():
-                self.report.update()
-            self.report._auto_update = self.report_update_tickbox.isChecked()
+            for i, m in enumerate(self.modellist):
+                if m["report"] != None:
+                    if self.report_update_tickbox.isChecked():
+                        self.modellist[i]["report"].update()
+                    self.modellist[i]["report"]._auto_update = self.report_update_tickbox.isChecked()
     
     def glycoblocks_button_pressed(self):
         from chimerax.core.commands import run
         self.glycoblocksexist = True
-        # FLAG: this is not really the end product. I need to have a "on state changed" set up for the tick box so the user can tick and untick whenever.
-        self.glycoblocks = run(self.session, f"privateer_glycoblocks {self.combo_box.currentText()} {self.glycoblocks_update_tickbox.isChecked()} {self.glycoblocks_resize_tickbox.isChecked()}")
+        self.glycoblocks = run(self.session, f"privateer_glycoblocks {self.combobox.currentText()} {self.glycoblocks_update_tickbox.isChecked()} {self.glycoblocks_resize_tickbox.isChecked()}")
 
     def glycoblock_update_state_changed(self):
         if self.glycoblocksexist:
@@ -135,9 +177,6 @@ class PrivateerTool(ToolInstance):
             self.glycoblocks._scroll_resize = self.glycoblocks_resize_tickbox.isChecked()
             self.glycoblocks.resize_with_scroll()
 
-                
-
-
     def fill_context_menu(self, menu, x, y):
         # Add any tool-specific items to the given context menu (a QMenu instance).
         # The menu will then be automatically filled out with generic tool-related actions
@@ -148,7 +187,7 @@ class PrivateerTool(ToolInstance):
         # was raised.
         from Qt.QtGui import QAction
         clear_action = QAction("Clear", menu)
-        clear_action.triggered.connect(lambda *args: self.combo_box.clear())
+        clear_action.triggered.connect(lambda *args: self.combobox.clear())
         clear_action.triggered.connect(lambda *args: self.run_button.clear())
         clear_action.triggered.connect(lambda *args: self.glycoblocks_button.clear())
         menu.addAction(clear_action)
@@ -222,14 +261,17 @@ class Glycoblocks(Model):
     
     def is_resize_needed(self, *_):
         resize_needed = False
-        self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
-        if self._scroll_resize:
-            #self.bounds = self.session.main_view.drawing_bounds() 
+        if self.session == None:
+            resize_needed = False
+        else:
             self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
-            scale = 2*self._view_window/self._bounds.width()
-            if scale != self._scale:
-                resize_needed = True
-                self._scale = scale
+            if self._scroll_resize:
+                #self.bounds = self.session.main_view.drawing_bounds() 
+                self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
+                scale = 2*self._view_window/self._bounds.width()
+                if scale != self._scale:
+                    resize_needed = True
+                    self._scale = scale
         if resize_needed:
             from chimerax.atomic import get_triggers
             #self.resize_handler = get_triggers().add_handler('changes done', self.resize_with_scroll)
@@ -247,11 +289,11 @@ class Glycoblocks(Model):
         self.vertex_colors = c
         self.display = True
         return DEREGISTER
-    
+
 from Qt.QtWidgets import QFrame
-class ValidationReport(QFrame):
+class ValidationReportWindow(QFrame):
     """
-    Displays Privateer Validation report in a tool window.
+    Tabbed tool window to display Privateer Validation Report(s)
     """
     def __init__(self,session,privateer_tool):
         """
@@ -265,6 +307,39 @@ class ValidationReport(QFrame):
         # Initialize base class.
         super().__init__()
         from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
+        from Qt.QtWidgets import QVBoxLayout, QTabWidget
+        self.session = session
+        self.tabs = QTabWidget(tabsClosable=True)
+        self.layout = QVBoxLayout()
+        self.layout.addWidget(self.tabs)
+        self.child_tool_window = privateer_tool.tool_window.create_child_window("Validation Report", close_destroys = False)
+        self.child_tool_window.ui_area.setLayout(self.layout)
+        self.child_tool_window.manage('side')
+
+    def new_tab(self, privateer_tool):
+        parent = self.child_tool_window.ui_area
+        parent.setMinimumHeight(1)
+        ValidationReport(self.session,privateer_tool, self, parent)
+
+    #def close_tab(self,tabindx):
+
+from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
+class ValidationReport(ChimeraXHtmlView):
+    """
+    Displays Privateer Validation report in a tab of the tool window
+    """
+    def __init__(self,session,privateer_tool,valreportwindow,parent):
+        """
+        Create the validation report widget, and add to the tool window.
+
+        Args:
+        - atomic_structure: a :py:class:`ChimeraX.AtomicStructure` instance
+        - privateer_tool_instance: an instance of the privateer tool used to create the validation report
+        - auto_update: if true, glycoblocks will update with any changes to the model
+        """
+        # Initialize base class.
+        super().__init__(session,parent)
+        from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
         from Qt.QtWidgets import QVBoxLayout
         self.session = session
         structure = self._atomic_structure = privateer_tool.model
@@ -272,14 +347,7 @@ class ValidationReport(QFrame):
         self._auto_update = privateer_tool.auto_update
         t = structure.triggers
         self._structure_change_handler = t.add_handler('changes', self.is_update_needed)
-        self.child_tool_window = privateer_tool.tool_window.create_child_window("Validation Report", close_destroys = False)
-        parent = self.child_tool_window.ui_area
-        parent.setMinimumHeight(1)
-        self.webview = ChimeraXHtmlView(self.session, parent)
-        self.layout = QVBoxLayout()
-        self.layout.addWidget(self.webview)
-        self.child_tool_window.ui_area.setLayout(self.layout)
-        self.child_tool_window.manage('side')
+        valreportwindow.tabs.addTab(self,f"Model #{modelID}")
         self.html = ""
         self.update()
 
@@ -310,9 +378,9 @@ class ValidationReport(QFrame):
         htmlstring = "<html>\n"
         htmlstring += "<table border=\"1\">\n"
         htmlstring += "<tr>\n"
-        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:20; text-align:center; font-weight:\"bold\";padding:15'>GlyConnectID</th>\n"
-        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:20; text-align:center; font-weight:\"bold\";padding:15'>GlyToucanID</th>\n"
-        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:20; text-align:center; font-weight:\"bold\";padding:15'>SNFG</th>\n"
+        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:16; text-align:center; font-weight:\"bold\";padding:5'>GlyConnectID</th>\n"
+        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:16; text-align:center; font-weight:\"bold\";padding:5'>GlyToucanID</th>\n"
+        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:16; text-align:center; font-weight:\"bold\";padding:5'>SNFG</th>\n"
         htmlstring += "</tr>\n"
         for i, glycan in enumerate(self._glycans):
             svgstring = glycan["svg"]
@@ -330,18 +398,14 @@ class ValidationReport(QFrame):
                 sugarresID = str(torsion["sugar_2_resID"])
                 svgstring = svgstring.replace(f"cxcmd:{sugarchainID}{sugarresID}", f"cxcmd:privateer_torsion_plot {sugar1} {donorPosition} {sugar2} {acceptorPosition} {phi} {psi}")
             htmlstring += "<tr>\n"
-            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:20; text-align:center; padding:15'>{glyconnectID}</td>\n"
-            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:20; text-align:center; padding:15'>{glytoucanID}</td>\n"
+            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:16; text-align:center; padding:5'>{glyconnectID}</td>\n"
+            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:16; text-align:center; padding:5'>{glytoucanID}</td>\n"
             htmlstring += f"<td>\n{svgstring}\n</td>\n"
             htmlstring += "</tr>\n"
         htmlstring += "</table>\n"
         htmlstring += "</html>"
         htmlstring = htmlstring.replace("cxcmd:view /", f"cxcmd:view #{self._modelID}/")
         if htmlstring != self.html:
-            self.webview.setHtml(htmlstring)
+            self.setHtml(htmlstring)
             self.html = htmlstring
         return DEREGISTER
-
-
-
-

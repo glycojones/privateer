@@ -1595,9 +1595,10 @@ void privateer::glycanbuilderplot::Plot::write_svg_header   ( std::fstream& of )
 {
 
     of << "<svg version=\"1.1\"\n"
-       << "     width=\"" << get_width() << "\" \n"
-       << "     height=\"" << get_height() << "\" \n"
+       << "     width=\"" << get_width()*0.75 << "\" \n"
+       << "     height=\"" << get_height()*0.75 << "\" \n"
        << "     viewBox=\"" << get_viewbox() << " \"\n"
+       //<< "     transform=\"scale(0.5)\"\n"
        << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
        << "     preserveAspectRatio=\"xMidYMid slice\">\n\n"
        << "  <style>\n"
@@ -1855,9 +1856,10 @@ std::string privateer::glycanbuilderplot::Plot::get_svg_string_header   ( )
     std::ostringstream of;
 
     of << "<svg version=\"1.1\"\n"
-       << "     width=\"" << get_width() << "\" \n"
-       << "     height=\"" << get_height() << "\" \n"
+       << "     width=\"" << get_width()*0.75 << "\" \n"
+       << "     height=\"" << get_height()*0.75 << "\" \n"
        << "     viewBox=\"" << get_viewbox() << " \"\n"
+       //<< "     transform=\"scale(0.5)\"\n"
        << "     xmlns=\"http://www.w3.org/2000/svg\"\n"
        << "     preserveAspectRatio=\"xMidYMid slice\">\n\n"
        << "  <style>\n"
@@ -2087,9 +2089,10 @@ void privateer::glycanbuilderplot::Plot::write_svg_header_ostringstream   ( std:
 
     of << "<div>\n"
        << "<svg version=\"1.1\"\n"
-       << "     width=\"" << get_width() << "\" \n"
-       << "     height=\"" << get_height() << "\" \n"
+       << "     width=\"" << get_width()*0.75 << "\" \n"
+       << "     height=\"" << get_height()*0.75 << "\" \n"
        << "     viewBox=\"" << get_viewbox() << " \"\n"
+       //<< "     transform=\"scale(0.5)\"\n"
        << "     xmlns=\"http://www.w3.org/2000/svg\"\n>"
 //        << "     preserveAspectRatio=\"xMinYMinXMaxYMax meet\">\n\n"
        << "  <style>\n"
