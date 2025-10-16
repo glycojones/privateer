@@ -33,8 +33,6 @@ class PrivateerTool(ToolInstance):
         # We will be adding an item to the tool's context menu, so override
         # the default MainToolWindow fill_context_menu method
         self.tool_window.fill_context_menu = self.fill_context_menu
-        #self.reportexist = False
-        self.valreportwindow = None
         self.glycoblocksexist = False
         self.valreportwindow = None
         self._build_ui()
@@ -105,18 +103,36 @@ class PrivateerTool(ToolInstance):
         self.combobox.clear()   
         models = atomic.all_structures(self.session)   
         modelIDs = [] 
-        for i,m in enumerate(models): #FLAG: Add iten here for if a model ID exists in the list that no longer exists in the models
-            modelIDs.append(m.id_string)
-            if not any(model['modelID'] == m.id_string for model in self.modellist):
-                self.modellist.append({"modelID": m.id_string})
+        if self.valreportwindow != None:
+            if self.valreportwindow.ui_area != None:
+                reportexists = True
             else:
-                for j,model in enumerate(self.modellist):
-                    if model["modelID"] == m.id_string:
-                        self.modellist[j]["modelID"] = m.id_string
-                self.modellist
-            self.combobox.addItem(str(m.id_string))
+                reportexists = False
+        else:
+            reportexists = False
+        if reportexists:
+            for i,m in enumerate(models): #FLAG: Add iten here for if a model ID exists in the list that no longer exists in the models
+                modelIDs.append(m.id_string)
+                if not any(model['modelID'] == m.id_string for model in self.modellist):
+                    self.modellist.append({"modelID": m.id_string})
+                    self.modellist[i]["report"] = None
+                else:
+                    for j,model in enumerate(self.modellist):
+                        if model["modelID"] == m.id_string:
+                            self.modellist[j]["modelID"] = m.id_string
+                self.combobox.addItem(str(m.id_string))
+            for i, m in enumerate(self.modellist):
+                if not any(mID == m["modelID"] for mID in modelIDs):
+                    del self.modellist[i]
+        else:
+            self.modellist = []
+            for i,m in enumerate(models):
+                modelIDs.append(m.id_string)
+                self.modellist.append({"modelID": m.id_string})
+                self.modellist[i]["report"] = None
+                self.combobox.addItem(str(m.id_string))
+
         if len(modelIDs) == 0:
-            #self.reportexist = False
             self.valreportwindow = None
         for i,m in enumerate(self.modellist):
             if not m["modelID"] in modelIDs:
@@ -148,26 +164,28 @@ class PrivateerTool(ToolInstance):
             if self.modellist[i]["modelID"] == modelID:
                 modelindx = i
         self.auto_update = self.report_update_tickbox.isChecked()
-        #if self.reportexist:
         if self.valreportwindow != None:
             if self.valreportwindow.ui_area != None:
                 self.valreportwindow.new_tab(self,modelID) 
             else:
+                for i in range(len(self.modellist)):
+                    self.modellist[i]["report"] = None
                 self.valreportwindow = ValidationReportWindow(self.session, self)
                 self.valreportwindow.new_tab(self,modelID) 
         else:
+            for i in range(len(self.modellist)):
+                self.modellist[i]["report"] = None
             self.valreportwindow = ValidationReportWindow(self.session, self)
             self.valreportwindow.new_tab(self,modelID) 
-        #self.reportexist = True
     
     def report_update_state_changed(self):
-        #if self.reportexist:
         if self.valreportwindow != None:
-            for i, m in enumerate(self.modellist):
-                if m["report"] != None:
-                    if self.report_update_tickbox.isChecked():
-                        self.modellist[i]["report"].update()
-                    self.modellist[i]["report"]._auto_update = self.report_update_tickbox.isChecked()
+            if self.valreportwindow.ui_area != None:
+                for i, m in enumerate(self.modellist):
+                    if m["report"] != None:
+                        if self.report_update_tickbox.isChecked():
+                            self.modellist[i]["report"].update()
+                        self.modellist[i]["report"]._auto_update = self.report_update_tickbox.isChecked()
     
     def glycoblocks_button_pressed(self):
         from chimerax.core.commands import run
@@ -323,31 +341,34 @@ class ValidationReportWindow(ChildToolWindow):
         self.layout.addWidget(self.tabs)
         self.ui_area.setLayout(self.layout)
         self.manage('side')
-    
-    def closeEvent(self, event):
-        import QtWidgets
-        close = QtWidgets.QMessageBox.question(self,
-                                         "QUIT",
-                                         "Are you sure want to stop process?",
-                                         QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
-        if close == QtWidgets.QMessageBox.Yes:
-            event.accept()
-        else:
-            event.ignore()
+        self.inactivetabs = []
+        self.modellist = privateer_tool.modellist
 
     def new_tab(self, privateer_tool, modelID):
         parent = self.ui_area
-        parent.setMinimumHeight(1) #FLAG: maybe the list is updated here
-        valreport = ValidationReport(self.session,privateer_tool, self, parent)
-        self.tabs.addTab(valreport,f"Model #{modelID}")
-        for i in range(len(privateer_tool.modellist)):
-            if privateer_tool.modellist[i]["modelID"] == modelID:
+        parent.setMinimumHeight(1) 
+        for i in range(len(self.modellist)):
+            if self.modellist[i]["modelID"] == modelID:
                 modelindx = i
-        privateer_tool.modellist[modelindx]["report"] = valreport
+        if self.modellist[modelindx]["report"] != None:
+            for i in range(self.tabs.count()):
+                if self.tabs.tabText(i) == f"Model #{modelID}":
+                    self.inactivetabs.append(i)
+                    self.tabs.setTabText(i,f"Model #{modelID} (inactive)")
+        valreport = ValidationReport(self.session,privateer_tool, self, parent)
+        self.modellist[modelindx]["report"] = valreport
+        tabindx = self.tabs.addTab(valreport,f"Model #{modelID}")
+
 
     def close_tab(self,tabindx):
+        tabtitle = self.tabs.tabText(tabindx)
+        modelID = tabtitle.partition("#")[2]
+        for i in range(len(self.modellist)):
+            if self.modellist[i]["modelID"] == modelID:
+                modelindx = i
         self.tabs.removeTab(tabindx)
-        #FLAG: remove the validation report from the list
+        if tabindx not in self.inactivetabs:
+            self.modellist[modelindx]["report"] = None
 
 from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
 class ValidationReport(ChimeraXHtmlView):
@@ -433,138 +454,3 @@ class ValidationReport(ChimeraXHtmlView):
             self.html = htmlstring
         return DEREGISTER
     
-from Qt.QtWidgets import QWidget 
-#FLAG: Change this to inheret from the ChildToolWindow class so that it can have a working closeEvent()
-# This will require changes to how it is initialised, and in how it is passed to the ValidationReport class
-class OLDValidationReportWindow(QWidget):
-    """
-    Tabbed tool window to display Privateer Validation Report(s)
-    """
-    def __init__(self,session,privateer_tool):
-        """
-        Create the validation report window, and add to the tool window.
-
-        Args:
-        - privateer_tool_instance: an instance of the privateer tool used to create the validation report
-        """
-        # Initialize base class.
-        super().__init__()
-        from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
-        from Qt.QtWidgets import QVBoxLayout, QTabWidget
-        self.session = session
-        self.tabs = QTabWidget(tabsClosable=True)
-        self.tabs.tabCloseRequested.connect(self.close_tab)
-        self.layout = QVBoxLayout()
-        self.layout.addWidget(self.tabs)
-        self.child_tool_window = privateer_tool.tool_window.create_child_window("Validation Report", close_destroys = True)
-        self.child_tool_window.ui_area.setLayout(self.layout)
-        self.child_tool_window.manage('side')
-    
-    def closeEvent(self, event):
-        import QtWidgets
-        close = QtWidgets.QMessageBox.question(self,
-                                         "QUIT",
-                                         "Are you sure want to stop process?",
-                                         QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
-        if close == QtWidgets.QMessageBox.Yes:
-            event.accept()
-        else:
-            event.ignore()
-
-    def new_tab(self, privateer_tool, modelID):
-        parent = self.child_tool_window.ui_area
-        parent.setMinimumHeight(1) #FLAG: maybe the list is updated here
-        valreport = ValidationReport(self.session,privateer_tool, self, parent)
-        self.tabs.addTab(valreport,f"Model #{modelID}")
-        for i in range(len(privateer_tool.modellist)):
-            if privateer_tool.modellist[i]["modelID"] == modelID:
-                modelindx = i
-        privateer_tool.modellist[modelindx]["report"] = valreport
-
-    def close_tab(self,tabindx):
-        self.tabs.removeTab(tabindx)
-        #FLAG: remove the validation report from the list
-
-from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
-class OLDValidationReport(ChimeraXHtmlView):
-    """
-    Displays Privateer Validation report in a tab of the tool window
-    """
-    def __init__(self,session,privateer_tool,valreportwindow,parent):
-        """
-        Create the validation report widget, and add to the tool window.
-
-        Args:
-        - privateer_tool_instance: an instance of the privateer tool used to create the validation report
-        - valreportwindow:
-        - parent:
-        """
-        # Initialize base class.
-        super().__init__(session,parent)
-        self.session = session
-        structure = self._atomic_structure = privateer_tool.model
-        modelID = self._modelID = privateer_tool.model.id_string
-        self._auto_update = privateer_tool.auto_update
-        t = structure.triggers
-        self._structure_change_handler = t.add_handler('changes', self.is_update_needed)
-        self.html = ""
-        self.update()
-
-    def is_update_needed(self, trigger_name, changes):
-        changes = changes[1]
-        reasons = changes.atom_reasons()
-        update_needed = False
-        created = changes.created_atoms()
-        deleted = changes.num_deleted_atoms()
-        modified = changes.modified_atoms()
-        if self._auto_update:
-            if len(created) or deleted or len(modified):
-                update_needed = True
-            if 'coord changed' in reasons:
-                update_needed = True
-        else:
-            update_needed = False
-        if update_needed:
-            from chimerax.atomic import get_triggers
-            self.handler = get_triggers().add_handler('changes done', self.update)
-            self._updated = True
-
-    def update(self, *_):
-        session = self.session
-        from chimerax.core.triggerset import DEREGISTER
-        from .main import privateer_validation_wrapper
-        self._glycans = privateer_validation_wrapper(self.session,None,self._atomic_structure,self._modelID,True)
-        htmlstring = "<html>\n"
-        htmlstring += "<table border=\"1\">\n"
-        htmlstring += "<tr>\n"
-        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:16; text-align:center; font-weight:\"bold\";padding:5'>GlyConnectID</th>\n"
-        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:16; text-align:center; font-weight:\"bold\";padding:5'>GlyToucanID</th>\n"
-        htmlstring += f"<th style='font-family:\"Helvetica\"; font-size:16; text-align:center; font-weight:\"bold\";padding:5'>SNFG</th>\n"
-        htmlstring += "</tr>\n"
-        for i, glycan in enumerate(self._glycans):
-            svgstring = glycan["svg"]
-            rootID = glycan["RootID"]
-            glyconnectID = glycan["GlyConnectID"]
-            glytoucanID = glycan["GlyToucanID"]
-            for j, torsion in enumerate(glycan["Torsions"]):
-                sugar1 = torsion["sugar_1"]
-                sugar2 = torsion["sugar_2"]
-                donorPosition = torsion["atom_number_1"]
-                acceptorPosition = torsion["atom_number_2"]
-                phi = torsion["phi"]
-                psi = torsion["psi"]
-                sugarchainID = torsion["chainID"]
-                sugarresID = str(torsion["sugar_2_resID"])
-                svgstring = svgstring.replace(f"cxcmd:{sugarchainID}{sugarresID}", f"cxcmd:privateer_torsion_plot {sugar1} {donorPosition} {sugar2} {acceptorPosition} {phi} {psi}")
-            htmlstring += "<tr>\n"
-            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:16; text-align:center; padding:5'>{glyconnectID}</td>\n"
-            htmlstring += f"<td style='font-family:\"Helvetica\"; font-size:16; text-align:center; padding:5'>{glytoucanID}</td>\n"
-            htmlstring += f"<td>\n{svgstring}\n</td>\n"
-            htmlstring += "</tr>\n"
-        htmlstring += "</table>\n"
-        htmlstring += "</html>"
-        htmlstring = htmlstring.replace("cxcmd:view /", f"cxcmd:view #{self._modelID}/")
-        if htmlstring != self.html:
-            self.setHtml(htmlstring)
-            self.html = htmlstring
-        return DEREGISTER
