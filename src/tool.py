@@ -137,6 +137,11 @@ class PrivateerTool(ToolInstance):
         for i,m in enumerate(self.modellist):
             if not m["modelID"] in modelIDs:
                 del self.modellist[i]
+
+        if reportexists:
+            self.valreportwindow.modellist = self.modellist
+            self.valreportwindow.update_tabs()
+
         if len(models) > 0:
             self.run_button.setEnabled(True)
             self.glycoblocks_button.setEnabled(True)
@@ -177,6 +182,7 @@ class PrivateerTool(ToolInstance):
                 self.modellist[i]["report"] = None
             self.valreportwindow = ValidationReportWindow(self.session, self)
             self.valreportwindow.new_tab(self,modelID) 
+        #print(self.modellist)
     
     def report_update_state_changed(self):
         if self.valreportwindow != None:
@@ -341,7 +347,6 @@ class ValidationReportWindow(ChildToolWindow):
         self.layout.addWidget(self.tabs)
         self.ui_area.setLayout(self.layout)
         self.manage('side')
-        self.inactivetabs = []
         self.modellist = privateer_tool.modellist
 
     def new_tab(self, privateer_tool, modelID):
@@ -353,7 +358,6 @@ class ValidationReportWindow(ChildToolWindow):
         if self.modellist[modelindx]["report"] != None:
             for i in range(self.tabs.count()):
                 if self.tabs.tabText(i) == f"Model #{modelID}":
-                    self.inactivetabs.append(i)
                     self.tabs.setTabText(i,f"Model #{modelID} (inactive)")
         valreport = ValidationReport(self.session,privateer_tool, self, parent)
         self.modellist[modelindx]["report"] = valreport
@@ -363,12 +367,24 @@ class ValidationReportWindow(ChildToolWindow):
     def close_tab(self,tabindx):
         tabtitle = self.tabs.tabText(tabindx)
         modelID = tabtitle.partition("#")[2]
-        for i in range(len(self.modellist)):
-            if self.modellist[i]["modelID"] == modelID:
-                modelindx = i
         self.tabs.removeTab(tabindx)
-        if tabindx not in self.inactivetabs:
-            self.modellist[modelindx]["report"] = None
+        if "(inactive)" not in tabtitle:
+            modelindx = None
+            for i in range(len(self.modellist)):
+                if self.modellist[i]["modelID"] == modelID:
+                    modelindx = i
+            if modelindx != None:
+                self.modellist[modelindx]["report"] = None
+
+    def update_tabs(self):
+        for i in range(self.tabs.count()):
+            tabtitle = self.tabs.tabText(i)
+            if "(inactive)" not in tabtitle:
+                modelID = tabtitle.partition("#")[2]
+                if not any(model["modelID"] == modelID for model in self.modellist):
+                    self.tabs.setTabText(i,f"Model #{modelID} (inactive)")
+
+
 
 from chimerax.ui.widgets.htmlview import ChimeraXHtmlView
 class ValidationReport(ChimeraXHtmlView):
