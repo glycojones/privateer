@@ -9,64 +9,125 @@
 <h3 style="color:black ; font-family:'Helvetica' ; font-style:italic">A tool to visualise and validate carbohydrates</h3>
 
 <p style="color:black ; font-family:'Helvetica'">
-To read more about how <i>Privateer</i> for ChimeraX works, or to cite the use of this tool, please read PAPER CITATION GOES HERE.
+    To read more about how <i>Privateer</i> for ChimeraX works, or to cite the use of this tool, please read PAPER CITATION GOES HERE.
 </p>
 
 <h2 style="color:black ; font-family:'Helvetica'">Run Privateer</h2>
 
 <p style="color:black ; font-family:'Helvetica'">
-To run carbohydrate validation on a structure, first ensure that the correct model ID is selected from the dropdown menu, then press the <b>"Run Privateer"</b> button. 
-If you want the validation report to update as you edit the structure, tick the box <b>"Auto Update Validation Report"</b>. You can tick and untick this box as needed while editing.
-If changes are made with the box unticked, those updates will be made as soon as the box is ticked. The status of the box will apply to all validation reports produced for all structures.
+    To run carbohydrate validation on a structure, first ensure that the correct model ID is selected from the dropdown menu, then press the <b>"Run Privateer"</b> button. 
+    If you want the validation report to update as you edit the structure, tick the box <b>"Auto Update Validation Report"</b>. You can tick and untick this box as needed while editing.
+    If changes are made with the box unticked, those updates will be made as soon as the box is ticked. The status of the box will apply to all validation reports produced for all structures.
 </p>
 <p style="color:black ; font-family:'Helvetica'">
-The validation reporst displays in a separate tool window. It contains a table listing all the glycans in the structure.
+    The validation reports display in a separate tool window. 
+    If you <b>"Run Privateer"</b> multiple times it will create multiple tabs within this window, named according to the Model ID of the model they correspond to.
+</p>
+
+<img src="3qvp_multiple_tabs.png" 
+    alt="Screenshot of the privateer tool in ChimeraX with multiple tabs open for different models corresponding to different versions of structure 3qvp."
+    style="display:block ; margin-left:auto ; margin-right:auto ; width:75%">
+</img>
+
+<p style="color:black ; font-family:'Helvetica'">
+    If you <b>"Run Privateer"</b> multiple times on the same structure, the tab corresponding to the most recent tab is the only active one, with all other validation reports corresponding to that Model ID becoming inactive.
+</p>
+
+<img src="3qvp_inactive_tabs.png" 
+    alt="Screenshot of the privateer tool in ChimeraX with multiple tabs open for the same model (3qvp), one of which is inactive."
+    style="display:block ; margin-left:auto ; margin-right:auto ; width:75%">
+</img>
+
+<p style="color:black ; font-family:'Helvetica'">
+    The report itself contains a table listing all the glycans in the structure.
+</p>
+
+<img src="3qvp_validation_report.png" 
+    alt="Screenshot of the validation report for structure 3qvp that the privateer tool in ChimeraX produced.."
+    style="display:block ; margin-left:auto ; margin-right:auto ; width:75%">
+</img>
+
+<p style="color:black ; font-family:'Helvetica'">
+    <i>Privateer</i> <a href="https://doi.org/10.1038/nsmb.3115">[1]</a> searches the GlyConnect and GlyToucan databases for each of the glycans. 
+    If found, the corresponding IDs of the glycan in each database are displayed in the first two columns of the validation report table.
 </p>
 <p style="color:black ; font-family:'Helvetica'">
-<i>Privateer</i> <a href="https://doi.org/10.1038/nsmb.3115">[1]</a> searches the GlyConnect and GlyToucan databases for each of the glycans. 
-If found, the corresponding IDs of the glycan in each ]database are displayed in the first two columns of the validation report table.
+    <i>Privateer</i> also produces an interactive SNFG (a pictoral visualisation of the glycan). This is displayed in the third column of the validation report table.
+    Hovering your mouse over the different elments of this SNFG will display tooltips, providing more information on conformations, linkage types, and torsion angles.
 </p>
 <p style="color:black ; font-family:'Helvetica'">
-<i>Privateer</i> also produces an interactive SNFG (a pictoral visualisation of the glycan). This is displayed in the third column of the validation report table.
-Hovering your mouse over the different elments of this SNFG will display tooltips, providing more information on conformations, linkage types, and torsion angles.
+    Sugars in unlikely ring conformations are highlighted. Clicking on a sugar will center ChimeraX's view on that sugar. Hovering over the sugar will display a tooltip with more information.
 </p>
+
+<img src="3qvp_highlighted_glycan.png" 
+    alt="Screenshot of the privateer tool in ChimeraX showing how hovering over a sugar displays a tooltip with more information."
+    style="display:block ; margin-left:auto ; margin-right:auto ; width:75%">
+</img>
+
 <p style="color:black ; font-family:'Helvetica'">
-Sugars in unlikely ring conformations are highlighted. Clicking on a sugar will center ChimeraX's view on that sugar.
+    Linkages which are torsion outliers (compared to <i>Privateer's</i> torsion database <a href="https://doi.org/10.1107/S2059798323003510">[2]</a>) are highlighted. 
+    Hovering over the link itself will display a tooltip with information on the linkage type and the torsion angles.
 </p>
+
+<img src="3qvp_link.png" 
+    alt="Screenshot of the privateer tool in ChimeraX showing how hovering over a link displays a tooltip with more information."
+    style="display:block ; margin-left:auto ; margin-right:auto ; width:75%">
+</img>
+
 <p style="color:black ; font-family:'Helvetica'">
-Linkages which are torsion outliers (compared to <i>Privateer's</i> torsion database <a href="https://doi.org/10.1107/S2059798323003510">[2]</a>) are highlighted. 
-A torsion outlier does not necessarily indicate an error. The link could be being skewed by interactions with neighbouring residues. 
-To investigate further, you can click on the linkage. This will display a torsion plot of that linkage, overlayed with data from <i>Privateer's</i> torsion database.
-You should also look at the linkage in question to look for possible interactions and to check the fit to the experimental data.
+    Hovering over the highlighted portion around a highlighted link will display a tooltip with information on the z-score (indicating how much of an outlier it is).
+</p>
+
+<img src="3qvp_link_zscore.png" 
+    alt="Screenshot of the privateer tool in ChimeraX showing how hovering over a highglighted link displays a tooltip with more information."
+    style="display:block ; margin-left:auto ; margin-right:auto ; width:75%">
+</img>
+
+<p style="color:black ; font-family:'Helvetica'">
+    A torsion outlier does not necessarily indicate an error. The link could be being skewed by interactions with neighbouring residues. 
+    To investigate further, you can click on the linkage. This will display a torsion plot of that linkage, overlayed with data from <i>Privateer's</i> torsion database.
+    You can click on any link in this way, not just highlighted ones, however a torsion plot will only display if there is enough data on that linkage in the torsion database.
+</p>
+
+<img src="3qvp_torsion_plot.png" 
+    alt="Screenshot of the torsion plot produced by the privateer tool in ChimeraX."
+    style="display:block ; margin-left:auto ; margin-right:auto ; width:75%">
+</img>
+
+<p style="color:black ; font-family:'Helvetica'">
+    You should also look at the linkage in question to look for possible interactions and to check the fit to the experimental data.
 </p>
 
 
 <h2 style="color:black ; font-family:'Helvetica'">Draw Glycan 3D Symbols</h2>
 <p style="color:black ; font-family:'Helvetica'">
-To help visualise the glycans within the structure, <i>Privateer</i> procudes a 3D representation of them in ChimeraX's view.
-These 3D shapes and colours match the 2D SNFGs produced in <i>Privateer</i>'s validation report. The alignment of the shape shows the plane of the sugar ring. 
+    To help visualise the glycans within the structure, <i>Privateer</i> procudes a 3D representation of them in ChimeraX's view.
+    These 3D shapes and colours match the 2D SNFGs produced in <i>Privateer</i>'s validation report. The alignment of the shape shows the plane of the sugar ring. 
 </p>
 <p style="color:black ; font-family:'Helvetica'">
-You can view this 3D glycan representation by pressing the <b>"Draw Glycan 3D Symbols"</b> button.
+    You can view this 3D glycan representation by pressing the <b>"Draw Glycan 3D Symbols"</b> button. They will display as a sub-structure of whateter structure they belong to.
 </p>
 <p style="color:black ; font-family:'Helvetica'">
-If you want 3D glycan symbols to update as you edit the structure, tick the box <b>"Auto Update Glycan 3D Symbols"</b>. You can tick and untick this box as needed while editing. It's status will apply to all structures.
-If changes are made with the box unticked, those updates will be made as soon as the box is ticked.
+    If you want 3D glycan symbols to update as you edit the structure, tick the box <b>"Auto Update Glycan 3D Symbols"</b>. You can tick and untick this box as needed while editing. It's status will apply to all structures.
+    If changes are made with the box unticked, those updates will be made as soon as the box is ticked.
 </p>
 <p style="color:black ; font-family:'Helvetica'">
-If you want the 3D glycan symbols to scale their height (the dimension normal to the plane of the sugar ring) with zoom, tick the box <b>"Resize Glycan 3D Symbols with Zoom"</b>.
-This will increase the height of the glycan symbols in the direction normal to the plane of the sugar ring the more you zoom out of the structure, to ensure that the shapes are still clearly visible.
-This is useful if you are looking to get an overall picture of how the glycans are interacting with binding sites, for example. You can tick and untick this box as you need. It's status will apply to all structures.
+    If you want the 3D glycan symbols to scale their height (the dimension normal to the plane of the sugar ring) with zoom, tick the box <b>"Resize Glycan 3D Symbols with Zoom"</b>.
+    This will increase the height of the glycan symbols in the direction normal to the plane of the sugar ring the more you zoom out of the structure, to ensure that the shapes are still clearly visible.
+    This is useful if you are looking to get an overall picture of how the glycans are interacting with binding sites, for example. You can tick and untick this box as you need. It's status will apply to all structures.
+    FLAG: IMAGE HERE ZOOMED OUT AND ZOOMED IN
 </p>
 <p style="color:black ; font-family:'Helvetica'">
-If you no longer wish to view the glycoblocks, their display can be toggeled on and off via the "Models" window in ChimeraX in the same way as other models. They will display as a sub-structure of whateter structure they belong to.
+    If you no longer wish to view the glycan 3D symbols, their display can be toggeled on and off via the "Models" window in ChimeraX in the same way as other models. 
+    FLAG: IMAGE HERE OF HOW THEY DISPLAY IN THE MODEL WINDOW
+    They can also be removed (or closed) completely in the same way as other models, using the "close #ID" command where "ID" is the model ID corresponding to the 3D glycan symbols.
 </p>
 
 <p style="color:black ; font-family:'Helvetica' ; margin-bottom:0">
-<b>[1]</b> Agirre, J., Iglesias-Fernández, J., Rovira, C., Davies, G.J., Wilson, K.S. and Cowtan, K.D., 2015. Privateer: software for the conformational validation of carbohydrate structures. <i>Nature structural & molecular biology, 22</i>(11), pp.833-834.
+    <b>[1]</b> Agirre, J., Iglesias-Fernández, J., Rovira, C., Davies, G.J., Wilson, K.S. and Cowtan, K.D., 2015. Privateer: software for the conformational validation of carbohydrate structures. <i>Nature structural & molecular biology, 22</i>(11), pp.833-834.
 </p>
 <p style="color:black ; font-family:'Helvetica' ; margin : 0; padding-top:0">
-<b>[2]</b> Dialpuri, J.S., Bagdonas, H., Atanasova, M., Schofield, L.C., Hekkelman, M.L., Joosten, R.P. and Agirre, J., 2023. Analysis and validation of overall N-glycan conformation in Privateer. <i>Biological Crystallography, 79</i>(6), pp.462-472.
+    <b>[2]</b> Dialpuri, J.S., Bagdonas, H., Atanasova, M., Schofield, L.C., Hekkelman, M.L., Joosten, R.P. and Agirre, J., 2023. Analysis and validation of overall N-glycan conformation in Privateer. <i>Biological Crystallography, 79</i>(6), pp.462-472.
 </p>
 
 <hr>

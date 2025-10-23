@@ -141,6 +141,12 @@ class PrivateerTool(ToolInstance):
         if reportexists:
             self.valreportwindow.modellist = self.modellist
             self.valreportwindow.update_tabs()
+        
+        if self.glycoblocksexist:
+            self.glycoblocksexist = False
+            for m in models:
+                if m._name == "Privateer Glycan 3D Symbols":
+                    self.glycoblocksexist = True
 
         if len(models) > 0:
             self.run_button.setEnabled(True)
