@@ -82,6 +82,7 @@ class PrivateerTool(ToolInstance):
         self._models_add_handler = st.add_handler(ADD_MODELS, self.update_models)
         self._models_del_handler = st.add_handler(REMOVE_MODELS, self.update_models)
 
+
         # Arrange for our 'return_pressed' method to be called when the
         # user presses the Return key
         self.documentation_button.clicked.connect(self.documentation_button_pressed)
@@ -145,8 +146,10 @@ class PrivateerTool(ToolInstance):
         if self.glycoblocksexist:
             self.glycoblocksexist = False
             for m in models:
-                if m._name == "Privateer Glycan 3D Symbols":
-                    self.glycoblocksexist = True
+                submodels = m.child_models()
+                for sm in submodels:
+                    if sm._name == "Privateer Glycan 3D Symbols":
+                        self.glycoblocksexist = True
 
         if len(models) > 0:
             self.run_button.setEnabled(True)
@@ -229,6 +232,16 @@ class PrivateerTool(ToolInstance):
         clear_action.triggered.connect(lambda *args: self.run_button.clear())
         clear_action.triggered.connect(lambda *args: self.glycoblocks_button.clear())
         menu.addAction(clear_action)
+    
+    def delete(self):
+        st = self.session.triggers
+        st.remove_handler(self._models_add_handler)
+        st.remove_handler(self._models_del_handler)
+        self._models_add_handler = None
+        self._models_del_handler = None
+        if self.session.ui.is_gui:
+            self.session.ui.remove_tool(self)
+        self.session.tools.remove([self])
 
 from chimerax.core.models import Model
 class Glycoblocks(Model):
@@ -357,7 +370,7 @@ class ValidationReportWindow(ChildToolWindow):
 
     def new_tab(self, privateer_tool, modelID):
         parent = self.ui_area
-        parent.setMinimumHeight(1) 
+        parent.setMinimumHeight(250) 
         for i in range(len(self.modellist)):
             if self.modellist[i]["modelID"] == modelID:
                 modelindx = i
