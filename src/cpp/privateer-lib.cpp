@@ -382,8 +382,9 @@ void privateer::util::print_supported_code_list ()
 
 }
 
-// bool privateer::util::write_libraries ( std::vector < std::string > code_list, float esd )
-// {
+bool privateer::util::write_libraries ( std::vector < std::string > code_list, float esd )
+{
+    return false;
 
 //     class PrTorsion : public ccp4srs::Torsion
 //     {
@@ -601,7 +602,7 @@ void privateer::util::print_supported_code_list ()
 //         delete srs;
 
 //     return false;
-// }
+}
 
 void privateer::util::print_XML ( std::vector < std::pair < clipper::String, clipper::MSugar > > sugarList, std::vector < clipper::MGlycan > list_of_glycans, std::vector<std::vector<std::pair<std::pair<clipper::MGlycan, std::vector<int>>,float>>>& list_of_glycans_associated_to_permutations, clipper::String pdbname, std::vector<privateer::json::GlycomicsDatabase>& glycomics_database )
 {
