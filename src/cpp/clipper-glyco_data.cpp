@@ -873,359 +873,359 @@ const sugar_database_entry sugar_database[] =
 
         // codes for hexoses
 
-        if      ( name == "GLC" ) wurcs_residue_code = "a2122h-1a_1-5"   ; // alpha
-        else if ( name == "BGC" ) wurcs_residue_code = "a2122h-1b_1-5"   ; // beta
-        else if ( name == "MAN" ) wurcs_residue_code = "a1122h-1a_1-5"   ; // alpha
-        else if ( name == "BMA" ) wurcs_residue_code = "a1122h-1b_1-5"   ; // beta
-        else if ( name == "GLA" ) wurcs_residue_code = "a2112h-1a_1-5"   ; // alpha
-        else if ( name == "GAL" ) wurcs_residue_code = "a2112h-1b_1-5"   ; // beta
-        else if ( name == "FCA" ) wurcs_residue_code = "a2112m-1a_1-5"   ; // alpha - d - fucose
-        else if ( name == "FCB" ) wurcs_residue_code = "a2112m-1b_1-5"   ; // beta - d - fucose
-        else if ( name == "FUC" ) wurcs_residue_code = "a1221m-1a_1-5"   ; // alpha - l - fucose
-        else if ( name == "FUL" ) wurcs_residue_code = "a1221m-1b_1-5"   ; // beta - l - fucose
-        else if ( name == "XYS" ) wurcs_residue_code = "a212h-1a_1-5"   ; // alpha
-        else if ( name == "XYP" ) wurcs_residue_code = "a212h-1b_1-5"   ; // beta
-        else if ( name == "Z9D" ) wurcs_residue_code = "a21d2h-1b_1-5"   ; // beta
+        if ( name == "GLC" ) wurcs_residue_code = "a2122h-1a_1-5"   ; // alpha
+        if ( name == "BGC" ) wurcs_residue_code = "a2122h-1b_1-5"   ; // beta
+        if ( name == "MAN" ) wurcs_residue_code = "a1122h-1a_1-5"   ; // alpha
+        if ( name == "BMA" ) wurcs_residue_code = "a1122h-1b_1-5"   ; // beta
+        if ( name == "GLA" ) wurcs_residue_code = "a2112h-1a_1-5"   ; // alpha
+        if ( name == "GAL" ) wurcs_residue_code = "a2112h-1b_1-5"   ; // beta
+        if ( name == "FCA" ) wurcs_residue_code = "a2112m-1a_1-5"   ; // alpha - d - fucose
+        if ( name == "FCB" ) wurcs_residue_code = "a2112m-1b_1-5"   ; // beta - d - fucose
+        if ( name == "FUC" ) wurcs_residue_code = "a1221m-1a_1-5"   ; // alpha - l - fucose
+        if ( name == "FUL" ) wurcs_residue_code = "a1221m-1b_1-5"   ; // beta - l - fucose
+        if ( name == "XYS" ) wurcs_residue_code = "a212h-1a_1-5"   ; // alpha
+        if ( name == "XYP" ) wurcs_residue_code = "a212h-1b_1-5"   ; // beta
+        if ( name == "Z9D" ) wurcs_residue_code = "a21d2h-1b_1-5"   ; // beta
 
         // codes for hexosamines
         // couldn't find codes for: ManN (either), GalN (either)
 
-        else if ( name == "GCS" ) wurcs_residue_code = "a2122h-1b_1-5_2*N"  ; // beta
-        else if ( name == "PA1" ) wurcs_residue_code = "a2122h-1a_1-5_2*N"  ; // alpha
+        if ( name == "GCS" ) wurcs_residue_code = "a2122h-1b_1-5_2*N"  ; // beta
+        if ( name == "PA1" ) wurcs_residue_code = "a2122h-1a_1-5_2*N"  ; // alpha
 
         // codes for N-acetyl hexosamines
         // couldn't find codes for: ManNAc (beta)
 
-        else if ( name == "NAG" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O"; // beta
-        else if ( name == "NDG" ) wurcs_residue_code = "a2122h-1a_1-5_2*NCC/3=O"; // alpha
-        else if ( name == "NGA" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O"; // beta
-        else if ( name == "A2G" ) wurcs_residue_code = "a2112h-1a_1-5_2*NCC/3=O"; // alpha
-        else if ( name == "BM3" ) wurcs_residue_code = "a1122h-1a_1-5_2*NCC/3=O"; // alpha
-        else if ( name == "BM7" ) wurcs_residue_code = "a1122h-1b_1-5_2*NCC/3=O"; // beta
+        if ( name == "NAG" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O"; // beta
+        if ( name == "NDG" ) wurcs_residue_code = "a2122h-1a_1-5_2*NCC/3=O"; // alpha
+        if ( name == "NGA" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O"; // beta
+        if ( name == "A2G" ) wurcs_residue_code = "a2112h-1a_1-5_2*NCC/3=O"; // alpha
+        if ( name == "BM3" ) wurcs_residue_code = "a1122h-1a_1-5_2*NCC/3=O"; // alpha
+        if ( name == "BM7" ) wurcs_residue_code = "a1122h-1b_1-5_2*NCC/3=O"; // beta
 
         // codes for acidic sugars
         // couldn't find codes for: Neu5Gc (either)
         // Neu5Gc is NGC(alpha) and NGE(beta)
 
-        else if ( name == "SIA" ) wurcs_residue_code = "Aad21122h-2a_2-6_5*NCC/3=O" ; // alpha
-        else if ( name == "SLB" ) wurcs_residue_code = "Aad21122h-2b_2-6_5*NCC/3=O" ; // beta
-        else if ( name == "IDR" ) wurcs_residue_code = "a2121A-1a_1-5"   ; // alpha
-        else if ( name == "KDM" ) wurcs_residue_code = "Aad21122h-2a_2-6"    ; // alpha
-        else if ( name == "KDN" ) wurcs_residue_code = "Aad21122h-2b_2-6"    ; // beta
-        else if ( name == "BDP" ) wurcs_residue_code = "a2122A-1b_1-5"   ; // beta
-        else if ( name == "GCU" ) wurcs_residue_code = "a2122A-1a_1-5"   ; // alpha
-        else if ( name == "MAV" ) wurcs_residue_code = "a1122A-1a_1-5"   ; // alpha
-        else if ( name == "BEM" ) wurcs_residue_code = "a1122A-1b_1-5"   ; // beta
-        else if ( name == "GTR" ) wurcs_residue_code = "a2112A-1b_1-5"   ; // beta
-        else if ( name == "ADA" ) wurcs_residue_code = "a2112A-1a_1-5"   ; // alpha
-        else if ( name == "LGU" ) wurcs_residue_code = "a1121A-1a_1-5" ; // alpha-L-Gulopyranuronic acid
-        else if ( name == "GUP" ) wurcs_residue_code = "a1121h-1a_1-5" ; // alpha-l-Gulopyranoside
-        else if ( name == "DAN" ) wurcs_residue_code = "Aad21122h-2x_2-6_5*N" ; // Undetermined. 
+        if ( name == "SIA" ) wurcs_residue_code = "Aad21122h-2a_2-6_5*NCC/3=O" ; // alpha
+        if ( name == "SLB" ) wurcs_residue_code = "Aad21122h-2b_2-6_5*NCC/3=O" ; // beta
+        if ( name == "IDR" ) wurcs_residue_code = "a2121A-1a_1-5"   ; // alpha
+        if ( name == "KDM" ) wurcs_residue_code = "Aad21122h-2a_2-6"    ; // alpha
+        if ( name == "KDN" ) wurcs_residue_code = "Aad21122h-2b_2-6"    ; // beta
+        if ( name == "BDP" ) wurcs_residue_code = "a2122A-1b_1-5"   ; // beta
+        if ( name == "GCU" ) wurcs_residue_code = "a2122A-1a_1-5"   ; // alpha
+        if ( name == "MAV" ) wurcs_residue_code = "a1122A-1a_1-5"   ; // alpha
+        if ( name == "BEM" ) wurcs_residue_code = "a1122A-1b_1-5"   ; // beta
+        if ( name == "GTR" ) wurcs_residue_code = "a2112A-1b_1-5"   ; // beta
+        if ( name == "ADA" ) wurcs_residue_code = "a2112A-1a_1-5"   ; // alpha
+        if ( name == "LGU" ) wurcs_residue_code = "a1121A-1a_1-5" ; // alpha-L-Gulopyranuronic acid
+        if ( name == "GUP" ) wurcs_residue_code = "a1121h-1a_1-5" ; // alpha-l-Gulopyranoside
+        if ( name == "DAN" ) wurcs_residue_code = "Aad21122h-2x_2-6_5*N" ; // Undetermined. 
 
         // More unique residues
-        else if ( name == "M6D" ) wurcs_residue_code = "a1122h-1b_1-5_6*OPO/3O/3=O" ; // beta-D-Mannose 6-phosphate 
-        else if ( name == "NAA" ) wurcs_residue_code = "a2222h-1b_1-5_2*NCC/3=O" ; // 2-acetamido-2-deoxy-beta-D-Allopyranose
-        else if ( name == "NGK" ) wurcs_residue_code = "a2112h-1a_1-5_2*NCC/3=O_4*OSO/3=O/3=O" ; // 2-acetamido-4-O-sulfono-2-deoxy-alpha-D-Galactopyranose
+        if ( name == "M6D" ) wurcs_residue_code = "a1122h-1b_1-5_6*OPO/3O/3=O" ; // beta-D-Mannose 6-phosphate 
+        if ( name == "NAA" ) wurcs_residue_code = "a2222h-1b_1-5_2*NCC/3=O" ; // 2-acetamido-2-deoxy-beta-D-Allopyranose
+        if ( name == "NGK" ) wurcs_residue_code = "a2112h-1a_1-5_2*NCC/3=O_4*OSO/3=O/3=O" ; // 2-acetamido-4-O-sulfono-2-deoxy-alpha-D-Galactopyranose
        
-        else if ( name == "FRU" ) wurcs_residue_code = "ha122h-2b_2-5";
+        if ( name == "FRU" ) wurcs_residue_code = "ha122h-2b_2-5";
 
         // Rare bois, added 01/12/2021 onwards.
-        else if ( name == "AC1" ) wurcs_residue_code = "a2122m-1a_1-5_4*NC^SC^SC^SC^RCCO/7=^ZC$3/6O/5O/4O";
-        else if ( name == "RY7" ) wurcs_residue_code = "a2122m-1a_1-5_4*NC^SC^SC^SC^RC^RCO/7C$3/6O/5O/4O";
-        else if ( name == "MAG" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*NCC/3=O";
-        else if ( name == "SGN" ) wurcs_residue_code = "a2122h-1a_1-5_2*NSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "UAP" ) wurcs_residue_code = "a21eEA-1a_1-5_2*OSO/3=O/3=O";
-        else if ( name == "MGL" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC";
-        else if ( name == "SGC" ) wurcs_residue_code = "a2122h-1b_1-5_4*S";
-        else if ( name == "NGS" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_6*OSO/3=O/3=O";
-        else if ( name == "MMA" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC";
-        else if ( name == "KDA" ) wurcs_residue_code = "Aad1122h-2a_2-6_2*OCC=C";
-        else if ( name == "KDO" ) wurcs_residue_code = "Aad1122h-2a_2-6";
-        else if ( name == "KDB" ) wurcs_residue_code = "Aazzd22h-2a_2-6";
-        else if ( name == "DGS" ) wurcs_residue_code = "a2112h-1a_1-5_3-6_2*OSO/3=O/3=O";
-        else if ( name == "G4S" ) wurcs_residue_code = "a2112h-1b_1-5_4*OSO/3=O/3=O";
-        else if ( name == "GMH" ) wurcs_residue_code = "a11221h-1a_1-5";
-        else if ( name == "TVS" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCC=C_2*NCC/3=O";
-        else if ( name == "TVV" ) wurcs_residue_code = "a2112h-1b_1-5_3*OCC#C";
-        else if ( name == "RAM" ) wurcs_residue_code = "a2211m-1a_1-5";
-        else if ( name == "GAD" ) wurcs_residue_code = "a21eEA-1a_1-5";
-        else if ( name == "IDS" ) wurcs_residue_code = "a2121A-1a_1-5_2*OSO/3=O/3=O";
-        else if ( name == "KO1" ) wurcs_residue_code = "Aa11122h-2a_2-6";
-        else if ( name == "G2F" ) wurcs_residue_code = "a2122h-1a_1-5_2*F";
-        else if ( name == "NFG" ) wurcs_residue_code = "a2122h-1b_1-5_1*O(C^ZC^EC^EC^EC^ZC^E$3)/6NO/9=O/4NO/12=O_2*F";
-        else if ( name == "MAW" ) wurcs_residue_code = "a11eEA-1a_1-5";
-        else if ( name == "ASG" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O_4*OSO/3=O/3=O";
-        else if ( name == "GU4" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_4*OSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "YYJ" ) wurcs_residue_code = "ha122h-2b_2-5_1*OSO/3=O/3=O_3*OSO/3=O/3=O_4*OSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "Z9N" ) wurcs_residue_code = "ha122h-2a_2-5";
-        else if ( name == "G6P" ) wurcs_residue_code = "a2122h-1a_1-5_6*OPO/3O/3=O";
-        else if ( name == "5N6" ) wurcs_residue_code = "Aad21122h-2a_2-6_5*NCC/3=O_9*OCC/3=O";
-        else if ( name == "TYV" ) wurcs_residue_code = "a1d22m-1a_1-5";
-        else if ( name == "PKM" ) wurcs_residue_code = "Aad21122h-2a_2-6_4*OCC/3=O_5*NCC/3=O";
-        else if ( name == "ABE" ) wurcs_residue_code = "a2d12m-1a_1-5";
-        else if ( name == "AAL" ) wurcs_residue_code = "a1221h-1a_1-5_3-6";
-        else if ( name == "Z3Q" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCCN=^ZN=N_2*NCC/3=O";
-        else if ( name == "BHG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCCCCCC";
-        else if ( name == "GNS" ) wurcs_residue_code = "a2122h-1a_1-5_2*NSO/3=O/3=O";
-        else if ( name == "AMV" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*NCC/3=O_3*OC^RCO/4=O/3C";
-        else if ( name == "AMU" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_3*OC^RCO/4=O/3C";
-        else if ( name == "1GL" ) wurcs_residue_code = "ad112m-1a_1-5_4*OC";
-        else if ( name == "ARI" ) wurcs_residue_code = "ad212m-1b_1-5_4*OCC/3=O";
-        else if ( name == "CDR" ) wurcs_residue_code = "ad222m-1b_1-5";
-        else if ( name == "ERI" ) wurcs_residue_code = "ad611m-1a_1-5_3*C_4*OCC/3=O";
-        else if ( name == "9WJ" ) wurcs_residue_code = "a1122m-1b_1-5_4*NCC/3=O";
-        else if ( name == "IDY" ) wurcs_residue_code = "a2121A-1a_1-5_1*OC_2*OSO/3=O/3=O";
-        else if ( name == "GNX" ) wurcs_residue_code = "a2122h-1a_1-5_2*NSO/3=O/3=O_3*OSO/3=O/3=O";
-        else if ( name == "SUS" ) wurcs_residue_code = "a2122h-1a_1-5_2*NSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "Z6W" ) wurcs_residue_code = "ha122d2ddddddm-2b_2-5";
-        else if ( name == "83Y" ) wurcs_residue_code = "a2211m-1a_1-5_3*OSO/3=O/3=O";
-        else if ( name == "GCD" ) wurcs_residue_code = "a21eEA-1a_1-5";
-        else if ( name == "RR7" ) wurcs_residue_code = "ad122h-1b_1-5";
-        else if ( name == "DDA" ) wurcs_residue_code = "ad122m-1b_1-5";
-        else if ( name == "DDL" ) wurcs_residue_code = "ad112m-1b_1-5";
-        else if ( name == "MDA" ) wurcs_residue_code = "ad622m-1b_1-5_3*C";
-        else if ( name == "AQA" ) wurcs_residue_code = "a21eEA-1b_1-5";
-        else if ( name == "9RN" ) wurcs_residue_code = "a2112h-1a_1-5_3-6";
-        else if ( name == "YIO" ) wurcs_residue_code = "a2112h-1b_1-5_1*S";
-        else if ( name == "GCO" ) wurcs_residue_code = "A2122h";
-        else if ( name == "GLO" ) wurcs_residue_code = "o2122h";
-        else if ( name == "SOR" ) wurcs_residue_code = "h2122h";
-        else if ( name == "XLS" ) wurcs_residue_code = "o212h";
-        else if ( name == "XYL" ) wurcs_residue_code = "h212h";
-        else if ( name == "NBG" ) wurcs_residue_code = "a2122h-1b_1-5_1*NCC/3=O";
-        else if ( name == "MBG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OC";
-        else if ( name == "AHR" ) wurcs_residue_code = "a211h-1a_1-4";
-        else if ( name == "FUB" ) wurcs_residue_code = "a211h-1b_1-4";
-        else if ( name == "GYP" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC";
-        else if ( name == "GZL" ) wurcs_residue_code = "a2112h-1b_1-4";
-        else if ( name == "AIG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCCCCCC_3*N";
-        else if ( name == "AOG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCCCCCCCC_3*N";
-        else if ( name == "BXY" ) wurcs_residue_code = "a122h-1a_1-4";
-        else if ( name == "YZ0" ) wurcs_residue_code = "a1122h-1b_1-5_1*OC";
-        else if ( name == "Z4Y" ) wurcs_residue_code = "a1122h-1a_1-5_6*S";
-        else if ( name == "DFX" ) wurcs_residue_code = "h212h_1-5_2*F";
-        else if ( name == "Z4R" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC_3*S";
-        else if ( name == "GLD" ) wurcs_residue_code = "a21d2m-1a_1-5";
-        else if ( name == "G6D" ) wurcs_residue_code = "a2122m-1a_1-5";
-        else if ( name == "V3P" ) wurcs_residue_code = "a2122h-1b_1-5_1*S(C^EC^ZC^EC^EC^ZC^E$3)/6I";
-        else if ( name == "TUP" ) wurcs_residue_code = "a2122h-1a_1-5_3*F";
-        else if ( name == "M8C" ) wurcs_residue_code = "a2112A-1a_1-5_6*OC";
-        else if ( name == "SHB" ) wurcs_residue_code = "a2112A-1b_1-5_6*OC";
-        else if ( name == "MUB" ) wurcs_residue_code = "a2122h-1a_1-5_2*NCC/3=O_3*OC^RCO/4=O/3C";
-        else if ( name == "GC4" ) wurcs_residue_code = "a21d2A-1b_1-5";
-        else if ( name == "B6D" ) wurcs_residue_code = "a2122m-1b_1-5_2*NCC/3=O_4*NCC/3=O";
-        else if ( name == "Z5L" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC_2*S";
-        else if ( name == "4NN" ) wurcs_residue_code = "AZz22h_1-5_2*NCC/3=O";
-        else if ( name == "BG6" ) wurcs_residue_code = "a2122h-1b_1-5_6*OPO/3O/3=O";
-        else if ( name == "K5B" ) wurcs_residue_code = "AOd2122h_4-7";
-        else if ( name == "Z9L" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "Z9K" ) wurcs_residue_code = "a2121A-1a_1-5_2*OSO/3=O/3=O_3*OC";
-        else if ( name == "GU0" ) wurcs_residue_code = "a2122h-1b_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "GU1" ) wurcs_residue_code = "a2122A-1b_1-5_2*OC_3*OC";
-        else if ( name == "GU2" ) wurcs_residue_code = "a2121A-1a_1-5_2*OC_3*OC";
-        else if ( name == "GU3" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*OSO/3=O/3=O_3*OC_6*OSO/3=O/3=O";
-        else if ( name == "GU4" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*OSO/3=O/3=O_3*OC_6*OSO/3=O/3=O";
-        else if ( name == "GU5" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_3*OC_6*OSO/3=O/3=O";
-        else if ( name == "GU6" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "GU8" ) wurcs_residue_code = "a2122h-1b_1-5_2*OC_3*OC_6*OC";
-        else if ( name == "GU9" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_3*OC_6*OC";
-        else if ( name == "Z9H" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OC_4*OC_6*OSO/3=O/3=O";
-        else if ( name == "NG6" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O_6*OSO/3=O/3=O";
-        else if ( name == "VJ1" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O_2*NCCC^RCCCCCCCCCCC/5O/3=O_3*OC^RCC^RCCCCCCCCCCC/5O/3O";
-        else if ( name == "VJ4" ) wurcs_residue_code = "a2122h-1a_1-5_2*NC^SCC^ROCCCCC/7=O/5CCCCCCCC/3O_4*OPO/3O/3=O";
-        else if ( name == "DGO" ) wurcs_residue_code = "zz122h_1-5";
-        else if ( name == "Z61" ) wurcs_residue_code = "ad122h-1a_1-5";
-        else if ( name == "SGA" ) wurcs_residue_code = "a2112h-1b_1-5_3*OSO/3=O/3=O";
-        else if ( name == "U2A" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*S";
-        else if ( name == "U1Y" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_6*S";
-        else if ( name == "GCV" ) wurcs_residue_code = "a2122A-1a_1-5_4*OC";
-        else if ( name == "TWA" ) wurcs_residue_code = "a1222h-1b_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
-        else if ( name == "TWD" ) wurcs_residue_code = "a1211h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O";
-        else if ( name == "GTM" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_4*S";
-        else if ( name == "GDA" ) wurcs_residue_code = "a2122h-1b_1-5_4*N";
-        else if ( name == "SSG" ) wurcs_residue_code = "a2122h-1b_1-5_1*S_4*S";
-        else if ( name == "RTV" ) wurcs_residue_code = "h1122h_1-5_2*NCC/3=O";
-        else if ( name == "YYQ" ) wurcs_residue_code = "a1221h-1a_1-5_2*NCC/3=O";
-        else if ( name == "SHG" ) wurcs_residue_code = "a2122h-1b_1-5_2*F";
-        else if ( name == "NGC" ) wurcs_residue_code = "Aad21122h-2a_2-6_5*NCCO/3=O";
-        else if ( name == "MN0" ) wurcs_residue_code = "Aad21122h-2a_2-6_2*OC_5*NCCO/3=O";
-        else if ( name == "MGC" ) wurcs_residue_code = "a2112h-1a_1-5_1*OC_2*NCC/3=O";
-        else if ( name == "BNG" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCCCCCCCCC";
-        else if ( name == "GPM" ) wurcs_residue_code = "h12122h_2-6_1*PO/2O/2=O";
-        else if ( name == "GDL" ) wurcs_residue_code = "A2122h_1-5_2*NCC/3=O";
-        else if ( name == "ARB" ) wurcs_residue_code = "a211h-1b_1-5";
-        else if ( name == "M6P" ) wurcs_residue_code = "a1122h-1a_1-5_6*OPO/3O/3=O";
-        else if ( name == "DT6" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_4*NCC/3=O";
-        else if ( name == "EGA" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCC";
-        else if ( name == "TQY" ) wurcs_residue_code = "a2122h-1a_1-5_6*OCCCCCCCC/3=O";
-        else if ( name == "ZDO" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*NSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "X2F" ) wurcs_residue_code = "a212h-1a_1-5_2*F";
-        else if ( name == "AGL" ) wurcs_residue_code = "a2122m-1a_1-5_4*N"; // Current PDB version also doesn't have complete MOD for this UniqueRES
-        else if ( name == "BOG" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCCCCCCCC";
-        else if ( name == "HSQ" ) wurcs_residue_code = "a2121h-1a_1-5_2*NCC/3=O";
-        else if ( name == "AMG" ) wurcs_residue_code = "a2112h-1a_1-5_1*OC";
-        else if ( name == "ZD0" ) wurcs_residue_code = "a1122m-1a_1-5_1*OC"; //incorrect, lacks long modification, but only 1 entry on PDB...
-        else if ( name == "ZCZ" ) wurcs_residue_code = "a1122m-1a_1-5_2*OC"; //incorrect, lacks long modification, but only 1 entry on PDB...
-        else if ( name == "RM4" ) wurcs_residue_code = "a2211m-1b_1-5";
-        else if ( name == "7CV" ) wurcs_residue_code = "a2211m-1a_1-5_2*OC_3*OC";
-        else if ( name == "XXR" ) wurcs_residue_code = "a1122m-1a_1-5";
-        else if ( name == "KD5" ) wurcs_residue_code = "AOd1122h_4-7";
-        else if ( name == "F6P" ) wurcs_residue_code = "ha122h-2b_2-5_6*OPO/3O/3=O";
-        else if ( name == "BDR" ) wurcs_residue_code = "a222h-1b_1-4";
-        else if ( name == "IDG" ) wurcs_residue_code = "a2121h-1b_1-5_2*N_6*N";
-        else if ( name == "PA1" ) wurcs_residue_code = "a2122h-1a_1-5_2*N";
-        else if ( name == "2GL" ) wurcs_residue_code = "ad112m-1b_1-5_4*OCC/3=O";
-        else if ( name == "LDY" ) wurcs_residue_code = "a112h-1a_1-5";
-        else if ( name == "GC1" ) wurcs_residue_code = "A1121h_2-6";
-        else if ( name == "Z9M" ) wurcs_residue_code = "a2122h-1b_1-5_2*N_4*OPO/3O/3=O";
-        else if ( name == "GP1" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O_2*N";
-        else if ( name == "RER" ) wurcs_residue_code = "ad621m-1a_1-5_3*C_3*N";
-        else if ( name == "TMX" ) wurcs_residue_code = "a2122h-1b_1-5_2*NC/2C/2C";
-        else if ( name == "BBV" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC(C^EC^ZC^ZC^ZC^ZC^E$4)_2*NCC/3=O";
-        else if ( name == "ASO" ) wurcs_residue_code = "h2122h_1-5";
-        else if ( name == "G4D" ) wurcs_residue_code = "a21d2h-1a_1-5";
-        else if ( name == "BDF" ) wurcs_residue_code = "ha122h-2b_2-6";
-        else if ( name == "BDG" ) wurcs_residue_code = "a2122h-1a_1-5_2*N_6*N";
-        else if ( name == "RIB" ) wurcs_residue_code = "a222h-1a_1-4";
-        else if ( name == "G6S" ) wurcs_residue_code = "a2112h-1b_1-5_6*OSO/3=O/3=O";
-        else if ( name == "MXY" ) wurcs_residue_code = "a1221m-1b_1-5_2*OC";
-        else if ( name == "WIA" ) wurcs_residue_code = "a2112h-1b_1-5_1*OC_6*S";
-        else if ( name == "SHD" ) wurcs_residue_code = "a1222h-1a_1-5";
-        else if ( name == "1GN" ) wurcs_residue_code = "a2112h-1b_1-5_2*N";
-        else if ( name == "6PZ" ) wurcs_residue_code = "Aad22111m-2a_2-6_5*NCC/3=O_7*NCC/3=O";
-        else if ( name == "6LW" ) wurcs_residue_code = "A211h_1-4_1*=NO";
-        else if ( name == "ARA" ) wurcs_residue_code = "a211h-1a_1-5";
-        else if ( name == "TT7" ) wurcs_residue_code = "ha122h-2b_2-5_4*OPO/3O/3=O";
-        else if ( name == "4GL" ) wurcs_residue_code = "a2212h-1a_1-5";
-        else if ( name == "MBF" ) wurcs_residue_code = "a1122h-1b_1-5_2*F";
-        else if ( name == "DLG" ) wurcs_residue_code = "a2d12h-1b_1-5_1*OCCCCCC";
-        else if ( name == "GS1" ) wurcs_residue_code = "a2122h-1b_1-5_1*S";
-        else if ( name == "OPM" ) wurcs_residue_code = "a1122h-1a_1-5_1*OCCCCC";
-        else if ( name == "DRI" ) wurcs_residue_code = "ad122m-1b_1-5_4*OC";
-        else if ( name == "LXB" ) wurcs_residue_code = "a2212h-1b_1-5_2*NCC/3=O";
-        else if ( name == "LXZ" ) wurcs_residue_code = "a1212h-1a_1-5_2*NCC/3=O";
-        else if ( name == "NGZ" ) wurcs_residue_code = "a1211h-1a_1-5_2*NCC/3=O";
-        else if ( name == "GL0" ) wurcs_residue_code = "a2212h-1b_1-5";
-        else if ( name == "GXL" ) wurcs_residue_code = "a1221h-1a_1-5";
-        else if ( name == "GM0" ) wurcs_residue_code = "a11221h-1a_1-5_4*OPO/3O/3=O";
-        else if ( name == "GCN" ) wurcs_residue_code = "a2d22h-1a_1-5_2*N";
-        else if ( name == "U2D" ) wurcs_residue_code = "a2122h-1a_1-5_6*OCCCCCCCCCC/3=O";
-        else if ( name == "U8V" ) wurcs_residue_code = "a2122h-1a_1-5_6*OCCCC/3=O";
-        else if ( name == "8EX" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O_4*OSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "TXB" ) wurcs_residue_code = "a212h-1a_1-5_4*S";
-        else if ( name == "TVG" ) wurcs_residue_code = "a2112h-1b_1-4_1*OCCC";
-        else if ( name == "TRV" ) wurcs_residue_code = "ha122h-2b_2-5_6*OCCCCCCCC/3=O";
-        else if ( name == "JHM" ) wurcs_residue_code = "ad122h-1a_1-5_6*OSO/3=O/3=O";
-        else if ( name == "6S2" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*NCC/3=O_6*OSO/3=O/3=O";
-        else if ( name == "X0X" ) wurcs_residue_code = "a1112A-1b_1-5";
-        else if ( name == "X1X" ) wurcs_residue_code = "a1112A-1a_1-5";
-        else if ( name == "HSH" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCCCCCCCC";
-        else if ( name == "MRH" ) wurcs_residue_code = "a1122m-1a_1-5_4*NCC/3=O";
-        else if ( name == "DAG" ) wurcs_residue_code = "a2122m-1b_1-5_4*N";
-        else if ( name == "EMP" ) wurcs_residue_code = "ad21h-1a_1-5_3*OC_4*NCC";
-        else if ( name == "DSR" ) wurcs_residue_code = "ad222m-1b_1-5_4*S";
-        else if ( name == "MRP" ) wurcs_residue_code = "a2211m-1a_1-5_3*OC";
-        else if ( name == "YYH" ) wurcs_residue_code = "a11221m-1a_1-5";
-        else if ( name == "MA1" ) wurcs_residue_code = "a2122h-1a_1-5_1*S_4*S";
-        else if ( name == "MA2" ) wurcs_residue_code = "a2122h-1a_1-5_4*SC";
-        else if ( name == "MA3" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_4*S";
-        else if ( name == "LVZ" ) wurcs_residue_code = "a2122h-1a_1-5_1*OCC/3C_2*NSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "C4W" ) wurcs_residue_code = "a2122h-1b_1-5_1*N=^ZN=N_2*NCC/3=O";
-        else if ( name == "MXZ" ) wurcs_residue_code = "a1221m-1a_1-5_2*OC";
-        else if ( name == "5KV" ) wurcs_residue_code = "a2122h-1b_1-5_2*NSO/3=O/3=O_6*OSO/3=O/3=O";
-        else if ( name == "SDY" ) wurcs_residue_code = "a1112h-1b_1-5";
-        else if ( name == "TWJ" ) wurcs_residue_code = "a1112h-1b_1-5_1*S";
-        else if ( name == "GCT" ) wurcs_residue_code = "a2112A-1b_1-5";
-        else if ( name == "GLF" ) wurcs_residue_code = "a2122h-1a_1-5_1*F";
-        else if ( name == "G1P" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O";
-        else if ( name == "TUJ" ) wurcs_residue_code = "a2222h-1a_1-5_1*OSO/3=O/3=O_2*OSO/3=O/3=O_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
-        else if ( name == "TUG" ) wurcs_residue_code = "a1222h-1a_1-5_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
-        else if ( name == "5LT" ) wurcs_residue_code = "a2122h-1a_1-5_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
-        else if ( name == "2F8" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*NCC/3=O";
-        else if ( name == "IDU" ) wurcs_residue_code = "a2111A-1b_1-5_2*OSO/3=O/3=O";
-        else if ( name == "AXR" ) wurcs_residue_code = "a122h-1a_1-4_1*OC";
-        else if ( name == "BXX" ) wurcs_residue_code = "a122h-1b_1-4";
-        else if ( name == "ZEE" ) wurcs_residue_code = "a2221h-1b_1-5";
-        else if ( name == "UEA" ) wurcs_residue_code = "ha212h-2b_2-5";
-        else if ( name == "GP4" ) wurcs_residue_code = "a2122h-1a_1-5_2*N_4*OPO/3O/3=O";
-        else if ( name == "SGD" ) wurcs_residue_code = "a2122h-1a_1-5_6*S";
-        else if ( name == "Z4U" ) wurcs_residue_code = "a212h-1a_1-5_1*OC_4*S";
-        else if ( name == "TWY" ) wurcs_residue_code = "a212h-1b_1-5_4*S";
-        else if ( name == "PZU" ) wurcs_residue_code = "a2d22m-1a_1-5";
-        else if ( name == "ZB0" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_3*OC";
-        else if ( name == "ZB1" ) wurcs_residue_code = "a2122h-1a_1-5_3*OC";
-        else if ( name == "ZB2" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC";
-        else if ( name == "ZB3" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_6*OC";
-        else if ( name == "DJB" ) wurcs_residue_code = "a2112A-1a_1-5_2*NCC/3=O_3*OCC/3=O";
-        else if ( name == "DJE" ) wurcs_residue_code = "a2112A-1a_1-5_2*NCC/3=O";
-        else if ( name == "3FM" ) wurcs_residue_code = "a1122h-1a_1-5_3*OCN/3=O";
-        else if ( name == "NM6" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_3*OC^RCN/4=O/3C";
-        else if ( name == "NM9" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*NCC/3=O_3*OC^RCN/4=O/3C";
-        else if ( name == "MAT" ) wurcs_residue_code = "ad21h-1a_1-5_3*OC_4*NCC/3C";
-        else if ( name == "TMR" ) wurcs_residue_code = "ad222m-1b_1-5_4*SC";
-        else if ( name == "DLF" ) wurcs_residue_code = "ad221m-1a_1-5";
-        else if ( name == "TGY" ) wurcs_residue_code = "ma112h-2a_2-6";
-        else if ( name == "B8D" ) wurcs_residue_code = "a2122h-1a_1-5_4*OC";
-        else if ( name == "B9D" ) wurcs_residue_code = "a2125h-1a_1-5_5*F";
-        else if ( name == "6C2" ) wurcs_residue_code = "a2122A-1b_1-5_1*OC_2*NCC/3=O";
-        else if ( name == "0WK" ) wurcs_residue_code = "a2122h-1b_1-5_6*OPO/3O/3=O";
-        else if ( name == "LEC" ) wurcs_residue_code = "a2122h-1b_1-5_1*O(C^EC^ZC^EC^EC^ZC^E$3)/6NO/9=O_2*NCC/3=O";
-        else if ( name == "EAG" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCCN_2*NCC/3=O";
-        else if ( name == "ZEL" ) wurcs_residue_code = "a1222h-1b_1-5_1*OC";
-        else if ( name == "TTV" ) wurcs_residue_code = "ha222h-2b_2-5";
-        else if ( name == "ZCD" ) wurcs_residue_code = "a1212h-1a_1-5";
-        else if ( name == "KTU" ) wurcs_residue_code = "Aad1eE2h-2a_2-6_2*OCC=C"; // seems kind of sus that MODs for this sugar are so short
-        else if ( name == "TVD" ) wurcs_residue_code = "a2122h-1b_1-5_1*NCC/3=O_2*NCC/3=O";
-        else if ( name == "TVM" ) wurcs_residue_code = "a2112h-1b_1-5_3*OC(C^EC^EC^EC^ZC^ZC^E$4)/6OC";
-        else if ( name == "8B9" ) wurcs_residue_code = "a21d2h-1a_1-5_2*NCC/3=O";
-        else if ( name == "IDX" ) wurcs_residue_code = "a1121A-1a_1-5_2*OSO/3=O/3=O";
-        else if ( name == "SN5" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=S";
-        else if ( name == "IXD" ) wurcs_residue_code = "a22eEA-1b_1-5_2*OSO/3=O/3=O";
-        else if ( name == "L6S" ) wurcs_residue_code = "a1221h-1a_1-5_6*OSO/3=O/3=O";
-        else if ( name == "GN1" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O_2*NCC/3=O";
-        else if ( name == "GN4" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_4*OPO/3O/3=O";
-        else if ( name == "Z6H" ) wurcs_residue_code = "a2111h-1a_1-5";
-        else if ( name == "GQ1" ) wurcs_residue_code = "a2122h-1a_1-5_4*OSO/3=O/3=O";
-        else if ( name == "TVY" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC^S(C^EC^ZC^ZC^ZC^ZC^E$4)/3CN";
-        else if ( name == "Z8T" ) wurcs_residue_code = "a1211h-1b_1-5";
-        else if ( name == "LOX" ) wurcs_residue_code = "A212h_1-5*N*_1*=NO";
-        else if ( name == "5LS" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_4*OSO/3=O/3=O";
-        else if ( name == "PDX" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O";
-        else if ( name == "5TJ" ) wurcs_residue_code = "a2122h-1a_1-5_3*OSO/3=O/3=O_4*OSO";
-        else if ( name == "5TM" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO";
-        else if ( name == "Z4K" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O";
-        else if ( name == "5TK" ) wurcs_residue_code = "a2122h-1a_1-5_4*OSO";
-        else if ( name == "5TH" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_4*OSO";
-        else if ( name == "4SG" ) wurcs_residue_code = "a2122h-1a_1-5_4*S";
-        else if ( name == "Z9E" ) wurcs_residue_code = "a2122h-1a_1-5_1*S";
-        else if ( name == "RAO" ) wurcs_residue_code = "a2211m-1a_1-5_1*OC";
-        else if ( name == "RAE" ) wurcs_residue_code = "ad211m-1a_1-5";
-        else if ( name == "XYZ" ) wurcs_residue_code = "a212h-1b_1-4";
-        else if ( name == "H1M" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC_2*CCO";
-        else if ( name == "MSX" ) wurcs_residue_code = "a1122h-1a_1-5_1*SC";
-        else if ( name == "Z4S" ) wurcs_residue_code = "a2122h-1x_1-5_1-6_2*NCC/3=O";
-        else if ( name == "KDD" ) wurcs_residue_code = "AEe2d22h_2-6";
-        else if ( name == "GPH" ) wurcs_residue_code = "a11222h-1b_1-5_4*OPO/3O/3=O";
-        else if ( name == "RIP" ) wurcs_residue_code = "a222h-1b_1-5";
-        else if ( name == "LOG" ) wurcs_residue_code = "A2122h_1-5_1*=NO_2*NCC/3=O";
-        else if ( name == "BXF" ) wurcs_residue_code = "a212h-1b_1-5_2*F";
-        else if ( name == "2FG" ) wurcs_residue_code = "a2112h-1b_1-5_2*F";
-        else if ( name == "TU4" ) wurcs_residue_code = "a2122h-1a_1-5_3*OCCCCCCCC/3=O";
-        else if ( name == "KME" ) wurcs_residue_code = "Aad1122h-2a_2-6_2*OC=^ECC_7*OC";
-        else if ( name == "1SD" ) wurcs_residue_code = "a2112h-1b_1-5_1*SN/2=O/2=O";
-        else if ( name == "Z3K" ) wurcs_residue_code = "a2122h-1b_1-5_1*SN/2=O/2=O_2*OCC/3=O_3*OCC/3=O_6*OCC/3=O";
-        else if ( name == "Z3L" ) wurcs_residue_code = "a2112h-1b_1-5_2*OCC/3=O_3*OCC/3=O_4*OCC/3=O_6*OCC/3=O";
-        else if ( name == "BGL" ) wurcs_residue_code = "a2122h-1b_1-5_2*OCCCCCCCC";
-        else if ( name == "PRP" ) wurcs_residue_code = "a222h-1a_1-4_1*OP^XOPO/5O/5=O/3O/3=O_5*OPO/3O/3=O";
-
+        if ( name == "AC1" ) wurcs_residue_code = "a2122m-1a_1-5_4*NC^SC^SC^SC^RCCO/7=^ZC$3/6O/5O/4O";
+        if ( name == "RY7" ) wurcs_residue_code = "a2122m-1a_1-5_4*NC^SC^SC^SC^RC^RCO/7C$3/6O/5O/4O";
+        if ( name == "MAG" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*NCC/3=O";
+        if ( name == "SGN" ) wurcs_residue_code = "a2122h-1a_1-5_2*NSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "UAP" ) wurcs_residue_code = "a21eEA-1a_1-5_2*OSO/3=O/3=O";
+        if ( name == "MGL" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC";
+        if ( name == "SGC" ) wurcs_residue_code = "a2122h-1b_1-5_4*S";
+        if ( name == "NGS" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_6*OSO/3=O/3=O";
+        if ( name == "MMA" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC";
+        if ( name == "KDA" ) wurcs_residue_code = "Aad1122h-2a_2-6_2*OCC=C";
+        if ( name == "KDO" ) wurcs_residue_code = "Aad1122h-2a_2-6";
+        if ( name == "KDB" ) wurcs_residue_code = "Aazzd22h-2a_2-6";
+        if ( name == "DGS" ) wurcs_residue_code = "a2112h-1a_1-5_3-6_2*OSO/3=O/3=O";
+        if ( name == "G4S" ) wurcs_residue_code = "a2112h-1b_1-5_4*OSO/3=O/3=O";
+        if ( name == "GMH" ) wurcs_residue_code = "a11221h-1a_1-5";
+        if ( name == "TVS" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCC=C_2*NCC/3=O";
+        if ( name == "TVV" ) wurcs_residue_code = "a2112h-1b_1-5_3*OCC#C";
+        if ( name == "RAM" ) wurcs_residue_code = "a2211m-1a_1-5";
+        if ( name == "GAD" ) wurcs_residue_code = "a21eEA-1a_1-5";
+        if ( name == "IDS" ) wurcs_residue_code = "a2121A-1a_1-5_2*OSO/3=O/3=O";
+        if ( name == "KO1" ) wurcs_residue_code = "Aa11122h-2a_2-6";
+        if ( name == "G2F" ) wurcs_residue_code = "a2122h-1a_1-5_2*F";
+        if ( name == "NFG" ) wurcs_residue_code = "a2122h-1b_1-5_1*O(C^ZC^EC^EC^EC^ZC^E$3)/6NO/9=O/4NO/12=O_2*F";
+        if ( name == "MAW" ) wurcs_residue_code = "a11eEA-1a_1-5";
+        if ( name == "ASG" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O_4*OSO/3=O/3=O";
+        if ( name == "GU4" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_4*OSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "YYJ" ) wurcs_residue_code = "ha122h-2b_2-5_1*OSO/3=O/3=O_3*OSO/3=O/3=O_4*OSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "Z9N" ) wurcs_residue_code = "ha122h-2a_2-5";
+        if ( name == "G6P" ) wurcs_residue_code = "a2122h-1a_1-5_6*OPO/3O/3=O";
+        if ( name == "5N6" ) wurcs_residue_code = "Aad21122h-2a_2-6_5*NCC/3=O_9*OCC/3=O";
+        if ( name == "TYV" ) wurcs_residue_code = "a1d22m-1a_1-5";
+        if ( name == "PKM" ) wurcs_residue_code = "Aad21122h-2a_2-6_4*OCC/3=O_5*NCC/3=O";
+        if ( name == "ABE" ) wurcs_residue_code = "a2d12m-1a_1-5";
+        if ( name == "AAL" ) wurcs_residue_code = "a1221h-1a_1-5_3-6";
+        if ( name == "Z3Q" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCCN=^ZN=N_2*NCC/3=O";
+        if ( name == "BHG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCCCCCC";
+        if ( name == "GNS" ) wurcs_residue_code = "a2122h-1a_1-5_2*NSO/3=O/3=O";
+        if ( name == "AMV" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*NCC/3=O_3*OC^RCO/4=O/3C";
+        if ( name == "AMU" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_3*OC^RCO/4=O/3C";
+        if ( name == "1GL" ) wurcs_residue_code = "ad112m-1a_1-5_4*OC";
+        if ( name == "ARI" ) wurcs_residue_code = "ad212m-1b_1-5_4*OCC/3=O";
+        if ( name == "CDR" ) wurcs_residue_code = "ad222m-1b_1-5";
+        if ( name == "ERI" ) wurcs_residue_code = "ad611m-1a_1-5_3*C_4*OCC/3=O";
+        if ( name == "9WJ" ) wurcs_residue_code = "a1122m-1b_1-5_4*NCC/3=O";
+        if ( name == "IDY" ) wurcs_residue_code = "a2121A-1a_1-5_1*OC_2*OSO/3=O/3=O";
+        if ( name == "GNX" ) wurcs_residue_code = "a2122h-1a_1-5_2*NSO/3=O/3=O_3*OSO/3=O/3=O";
+        if ( name == "SUS" ) wurcs_residue_code = "a2122h-1a_1-5_2*NSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "Z6W" ) wurcs_residue_code = "ha122d2ddddddm-2b_2-5";
+        if ( name == "83Y" ) wurcs_residue_code = "a2211m-1a_1-5_3*OSO/3=O/3=O";
+        if ( name == "GCD" ) wurcs_residue_code = "a21eEA-1a_1-5";
+        if ( name == "RR7" ) wurcs_residue_code = "ad122h-1b_1-5";
+        if ( name == "DDA" ) wurcs_residue_code = "ad122m-1b_1-5";
+        if ( name == "DDL" ) wurcs_residue_code = "ad112m-1b_1-5";
+        if ( name == "MDA" ) wurcs_residue_code = "ad622m-1b_1-5_3*C";
+        if ( name == "AQA" ) wurcs_residue_code = "a21eEA-1b_1-5";
+        if ( name == "9RN" ) wurcs_residue_code = "a2112h-1a_1-5_3-6";
+        if ( name == "YIO" ) wurcs_residue_code = "a2112h-1b_1-5_1*S";
+        if ( name == "GCO" ) wurcs_residue_code = "A2122h";
+        if ( name == "GLO" ) wurcs_residue_code = "o2122h";
+        if ( name == "SOR" ) wurcs_residue_code = "h2122h";
+        if ( name == "XLS" ) wurcs_residue_code = "o212h";
+        if ( name == "XYL" ) wurcs_residue_code = "h212h";
+        if ( name == "NBG" ) wurcs_residue_code = "a2122h-1b_1-5_1*NCC/3=O";
+        if ( name == "MBG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OC";
+        if ( name == "AHR" ) wurcs_residue_code = "a211h-1a_1-4";
+        if ( name == "FUB" ) wurcs_residue_code = "a211h-1b_1-4";
+        if ( name == "GYP" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC";
+        if ( name == "GZL" ) wurcs_residue_code = "a2112h-1b_1-4";
+        if ( name == "AIG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCCCCCC_3*N";
+        if ( name == "AOG" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCCCCCCCC_3*N";
+        if ( name == "BXY" ) wurcs_residue_code = "a122h-1a_1-4";
+        if ( name == "YZ0" ) wurcs_residue_code = "a1122h-1b_1-5_1*OC";
+        if ( name == "Z4Y" ) wurcs_residue_code = "a1122h-1a_1-5_6*S";
+        if ( name == "DFX" ) wurcs_residue_code = "h212h_1-5_2*F";
+        if ( name == "Z4R" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC_3*S";
+        if ( name == "GLD" ) wurcs_residue_code = "a21d2m-1a_1-5";
+        if ( name == "G6D" ) wurcs_residue_code = "a2122m-1a_1-5";
+        if ( name == "V3P" ) wurcs_residue_code = "a2122h-1b_1-5_1*S(C^EC^ZC^EC^EC^ZC^E$3)/6I";
+        if ( name == "TUP" ) wurcs_residue_code = "a2122h-1a_1-5_3*F";
+        if ( name == "M8C" ) wurcs_residue_code = "a2112A-1a_1-5_6*OC";
+        if ( name == "SHB" ) wurcs_residue_code = "a2112A-1b_1-5_6*OC";
+        if ( name == "MUB" ) wurcs_residue_code = "a2122h-1a_1-5_2*NCC/3=O_3*OC^RCO/4=O/3C";
+        if ( name == "GC4" ) wurcs_residue_code = "a21d2A-1b_1-5";
+        if ( name == "B6D" ) wurcs_residue_code = "a2122m-1b_1-5_2*NCC/3=O_4*NCC/3=O";
+        if ( name == "Z5L" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC_2*S";
+        if ( name == "4NN" ) wurcs_residue_code = "AZz22h_1-5_2*NCC/3=O";
+        if ( name == "BG6" ) wurcs_residue_code = "a2122h-1b_1-5_6*OPO/3O/3=O";
+        if ( name == "K5B" ) wurcs_residue_code = "AOd2122h_4-7";
+        if ( name == "Z9L" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "Z9K" ) wurcs_residue_code = "a2121A-1a_1-5_2*OSO/3=O/3=O_3*OC";
+        if ( name == "GU0" ) wurcs_residue_code = "a2122h-1b_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "GU1" ) wurcs_residue_code = "a2122A-1b_1-5_2*OC_3*OC";
+        if ( name == "GU2" ) wurcs_residue_code = "a2121A-1a_1-5_2*OC_3*OC";
+        if ( name == "GU3" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*OSO/3=O/3=O_3*OC_6*OSO/3=O/3=O";
+        if ( name == "GU4" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*OSO/3=O/3=O_3*OC_6*OSO/3=O/3=O";
+        if ( name == "GU5" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_3*OC_6*OSO/3=O/3=O";
+        if ( name == "GU6" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "GU8" ) wurcs_residue_code = "a2122h-1b_1-5_2*OC_3*OC_6*OC";
+        if ( name == "GU9" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_3*OC_6*OC";
+        if ( name == "Z9H" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OC_4*OC_6*OSO/3=O/3=O";
+        if ( name == "NG6" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O_6*OSO/3=O/3=O";
+        if ( name == "VJ1" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O_2*NCCC^RCCCCCCCCCCC/5O/3=O_3*OC^RCC^RCCCCCCCCCCC/5O/3O";
+        if ( name == "VJ4" ) wurcs_residue_code = "a2122h-1a_1-5_2*NC^SCC^ROCCCCC/7=O/5CCCCCCCC/3O_4*OPO/3O/3=O";
+        if ( name == "DGO" ) wurcs_residue_code = "zz122h_1-5";
+        if ( name == "Z61" ) wurcs_residue_code = "ad122h-1a_1-5";
+        if ( name == "SGA" ) wurcs_residue_code = "a2112h-1b_1-5_3*OSO/3=O/3=O";
+        if ( name == "U2A" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*S";
+        if ( name == "U1Y" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_6*S";
+        if ( name == "GCV" ) wurcs_residue_code = "a2122A-1a_1-5_4*OC";
+        if ( name == "TWA" ) wurcs_residue_code = "a1222h-1b_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
+        if ( name == "TWD" ) wurcs_residue_code = "a1211h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O";
+        if ( name == "GTM" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_4*S";
+        if ( name == "GDA" ) wurcs_residue_code = "a2122h-1b_1-5_4*N";
+        if ( name == "SSG" ) wurcs_residue_code = "a2122h-1b_1-5_1*S_4*S";
+        if ( name == "RTV" ) wurcs_residue_code = "h1122h_1-5_2*NCC/3=O";
+        if ( name == "YYQ" ) wurcs_residue_code = "a1221h-1a_1-5_2*NCC/3=O";
+        if ( name == "SHG" ) wurcs_residue_code = "a2122h-1b_1-5_2*F";
+        if ( name == "NGC" ) wurcs_residue_code = "Aad21122h-2a_2-6_5*NCCO/3=O";
+        if ( name == "MN0" ) wurcs_residue_code = "Aad21122h-2a_2-6_2*OC_5*NCCO/3=O";
+        if ( name == "MGC" ) wurcs_residue_code = "a2112h-1a_1-5_1*OC_2*NCC/3=O";
+        if ( name == "BNG" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCCCCCCCCC";
+        if ( name == "GPM" ) wurcs_residue_code = "h12122h_2-6_1*PO/2O/2=O";
+        if ( name == "GDL" ) wurcs_residue_code = "A2122h_1-5_2*NCC/3=O";
+        if ( name == "ARB" ) wurcs_residue_code = "a211h-1b_1-5";
+        if ( name == "M6P" ) wurcs_residue_code = "a1122h-1a_1-5_6*OPO/3O/3=O";
+        if ( name == "DT6" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_4*NCC/3=O";
+        if ( name == "EGA" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCC";
+        if ( name == "TQY" ) wurcs_residue_code = "a2122h-1a_1-5_6*OCCCCCCCC/3=O";
+        if ( name == "ZDO" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*NSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "X2F" ) wurcs_residue_code = "a212h-1a_1-5_2*F";
+        if ( name == "AGL" ) wurcs_residue_code = "a2122m-1a_1-5_4*N"; // Current PDB version also doesn't have complete MOD for this UniqueRES
+        if ( name == "BOG" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCCCCCCCC";
+        if ( name == "HSQ" ) wurcs_residue_code = "a2121h-1a_1-5_2*NCC/3=O";
+        if ( name == "AMG" ) wurcs_residue_code = "a2112h-1a_1-5_1*OC";
+        if ( name == "ZD0" ) wurcs_residue_code = "a1122m-1a_1-5_1*OC"; //incorrect, lacks long modification, but only 1 entry on PDB...
+        if ( name == "ZCZ" ) wurcs_residue_code = "a1122m-1a_1-5_2*OC"; //incorrect, lacks long modification, but only 1 entry on PDB...
+        if ( name == "RM4" ) wurcs_residue_code = "a2211m-1b_1-5";
+        if ( name == "7CV" ) wurcs_residue_code = "a2211m-1a_1-5_2*OC_3*OC";
+        if ( name == "XXR" ) wurcs_residue_code = "a1122m-1a_1-5";
+        if ( name == "KD5" ) wurcs_residue_code = "AOd1122h_4-7";
+        if ( name == "F6P" ) wurcs_residue_code = "ha122h-2b_2-5_6*OPO/3O/3=O";
+        if ( name == "BDR" ) wurcs_residue_code = "a222h-1b_1-4";
+        if ( name == "IDG" ) wurcs_residue_code = "a2121h-1b_1-5_2*N_6*N";
+        if ( name == "PA1" ) wurcs_residue_code = "a2122h-1a_1-5_2*N";
+        if ( name == "2GL" ) wurcs_residue_code = "ad112m-1b_1-5_4*OCC/3=O";
+        if ( name == "LDY" ) wurcs_residue_code = "a112h-1a_1-5";
+        if ( name == "GC1" ) wurcs_residue_code = "A1121h_2-6";
+        if ( name == "Z9M" ) wurcs_residue_code = "a2122h-1b_1-5_2*N_4*OPO/3O/3=O";
+        if ( name == "GP1" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O_2*N";
+        if ( name == "RER" ) wurcs_residue_code = "ad621m-1a_1-5_3*C_3*N";
+        if ( name == "TMX" ) wurcs_residue_code = "a2122h-1b_1-5_2*NC/2C/2C";
+        if ( name == "BBV" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC(C^EC^ZC^ZC^ZC^ZC^E$4)_2*NCC/3=O";
+        if ( name == "ASO" ) wurcs_residue_code = "h2122h_1-5";
+        if ( name == "G4D" ) wurcs_residue_code = "a21d2h-1a_1-5";
+        if ( name == "BDF" ) wurcs_residue_code = "ha122h-2b_2-6";
+        if ( name == "BDG" ) wurcs_residue_code = "a2122h-1a_1-5_2*N_6*N";
+        if ( name == "RIB" ) wurcs_residue_code = "a222h-1a_1-4";
+        if ( name == "G6S" ) wurcs_residue_code = "a2112h-1b_1-5_6*OSO/3=O/3=O";
+        if ( name == "MXY" ) wurcs_residue_code = "a1221m-1b_1-5_2*OC";
+        if ( name == "WIA" ) wurcs_residue_code = "a2112h-1b_1-5_1*OC_6*S";
+        if ( name == "SHD" ) wurcs_residue_code = "a1222h-1a_1-5";
+        if ( name == "1GN" ) wurcs_residue_code = "a2112h-1b_1-5_2*N";
+        if ( name == "6PZ" ) wurcs_residue_code = "Aad22111m-2a_2-6_5*NCC/3=O_7*NCC/3=O";
+        if ( name == "6LW" ) wurcs_residue_code = "A211h_1-4_1*=NO";
+        if ( name == "ARA" ) wurcs_residue_code = "a211h-1a_1-5";
+        if ( name == "TT7" ) wurcs_residue_code = "ha122h-2b_2-5_4*OPO/3O/3=O";
+        if ( name == "4GL" ) wurcs_residue_code = "a2212h-1a_1-5";
+        if ( name == "MBF" ) wurcs_residue_code = "a1122h-1b_1-5_2*F";
+        if ( name == "DLG" ) wurcs_residue_code = "a2d12h-1b_1-5_1*OCCCCCC";
+        if ( name == "GS1" ) wurcs_residue_code = "a2122h-1b_1-5_1*S";
+        if ( name == "OPM" ) wurcs_residue_code = "a1122h-1a_1-5_1*OCCCCC";
+        if ( name == "DRI" ) wurcs_residue_code = "ad122m-1b_1-5_4*OC";
+        if ( name == "LXB" ) wurcs_residue_code = "a2212h-1b_1-5_2*NCC/3=O";
+        if ( name == "LXZ" ) wurcs_residue_code = "a1212h-1a_1-5_2*NCC/3=O";
+        if ( name == "NGZ" ) wurcs_residue_code = "a1211h-1a_1-5_2*NCC/3=O";
+        if ( name == "GL0" ) wurcs_residue_code = "a2212h-1b_1-5";
+        if ( name == "GXL" ) wurcs_residue_code = "a1221h-1a_1-5";
+        if ( name == "GM0" ) wurcs_residue_code = "a11221h-1a_1-5_4*OPO/3O/3=O";
+        if ( name == "GCN" ) wurcs_residue_code = "a2d22h-1a_1-5_2*N";
+        if ( name == "U2D" ) wurcs_residue_code = "a2122h-1a_1-5_6*OCCCCCCCCCC/3=O";
+        if ( name == "U8V" ) wurcs_residue_code = "a2122h-1a_1-5_6*OCCCC/3=O";
+        if ( name == "8EX" ) wurcs_residue_code = "a2112h-1b_1-5_2*NCC/3=O_4*OSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "TXB" ) wurcs_residue_code = "a212h-1a_1-5_4*S";
+        if ( name == "TVG" ) wurcs_residue_code = "a2112h-1b_1-4_1*OCCC";
+        if ( name == "TRV" ) wurcs_residue_code = "ha122h-2b_2-5_6*OCCCCCCCC/3=O";
+        if ( name == "JHM" ) wurcs_residue_code = "ad122h-1a_1-5_6*OSO/3=O/3=O";
+        if ( name == "6S2" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*NCC/3=O_6*OSO/3=O/3=O";
+        if ( name == "X0X" ) wurcs_residue_code = "a1112A-1b_1-5";
+        if ( name == "X1X" ) wurcs_residue_code = "a1112A-1a_1-5";
+        if ( name == "HSH" ) wurcs_residue_code = "a2112h-1b_1-5_1*OCCCCCCCC";
+        if ( name == "MRH" ) wurcs_residue_code = "a1122m-1a_1-5_4*NCC/3=O";
+        if ( name == "DAG" ) wurcs_residue_code = "a2122m-1b_1-5_4*N";
+        if ( name == "EMP" ) wurcs_residue_code = "ad21h-1a_1-5_3*OC_4*NCC";
+        if ( name == "DSR" ) wurcs_residue_code = "ad222m-1b_1-5_4*S";
+        if ( name == "MRP" ) wurcs_residue_code = "a2211m-1a_1-5_3*OC";
+        if ( name == "YYH" ) wurcs_residue_code = "a11221m-1a_1-5";
+        if ( name == "MA1" ) wurcs_residue_code = "a2122h-1a_1-5_1*S_4*S";
+        if ( name == "MA2" ) wurcs_residue_code = "a2122h-1a_1-5_4*SC";
+        if ( name == "MA3" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_4*S";
+        if ( name == "LVZ" ) wurcs_residue_code = "a2122h-1a_1-5_1*OCC/3C_2*NSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "C4W" ) wurcs_residue_code = "a2122h-1b_1-5_1*N=^ZN=N_2*NCC/3=O";
+        if ( name == "MXZ" ) wurcs_residue_code = "a1221m-1a_1-5_2*OC";
+        if ( name == "5KV" ) wurcs_residue_code = "a2122h-1b_1-5_2*NSO/3=O/3=O_6*OSO/3=O/3=O";
+        if ( name == "SDY" ) wurcs_residue_code = "a1112h-1b_1-5";
+        if ( name == "TWJ" ) wurcs_residue_code = "a1112h-1b_1-5_1*S";
+        if ( name == "GCT" ) wurcs_residue_code = "a2112A-1b_1-5";
+        if ( name == "GLF" ) wurcs_residue_code = "a2122h-1a_1-5_1*F";
+        if ( name == "G1P" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O";
+        if ( name == "TUJ" ) wurcs_residue_code = "a2222h-1a_1-5_1*OSO/3=O/3=O_2*OSO/3=O/3=O_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
+        if ( name == "TUG" ) wurcs_residue_code = "a1222h-1a_1-5_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
+        if ( name == "5LT" ) wurcs_residue_code = "a2122h-1a_1-5_3*OSO/3=O/3=O_4*OSO/3=O/3=O";
+        if ( name == "2F8" ) wurcs_residue_code = "a2122h-1a_1-5_1*OC_2*NCC/3=O";
+        if ( name == "IDU" ) wurcs_residue_code = "a2111A-1b_1-5_2*OSO/3=O/3=O";
+        if ( name == "AXR" ) wurcs_residue_code = "a122h-1a_1-4_1*OC";
+        if ( name == "BXX" ) wurcs_residue_code = "a122h-1b_1-4";
+        if ( name == "ZEE" ) wurcs_residue_code = "a2221h-1b_1-5";
+        if ( name == "UEA" ) wurcs_residue_code = "ha212h-2b_2-5";
+        if ( name == "GP4" ) wurcs_residue_code = "a2122h-1a_1-5_2*N_4*OPO/3O/3=O";
+        if ( name == "SGD" ) wurcs_residue_code = "a2122h-1a_1-5_6*S";
+        if ( name == "Z4U" ) wurcs_residue_code = "a212h-1a_1-5_1*OC_4*S";
+        if ( name == "TWY" ) wurcs_residue_code = "a212h-1b_1-5_4*S";
+        if ( name == "PZU" ) wurcs_residue_code = "a2d22m-1a_1-5";
+        if ( name == "ZB0" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_3*OC";
+        if ( name == "ZB1" ) wurcs_residue_code = "a2122h-1a_1-5_3*OC";
+        if ( name == "ZB2" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC";
+        if ( name == "ZB3" ) wurcs_residue_code = "a2122h-1a_1-5_2*OC_6*OC";
+        if ( name == "DJB" ) wurcs_residue_code = "a2112A-1a_1-5_2*NCC/3=O_3*OCC/3=O";
+        if ( name == "DJE" ) wurcs_residue_code = "a2112A-1a_1-5_2*NCC/3=O";
+        if ( name == "3FM" ) wurcs_residue_code = "a1122h-1a_1-5_3*OCN/3=O";
+        if ( name == "NM6" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_3*OC^RCN/4=O/3C";
+        if ( name == "NM9" ) wurcs_residue_code = "a2122h-1b_1-5_1*OC_2*NCC/3=O_3*OC^RCN/4=O/3C";
+        if ( name == "MAT" ) wurcs_residue_code = "ad21h-1a_1-5_3*OC_4*NCC/3C";
+        if ( name == "TMR" ) wurcs_residue_code = "ad222m-1b_1-5_4*SC";
+        if ( name == "DLF" ) wurcs_residue_code = "ad221m-1a_1-5";
+        if ( name == "TGY" ) wurcs_residue_code = "ma112h-2a_2-6";
+        if ( name == "B8D" ) wurcs_residue_code = "a2122h-1a_1-5_4*OC";
+        if ( name == "B9D" ) wurcs_residue_code = "a2125h-1a_1-5_5*F";
+        if ( name == "6C2" ) wurcs_residue_code = "a2122A-1b_1-5_1*OC_2*NCC/3=O";
+        if ( name == "0WK" ) wurcs_residue_code = "a2122h-1b_1-5_6*OPO/3O/3=O";
+        if ( name == "LEC" ) wurcs_residue_code = "a2122h-1b_1-5_1*O(C^EC^ZC^EC^EC^ZC^E$3)/6NO/9=O_2*NCC/3=O";
+        if ( name == "EAG" ) wurcs_residue_code = "a2122h-1b_1-5_1*OCCN_2*NCC/3=O";
+        if ( name == "ZEL" ) wurcs_residue_code = "a1222h-1b_1-5_1*OC";
+        if ( name == "TTV" ) wurcs_residue_code = "ha222h-2b_2-5";
+        if ( name == "ZCD" ) wurcs_residue_code = "a1212h-1a_1-5";
+        if ( name == "KTU" ) wurcs_residue_code = "Aad1eE2h-2a_2-6_2*OCC=C"; // seems kind of sus that MODs for this sugar are so short
+        if ( name == "TVD" ) wurcs_residue_code = "a2122h-1b_1-5_1*NCC/3=O_2*NCC/3=O";
+        if ( name == "TVM" ) wurcs_residue_code = "a2112h-1b_1-5_3*OC(C^EC^EC^EC^ZC^ZC^E$4)/6OC";
+        if ( name == "8B9" ) wurcs_residue_code = "a21d2h-1a_1-5_2*NCC/3=O";
+        if ( name == "IDX" ) wurcs_residue_code = "a1121A-1a_1-5_2*OSO/3=O/3=O";
+        if ( name == "SN5" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=S";
+        if ( name == "IXD" ) wurcs_residue_code = "a22eEA-1b_1-5_2*OSO/3=O/3=O";
+        if ( name == "L6S" ) wurcs_residue_code = "a1221h-1a_1-5_6*OSO/3=O/3=O";
+        if ( name == "GN1" ) wurcs_residue_code = "a2122h-1a_1-5_1*OPO/3O/3=O_2*NCC/3=O";
+        if ( name == "GN4" ) wurcs_residue_code = "a2122h-1b_1-5_2*NCC/3=O_4*OPO/3O/3=O";
+        if ( name == "Z6H" ) wurcs_residue_code = "a2111h-1a_1-5";
+        if ( name == "GQ1" ) wurcs_residue_code = "a2122h-1a_1-5_4*OSO/3=O/3=O";
+        if ( name == "TVY" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC^S(C^EC^ZC^ZC^ZC^ZC^E$4)/3CN";
+        if ( name == "Z8T" ) wurcs_residue_code = "a1211h-1b_1-5";
+        if ( name == "LOX" ) wurcs_residue_code = "A212h_1-5*N*_1*=NO";
+        if ( name == "5LS" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_4*OSO/3=O/3=O";
+        if ( name == "PDX" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO/3=O/3=O";
+        if ( name == "5TJ" ) wurcs_residue_code = "a2122h-1a_1-5_3*OSO/3=O/3=O_4*OSO";
+        if ( name == "5TM" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_3*OSO";
+        if ( name == "Z4K" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O";
+        if ( name == "5TK" ) wurcs_residue_code = "a2122h-1a_1-5_4*OSO";
+        if ( name == "5TH" ) wurcs_residue_code = "a2122h-1a_1-5_2*OSO/3=O/3=O_4*OSO";
+        if ( name == "4SG" ) wurcs_residue_code = "a2122h-1a_1-5_4*S";
+        if ( name == "Z9E" ) wurcs_residue_code = "a2122h-1a_1-5_1*S";
+        if ( name == "RAO" ) wurcs_residue_code = "a2211m-1a_1-5_1*OC";
+        if ( name == "RAE" ) wurcs_residue_code = "ad211m-1a_1-5";
+        if ( name == "XYZ" ) wurcs_residue_code = "a212h-1b_1-4";
+        if ( name == "H1M" ) wurcs_residue_code = "a1122h-1a_1-5_1*OC_2*CCO";
+        if ( name == "MSX" ) wurcs_residue_code = "a1122h-1a_1-5_1*SC";
+        if ( name == "Z4S" ) wurcs_residue_code = "a2122h-1x_1-5_1-6_2*NCC/3=O";
+        if ( name == "KDD" ) wurcs_residue_code = "AEe2d22h_2-6";
+        if ( name == "GPH" ) wurcs_residue_code = "a11222h-1b_1-5_4*OPO/3O/3=O";
+        if ( name == "RIP" ) wurcs_residue_code = "a222h-1b_1-5";
+        if ( name == "LOG" ) wurcs_residue_code = "A2122h_1-5_1*=NO_2*NCC/3=O";
+        if ( name == "BXF" ) wurcs_residue_code = "a212h-1b_1-5_2*F";
+        if ( name == "2FG" ) wurcs_residue_code = "a2112h-1b_1-5_2*F";
+        if ( name == "TU4" ) wurcs_residue_code = "a2122h-1a_1-5_3*OCCCCCCCC/3=O";
+        if ( name == "KME" ) wurcs_residue_code = "Aad1122h-2a_2-6_2*OC=^ECC_7*OC";
+        if ( name == "1SD" ) wurcs_residue_code = "a2112h-1b_1-5_1*SN/2=O/2=O";
+        if ( name == "Z3K" ) wurcs_residue_code = "a2122h-1b_1-5_1*SN/2=O/2=O_2*OCC/3=O_3*OCC/3=O_6*OCC/3=O";
+        if ( name == "Z3L" ) wurcs_residue_code = "a2112h-1b_1-5_2*OCC/3=O_3*OCC/3=O_4*OCC/3=O_6*OCC/3=O";
+        if ( name == "BGL" ) wurcs_residue_code = "a2122h-1b_1-5_2*OCCCCCCCC";
+        if ( name == "PRP" ) wurcs_residue_code = "a222h-1a_1-4_1*OP^XOPO/5O/5=O/3O/3=O_5*OPO/3O/3=O";
 
         
-        else wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
+        if (wurcs_residue_code=="")
+            wurcs_residue_code = "ERROR: UNABLE TO FIND \'" + name + "\' RESIDUE CODE IN INTERNAL DATABASE";
 
         return wurcs_residue_code;
     } 
     
-    // Consider getting rid of clipper::data::get_anomer when there is already clipper::MSugar::anomer()
+    // Consider getting rid of ::get_anomer when there is already clipper::MSugar::anomer()
     // Or maybe not, SNFG generation functions depend on this.
     std::string get_anomer( std::string name )
     {
