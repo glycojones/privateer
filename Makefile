@@ -21,10 +21,11 @@
 # PKG_NAME = chimerax.privateer
 
 # Define where ChimeraX is installed.
-OS = $(patsubst CYGWIN_NT%,CYGWIN_NT,$(shell uname -s))
+#OS = $(patsubst CYGWIN_NT%,CYGWIN_NT,$(shell uname -s))
 # CHIMERAX_APP is the ChimeraX install folder
-
-ifeq ($(OS),CYGWIN_NT)
+CHIMERAX_APP = "/c/Program Files/ChimeraX"
+CHIMERAX_EXE = $(CHIMERAX_APP)/bin/ChimeraX.exe
+ifeq ($(OS),Windows)
 ifndef RELEASE
 # Windows
 CHIMERAX_APP = "/c/Program Files/ChimeraX_Daily"
@@ -54,8 +55,8 @@ endif
 # Theoretically, no changes are needed below this line
 
 # Platform-dependent settings.  Should not need fixing.
-# For Windows, we assume Cygwin is being used.
-ifeq ($(OS),CYGWIN_NT)
+# For Windows, we assume Cygmakewin is being used.
+ifeq ($(OS),Windows)
 CHIMERAX_EXE = $(CHIMERAX_APP)/bin/ChimeraX.exe
 endif
 ifeq ($(OS),Darwin)

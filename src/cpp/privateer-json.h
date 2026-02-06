@@ -22,7 +22,7 @@
 #include <iterator>
 
 #if defined(_WIN32)
-#include "utf.hpp"
+#include "gemmi/utf.hpp"
 #endif
 
 namespace privateer
@@ -53,8 +53,8 @@ namespace privateer
         {
             std::FILE* file;
             #if defined(_WIN32)
-            std::wstring wpath = UTF8_to_wchar(path);
-            std::wstring wmode = UTF8_to_wchar(mode);
+            std::wstring wpath = gemmi::UTF8_to_wchar(path);
+            std::wstring wmode = gemmi::UTF8_to_wchar(mode);
             if ((file = ::_wfopen(wpath.c_str(), wmode.c_str())) == nullptr)
             #else
             if ((file = std::fopen(path, mode)) == nullptr)

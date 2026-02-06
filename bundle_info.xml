@@ -74,11 +74,13 @@ will be displayed without the ChimeraX- prefix.
   
   <CLibrary name="ccp4">
     <Define>CCP4_EXPORT</Define>
+	<Define platform="windows">NOMINMAX</Define>
     <CompileArgument platform="mac">-fvisibility=hidden</CompileArgument>
     <CompileArgument platform="mac">-fvisibility-inlines-hidden</CompileArgument>
     <LinkArgument platform="mac">-fvisibility=hidden -fvisibility-inlines-hidden -s</LinkArgument>
     <LinkArgument platform="mac">-fvisibility-inlines-hidden</LinkArgument>
     <LinkArgument platform="mac">-s</LinkArgument>
+	<LinkArgument platform ="windows">AdvAPI32.Lib</LinkArgument>
     <SourceFile>src/dependencies/libccp4/ccp4/ccp4_array.c</SourceFile>
     <SourceFile>src/dependencies/libccp4/ccp4/cmap_data.c</SourceFile>
     <SourceFile>src/dependencies/libccp4/ccp4/cmtzlib.c</SourceFile>
@@ -104,6 +106,7 @@ will be displayed without the ChimeraX- prefix.
   <CLibrary name="clipper">
     <Define>CLIPPER_EXPORTS</Define>
     <Define>CLIPPER_VERBOSE</Define>
+	<Define platform="windows">NOMINMAX</Define>
     <CompileArgument platform="mac">-fvisibility=hidden</CompileArgument>
     <CompileArgument platform="mac">-fvisibility-inlines-hidden</CompileArgument>
     <LinkArgument platform="mac">-fvisibility=hidden -fvisibility-inlines-hidden -s</LinkArgument>
@@ -117,6 +120,7 @@ will be displayed without the ChimeraX- prefix.
     <LibraryDir>src</LibraryDir>
     <Library>mmdb2</Library>
     <Library>ccp4</Library>
+	  
     
     <SourceFile>src/dependencies/clipper/core/atomsf.cpp</SourceFile>
     <SourceFile>src/dependencies/clipper/core/coords.cpp</SourceFile>
@@ -200,11 +204,17 @@ will be displayed without the ChimeraX- prefix.
 
   <!-- Module created using PyBind11 for bindings -->
   <CModule name="privateer_core">
-    <CompileArgument platform="mac">-fvisibility=hidden</CompileArgument>
+	<Define>PRIVATEER_CX_EXPORTS</Define>
+	<Define>PRIVATEER_VERBOSE</Define>
+	<Define platform="windows">NOMINMAX</Define>
+    <!-- <CompileArgument platform="mac">-fvisibility=hidden</CompileArgument>
     <CompileArgument platform="mac">-fvisibility-inlines-hidden</CompileArgument>
     <LinkArgument platform="mac">-fvisibility=hidden -fvisibility-inlines-hidden -s</LinkArgument>
     <LinkArgument platform="mac">-fvisibility-inlines-hidden</LinkArgument>
     <LinkArgument platform="mac">-s</LinkArgument>
+	<LinkArgument platform="windows">/FORCE:MULTIPLE</LinkArgument> -->
+	<LinkArgument platform="windows">ws2_32.lib</LinkArgument>
+	<LinkArgument platform="windows">python311.lib</LinkArgument>
 
     <IncludeDir>src/dependencies</IncludeDir>
     <IncludeDir>src/dependencies/mmdb2</IncludeDir>
