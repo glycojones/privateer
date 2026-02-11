@@ -21,49 +21,43 @@
 # PKG_NAME = chimerax.privateer
 
 # Define where ChimeraX is installed.
-#OS = $(patsubst CYGWIN_NT%,CYGWIN_NT,$(shell uname -s))
-# CHIMERAX_APP is the ChimeraX install folder
-CHIMERAX_APP = "/c/Program Files/ChimeraX"
-CHIMERAX_EXE = $(CHIMERAX_APP)/bin/ChimeraX.exe
-ifeq ($(OS),Windows)
-ifndef RELEASE
-# Windows
-CHIMERAX_APP = "/c/Program Files/ChimeraX_Daily"
+
+ifeq ($(OS),Windows_NT)     # is Windows_NT on XP, 2000, 7, Vista, 10...
+detected_OS := Windows
 else
-CHIMERAX_APP = "/c/Program Files/ChimeraX"
-endif
+detected_OS := $(shell uname -s)  # same as "uname -s"
 endif
 
-ifeq ($(OS),Darwin)
+
+ifeq ($(detected_OS),Windows)
+# Windows
+CHIMERAX_APP = "/c/Program Files/ChimeraX"
+endif
+
+ifeq ($(detected_OS),Darwin)
 # Mac
-ifndef RELEASE
-CHIMERAX_APP = /Applications/ChimeraX_Daily.app
-else
 CHIMERAX_APP = /Applications/ChimeraX.app
 endif
-endif
 
-ifeq ($(OS),Linux)
-ifndef RELEASE
-CHIMERAX_APP = chimerax-daily
-else
+
+ifeq ($(detected_OS),Linux  ) # For some reason the OS name has trailing white space
 CHIMERAX_APP = chimerax
 endif
-endif
+
 
 # ==================================================================
 # Theoretically, no changes are needed below this line
 
 # Platform-dependent settings.  Should not need fixing.
 # For Windows, we assume Cygmakewin is being used.
-ifeq ($(OS),Windows)
+ifeq ($(detected_OS),Windows)
 CHIMERAX_EXE = $(CHIMERAX_APP)/bin/ChimeraX.exe
 endif
-ifeq ($(OS),Darwin)
+ifeq ($(detected_OS),Darwin)
 CHIMERAX_EXE = $(CHIMERAX_APP)/Contents/bin/ChimeraX
 export MACOSX_DEPLOYMENT_TARGET=10.13
 endif
-ifeq ($(OS),Linux)
+ifeq ($(detected_OS),Linux  ) # For some reason the OS name has trailing white space
 CHIMERAX_EXE = $(CHIMERAX_APP)
 endif
 
