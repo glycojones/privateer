@@ -71,6 +71,7 @@ def privateer_torsion_plot(session,sugar_1,atom_number_1,sugar_2,atom_number_2,p
         return
     from matplotlib.figure import Figure
     from matplotlib.backends.backend_qtagg import (FigureCanvasQTAgg as Canvas,)
+    from Qt.QtCore import Qt 
     from Qt.QtWidgets import QVBoxLayout
     from chimerax.privateer.tool import PrivateerTool
     tool = session.tools.find_by_class(PrivateerTool)[0]
@@ -106,7 +107,7 @@ def privateer_torsion_plot(session,sugar_1,atom_number_1,sugar_2,atom_number_2,p
     layout.addWidget(canvas)
     canvas.draw()
     torsion_tool_window.ui_area.setLayout(layout)
-    torsion_tool_window.manage('side')
+    torsion_tool_window.manage(placement=None, allowed_areas=Qt.LeftDockWidgetArea|Qt.RightDockWidgetArea)
 
 privateer_torsion_plot_desc = CmdDesc(
     required=[

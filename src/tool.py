@@ -370,7 +370,7 @@ class ValidationReportWindow(ChildToolWindow):
 
     def new_tab(self, privateer_tool, modelID):
         parent = self.ui_area
-        parent.setMinimumHeight(250) 
+        parent.setMinimumHeight(1) 
         for i in range(len(self.modellist)):
             if self.modellist[i]["modelID"] == modelID:
                 modelindx = i
