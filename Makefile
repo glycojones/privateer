@@ -27,20 +27,21 @@ detected_OS := Windows
 else
 detected_OS := $(shell uname -s)  # same as "uname -s" but seems to return "Linux  " rather than just "Linux"
 endif
+#$(info    detected_OS is $(strip $(detected_OS)).)
 
 
-ifeq ($(detected_OS),Windows)
+ifeq ($(strip $(detected_OS)),Windows)
 # Windows
 CHIMERAX_APP = "/c/Program Files/ChimeraX"
 endif
 
-ifeq ($(detected_OS),Darwin)
+ifeq ($(strip $(detected_OS)),Darwin)
 # Mac
-CHIMERAX_APP = /Applications/ChimeraX.app
+CHIMERAX_APP = /Applications/ChimeraX-1.10.1.app
 endif
 
 
-ifeq ($(detected_OS),Linux  ) # For some reason the OS name has trailing white space
+ifeq ($(strip $(detected_OS)),Linux) 
 CHIMERAX_APP = chimerax
 endif
 
@@ -50,14 +51,14 @@ endif
 
 # Platform-dependent settings.  Should not need fixing.
 # For Windows, we assume Cygmakewin is being used.
-ifeq ($(detected_OS),Windows)
+ifeq ($(strip $(detected_OS)),Windows)
 CHIMERAX_EXE = $(CHIMERAX_APP)/bin/ChimeraX.exe
 endif
-ifeq ($(detected_OS),Darwin)
+ifeq ($(strip $(detected_OS)),Darwin)
 CHIMERAX_EXE = $(CHIMERAX_APP)/Contents/bin/ChimeraX
 export MACOSX_DEPLOYMENT_TARGET=10.13
 endif
-ifeq ($(detected_OS),Linux  ) # For some reason the OS name has trailing white space
+ifeq ($(strip $(detected_OS)),Linux)
 CHIMERAX_EXE = $(CHIMERAX_APP)
 endif
 
