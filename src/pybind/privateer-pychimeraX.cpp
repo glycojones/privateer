@@ -2,22 +2,37 @@
 #include <privateer-lib.h>
 #include <privateer-json.h>
 #include <privateer-dbquery.h>
+#include <gemmi/mmread.hpp>
 
 
 using namespace pybind11::literals;
 
 pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zscores, std::string& path_to_glycomics)
 {
-    clipper::MiniMol mmol;
-    clipper::MMDBfile mfile;
-    clipper::String path_to_model_file_clipper = path_to_model_file;
+    char *c_data = (char *)path_to_model_file.c_str();
+  size_t size = path_to_model_file.length();
 
+  if (size == 0) {
+    return {};
+  }
+
+  gemmi::Structure structure = gemmi::read_structure_from_char_array(c_data, size, name);
+  clipper::GEMMIfile gemmi_file;
+  // clipper::GemmiStructure *gemmi_structure = &gemmi_file;
+  gemmi_file.set_gemmi_structure(structure);
+
+    clipper::MiniMol mmol;
+    //clipper::MMDBfile mfile;
+    //clipper::String path_to_model_file_clipper = path_to_model_file;
+    gemmi_file.import_minimol(mmol);
+    privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database(path_to_zscores);
+    std::vector<privateer::json::GlycomicsDatabase> glycomics_database = privateer::json::read_json_file_for_glycomics_database(path_to_glycomics);
+    
     privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
 
-    privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database(path_to_zscores);
     const clipper::MAtomNonBond &manb = clipper::MAtomNonBond(mmol, 1.0); // was 1.0
     clipper::MGlycology mgl = clipper::MGlycology(mmol, manb, torsions_zscore_database, false);
-    std::vector<privateer::json::GlycomicsDatabase> glycomics_database = privateer::json::read_json_file_for_glycomics_database(path_to_glycomics);
+
 
     std::vector<clipper::MGlycan> list_of_glycans = mgl.get_list_of_glycans();
 
