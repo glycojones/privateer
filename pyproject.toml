@@ -331,8 +331,116 @@ extra-compile-args = [
   "-std=c++14",
 ]
 
+[tool.chimerax.library.clipper-gemmi]
+sources = [
+  "src/dependencies/clipper-gemmi/core/atomsf.cpp",
+  "src/dependencies/clipper-gemmi/core/coords.cpp",
+  "src/dependencies/clipper-gemmi/core/nxmap_operator.cpp",
+  "src/dependencies/clipper-gemmi/core/cell.cpp",
+  "src/dependencies/clipper-gemmi/core/derivs.cpp",
+  "src/dependencies/clipper-gemmi/core/ramachandran.cpp",
+  "src/dependencies/clipper-gemmi/core/clipper_instance.cpp",
+  "src/dependencies/clipper-gemmi/core/fftmap.cpp",
+  "src/dependencies/clipper-gemmi/core/resol_basisfn.cpp",
+  "src/dependencies/clipper-gemmi/core/clipper_memory.cpp",
+  "src/dependencies/clipper-gemmi/core/fftmap_sparse.cpp",
+  "src/dependencies/clipper-gemmi/core/resol_fn.cpp",
+  "src/dependencies/clipper-gemmi/core/clipper_message.cpp",
+  "src/dependencies/clipper-gemmi/core/hkl_compute.cpp",
+  "src/dependencies/clipper-gemmi/core/resol_targetfn.cpp",
+  "src/dependencies/clipper-gemmi/core/clipper_stats.cpp",
+  "src/dependencies/clipper-gemmi/core/hkl_data.cpp",
+  "src/dependencies/clipper-gemmi/core/rotation.cpp",
+  "src/dependencies/clipper-gemmi/core/clipper_test.cpp",
+  "src/dependencies/clipper-gemmi/core/hkl_datatypes.cpp",
+  "src/dependencies/clipper-gemmi/core/spacegroup.cpp",
+  "src/dependencies/clipper-gemmi/core/clipper_types.cpp",
+  "src/dependencies/clipper-gemmi/core/hkl_info.cpp",
+  "src/dependencies/clipper-gemmi/core/spacegroup_data.cpp",
+  "src/dependencies/clipper-gemmi/core/clipper_util.cpp",
+  "src/dependencies/clipper-gemmi/core/hkl_lookup.cpp",
+  "src/dependencies/clipper-gemmi/core/symop.cpp",
+  "src/dependencies/clipper-gemmi/core/container.cpp",
+  "src/dependencies/clipper-gemmi/core/hkl_operators.cpp",
+  "src/dependencies/clipper-gemmi/core/container_hkl.cpp",
+  "src/dependencies/clipper-gemmi/core/map_interp.cpp",
+  "src/dependencies/clipper-gemmi/core/container_map.cpp",
+  "src/dependencies/clipper-gemmi/core/map_utils.cpp",
+  "src/dependencies/clipper-gemmi/core/xmap.cpp",
+  "src/dependencies/clipper-gemmi/core/container_types.cpp",
+  "src/dependencies/clipper-gemmi/core/nxmap.cpp",
+  "src/dependencies/clipper-gemmi/core/clipper_thread.cpp",
+  "src/dependencies/clipper-gemmi/core/test_core.cpp",
+  "src/dependencies/clipper-gemmi/core/test_data.cpp",
+  "src/dependencies/clipper-gemmi/contrib/convolution_search.cpp",
+  "src/dependencies/clipper-gemmi/contrib/sfcalc.cpp",
+  "src/dependencies/clipper-gemmi/contrib/edcalc.cpp",
+  "src/dependencies/clipper-gemmi/contrib/sfcalc_obs.cpp",
+  "src/dependencies/clipper-gemmi/contrib/fffear.cpp",
+  "src/dependencies/clipper-gemmi/contrib/sfscale.cpp",
+  "src/dependencies/clipper-gemmi/contrib/function_object_bases.cpp",
+  "src/dependencies/clipper-gemmi/contrib/sfweight.cpp",
+  "src/dependencies/clipper-gemmi/contrib/mapfilter.cpp",
+  "src/dependencies/clipper-gemmi/contrib/skeleton.cpp",
+  "src/dependencies/clipper-gemmi/contrib/originmatch.cpp",
+  "src/dependencies/clipper-gemmi/mmdb/clipper_mmdb.cpp",
+  "src/dependencies/clipper-gemmi/minimol/minimol.cpp",
+  "src/dependencies/clipper-gemmi/minimol/container_minimol.cpp",
+  "src/dependencies/clipper-gemmi/minimol/minimol_data.cpp",
+  "src/dependencies/clipper-gemmi/minimol/minimol_seq.cpp",
+  "src/dependencies/clipper-gemmi/minimol/minimol_utils.cpp",
+  "src/dependencies/clipper-gemmi/minimol/minimol_io_gemmi.cpp",
+  "src/dependencies/clipper-gemmi/minimol/minimol_io.cpp",
+  "src/dependencies/clipper-gemmi/phs/phs_io.cpp",
+  "src/dependencies/clipper-gemmi/cif/cif_data_io.cpp",
+  "src/dependencies/clipper-gemmi/ccp4/ccp4_mtz_types.cpp",
+  "src/dependencies/clipper-gemmi/ccp4/ccp4_mtz_io.cpp",
+  "src/dependencies/clipper-gemmi/ccp4/ccp4_map_io.cpp",
+  "src/dependencies/clipper-gemmi/ccp4/ccp4_utils.cpp",
+  "src/dependencies/clipper-gemmi/cns/cns_hkl_io.cpp",
+  "src/dependencies/clipper-gemmi/cns/cns_map_io.cpp",
+  "src/dependencies/clipper-gemmi/gemmi/clipper_gemmi_model.cpp",
+  "src/dependencies/clipper/gemmi/clipper_gemmi.cpp",
+]
+include-dirs = [
+  "src/dependencies/libccp4",
+  "src/dependencies/mmdb2",
+  "src/dependencies/clipper-gemmi",
+  "src/dependencies/pocketfft",
+  "src/dependencies/gemmi/include",
+]
+library-dirs = [
+  "src/lib",
+]
+libraries = [
+  "mmdb2",
+  "ccp4",
+  "gemmi",
+]
+define-macros = [
+  "CLIPPER-GEMMI_EXPORTS",
+  "CLIPPER-GEMMI_VERBOSE",
+]
 
-[tool.chimerax.extension.privateer_core]
+[tool.chimerax.library.clipper-gemmi.platform.win]
+define-macros = [
+  "NOMINMAX",
+]
+extra-compile-args = [
+  "-std=c++14",
+]
+
+[tool.chimerax.library.clipper-gemmi.platform.mac]
+extra-compile-args = [
+  "-std=c++14",
+]
+
+[tool.chimerax.library.clipper-gemmi.platform.linux]
+extra-compile-args = [
+  "-std=c++14",
+]
+
+[tool.chimerax.library.privateer_core]
 sources = [
   "src/cpp/clipper-glyco_data.cpp",
   "src/cpp/clipper-glyco.cpp",
@@ -340,11 +448,66 @@ sources = [
   "src/cpp/privateer-cryo_em.cpp",
   "src/cpp/privateer-lib.cpp",
   "src/cpp/privateer-xray.cpp",
-  "src/pybind/privateer-pychimeraX.cpp",
 ]
 include-dirs = [
   "src/dependencies",
   "src/dependencies/clipper",
+  "src/dependencies/mmdb2",
+  "src/dependencies/pybind11/include",
+  "src/cpp",
+  
+]
+library-dirs = [
+  "src/lib",
+]
+libraries = [
+  "clipper",
+  "mmdb2",
+  "ccp4",
+]
+define-macros = [
+  "PRIVATEER_CX_EXPORTS",
+  "PRIVATEER_VERBOSE",
+]
+
+[tool.chimerax.library.privateer_core.platform.win]
+extra-link-args = [
+  "/FORCE:MULTIPLE",
+]
+define-macros = [
+  "NOMINMAX",
+]
+extra-compile-args = [
+  "-std=c++14",
+]
+
+[tool.chimerax.library.privateer_core.platform.mac]
+extra-compile-args = [
+  "-fvisibility=hidden",
+  "-fvisibility-inlines-hidden",
+  "-std=c++14",
+]
+extra-link-args = [
+  "-s",
+]
+
+[tool.chimerax.library.privateer_core.platform.linux]
+extra-compile-args = [
+  "-fvisibility=hidden",
+  "-fvisibility-inlines-hidden",
+  "-std=c++14",
+]
+extra-link-args = [
+  "-s",
+]
+
+[tool.chimerax.extension.privateer_core]
+sources = [
+  "src/pybind/privateer-pychimeraX.cpp",
+]
+include-dirs = [
+  "src/dependencies",
+  "src/dependencies/clipper-gemmi",
   "src/dependencies/mmdb2",
   "src/dependencies/pybind11/include",
   "src/dependencies/gemmi/include",
@@ -355,7 +518,7 @@ library-dirs = [
   "src/lib",
 ]
 libraries = [
-  "clipper",
+  "clipper-gemmi",
   "mmdb2",
   "ccp4",
   "gemmi",
