@@ -6,13 +6,12 @@
 
 using namespace pybind11::literals;
 
-pybind11::list validate(std::string& path_to_model_file, std::string& path_to_zscores, std::string& path_to_glycomics)
+pybind11::list validate(std::string path_to_model_file, std::string& path_to_zscores, std::string& path_to_glycomics)
 {
     clipper::MiniMol mmol;
     clipper::MMDBfile mfile;
     clipper::String path_to_model_file_clipper = path_to_model_file;
 
-    privateer::util::read_coordinate_file_mtz(mfile, mmol, path_to_model_file_clipper, true);
 
     privateer::json::GlobalTorsionZScore torsions_zscore_database = privateer::json::read_json_file_for_torsions_zscore_database(path_to_zscores);
     std::vector<privateer::json::GlycomicsDatabase> glycomics_database = privateer::json::read_json_file_for_glycomics_database(path_to_glycomics);
