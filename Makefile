@@ -73,7 +73,7 @@ SRCS = $(SOURCE)/*.py #$(SOURCE)/*.cpp
 # Actual make dependencies!
 #
 
-wheel $(WHEEL): bundle_info.xml $(SRCS)
+wheel $(WHEEL): pyproject.toml $(SRCS)
 	$(CHIMERAX_EXE) --nogui --safemode --cmd "devel build . ; exit"
 
 install app-install:	$(WHEEL)
