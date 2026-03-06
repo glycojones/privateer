@@ -1,14 +1,8 @@
 [build-system]
 requires = [
   "ChimeraX-BundleBuilder>=1.4.0",
-  "ChimeraX-Core ~=1.11.1",
-  "ChimeraX-Atomic ~=1.6",
-  "ChimeraX-Surface ~=1.0",
-  "ChimeraX-Geometry ~=1.0",
-  "ChimeraX-UI ~=1.5",
   "ChimeraX-Clipper ~=0.26",
 ]
-build-backend = "chimerax.bundle_builder.cx_pep517"
 
 [project]
 name = "Privateer-for-ChimeraX"
@@ -26,6 +20,9 @@ dependencies = [
 ]
 dynamic = ["classifiers", "requires-python", "version"]
 
+[tool.setuptools.dynamic]
+version = { attr = "src.__version__"}
+
 [project.readme]
 content-type = "text"
 text = """Produces an interactive validation report on carbohydrates present within the structure. Hovering over elements of the validation report or clicking on elements can provide more detail. Also provides option to visualise 3D glycan symbols on the model."""
@@ -37,7 +34,7 @@ Home = "https://github.com/glycojones/privateer"
 [tool.chimerax]
 min-session-version = 1
 max-session-version = 1
-custom-init = false
+custom-init = true
 categories = ["General"]
 classifiers = ["Development Status :: 2 - Pre-Alpha"]
 
