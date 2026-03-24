@@ -37,7 +37,7 @@ endif
 
 ifeq ($(strip $(detected_OS)),Darwin)
 # Mac
-CHIMERAX_APP = /Applications/ChimeraX-1.10.1.app
+CHIMERAX_APP = /Applications/ChimeraX-1.11.1.app
 endif
 
 

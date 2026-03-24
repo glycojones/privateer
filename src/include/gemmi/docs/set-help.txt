@@ -1,0 +1,16 @@
+$ gemmi set -h
+Usage:
+ gemmi set [options] INPUT_FILE OUTPUT_FILE
+
+Modify atom attributes in a coordinate file.
+
+Options:
+  -h, --help         Print usage and exit.
+  -V, --version      Print version and exit.
+  -v, --verbose      Verbose output.
+  -B MIN[:MAX]       Set isotropic B-factors to a single value MIN
+                     or clamp them to MIN:MAX.
+  -O MIN[:MAX]       Set occupancies to a single value or clamp them to MIN:MAX.
+  --noise M          Add random shifts, uniform in (-M,M), to x,y,z.
+  --shift='DX DY DZ' Translate the model coordinates (units: Angstroms).
+  --select=SEL       Apply transformations only to selected atoms (MMDB syntax).
