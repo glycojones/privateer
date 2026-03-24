@@ -10,7 +10,7 @@ class PrivateerTool(ToolInstance):
 
     SESSION_ENDURING = False    # Does this instance persist when session closes
     SESSION_SAVE = True         # We do save/restore in sessions
-    help = "help:user/tools/privateer_for_chimeraX_docs.html"
+    help = "help:user/tools/documentation.html"
                                 # Let ChimeraX know about our help page
 
     def __init__(self, session, tool_name):
@@ -48,7 +48,7 @@ class PrivateerTool(ToolInstance):
         models = atomic.all_structures(self.session)
         layout = QFormLayout()
         vbox = QVBoxLayout()
-        self.documentation_button = QPushButton("Open Privateer for ChimeraX User Guide")
+        self.documentation_button = QPushButton("Open Privateer User Guide")
         label1 = "Model ID:"
         self.combobox = QComboBox()
         self.modellist = []
