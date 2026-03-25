@@ -133,15 +133,16 @@ class PrivateerTool(ToolInstance):
                 self.modellist[i]["report"] = None
                 self.combobox.addItem(str(m.id_string))
 
-        if len(modelIDs) == 0:
-            self.valreportwindow = None
         for i,m in enumerate(self.modellist):
             if not m["modelID"] in modelIDs:
                 del self.modellist[i]
 
         if reportexists:
             self.valreportwindow.modellist = self.modellist
-            self.valreportwindow.update_tabs()
+            self.valreportwindow.update_tabs()  
+        else:
+            if len(modelIDs) == 0:
+                self.valreportwindow = None
         
         if self.glycoblocksexist:
             self.glycoblocksexist = False
