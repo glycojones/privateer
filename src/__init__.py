@@ -2,7 +2,7 @@
 
 from chimerax.core.toolshed import BundleAPI
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 class _MyAPI(BundleAPI):
 
