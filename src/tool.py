@@ -271,11 +271,13 @@ class Glycoblocks(Model):
         vt = self.session.main_view.triggers
         self._structure_resize_handler = vt.add_handler('graphics update', self.is_resize_needed)
         self._bounds = self._atomic_structure.bounds() 
-        #self._bounds = self.session.main_view.drawing_bounds() 
-        self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
-        self._scale = 2*self._view_window/self._bounds.width()
-        self.update()
-        structure.add([self])
+        if self._bounds == None:
+            self.session.logger.info(f"Model is not currently in ChimeraX view. To draw 3D glycan symbols, please ensure model is shown within ChimeraX view window.")
+        else:
+            self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
+            self._scale = 2*self._view_window/self._bounds.width()
+            self.update()
+            structure.add([self])
 
     def is_update_needed(self, trigger_name, changes):
         changes = changes[1]
@@ -313,7 +315,7 @@ class Glycoblocks(Model):
     
     def is_resize_needed(self, *_):
         resize_needed = False
-        if self.session == None:
+        if self.session == None or self._bounds == None:
             resize_needed = False
         else:
             self._view_window = self.session.main_view.camera.view_width(self._bounds.center())
