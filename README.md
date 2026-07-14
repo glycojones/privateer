@@ -24,15 +24,15 @@ The bundle also relies on precompiled C++ librairies within the ChimeraX-Clipper
 
 
 ### Building the Bundle
-First, clone the repository and switch to the relevant branch:
+First, clone the repository and switch to the ChimeraX bundle branch:
 
 ```
-git clone https://github.com/glycojones/privateer.git chimeraX_bundle
+git clone --single-branch --branch chimeraX_bundle https://github.com/glycojones/privateer.git chimeraX_bundle
 ```
 Next, navigate to the directory with the repository, created by the previous command:
 
 ```
-cd privateer
+cd chimeraX_bundle
 ```
 Finally, build the bundle:
 
