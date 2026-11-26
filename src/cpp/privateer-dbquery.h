@@ -37,6 +37,8 @@ namespace privateer
         inline std::pair<std::string, std::string> output_dbquery(std::vector<privateer::json::GlycomicsDatabase>& glycomics_database, clipper::String glycanWURCS, clipper::MGlycan &currentGlycan)
         {
             int valueLocation = privateer::util::find_index_of_value_from_wurcs(glycomics_database, glycanWURCS);
+            if (valueLocation < 0)
+                return std::make_pair(std::string("NotFound"), std::string("NotFound"));
             std::string glytoucanID = glycomics_database[valueLocation].GlyTouCanID;
             std::string glyconnectID = glycomics_database[valueLocation].GlyConnectID;
             return std::make_pair(glytoucanID, glyconnectID);
