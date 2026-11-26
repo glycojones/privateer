@@ -1,10 +1,32 @@
-import pandas as pd
+import csv
 import re
 import os
 import time
 import tempfile
 
 from . import privateer_core as pvt
+
+
+# Report columns, in the order privateer_core returns them, used when a model has no glycans.
+_REPORT_COLUMNS = ["GlycanNum", "WURCS", "GlycosylationType", "RootID", "glycanChainID",
+                   "TorsionErr", "ConformationErr", "AnomerErr", "PuckeringErr", "ChiralityErr",
+                   "Torsions", "GlyToucanID", "GlyConnectID", "Sugars"]
+
+
+def _write_report_csv(csv_out, glycans):
+    """Write one row per glycan, leaving out the SVG, in the same format pandas' to_csv produced."""
+    columns = []
+    for glycan in glycans:
+        for key in glycan:
+            if key != "svg" and key not in columns:
+                columns.append(key)
+    if not columns:
+        columns = _REPORT_COLUMNS
+    with open(csv_out, "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.writer(csvfile, lineterminator=os.linesep)
+        writer.writerow([""] + columns)
+        for index, glycan in enumerate(glycans):
+            writer.writerow([index] + [glycan.get(column, "") for column in columns])
 
 
 def privateer_validation_wrapper(session,OutputFolderPath,m,i,display=False):
@@ -28,10 +50,8 @@ def privateer_validation_wrapper(session,OutputFolderPath,m,i,display=False):
             svgfile = open(os.path.join(OutputFolderPath,f"model-{i}_{rootID}.svg"),"w")
             svgfile.write(svgstring)
             svgfile.close()
-        df = pd.DataFrame.from_dict(AllGlycans)
-        df = df.drop(["svg"], axis=1)
         csv_out = os.path.join(OutputFolderPath,f"model-{i}_privateer-report.csv")
-        df.to_csv(csv_out)  
+        _write_report_csv(csv_out, AllGlycans)
 
 def draw_glycoblocks(session,Glycans, modelID,gb_scale=1):
     if gb_scale < 1:
